@@ -1,7 +1,7 @@
 ---
-title: Class, Object, Instance
+title: Java - 클래스, 오브젝트, 인스턴스
 author: meatsby
-date: 2021-10-30 09:09:00 +0900
+date: 2021-11-09 10:00:00 +0900
 categories: [Java]
 tags: [Java]
 ---
@@ -14,6 +14,8 @@ tags: [Java]
     - 객체를 생성하기 위한 **설계도** 혹은 틀
     - 연관되어 있는 변수와 메서드의 집합
 
+<br>
+
 ## Object
 
 ---
@@ -25,6 +27,8 @@ tags: [Java]
 - 특징
     - "클래스의 인스턴스" 라고도 불림
     - OOP관점에서 클래스의 타입으로 선언되었을 때 **객체**라고 부름
+
+<br>
 
 ## Instance
 
@@ -42,6 +46,8 @@ tags: [Java]
     - 추성적인 개념과 구체적인 객체 사이의 관계에 초점을 맞출 경우에 사용
         - 객체는 클래스의 인스턴스
         - 실행 프로세스는 프로그램의 인스턴스
+
+<br>
 
 ## 예시
 
@@ -67,6 +73,8 @@ public class Main {
   }
 }
 ```
+
+<br>
 
 ## Reference
 

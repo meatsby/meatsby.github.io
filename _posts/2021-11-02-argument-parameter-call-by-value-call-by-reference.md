@@ -1,7 +1,7 @@
 ---
-title: Argument, Parameter, Call by value, Call by reference
+title: Java - Argument & Parameter / Call by Value & Call by Reference
 author: meatsby
-date: 2021-10-30 09:09:00 +0900
+date: 2021-11-02 10:00:02 +0900
 categories: [Java]
 tags: [Java]
 ---
@@ -26,6 +26,8 @@ public class ArgumentParameter {
 }
 ```
 
+<br>
+
 ## Call by value
 
 ---
@@ -36,6 +38,8 @@ public class ArgumentParameter {
 - 복사된 인자는 함수 안에서 지역적으로 사용되는 local value의 특성을 가짐
 - 즉, 함수 안에서 인자의 값(Parameter)이 변경되어도, 외부 변수의 값(Argument)은 변경 X
 
+<br>
+
 ## Call by reference
 
 ---
@@ -44,6 +48,8 @@ public class ArgumentParameter {
 - Call by reference 방식으로 호출 시 전달되는 변수의 번지수를 전달함
 - Argument 와 parameter 모두 같은 객체를 참조하게 됨
 - 즉, 함수 안에서 인자의 값이 변경되면, 외부 변수의 값도 변경됨
+
+<br>
 
 ## Reference
 

@@ -1,7 +1,7 @@
 ---
-title: Process, Thread의 차이
+title: OS - Process와 Thread의 차이
 author: meatsby
-date: 2021-10-30 09:09:00 +0900
+date: 2021-11-16 10:00:00 +0900
 categories: [OS]
 tags: [OS]
 ---
@@ -29,7 +29,7 @@ tags: [OS]
     - 즉, 동적인 개념으로는 실행된 프로그램을 의미
 - 특징
     
-    ![Untitled](/assets/img/2021-10-30-process-and-thread/operation-system.png)
+    ![Untitled](/assets/img/2021-11-16-process-and-thread/operation-system.png)
     
     - 프로세스는 각각 독립된 메모리 영역을 할당 받는다.
     - 기본적으로 프로세스당 최소 1개의 스레드를 갖는다.
@@ -47,7 +47,7 @@ tags: [OS]
     - 프로세스 내에서 실행되는 여러 흐름의 단위
 - 특징
     
-    ![Untitled](/assets/img/2021-10-30-process-and-thread/process.png)
+    ![Untitled](/assets/img/2021-11-16-process-and-thread/process.png)
     
     - 스레드는 프로세스 내에서 각각 Stack만 따로 할당받고 Code, Data, Heap 영역은 공유
     - 스레드는 프로세스 내에서 동작하는 여러 실행의 흐름
@@ -127,7 +127,7 @@ tags: [OS]
 
 - 프로그램 여러 개를 키는 것보다 하나의 프로그램 안에서 여러 작업을 해결하는 것
     
-    ![Untitled](/assets/img/2021-10-30-process-and-thread/process-thread.png)
+    ![Untitled](/assets/img/2021-11-16-process-and-thread/process-thread.png)
     
 - 여러 프로세스로 할 수 있는 작업을 여러 스레드로 나눠서 하는 이유
     - 자원의 효율성 증대

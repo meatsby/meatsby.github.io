@@ -1,7 +1,7 @@
 ---
-title: Function, Method
+title: Java - 함수와 메서드
 author: meatsby
-date: 2021-10-30 09:09:00 +0900
+date: 2021-11-02 10:00:00 +0900
 categories: [Java]
 tags: [Java]
 ---
@@ -15,6 +15,8 @@ tags: [Java]
 - retunr 명령어의 두 가지 의미
     - 반환값을 반환
     - 메서드를 즉시 종료
+
+<br>
 
 ## Method
 

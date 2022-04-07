@@ -1,7 +1,7 @@
 ---
-title: == 연산자와 equals()의 차이
+title: Java - == 연산자와 equals()의 차이
 author: meatsby
-date: 2021-10-30 09:09:00 +0900
+date: 2021-11-02 10:00:04 +0900
 categories: [Java]
 tags: [Java]
 ---
@@ -22,6 +22,8 @@ tags: [Java]
     - 같은 내용을 갖고 있더라도 주소값이 다르기 때문
 - Boolean Type 으로 반환한다.
 
+<br>
+
 ## equals()
 
 ---
@@ -32,6 +34,8 @@ tags: [Java]
     - 문자열의 데이터/내용을 기반으로 비교한다.
 - 기본 유형(Primitive Types)에 적용할 수 없다.
 - Boolean Type 으로 반환한다.
+
+<br>
 
 ## 예시
 
@@ -55,6 +59,8 @@ public class Test {
     }
 }
 ```
+
+<br>
 
 ## Reference
 

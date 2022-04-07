@@ -1,7 +1,7 @@
 ---
-title: JVM 메모리 구조
+title: Java - JVM 메모리 구조
 author: meatsby
-date: 2021-10-30 09:09:00 +0900
+date: 2021-11-02 10:00:03 +0900
 categories: [Java]
 tags: [Java, JVM]
 ---
@@ -14,7 +14,7 @@ tags: [Java, JVM]
 - CPU나 OS(플렛폼)의 종류와 무관하게 실행 가능
 - 즉, OS 위에서 동작하는 프로세스로 자바 코드를 컴파일해서 얻은 바이트 코드를 해당 OS가 이해할 수 있는 기계어로 바꿔 실행시켜주는 역할
 
-![Untitled](/assets/img/2021-10-30-jvm-memery-structure/jvm-structure.png)
+![Untitled](/assets/img/2021-11-02-jvm-memery-structure/jvm-structure.png)
 
 <br>
 
@@ -47,7 +47,7 @@ tags: [Java, JVM]
 - 메서드, 힙 영역은 모든 스레드가 공유
 - 스택, PC 레지스터, Native 메서드 스택은 각 스레드마다 생성 공유 X
 
-![Untitled](/assets/img/2021-10-30-jvm-memery-structure/runtime-data-area.png)
+![Untitled](/assets/img/2021-11-02-jvm-memery-structure/runtime-data-area.png)
 
 <br>
 

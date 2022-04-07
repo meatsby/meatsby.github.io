@@ -1,12 +1,12 @@
 ---
-title: Primitive & Reference Type
+title: Java - 기본타입과 참조타입
 author: meatsby
-date: 2021-10-30 09:09:00 +0900
+date: 2021-11-04 10:00:00 +0900
 categories: [Java]
 tags: [Java]
 ---
 
-![Untitled](/assets/img/2021-10-30-primitive-and-reference-type/datatype.png)
+![Untitled](/assets/img/2021-11-04-primitive-and-reference-type/datatype.png)
 
 <br>
 

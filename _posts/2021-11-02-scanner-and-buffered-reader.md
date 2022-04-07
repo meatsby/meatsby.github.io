@@ -1,7 +1,7 @@
 ---
-title: Java - Scanner 와 BufferedReader
+title: Java - Scanner와 BufferedReader
 author: meatsby
-date: 2021-11-02 10:00:00 +0900
+date: 2021-11-02 10:00:01 +0900
 categories: [Java]
 tags: [Java]
 ---
@@ -48,6 +48,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class study {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // 선언
 

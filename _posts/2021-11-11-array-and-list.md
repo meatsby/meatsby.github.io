@@ -1,7 +1,7 @@
 ---
-title: Array와 List의 차이
+title: Java - Array와 List의 차이
 author: meatsby
-date: 2021-10-30 09:09:00 +0900
+date: 2021-11-11 10:00:00 +0900
 categories: [Java]
 tags: [Java]
 ---
@@ -24,7 +24,7 @@ tags: [Java]
 - 가변길이의 특성을 갖고 있으며 다양한 기능을 내장하고 있음
 - Array List 와 Linked List 두가지가 존재함
 
-![Untitled](/assets/img/2021-10-30-array-and-list/arraylist-linkedlist.png)
+![Untitled](/assets/img/2021-11-11-array-and-list/arraylist-linkedlist.png)
 
 <br>
 
