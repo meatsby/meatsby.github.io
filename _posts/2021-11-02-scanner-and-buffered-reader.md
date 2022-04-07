@@ -1,5 +1,5 @@
 ---
-title: Scanner, BufferedReader
+title: Java - Scanner 와 BufferedReader
 author: meatsby
 date: 2021-11-02 10:00:00 +0900
 categories: [Java]
@@ -66,6 +66,6 @@ public class study {
 
 ---
 
-![Desktop View](/assets/img/2021-10-30-scanner-and-buffered-reader/buffer.png)
+<img src="/assets/img/2021-10-30-scanner-and-buffered-reader/buffer.png">
 
-![Desktop View](/assets/img/2021-10-30-scanner-and-buffered-reader/difference.png)
+<img src="/assets/img/2021-10-30-scanner-and-buffered-reader/difference.png">
