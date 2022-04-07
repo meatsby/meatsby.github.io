@@ -1,7 +1,7 @@
 ---
 title: Scanner, BufferedReader
 author: meatsby
-date: 2021-10-30 09:09:00 +0900
+date: 2021-11-02 10:00:00 +0900
 categories: [Java]
 tags: [Java]
 ---
@@ -18,15 +18,15 @@ import java.util.Scanner;
 
 public class study {
 
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-		System.out.println("원하는 숫자를 입력하세요");
-		String input = scanner.nextLine();
-		int num = Integer.parseInt(input);
+        System.out.println("원하는 숫자를 입력하세요");
+        String input = scanner.nextLine();
+        int num = Integer.parseInt(input);
 
-		System.out.println(num);
-	}
+        System.out.println(num);
+    }
 }
 ```
 
@@ -48,16 +48,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class study {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // 선언
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // 선언
 
-		String s = br.readLine(); 
-		int i = Integer.parseInt(br.readLine()); 
-		
-		System.out.println("String : " + s);
-		System.out.println("Int : " + i);
-		
-	}
+        String s = br.readLine(); 
+        int i = Integer.parseInt(br.readLine()); 
+
+        System.out.println("String : " + s);
+        System.out.println("Int : " + i);
+    }
 }
 ```
 
@@ -67,6 +66,6 @@ public class study {
 
 ---
 
-![Untitled](/assets/img/2021-10-30-scanner-and-buffered-reader/buffer.png)
+![Desktop View](/assets/img/2021-10-30-scanner-and-buffered-reader/buffer.png)
 
-![Untitled](/assets/img/2021-10-30-scanner-and-buffered-reader/difference.png)
+![Desktop View](/assets/img/2021-10-30-scanner-and-buffered-reader/difference.png)
