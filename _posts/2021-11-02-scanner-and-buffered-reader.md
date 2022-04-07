@@ -66,6 +66,6 @@ public class study {
 
 ---
 
-<img src="assets/img/2021-10-30-scanner-and-buffered-reader/buffer.png">
+![Untitled](/assets/img/2021-11-02-scanner-and-buffered-reader/buffer.png)
 
-<img src="./assets/img/2021-10-30-scanner-and-buffered-reader/difference.png">
+![Untitled](/assets/img/2021-11-02-scanner-and-buffered-reader/difference.png)
