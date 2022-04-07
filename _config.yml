@@ -34,8 +34,8 @@ url: 'https://meatsby.github.io/'
 github:
   username: meatsby             # change to your github username
 
-twitter:
-  username: twitter_username            # change to your twitter username
+# twitter:
+  # username: twitter_username            # change to your twitter username
 
 social:
   # Change to your full name.
@@ -48,7 +48,7 @@ social:
     - https://github.com/meatsby       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/seokyoon-jung-4a633b14b
 
 google_site_verification:               # fill in to your verification string
 
@@ -73,7 +73,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: dark
+theme_mode:   # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
