@@ -122,7 +122,7 @@ Person p = new Person("홍길동", 20);
 
 <br>
 
-## Reference
+## References
 
 ---
 

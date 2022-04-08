@@ -76,7 +76,7 @@ public class Main {
 
 <br>
 
-## Reference
+## References
 
 ---
 
