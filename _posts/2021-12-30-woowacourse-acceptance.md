@@ -2,7 +2,7 @@
 title: 우아한테크코스 4기 - 최종 합격 후기
 author: meatsby
 date: 2021-12-30 10:00:00 +0900
-categories: [WoowaCourse]
+categories: [WoowaCourse, 프리코스]
 tags: [WoowaCourse]
 ---
 
@@ -156,11 +156,11 @@ tags: [WoowaCourse]
 
 ---
 
-### [1주 차 - 숫자 야구 게임](https://meatsby.tistory.com/73?category=940146)
+### [1주 차 - 숫자 야구 게임](https://meatsby.github.io/posts/woowa-precourse-week-1)
 
-### [2주 차 - 자동차 경주 게임](https://meatsby.tistory.com/74?category=940146)
+### [2주 차 - 자동차 경주 게임](https://meatsby.github.io/posts/woowa-precourse-week-2)
 
-### [3주 차 - 자판기](https://meatsby.tistory.com/75?category=940146)
+### [3주 차 - 자판기](https://meatsby.github.io/posts/woowa-precourse-week-3)
 
 <br>
 
