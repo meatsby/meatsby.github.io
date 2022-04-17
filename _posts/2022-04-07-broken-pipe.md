@@ -2,7 +2,7 @@
 title: Java - Broken pipe 오류 원인, 해결 방법
 author: meatsby
 date: 2022-04-07 10:00:03 +0900
-categories: [WoowaCourse, Level 1, Chess Mission]
+categories: [Java]
 tags: [WoowaCourse, 학습로그, Broken pipe]
 ---
 
