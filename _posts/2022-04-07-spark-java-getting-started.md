@@ -311,7 +311,7 @@ public static void main(String[] args) {
 
 ### 이럴 경우 result.html 은 어떻게 변해야 할까?
 
-```java
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
