@@ -253,7 +253,7 @@ public static void main(String[] args) {
 
 `render()` 메서드는 `Map<String, Object>` 형식으로 구성되어 있는 `model` 을 인자로 받는다.
 
-- `model` 의 key = template 에서 사용하는 변수 `\{{name\}}`
+- `model` 의 key = template 에서 사용하는 변수 `{{name}}`
 - `model` 의 value = `post` 요청으로 받은 값 `“meatsby”`
 
 ```html
@@ -265,7 +265,7 @@ public static void main(String[] args) {
 </head>
 <body>
 <h1>Sign Up Result</h1>
-Name : \{{name\}}, Age : \{{age\}}
+Name : {{name}}, Age : {{age}}
 <br>
 </body>
 </html>
@@ -275,7 +275,7 @@ Name : \{{name\}}, Age : \{{age\}}
 
 `Spark` 에서 동적 `html` 파일은 항상 `resources.templates` 로 접근하게 끔 설정되어 있기 때문에 `result.html` 을 꼭 해당 디렉토리에 위치시켜야 한다.
 
-handlebars 는 Mustache 문법을 사용하는데, `\{{name\}}` 은 `model` 에서 키값이 `name` 인 값을 가져온다.
+handlebars 는 Mustache 문법을 사용하는데, `{{name}}` 은 `model` 에서 키값이 `name` 인 값을 가져온다.
 
 <br>
 
@@ -320,19 +320,19 @@ public static void main(String[] args) {
 </head>
 <body>
 <h1>Sign Up Result</h1>
-\{{#users\}}
-Name : \{{name\}}, Age : \{{age\}}
+{{#users}}
+Name : {{name}}, Age : {{age}}
 <br>
-\{{/users\}}
+{{/users}}
 </body>
 </html>
 ```
 
-간단하다. `\{{#users\}}` 와 `\{{/users\}}` 코드 사이의 있는 구문에서 자연스럽게 반복문을 돌아 `user` 리스트에서 하나 씩 출력한다.
+간단하다. `{{#users}}` 와 `{{/users}}` 코드 사이의 있는 구문에서 자연스럽게 반복문을 돌아 `user` 리스트에서 하나 씩 출력한다.
 
-내부의 `\{{name\}}` 과 `\{{age\}}` 는 사실 `\{{user.name\}}` 과 `\{{user.age\}}` 이지만, `\{{#users\}}` 와 `\{{/users\}}` 에게 감싸져 있기 때문에 생략이 가능하다.
+내부의 `{{name}}` 과 `{{age}}` 는 사실 `{{user.name}}` 과 `{{user.age}}` 이지만, `{{#users}}` 와 `{{/users}}` 에게 감싸져 있기 때문에 생략이 가능하다.
 
-여기서 `\{{user.name\}}` 은 `user.getName()` 과 같다.
+여기서 `{{user.name}}` 은 `user.getName()` 과 같다.
 
 <br>
 
