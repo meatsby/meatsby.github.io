@@ -1,5 +1,5 @@
 ---
-title: WEB - Spark 시작하기
+title: \[WEB\] Spark 시작하기
 author: meatsby
 date: 2022-04-07 10:00:02 +0900
 categories: [WEB]
@@ -114,7 +114,7 @@ public class HelloWorld {
 
 쿼리스트링으로 전달된 값들은 `req.queryParams()` 메서드를 통해 `name` 값과 `age` 값을 받아 전달받은 값을 새로운 문자열에 추가시켜 `localhost:4567/users?name=meatsby&age=26` 주소에서 “Hello meatsby 나이는 26” 을 출력하게 된다.
 
-```java
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,7 +172,7 @@ public class HelloWorld {
 
 이럴 경우 같은 방법으로 브라우저에서 데이터를 전달해도 url 에 parameter 가 노출되지 않는다.
 
-```java
+```html
 <form action="/users" method="post">
 ```
 
@@ -253,10 +253,10 @@ public static void main(String[] args) {
 
 `render()` 메서드는 `Map<String, Object>` 형식으로 구성되어 있는 `model` 을 인자로 받는다.
 
-- `model` 의 key = template 에서 사용하는 변수 `{{name}}`
+- `model` 의 key = template 에서 사용하는 변수 `\{\{name\}\}`
 - `model` 의 value = `post` 요청으로 받은 값 `“meatsby”`
 
-```java
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -265,7 +265,7 @@ public static void main(String[] args) {
 </head>
 <body>
 <h1>Sign Up Result</h1>
-Name : {{name}}, Age : {{age}}
+Name : \{\{name\}\}, Age : \{\{age\}\}
 <br>
 </body>
 </html>
@@ -275,7 +275,7 @@ Name : {{name}}, Age : {{age}}
 
 `Spark` 에서 동적 `html` 파일은 항상 `resources.templates` 로 접근하게 끔 설정되어 있기 때문에 `result.html` 을 꼭 해당 디렉토리에 위치시켜야 한다.
 
-handlebars 는 Mustache 문법을 사용하는데, `{{name}}` 은 `model` 에서 키값이 `name` 인 값을 가져온다.
+handlebars 는 Mustache 문법을 사용하는데, `\{\{name\}\}` 은 `model` 에서 키값이 `name` 인 값을 가져온다.
 
 <br>
 
@@ -320,19 +320,19 @@ public static void main(String[] args) {
 </head>
 <body>
 <h1>Sign Up Result</h1>
-{{#users}}
-Name : {{name}}, Age : {{age}}
+\{\{#users\}\}
+Name : \{\{name\}\}, Age : \{\{age\}\}
 <br>
-{{/users}}
+\{\{/users\}\}
 </body>
 </html>
 ```
 
-간단하다. `{{#users}}` 와 `{{/users}}` 코드 사이의 있는 구문에서 자연스럽게 반복문을 돌아 `user` 리스트에서 하나 씩 출력한다.
+간단하다. `\{\{#users\}\}` 와 `\{\{/users\}\}` 코드 사이의 있는 구문에서 자연스럽게 반복문을 돌아 `user` 리스트에서 하나 씩 출력한다.
 
-내부의 `{{name}}` 과 `{{age}}` 는 사실 `{{user.name}}` 과 `{{user.age}}` 이지만, `{{#users}}` 와 `{{/users}}` 에게 감싸져 있기 때문에 생략이 가능하다.
+내부의 `\{\{name\}\}` 과 `\{\{age\}\}` 는 사실 `\{\{user.name\}\}` 과 `\{\{user.age\}\}` 이지만, `\{\{#users\}\}` 와 `\{\{/users\}\}` 에게 감싸져 있기 때문에 생략이 가능하다.
 
-여기서 `{{user.name}}` 은 `user.getName()` 과 같다.
+여기서 `\{\{user.name\}\}` 은 `user.getName()` 과 같다.
 
 <br>
 
