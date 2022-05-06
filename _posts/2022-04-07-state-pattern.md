@@ -3,7 +3,7 @@ title: 디자인패턴 - 상태 패턴
 author: meatsby
 date: 2022-04-07 10:00:00 +0900
 categories: [디자인패턴]
-tags: [WoowaCourse, 학습로그, 디자인패턴. 상태 패턴]
+tags: [WoowaCourse, 학습로그, 디자인패턴, 상태 패턴]
 ---
 
 ## 상태 패턴이란?
