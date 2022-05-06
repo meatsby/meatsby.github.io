@@ -16,13 +16,9 @@ tags: [Java, JVM]
 
 ![Untitled](/assets/img/2021-11-02-jvm-memery-structure/jvm-structure.png)
 
-<br>
-
 ### 1. Class Loader
 
 - 클래스 파일들을 엮어서 JVM이 OS로부터 할당받은 메모리영역(Runtime Data Area)에 적재
-
-<br>
 
 ### 2. Execution Engine
 
@@ -32,13 +28,9 @@ tags: [Java, JVM]
     - JIT(Just-In-TIme) Compiler 방식
         - 적절한 시간에 전체 바이트 코드를 기계어로 번역해 실행하여 성능을 높이는 방식
 
-<br>
-
 ### 3. Garbage Collector
 
 - GC는 Heap 메모리 영역에 생성된 객체들 중 참조되지 않은 객체들을 탐색 후 제거
-
-<br>
 
 ### 4. Runtime Data Area
 
@@ -55,15 +47,11 @@ tags: [Java, JVM]
 
 ---
 
-<br>
-
 ### 1. Method Area
 
 - JVM 이 시작될 때 생성되는 영역
 - 바이트 코드가 저장됨
     - 클래스 정보, 변수 정보, static 변수
-
-<br>
 
 ### 2. HeapArea
 
@@ -93,8 +81,6 @@ tags: [Java, JVM]
 Person p = new Person("홍길동", 20);
 ```
 
-<br>
-
 ### 3. StackArea
 
 - 지역변수, 메서드의 매개변수, 임시적으로 사용되는 변수, 메서드의 정보 등이 저장되는 영역
@@ -105,15 +91,11 @@ Person p = new Person("홍길동", 20);
 Person p = new Person("홍길동", 20);
 ```
 
-<br>
-
 ### 4. PC Register (Program Counter Register)
 
 - 스레드가 시잘될 때 생성
 - 현재 스레드가 실행되는 부분의 주소와 명령을 저장하는 영역
 - 스레드를 돌아가면서 수행할 수 있음
-
-<br>
 
 ### 5. Native Method Stack
 
