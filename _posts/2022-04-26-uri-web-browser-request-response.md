@@ -6,8 +6,6 @@ categories: [네트워크]
 tags: [인프런, 김영한 강의]
 ---
 
-<br>
-
 ## URI (Uniform Resource Identifier)
 
 ---
