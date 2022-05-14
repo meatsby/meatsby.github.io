@@ -1,7 +1,7 @@
 ---
 title: HTTP - HTTP 상태코드
 author: meatsby
-date: 2022-04-29 10:00:00 +0900
+date: 2022-05-06 10:00:00 +0900
 categories: [네트워크, HTTP]
 tags: [인프런, 김영한 강의]
 ---
