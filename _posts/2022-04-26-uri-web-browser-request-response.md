@@ -1,5 +1,5 @@
 ---
-title: 네트워크 - URI 와 웹 브라우저 요청 흐름
+title: '[네트워크] URI 와 웹 브라우저 요청 흐름'
 author: meatsby
 date: 2022-04-26 10:00:00 +0900
 categories: [네트워크]

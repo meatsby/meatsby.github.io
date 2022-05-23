@@ -1,5 +1,5 @@
 ---
-title: HTTP - HTTP 상태코드
+title: '[HTTP] HTTP 상태코드'
 author: meatsby
 date: 2022-05-06 10:00:00 +0900
 categories: [네트워크, HTTP]

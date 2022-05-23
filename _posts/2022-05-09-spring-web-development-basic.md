@@ -1,5 +1,5 @@
 ---
-title: Spring - 스프링 웹 개발 기초
+title: '[Spring] 스프링 웹 개발 기초'
 author: meatsby
 date: 2022-05-08 10:00:00 +0900
 categories: [Spring]

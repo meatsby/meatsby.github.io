@@ -1,5 +1,5 @@
 ---
-title: HTTP - HTTP 기본
+title: '[HTTP] HTTP 기본'
 author: meatsby
 date: 2022-04-27 10:00:00 +0900
 categories: [네트워크, HTTP]

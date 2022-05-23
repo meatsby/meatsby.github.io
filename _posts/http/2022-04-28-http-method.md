@@ -1,5 +1,5 @@
 ---
-title: HTTP - HTTP 메서드
+title: '[HTTP] HTTP 메서드'
 author: meatsby
 date: 2022-04-28 10:00:00 +0900
 categories: [네트워크, HTTP]

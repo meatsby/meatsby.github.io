@@ -1,5 +1,5 @@
 ---
-title: HTTP - HTTP 헤더 1 - 일반 헤더
+title: '[HTTP] HTTP 헤더 1 - 일반 헤더'
 author: meatsby
 date: 2022-05-07 10:00:00 +0900
 categories: [네트워크, HTTP]

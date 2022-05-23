@@ -1,5 +1,5 @@
 ---
-title: HTTP - HTTP 헤더 2 - 캐시와 조건부 요청
+title: '[HTTP] HTTP 헤더 2 - 캐시와 조건부 요청'
 author: meatsby
 date: 2022-05-08 10:00:00 +0900
 categories: [네트워크, HTTP]
