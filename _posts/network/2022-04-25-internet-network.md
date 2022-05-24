@@ -1,5 +1,5 @@
 ---
-title: 네트워크 - 인터넷 네트워크
+title: '[네트워크] 인터넷 네트워크'
 author: meatsby
 date: 2022-04-25 10:00:00 +0900
 categories: [네트워크]

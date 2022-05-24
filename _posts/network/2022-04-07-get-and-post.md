@@ -1,5 +1,5 @@
 ---
-title: 네트워크 - GET 과 POST
+title: '[네트워크] GET 과 POST'
 author: meatsby
 date: 2022-04-07 10:00:01 +0900
 categories: [네트워크]

@@ -1,5 +1,5 @@
 ---
-title: WEB - Spark 시작하기
+title: '[WEB] Spark 시작하기'
 author: meatsby
 date: 2022-04-07 10:00:02 +0900
 categories: [WEB]

@@ -1,5 +1,5 @@
 ---
-title: 우아한테크코스 4기 - 프리코스 2주차 회고
+title: '[우아한테크코스 4기] 프리코스 2주차 회고'
 author: meatsby
 date: 2021-12-07 10:00:00 +0900
 categories: [WoowaCourse, 프리코스]
