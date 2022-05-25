@@ -1,5 +1,5 @@
 ---
-title: Java - 클래스, 오브젝트, 인스턴스
+title: '[Java] 클래스, 오브젝트, 인스턴스'
 author: meatsby
 date: 2021-11-09 10:00:00 +0900
 categories: [Java]

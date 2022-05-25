@@ -1,5 +1,5 @@
 ---
-title: Java - 검증의 책임
+title: '[Java] 검증의 책임'
 author: meatsby
 date: 2022-03-07 10:00:01 +0900
 categories: [Java]

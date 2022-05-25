@@ -1,5 +1,5 @@
 ---
-title: 협업 - POSIX new line
+title: '[협업] POSIX new line'
 author: meatsby
 date: 2022-03-21 10:00:00 +0900
 categories: [협업]

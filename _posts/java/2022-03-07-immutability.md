@@ -1,5 +1,5 @@
 ---
-title: Java - 불변에 관하여
+title: '[Java] 불변에 관하여'
 author: meatsby
 date: 2022-03-07 10:00:00 +0900
 categories: [Java]

@@ -1,5 +1,5 @@
 ---
-title: Java - 객체의 생명주기
+title: '[Java] 객체의 생명주기'
 author: meatsby
 date: 2021-11-04 10:00:01 +0900
 categories: [Java]

@@ -1,5 +1,5 @@
 ---
-title: Java - Array와 List의 차이
+title: '[Java] Array와 List의 차이'
 author: meatsby
 date: 2021-11-11 10:00:00 +0900
 categories: [Java]

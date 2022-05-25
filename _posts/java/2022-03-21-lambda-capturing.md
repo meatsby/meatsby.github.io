@@ -1,5 +1,5 @@
 ---
-title: Java - 람다 캡처링
+title: '[Java] 람다 캡처링'
 author: meatsby
 date: 2022-03-21 10:00:01 +0900
 categories: [Java]

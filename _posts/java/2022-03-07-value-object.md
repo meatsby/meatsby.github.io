@@ -1,5 +1,5 @@
 ---
-title: Java - Value Object
+title: '[Java] Value Object'
 author: meatsby
 date: 2022-03-07 10:00:02 +0900
 categories: [Java]

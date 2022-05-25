@@ -1,5 +1,5 @@
 ---
-title: Java - 정적 팩토리 메서드
+title: '[Java] 정적 팩토리 메서드'
 author: meatsby
 date: 2022-02-21 10:00:03 +0900
 categories: [Java]

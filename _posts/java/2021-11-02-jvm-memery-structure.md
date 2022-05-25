@@ -1,5 +1,5 @@
 ---
-title: Java - JVM 메모리 구조
+title: '[Java] JVM 메모리 구조'
 author: meatsby
 date: 2021-11-02 10:00:03 +0900
 categories: [Java]

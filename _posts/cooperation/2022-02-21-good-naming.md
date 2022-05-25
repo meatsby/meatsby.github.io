@@ -1,5 +1,5 @@
 ---
-title: 협업 - 좋은 코드를 위한 네이밍
+title: '[협업] 좋은 코드를 위한 네이밍'
 author: meatsby
 date: 2022-02-21 10:00:00 +0900
 categories: [협업]

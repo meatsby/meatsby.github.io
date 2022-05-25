@@ -1,5 +1,5 @@
 ---
-title: Java - == 연산자와 equals()의 차이
+title: '[Java] == 연산자와 equals()의 차이'
 author: meatsby
 date: 2021-11-02 10:00:04 +0900
 categories: [Java]

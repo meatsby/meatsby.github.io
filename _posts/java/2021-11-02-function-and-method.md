@@ -1,5 +1,5 @@
 ---
-title: Java - 함수와 메서드
+title: '[Java] 함수와 메서드'
 author: meatsby
 date: 2021-11-02 10:00:00 +0900
 categories: [Java]

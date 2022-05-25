@@ -1,5 +1,5 @@
 ---
-title: Java - 일급 컬렉션
+title: '[Java] 일급 컬렉션'
 author: meatsby
 date: 2022-03-21 10:00:02 +0900
 categories: [Java]
