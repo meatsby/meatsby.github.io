@@ -1,12 +1,12 @@
 ---
-title: '[Spring] 스프링 웹 개발 기초'
+title: '[Spring] 1. 스프링 웹 개발 기초'
 author: meatsby
 date: 2022-05-09 10:00:00 +0900
 categories: [Spring]
 tags: [인프런, 김영한 강의]
 ---
 
-웹을 개발하는 3가지 방법
+## 웹을 개발하는 3가지 방법
 
 - 정적 컨텐츠
 - MVC와 템플릿 엔진
