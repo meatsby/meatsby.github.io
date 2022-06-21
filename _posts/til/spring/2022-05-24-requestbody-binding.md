@@ -3,7 +3,7 @@ title: '[Spring] @RequestBody 바인딩 여행기'
 author: meatsby
 date: 2022-05-24 10:00:00 +0900
 categories: [TIL, Spring]
-tags: [Woowacourse, 학습로그, Spring]
+tags: [WoowaCourse, 학습로그, Spring]
 ---
 
 ## 경로 조회 미션 진행 도중 받은 피드백
