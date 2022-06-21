@@ -1,5 +1,5 @@
 ---
-title: '[Spring Roadmap] 1.6. HTTP 웹 기본 지식 - HTTP 상태코드'
+title: '[Spring Roadmap] 3.6. HTTP 웹 기본 지식 - HTTP 상태코드'
 author: meatsby
 date: 2022-05-06 10:00:00 +0900
 categories: [COURSES, Spring Roadmap]

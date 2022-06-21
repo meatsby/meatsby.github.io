@@ -1,5 +1,5 @@
 ---
-title: '[Spring Roadmap] 1.3. HTTP 웹 기본 지식 - HTTP 기본'
+title: '[Spring Roadmap] 3.3. HTTP 웹 기본 지식 - HTTP 기본'
 author: meatsby
 date: 2022-04-27 10:00:00 +0900
 categories: [COURSES, Spring Roadmap]

@@ -1,5 +1,5 @@
 ---
-title: '[Spring Roadmap] 1.2. HTTP 웹 기본 지식 - URI 와 웹 브라우저 요청 흐름'
+title: '[Spring Roadmap] 3.2. HTTP 웹 기본 지식 - URI 와 웹 브라우저 요청 흐름'
 author: meatsby
 date: 2022-04-26 10:00:00 +0900
 categories: [COURSES, Spring Roadmap]
