@@ -2,7 +2,7 @@
 title: '[우아한테크코스 4기] 최종 합격 후기'
 author: meatsby
 date: 2021-12-30 10:00:00 +0900
-categories: [WOOWACOURSE, 프리코스]
+categories: [WOOWACOURSE, Pre Course]
 tags: [WoowaCourse]
 ---
 

@@ -2,7 +2,7 @@
 title: '[우아한테크코스 4기] 프리코스 3주차 회고'
 author: meatsby
 date: 2021-12-14 10:00:00 +0900
-categories: [WOOWACOURSE, 프리코스]
+categories: [WOOWACOURSE, Pre Course]
 tags: [WoowaCourse]
 ---
 
