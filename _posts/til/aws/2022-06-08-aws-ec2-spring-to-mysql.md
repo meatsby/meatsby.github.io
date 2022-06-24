@@ -12,17 +12,17 @@ tags: [WoowaCourse, 학습로그, AWS, Spring, MySQL]
 
 ### 서버 EC2 로 cer 인증서 이동
 
-```java
+```bash
 $ cd 인증서 위치
-$ ssh -i {key 파일} ubuntu@{서버 IP}
+$ ssh -i key-quaritch.cer ubuntu@13.125.173.161
 ```
 
 ### 레포지토리 폴더 생성 후 프로젝트 폴더 가져오기
 
-```java
+```bash
 $ mkdir repository
 $ cd repository
-$ git clone {서버 GitHub Repository}
+$ git clone https://github.com/meatsby/jwp-shopping-cart.git
 ```
 
 <br>
@@ -33,10 +33,10 @@ $ git clone {서버 GitHub Repository}
 
 ### DB EC2 인스턴스 생성
 
-- 이름: `ec2-db`
+- 이름: `ec2-크루1-크루2-db`
 - 애플리케이션: `Uduntu`
 - 인스턴스 유형: `t3.micro`
-- 키 페어: `key 파일 이름`
+- 키 페어: `key-quaritch`
 - 네트워크 설정
     - VPC: `TECHCOURSE`
     - 서브넷: `TRAINING`
@@ -46,48 +46,48 @@ $ git clone {서버 GitHub Repository}
 
 ### 서버 EC2 에서 DB EC2 로 cer 인증서 이동 후 접속
 
-```jsx
-$ scp -i {key 파일} {key 파일} ubuntu@{서버 IP}:/home/ubuntu
-$ ssh -i {key 파일} ubuntu@{DB IP}
+```bash
+$ scp -i key-quaritch.cer key-quaritch.cer ubuntu@13.125.173.161:/home/ubuntu
+$ ssh -i key-quaritch.cer ubuntu@192.168.0.240
 ```
 
 ### MySQL 설치
 
-```jsx
+```bash
 $ sudo apt install mysql-server
 ```
 
 ### MySQL 접속
 
-```jsx
+```bash
 $ sudo mysql -u root -p
 Enter password:
 ```
 
 ### MySQL 사용자 생성 및 권한 설정
 
-```jsx
-mysql> create user '유저 이름'@'%' identified by '비밀번호';
-mysql> grant all privileges on *.* to '유저 이름'@'%' with grant option;
+```bash
+mysql> create user 'paritch'@'%' identified by 'password123!';
+mysql> grant all privileges on *.* to 'paritch'@'%' with grant option;
 ```
 
 ### 생성한 사용자로 MySQL 재접속
 
-```jsx
+```bash
 mysql> exit;
-$ sudo mysql -u '유저 이름' -p
-Enter password: '비밀번호'
+$ sudo mysql -u paritch -p
+Enter password: password123!
 ```
 
 ### MySQL Database 생성
 
-```jsx
-mysql> create database 'DB 이름';
+```bash
+mysql> create database paritch;
 ```
 
 ### MySQL 외부접속 허용
 
-```jsx
+```bash
 // DB EC2 Uduntu 로 이동 후
 $ cd /etc/mysql/mysql.conf.d
 $ sudo vi mysqld.cnf
@@ -96,7 +96,7 @@ $ sudo vi mysqld.cnf
 
 ### MySQL 재시작
 
-```jsx
+```bash
 $ sudo service mysql restart
 ```
 
@@ -108,8 +108,8 @@ $ sudo service mysql restart
 
 ### `build.gradle` 의존성 변경
 
-```jsx
-$ cd repository/{서버 Repository 폴더}
+```bash
+$ cd repository/jwp-shopping-cart
 $ vi build.gradle
 
 // h2 의존성 제거 후 mysql 의존성 추가
@@ -118,36 +118,36 @@ implementation 'mysql:mysql-connector-java'
 
 ### `application.properties` 설정 변경
 
-```jsx
-$ cd repository/{서버 Repository 폴더}/src/main/resources
+```bash
+$ cd repository/jwp-shopping-cart/src/main/resources
 $ vi application.properties
 $ vi build.gradle
 
 // h2 설정 제거 후 mysql 설정 추가
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.datasource.url=jdbc:mysql://{DB IP}:3306/{DB 이름}?serverTimezone=UTC&characterEncoding=UTF-8
-spring.datasource.username={유저 이름}
-spring.datasource.password={비밀번호}
+spring.datasource.url=jdbc:mysql://192.168.0.240:3306/paritch?serverTimezone=UTC&characterEncoding=UTF-8
+spring.datasource.username=paritch
+spring.datasource.password=password123!
 ```
 
 ### 프로젝트 빌드
 
-```jsx
-$ cd {서버 Repository 폴더}
+```bash
+$ cd jwp-shopping-cart
 $ ./gradlew bootJar
 ```
 
 ### 백그라운드로 프로젝트 실행
 
-```java
+```bash
 $ cd build/libs
-$ java -jar {서버 Repository 폴더}-0.0.1-SNAPSHOT.jar &
+$ java -jar jwp-shopping-cart-0.0.1-SNAPSHOT.jar &
 ```
 
 ### 브라우저에서 프로젝트 실행 확인하기
 
-```java
-http://{서버 Public IP}:8080/api/products?page=1&limit=12
+```bash
+http://13.125.173.161:8080/api/products?page=1&limit=12
 ```
 
 <br>
@@ -156,19 +156,29 @@ http://{서버 Public IP}:8080/api/products?page=1&limit=12
 
 ---
 
-```jsx
-cd repository/{서버 Repository 폴더}/
+```bash
+#!/bin/bash
+
+echo "> 현재 구동중인 application pid 확인"
+
+CURRENT_PID=$(ps -ef | grep java | awk 'print $2')
+
+echo "$CURRENT_PID"
+
+if [ -z $CURRENT_PID ]; then
+    echo "> 현재 구동중인 애플리케이션이 없으므로 종료하지 않습니다."
+else
+    echo ">kill -9 $CURRENT_PID"
+    kill -9 $CURRENT_PID
+    sleep 10
+fi
+
+echo "새 application 배포"
+
+cd repository/jwp-shopping-cart/
+git pull
 ./gradlew bootJar
 
-// ./gradlew build jar
-// 테스트를 제외하고 빌드하려면 ./gradlew build jar -x test
-
 cd build/libs/
-nohup java -jar {서버 Repository 폴더}-0.0.1-SNAPSHOT.jar >> application.log 2> /dev/null &
-
-// 실행중인 자바 프로세스 확인
-ps -ef | grep java
-
-// 실행중인 자바 프로세스 종료
-kill -9 PID번호
+nohup java -jar jwp-shopping-cart-0.0.1-SNAPSHOT.jar >> application.log 2> /dev/null &
 ```
