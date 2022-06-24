@@ -182,3 +182,12 @@ git pull
 cd build/libs/
 nohup java -jar jwp-shopping-cart-0.0.1-SNAPSHOT.jar >> application.log 2> /dev/null &
 ```
+
+<br>
+
+## References
+
+---
+
+- [https://prolog.techcourse.co.kr/studylogs/1612](https://prolog.techcourse.co.kr/studylogs/1612)
+- [https://bibi6666667.tistory.com/312](https://bibi6666667.tistory.com/312)
