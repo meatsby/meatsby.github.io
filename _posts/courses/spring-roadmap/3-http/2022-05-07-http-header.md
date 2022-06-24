@@ -1,8 +1,8 @@
 ---
-title: '[Spring Roadmap] 3.7. HTTP 웹 기본 지식 - HTTP 헤더 1 - 일반 헤더'
+title: '[HTTP Basic] 7. HTTP 헤더 1 - 일반 헤더'
 author: meatsby
 date: 2022-05-07 10:00:00 +0900
-categories: [COURSES, Spring Roadmap]
+categories: [COURSES, HTTP Basic]
 tags: [인프런, Spring Roadmap]
 ---
 

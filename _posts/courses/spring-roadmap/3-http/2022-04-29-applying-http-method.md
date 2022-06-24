@@ -1,8 +1,8 @@
 ---
-title: '[Spring Roadmap] 3.5. HTTP 웹 기본 지식 - HTTP 메서드 활용'
+title: '[HTTP Basic] 5. HTTP 메서드 활용'
 author: meatsby
 date: 2022-04-29 10:00:00 +0900
-categories: [COURSES, Spring Roadmap]
+categories: [COURSES, HTTP Basic]
 tags: [인프런, Spring Roadmap]
 ---
 

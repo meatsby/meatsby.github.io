@@ -1,8 +1,8 @@
 ---
-title: '[Spring Roadmap] 3.1. HTTP 웹 기본 지식 - 인터넷 네트워크'
+title: '[HTTP Basic] 1. 인터넷 네트워크'
 author: meatsby
 date: 2022-04-25 10:00:00 +0900
-categories: [COURSES, Spring Roadmap]
+categories: [COURSES, HTTP Basic]
 tags: [인프런, Spring Roadmap]
 ---
 

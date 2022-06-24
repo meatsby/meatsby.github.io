@@ -1,8 +1,8 @@
 ---
-title: '[Spring Roadmap] 3.8. HTTP 웹 기본 지식 - HTTP 헤더 2 - 캐시와 조건부 요청'
+title: '[HTTP Basic] 8. HTTP 헤더 2 - 캐시와 조건부 요청'
 author: meatsby
 date: 2022-05-08 10:00:00 +0900
-categories: [COURSES, Spring Roadmap]
+categories: [COURSES, HTTP Basic]
 tags: [인프런, Spring Roadmap]
 ---
 

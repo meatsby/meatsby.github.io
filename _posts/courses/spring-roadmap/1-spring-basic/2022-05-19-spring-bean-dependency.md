@@ -1,8 +1,8 @@
 ---
-title: '[Spring Roadmap] 1.3. 스프링 입문 - 스프링 빈과 의존관계'
+title: '[Spring Basic] 3. 스프링 빈과 의존관계'
 author: meatsby
 date: 2022-05-19 10:00:00 +0900
-categories: [COURSES, Spring Roadmap]
+categories: [COURSES, Spring Basic]
 tags: [인프런, Spring Roadmap]
 ---
 

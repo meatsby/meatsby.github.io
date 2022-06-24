@@ -1,8 +1,8 @@
 ---
-title: '[Spring Roadmap] 1.1. 스프링 입문 - 스프링 웹 개발 기초'
+title: '[Spring Basic] 1. 스프링 웹 개발 기초'
 author: meatsby
 date: 2022-05-09 10:00:00 +0900
-categories: [COURSES, Spring Roadmap]
+categories: [COURSES, Spring Basic]
 tags: [인프런, Spring Roadmap]
 ---
 

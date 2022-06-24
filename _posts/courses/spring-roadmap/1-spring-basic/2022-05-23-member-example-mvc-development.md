@@ -1,8 +1,8 @@
 ---
-title: '[Spring Roadmap] 1.4. 스프링 입문 - 회원 관리 예제 - 웹 MVC 개발'
+title: '[Spring Basic] 4. 회원 관리 예제 - 웹 MVC 개발'
 author: meatsby
 date: 2022-05-23 10:00:00 +0900
-categories: [COURSES, Spring Roadmap]
+categories: [COURSES, Spring Basic]
 tags: [인프런, Spring Roadmap]
 ---
 
