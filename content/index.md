@@ -1,6 +1,9 @@
 ---
-title: Welcome to Quartz
+title: Welcome to meatsby.github.io
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+```dataview
+table date
+from "content"
+sort date desc
+```
