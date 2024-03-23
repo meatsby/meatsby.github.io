@@ -6,7 +6,6 @@ draft: true
 tags:
   - Docker
 ---
- 
 ## Objectives
 ---
 - What are Containers?
