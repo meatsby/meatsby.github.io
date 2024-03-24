@@ -89,6 +89,23 @@ tags:
 	- Docker Container 를 background 에서 실행
 	- `docker attach` 에 컨테이너 ID 나 이름을 지정해서 다시 Attached 모드로 변경
 
+## docker run
+---
+### run - tag
+![[docker run tag.png]]
+- `docker run redis`
+	- tag 가 명시되지 않으면 latest 버전으로 실행
+- `docker run redis:4.0`
+
+### run - stdin
+- Docker Container 는 기본적으로 표준 입력을 수신하지 않음
+- 입력값을 읽을 수 있는 터미널이 없어 비 대화형 모드로 실행됨
+- 입력값을 받으려면 `-i` 매개변수를 이용해서 호스트의 표준 입력값과 Docker Container 를 매핑해야 함
+	- `docker run -i kodekloud/simple-prompt-docker`
+		- 이러면 터미널의 애플리케이션 프롬프트를 사용하고 컨테이너 터미널에 연결하지 않았기 때문에 stdin 출력값이 보이지 않음
+	- `docker run -it kodekloud/simple-prompt-docker`
+		- Terminal 을 뜻하는 t 값을 추가하여 stdin 출력값을 볼 수 있음
+
 ## References
 ---
 - [Udemy - Docker for the Absolute Beginner](https://www.udemy.com/course/learn-docker/)
