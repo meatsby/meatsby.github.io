@@ -2,12 +2,11 @@
 title: Intro to Splunk
 date: 2024-03-21 15:23:44 +0800
 status: In Progress
-draft: false
+draft: true
 tags:
   - APM
   - Splunk
 ---
- 
 ## What is Splunk?
 ---
 Splunk is a `unified data platform` that allows teams to work together or individually to ensure mission-critical digital systems stay secure and reliable.
