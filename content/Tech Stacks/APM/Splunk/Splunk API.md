@@ -43,3 +43,34 @@ for result in results:
     print(result)
 
 ```
+
+```python
+import urllib
+import lxml.html
+import requests
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+baseurl = 'https://localhost:8089'
+username = 'admin'
+password = '1'
+
+url = baseurl + '/services/auth/login'
+data = urllib.parse.urlencode({'username': username, 'password': password})
+# data = data.encode('ascii')
+
+with requests.post(url, data=data, verify=False) as req:
+    sessionkey = lxml.html.fromstring(req.content)[0].text
+print("sessionkey {}".format(sessionkey))
+
+searchquery = 'index="_internal" | head 10'
+if not searchquery.startswith('search'):
+    searchquery = 'search ' + searchquery
+
+searchjoburl = baseurl + '/services/search/jobs'
+with requests.post(searchjoburl, verify=False, 
+              data=urllib.parse.urlencode({'search': searchquery}),
+              headers={'Authorization': 'Splunk {}'.format(sessionkey)}) as req:
+    sid = lxml.html.fromstring(req.content)[0].text
+print("sid {}".format(sid))
+```
