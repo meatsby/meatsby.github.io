@@ -57,7 +57,6 @@ password = '1'
 
 url = baseurl + '/services/auth/login'
 data = urllib.parse.urlencode({'username': username, 'password': password})
-# data = data.encode('ascii')
 
 with requests.post(url, data=data, verify=False) as req:
     sessionkey = lxml.html.fromstring(req.content)[0].text
@@ -73,4 +72,27 @@ with requests.post(searchjoburl, verify=False,
               headers={'Authorization': 'Splunk {}'.format(sessionkey)}) as req:
     sid = lxml.html.fromstring(req.content)[0].text
 print("sid {}".format(sid))
+
+servicessearchstatusstr = '/services/search/jobs/%s/' % sid
+
+isnotdone = True
+while isnotdone:
+    with requests.post(baseurl + servicessearchstatusstr, 
+                             headers={'Authorization': 'Splunk {}'.format(sessionkey)}, verify=False) as searchstatus:
+            
+        isDone=lxml.html.fromstring(searchstatus.content)
+        
+        isdonestatus=isDone.cssselect('key[name=isDone]')[0].text
+        if(isdonestatus == '1'):
+            isnotdone = False
+print ("search status : {}".format(isdonestatus))
+
+services_search_results_str = "/services/search/jobs/{}/results?output_mode=json&count=0".format(sid)
+print(services_search_results_str)
+
+with requests.get(baseurl + services_search_results_str, 
+                 headers={'Authorization': 'Splunk {}'.format(sessionkey)}, verify=False) as searchresults:
+    print(searchresults.content)
+            
+print ("====>search result:  [%s]  <====" % searchresults.content)
 ```
