@@ -106,6 +106,19 @@ tags:
 	- `docker run -it kodekloud/simple-prompt-docker`
 		- Terminal 을 뜻하는 t 값을 추가하여 stdin 출력값을 볼 수 있음
 
+### run - PORT mapping
+- Docker Host / Docker Engine = Docker 가 설치된 기본 호스트
+- Container 로 실행되는 Web App 에 엑세스하는 방법은?
+	- 모든 Docker Container 는 기본으로 내부 IP 를 할당 받음
+		- 이는 Docker Host 를 통해서만 접근 가능
+	- 외부 접근의 경우 Docker Container Port 와 Docker Host Port 를 매핑하는 Port Mapping 을 활용해야 함
+		- `docker run -p 80:5000 kodekloud/simple-webapp`
+		- 위와 같은 명령어를 통해 Docker Host 의 80 포트와 Docker Container 의 5000 포트를 매핑할 수 있음
+- 물론 하나의 Docker Host Port 에 2개 이상의 Container 를 매핑할 순 없음
+
+### run - Volume mapping
+
+
 ## References
 ---
 - [Udemy - Docker for the Absolute Beginner](https://www.udemy.com/course/learn-docker/)
