@@ -117,7 +117,20 @@ tags:
 - 물론 하나의 Docker Host Port 에 2개 이상의 Container 를 매핑할 순 없음
 
 ### run - Volume mapping
+![[Volume mapping.png]]
+- 데이터베이스와 테이블이 생성되면 Docker Container 안에 있는 자체적으로 분리된 파일 시스템에 저장됨
+- `docker stop mysql`
+- `docker rm mysql`
+	- Container 제거 시 그 안에 있는 모든 데이터가 날아감
+- 데이터를 유지하려면 Docker Host 디렉터리를 Docker Container 내부 디렉터리에 매핑해야 함
+- `docker run -v /opt/datadir:/var/lib/mysql mysql`
+- 위 명령어 실행 시 Docker Container 내의 폴더로 외부 디렉터리가 내부적으로 마운트 됨
 
+## Inspect Container
+- `docker ps` 명령어 사용 시 Container 이름이나 ID 같은 기본 정보를 얻을 수 있음
+- `docker inspect` 명령어를 사용해서 특정 컨테이너의 추가적인 세부 정보를 볼 수 있음
+	- `docker inspect blissful_hopper` 사용 시 컨테이너의 모든 세부 정보를 JSON 형식으로 출력
+		- 상태, 마운트, 구성 데이터, 네트워크 설정 등
 
 ## References
 ---
