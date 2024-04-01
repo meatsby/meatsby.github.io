@@ -132,6 +132,11 @@ tags:
 	- `docker inspect blissful_hopper` 사용 시 컨테이너의 모든 세부 정보를 JSON 형식으로 출력
 		- 상태, 마운트, 구성 데이터, 네트워크 설정 등
 
+### Container Logs
+- 백그라운드에서 실행한 컨테이너 로그를 보는 방법
+	- 예를 들어 detatched 모드로 실행한 컨테이너의 stdout 로그를 보고 싶을 경우
+	- `docker logs blissful_hopper` (컨테이너 ID 또는 이름)
+
 ## References
 ---
 - [Udemy - Docker for the Absolute Beginner](https://www.udemy.com/course/learn-docker/)
