@@ -131,6 +131,7 @@ tags:
 - `docker inspect` 명령어를 사용해서 특정 컨테이너의 추가적인 세부 정보를 볼 수 있음
 	- `docker inspect blissful_hopper` 사용 시 컨테이너의 모든 세부 정보를 JSON 형식으로 출력
 		- 상태, 마운트, 구성 데이터, 네트워크 설정 등
+	- `Networks.bridge.IPAddress` 를 통해 내부 IP 확인 가능
 
 ### Container Logs
 - 백그라운드에서 실행한 컨테이너 로그를 보는 방법
