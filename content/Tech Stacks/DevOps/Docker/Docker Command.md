@@ -127,6 +127,7 @@ tags:
 - 위 명령어 실행 시 Docker Container 내의 폴더로 외부 디렉터리가 내부적으로 마운트 됨
 
 ## Inspect Container
+![[Inspect Container.png]]
 - `docker ps` 명령어 사용 시 Container 이름이나 ID 같은 기본 정보를 얻을 수 있음
 - `docker inspect` 명령어를 사용해서 특정 컨테이너의 추가적인 세부 정보를 볼 수 있음
 	- `docker inspect blissful_hopper` 사용 시 컨테이너의 모든 세부 정보를 JSON 형식으로 출력
