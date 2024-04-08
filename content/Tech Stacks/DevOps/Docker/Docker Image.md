@@ -35,6 +35,46 @@ ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
 - 퍼블릭 Docker Hub Registry 에서 이용할 수 있도록 하려면 `docker push` 명령어를 실행, 이러면 계정 이름이 이미지 이름이 됨
 	- `docker push mmumshad/my-custom-app`
 
+## Dockerfile
+---
+```
+FROM Ubuntu
+
+RUN apt-get update && apt-get -y install python
+
+RUN pip install flask flask-mysql
+
+COPY . /opt/source-code
+
+ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+```
+- `Dockerfile` 은 Docker 가 인식하도록 특정 형식으로 작성된 텍스트 파일
+- `INSTRUCTION` 과 `ARGUMENT` 형식으로 이루어짐
+	- `FROM Ubuntu`
+		- 컨테이너의 기본 운영체제를 정의
+		- 모든 Docker Image 는 운영체제 혹은 사전에 운영체제에 기반해 생성한 이미지과 같은 또 다른 이미지에 기반을 둠
+	- `RUN apt-get update && apt-get -y install python`
+		- `RUN` 명령어는 Docker 가 기본 이미지에 특정 명령어를 실행하도록 함
+	- `COPY . /opt/source-code`
+		- `COPY` 는 로컬 시스템의 파일을 복사해 Docker Image 에 넣음
+		- `. /opt/source-code`현재 폴더에 있는 애플리케이션 소스코드를 `/opt/source-code` 에 붙여넣는다는 의미
+	- `ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run`
+		- `ENTRYPOINT` 명령어는 이미지가 컨테이너로 실행될 때 작동할 명령어를 지정
+
+### Layered Architecture
+![[Layered Architecture.png]]
+- Docker 는 계층형 아키텍처로 이미지를 구축
+- 명령어 각 줄이 이전 계층의 변경 사항으로 Docker Image 에 새로운 계층을 생성함
+	- 계층마다 이전 계층의 변경 사항만을 저장하기 때문에 크기에서도 이를 확인할 수 있음
+	- `docker history mmumshad/simple-webapp` 을 실행하면 확인 가능
+
+### Docker build output
+![[Docker build output.png]]
+- `docker build .` 실행 시 여러 단계와 작업별 결과를 볼 수 있음
+- 모든 계층은 캐시에 저장되기 때문에 실패하더라도 해당 단계에서 `docker build` 를 재실행 가능
+- 또한 빌드 프로세스에 새로운 단계를 추가해도 처음부터 다시 빌드할 필요가 없음
+- 특히 애플리케이션 소스코드 업데이트는 빈번하기 때문에 빠른 재빌드가 가능
+
 ## References
 ---
 - [Udemy - Docker for the Absolute Beginner](https://www.udemy.com/course/learn-docker/)
