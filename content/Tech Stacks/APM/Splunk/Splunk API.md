@@ -7,43 +7,8 @@ tags:
   - APM
   - Splunk
 ---
-## Splunk API
+## Using Splunk REST API
 ---
-```python
-import splunklib.client as client
-import splunklib.results as results
-
-# Splunk 인스턴스에 연결
-service = client.connect(
-    host='YOUR_SPLUNK_HOST',
-    port='YOUR_SPLUNK_PORT',
-    username='YOUR_USERNAME',
-    password='YOUR_PASSWORD')
-
-# Splunk에서 데이터 검색 실행
-searchquery_normal = "search * | head 100"
-job = service.jobs.create(searchquery_normal)
-
-# 결과 가져오기
-result_count = 50
-offset = 0
-results = []
-while True:
-    # 검색 결과 조각 가져오기
-    kwargs_paginate = {'count': result_count, 'offset': offset}
-    rs = results.ResultsReader(job.results(**kwargs_paginate))
-    records = [record for record in rs]
-    results.extend(records)
-    if len(records) == 0:
-        break
-    offset += result_count
-
-# 결과 출력
-for result in results:
-    print(result)
-
-```
-
 ```python
 import urllib
 import lxml.html
@@ -96,3 +61,79 @@ with requests.get(baseurl + services_search_results_str,
             
 print ("====>search result:  [%s]  <====" % searchresults.content)
 ```
+
+## Using Splunk Enterprise SDK for Python
+---
+### Using search
+```python
+import splunklib.client as client
+import splunklib.results as results
+
+# Splunk 인스턴스에 연결
+service = client.connect(
+    host='YOUR_SPLUNK_HOST',
+    port='YOUR_SPLUNK_PORT',
+    username='YOUR_USERNAME',
+    password='YOUR_PASSWORD')
+
+# Splunk에서 데이터 검색 실행
+searchquery_normal = "search * | head 100"
+job = service.jobs.create(searchquery_normal)
+
+# 결과 가져오기
+result_count = 50
+offset = 0
+results = []
+while True:
+    # 검색 결과 조각 가져오기
+    kwargs_paginate = {'count': result_count, 'offset': offset}
+    rs = results.ResultsReader(job.results(**kwargs_paginate))
+    records = [record for record in rs]
+    results.extend(records)
+    if len(records) == 0:
+        break
+    offset += result_count
+
+# 결과 출력
+for result in results:
+    print(result)
+
+```
+
+### Using export
+```python
+import splunklib.client as client
+import splunklib.results as results
+
+# Splunk 인스턴스에 연결
+service = client.connect(
+    host='YOUR_SPLUNK_HOST',
+    port='YOUR_SPLUNK_PORT',
+    username='YOUR_USERNAME',
+    password='YOUR_PASSWORD')
+
+# Run an export search and display the results using the results reader.
+searchquery_export = "search index=_internal"
+kwargs_export = {"earliest_time": "-1h",
+                 "latest_time": "now",
+                 "search_mode": "normal",
+                 "output_mode": "json"}
+
+exportsearch_results = service.jobs.export(searchquery_export, **kwargs_export)
+
+# Get the results and display them using the JSONResultsReader
+reader = results.JSONResultsReader(exportsearch_results)
+for result in reader:
+    if isinstance(result, dict):
+        print "Result: %s" % result
+    elif isinstance(result, results.Message):
+        # Diagnostic messages may be returned in the results
+        print "Message: %s" % result
+
+# Print whether results are a preview from a running search
+print "is_preview = %s " % reader.is_preview
+```
+
+## References
+---
+- [Splunk Dev - Developer Guide](https://dev.splunk.com/enterprise/docs/welcome/)
