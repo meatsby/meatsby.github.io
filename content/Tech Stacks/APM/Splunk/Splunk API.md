@@ -133,6 +133,52 @@ for result in reader:
 # Print whether results are a preview from a running search
 print "is_preview = %s " % reader.is_preview
 ```
+- Exported events are somehow limited to 480K ~ 570K
+
+```python
+from datetime import datetime, timedelta
+import splunklib.client as client
+import splunklib.results as results
+import json
+import time
+
+# Splunk 인스턴스에 연결
+service = client.connect(
+    host='YOUR_SPLUNK_HOST',
+    port='YOUR_SPLUNK_PORT',
+    username='YOUR_USERNAME',
+    password='YOUR_PASSWORD')
+
+# Run an export search and display the results using the results reader.
+search_query = "search index=_internal"
+earliest_time = datetime.strptime('2023-11-10 00:00:00', '%Y-%m-%d %H:%M:%S')
+end_time = datetime.strptime('2023-11-10 01:00:00', '%Y-%m-%d %H:%M:%S')
+
+total = 0
+initial = time.time()
+
+while earliest_time < end_time:
+	start = time.time()
+	latest_time = earliest_time + timedelta(minutes=15)
+	kwargs_export = {"earliest_time": earliest_time.strftime('%Y-%m-%dT%H:%M:%S.000+00:00'),
+	                 "latest_time": latest_time.strftime('%Y-%m-%dT%H:%M:%S.000+00:00'),
+	                 "search_mode": "normal",
+	                 "output_mode": "json"}
+
+	job = service.jobs.export(search_query, **kwargs_export)
+
+	count = 0
+	file_name = 'logs.json'
+	with open(file_name, 'w', encoding='utf-8') as f:
+		for result in results.JSONResultsReader(job):
+		    if isinstance(result, dict):
+			    f.write(json.dumps(result) + '\n')
+		        count += 1
+		total += count
+		end = time.time()
+	earliest_time = latest_time
+```
+- Windowing the search query can be a workaround
 
 ## References
 ---
