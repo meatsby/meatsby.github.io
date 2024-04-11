@@ -137,6 +137,7 @@ print "is_preview = %s " % reader.is_preview
 
 ```python
 from datetime import datetime, timedelta
+from pandas import date_range
 import splunklib.client as client
 import splunklib.results as results
 import json
@@ -156,6 +157,8 @@ end_time = datetime.strptime('2023-11-10 01:00:00', '%Y-%m-%d %H:%M:%S')
 
 total = 0
 initial = time.time()
+
+# for date in date_range('2023-11-10', '2024-02-15'):
 
 while earliest_time < end_time:
 	start = time.time()
