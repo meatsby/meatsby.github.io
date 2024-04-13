@@ -75,6 +75,34 @@ ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
 - 또한 빌드 프로세스에 새로운 단계를 추가해도 처음부터 다시 빌드할 필요가 없음
 - 특히 애플리케이션 소스코드 업데이트는 빈번하기 때문에 빠른 재빌드가 가능
 
+## Demo
+---
+```
+docker run -it ubuntu bash
+apt-get update
+apt-get install -y python
+apt-get install python-pip
+pip install flask
+# Copy code to /opt/app.py
+FLASK_APP=/opt/app.py flask run --host=0.0.0.0
+```
+- Dockerfile 없이 수동으로 실행 할 경우
+
+```
+FROM ubuntu
+
+RUN apt-get update
+RUN apt-get install -y python
+RUN apt-get install python-pip
+
+COPY app.py /opt/app.py
+
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
+```
+- 위와 같은 Dockerfile 을 만들고 `docker build . -t my-simple-webapp` 명령어로 이미지 생성
+- 이미지 생성 후 `docker images` 명령어 사용 시 `my-simple-webapp` 이미지가 생성되어있음
+- `docker run my-simple-webapp` 실행 시 처음 수동 실행과 같은 결과
+
 ## References
 ---
 - [Udemy - Docker for the Absolute Beginner](https://www.udemy.com/course/learn-docker/)
