@@ -103,6 +103,46 @@ ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
 - 이미지 생성 후 `docker images` 명령어 사용 시 `my-simple-webapp` 이미지가 생성되어있음
 - `docker run my-simple-webapp` 실행 시 처음 수동 실행과 같은 결과
 
+## Environment Variables
+---
+- `docker run -e APP_COLOR=blue simple-webapp-color`
+	- `-e` 옵션을 통해 컨테이너 내에 환경변수 설정 가능
+- `docker inspect blissful_hopper`
+	- `docker inspect` 를 통해 이미 실행 중인 컨테이너의 환경변수를 찾을 수 있음
+	- `"Config"` 섹션에서 해당 컨테이너가 가진 환경변수 확인 가능
+
+## CMD vs ENTRYPOINT
+---
+- `CMD` 는 해당 이미지가 기본으로 사용할 명령어
+	- ubuntu 이미지의 경우 `CMD ["bash"]`
+```
+FROM Ubuntu
+
+CMD sleep 5
+```
+- 위 `Dockerfile` 로 `docker build . -t ubuntu-sleeper`
+	- `docker run ubuntu-sleeper sleep 10` 실행 시 CMD 가 `sleep 10` 으로 덮어씌워짐
+```
+FROM Ubuntu
+
+ENTRYPOINT ["sleep"]
+```
+- `ENTRYPOINT` 사용 시 `docker run ubuntu-sleeper 10` 로 인자를 전달할 수 있음
+
+즉, CMD 의 경우 명령줄 매개변수가 완전히 대체되는 반면, ENTRYPOINT 의 경우 명령줄 매개변수가 추가됨
+
+```
+FROM Ubuntu
+
+ENTRYPOINT ["sleep"]
+
+CMD ["5"]
+```
+- `Dockerfile` 을 위와 같이 설정할 경우 (JSON 포맷으로 설정해야 됨)
+	- `docker run ubuntu-sleeper` 실행 시 `sleep 5` 가 실행됨
+	- `docker run ubuntu-sleeper 10` 실행 시 `sleep 10` 가 실행됨
+	- `docker run --entrypoint sleep2.0 ubuntu-sleeper 10` 실행 시 `sleep2.0 10` 가 실행됨
+
 ## References
 ---
 - [Udemy - Docker for the Absolute Beginner](https://www.udemy.com/course/learn-docker/)
