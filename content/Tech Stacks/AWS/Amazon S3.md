@@ -28,3 +28,7 @@ tags:
 	- Requests and Data Retrievals - Charged based on requests made to Amazon S3 objects and buckets
 	- Data Transfer - You pay for data that you transfer into and out of Amazon S3
 	- Management and Replication - You pay for the storage management features that you have enabled on your account’s Amazon S3 buckets
+
+## References
+---
+- 

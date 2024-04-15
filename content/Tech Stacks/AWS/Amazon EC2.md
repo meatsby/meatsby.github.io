@@ -38,3 +38,7 @@ tags:
 	- Service that automatically distributes incoming application traffic across multiple resources
 	- Application Load Balancer (L7: HTTP/HTTPS Routing)
 	- Network Load Balancer (L4: TCP Routing)
+
+## References
+---
+- 
