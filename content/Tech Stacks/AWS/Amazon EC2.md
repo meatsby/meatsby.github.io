@@ -39,6 +39,13 @@ tags:
 	- Application Load Balancer (L7: HTTP/HTTPS Routing)
 	- Network Load Balancer (L4: TCP Routing)
 
+## EC2 User Data
+---
+- EC2 인스턴스가 생성되면서 최초에 실행되는 script
+- 생성 시 Advanced Details 에서 작성 가능
+	- 제일 윗 줄에 `#!/bin/bash` 필수
+- `cat /var/log/cloud-init-output.log` 로 script 실행 로그 확인 가능
+
 ## EC2 Memory Swap
 ---
 - EC2 t3.micro 와 같은 free-tier 인스턴스를 사용한다면 OOM Kill process 가 자주 발생한다.
