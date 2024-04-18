@@ -1,14 +1,5 @@
 ## Compute
-- ⭐️ Amazon EC2
-    - 서버를 Application 수요에 따라 탄력적으로 확장 가능
-    - DR 을 위한 2가지 feature: AMIs, EBS snapshots
-    - Advantages
-        - Integration with VPC, CloudTrail, IAM
-        - Flexible, pay-as-you-go pricing model       
-    - Amazon Elastic Block Store (EBS)
-        - 영구적인 스토리지를 위한 용도
-        - 하드처럼 EC2 에 붙여서 사용 가능
-        - Amazon EBS는 사용하기 쉬운 고성능 블록 스토리지 서비스입니다. 모든 규모의 처리량(throughput) 및 트랜잭션 집약적 워크로드 모두에 대해 Amazon EC2와 함께 Amazon EBS를 사용할 수 있습니다. Amazon EC2 인스턴스에서 데이터베이스를 실행하고 Amazon EBS를 해당 데이터베이스의 스토리지로 사용할 수 있습니다. 하지만 Amazon EBS 자체는 관계형 데이터베이스가 아닙니다.
+- ⭐️ [[Amazon EC2]]
 - Amazon Lightsail
     - AWS 에서 가상 프라이빗 서버를 시작하고 관리할 때 사용 가능한 가장 간편한 방법
 - ⭐️ AWS Lambda
@@ -16,9 +7,7 @@
     - `코드를 실행하는 데 걸리는 시간`과 `함수에 대한 요청 수`에 따라 요금 청구
 - AWS Batch
     - 코어가 많이 필요한 배치 컴퓨팅 작업을 효율적으로 실행 가능
-- AWS Elastic Beanstalk (EB)
-    - Application Code 만으로 간단하게 서버 배포 가능
-    - Elastic Beanstalk은 용량 관리, 로드 밸런싱, 자동 크기 조정 및 모니터링을 통해 자동으로 배포된 인프라에 공통 프로그래밍 언어로 개발된 웹 애플리케이션 및 서비스를 배포하고 크기 조정하는 서비스입니다. Elastic Beanstalk을 사용하면 애플리케이션을 보다 쉽게 프로비저닝하고 지원할 수 있습니다. Elastic Beanstalk은 웹 사이트 지연 시간을 줄이지는 않습니다.
+- [[AWS Elastic Beanstalk]]
 - AWS Serverless Application Repository
 - AWS Outposts
 - EC2 Image Builder
@@ -38,20 +27,7 @@
 - Red Hat OpenShift Service on AWS
 
 ## Storage
-- ⭐️ Amazon S3
-    - `내구성이 뛰어난` 이미지, 비디오, 파일, 스냅샷 등 `객체` 기반의 스토리지
-    - 정적 웹 사이트 호스팅 용도
-    - S3 Standard
-        - 일반적인 저장 목적
-        - 접근이 빈번한 스토리지
-    - S3 Standard IA
-        - 데이터를 오래 보유하기 위한 목적
-        - 접근 빈도 낮음
-        - 3개 이상의 AZ 에 저장됨
-        - S3 Standard 보다 저렴
-    - S3 One Zone IA
-        - S3 Standard IA 와 같지만 오직 1개의 AZ 에 저장됨
-        - S3 Standard IA 보다 20% 저렴
+- ⭐️ [[Amazon S3]]
 - ⭐️ Amazon Elastic File System (EFS)
     - 네트워크 파일 시스템, 한 지역에서 수백 개의 인스턴스에 연결 가능
     - Linux 기반 AWS 및 On-premise 서버와 함께 사용 가능한 간단하고 확장성 있는 공유 파일 스토리지 솔루션

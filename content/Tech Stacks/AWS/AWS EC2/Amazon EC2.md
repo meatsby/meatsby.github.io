@@ -14,6 +14,7 @@ tags:
 	- Sharing the underlying physical resources between the virtual machines
 	- Coordinating this multitenancy
 	- Isolating the virtual machines from each other as they share resources from the host
+- 서버를 Application 수요에 따라 탄력적으로 확장 가능
 - DR features: AMIs, EBS snapshots
 - Advantages
 	- Integration with VPC, CloudTrail, IAM
@@ -30,6 +31,9 @@ tags:
 	- Dedicated Hosts
 		- `Physical servers` with EC2 instance capacity that is fully dedicated to your use
 - Amazon Elastic Block Store (EBS)
+	- 영구적인 스토리지를 위한 용도
+	- 하드처럼 EC2 에 붙여서 사용 가능
+	- Amazon EBS는 사용하기 쉬운 고성능 블록 스토리지 서비스입니다. 모든 규모의 처리량(throughput) 및 트랜잭션 집약적 워크로드 모두에 대해 Amazon EC2와 함께 Amazon EBS를 사용할 수 있습니다. Amazon EC2 인스턴스에서 데이터베이스를 실행하고 Amazon EBS를 해당 데이터베이스의 스토리지로 사용할 수 있습니다. 하지만 Amazon EBS 자체는 관계형 데이터베이스가 아닙니다.
 	- A service that provides `block-level` storage volumes that you can use with Amazon EC2 instances
 	- `AZ level resource`
 	- Need to be in the same AZ to attach EC2
@@ -38,6 +42,9 @@ tags:
 	- Service that automatically distributes incoming application traffic across multiple resources
 	- Application Load Balancer (L7: HTTP/HTTPS Routing)
 	- Network Load Balancer (L4: TCP Routing)
+- Advantages
+	- Integration with VPC, CloudTrail, IAM
+	- Flexible, pay-as-you-go pricing model       
 
 ## EC2 User Data
 ---

@@ -29,6 +29,19 @@ tags:
 	- Data Transfer - You pay for data that you transfer into and out of Amazon S3
 	- Management and Replication - You pay for the storage management features that you have enabled on your account’s Amazon S3 buckets
 
+- `내구성이 뛰어난` 이미지, 비디오, 파일, 스냅샷 등 `객체` 기반의 스토리지
+- 정적 웹 사이트 호스팅 용도
+- S3 Standard
+	- 일반적인 저장 목적
+	- 접근이 빈번한 스토리지
+- S3 Standard IA
+	- 데이터를 오래 보유하기 위한 목적
+	- 접근 빈도 낮음
+	- 3개 이상의 AZ 에 저장됨
+	- S3 Standard 보다 저렴
+- S3 One Zone IA
+	- S3 Standard IA 와 같지만 오직 1개의 AZ 에 저장됨
+	- S3 Standard IA 보다 20% 저렴
 ## References
 ---
 - 
