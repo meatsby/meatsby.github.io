@@ -44,7 +44,10 @@ tags:
 	- Network Load Balancer (L4: TCP Routing)
 - Advantages
 	- Integration with VPC, CloudTrail, IAM
-	- Flexible, pay-as-you-go pricing model       
+	- Flexible, pay-as-you-go pricing model
+
+### IAM Instance Profile
+- EC2 Instance 에 IAM Role 을 할당할 때 사용하는 설정
 
 ## EC2 User Data
 ---
