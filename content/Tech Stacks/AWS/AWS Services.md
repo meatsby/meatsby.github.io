@@ -2,9 +2,7 @@
 - ⭐️ [[Amazon EC2]]
 - Amazon Lightsail
     - AWS 에서 가상 프라이빗 서버를 시작하고 관리할 때 사용 가능한 가장 간편한 방법
-- ⭐️ AWS Lambda
-    - 서버를 관리할 필요 없이 코드 실행 가능 `serverless`
-    - `코드를 실행하는 데 걸리는 시간`과 `함수에 대한 요청 수`에 따라 요금 청구
+- ⭐️ [[AWS Lambda]]
 - AWS Batch
     - 코어가 많이 필요한 배치 컴퓨팅 작업을 효율적으로 실행 가능
 - [[AWS Elastic Beanstalk]]
