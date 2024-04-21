@@ -54,9 +54,7 @@
     - NoSQL DB Service
 - Amazon Keyspaces
 - Amazon Timestream
-- ⭐️ Amazon DynamoDB
-    - NoSQL DB 서비스
-    - DynamoDB는 완전관리형 NoSQL 데이터베이스 서비스입니다. DynamoDB는 빠르고 예측 가능한 성능과 원활한 확장성을 제공합니다. 하지만 DynamoDB는 관계형 데이터베이스가 아닙니다.
+- ⭐️ [[Amazon DynamoDB]]
 - Amazon MemoryDB for Redis
 
 ## Migration & Transfer
