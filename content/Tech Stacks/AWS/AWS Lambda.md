@@ -16,6 +16,10 @@ tags:
 - AWS Lambda Pricing
 	- Charged based on the `number of requests` for your functions and the `time that it takes` for them to run
 
+### Lambda Pre-installed Python packages
+- Lambda 엔 `boto3` 와 같은 유용한 패키지들을 미리 제공되어 Docker Image 를 빌드할 때 패키지를 다운로드하는 번거로움을 줄일 수 있음
+- [해당 Gist](https://gist.github.com/gene1wood/4a052f39490fae00e0c3) 를 통해 어떤 패키지들이 pre-installed 되어있는지 확인 가능
+
 ## References
 ---
 - 
