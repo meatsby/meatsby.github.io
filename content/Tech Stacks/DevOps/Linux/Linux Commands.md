@@ -9,7 +9,7 @@ tags:
 ### 로그 파일 생성 없이, 세션 종료 없이 백그라운드 실행
 
 ```bash
-nohup {실행파일.jar} >/dev/null 2>&1 &
+nohup {실행파일} 1>/dev/null 2>&1 &
 ```
 
 ### 저장 안하고 나가기
@@ -37,6 +37,24 @@ lsof -i:8080
 tail -f {로그 파일 경로}
 ```
 
+### 파일 작성
+```bash
+cat << EOF > /home/ec2-user/{파일이름}
+#!/usr/bin/python
+...
+EOF
+```
+
+### SCP 파일 전송
+```
+scp -rp -i ssh-key-2023-08-09.key {파일} opc@129.154.55.231:/home/opc
+```
+
+### SSH 접속
+```
+ssh -i ssh-key-2023-08-09.key opc@129.154.55.231
+```
+
 ## Insufficient space for shared memory file
 
 ---
@@ -51,14 +69,4 @@ df -h
 
 ```bash
 sudo du -h --max-depth=1
-```
-
-### SCP 파일 전송
-```
-scp -rp -i ssh-key-2023-08-09.key OptiFine_1.20.1_HD_U_I5.jar opc@129.154.55.231:/home/opc/mods
-```
-
-### SSH 접속
-```
-ssh -i ssh-key-2023-08-09.key opc@129.154.55.231
 ```
