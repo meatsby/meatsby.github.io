@@ -60,39 +60,39 @@ tags:
 ---
 - EC2 t3.micro 와 같은 free-tier 인스턴스를 사용한다면 OOM Kill process 가 자주 발생한다.
 - HDD or SSD 공간을 가상 메모리로 사용하는 Swap Partition 을 활용하자.
-```
-$ free -m
-```
+- Swap Partition 크기 계산은 [해당 문서](https://repost.aws/ko/knowledge-center/ec2-memory-partition-hard-drive)를 참고
 
 ```
+# 메모리 확인
+$ free -m
+
+# dd 명령을 통해 root file system 에 swap file 을 생성
+# bs(블록 크기) * count(블록 수) = swap file 의 크기
+# bs(블록 크기)는 인스턴스에서 사용 가능한 메모리보다 작아야 함
 $ sudo dd if=/dev/zero of=/swapfile bs=128M count=32
-```
-스왑 파일의 읽기 및 쓰기 권한을 업데이트합니다.
-```
+
+# swap file 의 rw 권한 업데이트
 $ sudo chmod 600 /swapfile
-```
-Linux 스왑 영역을 설정합니다.
-```
+
+# linux swap 영역 설정
 $ sudo mkswap /swapfile
-```
-스왑 공간에 스왑 파일을 추가하여 스왑 파일을 즉시 사용할 수 있도록 합니다.
-```
+
+# swap 공간에 swap file 을 추가해 즉시 사용할 수 있도록 함
 $ sudo swapon /swapfile
-```
-절차가 성공적으로 완료되었는지 확인합니다.
-```
+
+# 절차 성공 확인
 $ sudo swapon -s
-```
-부팅 시 **/etc/fstab** 파일을 편집하여 스왑 파일을 시작합니다.
-편집기에서 파일을 엽니다.
-```
+
+# swap file 을 활성화할 수 있게 설정
 $ sudo vi /etc/fstab
-```
-파일 끝에 다음 새 줄을 추가하고 파일을 저장한 다음 종료합니다.
-```
+
+# 파일 끝에 아래 줄을 추가하고 저장
 /swapfile swap swap defaults 0 0
+
+# 메모리 재확인 시 swap memory 가 allocate 된 것을 확인 가능
+$ free -m
 ```
 
 ## References
 ---
-- 
+- [AWS re:Post - 스왑 파일을 사용하여 Amazon EC2 인스턴스에서 스왑 스페이스로 작동하도록 메모리를 할당하려면 어떻게 해야 하나요?](https://repost.aws/ko/knowledge-center/ec2-memory-swap-file)
