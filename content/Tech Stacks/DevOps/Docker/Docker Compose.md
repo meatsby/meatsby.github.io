@@ -15,6 +15,7 @@ docker run redis:alpine
 docker run ansible
 ```
 - 위와 같은 다수의 서비스를 실행하는 복잡한 Application 을 설정할 때엔 Docker Compose 를 사용하는 게 좋음
+- Docker Compose 는 기본으로 설치되지 않기 때문에 [공식 홈페이지](https://docs.docker.com/compose/install/)에서 따로 설치해야 함
 
 ```
 # docker-compose.yml
