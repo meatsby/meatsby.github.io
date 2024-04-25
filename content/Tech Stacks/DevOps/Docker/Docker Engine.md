@@ -42,6 +42,7 @@ Docker Engine(Docker 가 설치된 Host) 은 3개의 Component 로 구성됨
 - 이 때 cgroups(control groups) 를 통해 각 Container 에  할당된 하드웨어 리소스를 제한할 수 있음
 	- `docker run --cpus=.5 ubuntu` 로 Container 가 사용할 CPU 를 50% 로 제한
 	- `docker run --memory=100m ubuntu` 로 Container 가 사용할 Memory 를 100MB 로 제한
+- 자세한 내용은 [공식 문서](https://docs.docker.com/config/containers/resource_constraints/) 참조
 
 ## References
 ---

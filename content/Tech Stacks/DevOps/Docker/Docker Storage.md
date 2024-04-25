@@ -1,0 +1,65 @@
+---
+title: Docker Storage
+date: 2024-04-25 16:04:49 +0800
+status: In Progress
+draft: false
+tags:
+  - Docker
+---
+## File System
+---
+```
+/var/lib/docker
+├── aufs
+├── containers
+├── image
+└── volumes
+```
+- Docker 를 설치하면 Local File System 에 `/var/lib/docker` 와 같은 폴더 구조가 생성되고 기본적으로 이 경로에 모든 데이터를 저장함
+	- 여기서 데이터는 Docker Host 에서 실행되는 Image 와 Container 관련 파일
+
+## Layered Architecture
+---
+![[Advantage of Layered Architecture.png]]
+- Docker 가 Image 를 빌드할 때 Layered Architecture 형식으로 생성돼서 중복되는 Layer 는 재사용하고 차이가 있는 Layer 만 새로 생성하기 때문에 Image 를 빠르게 생성할 수 있고 디스크 공간도 절약할 수 있음
+
+## Copy-On-Write(COW) Mechanism
+---
+![[COW Mechanism.png]]
+- `docker build Dockerfile -t mmumshad/my-custom-app` 실행 시 Read Only 의 Image Layers 가 생성됨
+- `docker run mmumshad/my-custom-app` 실행 시 Read Write 이 가능한 Container Layer 가 Image Layers 위에 생성됨
+	- Read Write 이 가능한 Container Layer 에는 Container 가 생성한 데이터(Application 로그, Container 내에서 사용자가 수정한 파일 등)가 저장됨
+	- Image 생성 시 복사해 놓은 `app.py` 와 같은 Application 파일을 수정할 경우 Container Layer 에 사본을 생성해서 저장하기 때문에 Image 에 있는 `app.py` 는 변하지 않음
+
+## Volumes
+---
+![[Volumes.png]]
+- `docker volume create data_volume`
+	- 위 명령어로 `/var/lib/docker/volumes/data_volume` 폴더 생성
+- `docker run -v data_volume:/var/lib/mysql mysql`
+	- 위 명령어로 Container 의 Read Write Layer 와 Mount 가능
+	- `docker volume create data_volume` 을 실행하지 않았다면 자동으로 생성해줌
+	- 이런 방식을 Volume Mounting 이라고 함
+- `docker run -v /data/mysql:/var/lib/mysql mysql`
+	- 위 명령어처럼 다른 위치와 Mounting 하고 싶을 땐 Mount 할 디렉터리의 전체 경로를 입력
+	- 이런 방식을 Bind Mounting 이라고 함
+- `docker run --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql`
+	- `-v` 옵션은 구식이고 `--mount` 가 신식
+
+## Storage Drivers
+---
+- Docker 는 Storage Driver 를 통해 Layered Architecture 를 구현 및 관리, Write Layer 생성, Layer 간 파일 이동과 복사, 쓰기 등 작업을 수행함
+	- Storage Driver 는 아래와 같이 여러 종류가 있고 기반 OS 에 따라 다르게 사용함
+		- AUFS
+		- ZFS
+		- BTRFS
+		- Device Mapper
+		- Overlay
+		- Overlay2
+	- Ubuntu 의 경우 기본 Storage Driver 는 AUFS
+	- Fedora 나 CentOS 같은 OS 는 AUFS 를 사용할 수 없으니 Device Mapper 를 사용
+- Docker 는 OS 에 가장 적합한 Storage Driver 를 자동으로 선택함
+
+## References
+---
+- [Udemy - Docker for the Absolute Beginner](https://www.udemy.com/course/learn-docker/)
