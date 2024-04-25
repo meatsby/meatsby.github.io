@@ -1,0 +1,48 @@
+---
+title: Docker Engine
+date: 2024-04-25 15:26:04 +0800
+status: In Progress
+draft: false
+tags:
+  - Docker
+---
+## Docker Engine 이란
+---
+Docker Engine(Docker 가 설치된 Host) 은 3개의 Component 로 구성됨
+- Docker Daemon
+- Docker REST API Server
+- Docker CLI
+
+### Docker Daemon
+- Docker Daemon 은 Docker 객체인 Image, Container, Volume 및 Network 를 관리하는 Background Process
+
+### Docker REST API Server
+- Docker REST API Server 는 프로그램이 쓰는 API 인터페이스로 Daemon 과 통신하고 명령어를 전달할 때 사용됨
+
+### Docker CLI
+- Docker CLI 는 평시 사용하는 명령줄 인터페이스로 Container 실행, 중지 및 Image 제거 등에 사용됨
+- Docker REST API Server 를 사용하여 Docker Daemon 과 상호작용하는데 이 때 Docker CLI 가 같은 Host 에 존재하지 않아도 됨
+	- `docker -H=10.123.2.1:2375 run nginx` 와 같이 Docker Engine 의 주소와 포트를 지정해서 상호작용 가능
+
+## Containerization
+---
+- Docker 는 Namespace 로 공간을 구분함
+	- Process ID, Network, IPC, Mount 및 Unix Timesharing 시스템을 독립된 Namespace 에 생성
+	- 따라서 컨테이너가 각각 분리됨
+
+### Namespace - PID
+![[Namespace PID.png]]
+- 모든 Process 는 같은 Host 에서 실행되지만 Namespace 에 의해 분리됨
+	- Container 내부에서 PID=1 인 Process 는 Host 에서 PID=5 인 Process 와 동일
+	- `docker exec {CONTAINER ID} ps -ef` 로 확인한 PID 와 `ps -ef` 로 확인한 PID 가 다름
+
+### cgroups
+- Docker Host 와 Container 는 CPU 와 Memory 등 동일한 하드웨어 리소스를 공유함
+- Container 가 사용할 수 있는 리소스는 기본적으로 제한이 없어서 Host 의 모든 리소스를 활용할 수 있음
+- 이 때 cgroups(control groups) 를 통해 각 Container 에  할당된 하드웨어 리소스를 제한할 수 있음
+	- `docker run --cpus=.5 ubuntu` 로 Container 가 사용할 CPU 를 50% 로 제한
+	- `docker run --memory=100m ubuntu` 로 Container 가 사용할 Memory 를 100MB 로 제한
+
+## References
+---
+- [Udemy - Docker for the Absolute Beginner](https://www.udemy.com/course/learn-docker/)
