@@ -17,6 +17,8 @@ tags:
 ```
 - Docker 를 설치하면 Local File System 에 `/var/lib/docker` 와 같은 폴더 구조가 생성되고 기본적으로 이 경로에 모든 데이터를 저장함
 	- 여기서 데이터는 Docker Host 에서 실행되는 Image 와 Container 관련 파일
+- `docker system df` 명령어로 Docker 의 디스크 사용량을 알 수 있음
+	- `docker system df -v` 명령어로 Image 별 디스크 사용량을 알 수 있음
 
 ## Layered Architecture
 ---
