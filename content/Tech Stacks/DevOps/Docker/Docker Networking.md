@@ -1,0 +1,55 @@
+---
+title: Docker Networking
+date: 2024-04-25 18:23:06 +0800
+status: In Progress
+draft: false
+tags:
+  - Docker
+---
+## Default Networks
+---
+- Docker 를 설치하면 자동으로 3개의 Network 를 생성함
+	- Bridge
+	- none(null)
+	- host
+- Container 를 다른 Network 와 연결하려면 아래와 같이 Network 를 지정해야함
+	- `docker run Ubuntu --network=none`
+	- `docker run Ubuntu --network=host`
+
+### Bridge Network
+- Container 에서 사용하는 Default Network 로 Docker 가 Host 에 생성한 Private Internal Network
+- 모든 Container 는 기본적으로 이 Network 에 연결되며 보통 172.17 로 시작하는 내부 IP 가 할당됨
+	- 이 내부 IP 를 사용해 Container 끼리 엑세스할 수 있음
+
+### none Network
+- Container 가 아무런 Network 에도 속하지 않음
+	- 즉, 외부 Network 나 다른 Container 에 엑세스할 수 없음
+
+### host Network
+- Container 를 Host Network 에 연결하는 방식
+- 포트 매핑 없이 Host 의 포트로 외부 접속이 가능함
+
+## User-Defined Networks
+---
+- Docker 는 기본적으로 하나의 내부 Bridge Network 만 생성
+- `docker network create --driver bridge --subnet 182.18.0.0/16 custom-isolated-network`
+	- 위 명령어로 User-Defined Network 생성 가능
+- `docker network ls` 명령어로 모든 Network 목록을 표시 가능
+
+## Inspect Network
+---
+![[Inspect Network.png]]
+- `docker inspect {CONTAINER ID}` 명령어를 통해 Network 설정과 IP 주소 확인 가능
+
+## Embedded DNS
+---
+![[Embedded DNS.png]]
+- Docker Host 에 있는 모든 Container 는 이름으로 서로 엑세스할 수 있음
+- Docker 에는 Container 들이 이름으로 서로 엑세스할 수 있게 도와주는 DNS 서버가 내장되어 있음
+	- 내장 DNS 서버는 항상 127.0.0.11 주소로 작동함
+- Docker 는 Network Namespace 를 사용해 각 Container 에 별개의 Namespace 를 생성함
+- 그리고 Virtual Ethernet Pair 을 사용해 Container 를 연결
+
+## References
+---
+- [Udemy - Docker for the Absolute Beginner](https://www.udemy.com/course/learn-docker/)
