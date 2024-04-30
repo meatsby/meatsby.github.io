@@ -67,6 +67,7 @@ tags:
 ---
 ![[Application and OS Images (Amazon Machine Image).png]]
 - EC2 의 운영체제를 설정할 수 있음
+- Amazon Linux AMI 엔 aws-cli 가 기본으로 설치되어 있음
 
 ## Instance Type
 ---
@@ -107,6 +108,24 @@ tags:
 - 인스턴스에게 공용 IP 할당 여부
 - Security Group 으로 Firewall 설정
 
+### Security Group
+- A `Stateful` virtual firewall that controls inbound and outbound traffic for an `EC2`
+- It's a Regional VPC service that lives outside the EC2
+	- This means any blocked traffic cannot be seen inside the EC2 instance
+- Security Group can be attached to multiple instances
+- By `default`, it `denies all inbound` traffic and `allows all outbound` traffic
+- Security Group rules can reference `IP & ports` or `other Security Group` to control access
+- `Not accessible (time out)`: Security Group issue
+- `Connection refused`: Application error or instance is not launched
+
+### Classic Ports to know
+- 22 = SSH (Secure Shell) - Log into a Linux instance
+- 21 = FTP (File Transfer Protocol) - Upload files
+- 22 = SFTP (Secure File Transfer Protocol) - Upload files using SSH
+- 80 = HTTP
+- 443 = HTTPS
+- 3389 = RDP (Remote Desktop Protocol) - Log into a Windows instance
+
 ## Storage (Volumes)
 ---
 ![[Storage (Volumes).png]]
@@ -116,6 +135,9 @@ tags:
 ---
 ### IAM Instance Profile
 - EC2 Instance 에 IAM Role 을 할당할 때 사용하는 설정
+
+![[Modify IAM Role.png]]
+- 생성 시 할당하지 않았더라도 Actions -> Security -> Modify IAM role 을 통해 IAM Role 을 할당할 수 있음
 
 ### User Data
 ![[User Data.png]]

@@ -56,6 +56,8 @@ Default region name [None]: ap-east-1
 Default output format [None]:
 ```
 - `aws configure` 명령어 입력 후 위와 같이 설정하면 CLI 로 AWS API 를 사용 가능
+- 단, EC2 인스턴스와 같이 타인이 접속할 수 있는 머신에서 이 방법을 쓰면 타인이 인스턴스에 입력된 자격 증명 정보를 회수할 수 있기 때문에 best practice 가 아님
+- 따라서 EC2 에서 AWS API 를 사용하길 원할 경우 IAM Role 을 지정하는게 best practice
 
 ## IAM Policies
 ---
@@ -107,6 +109,7 @@ Default output format [None]:
 
 ## IAM Roles
 ---
+![[IAM Create Role.png]]
 - IAM Role 은 AWS Services 를 위한 IAM User 라고 생각할 수 있음
 - An identity that you can assume to gain `temporary access` to permissions
 - Ideal for situations in which access to services or resources needs to be granted `temporarily`, instead of long-term
