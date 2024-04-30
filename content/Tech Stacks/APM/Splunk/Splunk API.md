@@ -173,4 +173,7 @@ for date in date_range('2023-11-10', '2024-02-15'):
 
 ## References
 ---
-- [Splunk Dev - Developer Guide](https://dev.splunk.com/enterprise/docs/welcome/)
+- [Splunk Blog - Splunk REST API is EASY to use](https://www.splunk.com/en_us/blog/tips-and-tricks/splunk-rest-api-is-easy-to-use.html)
+- [Splunk Docs - Run searches and jobs](https://dev.splunk.com/enterprise/docs/devtools/python/sdk-python/howtousesplunkpython/howtorunsearchespython/)
+- [Splunk Community - Search returns only 50000 events in Python script?](https://community.splunk.com/t5/Splunk-Dev/Search-returns-only-50000-events-in-Python-script/m-p/398156)
+- [GitHub - splunk-sdk-python](https://github.com/splunk/splunk-sdk-python/tree/master)
