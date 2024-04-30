@@ -40,6 +40,23 @@ tags:
 ![[IAM User Created Successfully.png]]
 - Users 로 다시 돌아와보면 User 가 성공적으로 생성되어있는 것을 확인 가능
 
+### IAM User Access Key for AWS CLI
+![[Create Access Key.png]]
+- AWS Management Console 에서 IAM -> Users -> User 선택 -> Security credentials 탭 -> Access keys 에서 `Create access key`
+
+![[Choosing Access Key Use Case.png]]
+![[Retrieve Access Key.png]]
+- CLI 선택후 마지막 화면이 Access Key 와 Secret Access Key 를 저장할 수 있는 유일한 시간
+
+```
+$ aws configure
+AWS Access Key ID [None]: ACCESS_KEY
+AWS Secret Access Key [None]: SECRET_ACCESS_KEY
+Default region name [None]: ap-east-1
+Default output format [None]:
+```
+- `aws configure` 명령어 입력 후 위와 같이 설정하면 CLI 로 AWS API 를 사용 가능
+
 ## IAM Policies
 ---
 ![[IAM Policy Inheritance.png]]
@@ -90,15 +107,24 @@ tags:
 
 ## IAM Roles
 ---
+- IAM Role 은 AWS Services 를 위한 IAM User 라고 생각할 수 있음
 - An identity that you can assume to gain `temporary access` to permissions
 - Ideal for situations in which access to services or resources needs to be granted `temporarily`, instead of long-term
 - To grant users in one AWS account access to resources in another AWS account
-- IAM Users 의 권한을 쉽게 관리하기 위해 IAM User Groups 를 사용하는데, 권한이 다양해지면 관리가 복잡해짐
-- 이를 해결하기 위해 IAM Roles 를 사용
-- IAM Roles 를 통해 일시적인 권한을 위임, 만약 IAM User Groups 를 할당한다면 위임 후 회수 작업이 번거로워짐
-- IAM Roles 를 통해 임시 세션토큰 발급
-- IAM Roles 란 AWS Resources 가 무엇을 할 수 있는지 정의하는 자격증명서
-- IAM User Groups 에 권한을 바로 부여하는 대신, IAM Roles 를 만들고 IAM Users 또는 IAM User Groups 에 할당하는 방식
+- IAM Users 의 권한을 쉽게 관리하기 위해 IAM User Groups 를 사용하는데, 권한이 다양해지면 관리가 복잡해지고 이를 해결하기 위해 IAM Roles 를 사용
+- User Group 에 권한을 바로 부여하는 대신, Role 을 만들고 User 또는 User Group 에 할당
+	- 임시 세션토큰을 발급하여 일시적인 권한을 위임
+
+## IAM Security Tools
+---
+### IAM Credential Reports (account-level)
+- AWS Management Console 에서 IAM -> Credential report -> Download Report 
+- A report that lists all account's users and the status of their various credentials
+
+### IAM Access Advisor (user-level)
+- AWS Management Console 에서 IAM -> Users -> User 선택 -> Access Advisor 탭
+- 어떤 AWS Services 에 마지막으로 접근했는지 확인 가능
+	- 접근하지 않는 Resources 는 제한하여 `principle of least privilege` 를 지킬 수 있음
 
 ## IAM 권한 검증 절차
 ---

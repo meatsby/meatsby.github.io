@@ -131,7 +131,7 @@
     - 개별 서비스 간의 코드 이동을 관리하는 서비스
 - AWS Cloud9
 - AWS CloudShell
-    - AWS CLI 커맨드로 리소스에 액세스할 수 있음
+    - AWS Console 에서 Credentials 없이 로그인된 User 를 바탕으로 CLI 를 실행할 수 있는 터미널
 - AWS X-Ray
 - AWS FIS
 - AWS CodeArtifact
