@@ -71,7 +71,27 @@ tags:
 ## Instance Type
 ---
 ![[Instance Type.png]]
-- CPU 개수나 메모리 용량, 비용에 따라 달라질 수 있음
+- Instance Type 이란 EC2 인스턴스의 사양으로 아래 네이밍 컨벤션을 따름
+	- `t3.micro`
+		- `t`: Instance Class
+		- `3`: Generation
+		- `micro`: Size within the instance class
+- Instance Type Variations
+	- General Purpose
+		- Compute, Memory, Networking 이 밸런스 잡힌 타입
+		- `t-family`, `m-family` 등이 해당됨
+	- Compute Optimized
+		- High performance 가 요구되는 작업을 수행할 때 사용
+			- Batch processing, Media transcoding, Gaming server 등
+		- `c-family` 가 해당됨
+	- Memory Optimized
+		- 메모리에서 대규모 데이터셋을 처리할 때 사용
+			- High-performance RDB/non-RDB, Distributed web-scale cache store 등
+		- `r-family`, `x-family` 등이 해당됨
+	- Storage Optimized
+		- 로컬 스토리지의 대규모 데이터셋에 접근할 때 사용
+			- RDB, NoSQL, Cache for in-memory DB(Redis) 등
+		- `i-family`, `d-family`, `h-family` 등이 해당됨
 
 ## Key Pair (Login)
 ---
