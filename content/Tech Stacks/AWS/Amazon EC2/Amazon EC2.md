@@ -55,7 +55,8 @@ tags:
 ## Application and OS Images (Amazon Machine Image)
 ---
 ![[Application and OS Images (Amazon Machine Image).png]]
-- EC2 의 운영체제를 설정할 수 있음
+- AMI 는 EC2 instance 의 customization
+	- Software, OS 등을 미리 설치하고 이미지화 해둘 수 있음
 - Amazon Linux AMI 엔 aws-cli 가 기본으로 설치되어 있음
 
 ## Instance Type
