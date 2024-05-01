@@ -147,6 +147,7 @@ tags:
 - `AZ-level network drive` that can be attached to EC2 instances while running
 	- EC2 instances can have multiple EBSs attached
 - 30GB free for free-tier
+- Can be encrypted with a KMS key (AES-256)
 - Delete on Termination
 	- Root EBS volume is deleted by default
 	- Additional EBS volumes are not deleted by default
@@ -174,6 +175,14 @@ tags:
 		- Retention from 1 day to 1 year
 	- Fast Snapshot Restore (FSR) `$$$`
 		- Force full initialization of Snapshot to have no latency on the first use
+
+### Amazon Elastic File System (EFS)
+![[EFS.png]]
+- A managed NFS (Network File System) that can be mounted on many EC2
+- EFS works with EC2s in multiple AZs
+- Compatible with Linux-based AMIs
+	- POSIX file system
+- The file system scales automatically
 
 ## Advanced Details
 ---
