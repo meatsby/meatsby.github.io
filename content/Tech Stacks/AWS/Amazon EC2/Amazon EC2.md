@@ -126,6 +126,17 @@ tags:
 - 443 = HTTPS
 - 3389 = RDP (Remote Desktop Protocol) - Log into a Windows instance
 
+### Elastic IP
+- EC2 는 기본적으로 Public IP 와 Private IP 를 할당받음
+	- Public IP = 인터넷과 통신하기 위한 IP
+		- SSH 사용 시 Public IP 로 접속
+		- Google 검색으로 geo-location 을 쉽게 찾을 수 있음
+		- Elastic IP 를 통해 Public IP 를 고정으로 사용 가능
+	- Private IP = 내부망과 통신하기 위한 IP
+		- VPN 을 쓰면 SSH 로 접속 가능
+		- Internet Gateway 를 통해 인터넷과 통신 가능
+		- 특정 범위의 IP 만 Private IP 로 사용 가능
+
 ## Storage (Volumes)
 ---
 ![[Storage (Volumes).png]]
