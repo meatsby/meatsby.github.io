@@ -137,6 +137,16 @@ tags:
 		- Internet Gateway 를 통해 인터넷과 통신 가능
 		- 특정 범위의 IP 만 Private IP 로 사용 가능
 
+### Elastic Network Interface (ENI)
+- ENI is a logical component in a VPC that represents a virtual network card
+- ENI lets EC2 instance access to the network
+- ENI is bound to a specific AZ
+- ENI can have the following attributes:
+	- EC2 can have a primary Private IP & 1 or more secondary Private IP
+	- 1 EIP or Public IP per Private IP
+	- 1 or more SGs can be attached to an ENI
+	- ENI can have a Mac address
+
 ## Storage (Volumes)
 ---
 ![[Storage (Volumes).png]]
