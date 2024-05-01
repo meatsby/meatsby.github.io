@@ -47,14 +47,6 @@ tags:
 		- Use unused EC2 computing capacity and offer you cost savings at up to 90% off of On-Demand prices
 	- Dedicated Hosts
 		- `Physical servers` with EC2 instance capacity that is fully dedicated to your use
-- Amazon Elastic Block Store (EBS)
-	- 영구적인 스토리지를 위한 용도
-	- 하드처럼 EC2 에 붙여서 사용 가능
-	- Amazon EBS는 사용하기 쉬운 고성능 블록 스토리지 서비스입니다. 모든 규모의 처리량(throughput) 및 트랜잭션 집약적 워크로드 모두에 대해 Amazon EC2와 함께 Amazon EBS를 사용할 수 있습니다. Amazon EC2 인스턴스에서 데이터베이스를 실행하고 Amazon EBS를 해당 데이터베이스의 스토리지로 사용할 수 있습니다. 하지만 Amazon EBS 자체는 관계형 데이터베이스가 아닙니다.
-	- A service that provides `block-level` storage volumes that you can use with Amazon EC2 instances
-	- `AZ level resource`
-	- Need to be in the same AZ to attach EC2
-	- Volumes do not automatically scale
 - Elastic Load Balancer
 	- Service that automatically distributes incoming application traffic across multiple resources
 	- Application Load Balancer (L7: HTTP/HTTPS Routing)
@@ -147,7 +139,29 @@ tags:
 ## Storage (Volumes)
 ---
 ![[Storage (Volumes).png]]
-- Free tier 는 30GB 까지 무료
+
+### Amazon Elastic Block Store (EBS)
+#### EBS Volumes
+- `AZ-level network drive` that can be attached to EC2 instances while running
+	- EC2 instances can have multiple EBSs attached
+- For some EBS, they can be attached to multiple instances
+- 30GB free for free-tier
+- Delete on Termination
+	- Root EBS volume is deleted by default
+	- Additional EBS volumes are not deleted by default
+
+#### EBS Snapshots
+- A backup(snapshot) of an EBS volume at a point in time
+- It is not necessary to detach volume to snapshot, but it is recommended
+- Can copy snapshots across AZs or Regions
+- Features
+	- EBS Snapshot Archive
+		- Move a Snapshot to an "Archive" that is 75% cheaper
+		- It takes 24~72 hours to restore
+	- Recycle Bin for EBS Snapshots
+		- Retention from 1 day to 1 year
+	- Fast Snapshot Restore (FSR) `$$$`
+		- Force full initialization of Snapshot to have no latency on the first use
 
 ## Advanced Details
 ---
