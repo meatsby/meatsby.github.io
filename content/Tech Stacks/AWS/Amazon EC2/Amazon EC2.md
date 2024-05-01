@@ -178,7 +178,7 @@ tags:
 
 ### Amazon Elastic File System (EFS)
 ![[EFS.png]]
-- A managed NFS (Network File System) that can be mounted on many EC2
+- A managed NFS (Network File System) that can be mounted on 100s of EC2s
 - EFS works with EC2s in multiple AZs
 - Compatible with Linux-based AMIs
 	- POSIX file system
