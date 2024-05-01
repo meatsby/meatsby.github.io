@@ -21,6 +21,7 @@ tags:
 	- Storage
 		- Network-attached: EBS & EFS
 		- Hardware: EC2 Instance Store
+			- It has better I/O performance since it's physically attached
 	- Network Card
 		- Speed of the card
 		- Public IP address
