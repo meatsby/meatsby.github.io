@@ -59,9 +59,6 @@ tags:
 	- Service that automatically distributes incoming application traffic across multiple resources
 	- Application Load Balancer (L7: HTTP/HTTPS Routing)
 	- Network Load Balancer (L4: TCP Routing)
-- Advantages
-	- Integration with VPC, CloudTrail, IAM
-	- Flexible, pay-as-you-go pricing model
 
 ## Application and OS Images (Amazon Machine Image)
 ---
@@ -159,6 +156,17 @@ tags:
 
 ![[Modify IAM Role.png]]
 - 생성 시 할당하지 않았더라도 Actions -> Security -> Modify IAM role 을 통해 IAM Role 을 할당할 수 있음
+
+### EC2 Hibernate
+![[EC2 Hibernate.png]]
+- EC2 Hibernate 은 절전모드로 RAM state 을 root EBS volume 에 저장하는 상태
+	- 재부팅 시 RAM state 을 그대로 불러올 수 있음
+	- 전에 부팅한 상태라면 새로 부팅할 필요가 없어 부팅 시간이 단축됨
+- RAM size must be less than 150GB
+- Not supported for bare metal instances
+- Root volume must be `EBS`, `encrypted`, not instance store, and large enough to store RAM
+- Available for On-Demand, Reserved, and Spot instances
+- An instance cannot be hibernated for more than 60 days
 
 ### User Data
 ![[User Data.png]]
