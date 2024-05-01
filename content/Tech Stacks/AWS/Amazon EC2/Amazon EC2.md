@@ -146,11 +146,21 @@ tags:
 #### EBS Volumes
 - `AZ-level network drive` that can be attached to EC2 instances while running
 	- EC2 instances can have multiple EBSs attached
-- For some EBS, they can be attached to multiple instances
 - 30GB free for free-tier
 - Delete on Termination
 	- Root EBS volume is deleted by default
 	- Additional EBS volumes are not deleted by default
+
+#### EBS Volume Types
+- gp2/gp3(SSD): General purpose SSD volume
+- io1/io2(SSD): Highest-performance SSD volume
+	- For applications that need more than 16K IOPS
+	- io2 has more durability and more IOPS per GiB at the same price as io1
+	- Supports EBS Multi-attach up to `16` instances
+	- Must use a file system that's cluster-aware (not XFS, EX4, etc...)
+- st1(HDD): Low-cost HDD volume
+- sc1(HDD): Lowest cost HDD volume
+- Only gp2/gp3 and io1/io2 can be used as boot volumes
 
 #### EBS Snapshots
 - A backup(snapshot) of an EBS volume at a point in time
