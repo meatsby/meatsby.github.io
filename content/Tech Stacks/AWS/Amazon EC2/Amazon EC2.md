@@ -58,6 +58,8 @@ tags:
 ![[Application and OS Images (Amazon Machine Image).png]]
 - AMI 는 EC2 instance 의 customization
 	- Software, OS 등을 미리 설치하고 이미지화 해둘 수 있음
+- 각 Region 에는 고유한 AMI 가 있음
+	- 다른 Region 에서 AMI 를 사용하고 싶을 경우 복사 후 사용
 - Amazon Linux AMI 엔 aws-cli 가 기본으로 설치되어 있음
 
 ## Instance Type
@@ -147,7 +149,8 @@ tags:
 - `AZ-level network drive` that can be attached to EC2 instances while running
 	- EC2 instances can have multiple EBSs attached
 - 30GB free for free-tier
-- Can be encrypted with a KMS key (AES-256)
+- Can be encrypted with a KMS key (AES-256) only when creating
+	- If a running EBS needs to be encrypted, it needs to be snapshotted and created with encryption again
 - Delete on Termination
 	- Root EBS volume is deleted by default
 	- Additional EBS volumes are not deleted by default
