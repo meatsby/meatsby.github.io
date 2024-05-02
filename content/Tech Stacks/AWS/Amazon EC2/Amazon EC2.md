@@ -296,6 +296,23 @@ tags:
 	- EC2 instances
 	- Private IPs
 
+## Auto Scaling Group
+---
+- Can be launched with Launch Template of EC2 instances that will be auto-scaled
+- Min Capacity, Desired Capacity, and Max Capacity are configurable
+- Scaling policy can be set with CloudWatch Alarms
+	- Dynamic Scaling Policies
+		- Target Tracking Scaling
+			- Target the metric as desired
+		- Simple/Step Scaling
+			- CloudWatch alarm trigger will add or remove instances
+		- Scheduled Actions
+			- Schedule a scaling
+	- Predictive Scaling
+		- Continuously forecast load and schedule scaling
+- Scaling Cooldowns happen after a scaling activity
+	- During cooldown, ASG will not launch or terminate instances
+
 ## EC2 Memory Swap
 ---
 - EC2 t3.micro 와 같은 free-tier 인스턴스를 사용한다면 OOM Kill process 가 자주 발생한다.
