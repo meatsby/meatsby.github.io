@@ -41,12 +41,8 @@
 - AWS Elastic Disaster Recovery
 
 ## Database
-- ⭐️ Amazon RDS
-    - ⭐️ Amazon Aurora
-        - MySQL 및 PostgreSQL 과 호환되는 RDB Engine
-        - 고사양 상업용 DB 의 속도/가용성과 오픈 소스 DB 의 단순성 및 비용 효율성을 결합한 솔루션
-        - Aurora는 클라우드를 위해 구축된 MySQL 및 PostgreSQL 호환 관계형 데이터베이스입니다. Aurora는 기존 기업 데이터베이스의 성능 및 가용성과 오픈 소스 데이터베이스의 간편성 및 비용 효율성을 함께 제공합니다.
-- Amazon ElastiCache
+- ⭐️ [[Amazon RDS]]
+- [[Amazon ElastiCache]]
 - ⭐️ Amazon Neptune
     - Cloud 용으로 구축된 빠르고 안정적인 그래프 DB
 - Amazon QLDB
