@@ -99,6 +99,21 @@ tags:
 	- Multi-Value Answer
 	- Geoproximity (using R53 Traffic Flow feature)
 
+### Simple
+- Typically, route traffic to a single resource
+- Can specify multiple values in the same record
+	- A random one is chosen by the client
+- When Alias is enabled, specify only 1 AWS resource
+- Can't be associated with Health Checks
+
+### Weighted
+- Control the % of the requests that go to each specific resource
+- Assign each record a relative weight
+- DNS records must have the same name and type
+- Can be associated with Health Checks
+- Assign a weight of 0 to a record to stop sending traffic
+- If all records have weight of 0, then all records will be returned equally
+
 ## References
 ---
 - [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
