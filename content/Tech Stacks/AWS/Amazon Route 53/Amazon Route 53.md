@@ -87,6 +87,21 @@ tags:
 - Private Hosted Zones - contains records that specify how you route traffic within one or more VPCs (private domain names)
 - $0.5 per month per hosted zone
 
+### Health Checks
+- HTTP Health Checks are only for Public Resources
+- Health Check -> Automated DNS Failover:
+	- Health Checks that monitor an endpoint (application, server, other AWS resources)
+		- About 15 global Health Checkers will check the endpoint health
+		- Health Checks pass only when the endpoint responds with the 2xx or 3xx
+		- Health Checks can be set up to pass/fail based on the text in the first 5120 bytes of the response
+	- Health Checks that monitor other health checks (Calculated Health Checks)
+		- Combine the results of multiple Health Checkers into a single Health Check
+		- Used to perform maintenance to a website without causing all health checks to fail
+	- Health Checks that monitor CloudWatch Alarms
+		- R53 Health Checkers are outside the VPC
+		- CW metric and associate CW alarm to Health Check the alarm
+- Health Checks are integrated with CloudWatch metrics
+
 ## Routing Policies
 ---
 - Define how R53 responds to DNS queries
@@ -94,7 +109,7 @@ tags:
 	- Simple
 	- Weighted
 	- Failover
-	- Latency based
+	- Latency-based
 	- Geolocation
 	- Multi-Value Answer
 	- Geoproximity (using R53 Traffic Flow feature)
@@ -113,6 +128,43 @@ tags:
 - Can be associated with Health Checks
 - Assign a weight of 0 to a record to stop sending traffic
 - If all records have weight of 0, then all records will be returned equally
+
+### Failover
+![[R53 Failover.png]]
+
+### Latency-based
+- Redirect to the resource that has the least latency close to the user
+- Latency is based on traffic between users and AWS Regions
+- Can be associated with Health Checks
+
+### Geolocation
+- Different from Latency-based
+- This routing is based on user location
+- Specify location by Continent, Country or by US State
+- Should create a "Default" record (in case there's no match on location)
+- Use cases: website localization, restrict content distribution, ...
+- Can be associated with Health Checks
+
+### Geoproximity
+- Route traffic to resources based on the geographic location of users and resources
+- Ability to shift more traffic to resources based on the defined bias
+- To change the size of the geographic region, specify bias values:
+	- To expand (1 to 99) - more traffic to the resource
+	- To shrink (-1 to -99) - less traffic to the resource
+- Must use R53 Traffic Flow (advanced) to use this feature
+
+### IP-based Routing
+- Routing based on clients' IP addresses
+- Provide a list of CIDRs for clients and the corresponding endpoints/locations
+- Use cases: Optimize performance, reduce network costs, ...
+- e.g. Route end users from a particular ISP to a specific endpoint
+
+### Multi-Value
+- User when routing traffic to multiple resources
+- R53 returns multiple resources
+- Can be associated with Health Checks
+- Up to 8 healthy records are returned for each Multi-Value query
+- Multi-Value is not a substitute for having an ELB
 
 ## References
 ---
