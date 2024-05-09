@@ -42,6 +42,13 @@ tags:
 - S3 One Zone IA
 	- S3 Standard IA 와 같지만 오직 1개의 AZ 에 저장됨
 	- S3 Standard IA 보다 20% 저렴
+
+## S3 to S3 Data Transfer
+---
+- Using AWS CLI
+- Using S3 Batch Replication
+- Using DataSync
+
 ## References
 ---
 - 
