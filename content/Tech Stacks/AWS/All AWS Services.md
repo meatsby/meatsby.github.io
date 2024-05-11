@@ -387,7 +387,7 @@
 
 ## End User Computing
 - WorkSpaces
-- AppStream 2.0
+- [[Amazon AppStream 2.0]]
 - WorkSpaces Web
 - WorkSpaces Thin Client
 
