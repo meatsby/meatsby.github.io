@@ -239,9 +239,70 @@ tags:
 - To force encryption in transit:
 	- Add condition statement in S3 bucket policy `"aws:SecureTransport"`
 
-## S3 CORS
----
+### S3 CORS
+- We need to enable the correct CORS headers
+	- Can allow for a specific origin or * (all origins)
 
+### MFA Delete
+- MFA forces users to generate a code on a device before doing important operations on S3
+	- Permanently delete an object version
+	- Suspend Versioning on the bucket
+- To use MFA Delete, Versioning must be enabled
+- Only the bucket owner (root account) can enable/disable MFA Delete
+
+### Access Logs
+- For audit purposes, you may want to log all access to S3 buckets
+- Any request made to S3, from any account, authorized or denied, will be logged into another S3 bucket
+- Data can be analyzed using data analysis tools
+- The target logging bucket must be in the same AWS region
+- DO NOT set the logging bucket to be the monitored bucket
+	- It will create a logging loop, and the bucket will grow exponentially
+
+### Pre-Signed URLs
+- Generate Pre-Singed URLs using the S3 console, AWS CLI, or SDK
+- URL Expiration
+	- S3 console - 1 min up to 720 mins (12 hours)
+	- AWS CLI - configure expiration with --expires-in parameter in seconds (default 3600 secs, max 604800 secs ~ 168 hours)
+- Users given a pre-signed URL inherit the permissions of the user that generated the URL for GET / PUT
+- Examples:
+	- Allow only logged-in users to download a premium video from your S3 bucket
+	- Allow an ever-changing list of users to download files by generating URLs dynamically
+	- Allow temporarily a user to upload a file to a precise location in S3 bucket
+
+### S3 Glacier Vault Lock
+- Adopt a WORM (Write Once Read Many) model
+- Create a Vault Lock Policy
+- Lock the policy for future edits (can no longer be changed or deleted)
+- Helpful for compliance and data retention
+
+### S3 Object Lock (versioning must be enabled)
+- Adopt WORM model
+- Block an object version deletion for a specific amount of time
+- Retention mode - Compliance
+	- Object versions can't be overwritten or deleted by any user, including the root user
+	- Objects retention modes can't be changed, and retention periods can't be shortened
+- Retention mode - Governance
+	- Most users can't overwrite or delete an object version or alter its lock settings
+	- Some users have special permissions to change the retention or delete the object
+- Retention Period
+	- Protect the object for a fixed period, it can be extended
+- Legal Hold
+	- Protect the object indefinitely, independent from the retention period
+	- Can be freely placed and removed using the `s3:PutObjectLegalHold` IAM permission
+
+### Access Points
+- Access Points simplify security management for S3 buckets
+- Each Access Point has:
+	- Its own DNS name (Internet Origin or VPC Origin)
+	- An access point policy (similar to bucket policy) - manage security at scale
+
+### VPC Origin
+- We can define the access point to be accessible only from within the VPC by creating VPC Endpoint (Gateway or Interface Endpoint)
+- The VPC Endpoint Policy must allow access to the target bucket and Access Point
+
+### S3 Object Lambda
+- Use AWS Lambda Functions to change the object before the caller application retrieves it
+- Only one S3 bucket is needed, on top of which we create S3 Access Point and S3 Object Lambda Access Points
 
 ## S3 to S3 Data Transfer
 ---
