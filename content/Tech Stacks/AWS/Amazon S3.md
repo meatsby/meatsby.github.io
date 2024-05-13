@@ -207,6 +207,40 @@ tags:
 ## S3 Security
 ---
 ### Object Encryption
+- Server-Side Encryption
+	- SSE-S3 (Default)
+		- Encryption using keys handled, managed, and owned by AWS
+		- Object is encrypted server-side
+		- Encryption type = AES-256
+		- Must set header `"x-amz-server-side-encryption":"AES256"`
+	- SSE-KMS
+		- Encryption using keys handled and managed by AWS KMS
+		- Object is encrypted server-side
+		- Must set header `"x-amz-server-side-encryption":"aws:kms"`
+		- KMS advantages: user control + audit key usage using CloudTrail
+		- KMS limitations: count towards the KMS quota per second
+	- SSE-C
+		- SSE using keys fully managed by the customer outside AWS
+		- S3 does NOT store the encryption key
+		- HTTPS must be used
+		- Encryption key must provided in HTTP headers for every request
+- Client-Side Encryption
+	- Use client libraries such as S3 Client-Side Encryption Library
+	- Clients must encrypt data themselves
+		- before sending to S3
+		- retrieving from S3
+	- Customer fully manages the keys and encryption cycle
+
+### Encryption in transit (SSL/TLS)
+- S3 exposes two endpoints
+	- HTTP - non-encrypted
+	- HTTPS - encryption in flight
+- HTTPS is recommended & HTTPS is mandatory for SSE-C
+- To force encryption in transit:
+	- Add condition statement in S3 bucket policy `"aws:SecureTransport"`
+
+## S3 CORS
+---
 
 
 ## S3 to S3 Data Transfer
