@@ -127,11 +127,87 @@ tags:
 	- Archive Access Tier (optional): configurable from 90 days to 700+ days
 	- Deep Archive Access Tier (optional): configurable from 180 days to 700+ days
 
+### Lifecycle Rules
+- Transition Actions - configure objects to transition to another storage class
+	- Move to Standard IA 60 days after creation
+	- Move to Glacier for archiving after 6 months
+- Expiration Actions - configure objects to expire (delete) after some time
+	- Access log files can be set to delete after 365 days
+	- Can be used to delete old versions of files (if versioning is enabled)
+	- Can be used to delete incomplete Multi-Part uploads
+- Rules can be created for a certain prefix & object tags
+
+### S3 Analytics - Storage Class Analysis
+- Help decide when to transition objects to the right storage class
+- Recommendations for Standard and Standard IA
+	- Do NOT work for One-Zone IA or Glacier
+- Report is updated daily
+- 24 to 48 hours to start seeing data analysis
+- Good first step to put together Lifecycle Rules
+
 ### S3 Pricing
 - Storage - Charged based on objects’ sizes, storage classes, and how long you have stored each object during the month
 - Requests and Data Retrievals - Charged based on requests made to Amazon S3 objects and buckets
 - Data Transfer - You pay for data that you transfer into and out of Amazon S3
 - Management and Replication - You pay for the storage management features that you have enabled on your account’s Amazon S3 buckets
+
+### S3 Request Pays
+- In general, bucket owners pay for all S3 storage & data transfer costs associated with their bucket
+- With Request Pays buckets, the requester pays the cost of the request & data download instead
+- Helpful when sharing large datasets with other accounts
+- The requester must be authenticated in AWS (cannot be anonymous)
+
+### S3 Event Notifications
+- S3 event notification typically delivers events in seconds but can sometimes take a minute or longer and can create as many S3 events as desired
+	- S3 to SNS requires SNS Resource Policy
+	- S3 to SQS requires SQS Resource Policy
+	- S3 to Lambda requires Lambda Resource Policy
+	- Use case: generate thumbnails of images uploaded to S3
+- S3 Event Notifications with Amazon EventBridge
+	- Advanced filtering options with JSON rules (metadata, object size, name, ...)
+	- Multiple Destinations - e.g. Step Functions, Kinesis Streams / Firehose, ...
+	- EventBridge Capabilities - Archive, Replay Events, Reliable delivery
+
+### S3 Baseline Performance
+- S3 automatically scales to high request rates, latency 100~200ms
+- An application can achieve at least 3500 PUT/COPY/POST/DELETE and 5500 GET/HEAD requests per second per prefix in a bucket
+- There are no limits to the number of prefixes in a bucket
+- Example (object path => prefix):
+	- bucket/folder1/sub1/file => /folder1/sub1/
+
+### S3 Performance
+- Multi-Part upload
+	- Recommended for files > 100MB, must use for files > 5GB
+	- Can help parallelize uploads (speed up transfers)
+- S3 Transfer Acceleration
+	- Increase transfer speed by transferring files to an AWS edge location which will forward the data to the S3 bucket in the target region
+	- Compatible with multi-part upload
+- S3 Byte-Range Fetches
+	- Parallelize GETs by requesting specific byte ranges
+	- Better resilience in case of failures
+	- Can be used to speed up downloads & retrieve only partial data
+
+### S3 Select & Glacier Select
+- Retrieve less data using SQL performing server-side filtering
+- Can filter by rows & columns (simple SQL statements)
+- Less network transfer, less CPU cost client-side
+
+### S3 Batch Operations
+- Perform bulk operations on existing S3 objects with a single request
+	- Modify object metadata & properties
+	- Copy objects between S3 buckets
+	- Encrypt un-encrypted objects
+	- Modify ACLs, tags
+	- Restore objects from S3 Glacier
+	- Invoke Lambda function to perform custom action on each object
+- A job consists of a list of objects, the action to perform, and optional parameters
+- S3 Batch Operations manages retries, tracks progress, sends completion notifications, generates reports, ...
+- Can use S3 Inventory to get an object list and use S3 Select to filter objects
+
+## S3 Security
+---
+### Object Encryption
+
 
 ## S3 to S3 Data Transfer
 ---
