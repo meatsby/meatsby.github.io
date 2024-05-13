@@ -30,11 +30,6 @@
     - 네트워크 파일 시스템, 한 지역에서 수백 개의 인스턴스에 연결 가능
     - Linux 기반 AWS 및 On-premise 서버와 함께 사용 가능한 간단하고 확장성 있는 공유 파일 스토리지 솔루션
 - FSx
-- ⭐️ Amazon S3 Glacier
-    - S3 와 같은 내구성, 성능 및 가용성
-    - 아카이빙, 장기간 백업 및 오래된 로그 데이터 보관 용도
-    - 파일을 로드할 때 비용 발생
-    - 다른 S3 와 비교해서 제일 저렴
 - AWS Storage Gateway
     - On-premise 데이터 스토리지를 AWS Cloud 에 연결하는 용도
 - AWS Backup
@@ -91,11 +86,7 @@
         - To establish a connection between 2 VPCs
     - Transit Gateway
         - To connect and centrally manage network connectivity between multiple VPCs in several AWS Regions around the world
-- ⭐️ Amazon CloudFront
-    - 전 세계 엣지 로케이션에 컨텐츠를 캐싱하여 성능이 향상된 CDN 서비스
-    - DDoS 방어 무료 제공 (AWS Shield Standard)
-    - CloudFront는 .html, .css, .js 및 이미지 파일과 같은 정적 및 동적 웹 콘텐츠를 사용자에게 더 빨리 배포하는 웹 서비스입니다. 콘텐츠는 엣지 로케이션에서 캐시됩니다. 반복적으로 액세스되는 콘텐츠는 소스 S3 버킷 대신 엣지 로케이션에서 제공될 수 있습니다.
-    - CloudFront는 정적 및 동적 웹 콘텐츠를 사용자에게 빠르게 배포하는 웹 서비스입니다. CloudFront는 엣지 로케이션이라고 하는 데이터 센터의 전 세계 네트워크를 통해 콘텐츠를 제공합니다. CloudFront를 통해 제공하는 콘텐츠를 사용자가 요청하면 해당 요청은 지연 시간이 가장 짧은 엣지 로케이션으로 라우팅됩니다. 하지만 CloudFront는 네트워크 연결을 제공하지 않습니다.
+- ⭐️ [[Amazon CloudFront]]
 - ⭐️ [[Amazon Route 53]]
 - Amazon API Gateway
 - ⭐️ AWS Direct Connect
