@@ -253,8 +253,7 @@
     - Cloud 에서 완벽하게 관리되는 페타바이트급 데이터 웨어하우스 서비스
 - Amazon CloudSearch
 - ⭐️ Amazon OpenSearch Service
-- ⭐️ Amazon Kinesis
-    - 실시간으로 비디오 및 데이터 스트림을 수집, 처리 및 분석
+- ⭐️ [[Amazon Kinesis]]
 - ⭐️ Amazon QuickSight
     - 비지니스 인텔리전스 솔루션 구축 중 보고 목적으로 대시 보드 사용 시 필요한 서비스
     - Supports the creation of `visual` reports from AWS Cost and Usage Report data
@@ -347,8 +346,8 @@
 - Amazon AppFlow
 - Amazon EventBridge
 - Amazon MQ
-- Simple Notification Service
-- Simple Queue Service
+- [[Amazon SNS]]
+- [[Amazon SQS]]
 - SWF
 - Managed Apache Airflow
 - AWS B2B Data Interchange
