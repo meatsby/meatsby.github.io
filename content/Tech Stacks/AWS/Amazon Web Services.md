@@ -58,7 +58,7 @@
     - AWS DMS를 사용하면 온프레미스 데이터베이스에서 AWS의 데이터베이스로 데이터를 마이그레이션할 수 있습니다.
 - [[AWS Transfer Family]]
 - [[AWS Snow Family]]
-- AWS DataSync
+- [[AWS DataSync]]
 - AWS Mainframe Modernization
 
 ## Networking & Content Delivery
