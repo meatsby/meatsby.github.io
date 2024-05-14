@@ -65,6 +65,12 @@ tags:
 	- Launch compatible AWS services on devices
 		- e.g. EC2, DataSync, NFS
 
+## Solution Architecture
+---
+### Snowball into Glacier
+- Snowball cannot import to Glacier directly
+- Import to S3 first, then use S3 lifecycle policy to move into Glacier
+
 ## References
 ---
 - [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
