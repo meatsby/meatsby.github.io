@@ -57,10 +57,8 @@
     - Application Discovery Service는 온프레미스 서버의 사용 및 구성에 대한 정보를 수집하여 AWS로의 마이그레이션을 계획하는 데 도움이 됩니다.
 - AWS Database Migration Service
     - AWS DMS를 사용하면 온프레미스 데이터베이스에서 AWS의 데이터베이스로 데이터를 마이그레이션할 수 있습니다.
-- AWS Transfer Family
-- AWS Snow Family
-    - ⭐️ AWS Snowball
-        - 페타바이트 규모의 대용량 데이터를 안전하게 전송하기 위한 서비스
+- [[AWS Transfer Family]]
+- [[AWS Snow Family]]
 - AWS DataSync
 - AWS Mainframe Modernization
 
@@ -95,11 +93,7 @@
     - Direct Connect는 네트워크 연결을 통해 내부 네트워크를 Direct Connect 위치에 연결합니다. 연결의 한쪽 끝이 온프레미스 라우터에 연결됩니다. 다른 쪽 끝은 Direct Connect 라우터에 연결됩니다. 이 연결을 통해 네트워크 경로의 ISP를 우회할 수 있습니다. 하지만 이 시나리오에서 회사는 기존 인터넷 연결을 사용해야 합니다.
     - To create a private connection between an on-premises workload and an AWS Cloud workload
 - AWS App Mesh
-- ⭐️ AWS Global Accelerator
-    - 엔드 단 상태 지속 모니터링 및 즉시 대응 서비스
-    - Global Accelerator는 사용자의 네트워크 트래픽 성능을 최대 60% 향상시키는 네트워킹 서비스입니다. Global Accelerator는 AWS 글로벌 네트워크 인프라를 사용합니다.
-    - To improve the overall availability and performance of its applications that are hosted on AWS
-    - Uses Edge Locations
+- ⭐️ [[AWS Global Accelerator]]
 - AWS Cloud Map
 - Amazon Route 53 Application Recovery Controller
 - AWS Private 5G
