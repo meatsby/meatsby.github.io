@@ -345,7 +345,7 @@
 - Step Functions
 - Amazon AppFlow
 - Amazon EventBridge
-- Amazon MQ
+- [[Amazon MQ]]
 - [[Amazon SNS]]
 - [[Amazon SQS]]
 - SWF
