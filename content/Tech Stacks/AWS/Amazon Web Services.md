@@ -14,13 +14,7 @@
 
 ## Containers
 - Amazon Elastic Container Registry (ECR)
-    - Docker Container Image 를 저장, 관리 및 배포할 수 있는 Registry
-    - AWS IAM 과 통합하여 각 Repository 를 리소스 수준에서 제어 가능
-    - 선수금이나 약정 없이 저장한 데이터와 인터넷으로 전송한 데이터에 대한 요금만 지불
 - Amazon Elastic Container Service (ECS)
-    - Docker Container 를 지원하는 Container 관리 서비스
-    - 클러스터 관리 인프라 설치, 운영 및 확장
-    - Eliminates the need to provision and manage the container hosts
 - Amazon Elastic Kubernetes Service (EKS)
 - Red Hat OpenShift Service on AWS
 
