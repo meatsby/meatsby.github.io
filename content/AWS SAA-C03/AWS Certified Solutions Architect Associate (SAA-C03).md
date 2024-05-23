@@ -42,6 +42,131 @@ tags:
 	- Lambda (FaaS)
 	- Rekognition (SaaS)
 
+## Choosing the right DB
+---
+### Database Types
+- RDBMS: RDS, Aurora - great for joins
+- NoSQL DB: No joins, no SQL - DynamoDB(~JSON), ElastiCache(key/value pairs), Neptune(graphs), DocumentDB(for MongoDB), Keyspaces(for Apache Cassandra)
+- Object Store: S3(for big objects), Glacier(for backups/archives)
+- Data Warehouse: Redshift(OLAP), Athena, EMR
+- Search: OpenSearch(JSON) - free text, unstructured searches
+- Graphs: Neptune - displays relationships between data
+- Ledger: Quantum Ledger DB
+- Time Series: Timestream
+
+### RDS
+- Managed PostgreSQL / MySQL / Oracle / SQL Server / MariaDB / Custom
+- Provisioned RDS instance size and EBS volume type & size
+- Auto-scaling capability for storage
+- Support for Read Replicas and Multi-AZ
+- Security through IAM, SGs, KMS, and SSL in transit
+- Automated Backup with Point in time restore feature (up to 35 days)
+- Manual DB snapshot for longer-term recovery
+- Support for IAM Authentication, integration with Secrets Manager
+- RDS Custom for access to and customize the underlying instance (Oracle & SQL Server)
+- Use case: Store RDBMS/OLTP, perform SQL queries, transactions
+
+### Aurora
+- Compatible API for PostgreSQL / MySQL, separation of storage and compute
+- Storage: data is stored in 6 replicas across 3 AZs
+- Compute: Cluster of DB instances across multiple AZs, auto-scaling of Read Replicas
+- Cluster: Custom endpoints for writer and reader DB instances
+- Same security/monitoring/maintenance features as RDS
+- Aurora Serverless: for unpredictable/intermittent workloads, no capacity planning
+- Aurora Global: up to 16 DB Read Instances in each region, < 1 second storage replication
+- Aurora Machine Learning: perform ML using SageMaker & Comprehend on Aurora
+- Aurora DB Cloning: new cluster from existing one, faster than restoring a snapshot
+- Use case: same as RDS, but with less maintenance/more flexibility/performance/features
+
+### ElastiCache
+- Managed Redis / Memcached
+- In-memory data store, sub-millisecond latnency
+- Must provision an EC2 instance type
+- Support for clustering(Redis) and Multi-AZ, Read Replicas(sharding)
+- Security through IAM, SGs, KSM, Redis Auth
+- Backup / Snapshot / Point in time restore feature
+- Managed and Scheduled maintenance
+- Requires some application code changes to be leveraged
+- Use case: Key/Value store, frequent reads, less writes, cache results for DB queries, store session data for websites, cannot use SQL
+
+### DynamoDB
+- AWS proprietary technology, managed serverless NoSQL DB, millisecond latency
+- Capacity modes: provisioned capacity with optional auto-scaling or on-demand capacity
+- Can replace ElastiCache as a Key/Value store
+- HA, Multi-AZ by default, Read and Writes are decoupled, transaction capability
+- DAX cluster for read cache, microsecond read latency
+- Security, authentication, and authorization are done through IAM
+- Event Processing: DDB Streams to integrate with Lambda, Kinesis Data Streams
+- Global Table feature: active-active setup
+- Automated backups up to 35 days with PITR, or on-demand backups
+- Export to S3 without using RCU within the PITR window, import from S3 without using WCU
+- Great to rapidly evolve schemas
+- Use case: Serverless applications development (small documents 100s KB), distributed serverless cache
+
+### S3
+- A key/value store for objects
+- Great for bigger objects, not so great for many small objects
+- Serverless, scales infinitely, max object size is 5TB, versioning capability
+- Tiers: Standard, IA, Intelligent, Glacier + lifecycle policy
+- Features: Versioning, Encryption, Replication, MFA-Delete, Access Logs, ...
+- Security: IAM, Bucket Policies, ACL, Access Points, Object Lambda, CORS, Object/Vault Lock
+- Encryption: SSE-S3, SSE-KMS, SSE-C, client-side, TLS in transit, default encryption
+- Batch operations on objects using S3 Batch, listing files using S3 Inventory
+- Performance: Multi-part upload, S3 Transfer Acceleration, S3 Select
+- Automation: S3 Event Notifications (SNS, SQS, Lambda, EventBridge)
+- Use Cases: Static files, key-value store for big files, website hosting
+
+### DocumentDB
+- AWS implementation for MongoDB(NoSQL DB)
+- Used to store, query, and index JSON data
+- Similar "deployment concept" to Aurora
+- Fully managed, HA with replication across 3 AZ
+- Document DB storage automatically grows in increments of 10GB
+- Automatically scales to workloads with millions of requests per second
+
+### Neptune
+- Fully managed graph DB
+	- e.g. Social network
+		- Users have friends
+		- Posts have comments
+		- Comments have likes from users
+		- Users share and like posts
+- HA across 3 AZ, with up to 15 read replicas
+- Build and run applications working with highly connected datasets - optimized for these complex and hard queries
+- Can store up to billions of relations and query the graph with millisecond latency
+- Great for knowledge graphs (Wikipedia), fraud detection, recommendation engines, social networks
+
+### Keyspaces(for Apache Cassandra)
+- Apache Cassandra is an open-source NoSQL distributed DB
+- A managed Apache Cassandra-compatible DB service
+- Serverless, scalable, HA
+- Automatically scale tables up/down based on the app traffic
+- Tables are replicated 3 times across multi-AZ
+- Using the Cassandra Query Language (CQL)
+- Single-digit millisecond latency at any scale, 1000s of requests per second
+- Capacity: On-demand mode or provisioned mode with auto-scaling
+- Encryption, backup, PITR up to 35 days
+- Use case: Store IoT device info, time-series data, ...
+
+### QLDB
+- A ledger is a book recording financial transactions
+- Fully managed, serverless, HA, replication across 3 AZs
+- Used to review the history of all the changes made to your application data over time
+- Immutable system: no entry can be removed or modified, cryptographically verifiable
+- 2-3x better performance than common ledger blockchain frameworks, manipulate data using SQL
+- Difference with Amazon Managed Blockchain: no decentralization component, in accordance with financial regulation rules
+
+### Timestream
+- Fully managed, fast, scalable time series DB
+- Automatically scales up/down to adjust capacity
+- Store and analyze trillions of events per day
+- 1000s times faster & 1/10 the cost of RDBMS
+- Scheduled queries, multi-measure records, SQL compatibility
+- Data storage tiering: recent data kept in memory and historical data kept in a cost-optimized storage
+- Built-in time series analytics functions
+- Encryption in transit and at rest
+- Use cases: IoT apps, operational apps, real-time analytics, ...
+
 ## Domain 1: Design Secure Architectures (30%)
 ---
 ### 1.1: Design secure access to AWS resources
