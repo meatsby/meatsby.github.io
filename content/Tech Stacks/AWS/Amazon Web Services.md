@@ -241,10 +241,8 @@
 - Amazon Q
 
 ## Analytics
-- ⭐️ Amazon Athena
-    - 표준 SQL 을 사용하여 S3 에서 직접 데이터를 쉽게 분석할 수 있는 대화형 쿼리 서비스
-- ⭐️ Amazon Redshift
-    - Cloud 에서 완벽하게 관리되는 페타바이트급 데이터 웨어하우스 서비스
+- ⭐️ [[Amazon Athena]]
+- ⭐️ [[Amazon Redshift]]
 - Amazon CloudSearch
 - ⭐️ Amazon OpenSearch Service
 - ⭐️ [[Amazon Kinesis]]
