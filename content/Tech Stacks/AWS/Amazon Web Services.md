@@ -244,23 +244,18 @@
 - ⭐️ [[Amazon Athena]]
 - ⭐️ [[Amazon Redshift]]
 - Amazon CloudSearch
-- ⭐️ Amazon OpenSearch Service
+- ⭐️ [[Amazon OpenSearch Service]]
 - ⭐️ [[Amazon Kinesis]]
-- ⭐️ Amazon QuickSight
-    - 비지니스 인텔리전스 솔루션 구축 중 보고 목적으로 대시 보드 사용 시 필요한 서비스
-    - Supports the creation of `visual` reports from AWS Cost and Usage Report data
+- ⭐️ [[Amazon QuickSight]]
 - Amazon Data Pipeline
 - ⭐️ AWS Data Exchange
 - AWS Lake Formation
 - ⭐️ Amazon Managed Streaming for Apache Kafka (MSK)
 - AWS Glue DataBrew
 - Amazon FinSpace
-- ⭐️ AWS Glue
+- ⭐️ [[AWS Glue]]
 - Amazon Kinesis Data Firehose
-- ⭐️ Amazon Elastic MapReduce (EMR)
-    - 방대한 양의 데이터를 처리하기 위한 클라우드 빅 데이터 플랫폼
-    - Elastic MapReduce: 분산 처리 후 합치는 과정을 MapReduce 라고 함
-    - EC2 에서 대량의 데이터를 쉽고 빠르게 비용 효율적으로 처리할 수 있는 AWS 관리형 Hadoop 프레임워크
+- ⭐️ [[Amazon Elastic MapReduce (EMR)]]
 - AWS Clean Rooms
 - Amazon DataZone
 - AWS Entity Resolution
