@@ -249,8 +249,8 @@
 - ⭐️ [[Amazon QuickSight]]
 - Amazon Data Pipeline
 - ⭐️ AWS Data Exchange
-- AWS Lake Formation
-- ⭐️ Amazon Managed Streaming for Apache Kafka (MSK)
+- [[AWS Lake Formation]]
+- ⭐️ [[Amazon Managed Streaming for Apache Kafka (MSK)]]
 - AWS Glue DataBrew
 - Amazon FinSpace
 - ⭐️ [[AWS Glue]]
