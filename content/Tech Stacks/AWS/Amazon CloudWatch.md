@@ -109,6 +109,18 @@ tags:
 - AND and OR conditions
 - Helpful to reduce "alarm noise" by creating complex composite alarms
 
+## CloudWatch Insights & Operational Visibility
+---
+- CloudWatch Container Insights
+	- ECS, EKS, k8s on EC2, Fargate, needs agent for k8s
+	- Metrics and logs
+- CloudWatch Lambda Insights
+	- Detailed metrics to troubleshoot serverless apps
+- CloudWatch Contributors Insights
+	- Find "Top-N" Contributors through CloudWatch Logs
+- CloudWatch Application Insights
+	- Automatic dashboard to troubleshoot app and related AWS services
+
 ## References
 ---
 - [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
