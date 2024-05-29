@@ -201,28 +201,20 @@
 - Amazon Interactive Video Service
 
 ## Machine Learning
-- Amazon SageMaker
+- [[Amazon SageMaker]]
 - Amazon Augmented AI
 - Amazon CodeGuru
 - Amazon DevOps Guru
-- ⭐️ Amazon Comprehend
-    - NLP 에 ML 을 사용하고 싶지만 ML 경험이 없는 사용자를 돕기 위한 서비스
-- Amazon Forecast
+- ⭐️ [[Amazon Comprehend]]
+- [[Amazon Forecast]]
 - Amazon Fraud Detector
-- Amazon Kendra
-- Amazon Personalize
-- Amazon Polly
-    - Text -> 음성 변환 서비스
-    - Amazon Polly는 텍스트를 음성으로 변환하는 기계 학습 서비스입니다. 이 서비스는 텍스트를 소리내어 읽을 수 있는 기능을 제공합니다.
-- ⭐️ Amazon Rekognition
-    - 이미지, 비디오 분석 서비스
-    - 사진에 나타나는 객체를 자동으로 감지
-- Amazon Textract
-    - Amazon Textract는 스캔한 문서에서 텍스트를 추출할 수 있는 기계 학습 서비스입니다.
-- Amazon Transcribe
-    - Amazon Transcribe는 기계 학습을 사용하여 오디오 데이터를 텍스트로 변환하는 서비스입니다.
-- Amazon Translate
-    - Amazon Translate는 기계 학습 언어 번역 서비스입니다.
+- [[Amazon Kendra]]
+- [[Amazon Personalize]]
+- [[Amazon Polly]]
+- ⭐️ [[Amazon Rekognition]]
+- [[Amazon Textract]]
+- [[Amazon Transcribe]]
+- [[Amazon Translate]]
 - AWS DeepComposer
 - AWS DeepLens
 - AWS DeepRacer
@@ -232,9 +224,8 @@
 - Amazon Lookout for Vision
 - Amazon Lookout for Equipment
 - Amazon Lookout for Metrics
-- Amazon Lex
-    - 대화형 챗봇 서비스
-- Amazon Comprehend Medical
+- [[Amazon Lex]]
+- [[Amazon Comprehend Medical]]
 - AWS HealthOmics
 - Amazon Bedrock
 - AWS HealthImaging

@@ -8,7 +8,10 @@ tags:
 ---
 ## Amazon Personalize
 ---
-
+- Fully managed ML-service to build apps with real-time personalized recommendations
+- Same tech used by Amazon.com
+- Integrates into existing websites, applications, SMS, email marketing systems, ...
+- Implement in days
 
 ## References
 ---
