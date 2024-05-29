@@ -139,7 +139,7 @@
     - Service Control Policies (SCPs)
         - To limit the access to AWS services for member accounts
     - Organizational Units (OUs)
-- ⭐️ Amazon CloudWatch
+- ⭐️ [[Amazon CloudWatch]]
     - AWS Management Console 로그인 이벤트에 대한 경고를 모니터링하고 수신
     - CloudWatch는 AWS 리소스에 대한 지표를 수집하고 추적하는 모니터링 서비스이고, 무제한 액세스를 허용하는 보안 그룹은 식별하지 않습니다.
     - CloudWatch는 실시간으로 AWS에서 실행되는 애플리케이션 및 AWS 리소스를 모니터링합니다. CloudWatch와 AWS CloudTrail을 사용하여 AWS 계정 루트 사용자와 관련된 콘솔 로그인 이벤트를 모니터링하고 이에 대한 알림을 받을 수 있습니다.
@@ -151,7 +151,7 @@
     - 서비스 구성을 모델링 가능하게 해주고 맘에 들면 코드로 배포 가능
     - 사용자가 리소스 프로비저닝 프로세스를 자동화하여 IaC 를 배포할 수 있는 서비스
     - To deploy a service to the AWS Cloud by using infrastructure-as-code (IaC) principles
-- ⭐️ AWS Config
+- ⭐️ [[AWS Config]]
     - 감사용 / AWS 리소스 변경 사항 확인용
     - AWS 리소스의 설정을 정기적으로 감사 및 평가, 비준수 계정 식별, 리소스 변경 시 알림
     - AWS Config는 AWS 리소스에 대한 변경 사항을 지속적으로 모니터링하고 기록하지만 무제한 액세스를 허용하는 보안 그룹은 식별하지 않습니다.
@@ -179,7 +179,7 @@
 - AWS Service Quotas
     - use to centrally request and track service limit increases
 - AWS Proton
-- ⭐️ AWS CloudTrail
+- ⭐️ [[AWS CloudTrail]]
     - 계정 활동 기록 서비스
     - CloudTrail은 API 호출에 대한 감사 레코드를 제공하고, 무제한 액세스를 허용하는 보안 그룹은 식별하지 않습니다.
     - To see if the security group was changed
@@ -322,7 +322,7 @@
 ## Application Integration
 - Step Functions
 - Amazon AppFlow
-- Amazon EventBridge
+- [[Amazon EventBridge]]
 - [[Amazon MQ]]
 - [[Amazon SNS]]
 - [[Amazon SQS]]
