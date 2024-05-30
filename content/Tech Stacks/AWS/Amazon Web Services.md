@@ -132,18 +132,8 @@
 - Amazon Braket
 
 ## Management & Governance
-- ⭐️ AWS Organizations
-    - 각 부서별 계정이 여러개라면 Tag 를 활용해 통합된 결제 가능
-    - 고객이 여러 AWS 계정을 통합하고 중앙에서 관리하려면 필요한 서비스
-    - Organizations는 여러 계정을 포함하여 AWS 환경에 대한 중앙 집중식 거버넌스와 결제를 제공합니다.
-    - Service Control Policies (SCPs)
-        - To limit the access to AWS services for member accounts
-    - Organizational Units (OUs)
+- ⭐️ [[AWS Organizations]]
 - ⭐️ [[Amazon CloudWatch]]
-    - AWS Management Console 로그인 이벤트에 대한 경고를 모니터링하고 수신
-    - CloudWatch는 AWS 리소스에 대한 지표를 수집하고 추적하는 모니터링 서비스이고, 무제한 액세스를 허용하는 보안 그룹은 식별하지 않습니다.
-    - CloudWatch는 실시간으로 AWS에서 실행되는 애플리케이션 및 AWS 리소스를 모니터링합니다. CloudWatch와 AWS CloudTrail을 사용하여 AWS 계정 루트 사용자와 관련된 콘솔 로그인 이벤트를 모니터링하고 이에 대한 알림을 받을 수 있습니다.
-    - To monitor Amazon EC2 instances for CPU and network utilization
 - ⭐️ AWS Auto Scaling
     - 수요에 따른 EC2 자동 확장 및 축소를 통한 고가용성 확보
 - ⭐️ AWS CloudFormation
@@ -152,10 +142,6 @@
     - 사용자가 리소스 프로비저닝 프로세스를 자동화하여 IaC 를 배포할 수 있는 서비스
     - To deploy a service to the AWS Cloud by using infrastructure-as-code (IaC) principles
 - ⭐️ [[AWS Config]]
-    - 감사용 / AWS 리소스 변경 사항 확인용
-    - AWS 리소스의 설정을 정기적으로 감사 및 평가, 비준수 계정 식별, 리소스 변경 시 알림
-    - AWS Config는 AWS 리소스에 대한 변경 사항을 지속적으로 모니터링하고 기록하지만 무제한 액세스를 허용하는 보안 그룹은 식별하지 않습니다.
-    - AWS Config를 사용하여 AWS 리소스 구성을 측정, 감사 및 평가할 수 있습니다. AWS Config는 AWS 계정 루트 사용자와 관련된 콘솔 로그인 이벤트에 대해 알림을 보낼 수 없습니다.
 - AWS OpsWorks
 - AWS Service Catalog
     - To limit its employees' AWS access to a portfolio of predefined AWS resources
@@ -164,7 +150,7 @@
     - AWS 계정을 분석하고 비용 최적화, 성능, 보안, 내결함성 등 권장 사항을 제공
     - Trusted Advisor는 리소스에 대한 무제한 액세스를 허용하는 규칙에 대해 보안 그룹을 확인합니다. 무제한 액세스로 인해 해킹, 서비스 거부 공격 또는 데이터 손실과 같은 악의적인 활동의 기회가 증가합니다.
     - AWS 모범 사례에 따라 리소스를 프로비저닝하는 데 도움이 되도록 실시간 지침에 Trusted Advisor를 사용할 수 있습니다. Trusted Advisor는 AWS 계정 루트 사용자와 관련된 콘솔 로그인 이벤트에 대해 알림을 보낼 수 없습니다.
-- AWS Control Tower
+- [[AWS Control Tower]]
 - AWS License Manager
 - AWS Well-Architected Tool
 - AWS Health Dashboard
@@ -180,9 +166,6 @@
     - use to centrally request and track service limit increases
 - AWS Proton
 - ⭐️ [[AWS CloudTrail]]
-    - 계정 활동 기록 서비스
-    - CloudTrail은 API 호출에 대한 감사 레코드를 제공하고, 무제한 액세스를 허용하는 보안 그룹은 식별하지 않습니다.
-    - To see if the security group was changed
 - AWS Resource Explorer
 - AWS User Notifications
 - AWS Telco Network Builder
@@ -267,12 +250,12 @@
     - PII 와 같은 민감한 데이터를 식별하고 경고해주는 서비스
     - Macie는 AWS에 배포된 애플리케이션의 보안 및 규정 준수를 개선하는 데 도움이 되는 자동 보안 평가 서비스입니다.
     - Uses machine learning to help discover, monitor, and protect sensitive data that is stored in Amazon S3 buckets
-- AWS IAM Identity Center
+- [[AWS IAM Identity Center]]
 - AWS Certificate Manager
 - ⭐️ AWS Key Management Service (KMS)
     - 데이터 암호화에 사용되는 고객 마스터 키 CMK 를 쉽게 생성 및 제어할 수 있는 서비스
 - AWS CloudHSM
-- AWS Directory Service
+- [[AWS Directory Service]]
 - ⭐️ AWS WAF & Shield
     - ⭐️ AWS WAF
         - SQL Injection, XSS
@@ -289,13 +272,7 @@
 - AWS Audit Manager
 - Amazon Security Lake
 - Amazon Verified Permissions
-- ⭐️ AWS Identity and Access Management (IAM)
-    - AWS 서비스 및 리소스에 대한 액세스를 안전하게 관리
-    - AWS 사용자 및 그룹을 생성/관리, 권한에 따라 AWS 리소스 액세스 설정 가능
-    - IAM을 사용하면 AWS 서비스 및 리소스에 대한 액세스를 안전하게 관리할 수 있습니다. IAM은 AWS 계정 루트 사용자와 관련된 콘솔 로그인 이벤트에 대해 알림을 보낼 수 없습니다.
-    - IAM Access Analyzer
-        - Identifies whether an Amazon S3 bucket or an IAM role has been shared with an external entity
-        - Checks access policies and offers actionable recommendations to help users set secure and functional policies
+- ⭐️ [[Amazon IAM]]
 - AWS Payment Cryptography
 
 ## Cloud Financial Management
