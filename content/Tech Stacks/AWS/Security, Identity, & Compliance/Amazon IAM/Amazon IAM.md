@@ -148,3 +148,125 @@ Default output format [None]:
     - To `audit` its password and access key rotation details for `compliance` purposes
 - AWS Security Token Service (STS)
     - To request `temporary`, `limited-privilege` credentials for users
+
+## IAM Conditions
+---
+### aws:SourceIp
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": "*",
+            "Resource": "*",
+            "Condition": {
+	            "NotIpAddress": {
+		            "aws:SourceIp": [
+			            "192.0.2.0/24",
+			            "203.0.113.0/24"
+		            ]
+	            }
+            }
+        }
+    ]
+}
+```
+- Restrict the client IP from which the API calls are being made
+
+### aws:RequestedRegion
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": "*",
+            "Resource": "*",
+            "Condition": {
+	            "StringEquals": {
+		            "aws:RequestedRegion": [
+			            "eu-central-1",
+			            "eu-west-1"
+		            ]
+	            }
+            }
+        }
+    ]
+}
+```
+- Restrict the Region the API calls are made to
+
+### ec2:ResourceTag
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "*",
+            "Condition": {
+	            "StringEquals": {
+		            "aws:ResourceTag/Project": "DataAnalytics"
+	            }
+            }
+        }
+    ]
+}
+```
+- Restrict based on tags
+
+### aws:MultiFactorAuthPresent
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": "*",
+            "Resource": "*",
+            "Condition": {
+	            "BoolIfExists": {
+		            "aws:MultiFactorAuthPresent": false
+	            }
+            }
+        }
+    ]
+}
+```
+- To force MFA
+
+## IAM for S3
+---
+- `s3:ListBucket` permission applies to `arn:aws:s3:::test`
+	- Bucket level permission
+- `s3:GetObject` permission applies to `arn:aws:s3:::test/*`
+	- Object level permission
+
+## Resource Policies & aws:PrincipalOrgID
+---
+- `aws:PrincipalOrgID` can be used in any resource policies to restrict access to accounts that are members of an AWS Organization
+
+## IAM Role vs Resource-Based Policies
+---
+- In Cross-Account situation
+	- Resource-Based Policy can be attached to a resource (e.g. S3 bucket policy)
+	- OR use a Role as a proxy
+- When using Assume Role, original permissions will not work
+- When using Resource-Based Policy, resource allows given permissions
+
+### Amazon EventBridge - Security
+- When a rule runs, it needs permissions on the target
+	- Resource-Based Policy: Lambda, SNS, SQS, CloudWatch Logs, API Gateway, ...
+	- IAM Role: Kinesis Stream, Systems Manager Run Command, ECS task, ...
+
+## IAM Permission Boundaries
+---
+- IAM Permission Boundaries are supported for users and roles (not group)
+- Advanced feature to use a managed policy to set the maximum permissions an IAM entity can get
+- Can be used in combinations of AWS Org SCP
+
+## References
+---
+- [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
