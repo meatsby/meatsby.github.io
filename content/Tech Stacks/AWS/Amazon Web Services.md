@@ -237,7 +237,7 @@
 
 ## Security, Identity, & Compliance
 - AWS Resource Access Manager
-- Amazon Cognito
+- [[Amazon Cognito]]
 - AWS Secrets Manager
     - Secrets Manager는 애플리케이션, 서비스, IT 리소스에 액세스하는 데 필요한 보안을 지키도록 도와줍니다.
 - Amazon GuardDuty
