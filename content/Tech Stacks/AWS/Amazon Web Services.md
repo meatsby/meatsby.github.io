@@ -238,30 +238,17 @@
 ## Security, Identity, & Compliance
 - AWS Resource Access Manager
 - [[Amazon Cognito]]
-- AWS Secrets Manager
-    - Secrets Manager는 애플리케이션, 서비스, IT 리소스에 액세스하는 데 필요한 보안을 지키도록 도와줍니다.
-- Amazon GuardDuty
-    - GuardDuty는 악성 활동 및 무단 행위를 지속적으로 모니터링하여 AWS 계정 및 워크로드를 보호하는 위협 탐지 서비스로입니다.
-    -Threat detection service
-- Amazon Inspector
-    - AWS 에 배포된 Application 의 자동화된 보안평가 서비스
-    - Amazon Inspector는 Amazon EC2 인스턴스에 배포된 애플리케이션의 보안 및 규정 준수를 개선하는 데 도움이 되는 자동화된 보안 평가 서비스입니다.
-- ⭐️ Amazon Macie
-    - PII 와 같은 민감한 데이터를 식별하고 경고해주는 서비스
-    - Macie는 AWS에 배포된 애플리케이션의 보안 및 규정 준수를 개선하는 데 도움이 되는 자동 보안 평가 서비스입니다.
-    - Uses machine learning to help discover, monitor, and protect sensitive data that is stored in Amazon S3 buckets
+- [[AWS Secrets Manager]]
+- [[Amazon GuardDuty]]
+- [[Amazon Inspector]]
+- ⭐️ [[Amazon Macie]]
 - [[AWS IAM Identity Center]]
-- AWS Certificate Manager
-- ⭐️ AWS Key Management Service (KMS)
-    - 데이터 암호화에 사용되는 고객 마스터 키 CMK 를 쉽게 생성 및 제어할 수 있는 서비스
+- [[AWS Certificate Manager]]
+- ⭐️ [[AWS KMS]]
 - AWS CloudHSM
 - [[AWS Directory Service]]
-- ⭐️ AWS WAF & Shield
-    - ⭐️ AWS WAF
-        - SQL Injection, XSS
-    - ⭐️ AWS Shield
-        - DDoS 방어
-- AWS Firewall Manager
+- ⭐️ [[AWS WAF & Shield]]
+- [[AWS Firewall Manager]]
 - ⭐️ AWS Artifact
     - 규정 준수와 관련된 정보를 제공하는 신뢰할 수 있는 중앙 리소스
     - provides AWS ISO certifications
