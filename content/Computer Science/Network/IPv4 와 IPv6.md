@@ -30,3 +30,26 @@ tags:
 - CIDR(Classless InterDomain Routing)
     - 클래스 A, B, C 와 같은 기존의 약속을 무시하고 뒤에 붙은 서브넷 마스크만으로 클래스를 지정하는 방식
     - 서브넷팅의 반대개념인 수퍼넷팅, 즉 여러 개의 작은 네트워크를 한 개로 모아 라우팅 테이블을 줄여줌으로써 라우터의 메모리를 절약하고 라우팅 속도를 올려주기 위해 사용
+
+## CIDR
+---
+- CIDR (Classless Inter-Domain Routing) consists of 2 components
+	- Base IP - Represents an IP contained in the range
+		- e.g. 10.0.0.0
+	- Subnet Mask - Defines how many bits can change in the IP range
+		- e.g.
+			- /8 = 255.0.0.0
+			- /16 = 255.255.0.0
+			- ...
+
+### Subnet Mask
+- 192.168.0.0/32 = 192.168.0.0
+- 192.168.0.0/24 = 192.168.0.0 ~ 192.168.0.255
+- 192.168.0.0/16 = 192.168.0.0 ~ 192.168.255.255
+
+## Private IP
+---
+- IANA (Internet Assigned Numbers Authority) established certain blocks for private IPv4 addresses
+	- 10.0.0.0 ~ 10.255.255.255 (10.0.0.0/8)
+	- 172.16.0.0 ~ 172.31.255.255 (172.16.0.0/12) <- e.g. AWS default VPC range
+	- 192.168.0.0 ~ 192.168.255.255 (192.168.0.0/16) <- e.g. home networks
