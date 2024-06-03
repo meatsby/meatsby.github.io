@@ -1,12 +1,12 @@
 ---
-title: AWS API Gateway
+title: Amazon API Gateway
 date: 2024-05-16 21:53:28 +0800
 status: In Progress
 draft: false
 tags:
   - AWS
 ---
-## AWS API Gateway
+## Amazon API Gateway
 ---
 - AWS Lambda + API Gateway: No infrastructure to manage
 - Support WebSocket
