@@ -24,7 +24,7 @@
     - Linux 기반 AWS 및 On-premise 서버와 함께 사용 가능한 간단하고 확장성 있는 공유 파일 스토리지 솔루션
 - [[Amazon FSx]]
 - [[AWS Storage Gateway]]
-- AWS Backup
+- [[AWS Backup]]
 - AWS Elastic Disaster Recovery
 
 ## Database
