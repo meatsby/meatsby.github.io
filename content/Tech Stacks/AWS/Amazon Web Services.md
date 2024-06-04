@@ -44,8 +44,7 @@
 - AWS Migration Hub
     - Migration Hub는 애플리케이션 마이그레이션을 계획하고 추적하는 데 도움이 되는 서비스입니다.
 - [[AWS Application Migration Service]]
-- AWS Application Discovery Service
-    - Application Discovery Service는 온프레미스 서버의 사용 및 구성에 대한 정보를 수집하여 AWS로의 마이그레이션을 계획하는 데 도움이 됩니다.
+- [[AWS Application Discovery Service]]
 - [[AWS Database Migration Service]]
 - [[AWS Transfer Family]]
 - [[AWS Snow Family]]
