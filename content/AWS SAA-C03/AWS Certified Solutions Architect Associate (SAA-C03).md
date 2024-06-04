@@ -167,6 +167,20 @@ tags:
 - Encryption in transit and at rest
 - Use cases: IoT apps, operational apps, real-time analytics, ...
 
+## Disaster Recovery Strategies
+---
+- Backup and Restore
+- Pilot Light
+	- A small version of the app is always running in the cloud
+	- Useful for the critical core (pilot light)
+	- Very similar to Backup and Restore
+- Warm Standby
+	- Full system is up and running, but at minimum size
+	- Upon disaster, we can scale to production load
+- Hot Site / Multi-Site Approach
+	- Very low RTO (minutes or seconds) - very expensive
+	- Full Production Scale is running AWS and On-Premise
+
 ## Domain 1: Design Secure Architectures (30%)
 ---
 ### 1.1: Design secure access to AWS resources
