@@ -8,7 +8,11 @@ tags:
 ---
 ## AWS CloudFormation
 ---
+- A declarative way(Infrastructure as Code) of outlining AWS infrastructure, for any resources
 
+### Service Role
+- IAM role that allows CloudFormation to create/update/delete stack resources
+- Give the ability to users to create/update/delete the stack resources even if they don't have permissions to work with the resources in the stack
 
 ## References
 ---
