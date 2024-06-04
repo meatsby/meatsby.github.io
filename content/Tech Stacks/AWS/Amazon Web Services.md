@@ -3,8 +3,7 @@
 - Amazon Lightsail
     - AWS 에서 가상 프라이빗 서버를 시작하고 관리할 때 사용 가능한 가장 간편한 방법
 - ⭐️ [[AWS Lambda]]
-- AWS Batch
-    - 코어가 많이 필요한 배치 컴퓨팅 작업을 효율적으로 실행 가능
+- [[AWS Batch]]
 - [[AWS Elastic Beanstalk]]
 - AWS Serverless Application Repository
 - AWS Outposts
@@ -44,12 +43,10 @@
 ## Migration & Transfer
 - AWS Migration Hub
     - Migration Hub는 애플리케이션 마이그레이션을 계획하고 추적하는 데 도움이 되는 서비스입니다.
-- AWS Application Migration Service
-    - AWS MGN은 자동화된 리프트 앤 시프트 솔루션입니다. 이 솔루션은 물리적 서버와 해당 서버에서 실행되는 모든 데이터베이스 또는 애플리케이션을 AWS의 EC2 인스턴스로 마이그레이션할 수 있습니다.
+- [[AWS Application Migration Service]]
 - AWS Application Discovery Service
     - Application Discovery Service는 온프레미스 서버의 사용 및 구성에 대한 정보를 수집하여 AWS로의 마이그레이션을 계획하는 데 도움이 됩니다.
-- AWS Database Migration Service
-    - AWS DMS를 사용하면 온프레미스 데이터베이스에서 AWS의 데이터베이스로 데이터를 마이그레이션할 수 있습니다.
+- [[AWS Database Migration Service]]
 - [[AWS Transfer Family]]
 - [[AWS Snow Family]]
 - [[AWS DataSync]]
@@ -111,16 +108,12 @@
 - ⭐️ [[Amazon CloudWatch]]
 - ⭐️ AWS Auto Scaling
     - 수요에 따른 EC2 자동 확장 및 축소를 통한 고가용성 확보
-- ⭐️ AWS CloudFormation
-    - Formation 정보
-    - 서비스 구성을 모델링 가능하게 해주고 맘에 들면 코드로 배포 가능
-    - 사용자가 리소스 프로비저닝 프로세스를 자동화하여 IaC 를 배포할 수 있는 서비스
-    - To deploy a service to the AWS Cloud by using infrastructure-as-code (IaC) principles
+- ⭐️ [[AWS CloudFormation]]
 - ⭐️ [[AWS Config]]
 - AWS OpsWorks
 - AWS Service Catalog
     - To limit its employees' AWS access to a portfolio of predefined AWS resources
-- AWS Systems Manager
+- [[AWS Systems Manager]]
 - ⭐️ AWS Trusted Advisor
     - AWS 계정을 분석하고 비용 최적화, 성능, 보안, 내결함성 등 권장 사항을 제공
     - Trusted Advisor는 리소스에 대한 무제한 액세스를 허용하는 규칙에 대해 보안 그룹을 확인합니다. 무제한 액세스로 인해 해킹, 서비스 거부 공격 또는 데이터 손실과 같은 악의적인 활동의 기회가 증가합니다.
@@ -253,7 +246,7 @@
         - 설정된 예산 한계치 도달 시 알림
 
 ## Front-end Web & Mobile
-- AWS Amplify
+- [[AWS Amplify]]
 - AWS AppSync
 - Device Farm
 - Amazon Location Service
@@ -275,7 +268,7 @@
     - Amazon Connect는 옴니채널 클라우드 고객 센터입니다. Amazon Connect를 사용하면 저렴한 비용으로 고객 서비스를 제공하는 데 도움이 됩니다. Amazon Connect는 옴니채널 설계를 사용하여 고객과 에이전트에게 음성 및 채팅 전반에서 원활한 경험을 제공합니다. Amazon Connect는 네트워크 연결을 제공하지 않습니다.
 - Amazon Honeycode
 - Amazon Chime
-- Amazon Simple Email Service
+- [[Amazon Simple Email Service]]
 - Amazon WorkDocs
 - Amazon WorkMail
 - AWS Supply Chain
@@ -283,7 +276,7 @@
 - AWS Wickr
 - Amazon Chime SDK
 - Amazon One Enterprise
-- Amazon Pinpoint
+- [[Amazon Pinpoint]]
 
 ## End User Computing
 - WorkSpaces
