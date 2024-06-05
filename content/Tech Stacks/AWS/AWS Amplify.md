@@ -8,7 +8,9 @@ tags:
 ---
 ## AWS Amplify
 ---
-
+- A set of tools and services that helps you develop and deploy scalable full stack web and mobile apps
+- Authentication, Storage, API, CI/CD, PubSub, Analytics, AI/ML Predictions, Monitoring, ...
+- Connect source code from GitHub, AWS CodeCommit, Bitbucket, GitLab, or upload directly
 
 ## References
 ---
