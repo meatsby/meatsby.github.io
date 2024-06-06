@@ -252,7 +252,7 @@
 
 ## Application Integration
 - Step Functions
-- Amazon AppFlow
+- [[Amazon AppFlow]]
 - [[Amazon EventBridge]]
 - [[Amazon MQ]]
 - [[Amazon SNS]]
