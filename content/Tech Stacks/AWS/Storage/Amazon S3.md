@@ -310,6 +310,91 @@ tags:
 - Using S3 Batch Replication
 - Using DataSync
 
+### Using AWS CLI
+#### Source Account IAM Policy
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::source-DOC-EXAMPLE-BUCKET",
+        "arn:aws:s3:::source-DOC-EXAMPLE-BUCKET/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:PutObject",
+        "s3:PutObjectAcl"
+      ],
+      "Resource": [
+        "arn:aws:s3:::destination-DOC-EXAMPLE-BUCKET",
+        "arn:aws:s3:::destination-DOC-EXAMPLE-BUCKET/*"
+      ]
+    }
+  ]
+}
+```
+
+#### Destination Account IAM Policy
+```json
+{
+  "Version": "2012-10-17",
+  "Id": "Policy1611277539797",
+  "Statement": [
+    {
+      "Sid": "Stmt1611277535086",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::222222222222:user/Jane"
+      },
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::destination-DOC-EXAMPLE-BUCKET/*",
+      "Condition": {
+        "StringEquals": {
+          "s3:x-amz-acl": "bucket-owner-full-control"
+        }
+      }
+    },
+    {
+      "Sid": "Stmt1611277877767",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::222222222222:user/Jane"
+      },
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::destination-DOC-EXAMPLE-BUCKET"
+    }
+  ]
+}
+```
+
+#### Execute Command to sync
+```
+aws s3 cp s3://source-DOC-EXAMPLE-BUCKET/object.txt s3://destination-DOC-EXAMPLE-BUCKET/object.txt --acl bucket-owner-full-control
+```
+- Use `--exclude` & `--include` option to execute in multi-thread
+- Details can be found in [this video](https://www.youtube.com/watch?v=z-GRzlAwLjo)
+
+#### Troubleshooting
+```
+[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed
+```
+- Requires `AWS_CA_BUNDLE`
+
+```
+fatal error: An error occurred (IllegalLocationConstraintException)
+```
+- Requires source & destination
+	- e.g. `aws s3 sync s3://site1 s3://site2 --source-region ap-east-1 --region ap-southeast-1`
+
 ## References
 ---
 - [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
