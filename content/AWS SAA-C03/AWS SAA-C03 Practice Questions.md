@@ -18,7 +18,7 @@ Which solution meets these requirements?
 - D. Upload the data from each site to an Amazon EC2 instance in the closest Region. Store the data in an Amazon Elastic Block Store (Amazon EBS) volume. At regular intervals, take an EBS snapshot and copy it to the Region that contains the destination S3 bucket. Restore the EBS volume in that Region.
 
 - Answer
-	- A.
+	- A
 
 ## Question 2
 ---
@@ -31,7 +31,7 @@ What should the solutions architect do to meet these requirements with the LEAST
 - D. Use AWS Glue to catalog the logs. Use a transient Apache Spark cluster on Amazon EMR to run the SQL queries as needed.
 
 - Answer
-	- C.
+	- C
 
 ## Question 3
 ---
@@ -44,7 +44,7 @@ Which solution meets these requirements with the LEAST amount of operational ove
 - D. Tag each user that needs access to the S3 bucket. Add the aws:PrincipalTag global condition key to the S3 bucket policy.
 
 - Answer
-	- A.
+	- A
 
 ## Question 4
 ---
@@ -57,7 +57,7 @@ Which solution will provide private network connectivity to Amazon S3?
 - D. Create an Amazon API Gateway API with a private link to access the S3 endpoint.
 
 - Answer
-	- A.
+	- A
 
 ## Question 5
 ---
@@ -70,7 +70,7 @@ What should a solutions architect propose to ensure users see all of their docum
 - D. Configure the Application Load Balancer to send the request to both servers. Return each document from the correct server
 
 - Answer
-	- C.
+	- C
 
 ## Question 6
 ---
@@ -83,7 +83,7 @@ Which solution will meet these requirements?
 - D. Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.
 
 - Answer
-	- B.
+	- B
 
 ## Question 7
 ---
@@ -96,7 +96,7 @@ Which solution meets these requirements?
 - D. Publish the messages to an Amazon Simple Notification Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SQS) subscriptions. Configure the consumer applications to process the messages from the queues.
 
 - Answer
-	- D.
+	- D
 
 ## Question 8
 ---
@@ -109,7 +109,7 @@ How should a solutions architect design the architecture to meet these requireme
 - D. Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure Amazon EventBridge (Amazon CloudWatch Events) as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the compute nodes.
 
 - Answer
-	- B.
+	- B
 
 ## Question 9
 ---
@@ -123,7 +123,7 @@ Which solution will meet these requirements?
 - D. Install a utility on each user's computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days.
 
 - Answer
-	- B.
+	- B
 
 ## Question 10
 ---
@@ -136,7 +136,7 @@ Which solution will meet these requirements?
 - D. Use an API Gateway integration to send a message to an Amazon Simple Queue Service (Amazon SQS) standard queue when the application receives an order. Configure the SQS standard queue to invoke an AWS Lambda function for processing.
 
 - Answer
-	- B.
+	- B
 
 ## Question 11
 ---
@@ -149,7 +149,7 @@ What should a solutions architect do to accomplish this goal?
 - D. Create an encrypted Amazon Elastic Block Store (Amazon EBS) volume for each EC2 instance. Attach the new EBS volume to each EC2 instance. Migrate the credential file to the new EBS volume. Point the application to the new EBS volume.
 
 - Answer
-	- A.
+	- A
 
 ## Question 12
 ---
@@ -162,7 +162,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint. Create two domain names. Point one domain name to the CloudFront DNS name for dynamic content. Point the other domain name to the accelerator DNS name for static content. Use the domain names as endpoints for the web application.
 
 - Answer
-	- A.
+	- A
 
 ## Question 13
 ---
@@ -175,7 +175,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Encrypt the credentials as secrets by using AWS Key Management Service (AWS KMS) multi-Region customer managed keys. Store the secrets in an Amazon DynamoDB global table. Use an AWS Lambda function to retrieve the secrets from DynamoDB. Use the RDS API to rotate the secrets.
 
 - Answer
-	- A.
+	- A
 
 ## Question 14
 ---
@@ -189,7 +189,7 @@ Which solution will meet these requirements?
 - D. Use Amazon ElastiCache for Memcached with EC2 Spot Instances.
 
 - Answer
-	- C.
+	- C
 
 ## Question 15
 ---
@@ -202,7 +202,7 @@ Which solution will meet these requirements?
 - D. Use AWS Firewall Manager to create the required rules for traffic inspection and traffic filtering for the production VPC.
 
 - Answer
-	- C.
+	- C
 
 ## Question 16
 ---
@@ -215,7 +215,7 @@ Which solution will meet these requirements?
 - D. Create an AWS Glue table and crawler for the data in Amazon S3. Use Amazon Athena Federated Query to access data within Amazon RDS for PostgreSQL. Generate reports by using Amazon Athena. Publish the reports to Amazon S3. Use S3 bucket policies to limit access to the reports.
 
 - Answer
-	- B.
+	- B
 
 ## Question 17
 ---
@@ -228,7 +228,7 @@ What should the solutions architect do to meet this requirement?
 - D. Create an IAM user that grants access to the S3 bucket. Attach the user account to the EC2 instances.
 
 - Answer
-	- A.
+	- A
 
 ## Question 18
 ---
@@ -243,7 +243,7 @@ Which combination of actions will meet these requirements? (Choose two.)
 - E. Configure an Amazon EventBridge (Amazon CloudWatch Events) event to monitor the S3 bucket. When an image is uploaded, send an alert to an Amazon ample Notification Service (Amazon SNS) topic with the application owner's email address for further processing.
 
 - Answer
-	- A. & B.
+	- AB
 
 ## Question 19
 ---
@@ -257,7 +257,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance.
 
 - Answer
-	- D.
+	- D
 
 ## Question 20
 ---
@@ -271,7 +271,7 @@ Which solution will meet these requirements?
 - D. Take EBS snapshots of the production EBS volumes. Turn on the EBS fast snapshot restore feature on the EBS snapshots. Restore the snapshots into new EBS volumes. Attach the new EBS volumes to EC2 instances in the test environment.
 
 - Answer
-	- D.
+	- D
 
 ## Question 21
 ---
@@ -284,7 +284,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use an Amazon S3 bucket to host the website's static content. Deploy an Amazon CloudFront distribution. Set the S3 bucket as the origin. Use Amazon API Gateway and AWS Lambda functions for the backend APIs. Store the data in Amazon DynamoDB.
 
 - Answer
-	- D.
+	- D
 
 ## Question 22
 ---
@@ -297,7 +297,7 @@ Which storage option meets these requirements?
 - D. S3 One Zone-Infrequent Access (S3 One Zone-IA)
 
 - Answer
-	- B.
+	- B
 
 ## Question 23
 ---
@@ -310,7 +310,7 @@ Which storage solution will meet these requirements MOST cost-effectively?
 - D. Create an S3 Lifecycle configuration to transition objects from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 1 month.
 
 - Answer
-	- B.
+	- B
 
 ## Question 24
 ---
@@ -323,7 +323,7 @@ How should the solutions architect generate the information with the LEAST opera
 - D. Use AWS Cost and Usage Reports to create a report and send it to an Amazon S3 bucket. Use Amazon QuickSight with Amazon S3 as a source to generate an interactive graph based on instance types.
 
 - Answer
-	- B.
+	- B
 
 ## Question 25
 ---
@@ -337,7 +337,7 @@ Which solution will meet these requirements?
 - D. Set up two Lambda functions. Configure one function to receive the information. Configure the other function to load the information into the database. Integrate the Lambda functions by using an Amazon Simple Queue Service (Amazon SQS) queue.
 
 - Answer
-	- D.
+	- D
 
 ## Question 26
 ---
@@ -350,7 +350,7 @@ What should a solutions architect do to accomplish this goal?
 - D. Turn on Amazon S3 server access logging. Configure Amazon EventBridge (Amazon Cloud Watch Events).
 
 - Answer
-	- A.
+	- A
 
 ## Question 27
 ---
@@ -363,7 +363,7 @@ Which solution will meet these requirements?
 - D. Deploy a bastion server in a public subnet. When the product manager requires access to the dashboard, start the server and share the RDP credentials. On the bastion server, ensure that the browser is configured to open the dashboard URL with cached AWS credentials that have appropriate permissions to view the dashboard.
 
 - Answer
-	- A.
+	- A
 
 ## Question 28
 ---
@@ -376,7 +376,7 @@ Which solution will meet these requirements?
 - D. Deploy an identity provider (IdP) on premises. Enable AWS Single Sign-On (AWS SSO) from the AWS SSO console.
 
 - Answer
-	- B.
+	- B
 
 ## Question 29
 ---
@@ -390,7 +390,7 @@ Which solution will meet these requirements?
 - D. Deploy an Application Load Balancer (ALB) and an associated target group. Associate the target group with the Auto Scaling group. Create an Amazon Route 53 weighted record that points to aliases for each ALB. Deploy an Amazon CloudFront distribution that uses the weighted record as an origin.
 
 - Answer
-	- A.
+	- A
 
 ## Question 30
 ---
@@ -403,7 +403,7 @@ Which solution meets these requirements MOST cost-effectively?
 - D. Modify the DB instance to a low-capacity instance when tests are completed. Modify the DB instance again when required.
 
 - Answer
-	- C.
+	- C
 
 ## Question 31
 ---
@@ -416,7 +416,7 @@ What should a solutions architect do to accomplish this?
 - D. Write API calls to check all resources for proper tag allocation. Schedule an AWS Lambda function through Amazon CloudWatch to periodically run the code.
 
 - Answer
-	- A.
+	- A
 
 ## Question 32
 ---
@@ -429,7 +429,7 @@ Which method is the MOST cost-effective for hosting the website?
 - D. Configure an Application Load Balancer with an AWS Lambda target that uses the Express.js framework.
 
 - Answer
-	- B.
+	- B
 
 ## Question 33
 ---
@@ -442,7 +442,7 @@ What should a solutions architect recommend to meet these requirements?
 - D. Store the batched transactions data in Amazon S3 as files. Use AWS Lambda to process every file and remove sensitive data before updating the files in Amazon S3. The Lambda function then stores the data in Amazon DynamoDB. Other applications can consume transaction files stored in Amazon S3.
 
 - Answer
-	- C.
+	- C
 
 ## Question 34
 ---
@@ -455,7 +455,7 @@ What should a solutions architect do to meet these requirements?
 - D. Use AWS CloudTrail to track configuration changes and Amazon CloudWatch to record API calls.
 
 - Answer
-	- B.
+	- B
 
 ## Question 35
 ---
@@ -468,7 +468,7 @@ Which solution meets these requirements?
 - D. Enable AWS Shield Advanced and assign the ELB to it.
 
 - Answer
-	- D.
+	- D
 
 ## Question 36
 ---
@@ -481,7 +481,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create a customer managed KMS key and an S3 bucket in each Region. Configure the S3 buckets to use server-side encryption with AWS KMS keys (SSE-KMS). Configure replication between the S3 buckets.
 
 - Answer
-	- B.
+	- B
 
 ## Question 37
 ---
@@ -494,7 +494,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Establish an AWS Site-to-Site VPN connection. Instruct administrators to use their local on-premises machines to connect directly to the instances by using SSH keys across the VPN tunnel.
 
 - Answer
-	- B.
+	- B
 
 ## Question 38
 ---
@@ -507,7 +507,7 @@ Which solution meets these requirements MOST cost-effectively?
 - D. Enable S3 Transfer Acceleration on the bucket. Edit the Route 53 entries to point to the new endpoint.
 
 - Answer
-	- C.
+	- C
 
 ## Question 39
 ---
@@ -521,7 +521,7 @@ Which solution addresses this performance issue?
 - D. Enable Multi-AZ RDS read replicas with MySQL native asynchronous replication.
 
 - Answer
-	- A.
+	- A
 
 ## Question 40
 ---
@@ -535,7 +535,7 @@ What is the MOST operationally efficient solution that meets these requirements?
 - D. Create an Amazon Simple Queue Service (Amazon SQS) standard queue to ingest the alerts, and set the message retention period to 14 days. Configure consumers to poll the SQS queue, check the age of the message, and analyze the message data as needed. If the message is 14 days old, the consumer should copy the message to an Amazon S3 bucket and delete the message from the SQS queue.
 
 - Answer
-	- A.
+	- A
 
 ## Question 41
 ---
@@ -548,7 +548,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create a Docker container to use instead of an EC2 instance. Host the containerized application on Amazon Elastic Container Service (Amazon ECS). Configure Amazon CloudWatch Container Insights to send events to an Amazon Simple Notification Service (Amazon SNS) topic when the upload to the S3 bucket is complete.
 
 - Answer
-	- B.
+	- B
 
 ## Question 42
 ---
@@ -561,7 +561,7 @@ What is the MOST cost-effective way for the company to avoid Regional data trans
 - D. Provision an EC2 Dedicated Host to run the EC2 instances.
 
 - Answer
-	- C.
+	- C
 
 ## Question 43
 ---
@@ -574,7 +574,7 @@ Which solution meets these requirements?
 - D. Submit a support ticket through the AWS Management Console. Request the removal of S3 service limits from the account.
 
 - Answer
-	- B.
+	- B
 
 ## Question 44
 ---
@@ -588,7 +588,7 @@ Which combination of steps should a solutions architect take to meet these requi
 - E. Create a lifecycle policy for the objects in the S3 bucket.
 
 - Answer
-	- A. & B.
+	- AB
 
 ## Question 45
 ---
@@ -605,7 +605,7 @@ Which combination of actions should a solutions architect take to ensure that th
 - E. Modify the Lambda function to read from an Amazon Simple Queue Service (Amazon SQS) queue.
 
 - Answer
-	- B. & E.
+	- BE
 
 ## Question 46
 ---
@@ -619,7 +619,7 @@ What should a solutions architect do to meet these requirements with the LEAST d
 - D. Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Email Service (Amazon SES) to trigger a notification to the administrators and trigger an S3 Lifecycle policy to remove the meats that contain PII.
 
 - Answer
-	- B.
+	- B
 
 ## Question 47
 ---
@@ -632,7 +632,7 @@ What should the company do to guarantee the EC2 capacity?
 - D. Create an On-Demand Capacity Reservation that specifies the Region and three Availability Zones needed.
 
 - Answer
-	- D.
+	- D
 
 ## Question 48
 ---
@@ -645,7 +645,7 @@ What should a solutions architect do to meet these requirements?
 - D. Move the catalog to an Amazon Elastic File System (Amazon EFS) file system.
 
 - Answer
-	- D.
+	- D
 
 ## Question 49
 ---
@@ -658,7 +658,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Store individual files in Amazon S3 Standard storage. Use S3 Lifecycle policies to move the files to S3 Glacier Deep Archive after 1 year. Store search metadata in Amazon RDS. Query the files from Amazon RDS. Retrieve the files from S3 Glacier Deep Archive.
 
 - Answer
-	- B.
+	- B
 
 ## Question 50
 ---
@@ -671,7 +671,7 @@ What should a solutions architect do to meet these requirements?
 - D. Use AWS Systems Manager Run Command to run a custom command that applies the patch to all EC2 instances.
 
 - Answer
-	- D.
+	- D
 
 ## Question 51
 ---
@@ -685,7 +685,7 @@ Which combination of steps should a solutions architect take to meet these requi
 - E. Store the application data in Amazon S3. Create an Amazon Simple Notification Service (Amazon SNS) topic as an S3 event destination to send the report by email.
 
 - Answer
-	- B. & D.
+	- BD
 
 ## Question 52
 ---
@@ -698,7 +698,7 @@ Which solution will meet these requirements?
 - D. Migrate the application to Amazon EC2 instances in a Multi-AZ Auto Scaling group. Use Amazon Elastic Block Store (Amazon EBS) for storage.
 
 - Answer
-	- C.
+	- C
 
 ## Question 53
 ---
@@ -711,7 +711,7 @@ Which solution will meet these requirements?
 - D. Use an S3 Lifecycle policy to transition the records from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 1 year. Use S3 Object Lock in governance mode for a period of 10 years.
 
 - Answer
-	- C.
+	- C
 
 ## Question 54
 ---
@@ -724,7 +724,7 @@ What should a solutions architect do to meet these requirements?
 - D. Extend the file share environment to Amazon Elastic File System (Amazon EFS) with a Multi-AZ configuration. Migrate all the data to Amazon EFS.
 
 - Answer
-	- C.
+	- C
 
 ## Question 55
 ---
@@ -737,7 +737,7 @@ Which solution will meet these requirements?
 - D. Create a new peering connection between the public subnets and the private subnets. Create a different peering connection between the private subnets and the database subnets.
 
 - Answer
-	- C.
+	- C
 
 ## Question 56
 ---
@@ -750,7 +750,7 @@ Which solution will meet these requirements?
 - D. Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certificate associated with the company's domain name into AWS Certificate Manager (ACM) in the us-east-1 Region. Attach the certificate to the API Gateway APIs. Create Route 53 DNS records with the company's domain name. Point an A record to the company's domain name.
 
 - Answer
-	- C.
+	- C
 
 ## Question 57
 ---
@@ -763,7 +763,7 @@ What should a solutions architect do to meet these requirements?
 - D. Use AWS Fargate to deploy a custom machine learning model to detect inappropriate content. Use ground truth to label low-confidence predictions.
 
 - Answer
-	- B.
+	- B
 
 ## Question 58
 ---
@@ -776,7 +776,7 @@ What should a solutions architect do to meet these requirements?
 - D. Use Amazon EC2 instances from an Amazon Elastic Container Service (Amazon ECS)-optimized Amazon Machine Image (AMI).
 
 - Answer
-	- C.
+	- C
 
 ## Question 59
 ---
@@ -789,7 +789,7 @@ What should a solutions architect do to transmit and process the clickstream dat
 - D. Collect the data from Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose to transmit the data to an Amazon S3 data lake. Load the data in Amazon Redshift for analysis.
 
 - Answer
-	- D.
+	- D
 
 ## Question 60
 ---
@@ -802,9 +802,144 @@ What should a solutions architect do to meet this requirement?
 - D. Replace the ALB with a Network Load Balancer configured to use Server Name Indication (SNI).
 
 - Answer
-	- C.
+	- C
 
 ## Question 61
+---
+A company is developing a two-tier web application on AWS. The company's developers have deployed the application on an Amazon EC2 instance that connects directly to a backend Amazon RDS database. The company must not hardcode database credentials in the application. The company must also implement a solution to automatically rotate the database credentials on a regular basis.
+Which solution will meet these requirements with the LEAST operational overhead?
+
+- A. Store the database credentials in the instance metadata. Use Amazon EventBridge (Amazon CloudWatch Events) rules to run a scheduled AWS Lambda function that updates the RDS credentials and instance metadata at the same time.
+- B. Store the database credentials in a configuration file in an encrypted Amazon S3 bucket. Use Amazon EventBridge (Amazon CloudWatch Events) rules to run a scheduled AWS Lambda function that updates the RDS credentials and the credentials in the configuration file at the same time. Use S3 Versioning to ensure the ability to fall back to previous values.
+- C. Store the database credentials as a secret in AWS Secrets Manager. Turn on automatic rotation for the secret. Attach the required permission to the EC2 role to grant access to the secret.
+- D. Store the database credentials as encrypted parameters in AWS Systems Manager Parameter Store. Turn on automatic rotation for the encrypted parameters. Attach the required permission to the EC2 role to grant access to the encrypted parameters.
+
+- Answer
+	- C
+
+## Question 62
+---
+A company is deploying a new public web application to AWS. The application will run behind an Application Load Balancer (ALB). The application needs to be encrypted at the edge with an SSL/TLS certificate that is issued by an external certificate authority (CA). The certificate must be rotated each year before the certificate expires.
+What should a solutions architect do to meet these requirements?
+
+- A. Use AWS Certificate Manager (ACM) to issue an SSL/TLS certificate. Apply the certificate to the ALB. Use the managed renewal feature to automatically rotate the certificate.
+- B. Use AWS Certificate Manager (ACM) to issue an SSL/TLS certificate. Import the key material from the certificate. Apply the certificate to the ALUse the managed renewal feature to automatically rotate the certificate.
+- C. Use AWS Certificate Manager (ACM) Private Certificate Authority to issue an SSL/TLS certificate from the root CA. Apply the certificate to the ALB. Use the managed renewal feature to automatically rotate the certificate.
+- D. Use AWS Certificate Manager (ACM) to import an SSL/TLS certificate. Apply the certificate to the ALB. Use Amazon EventBridge (Amazon CloudWatch Events) to send a notification when the certificate is nearing expiration. Rotate the certificate manually.
+
+- Answer
+	- D
+
+## Question 63
+---
+A company runs its infrastructure on AWS and has a registered base of 700,000 users for its document management application. The company intends to create a product that converts large .pdf files to .jpg image files. The .pdf files average 5 MB in size. The company needs to store the original files and the converted files. A solutions architect must design a scalable solution to accommodate demand that will grow rapidly over time.
+Which solution meets these requirements MOST cost-effectively?
+
+- A. Save the .pdf files to Amazon S3. Configure an S3 PUT event to invoke an AWS Lambda function to convert the files to .jpg format and store them back in Amazon S3.
+- B. Save the .pdf files to Amazon DynamoDUse the DynamoDB Streams feature to invoke an AWS Lambda function to convert the files to .jpg format and store them back in DynamoDB.
+- C. Upload the .pdf files to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic Block Store (Amazon EBS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the files to .jpg format. Save the .pdf files and the .jpg files in the EBS store.
+- D. Upload the .pdf files to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic File System (Amazon EFS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the file to .jpg format. Save the .pdf files and the .jpg files in the EBS store.
+
+- Answer
+	- A
+
+## Question 64
+---
+A company has more than 5 TB of file data on Windows file servers that run on premises. Users and applications interact with the data each day.
+The company is moving its Windows workloads to AWS. As the company continues this process, the company requires access to AWS and on-premises file storage with minimum latency. The company needs a solution that minimizes operational overhead and requires no significant changes to the existing file access patterns. The company uses an AWS Site-to-Site VPN connection for connectivity to AWS.
+What should a solutions architect do to meet these requirements?
+
+- A. Deploy and configure Amazon FSx for Windows File Server on AWS. Move the on-premises file data to FSx for Windows File Server. Reconfigure the workloads to use FSx for Windows File Server on AWS.
+- B. Deploy and configure an Amazon S3 File Gateway on premises. Move the on-premises file data to the S3 File Gateway. Reconfigure the on-premises workloads and the cloud workloads to use the S3 File Gateway.
+- C. Deploy and configure an Amazon S3 File Gateway on premises. Move the on-premises file data to Amazon S3. Reconfigure the workloads to use either Amazon S3 directly or the S3 File Gateway. depending on each workload's location.
+- D. Deploy and configure Amazon FSx for Windows File Server on AWS. Deploy and configure an Amazon FSx File Gateway on premises. Move the on-premises file data to the FSx File Gateway. Configure the cloud workloads to use FSx for Windows File Server on AWS. Configure the on-premises workloads to use the FSx File Gateway.
+
+- Answer
+	- D
+
+## Question 65
+---
+A hospital recently deployed a RESTful API with Amazon API Gateway and AWS Lambda. The hospital uses API Gateway and Lambda to upload reports that are in PDF format and JPEG format. The hospital needs to modify the Lambda code to identify protected health information (PHI) in the reports.
+Which solution will meet these requirements with the LEAST operational overhead?
+
+- A. Use existing Python libraries to extract the text from the reports and to identify the PHI from the extracted text.
+- B. Use Amazon Textract to extract the text from the reports. Use Amazon SageMaker to identify the PHI from the extracted text.
+- C. Use Amazon Textract to extract the text from the reports. Use Amazon Comprehend Medical to identify the PHI from the extracted text.
+- D. Use Amazon Rekognition to extract the text from the reports. Use Amazon Comprehend Medical to identify the PHI from the extracted text.
+
+- Answer
+	- C
+
+## Question 66
+---
+  
+Topic 1
+
+A company has an application that generates a large number of files, each approximately 5 MB in size. The files are stored in Amazon S3. Company policy requires the files to be stored for 4 years before they can be deleted. Immediate accessibility is always required as the files contain critical business data that is not easy to reproduce. The files are frequently accessed in the first 30 days of the object creation but are rarely accessed after the first 30 days.
+Which storage solution is MOST cost-effective?
+
+- A. Create an S3 bucket lifecycle policy to move files from S3 Standard to S3 Glacier 30 days from object creation. Delete the files 4 years after object creation.
+- B. Create an S3 bucket lifecycle policy to move files from S3 Standard to S3 One Zone-Infrequent Access (S3 One Zone-IA) 30 days from object creation. Delete the files 4 years after object creation.
+- C. Create an S3 bucket lifecycle policy to move files from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-IA) 30 days from object creation. Delete the files 4 years after object creation.
+- D. Create an S3 bucket lifecycle policy to move files from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-IA) 30 days from object creation. Move the files to S3 Glacier 4 years after object creation.
+
+- Answer
+	- C
+
+## Question 67
+---
+A company hosts an application on multiple Amazon EC2 instances. The application processes messages from an Amazon SQS queue, writes to an Amazon RDS table, and deletes the message from the queue. Occasional duplicate records are found in the RDS table. The SQS queue does not contain any duplicate messages.
+What should a solutions architect do to ensure messages are being processed once only?
+
+- A. Use the CreateQueue API call to create a new queue.
+- B. Use the AddPermission API call to add appropriate permissions.
+- C. Use the ReceiveMessage API call to set an appropriate wait time.
+- D. Use the ChangeMessageVisibility API call to increase the visibility timeout.
+
+- Answer
+	- D
+
+## Question 68
+---
+A solutions architect is designing a new hybrid architecture to extend a company's on-premises infrastructure to AWS. The company requires a highly available connection with consistent low latency to an AWS Region. The company needs to minimize costs and is willing to accept slower traffic if the primary connection fails.
+What should the solutions architect do to meet these requirements?
+
+- A. Provision an AWS Direct Connect connection to a Region. Provision a VPN connection as a backup if the primary Direct Connect connection fails.
+- B. Provision a VPN tunnel connection to a Region for private connectivity. Provision a second VPN tunnel for private connectivity and as a backup if the primary VPN connection fails.
+- C. Provision an AWS Direct Connect connection to a Region. Provision a second Direct Connect connection to the same Region as a backup if the primary Direct Connect connection fails.
+- D. Provision an AWS Direct Connect connection to a Region. Use the Direct Connect failover attribute from the AWS CLI to automatically create a backup connection if the primary Direct Connect connection fails.
+
+- Answer
+	- A
+
+## Question 69
+---
+A company is running a business-critical web application on Amazon EC2 instances behind an Application Load Balancer. The EC2 instances are in an Auto Scaling group. The application uses an Amazon Aurora PostgreSQL database that is deployed in a single Availability Zone. The company wants the application to be highly available with minimum downtime and minimum loss of data.
+Which solution will meet these requirements with the LEAST operational effort?
+
+- A. Place the EC2 instances in different AWS Regions. Use Amazon Route 53 health checks to redirect traffic. Use Aurora PostgreSQL Cross-Region Replication.
+- B. Configure the Auto Scaling group to use multiple Availability Zones. Configure the database as Multi-AZ. Configure an Amazon RDS Proxy instance for the database.
+- C. Configure the Auto Scaling group to use one Availability Zone. Generate hourly snapshots of the database. Recover the database from the snapshots in the event of a failure.
+- D. Configure the Auto Scaling group to use multiple AWS Regions. Write the data from the application to Amazon S3. Use S3 Event Notifications to launch an AWS Lambda function to write the data to the database.
+
+- Answer
+	- B
+
+## Question 70
+---
+A company's HTTP application is behind a Network Load Balancer (NLB). The NLB's target group is configured to use an Amazon EC2 Auto Scaling group with multiple EC2 instances that run the web service.
+The company notices that the NLB is not detecting HTTP errors for the application. These errors require a manual restart of the EC2 instances that run the web service. The company needs to improve the application's availability without writing custom scripts or code.
+What should a solutions architect do to meet these requirements?
+
+- A. Enable HTTP health checks on the NLB, supplying the URL of the company's application.
+- B. Add a cron job to the EC2 instances to check the local application's logs once each minute. If HTTP errors are detected. the application will restart.
+- C. Replace the NLB with an Application Load Balancer. Enable HTTP health checks by supplying the URL of the company's application. Configure an Auto Scaling action to replace unhealthy instances.
+- D. Create an Amazon Cloud Watch alarm that monitors the UnhealthyHostCount metric for the NLB. Configure an Auto Scaling action to replace unhealthy instances when the alarm is in the ALARM state.
+
+- Answer
+	- C
+
+## Question 71
 ---
 
 
