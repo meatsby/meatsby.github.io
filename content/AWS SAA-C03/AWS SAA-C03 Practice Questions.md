@@ -1095,7 +1095,7 @@ What should a solutions architect recommend to meet this requirement?
 - D. Create an Amazon EventBridge (Amazon CloudWatch Events) rule to detect any certificates that will expire within 30 days. Configure the rule to invoke an AWS Lambda function. Configure the Lambda function to send a custom alert by way of Amazon Simple Notification Service (Amazon SNS).
 
 - Answer
-	- B
+	- B, AWS Config has a managed rule named acm-certificate-expiration-check to check for expiring certificates (configurable number of days)
 
 ## Question 83
 ---
