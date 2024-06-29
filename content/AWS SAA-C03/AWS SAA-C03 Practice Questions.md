@@ -2954,7 +2954,7 @@ Which storage solution meets these requirements MOST cost-effectively?
 - D. Amazon S3
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95307-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 222
 ---
@@ -2967,7 +2967,7 @@ How should a solutions architect grant this access to the vendor?
 - D. Create a new identity provider by choosing “AWS account” as the provider type in the IAM console. Supply the vendor’s AWS account ID and user name. Attach the appropriate IAM policies to the new provider for the permissions that the vendor requires.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95160-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 223
 ---
@@ -2981,7 +2981,7 @@ Which combination of steps should the solutions architect take to accomplish thi
 - E. Embed the access keys in the Java Spring Boot code.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95310-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AD
 
 ## Question 224
 ---
@@ -2995,7 +2995,7 @@ Which combination of steps should the company take to meet these requirements? (
 - E. Launch four EC2 instances: two instances in one Availability Zone and two instances in another Availability Zone.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95311-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- CE
 
 ## Question 225
 ---
@@ -3008,7 +3008,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create an ingestion service on Amazon EC2 instances that are spread across multiple Availability Zones. Configure the service to forward data to an Amazon RDS Multi-AZ database.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/94985-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 226
 ---
@@ -3022,7 +3022,7 @@ Which combination of steps should a solutions architect take to meet these requi
 - E. Use Amazon API Gateway to send the raw data to an Amazon Kinesis data stream. Configure Amazon Kinesis Data Firehose to use the data stream as a source to deliver the data to Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95312-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AE
 
 ## Question 227
 ---
@@ -3036,7 +3036,7 @@ Which solution will delete objects that are older than 3 years in the MOST cost-
 - D. Configure the parent account as the owner of all objects that are delivered to the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95314-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 228
 ---
@@ -3050,7 +3050,7 @@ Which solution will meet these requirements?
 - D. Modify the API to write incoming data to an Amazon Simple Notification Service (Amazon SNS) topic. Use an AWS Lambda function that Amazon SNS invokes to write data from the topic to the database.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95318-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 229
 ---
@@ -3063,7 +3063,7 @@ Which solution meets these requirements?
 - D. Create an EC2 Auto Scaling group for the database tier. Migrate the existing databases to the new environment.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95319-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 230
 ---
@@ -3076,7 +3076,7 @@ What should the solutions architect recommend?
 - D. Replace the two NAT instances with Spot Instances in different Availability Zones and deploy a Network Load Balancer.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95322-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 231
 ---
