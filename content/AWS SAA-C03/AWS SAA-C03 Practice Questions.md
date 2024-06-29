@@ -3089,7 +3089,7 @@ Which solution will provide the required access MOST securely?
 - D. Launch an EC2 instance with an Elastic IP address into VPC B. Proxy all requests through the new EC2 instance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95323-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 232
 ---
@@ -3101,7 +3101,7 @@ A company runs demonstration environments for its customers on Amazon EC2 instan
 - D. Configure an Amazon EventBridge rule to listen for events of type EC2 Instance State-change Notification. Configure an Amazon Simple Notification Service (Amazon SNS) topic as a target. Subscribe the operations team to the topic.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95324-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 233
 ---
@@ -3115,7 +3115,7 @@ Which combination of actions will accomplish this? (Choose two.)
 - E. Apply the required permissions to the root user with an inline policy document.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95084-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AB
 
 ## Question 234
 ---
@@ -3128,7 +3128,7 @@ Which solution will meet these requirements?
 - D. Use BitLocker to encrypt all data at rest. Import the company’s TLS certificate keys to AWS Key Management Service (AWS KMS) Attach the KMS keys to the ALB to encrypt data in transit.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95325-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 235
 ---
@@ -3141,7 +3141,7 @@ What should a solutions architect recommend?
 - D. Use the AWS Schema Conversion Tool with AWS Database Migration Service (AWS DMS) using a compute optimized replication instance. Create a full load plus change data capture (CDC) replication task and a table mapping to select the largest tables.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95326-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 236
 ---
@@ -3154,7 +3154,7 @@ Which solution meets these requirements?
 - D. Use load-balanced Multi-AZ AWS Elastic Beanstalk environments for the front-end layer and the application layer. Move the database to an Amazon RDS Multi-AZ DB instance. Use Amazon S3 to store and serve users’ images.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/94990-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 237
 ---
@@ -3167,7 +3167,7 @@ Which solution will meet these requirements?
 - D. Create a private virtual interface (VIF) for the EC2 instance running in VPC-B and add appropriate routes from VPC-A.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95144-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 238
 ---
@@ -3180,7 +3180,7 @@ What should a solutions architect do to meet this requirement MOST cost-effectiv
 - D. Use AWS Cost and Usage Reports to create a report with hourly granularity. Integrate the report data with Amazon Athena. Use Amazon EventBridge to schedule an Athena query. Configure an Amazon Simple Notification Service (Amazon SNS) topic to receive a notification when a threshold is exceeded.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/94996-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 239
 ---
@@ -3194,7 +3194,7 @@ What should a solutions architect recommend?
 - D. Set up Amazon EC2 on Windows, attach multiple Amazon Elastic Block Store (Amazon EBS) volumes, and move all media and application files.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/35832-exam-aws-certified-solutions-architect-associate-saa-c02/)
-	- 
+	- B
 
 ## Question 240
 ---
@@ -3207,7 +3207,7 @@ Which solution provides the LOWEST data transfer egress cost for the company?
 - D. Host the visualization tool in the same AWS Region as the data warehouse and access it over a Direct Connect connection at a location in the same Region.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/94998-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 241
 ---
