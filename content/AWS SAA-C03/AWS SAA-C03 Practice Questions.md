@@ -3220,7 +3220,7 @@ Which solution will meet these requirements with the LEAST amount of operational
 - D. Migrate the PostgreSQL database to an Amazon RDS for PostgreSQL DB instance. Set up DB snapshots to be copied to another Region.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95000-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 242
 ---
@@ -3233,7 +3233,7 @@ Which policy should be used to meet this requirement?
 - D. Geolocation routing policy
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95001-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 243
 ---
@@ -3246,7 +3246,7 @@ What should a solutions architect recommend to meet these requirements?
 - D. Attach an Amazon Elastic File System (Amazon EFS) file system to each clinic’s on-premises servers.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95002-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 244
 ---
@@ -3259,7 +3259,7 @@ What should a solutions architect recommend to meet these requirements?
 - D. Move the database to a separate EC2 instance, and schedule backups to Amazon S3. Create an Amazon Machine Image (AMI) from the original EC2 instance. Configure an Application Load Balancer in two Availability Zones. Attach an Auto Scaling group that uses the AMI across two Availability Zones.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95336-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 245
 ---
@@ -3272,7 +3272,7 @@ Which solution will configure the development environment MOST cost-effectively?
 - D. Reduce the maximum number of EC2 instances in the development environment’s Auto Scaling group.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95337-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 246
 ---
@@ -3285,7 +3285,7 @@ How should the solutions architect reconfigure the architecture to resolve this 
 - D. Create public subnets in each Availability Zone. Associate the public subnets with the ALB. Update the route tables for the public subnets with a route to the private subnets.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95003-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 247
 ---
@@ -3299,7 +3299,7 @@ Which combination of actions should a solutions architect take before implementi
 - E. Enable automatic backups on the source instance by setting the backup retention period to a value other than 0.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95004-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- CE
 
 ## Question 248
 ---
@@ -3312,7 +3312,7 @@ What should a solutions architect do to meet these requirements?
 - D. Route incoming requests to Amazon Simple Queue Service (Amazon SQS). Configure an EC2 Auto Scaling group based on queue size. Update the software to read from the queue.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95329-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 249
 ---
@@ -3325,7 +3325,7 @@ Which AWS solution meets these requirements?
 - D. Create an Amazon FSx for Windows File Server file system. Attach the file system to the origin server. Connect the application server to the file system.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95006-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 250
 ---
@@ -3338,7 +3338,7 @@ What should a solutions architect do to meet these requirements when configuring
 - D. Use Amazon S3 as the target. Enable an S3 Lifecycle policy to transition the logs to S3 Standard-Infrequent Access (S3 Standard-IA) after 90 days.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95007-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 251
 ---
