@@ -3481,7 +3481,7 @@ Which combination of actions should a solutions architect take to meet these req
 - E. Configure AWS Global Accelerator. Forward requests to a Network Load Balancer (NLB). Configure the NLB to set up path-based routing to different EC2 instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95011-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AC
 
 ## Question 262
 ---
@@ -3495,7 +3495,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Create a Transit VPC. Update the VPC route tables in the Cache VPC and the App VPC to route traffic through the Transit VPC. Configure an inbound rule for the Transit VPC’s security group to allow inbound connection from the application’s security group.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95463-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 263
 ---
@@ -3509,7 +3509,7 @@ Which combination of actions should a solutions architect take to meet these req
 - E. Deploy Kubernetes worker nodes on Amazon EC2 instances that span multiple Availability Zones. Create a deployment that specifies two or more replicas for each microservice.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95012-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AD
 
 ## Question 264
 ---
@@ -3522,7 +3522,7 @@ What should a solutions architect implement to overcome these timeout errors?
 - D. Create an Application Load Balancer (ALB) with a health check in front of the EC2 instances. Route to the ALB from Route 53.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95345-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, not B because DNS cache in clients could drive timeouts
 
 ## Question 265
 ---
@@ -3535,7 +3535,7 @@ Which solution meets these requirements and is MOST secure?
 - D. Configure a public Application Load Balancer with multiple redundant Amazon EC2 instances in public subnets. Configure Amazon CloudFront to deliver HTTPS content using the EC2 instances as the origin.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95013-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 266
 ---
@@ -3548,7 +3548,7 @@ Which solution meets these requirements?
 - D. Configure an Amazon DynamoDB database to serve as the data store for the application. Create a DynamoDB Accelerator (DAX) cluster to act as the in-memory cache for DynamoDB hosting the application data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95014-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 267
 ---
@@ -3561,7 +3561,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create an Amazon Kinesis Data Firehose delivery stream to store the data in Amazon S3. Create an Amazon Kinesis Data Analytics application to analyze the data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95347-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, not C because it introduces unnecessary complexity by involving EMR
 
 ## Question 268
 ---
@@ -3574,7 +3574,7 @@ What should a solutions architect do to meet these requirements?
 - D. Migrate the database from Amazon RDS for MySQL to Amazon DynamoDB.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95016-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 269
 ---
@@ -3587,7 +3587,7 @@ What should the solutions architect recommend?
 - D. Copy the data into an Amazon Redshift cluster and have the business analysts run their queries.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95032-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 270
 ---
@@ -3600,7 +3600,7 @@ Which solution meets these requirements?
 - D. Enable the security option to encrypt the S3 buckets through the use of a default AWS Key Management Service (AWS KMS) key.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95031-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 271
 ---
