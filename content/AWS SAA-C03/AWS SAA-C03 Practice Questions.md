@@ -3746,7 +3746,7 @@ Which solution meets these requirements?
 - D. Configure the DB instance in one Availability Zone, and configure AWS Database Migration Service (AWS DMS) change data capture (CDC) tasks.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99511-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 282
 ---
@@ -3759,7 +3759,7 @@ Which solution will meet these requirements?
 - D. Configure the security group for the ALB to allow any TCP traffic on any port.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99660-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 283
 ---
@@ -3773,7 +3773,7 @@ Which solution will meet these requirements?
 - D. Migrate the simulation application to Linux Amazon EC2 instances. Migrate the visualization application to Windows EC2 instances. Configure Amazon FSx for NetApp ONTAP for storage.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99512-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, since FSx for NetApp ONTAP provides shared storage between Linux and Windows file systems
 
 ## Question 284
 ---
@@ -3786,7 +3786,7 @@ What should the solutions architect do to meet these requirements?
 - D. Deploy an AWS Snowball device in the on-premises data center after completing an export job request in the AWS Snowball console.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/43782-exam-aws-certified-solutions-architect-associate-saa-c02/)
-	- 
+	- D
 
 ## Question 285
 ---
@@ -3799,7 +3799,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Create a t2.micro Amazon EC2 instance. Deploy a LAMP (Linux, Apache, MySQL, PHP/Perl/Python) stack to host the webpage. Use client-side scripting to build the contact form. Integrate the form with Amazon WorkMail.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99680-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 286
 ---
@@ -3813,7 +3813,7 @@ Which solution will meet these requirements?
 - D. Use AWS Certificate Manager (ACM) to validate the website’s SSL certificate.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99669-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 287
 ---
@@ -3826,7 +3826,7 @@ How should a solutions architect design the architecture to meet these requireme
 - D. Host the application tier and the business tier on Amazon EC2 instances. Host the database tier on Amazon RDS. Use a Provisioned IOPS SSD (io2) Amazon Elastic Block Store (Amazon EBS) volume for file sharing between the tiers.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99670-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 288
 ---
@@ -3839,7 +3839,7 @@ What should a solutions architect do to meet these requirements?
 - D. Configure a General Purpose SSD (gp3) Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume to all web servers.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99671-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 289
 ---
@@ -3852,7 +3852,7 @@ Which solution will meet these requirements in the MOST secure manner?
 - D. Apply an IAM role to the Lambda function. Apply an IAM policy to the role to grant read access to all S3 buckets in the account.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99756-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 290
 ---
@@ -3865,7 +3865,7 @@ Which EC2 instance purchasing option should a solutions architect recommend to m
 - D. A mix of On-Demand Instances and Reserved Instances
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100006-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 291
 ---
