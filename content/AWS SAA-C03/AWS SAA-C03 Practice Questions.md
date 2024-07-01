@@ -3879,7 +3879,7 @@ Which services or methods will meet these requirements with the LEAST impact to 
 - E. AWS Secrets Manager
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99831-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AB
 
 ## Question 292
 ---
@@ -3893,7 +3893,7 @@ Which solutions will meet these requirements? (Choose two.)
 - E. Use Amazon Kinesis Data Streams to stream the data. Use AWS Glue to transform the data. Use Amazon Kinesis Data Firehose to write the data to Amazon S3. Use the Amazon RDS query editor to query the transformed data from Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99834-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AB
 
 ## Question 293
 ---
@@ -3906,7 +3906,7 @@ Which solution meets these requirements?
 - D. Use AWS Storage Gateway and configure a stored volume gateway. Run the Storage Gateway software appliance on premises and map the gateway storage volumes to on-premises storage. Mount the gateway storage volumes to provide local access to the data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99692-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 294
 ---
@@ -3919,7 +3919,7 @@ How should a solutions architect configure access to meet these requirements?
 - D. Establish an AWS Site-to-Site VPN connection between the VPC and the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99954-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 295
 ---
@@ -3932,7 +3932,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Process the data and store the transformed data in three separate Amazon DynamoDB tables so that each application has its own custom dataset. Point each application to its respective DynamoDB table.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99956-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 296
 ---
@@ -3945,7 +3945,7 @@ What is the SMALLEST CIDR block that meets these requirements?
 - D. 10.0.1.0/24
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99651-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 297
 ---
@@ -3959,7 +3959,7 @@ Which solution will meet these requirements?
 - D. Create two Amazon CloudWatch alarms. Configure the first CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is below 20%. Configure the second CloudWatch alarm to enter the ALARM state when the average CPUUtilization matric is above 50%. Configure the alarms to publish to an Amazon Simple Notification Service (Amazon SNS) topic to send an email message. After receiving the message, log in to decrease or increase the number of EC2 instances that are running.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99652-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 298
 ---
@@ -3973,7 +3973,7 @@ Which solution will make the application highly available?
 - D. Provision a subnet that extends across both Availability Zones. Configure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. Configure the DB instance for Multi-AZ deployment.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99653-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 299
 ---
@@ -3986,7 +3986,7 @@ Which solution will meet the performance requirements?
 - D. Create an Amazon FSx for NetApp ONTAP file system. Set each volume’s tiering policy to NONE. Import the raw data into the file system. Mount the file system on the EC2 instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99676-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 300
 ---
@@ -3999,4 +3999,4 @@ What should a solutions architect do to meet these requirements MOST cost-effect
 - D. Migrate the application layer to Amazon EC2 On-Demand Instances. Migrate the data storage layer to Amazon RDS Reserved Instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99948-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
