@@ -3351,7 +3351,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create an internet gateway, and attach it to the VPC. Create a NAT instance, and place it in the same subnet where the EC2 instance is located. Configure the private subnet route table to use the internet gateway as the default route.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95023-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 252
 ---
@@ -3363,6 +3363,8 @@ What should a solutions architect do to meet these requirements?
 ## Question 253
 ---
 A solutions architect has created two IAM policies: Policy1 and Policy2. Both policies are attached to an IAM group.
+![](https://img.examtopics.com/aws-certified-solutions-architect-associate-saa-c03/image2.png)
+![](https://img.examtopics.com/aws-certified-solutions-architect-associate-saa-c03/image3.png)
 A cloud engineer is added as an IAM user to the IAM group. Which action will the cloud engineer be able to perform?
 
 - A. Deleting IAM users
@@ -3371,7 +3373,7 @@ A cloud engineer is added as an IAM user to the IAM group. Which action will the
 - D. Deleting logs from Amazon CloudWatch Logs
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95008-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 254
 ---
@@ -3384,7 +3386,7 @@ What should a solutions architect do to correct this issue?
 - D. Create security group rules using the subnet CIDR blocks as the source or destination.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95009-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 255
 ---
@@ -3397,7 +3399,7 @@ How should a solutions architect refactor this workflow to prevent the creation 
 - D. Store the order in the database. Send a message that includes the order number to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Set the payment service to retrieve the message and process the order. Delete the message from the queue.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95026-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 256
 ---
@@ -3411,7 +3413,7 @@ Which combination of actions should be taken to meet these requirements? (Choose
 - E. Encrypt the bucket using AWS KMS.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95460-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BD
 
 ## Question 257
 ---
@@ -3424,7 +3426,7 @@ How should the company move the data to Amazon S3 to meet these requirements?
 - D. Use a bootstrap script during the launch of an EC2 instance to install Amazon Kinesis Agent. Configure Kinesis Agent to collect the EC2 Auto Scaling status data and send the data to Amazon Kinesis Data Firehose. Store the data in Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95027-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, since near-real-time == Kinesis Data Firehose
 
 ## Question 258
 ---
@@ -3437,7 +3439,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create an AWS Glue extract, transform, and load (ETL) job to convert the .csv files to Parquet format and place the output files into an S3 bucket. Create an AWS Lambda function for each S3 PUT event to invoke the ETL job.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95028-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 259
 ---
@@ -3450,7 +3452,7 @@ Which solution should a solutions architect recommend to meet these requirements
 - D. Configure an AWS Database Migration Service (AWS DMS) replication task. Deploy a replication instance, and configure a change data capture (CDC) task to stream database changes to Amazon S3 as the target. Configure S3 Lifecycle policies to delete the snapshots after 2 years.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95030-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 260
 ---
@@ -3464,7 +3466,7 @@ Which solution will meet these requirements?
 - D. Join the file system to the Active Directory to restrict access.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95343-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 261
 ---
