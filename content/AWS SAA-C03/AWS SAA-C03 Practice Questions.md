@@ -3613,7 +3613,7 @@ What should the solutions architect do to meet these requirements?
 - D. Change the scaling policy to add more EC2 instances during each scaling operation.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/95018-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 272
 ---
@@ -3627,7 +3627,7 @@ What should a solutions architect do to meet these requirements?
 - D. Launch an EC2 instance in each additional Region and configure NGINX to act as a cache server for that Region. Put all the EC2 instances and the ALB behind an Amazon Route 53 record set with a geolocation routing policy.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99865-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 273
 ---
@@ -3640,7 +3640,7 @@ Which solution will meet these requirements with the LOWEST recovery time object
 - D. Use an Amazon RDS Multi-AZ DB instance with a warm standby deployment.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99505-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, as Multi-AZ is not for DR and warm standby has lowest RTO
 
 ## Question 274
 ---
@@ -3653,7 +3653,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 - D. Launch EC2 instances in a secondary Availability Zone. Keep the EC2 instances in the secondary Availability Zone active at all times.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99459-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 275
 ---
@@ -3666,7 +3666,7 @@ How should the scaling be changed to address the staff complaints and keep costs
 - D. Implement a scheduled action that sets the minimum and maximum capacity to 20 shortly before the office opens.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99584-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, not A as C has better cost effectiveness
 
 ## Question 276
 ---
@@ -3680,7 +3680,7 @@ What should a solutions architect do to ensure the system can automatically scal
 - E. Configure the Auto Scaling group to use the average free memory as the scaling metric.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99739-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AD
 
 ## Question 277
 ---
@@ -3693,7 +3693,7 @@ Which storage solution is MOST cost-effective?
 - D. Use Amazon S3 for storing the video content. Move the files temporarily over to an Amazon Elastic Block Store (Amazon EBS) volume attached to the server for processing.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99509-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 278
 ---
@@ -3707,7 +3707,7 @@ Which combination of steps should a solutions architect take to meet these requi
 - E. Configure Amazon Macie for the AWS account. Integrate Macie with Amazon EventBridge to send monthly notifications through an Amazon Simple Notification Service (Amazon SNS) subscription.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99940-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BE
 
 ## Question 279
 ---
@@ -3720,7 +3720,7 @@ Which solution will meet these requirements?
 - D. Use the AWS CLI to create an on-demand backup of the DynamoDB table. Set up an Amazon EventBridge rule that runs the command on the first day of each month with a cron expression. Specify in the command to transition the backups to cold storage after 6 months and to delete the backups after 7 years.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99793-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 280
 ---
@@ -3733,7 +3733,7 @@ What should a solutions architect do to meet these requirements?
 - D. Use standard SQL queries in Amazon DynamoDB to analyze the CloudFront logs in the S3 bucket. Visualize the results with Amazon QuickSight.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99508-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 281
 ---
