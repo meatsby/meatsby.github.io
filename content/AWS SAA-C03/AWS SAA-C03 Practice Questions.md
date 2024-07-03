@@ -4148,7 +4148,7 @@ Which solution meets these requirements?
 - D. Create multiple Amazon Kinesis Data Firehose delivery streams based on the quote type to deliver data streams to an Amazon OpenSearch Service cluster. Configure the application to send messages to the proper delivery stream. Configure each backend group of application servers to search for the messages from OpenSearch Service and process them accordingly.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99627-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 312
 ---
@@ -4161,7 +4161,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 - D. Write an AWS Lambda function that schedules nightly snapshots of the application's EBS volumes and copies the snapshots to a different Availability Zone.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99785-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 313
 ---
@@ -4174,7 +4174,7 @@ What should a solutions architect recommend to meet these requirements?
 - D. Set up AWS Client VPN between the mobile app and the AWS environment to stream content.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100130-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 314
 ---
@@ -4187,7 +4187,7 @@ Which service should a solutions architect recommend?
 - D. Amazon RDS for MySQL
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99769-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, as "without selecting a particular instance type" = serverless
 
 ## Question 315
 ---
@@ -4200,7 +4200,7 @@ Which solution will meet these requirements?
 - D. Turn on Amazon Inspector. Deploy the Amazon Inspector agent to the EC2 instances. Configure an AWS Lambda function to automate the generation and distribution of reports that detail the findings.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99808-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 316
 ---
@@ -4213,7 +4213,7 @@ What should a solutions architect recommend to meet these requirements?
 - D. Use AWS Systems Manager Run Command to run the script on demand.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99698-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 317
 ---
@@ -4227,7 +4227,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Amazon EventBridge to launch an Amazon EMR cluster on a weekly schedule. Configure the EMR cluster to perform an extract, transform, and load (ETL) job to process the .csv files and store the processed data in an Amazon Redshift table.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99817-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 318
 ---
@@ -4241,7 +4241,7 @@ Which actions should the solutions architect take to meet these requirements? (C
 - E. Restore previous resource configurations with an AWS CloudFormation template.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99804-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AD
 
 ## Question 319
 ---
@@ -4254,7 +4254,7 @@ Which solution will meet this requirement with the LEAST amount of administrativ
 - D. Use an Amazon Cognito custom authorizer to authenticate users. Invoke an AWS Lambda function to generate a temporary SSH key.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99628-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, as STS does not generate SSH keys, bastion instances do not remove all shared keys, and Cognito is not meant for internal users
 
 ## Question 320
 ---
@@ -4267,7 +4267,7 @@ Which solution provides near-real-time data querying that is scalable with minim
 - D. Store ingested data in an Amazon Elastic Block Store (Amazon EBS) volume. Publish data to Amazon ElastiCache for Redis. Subscribe to the Redis channel to query the data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99752-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, as B does not offer real-time querying
 
 ## Question 321
 ---
