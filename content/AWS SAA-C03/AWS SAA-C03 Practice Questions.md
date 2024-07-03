@@ -4279,7 +4279,7 @@ What should a solutions architect do to ensure that all objects uploaded to an A
 - D. Update the bucket policy to deny if the PutObject does not have an x-amz-server-side-encryption header set.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99685-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 322
 ---
@@ -4293,7 +4293,7 @@ What should the solutions architect do to meet these requirements?
 - D. Create Amazon Simple Notification Service (Amazon SNS) notification topics and subscriptions. Use one subscription with the application to generate the thumbnail after the image upload is complete. Use a second subscription to message the user's mobile app by way of a push notification after thumbnail generation is complete.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99753-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 323
 ---
@@ -4307,7 +4307,7 @@ Which system architecture should the solutions architect recommend?
 - D. Create a gateway VPC endpoint for Amazon S3. Configure a Site-to-Site VPN connection from the facility network to the VPC so that sensor data can be written directly to an S3 bucket by way of the VPC endpoint.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99699-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 324
 ---
@@ -4321,7 +4321,7 @@ Which solution will meet these requirements with the LEAST amount of change to t
 - D. Provision an AWS Storage Gateway Volume Gateway stored volume with the same amount of disk space as the existing file storage volume. Mount the Volume Gateway stored volume to the existing file server by using iSCSI, and copy all files to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99711-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, as C is for frequently accessed data and 10TB limit
 
 ## Question 325
 ---
@@ -4335,7 +4335,7 @@ Which solution meets these requirements?
 - D. Update the Amazon Cognito pool to use custom attribute mappings within the identity pool and grant users the proper permissions to access the protected content.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99754-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 326
 ---
@@ -4349,7 +4349,7 @@ Which combination of actions should a solutions architect recommend to meet thes
 - E. Move assets to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 30 days.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99755-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AB
 
 ## Question 327
 ---
@@ -4362,7 +4362,7 @@ Which solution meets these requirements?
 - D. Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traffic to the ALB. Use a URL-based rule listener in the ALB’s target group for outbound access to the internet.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99795-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, as a Network Firewall creates stateful outbound rules to allow certain domains for software patch download and deny all other domains
 
 ## Question 328
 ---
@@ -4376,7 +4376,7 @@ What should a solutions architect recommend to ensure that all the requests are 
 - D. Add an Amazon CloudFront distribution for the static content. Add an Amazon Simple Queue Service (Amazon SQS) queue to receive requests from the website for later processing by the EC2 instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99704-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 329
 ---
@@ -4389,7 +4389,7 @@ Which solution will meet these requirements?
 - D. Turn on Amazon Inspector in the account. Configure Amazon Inspector to scan the EC2 instances for software vulnerabilities. Set up AWS Systems Manager Patch Manager to patch the EC2 instances on a regular schedule.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99796-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 330
 ---
@@ -4402,7 +4402,7 @@ What should a solutions architect do to meet this requirement?
 - D. Generate a certificate in AWS Identity and Access Management (IAM). Enable SSL/TLS on the DB instances by using the certificate.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99702-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 331
 ---
