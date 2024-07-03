@@ -4013,7 +4013,7 @@ Which AWS solution will meet these requirements?
 - D. AWS Transfer Family
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99659-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, as Snowcone is suitable when network bandwidth is limited, FSx File GW only provides access to files stored in FSx, and Transfer Family is transferring file over SFTP and such
 
 ## Question 302
 ---
@@ -4028,7 +4028,7 @@ Which combination of solutions will meet these requirements? (Choose two.)
 - E. Deploy an Auto Scaling group of Amazon EC2 instances to convert the video files to more appropriate formats.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99693-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AC
 
 ## Question 303
 ---
@@ -4041,7 +4041,7 @@ What should a solutions architect recommend?
 - D. Use AWS Application Auto Scaling with target tracking policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99813-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 304
 ---
@@ -4054,7 +4054,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use AWS Database Migration Service (AWS DMS).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99949-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 305
 ---
@@ -4067,7 +4067,7 @@ Which AWS solution meets these requirements?
 - D. Create an Amazon S3 bucket. Assign an IAM role to the application to grant access to the S3 bucket. Mount the S3 bucket to the application server.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99809-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 306
 ---
@@ -4080,7 +4080,7 @@ Which solution meets these requirements?
 - D. Deploy an Auto Scaling group with a step scaling policy to launch EC2 instances in different Availability Zones.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99807-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, as BCD distributes instances across AZs which is bad for inter-node network
 
 ## Question 307
 ---
@@ -4093,7 +4093,7 @@ Which AWS solution should the company use to meet these requirements?
 - D. AWS Storage Gateway Volume Gateway cached volumes
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99611-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 308
 ---
@@ -4108,7 +4108,7 @@ Which combination of steps should the finance team take to meet these requiremen
 - E. Review the Trusted Advisor check for Amazon Redshift Reserved Node Optimization.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99936-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BD, as C is for 1 or 3 years
 
 ## Question 309
 ---
@@ -4121,7 +4121,7 @@ Which solution will accomplish this goal with the LEAST operational overhead?
 - D. Turn on AWS CloudTrail for S3 object monitoring. Analyze bucket access patterns by using CloudTrail logs that are integrated with Amazon CloudWatch Logs.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99803-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, as S3 Storage Lens is a fully managed S3 storage analytics solution that provides a comprehensive view of object storage usage, activity trends, and recommendations to optimize costs
 
 ## Question 310
 ---
@@ -4135,7 +4135,7 @@ What should a solutions architect do to meet these requirements?
 - D. Modify the web application to enable streaming of the datasets to end users. Configure the web application to read the data from the existing S3 bucket. Implement access control directly in the application.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99697-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, as A speeds uploads only
 
 ## Question 311
 ---
