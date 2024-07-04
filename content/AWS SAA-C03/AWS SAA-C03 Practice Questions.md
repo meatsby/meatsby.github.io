@@ -4684,7 +4684,7 @@ Which solution will meet these requirements?
 - D. Build out the workflow in AWS Step Functions. Use Step Functions to create a state machine. Use the state machine to invoke AWS Lambda functions to process the workflow steps.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100371-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 352
 ---
@@ -4697,7 +4697,7 @@ Which solution will meet these requirements?
 - D. Set up a VPC peering mesh between each Region. Turn on UDP for each VPC.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100197-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 353
 ---
@@ -4711,7 +4711,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use two large EC2 instances to host the database in active-passive mode.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100225-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 354
 ---
@@ -4724,7 +4724,7 @@ What should a solutions architect do to meet these requirements?
 - D. Migrate the database to Amazon DynamoDB with on-demand scaling.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100198-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 355
 ---
@@ -4737,7 +4737,7 @@ Which solution will run the batch job within 15 minutes with the LEAST operation
 - D. Use AWS Batch on Amazon EC2.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100227-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 356
 ---
@@ -4750,7 +4750,7 @@ Which storage solution will meet these requirements?
 - D. Move the data objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100229-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 357
 ---
@@ -4764,7 +4764,7 @@ Which combination of steps should a solutions architect take to meet these requi
 - E. Store the server-side code on a General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volume. Mount the EBS volume on each EC2 instance to share the files.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100230-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AD
 
 ## Question 358
 ---
@@ -4777,7 +4777,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create a CloudFront response headers policy. Use the policy to automatically resize images and to serve the appropriate format based on the User-Agent HTTP header in the request.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100231-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 359
 ---
@@ -4797,7 +4797,7 @@ Which solution will meet these requirements with the FEWEST changes to the code?
 - D. Add an Amazon Simple Queue Service (Amazon SQS) queue between the two REST APIs.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100238-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, as C is for S3 or DDB
 
 ## Question 361
 ---
