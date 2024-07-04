@@ -4810,7 +4810,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Amazon DynamoDB for data that is frequently accessed. Turn on streaming to Amazon Kinesis Data Streams. Use Amazon Kinesis Data Firehose to read the data from Kinesis Data Streams. Store the records in an Amazon S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102119-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 362
 ---
@@ -4824,7 +4824,7 @@ Which actions should a solutions architect take to meet this requirement? (Choos
 - E. Write the messages to an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Set the message group to use the payment ID.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102121-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BE
 
 ## Question 363
 ---
@@ -4837,7 +4837,7 @@ Which solution will meet these requirements?
 - D. Amazon Simple Queue Service (Amazon SQS) FIFO queues
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102124-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 364
 ---
@@ -4852,7 +4852,7 @@ Which combination of steps should the solutions architect take to meet these req
 - E. Turn on server-side encryption on the SQS components by using an AWS Key Management Service (AWS KMS) customer managed key. Apply an IAM policy to restrict key usage to a set of authorized principals. Set a condition in the queue policy to allow only encrypted connections over TLS.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102125-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BD
 
 ## Question 365
 ---
@@ -4872,7 +4872,7 @@ Which solution will meet this requirement with the LEAST operational overhead?
 - D. Implement API usage plans and API keys to limit the access of users who do not have a subscription.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102128-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 367
 ---
@@ -4885,7 +4885,7 @@ What should a solutions architect do to meet these requirements?
 - D. Configure three Application Load Balancers (ALBs) in the three AWS Regions to address the on-premises endpoints. In Route 53, create a latency-based record that points to the three ALBs, and use it as an origin for an Amazon CloudFront distribution. Provide access to the application by using a CNAME that points to the CloudFront DNS.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102131-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 368
 ---
@@ -4898,7 +4898,7 @@ What should the solutions architect do to accomplish this?
 - D. Attach an Amazon CloudWatch rule to the Create_newuser event to set the password with the appropriate requirements.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102132-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 369
 ---
@@ -4911,7 +4911,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create an Amazon Machine Image (AMI) of the EC2 instance that runs the tasks. Create an Auto Scaling group with the AMI to run multiple copies of the instance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102133-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 370
 ---
@@ -4924,7 +4924,7 @@ Which solution meets these requirements?
 - D. Provision a NAT gateway in a private subnet. Modify each private subnet's route table with a default route that points to the NAT gateway.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102134-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 371
 ---
