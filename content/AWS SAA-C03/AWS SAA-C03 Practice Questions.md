@@ -4415,7 +4415,7 @@ What should a solutions architect do to meet these requirements?
 - D. Use Amazon S3 Transfer Acceleration.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99603-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 332
 ---
@@ -4430,7 +4430,7 @@ Which solution will meet these requirements?
 - D. Migrate the files to Amazon S3, and create a public VPC endpoint. Allow employees to sign on with AWS IAM Identity Center (AWS Single Sign-On).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99792-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 333
 ---
@@ -4443,7 +4443,7 @@ What should a solutions architect recommend to ensure the application is able to
 - D. Configure Amazon ElastiCache to remove some of the workload from the EC2 instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99791-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 334
 ---
@@ -4456,7 +4456,7 @@ Which solution will meet these requirements with the LEAST operational overhead 
 - D. Set up a Windows Amazon EC2 instance with SFTP to connect the on-premises client with Amazon S3. Integrate AWS Identity and Access Management (IAM).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99703-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 335
 ---
@@ -4469,7 +4469,7 @@ Which solution meets these requirements?
 - D. Use Amazon EventBridge to invoke AWS Backup lifecycle policies that provision AMIs. Configure Auto Scaling group capacity limits as an event source in EventBridge.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99686-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, Fast Snapshot Restore (FSR) is for initialization latency
 
 ## Question 336
 ---
@@ -4482,7 +4482,7 @@ What should a solutions architect do to meet this requirement with the LEAST ope
 - D. Store a file that contains the credentials in an AWS Key Management Service (AWS KMS) encrypted Amazon S3 bucket that the application uses to load the credentials. Download the file to the application regularly to ensure that the correct credentials are used. Implement an AWS Lambda function that rotates the Aurora credentials every 14 days and uploads these credentials to the file in the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99790-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 337
 ---
@@ -4496,7 +4496,7 @@ Which solution will meet these requirements?
 - D. Migrate the database to Amazon DynamoDB. Provision a large number of read capacity units (RCUs) to support the required throughput, and configure on-demand capacity scaling. Replace the stored procedures with DynamoDB streams.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99871-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 338
 ---
@@ -4510,7 +4510,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Set up an Aurora global database for the DB cluster. Specify a minimum of one DB instance in the secondary Region.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99758-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, as D is more expensive
 
 ## Question 339
 ---
@@ -4523,7 +4523,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Systems Manager Parameter Store. Configure the application to load the database credentials from Parameter Store. Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Parameter Store.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99705-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 340
 ---
@@ -4536,7 +4536,7 @@ How should the company resolve this issue?
 - D. Set up Amazon Inspector to block all SQL injection attempts automatically.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99708-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 341
 ---
