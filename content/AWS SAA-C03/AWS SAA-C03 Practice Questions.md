@@ -5073,7 +5073,7 @@ Which solution will meet these requirements with the LEAST amount of change to t
 - D. Set up a new Amazon DynamoDB table to store the documents. Use a fixed write capacity to support new document entries. Automatically scale the read capacity to support the reports.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102147-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 382
 ---
@@ -5086,7 +5086,7 @@ What should a solutions architect do to improve the security of the data in tran
 - D. Encrypt the Amazon Elastic Block Store (Amazon EBS) volume on the EC2 instances by using AWS Key Management Service (AWS KMS).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102149-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 383
 ---
@@ -5099,7 +5099,7 @@ Which Amazon EC2 pricing option is the MOST cost-effective?
 - D. Dedicated On-Demand Instances
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102150-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 384
 ---
@@ -5112,7 +5112,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use the Amazon Elastic File System (Amazon EFS) One Zone storage class. Create a lifecycle management policy to move infrequently accessed data to EFS One Zone-Infrequent Access (EFS One Zone-IA).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102152-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, as only EFS supports POSIX
 
 ## Question 385
 ---
@@ -5125,7 +5125,7 @@ Which additional configuration strategy should the solutions architect use to me
 - D. Create a network ACL for the web servers and allow port 443 from the load balancer. Create a network ACL for the MySQL servers and allow port 3306 from the web servers security group.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102153-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 386
 ---
@@ -5138,7 +5138,7 @@ Which action should be taken to improve the performance of the backend?
 - D. Implement Amazon Kinesis Data Firehose to stream the calls to the database.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102154-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 387
 ---
@@ -5152,7 +5152,7 @@ Which combination of actions should the solutions architect take to accomplish t
 - E. Create an IAM role for the deployment engineer to explicitly define the permissions specific to the AWS CloudFormation stack and launch stacks using that IAM role.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102155-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- DE
 
 ## Question 388
 ---
@@ -5166,7 +5166,7 @@ What should a solutions architect recommend to fix the application?
 - D. Add an inbound rule to the security group of the database tier’s RDS instance to allow traffic from the web tiers security group.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102156-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 389
 ---
@@ -5179,7 +5179,7 @@ Which solution meets these requirements?
 - D. Deploy the DB instance in multiple Availability Zones to process the business reporting queries.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102157-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 390
 ---
@@ -5194,7 +5194,7 @@ Which solutions will meet these requirements? (Choose two.)
 - E. Use AWS Systems Manager Application Manager in the application to manage user session information.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102213-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AD
 
 ## Question 391
 ---
