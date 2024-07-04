@@ -4549,7 +4549,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use a Lake Formation blueprint to ingest the data from the database to the S3 data lake. Use Lake Formation to enforce column-level access control for the QuickSight users. Use Amazon Athena as the data source in QuickSight.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/99710-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 342
 ---
@@ -4563,7 +4563,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create an Amazon EventBridge event to invoke an AWS Lambda function when the CPU utilization metric value for the Auto Scaling group reaches 60%. Configure the Lambda function to increase the Auto Scaling group’s desired capacity and maximum capacity by 20%.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100204-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 343
 ---
@@ -4576,7 +4576,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Store the scheduled backup of the MySQL database in an Amazon S3 bucket that is configured for S3 Cross-Region Replication (CRR). Use the data backup to restore the database in the DR Region.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100302-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 344
 ---
@@ -4589,7 +4589,7 @@ Which solution will meet these requirements with the FEWEST changes to the code?
 - D. Store messages that are larger than 256 KB in Amazon Elastic File System (Amazon EFS). Configure Amazon SQS to reference this location in the messages.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100202-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 345
 ---
@@ -4602,7 +4602,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use AWS Directory Service for Microsoft Active Directory for authentication. Use Lambda@Edge for authorization. Use AWS Elastic Beanstalk to serve the web application globally.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100341-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 346
 ---
@@ -4616,7 +4616,7 @@ Which type of storage gateway should the solutions architect provision to meet t
 - D. Amazon S3 File Gateway
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100220-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 347
 ---
@@ -4630,7 +4630,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Standard Reserved Instances
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100221-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 348
 ---
@@ -4643,7 +4643,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use on-demand mode. Specify the read capacity units (RCUs) and write capacity units (WCUs) with reserved capacity.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100222-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 349
 ---
@@ -4656,7 +4656,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create a database snapshot. Download the database snapshot. Upload the database snapshot to an Amazon S3 bucket. Update the S3 bucket policy to allow access from the acquiring company’s AWS account.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100299-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 350
 ---
@@ -4671,7 +4671,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - E. Use RDS Proxy to limit reporting requests to the maintenance window.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/100300-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AC
 
 ## Question 351
 ---
