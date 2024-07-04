@@ -5208,7 +5208,7 @@ Which solution will meet these requirements?
 - D. Take snapshots of Amazon Elastic Block Store (Amazon EBS) volumes of the EC2 instances every 2 hours. Enable automated backups in Amazon RDS and use point-in-time recovery to meet the RPO.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102212-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 392
 ---
@@ -5222,7 +5222,7 @@ How should a solutions architect configure the security groups to meet these req
 - D. Configure the security group for the web servers to allow inbound traffic on port 443 from 0.0.0.0/0. Configure the security group for the DB instance to allow inbound traffic on port 3306 from 0.0.0.0/0.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102160-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 393
 ---
@@ -5235,7 +5235,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create an Amazon Connect contact flow that ingests the audio files with transcription turned on. Embed an AWS Lambda function to scan for known PII patterns. Use Amazon EventBridge to start the contact flow when an audio file is uploaded to the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102322-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 394
 ---
@@ -5249,7 +5249,7 @@ What should a solutions architect do to improve the application performance?
 - D. Replace the 2,000 GB gp3 volume with two 1,000 GB gp3 volumes.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102161-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, as gp3's max IOPS is 16,000 and RDS does not support io2
 
 ## Question 395
 ---
@@ -5262,7 +5262,7 @@ Which service should the solutions architect use to find the desired information
 - D. AWS Config
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102162-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 396
 ---
@@ -5278,7 +5278,7 @@ What should a solutions architect do to meet this requirement?
 - D. Create an AWS WAF web ACL that includes a rate-based rule. Associate the web ACL with the EC2 instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102164-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 397
 ---
@@ -5292,7 +5292,7 @@ Which solution meets these requirements?
 - D. Create an Amazon Elastic Container Service (Amazon ECS) cluster with an Amazon EC2 launch type and an Auto Scaling group with at least one EC2 instance. Create an Amazon EventBridge scheduled event that launches an ECS task on the cluster to run the job.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102165-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 398
 ---
@@ -5305,7 +5305,7 @@ Which solution meets these requirements MOST cost-effectively?
 - D. Set up a 10 Gbps AWS Direct Connect connection between the company location and the nearest AWS Region. Transfer the data over a VPN connection into the Region to store the data in Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102166-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, as AB would take around 600 days to transfer and D takes time to setup a connection
 
 ## Question 399
 ---
@@ -5319,7 +5319,7 @@ Which solution meets these requirements with the LEAST operational overhead?
 - D. Create an Amazon CloudFront distribution with Lambda@Edge in front of the API Gateway Regional API endpoint. Create an AWS Lambda function to block requests from IP addresses that exceed the predefined rate.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102167-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 400
 ---
@@ -5332,7 +5332,7 @@ What should a solutions architect do to meet these requirements with the LEAST a
 - D. Add a custom attribute to each record to flag new items. Write a cron job that scans the table every minute for items that are new and notifies an Amazon Simple Queue Service (Amazon SQS) queue to which the teams can subscribe.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102169-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 401
 ---
