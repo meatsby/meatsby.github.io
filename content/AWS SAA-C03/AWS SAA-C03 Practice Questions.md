@@ -4938,7 +4938,7 @@ Which combination of actions will meet this requirement with the LEAST operation
 - E. Store the customer managed key as a Kubernetes secret in the EKS cluster. Use the customer managed key to encrypt the EBS volumes.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102135-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- CD
 
 ## Question 372
 ---
@@ -4952,7 +4952,7 @@ Which solution meets these requirements MOST cost-effectively?
 - D. Store the images in Amazon S3 buckets. Store geographic codes and image S3 URLs in a database table. Use Oracle running on an Amazon RDS Multi-AZ DB instance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102136-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 373
 ---
@@ -4966,7 +4966,7 @@ Which storage solution meets these requirements MOST cost-effectively?
 - D. Use the S3 Standard storage class. Create an S3 Lifecycle policy to transition objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 30 days, and then to S3 Glacier Deep Archive after 1 year.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102137-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 374
 ---
@@ -4980,7 +4980,7 @@ Which solution meets these requirements?
 - D. Set up one AWS Direct Connect connection from the data center to AWS. Create a transit gateway, and attach each VPC to the transit gateway. Establish connectivity between the Direct Connect connection and the transit gateway.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102138-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 375
 ---
@@ -4994,7 +4994,7 @@ Which solution meets these requirements?
 - D. The requests from the API are sent to the models Amazon Simple Queue Service (Amazon SQS) queue. Models are deployed as Amazon Elastic Container Service (Amazon ECS) services reading from the queue AWS Auto Scaling is enabled on Amazon ECS for both the cluster and copies of the service based on the queue size.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/47730-exam-aws-certified-solutions-architect-associate-saa-c02/)
-	- 
+	- D
 
 ## Question 376
 ---
@@ -5007,7 +5007,7 @@ Which solution will resolve this issue with the LEAST operational overhead?
 - D. Configure Multi-AZ for the DB instance. Configure the users’ applications to switch between the DB instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102140-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 377
 ---
@@ -5020,7 +5020,7 @@ Which solution achieves these goals MOST efficiently?
 - D. Run a custom script on the instance operating system to send data to the audit system. Configure the script to be invoked by the EC2 Auto Scaling group when the instance starts and is terminated.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102142-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 378
 ---
@@ -5033,7 +5033,7 @@ Which solution should a solutions architect recommend?
 - D. Use an Application Load Balancer for traffic distribution and Amazon DynamoDB global tables for data storage.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102143-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 379
 ---
@@ -5046,7 +5046,7 @@ Which solution will meet these requirements?
 - D. Increase the size of the database to increase the number of connections Lambda can establish at one time.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102144-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, configuring provisioned concurrency would get rid of the "cold start" of the Lambda to load many libraries
 
 ## Question 380
 ---
@@ -5059,7 +5059,7 @@ Which solution will meet these requirements?
 - D. Create an AWS Lambda function that will start and stop the EC2 instances and DB instances. Configure Amazon EventBridge to invoke the Lambda function on a schedule.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102145-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 381
 ---
