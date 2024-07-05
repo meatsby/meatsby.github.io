@@ -5479,7 +5479,7 @@ Which solution will meet these requirements?
 - D. MySQL deployed on Amazon EC2 in an Auto Scaling group
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102188-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, since automatically scales compute and memory resources based on application usage
 
 ## Question 412
 ---
@@ -5492,7 +5492,7 @@ Which solution will meet these requirements?
 - D. Use the S3 Block Public Access feature on the account level. Use AWS Organizations to create a service control policy (SCP) that prevents IAM users from changing the setting. Apply the SCP to the account.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102189-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 413
 ---
@@ -5505,7 +5505,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create a separate application tier using EC2 instances dedicated to email processing. Place the instances in an Auto Scaling group.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102190-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 414
 ---
@@ -5518,7 +5518,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 - D. Deploy an AWS Transfer for SFTP endpoint. Create a script that checks for new files on the network share and uploads the new files by using SFTP.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/103452-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, since near-real time with least administrative overhead
 
 ## Question 415
 ---
@@ -5531,7 +5531,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 - D. Create an S3 Lifecycle configuration with a rule to transition the objects in the S3 bucket to S3 One Zone-Infrequent Access (S3 One Zone-IA).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/103404-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 416
 ---
@@ -5545,7 +5545,7 @@ Which combination of actions should a solutions architect take to resolve this i
 - E. Configure a Multi-AZ deployment for the RDS DB instance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/103423-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BD
 
 ## Question 417
 ---
@@ -5559,7 +5559,7 @@ Which solution will meet these requirements?
 - D. Purchase a Compute Savings Plan. Optimize the Lambda functions’ duration and memory usage, the number of invocations, and the amount of data that is transferred. Keep the Lambda functions in the Lambda service VPC.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/103598-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, Compute Savings Plan can save costs for both EC2 and Lambda
 
 ## Question 418
 ---
@@ -5573,7 +5573,7 @@ Which solution will meet these requirements while complying with the principle o
 - D. Create a user in the production account with unique credentials for each team member.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/103585-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 419
 ---
@@ -5588,7 +5588,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - E. In the Organizations management account, specify the Default EBS volume encryption setting.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109268-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- CE
 
 ## Question 420
 ---
@@ -5601,7 +5601,7 @@ Which solution will meet these requirements?
 - D. Use an Amazon RDS Multi-AZ DB cluster deployment Point the read workload to the reader endpoint.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109269-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 421
 ---
