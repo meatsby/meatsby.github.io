@@ -6019,7 +6019,7 @@ Which activities will be managed by the company's operational team? (Choose thre
 - F. Encryption of the data that moves in transit through Direct Connect
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109408-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BCF
 
 ## Question 452
 ---
@@ -6032,7 +6032,7 @@ Which solution will meet these requirements?
 - D. Configure the existing schedule to stop the EC2 instance at the completion of the job and restart the EC2 instance when the next job starts.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109521-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 453
 ---
@@ -6045,7 +6045,7 @@ Which solution will meet these requirements?
 - D. Use AWS Backup to create a backup vault that has a vault lock in compliance mode. Create the required backup plan.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109410-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, since we can delete backup in governance mode
 
 ## Question 454
 ---
@@ -6058,7 +6058,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 - D. Use AWS X-Ray to view the workload details. Build architecture diagrams with relationships.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109433-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 455
 ---
@@ -6073,7 +6073,7 @@ Which combination of solutions will meet these requirements? (Choose three.)
 - F. Add an alert to notify the company when each account meets its budget threshold. Add a budget action that selects the IAM identity created with the appropriate service control policy (SCP) to prevent provisioning of additional resources.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109522-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BDF
 
 ## Question 456
 ---
@@ -6086,7 +6086,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Deploy a similar number of EC2 instances in the second Region. Use AWS DataSync to transfer the data from the source Region to the second Region.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109523-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 457
 ---
@@ -6099,7 +6099,7 @@ Which solution will meet these requirements?
 - D. Use AWS Storage Gateway to transfer the data. Create an Amazon Cognito identity pool for IdP authentication.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109524-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, since Transfer Family supports AS2
 
 ## Question 458
 ---
@@ -6113,7 +6113,7 @@ Which additional combination ofAWS services will meet these requirements with th
 - E. Amazon Elastic Kubernetes Services (Amazon EKS)
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109435-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BC
 
 ## Question 459
 ---
@@ -6127,7 +6127,7 @@ Which solution meets these requirements in the MOST operationally efficient way?
 - D. From the Organizations member account billing console, activate an AWS-defined cost allocation tag named department. Create one cost report in Cost Explorer grouping by tag name, and filter by EC2.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109440-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 460
 ---
@@ -6139,7 +6139,7 @@ A company wants to securely exchange data between its software as a service (Saa
 - D. Create a custom connector for Salesforce to transfer the data securely from Salesforce to Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109525-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 461
 ---
