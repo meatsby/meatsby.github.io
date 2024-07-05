@@ -5615,7 +5615,7 @@ Which solution will meet these requirements?
 - D. Create an Amazon S3 bucket with default encryption enabled. Create an AWS Transfer Family SFTP service with a VPC endpoint that has internal access in a private subnet. Attach a security group that allows only trusted IP addresses. Attach the S3 bucket to the SFTP service endpoint. Grant users access to the SFTP service.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109270-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, since SFTP cannot use EBS, and S3 doesn't guarantee high IOPS
 
 ## Question 422
 ---
@@ -5629,7 +5629,7 @@ Which design should a solutions architect recommend to meet these requirements?
 - D. Direct the requests from the API into an Amazon Simple Queue Service (Amazon SQS) queue. Deploy the models as Amazon Elastic Container Service (Amazon ECS) services that read from the queue. Enable AWS Auto Scaling on Amazon ECS for both the cluster and copies of the service based on the queue size.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109280-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 423
 ---
@@ -5643,7 +5643,7 @@ Which IAM principals can the solutions architect attach this policy to? (Choose 
 - E. Amazon EC2 resource
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109281-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AB, since Identity-based policy is used for role and group
 
 ## Question 424
 ---
@@ -5657,7 +5657,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use Spot Instances for the frontend nodes. Use AWS Fargate for the backend nodes.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109283-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 425
 ---
@@ -5670,7 +5670,7 @@ Which Amazon Elastic Block Store (Amazon EBS) volume type will meet these requir
 - D. io1 volume type
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109282-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, since GP3 is cost effective
 
 ## Question 426
 ---
@@ -5684,7 +5684,7 @@ Which solution will meet these requirements?
 - D. Use AWS Storage Gateway to move the existing data to Amazon S3. Use AWS CloudTrail to log management events.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109278-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 427
 ---
@@ -5697,7 +5697,7 @@ What should the solutions architect do to meet these requirements?
 - D. Launch an Amazon EC2 instance. Install a MySQL server on the EC2 instance. Configure the application on the server. Create an AMI. Use the AMI to create a launch template with an Auto Scaling group.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109279-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 428
 ---
@@ -5710,7 +5710,7 @@ Which solution will give the Lambda function access to the DynamoDB table MOST s
 - D. Create an IAM role that includes DynamoDB as a trusted service. Attach a policy to the role that allows read and write access from the Lambda function. Update the code of the Lambda function to attach to the new role as an execution role.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109285-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 429
 ---
@@ -5723,7 +5723,7 @@ What are the effective IAM permissions of this policy for group members?
 - D. Group members are allowed the ec2:StopInstances and ec2:TerminateInstances permissions for the us-east-1 Region only when logged in with multi-factor authentication (MFA). Group members are permitted any other Amazon EC2 action within the us-east-1 Region.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109286-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 430
 ---
@@ -5738,7 +5738,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 - E. Create S3 Lifecycle rules for .csv files and image files in the S3 bucket. Transition the .csv files from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-IA) 1 day after they are uploaded. Keep the image files in Reduced Redundancy Storage (RRS).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109288-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BC
 
 ## Question 431
 ---
