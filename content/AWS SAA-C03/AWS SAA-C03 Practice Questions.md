@@ -6282,7 +6282,7 @@ Which solution will meet these requirements?
 - D. Create an interface endpoint for Amazon S3 in the VPC. Associate this endpoint with all route tables in the VPC
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109453-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 472
 ---
@@ -6295,7 +6295,7 @@ Which method should the solutions architect select?
 - D. Add an Amazon ElastiCache for Redis cache to the application stack. Update the application to point to the Redis cache endpoint instead of DynamoDB.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109454-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 473
 ---
@@ -6307,7 +6307,7 @@ A company hosts a website on Amazon EC2 instances behind an Application Load Bal
 - D. Create a second ALB in an alternative AWS Region. Route user traffic to the closest Region to minimize data transfer costs
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109455-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 474
 ---
@@ -6320,7 +6320,7 @@ Which solution will meet these requirements with the LEAST amount of administrat
 - D. Use AWS PrivateLink across all Regions to connect VPCs across Regions and manage VPC communications
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109659-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 475
 ---
@@ -6334,7 +6334,7 @@ Which solution will meet these requirements?
 - D. Amazon FSx for OpenZFS
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109456-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 476
 ---
@@ -6347,20 +6347,21 @@ Which additional action is the MOST secure way to grant permissions to the new u
 - D. Create IAM roles. Associate the roles with a permissions boundary that defines the maximum permissions
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109458-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 477
 ---
 A group requires permissions to list an Amazon S3 bucket and delete objects from that bucket. An administrator has created the following IAM policy to provide access to the bucket and applied that policy to the group. The group is not able to delete objects in the bucket. The company follows least-privilege access rules.
+![](https://img.examtopics.com/aws-certified-solutions-architect-associate-saa-c03/image6.png)
 Which statement should a solutions architect add to the policy to correct bucket access?
 
-- A. 
-- B. 
-- C. 
-- D. 
+- A. ![](https://img.examtopics.com/aws-certified-solutions-architect-associate-saa-c03/image7.png)
+- B. ![](https://img.examtopics.com/aws-certified-solutions-architect-associate-saa-c03/image8.png)
+- C. ![](https://img.examtopics.com/aws-certified-solutions-architect-associate-saa-c03/image9.png)
+- D. ![](https://img.examtopics.com/aws-certified-solutions-architect-associate-saa-c03/image10.png)
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109459-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 478
 ---
@@ -6373,7 +6374,7 @@ Which solution will meet these requirements in the MOST secure way?
 - D. Upload all files to an Amazon S3 bucket that is configured for static website hosting. Select the folder that contains the files. Use S3 Object Lock with a retention period in accordance with the designated date. Grant read-only IAM permissions to any AWS principals that access the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109725-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 479
 ---
@@ -6386,7 +6387,7 @@ What should a solutions architect recommend to meet these requirements?
 - D. Use AWS Elastic Beanstalk and configure it to use an automated reference to the prototype infrastructure to automatically deploy new environments in two Availability Zones.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109461-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 480
 ---
@@ -6399,7 +6400,7 @@ Which capability should the solutions architect use to meet the compliance requi
 - D. Virtual private gateway
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109663-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 481
 ---
