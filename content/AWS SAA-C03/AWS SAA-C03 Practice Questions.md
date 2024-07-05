@@ -5883,7 +5883,7 @@ What should a solutions architect do to redesign the application MOST cost-effec
 - D. Create an AWS Lambda function behind an Amazon API Gateway API to host the static website contents.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109423-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 442
 ---
@@ -5896,7 +5896,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Lake Formation tag-based access control to authorize and grant cross-account permissions for the required data to the engineering team accounts.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109647-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 443
 ---
@@ -5909,7 +5909,7 @@ What should a solutions architect do to accomplish this?
 - D. Use Amazon EC2 with Auto Scaling and Amazon ElastiCache to host the application.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109424-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 444
 ---
@@ -5923,7 +5923,7 @@ What should a solutions architect do to meet these requirements?
 - D. Enable S3 Transfer Acceleration for the S3 bucket in us-east-1. Configure the application to use the bucket's S3-accelerate endpoint domain name for the upload and download links for users who have a subscription.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/53895-exam-aws-certified-solutions-architect-associate-saa-c02/)
-	- 
+	- D, S3 Transfer Acceleration supports both upload and download
 
 ## Question 445
 ---
@@ -5937,7 +5937,7 @@ Which solution will meet these requirements?
 - D. Back up the data on tapes. Ship the tapes to an AWS data center. Mount a target Amazon S3 bucket on the on-premises file system.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109403-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 446
 ---
@@ -5950,7 +5950,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Turn on S3 Object Lock with compliance retention mode for the S3 bucket. Set the retention period to expire after 7 years. Use S3 Batch Operations to bring the existing data into compliance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109404-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 447
 ---
@@ -5963,7 +5963,7 @@ What should a solutions architect do to route traffic to multiple Regions?
 - D. Create an Application Load Balancer in the primary Region. Set the target group to point to the API Gateway endpoint hostnames in each Region.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109405-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 448
 ---
@@ -5976,7 +5976,7 @@ What should a solutions architect do to mitigate any single point of failure in 
 - D. Add a second VPC peering connection between the Management VPC and the Production VPC.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109499-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 449
 ---
@@ -5989,7 +5989,7 @@ Which solution will help the company migrate the database to AWS MOST cost-effec
 - D. Migrate the database to Amazon RDS for PostgreSQL by rewriting the application code to remove dependency on Oracle APEX.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109432-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 450
 ---
@@ -6004,7 +6004,7 @@ Which combination of solutions will meet these requirements? (Choose three.)
 - F. Use an Amazon RDS database Multi-AZ cluster deployment in private subnets. Allow database access only from application tier security groups.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109406-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- CEF
 
 ## Question 451
 ---
