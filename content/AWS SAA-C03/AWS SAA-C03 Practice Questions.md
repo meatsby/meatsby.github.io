@@ -6413,7 +6413,7 @@ Which solution will meet these requirements?
 - D. Implement the AWS AppConfig caching strategy
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109462-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 482
 ---
@@ -6426,7 +6426,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Set up an IPsec VPN from the on-premises location to AWS. Use the s3 cp command in the AWS CLI to move the data directly to an S3 bucket
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109490-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 483
 ---
@@ -6439,7 +6439,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use Amazon Elastic Container Service (Amazon ECS) on AWS Fargate to run the job. Create a standalone task based on the container image of the job. Use Windows task scheduler to run the job every
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109463-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 484
 ---
@@ -6453,7 +6453,7 @@ Which combination of actions should a solutions architect recommend to meet thes
 - E. Set up AWS IAM Identity Center (AWS Single Sign-On) in the organization. Configure IAM Identity Center, and integrate it with the company's corporate directory service.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109467-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AE
 
 ## Question 485
 ---
@@ -6466,7 +6466,7 @@ What is the MOST cost-effective solution?
 - D. Store the video archives in Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109470-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, since Expedited retrievals typically take 1–5 minutes
 
 ## Question 486
 ---
@@ -6479,7 +6479,7 @@ Which solution will meet these requirements?
 - D. Use Amazon EC2 Reserved Instances to host static content. Use Amazon Elastic Kubernetes Service (Amazon EKS) with Amazon EC2 for compute power. Use a managed Amazon RDS cluster for the database.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109664-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 487
 ---
@@ -6492,7 +6492,7 @@ Which storage solution meets these requirements?
 - D. Amazon Elastic File System (Amazon EFS) with a single mount target and multiple access points
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109665-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, since A doesn't support native protocol
 
 ## Question 488
 ---
@@ -6505,7 +6505,7 @@ Which solution will meet these requirements?
 - D. Convert from the Organizations all features feature set to the Organizations consolidated billing feature set.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109509-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 489
 ---
@@ -6519,7 +6519,7 @@ Which solution will meet these requirements with the LEAST development effort?
 - D. Configure an Amazon SNS dead letter queue that has an Amazon DynamoDB target with a TTL attribute set for a retention period of 14 days.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109637-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 490
 ---
@@ -6532,7 +6532,7 @@ Which solution meets these requirements?
 - D. Create an AWS Lambda function to export the data from the database tables to Amazon S3 on a regular basis. Turn on point-in-time recovery for the table.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109577-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 491
 ---
