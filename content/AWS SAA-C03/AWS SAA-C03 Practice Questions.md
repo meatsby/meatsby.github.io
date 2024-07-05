@@ -6545,7 +6545,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use the AWS Lambda event source mapping. Set Amazon Simple Queue Service (Amazon SQS) standard queues as the event source. Use AWS KMS keys (SSE-KMS) for encryption. Add the encryption key invocation permission for the Lambda function.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109513-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 492
 ---
@@ -6558,7 +6558,7 @@ Which solution will meet these requirements with the LEAST development effort?
 - D. Set up AWS Service Catalog products for the staff to create the allowed EC2 instance types. Ensure that staff can deploy EC2 instances only by using the Service Catalog products.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109638-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 493
 ---
@@ -6574,12 +6574,13 @@ Which combination of steps will meet these requirements? (Choose three.)
 - F. Use Amazon Comprehend to create the sentiment analysis reports.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109639-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- DEF
 
 ## Question 494
 ---
 A company uses Amazon EC2 instances to host its internal systems. As part of a deployment operation, an administrator tries to use the AWS CLI to terminate an EC2 instance. However, the administrator receives a 403 (Access Denied) error message.
 The administrator is using an IAM role that has the following IAM policy attached:
+![](https://img.examtopics.com/aws-certified-solutions-architect-associate-saa-c03/image11.png)
 What is the cause of the unsuccessful request?
 
 - A. The EC2 instance has a resource-based policy with a Deny statement.
@@ -6588,7 +6589,7 @@ What is the cause of the unsuccessful request?
 - D. The request to terminate the EC2 instance does not originate from the CIDR blocks 192.0.2.0/24 or 203.0.113.0/24.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109727-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 495
 ---
@@ -6601,7 +6602,7 @@ Which solution will meet these requirements?
 - D. Use Amazon S3 Select to run a report across the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109666-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 496
 ---
@@ -6615,7 +6616,7 @@ Which combination of actions should a solutions architect take to meet these req
 - E. Deploy Amazon Elastic File System (Amazon EFS) volumes and mount them to on-premises servers.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109552-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BD, Storage GW file and volume is for NFS and block storage respectively
 
 ## Question 497
 ---
@@ -6628,7 +6629,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Provision a second NAT gateway. Configure the route table for the private subnet to use this NAT gateway as the destination for all S3 traffic.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109667-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 498
 ---
@@ -6642,7 +6643,7 @@ Which solution will reduce the S3 costs with the LEAST operational overhead?
 - D. Deactivate versioning on the S3 bucket and retain the two most recent versions.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109668-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 499
 ---
@@ -6655,7 +6656,7 @@ Which solution will meet these requirements?
 - D. Contact an AWS Direct Connect Partner to order a 200 Mbps hosted connection for an existing AWS account.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109515-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 500
 ---
@@ -6669,4 +6670,4 @@ Which solutions will meet these requirements? (Choose two.)
 - E. Order an AWS Snowball Edge Storage Optimized device. Connect the device to the on-premises network. Copy data to the device by using the AWS CLI. Ship the device back to AWS for import into Amazon S3. Schedule AWS DataSync tasks to transfer the data to the FSx for Windows File Server file system.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109689-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AD
