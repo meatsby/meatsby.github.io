@@ -5346,7 +5346,7 @@ Which solution will meet these requirements?
 - D. Deploy the application servers by using Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. Deploy the primary and secondary database servers on EC2 instances across multiple Availability Zones. Use Amazon Elastic Block Store (Amazon EBS) Multi-Attach to create shared storage between the instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102170-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 402
 ---
@@ -5359,7 +5359,7 @@ What should a solutions architect do to resolve this issue?
 - D. Turn on S3 Versioning within the S3 bucket to preserve every version of every object that is ingested in the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102175-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, since Kinesis Data Stream stores 24 hrs by default
 
 ## Question 403
 ---
@@ -5372,7 +5372,7 @@ What should a solutions architect do to grant the permissions?
 - D. Create an IAM execution role with the required permissions and attach the IAM role to the Lambda function.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102178-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 404
 ---
@@ -5385,7 +5385,7 @@ What should a solutions architect do to improve the architecture of this applica
 - D. Create an Amazon Simple Queue Service (Amazon SQS) queue. Send the requests to the queue. Configure the queue as an event source for Lambda.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102180-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 405
 ---
@@ -5399,7 +5399,7 @@ Which combination of actions should the solutions architect take to ensure that 
 - E. Use scheduled scaling to change the Auto Scaling group minimum, maximum, and desired capacity to zero for weekends. Revert to the default values at the start of the week.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102181-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- DE, since ASG cannot adjust ALB capacity
 
 ## Question 406
 ---
@@ -5413,7 +5413,7 @@ Which combination of steps should the solutions architect take to meet these req
 - E. Create a security group for the DB instance. Add a rule to deny all traffic except traffic from the web servers’ security group on port 3306.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102183-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- CD
 
 ## Question 407
 ---
@@ -5426,7 +5426,7 @@ Which solution meets these requirements?
 - D. Create an Amazon FSx for Lustre file system. Attach the file system to the origin server. Connect the application server to the file system.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102184-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 408
 ---
@@ -5440,7 +5440,7 @@ Which solution will meet these requirements?
 - D. Configure an Amazon Route 53 failover routing policy. Create an Application Load Balancer (ALB) in each of the two Regions. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the ALB. Process the data in Amazon ECS.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102185-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 409
 ---
@@ -5453,7 +5453,7 @@ Which replacement to the on-premises file share is MOST resilient and durable?
 - D. Migrate the file share to Amazon Elastic File System (Amazon EFS).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102186-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 410
 ---
@@ -5466,7 +5466,7 @@ Which solution will meet this requirement?
 - D. Create an AWS Key Management Service (AWS KMS) key policy that enforces EBS encryption in the account. Ensure that the key policy is active.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/102187-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 411
 ---
