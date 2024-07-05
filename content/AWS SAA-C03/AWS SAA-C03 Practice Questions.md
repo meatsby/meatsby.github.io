@@ -5751,7 +5751,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create a read replica on Amazon RDS for MySQL to run queries to compute the scoreboard and serve the read traffic to the web application.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109274-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 432
 ---
@@ -5764,7 +5764,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Amazon QuickSight to build and train models by using calculated fields. Use Amazon QuickSight to visualize the data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109291-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 433
 ---
@@ -5777,7 +5777,7 @@ Which solution will meet these requirements?
 - D. Create custom Amazon CloudWatch logs to prevent tag modification.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109384-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 434
 ---
@@ -5790,7 +5790,7 @@ What should a solutions architect do to meet these requirements with the LEAST a
 - D. Create an Auto Scaling group and load balancer in the disaster recovery Region. Configure the DynamoDB table as a global table. Create an Amazon CloudWatch alarm to trigger an AWS Lambda function that updates Amazon Route 53 pointing to the disaster recovery load balancer.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109294-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 435
 ---
@@ -5803,7 +5803,7 @@ Which solution will migrate the database MOST cost-effectively?
 - D. Order a 1 GB dedicated AWS Direct Connect connection to establish a connection with the data center. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with replication of ongoing changes.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109377-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 436
 ---
@@ -5816,7 +5816,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Make the Amazon RDS for PostgreSQL DB instance an on-demand DB instance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109277-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 437
 ---
@@ -5829,7 +5829,7 @@ What should a solutions architect recommend?
 - D. Deploy Amazon GuardDuty and enable rate-limiting protection when configuring GuardDuty.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109378-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 438
 ---
@@ -5842,7 +5842,7 @@ What is the MOST secure way for the company to share the database with the audit
 - D. Create an encrypted snapshot of the database. Share the snapshot with the auditor. Allow access to the AWS Key Management Service (AWS KMS) encryption key.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109398-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 439
 ---
@@ -5855,7 +5855,7 @@ Which solution resolves this issue with the LEAST operational overhead?
 - D. Create a second VPC. Create a Site-to-Site VPN connection between the first VPC and the second VPC by using a VPN-hosted solution on Amazon EC2 and a virtual private gateway. Update the route between VPCs to the traffic through the VPN. Create new resources in the subnets of the second VPC.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109400-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 440
 ---
@@ -5870,7 +5870,7 @@ Which solutions will create the new DB instance? (Choose two.)
 - E. Upload the database dump to Amazon S3. Then use AWS Database Migration Service (AWS DMS) to import the database dump into Aurora.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109297-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AC
 
 ## Question 441
 ---
