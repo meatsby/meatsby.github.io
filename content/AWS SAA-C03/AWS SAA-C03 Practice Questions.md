@@ -6152,7 +6152,7 @@ Which solution will meet these requirements?
 - D. Create an Amazon CloudFront content delivery network (CDN) endpoint. Create an Application Load Balancer (ALB) behind the endpoint and listening on the TCP and UDP ports. Update the Auto Scaling group to register instances on the ALB. Update CloudFront to use the ALB as the origin.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109446-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 462
 ---
@@ -6165,7 +6165,7 @@ What should a solutions architect do to write the orders reliably to the databas
 - D. Write orders to an Amazon Simple Queue Service (Amazon SQS) queue when the EC2 instance reaches CPU threshold limits. Use scheduled scaling of EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process orders into the database.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109653-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 463
 ---
@@ -6178,7 +6178,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use AWS Glue with a PySpark job
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109501-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 464
 ---
@@ -6191,7 +6191,7 @@ Which solution meets these requirements?
 - D. Place the RDS for PostgreSQL database in an Amazon EC2 Auto Scaling group with a minimum group size of two. Use Amazon Route 53 weighted record sets to distribute requests across instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109449-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 465
 ---
@@ -6204,7 +6204,7 @@ Which solution will meet these requirements?
 - D. Use General Purpose SSD (gp2) EBS volumes with Amazon Elastic Block Store (Amazon EBS) Multi-Attach
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109655-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, since Multi-Attach is supported only for io1 and io2 volumes
 
 ## Question 466
 ---
@@ -6217,7 +6217,7 @@ What should a solutions architect do to meet this requirement?
 - D. Configure Amazon Route 53 rules to handle incoming requests and create a Multi-AZ Application Load Balancer
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109450-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 467
 ---
@@ -6229,7 +6229,7 @@ A company uses AWS Organizations. A member account has purchased a Compute Savin
 - D. Sell the excess Savings Plan commitment in the Reserved Instance Marketplace.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109485-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 468
 ---
@@ -6242,7 +6242,7 @@ Which solution will meet these requirements?
 - D. Design a REST API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a security group for API Gateway to access Amazon ECS.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109451-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 469
 ---
@@ -6256,7 +6256,7 @@ Which solution will meet these requirements?
 - D. Use S3 Inventory to identify and transition objects that have not been accessed from S3 Standard to S3 Intelligent-Tiering
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109452-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 470
 ---
@@ -6269,7 +6269,7 @@ What should a solutions architect recommend to resolve this issue?
 - D. Create an egress-only internet gateway and make it the destination of the subnet's route table
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109334-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, since egress-only IG is for IPv6 and NATGW is for IPv4
 
 ## Question 471
 ---
