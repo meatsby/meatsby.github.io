@@ -6818,7 +6818,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Configure each development environment with its own Amazon S3 bucket by using Amazon S3 Object Select
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109532-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 512
 ---
@@ -6831,7 +6831,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Amazon Inspector to identify all noncompliant resources.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109709-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 513
 ---
@@ -6844,7 +6844,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create a dynamic website hosted on an automatically scaling Amazon Elastic Container Service (Amazon ECS) cluster that creates a resize job in Amazon Simple Queue Service (Amazon SQS). Set up an image-resizing program that runs on an Amazon EC2 instance to process the resize jobs.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109713-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 514
 ---
@@ -6857,7 +6857,7 @@ Which solution will allow the node to join the cluster?
 - D. Allow outbound traffic in the security group of the nodes.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109534-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, since the EKS control plane is configured with private endpoint access only which requires interface VPC endpoint to communicate
 
 ## Question 515
 ---
@@ -6872,7 +6872,7 @@ Which use cases are suitable for Amazon Redshift in this scenario? (Choose three
 - F. Creating a secondary replica of the cluster by using the AWS Management Console
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109535-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BCE
 
 ## Question 516
 ---
@@ -6886,7 +6886,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Amazon API Gateway and AWS Lambda functions with reserved concurrency.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109719-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 517
 ---
@@ -6899,7 +6899,7 @@ Which solution will meet this requirement with the MOST operational efficiency?
 - D. Install an Amazon CloudWatch agent. Push all logs to a CloudWatch log group. Create a CloudWatch logs subscription that pushes any incoming log events to an Amazon Kinesis Data Firehose delivery stream. Set Amazon S3 as the destination.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109536-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 518
 ---
@@ -6912,7 +6912,7 @@ Which solution meets these requirements with the LEAST amount of effort?
 - D. Back up the RDS database, increase the storage capacity, restore the database, and stop the previous instance
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109721-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 519
 ---
@@ -6925,7 +6925,7 @@ Which solution will meet these requirements?
 - D. Create AWS Config items for the customers.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109722-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 520
 ---
@@ -6938,7 +6938,7 @@ Which DynamoDB table configuration will meet these requirements MOST cost-effect
 - D. Configure DynamoDB in on-demand mode by using the DynamoDB Standard Infrequent Access (DynamoDB Standard-IA) table class.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109539-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 521
 ---
