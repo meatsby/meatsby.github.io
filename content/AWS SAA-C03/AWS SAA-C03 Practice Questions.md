@@ -7219,7 +7219,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 - F. Use Amazon S3 static web hosting with PHP, CSS, and JS. Use Amazon CloudFront to serve the frontend web content.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111440-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- ACE, since B is too much cost, D is for session management, and F doesn't work for S3 + PHP
 
 ## Question 542
 ---
@@ -7232,7 +7232,7 @@ Which solution will meet these requirements?
 - D. Generate and activate field-level encryption to block non-premium customers.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111441-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 543
 ---
@@ -7246,7 +7246,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - E. Create an organization in AWS Organizations in the existing AWS account with the existing EC2 instances and Savings Plan. Invite the other AWS accounts to join the organization from the management account.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111442-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AE, Resource Access Manager is for security not for billing
 
 ## Question 544
 ---
@@ -7259,7 +7259,7 @@ Which solution will meet these requirements?
 - D. Create a new API Gateway endpoint with new versions of the API definitions. Create a custom domain name for the new API Gateway API. Point the Route 53 alias record to the new API Gateway API custom domain name.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111450-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 545
 ---
@@ -7272,7 +7272,7 @@ Which solution will meet these requirements?
 - D. Update the Route 53 records to use a multivalue answer routing policy. Create a health check. Direct traffic to the website if the health check passes. Direct traffic to a static error page that is hosted in Amazon S3 if the health check does not pass.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116974-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 546
 ---
@@ -7285,7 +7285,7 @@ What should a solutions architect recommend?
 - D. Set up AWS Storage Gateway to connect with the backup applications using the iSCSI-virtual tape library (VTL) interface.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116975-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, since it's tapes
 
 ## Question 547
 ---
@@ -7298,7 +7298,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use AWS Database Migration Service (AWS DMS) to deliver streaming data to Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116976-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 548
 ---
@@ -7311,7 +7311,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Set up a list of products in AWS Service Catalog in the AWS accounts to manage and control the usage of specific AWS services.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116977-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 549
 ---
@@ -7324,7 +7324,7 @@ What should the solutions architect do to meet these requirements?
 - D. Configure a virtual private gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound traffic to the virtual private gateway.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116978-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 550
 ---
@@ -7338,7 +7338,7 @@ Which steps must the solutions architect take to implement the correct permissio
 - E. Allow the Lambda resource policy in the AWS KMS key policy.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116979-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BD, least privileged == role level
 
 ## Question 551
 ---
