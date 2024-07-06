@@ -7085,7 +7085,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 - D. Create an Amazon Simple Queue Service (Amazon SQS) queue. Attach the queue to the Lambda function. Provide the public hostname of the SQS queue to the third party for the webhook.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111430-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 532
 ---
@@ -7100,7 +7100,7 @@ Which combination of steps will meet these requirements with the MOST operationa
 - F. Create a custom domain name in API Gateway for the REST API. Import the certificate from AWS Certificate Manager (ACM).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111382-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- ADF
 
 ## Question 533
 ---
@@ -7113,7 +7113,7 @@ Which solution will meet these requirements?
 - D. Use Amazon GuardDuty. Create an Amazon EventBridge rule to filter the CRITICAL event type from GuardDuty findings and to send an Amazon Simple Queue Service (Amazon SQS) notification to the security team.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111432-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 534
 ---
@@ -7126,7 +7126,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Transition objects to the S3 One Zone-Infrequent Access (S3 One Zone-IA) storage class 30 days after creation. Move all objects to the S3 Glacier Flexible Retrieval storage class after 90 days. Write an expiration action that directs Amazon S3 to delete objects after 90 days.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111434-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 535
 ---
@@ -7139,7 +7139,7 @@ Which solution will meet these requirements?
 - D. Create a new AWS Key Management Service (AWS KMS) key with the alias/aws/ebs alias. Enable default Amazon Elastic Block Store (Amazon EBS) volume encryption for the account.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111385-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, Secrets Manager does not encrypt etcd store
 
 ## Question 536
 ---
@@ -7152,7 +7152,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Change the setup from a Single-AZ to a Multi-AZ cluster deployment with two readable standby instances. Provide read endpoints to the data scientists.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111435-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, since read replicas are async whereas readable standby is synchronous
 
 ## Question 537
 ---
@@ -7165,7 +7165,7 @@ Which solution will meet these requirements?
 - D. Migrate the MySQL database to Amazon RDS for MySQL in a single Availability Zone. Use Amazon ElastiCache for Redis with high availability to store session data and to cache reads. Migrate the web server to an Auto Scaling group that is in three Availability Zones.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111386-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 538
 ---
@@ -7178,7 +7178,7 @@ Which solution will meet these requirements?
 - D. Create a new URL for restricted content. Set up a time-restricted access policy for signed URLs.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111387-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 539
 ---
@@ -7191,7 +7191,7 @@ Which solution will meet these requirements?
 - D. Use third-party backup software to capture backups every night. Store a secondary set of backups in Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111301-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, since Warm Standby provides (RPO in seconds, RTO in minutes)
 
 ## Question 540
 ---
@@ -7204,7 +7204,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 - D. Use Amazon RDS deployed in a Multi-AZ instance deployment to create an Amazon Aurora database. Direct the reporting functions to the reader instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111439-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, since RDS for Oracle doesn't support Multi-AZ DB clusters
 
 ## Question 541
 ---
