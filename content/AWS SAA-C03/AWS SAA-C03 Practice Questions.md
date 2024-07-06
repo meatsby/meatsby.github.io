@@ -6952,7 +6952,7 @@ Which authentication option will meet these requirements MOST securely?
 - D. Integrate DynamoDB with AWS Certificate Manager (ACM). Generate identity certificates to authenticate DynamoDB. Configure the application to use the correct certificate to authenticate and read the DynamoDB table.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109703-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 522
 ---
@@ -6966,7 +6966,7 @@ Which combination of steps will meet these requirements with the LEAST operation
 - E. Use AWS App Mesh to observe network activity.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109702-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BC
 
 ## Question 523
 ---
@@ -6979,7 +6979,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 - D. Amazon Athena Federated Query with a DynamoDB connector
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/109701-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 524
 ---
@@ -6992,7 +6992,7 @@ Which solution will meet these requirements with the LEAST effort?
 - D. Search CloudTrail logs with Amazon QuickSight. Create a dashboard to identify the errors.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111425-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 525
 ---
@@ -7005,7 +7005,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create AWS Budgets reports for usage cost data. Send the data to the company through SMTP.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111278-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 526
 ---
@@ -7018,7 +7018,7 @@ Which solution will reduce the downtime for scaling exercises with the LEAST ope
 - D. Set up an Amazon RDS proxy for the database. Update the application to use the proxy endpoint.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111245-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, RDS proxy also allows automatic routing for write requests to healthy writer
 
 ## Question 527
 ---
@@ -7032,7 +7032,7 @@ Which solution will provide the MOST fault tolerance?
 - D. Deploy the web tier and the application tier to a second Region. Use an Amazon Aurora global database to deploy the database in the primary Region and the second Region. Use Amazon Route 53 health checks with a failover routing policy to the second Region. Promote the secondary to primary as needed.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111428-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 528
 ---
@@ -7046,7 +7046,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 - D. Use AWS Transfer Family to create an FTP server to store incoming files in Amazon S3 Standard. Create an AWS Lambda function to process the files and to delete the files after they are processed. Use an S3 event notification to invoke the Lambda function when the files arrive.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111317-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 529
 ---
@@ -7059,7 +7059,7 @@ Which solution will meet these requirements?
 - D. Migrate the database to Amazon RDS. Use Amazon CloudWatch Logs for data security and protection.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111246-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 530
 ---
@@ -7072,7 +7072,7 @@ Which solution will meet these requirements?
 - D. Add an Amazon API Gateway endpoint behind the NLBs. Enable API caching. Override method caching for the different stages.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/111271-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 531
 ---
