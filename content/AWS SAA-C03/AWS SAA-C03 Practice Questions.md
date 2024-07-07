@@ -7485,7 +7485,7 @@ Which solution will meet these requirements with the LEAST amount of operational
 - D. Set up Amazon DynamoDB Streams on the table, and have AWS Lambda read from the table and populate Amazon ElastiCache. Route all read requests through ElastiCache.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117022-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 562
 ---
@@ -7499,7 +7499,7 @@ Which combination of steps should the solutions architect take to meet this requ
 - E. Create a security group entry in the endpoint's security group to provide access.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117251-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AB
 
 ## Question 563
 ---
@@ -7512,7 +7512,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Amazon EKS Anywhere as the primary cluster to view the other clusters with native Kubernetes commands.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117023-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 564
 ---
@@ -7525,7 +7525,7 @@ Which solution meets these requirements?
 - D. Store sensitive data in Amazon FSx for Windows Server. Mount the file share on application servers. Use Windows file permissions to restrict access.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117024-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 565
 ---
@@ -7538,7 +7538,7 @@ Which migration solution will meet these requirements?
 - D. Use AWS Database Migration Service (AWS DMS) to migrate the database to Amazon DynamoDB. Configure an Auto Scaling policy.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117025-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 566
 ---
@@ -7551,7 +7551,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create file systems on Amazon Elastic Block Store (Amazon EBS) volumes that are attached to each EC2 instance. Synchronize the EBS volumes across the different EC2 instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116902-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 567
 ---
@@ -7564,7 +7564,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use an Elastic Load Balancer that is supported by an Auto Scaling group of Amazon EC2 instances to receive and process the data from the sensors. Use an Amazon Elastic File System (Amazon EFS) shared file system to store the processed data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117026-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 568
 ---
@@ -7578,7 +7578,7 @@ Which combination of storage and caching should the solutions architect use?
 - D. AWS Storage Gateway with Amazon ElastiCache
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117027-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 569
 ---
@@ -7591,7 +7591,7 @@ Which solution will meet these requirements?
 - D. Check the trails in AWS CloudTrail for the EventBridge events.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117377-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 570
 ---
@@ -7604,7 +7604,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create an Auto Scaling group that uses automatic scaling.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116903-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 571
 ---
