@@ -7617,7 +7617,7 @@ Which solution will meet these requirements?
 - D. Create a certificate in AWS Certificate Manager (ACM) that is signed by the third-party CA. Create an AWS Lambda function with a Lambda function URL. Configure the Lambda function URL to use the certificate.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116904-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, since there is no option in ACM to request a certificate from third-party CA
 
 ## Question 572
 ---
@@ -7631,7 +7631,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 - D. Provision an Amazon RDS for MySQL database with 2 GiB of memory.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117029-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, since provisioned Aurora and RDS have more admin overhead
 
 ## Question 573
 ---
@@ -7644,7 +7644,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Configure Lambda SnapStart.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116925-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, not A because it costs more
 
 ## Question 574
 ---
@@ -7657,7 +7657,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Migrate the existing RDS for MySQL database to an Amazon Elastic Container Service (Amazon ECS) cluster that uses MySQL container images to run tasks.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117272-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 575
 ---
@@ -7670,7 +7670,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 - D. Create an Amazon RDS database configured with cross-Region read replicas.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116969-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 576
 ---
@@ -7683,7 +7683,7 @@ Which type of endpoint should a solutions architect use to meet these requiremen
 - D. Edge-optimized endpoint
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116906-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 577
 ---
@@ -7696,7 +7696,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 - D. Use AWS Certificate Manager (ACM) to create a certificate. Use email validation for the domain.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117037-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 578
 ---
@@ -7709,7 +7709,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Amazon ElastiCache for Redis.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117038-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 579
 ---
@@ -7722,7 +7722,7 @@ Which solution will meet these requirements?
 - D. Purchase All Upfront reserved DB instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116924-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 580
 ---
@@ -7735,7 +7735,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Host the application on an Amazon EC2 instance. Use an Amazon Elastic Block Store (Amazon EBS) GP3 volume to run the application.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117663-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 581
 ---
