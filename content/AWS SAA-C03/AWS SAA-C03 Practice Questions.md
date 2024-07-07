@@ -7749,7 +7749,7 @@ Which set of additional steps should the solutions architect take to meet these 
 - D. Set the Auto Scaling group's minimum capacity to four. Deploy two On-Demand Instances in one Availability Zone and two Spot Instances in a second Availability Zone.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116968-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 582
 ---
@@ -7762,7 +7762,7 @@ Which solution will meet these requirements?
 - D. Set up a weighted routing policy. Split the traffic evenly between eu-central-1 and the on-premises data center.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/118597-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 583
 ---
@@ -7775,7 +7775,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Configure an on-premises Tape Gateway. Create virtual tapes in the AWS Cloud. Use backup software to copy the physical tape to the virtual tape.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117215-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 584
 ---
@@ -7788,7 +7788,7 @@ Which networking solution meets these requirements?
 - D. Configure the EC2 instances with shared tenancy.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119485-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 585
 ---
@@ -7801,7 +7801,7 @@ Which solution will meet these requirements?
 - D. Purchase a Capacity Reservation in the failover Region.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119642-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 586
 ---
@@ -7814,7 +7814,7 @@ What should the solutions architect do next in the new management account?
 - D. Have the R&D AWS account join the new organization. Make the new management account a member of the prior organization.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119645-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 587
 ---
@@ -7827,7 +7827,7 @@ Which solution will meet these requirements?
 - D. Configure a Gateway Load Balancer (GWLB) in front of an Amazon Elastic Container Service (Amazon ECS) container instance that stores the information that the company receives on an Amazon Elastic File System (Amazon EFS) file system. Use an AWS Lambda function to resolve authorization.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119576-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 588
 ---
@@ -7840,7 +7840,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Copy automatic snapshots to another Region every 24 hours.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119718-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 589
 ---
@@ -7853,7 +7853,7 @@ Which solution will meet these requirements?
 - D. Use Amazon RDS to store the session state. Update the application to use Amazon RDS to store the session state.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119487-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, as Memcache is not HA
 
 ## Question 590
 ---
@@ -7866,7 +7866,7 @@ Which solution will meet these requirements?
 - D. Resize the DB instance to accommodate the additional workload.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119719-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 591
 ---
