@@ -7351,7 +7351,7 @@ Which solution meets these requirements MOST cost-effectively?
 - D. Use S3 Standard. Use an S3 Lifecycle rule to transition the reports to S3 Glacier Deep Archive after 7 days.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116896-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 552
 ---
@@ -7364,7 +7364,7 @@ What should the company do to meet these requirements?
 - D. Purchase an All Upfront EC2 Instance Savings Plan for a 1-year term.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116897-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, only Compute Savings Plan allows changing instance family
 
 ## Question 553
 ---
@@ -7377,7 +7377,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Configure Amazon GuardDuty to analyze the data that is in Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117206-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 554
 ---
@@ -7390,7 +7390,7 @@ Which solution will meet these requirements?
 - D. Use the high performance computing (HPC) optimized instance family for the application. Use the memory optimized instance family for the database.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117442-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 555
 ---
@@ -7404,7 +7404,7 @@ Which solution will meet these requirements?
 - D. Implement a gateway endpoint for Amazon SQS. Add a NAT gateway to the private subnets. Attach an IAM role to the EC2 instances that allows access to the SQS queue.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/116983-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 556
 ---
@@ -7417,7 +7417,7 @@ What should the solutions architect do to meet these requirements?
 - D. Create an IAM user in the AWS CloudFormation template that has the required permissions to read and write from the DynamoDB tables. Use the GetAtt function to retrieve the access and secret keys, and pass them to the application instances through the user data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117434-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 557
 ---
@@ -7430,7 +7430,7 @@ Which solution will meet these requirements?
 - D. Use AWS Glue to process the S3 data. Use AWS Lake Formation with the Amazon Redshift data to enrich the S3 data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117344-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 558
 ---
@@ -7443,7 +7443,7 @@ What is the MOST cost-effective solution to connect these VPCs?
 - D. Set up a 1 GB AWS Direct Connect connection between the VPCs. Update the route tables of each VPC to use the Direct Connect connection for inter-VPC communication.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117053-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 559
 ---
@@ -7458,7 +7458,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - E. Activate the selected tag from the Organizations management account.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117403-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BE
 
 ## Question 560
 ---
@@ -7472,7 +7472,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use AWS CloudFormation templates to create accounts in Organizations. Use the drift detection operation on a stack to identify the changes to the OU hierarchy.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/117021-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, as Control Tower has built-in account drift notifications that detects OU changes automatically
 
 ## Question 561
 ---
