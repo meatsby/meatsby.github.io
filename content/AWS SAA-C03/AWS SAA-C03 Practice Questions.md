@@ -7879,7 +7879,7 @@ Which solution will meet this requirement MOST cost-effectively?
 - D. Use Amazon API Gateway to connect the requests to Amazon EKS.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119574-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 592
 ---
@@ -7892,7 +7892,7 @@ Which solution will meet these requirements?
 - D. Use Amazon S3 to store the images. Use Amazon CloudFront to distribute the images with geographic restrictions. Provide a signed URL for each customer to access the data in CloudFront.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119573-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 593
 ---
@@ -7905,7 +7905,7 @@ Which solution will meet these requirements?
 - D. Use Redis shards that contain multiple nodes with Auto Scaling turned on.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119572-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 594
 ---
@@ -7918,7 +7918,7 @@ Which solution will reduce the launch time of the application during the next te
 - D. Launch EC2 On-Demand Instances with Capacity Reservations. Start additional EC2 instances during the next testing phase.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119570-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 595
 ---
@@ -7931,7 +7931,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use schedule scaling to change the size of the Auto Scaling group.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119569-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 596
 ---
@@ -7944,7 +7944,7 @@ Which solution resolves this issue in the MOST cost-effective way?
 - D. Migrate the PostgreSQL database to Amazon Redshift to accommodate increased usage.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119590-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 597
 ---
@@ -7957,7 +7957,7 @@ Which solution will meet these requirements?
 - D. Increase the Lambda function memory.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119465-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 598
 ---
@@ -7972,7 +7972,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 - F. Setup Amazon Athena to query the data that is in Amazon S3. Provide access to analysts.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119563-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- ACF, as S3 File GW supports SMB
 
 ## Question 599
 ---
@@ -7988,7 +7988,7 @@ Which activities are the responsibility of the company's operational team? (Choo
 - F. Providing extra capacity for Amazon ECS clusters to mitigate server failures and maintenance events
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/119530-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- ACF, not D and E as it's AWS's responsibility for Outposts
 
 ## Question 600
 ---
@@ -8001,4 +8001,4 @@ What should a solutions architect recommend to meet this requirement?
 - D. Deploy an Amazon API Gateway API that is configured with the TCP port that the application requires. Configure AWS Lambda functions with provisioned concurrency to process the requests.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121205-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
