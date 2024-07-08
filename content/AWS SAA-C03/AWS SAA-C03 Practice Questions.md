@@ -8014,7 +8014,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use the pg_dump utility to back up the RDS for PostgreSQL database. Restore the backup to a new Aurora PostgreSQL DB cluster.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121210-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, it is possible to promote RDS to Aurora
 
 ## Question 602
 ---
@@ -8027,7 +8027,7 @@ What should the solutions architect do to meet this requirement with the LEAST a
 - D. Create an AWS Lambda function to take a snapshot of the EBS storage that is attached to each EC2 instance and copy the Amazon Machine Images (AMIs). Create another Lambda function to perform the restores with the copied AMIs and attach the EBS storage.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121212-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 603
 ---
@@ -8040,7 +8040,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 - D. Use several AWS Lambda functions to process the data in parallel.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121211-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, Step Functions provide Map state which is for distributed processing
 
 ## Question 604
 ---
@@ -8053,7 +8053,7 @@ Which solution will meet these requirements?
 - D. Order multiple AWS Snowball devices. Copy the data to the devices. Send the devices to AWS to copy the data to Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121186-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 605
 ---
@@ -8066,7 +8066,7 @@ Which solution will meet these requirements?
 - D. Deploy an AWS Storage Gateway volume gateway that is configured with cached volumes.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121170-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, iSCSI = Storage GW, low-latency access to frequently used data = cached volume
 
 ## Question 606
 ---
@@ -8079,7 +8079,7 @@ Which solution meets these requirements MOST cost-effectively?
 - D. Store all the objects in S3 Intelligent-Tiering with an S3 Lifecycle rule to transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 30 days.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121214-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 607
 ---
@@ -8093,7 +8093,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Create an Amazon DynamoDB table. Update the application to use DynamoDB. Use AWS Database Migration Service (AWS DMS) to migrate data from the Oracle database to DynamoDB.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121215-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, storing blobs cost-effectively = S3
 
 ## Question 608
 ---
@@ -8107,7 +8107,7 @@ What should a solutions architect do to meet these requirements?
 - D. Configure the network ACL on the subnet that contains the public interface of the ALB. Update the ingress rules on the network ACL with entries for each of the registered IP addresses.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121216-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, endpoint restriction by IP addresses = AWS WAF
 
 ## Question 609
 ---
@@ -8127,7 +8127,7 @@ Which solution will meet these requirements?
 - D. Set up proxy EC2 instances that have routes to NAT gateways. Configure the proxy EC2 instances to fetch S3 data and feed the application instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121217-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 611
 ---
