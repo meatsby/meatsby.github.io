@@ -8807,7 +8807,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use an AWS Lambda function to provide connection pooling with a target group configuration for the database. Change the applications to use the Lambda function.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/127729-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 662
 ---
@@ -8820,7 +8820,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Delete all nonessential snapshots. Use Amazon Data Lifecycle Manager to create and manage the snapshots according to the company's snapshot policy requirements.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/126865-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 663
 ---
@@ -8833,7 +8833,7 @@ Which solution will meet these requirements?
 - D. Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to allow access from only the subnets that the ECS cluster will generate tasks in. Create a VPC endpoint for Amazon S3. Update the S3 bucket policy to allow access from only the S3 VPC endpoint.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/126798-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 664
 ---
@@ -8847,7 +8847,7 @@ Which solution will meet these requirements?
 - D. Configure an Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale on predictive metrics.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/126800-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 665
 ---
@@ -8860,7 +8860,7 @@ Which solution will meet these requirements?
 - D. Use AWS CloudFormation to set up the infrastructure. Use AWS Service Catalog to track changes.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/128070-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 666
 ---
@@ -8874,7 +8874,7 @@ Which combination of actions should a solutions architect take to achieve high a
 - E. Create an Application Load Balancer to distribute traffic to an Auto Scaling group of EC2 instances that are distributed across two Availability Zones.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/128269-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BE
 
 ## Question 667
 ---
@@ -8887,7 +8887,7 @@ Which solution will meet these requirements?
 - D. Use an AWS Key Management Service (AWS KMS) key to access the data securely from the Region and the on-premises location.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/126802-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, not A since the GW endpoint does not allow access from on-prem, peered VPCs in other Regions, or transit GW
 
 ## Question 668
 ---
@@ -8901,7 +8901,7 @@ Which solution will meet these requirements?
 - D. Create a tag policy in Organizations that has a list of allowed application names.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/127661-exam-aws/)
-	- 
+	- D
 
 ## Question 669
 ---
@@ -8914,7 +8914,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Integrate AWS Systems Manager Parameter Store with Amazon RDS for PostgreSQL to automate password rotation.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/127660-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 670
 ---
@@ -8927,7 +8927,7 @@ Which solution will meet these requirements?
 - D. Purchase DynamoDB reserved capacity for a 3-year term.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129711-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, as applications have predictable traffic patterns
 
 ## Question 671
 ---
