@@ -8408,7 +8408,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Amazon Quantum Ledger Database (Amazon QLDB) to store the information. Use Neptune Streams to process changes in the database.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125113-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, Social Network -> Graph data -> Neptune
 
 ## Question 632
 ---
@@ -8421,7 +8421,7 @@ Which storage solution should a solutions architect recommend to meet these requ
 - D. Store the data in an Amazon Elastic Block Store (Amazon EBS) Provisioned IOPS volume shared between the application instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125114-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 633
 ---
@@ -8434,7 +8434,7 @@ What should a solutions architect do to improve the application's performance?
 - D. Use Amazon Kinesis Data Firehose between the application and Amazon RDS to increase the concurrency of database requests.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125513-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 634
 ---
@@ -8448,7 +8448,7 @@ Which solution will meet these requirements?
 - D. Set up an IAM user for each analyst in the source data account. Grant each user access to the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125544-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 635
 ---
@@ -8461,7 +8461,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create an Amazon Elastic File System (Amazon EFS) volume. Migrate the current data to the volume. Replicate the volume to the secondary Region.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125545-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, as B is one-time copy
 
 ## Question 636
 ---
@@ -8474,7 +8474,7 @@ What should a solutions architect do to process the events from Amazon S3 in a s
 - D. Create an SNS subscription that sends the event to AWS Server Migration Service (AWS SMS). Configure the Lambda function to poll from the SMS event.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125546-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 637
 ---
@@ -8488,7 +8488,7 @@ Which combination ofAWS services would meet these requirements? (Choose two.)
 - E. MySQL-compatible Amazon Aurora
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125547-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BC
 
 ## Question 638
 ---
@@ -8501,7 +8501,7 @@ Which solution will meet these requirements?
 - D. Configure AWS Transfer Family SFTP endpoints. Select the custom identity provider options. Use AWS Secrets Manager to manage the user credentials Instruct employees to use Transfer Family.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125574-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 639
 ---
@@ -8515,7 +8515,7 @@ What should the solutions architect do to resolve this issue?
 - D. Adjust the frequency of the health checks on the ALB's target group
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125575-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 640
 ---
@@ -8529,7 +8529,7 @@ Which combination of actions accomplish this? (Choose two.)
 - E. Create a new IAM role with the kms:decrypt permission and attach the execution role to the Lambda function.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125579-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BE
 
 ## Question 641
 ---
