@@ -8141,7 +8141,7 @@ Which design should a solutions architect recommend to provide a more scalable s
 - D. Repackage the application as a container. Deploy the application using Amazon Elastic Container Service (Amazon ECS) using the EC2 launch type with an Auto Scaling group.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121218-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 612
 ---
@@ -8154,7 +8154,7 @@ Which solution will meet these requirements?
 - D. Configure a VPC endpoint. Update the S3 bucket policy to allow access from the VPC endpoint. Update the application to use the new VPC endpoint.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121159-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 613
 ---
@@ -8167,7 +8167,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use AWS Systems Manager Parameter Store to encrypt the information by using AWS Key Management Service (AWS KMS).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121158-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 614
 ---
@@ -8183,7 +8183,7 @@ Which solution will meet these requirements?
 - D. Deploy an Application Load Balancer with a target group that contains the application servers' Auto Scaling group. Configure the security group to allow only the web servers to access the application servers.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121157-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 615
 ---
@@ -8196,7 +8196,7 @@ Which solution meets these requirements?
 - D. Configure Amazon CloudWatch Container Insights in the existing EKS cluster. View the metrics and logs in the CloudWatch console.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121154-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 616
 ---
@@ -8210,7 +8210,7 @@ Which solution will meet these requirements?
 - D. Configure AWS Config to monitor and report findings to Amazon EventBridge.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121177-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 617
 ---
@@ -8224,7 +8224,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 - E. Install an AWS DataSync agent in the on-premises data center. Use a DataSync task between the on-premises location and AWS.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121176-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BE, NFS = EFS
 
 ## Question 618
 ---
@@ -8237,7 +8237,7 @@ Which solution will meet these requirements?
 - D. Create an FSx for Windows File Server file system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121219-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 619
 ---
@@ -8250,7 +8250,7 @@ Which action meets these requirements?
 - D. Create a service-linked role for CloudTrail with a policy condition that allows changes only from an Amazon Resource Name (ARN) in the management account.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121220-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 620
 ---
@@ -8263,7 +8263,7 @@ Which type of storage should a solutions architect recommend to meet these requi
 - D. Throughput Optimized HDD Amazon Elastic Block Store (Amazon EBS) volume
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121221-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 621
 ---
