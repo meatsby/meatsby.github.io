@@ -8941,7 +8941,7 @@ Which solution will meet these requirements?
 - D. Use Amazon CloudWatch to monitor costs and to identify unusual spending.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129712-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 672
 ---
@@ -8954,7 +8954,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Configure an AWS Glue crawler to crawl the data. Configure Amazon Kinesis Data Analytics to use SQL to query the data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129713-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 673
 ---
@@ -8967,7 +8967,7 @@ Which solution will meet these requirements?
 - D. Configure access to Amazon S3 for each user. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129714-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 674
 ---
@@ -8981,7 +8981,7 @@ Which actions should a solutions architect take to resolve these performance iss
 - E. Configure the Auto Scaling group subnets to ensure that the EC2 instances are provisioned in the same Availability Zone as the DB instance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129716-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BD
 
 ## Question 675
 ---
@@ -8994,7 +8994,7 @@ Which solution will meet these requirements with the LEAST administrative effort
 - D. Lock the EBS snapshots to prevent deletion.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129717-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 676
 ---
@@ -9007,7 +9007,7 @@ Which solution will meet these requirements?
 - D. Create a trail in AWS CloudTrail. Configure VPC Flow Logs to send the log data to the trail. Use Amazon Kinesis Data Firehose to stream the logs from the trail to OpenSearch Service.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129718-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 677
 ---
@@ -9021,7 +9021,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Create a managed node group that contains only On-Demand Instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129827-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 678
 ---
@@ -9034,7 +9034,7 @@ Which solution will meet these requirements?
 - D. Download S3 objects to an Amazon EC2 instance. Encrypt the objects by using customer managed keys. Upload the encrypted objects back into Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129719-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 679
 ---
@@ -9049,7 +9049,7 @@ Which combination of steps will meet these requirements? (Choose three.)
 - F. Configure the backup solution to tag the objects with a 30-day retention period
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129721-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- ACE
 
 ## Question 680
 ---
@@ -9062,7 +9062,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Launch an Amazon EC2 instance in the same VPC as the file system. Mount the file system. Create a script to routinely synchronize all objects that changed in the origin S3 bucket to the destination S3 bucket and the mounted file system.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129722-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 681
 ---
