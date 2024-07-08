@@ -8542,7 +8542,7 @@ Which solution is the MOST scalable and cost-effective way to meet these require
 - D. Enable Cost and Usage Reports for member accounts. Deliver the reports to Amazon Kinesis. Use Amazon QuickSight tor analysis.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125580-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 642
 ---
@@ -8555,7 +8555,7 @@ What should a solutions architect do to meet these requirements?
 - D. Deploy a NAT instance that is configured with port forwarding to the EC2 instances in the Auto Scaling group.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125215-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 643
 ---
@@ -8568,7 +8568,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Store the logs in an Amazon EMR cluster Use a supported open-source framework for SQL-based analysis.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125581-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 644
 ---
@@ -8582,7 +8582,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - E. Validate domain ownership for the domain by adding the required DNS records to the DNS provider.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125582-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AE
 
 ## Question 645
 ---
@@ -8595,7 +8595,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use a custom key store backed by an AWS CloudHSM cluster.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125583-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 646
 ---
@@ -8608,7 +8608,7 @@ Which solution will meet these requirements?
 - D. Configure AWS Resource Access Manager to share an Amazon S3 bucket so that it can be mounted to all instances for processing and postprocessing.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125584-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, host a high performance computing (HPC) workload -> FSx lustre
 
 ## Question 647
 ---
@@ -8621,7 +8621,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create an Application Load Balancer that uses path-based routing.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125212-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 648
 ---
@@ -8635,7 +8635,7 @@ What should the solutions architect do to meet these requirements?
 - D. Use Amazon Elastic File System (Amazon EFS) with Provisioned Throughput mode.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125586-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, as the entire dataset is required, A is for temporary data storage
 
 ## Question 649
 ---
@@ -8648,7 +8648,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Configure the EBS magnetic volume type to achieve maximum IOPS.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125588-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 650
 ---
@@ -8661,7 +8661,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Migrate to Amazon Aurora MySQL. Use Aurora read replicas for reporting purposes
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125589-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 651
 ---
