@@ -8276,7 +8276,7 @@ Which solution will meet this requirement with the LEAST operational effort?
 - D. Create a second S3 bucket in us-east-1. Configure S3 event notifications on object creation and update events to invoke an AWS Lambda function to copy photos from the existing S3 bucket to the second S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121222-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 622
 ---
@@ -8290,7 +8290,7 @@ Which solutions will meet these requirements and provide the MOST scalability? (
 - E. Deploy the web servers for static content across a fleet of Amazon EC2 instances in Auto Scaling groups. Configure the instances to periodically refresh the content from an Amazon Elastic File System (Amazon EFS) volume.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121223-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AD, not B since Aurora can't rapidly evolve their schema
 
 ## Question 623
 ---
@@ -8303,7 +8303,7 @@ What is the MOST operationally efficient solution that meets these requirements?
 - D. Set up API Gateway with an Amazon CloudFront distribution. Configure AWS WAF in CloudFront.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/121172-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 624
 ---
@@ -8316,7 +8316,7 @@ What should the solutions architect do to meet these requirements?
 - D. Configure Security Assertion Markup Language (SAML) 2 0-based federation. Create roles with the appropriate policies attached Map the roles to the Active Directory groups.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125336-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, not B since Cognito is for providing access to own apps, not AWS resources
 
 ## Question 625
 ---
@@ -8329,7 +8329,7 @@ Which configuration should the solutions architect choose to meet these requirem
 - D. Configure Amazon Route 53 with a geoproximity routing policy
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125337-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 626
 ---
@@ -8343,7 +8343,7 @@ Which solution will meet these requirements?
 - D. Configure an accelerator in Amazon S3 Transfer Acceleration on premises. Configure the accelerator to perform the online data transfer to an S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125338-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 627
 ---
@@ -8356,7 +8356,7 @@ What should a solutions architect recommend to meet these requirements?
 - D. Launch an Amazon EC2 instance in an Auto Scaling group across two Availability Zones. Import zone files. Set the desired capacity to 1 and the maximum capacity to 3 for the Auto Scaling group. Configure scaling alarms to scale based on CPU utilization.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125541-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 628
 ---
@@ -8369,7 +8369,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create an S3 Multi-Region Access Point to report the incomplete multipart upload object count.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125459-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 629
 ---
@@ -8382,7 +8382,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Amazon RDS Blue/Green Deployments to deploy and test production changes.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125460-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 630
 ---
@@ -8395,7 +8395,7 @@ How should the solutions architect address this issue in the MOST cost-effective
 - D. Use an Amazon Elastic Container Service (Amazon ECS) task running on Amazon EC2 triggered by an Amazon EventBridge scheduled event.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125542-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, Fargate is cheaper than EC2
 
 ## Question 631
 ---
