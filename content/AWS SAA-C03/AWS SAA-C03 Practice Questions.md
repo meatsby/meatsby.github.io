@@ -9075,7 +9075,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use an AWS owned key to encrypt the EBS volumes.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129723-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 682
 ---
@@ -9088,7 +9088,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 - D. Use Amazon inspector to detect unencrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Systems Manager Automation rules to automatically encrypt existing and new EBS volumes.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129724-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, not D inspector is for OS patching and vulnerability detections
 
 ## Question 683
 ---
@@ -9102,7 +9102,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - E. Migrate the database to an Amazon DynamoDB table.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129725-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AC
 
 ## Question 684
 ---
@@ -9115,7 +9115,7 @@ Which solution will meet these requirements?
 - D. Deploy the applications in AWS Wavelength Zones by extending the company’s VPC from eu-central-1 to the chosen Wavelength Zone.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/129726-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 685
 ---
@@ -9128,7 +9128,7 @@ What should a solutions architect do to meet these requirements?
 - D. Point the client driver at an RDS proxy endpoint. Deploy the Lambda functions outside a VPC.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133297-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 686
 ---
@@ -9142,7 +9142,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 - D. Create an AWS Direct Connect connection between the on-premises locations and a central VPC. Connect the central VPC to other VPCs by using peering connections.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132844-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 687
 ---
@@ -9156,7 +9156,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - E. Train an Amazon Forsecast predictor by using the historical data in the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132845-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- DE
 
 ## Question 688
 ---
@@ -9170,7 +9170,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create individual users in IAM Identity Center. Create new permission sets that include the appropriate IAM policies for each user. Assign the users to the appropriate accounts. Grant additional IAM permissions to the users from within specific accounts. When new users are hired, add them to IAM Identity Center and assign them to the accounts.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132847-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 689
 ---
@@ -9183,7 +9183,7 @@ Which solution will meet these requirements?
 - D. Create an AWS Config rule for Amazon EBS to evaluate if a volume is encrypted and to flag the volume if it is not encrypted.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132849-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 690
 ---
@@ -9197,7 +9197,7 @@ Which solutions will meet these requirements? (Choose two.)
 - E. Add a random prefix to each object when uploading the files.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132852-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- CD
 
 ## Question 691
 ---
