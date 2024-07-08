@@ -8675,7 +8675,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Flexible Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125244-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, "The images cannot be lost during this process"
 
 ## Question 652
 ---
@@ -8688,7 +8688,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Configure a long-running cluster that runs the primary node on an On-Demand Instance, the core nodes on Spot Instances, and the task nodes on Spot Instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/125591-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, as Transient cluster runs until the workload is completed and cannot lose data = primary and core nodes on demand
 
 ## Question 653
 ---
@@ -8701,7 +8701,7 @@ Which solution will meet these requirements?
 - D. Create an AWS Lambda function to tag the resources with a default value. Configure an Amazon EventBridge rule that reacts to AWS CloudTrail events to invoke the Lambda function when a resource is missing the cost center tag.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/126867-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 654
 ---
@@ -8715,7 +8715,7 @@ Which solution will meet these requirements?
 - D. Configure an Amazon CloudFront distribution with an Amazon S3 endpoint to an S3 bucket that is configured to host the static content. Configure an Application Load Balancer that targets an Amazon Elastic Container Service (Amazon ECS) service that runs AWS Fargate tasks for the PHP application. Configure the PHP application to use an Amazon ElastiCache for Redis cluster that runs in multiple Availability Zones.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/128008-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 655
 ---
@@ -8728,7 +8728,7 @@ Which S3 storage class should a solutions architect choose to meet these require
 - D. S3 One Zone-Infrequent Access (S3 One Zone-IA)
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/81300-exam-aws-certified-solutions-architect-associate-saa-c02/)
-	- 
+	- C
 
 ## Question 656
 ---
@@ -8741,7 +8741,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Store images in Amazon S3 Standard-Infrequent Access (S3 Standard-IA). Use S3 Standard-IA to directly deliver images by using a static website.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/127135-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 657
 ---
@@ -8754,7 +8754,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Create security groups in a central administrative AWS account. Create an AWS Firewall Manager common security group policy for the whole organization. Select the previously created security groups as primary groups in the policy.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/127524-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, as RAM is for this usage
 
 ## Question 658
 ---
@@ -8768,7 +8768,7 @@ Which solution will meet these requirements with the LEAST latency? (Choose two.
 - E. Attach the EC2 instances to an Amazon FSx for NetApp ONTAP file system.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/126797-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AE, as LEAST latency = cluster, NFS & SMB = NetApp ONTAP
 
 ## Question 659
 ---
@@ -8781,7 +8781,7 @@ Which AWS service should a solutions architect use to meet these requirements?
 - D. AWS Storage Gateway
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/128067-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 660
 ---
@@ -8794,7 +8794,7 @@ Which solution will meet these requirements?
 - D. Configure a scheduled scaling policy for the Auto Scaling group to launch new instances before peak hours.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/126994-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 661
 ---
