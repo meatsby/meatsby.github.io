@@ -9211,7 +9211,7 @@ Which solutions meet these requirements? (Choose two.)
 - E. Create an Amazon S3 bucket to store the web content. Set the metadata for the Cache-Control header to no-cache. Use Amazon CloudFront to deliver the content.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132853-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BE
 
 ## Question 692
 ---
@@ -9224,7 +9224,7 @@ Which Route 53 configuration should a solutions architect use to provide the MOS
 - D. Create a CNAME record with a geoproximity policy.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132854-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 693
 ---
@@ -9238,7 +9238,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Modify the Auto Scaling group to use EC2 instances across three Availability Zones. Migrate the embedded NoSQL database to Amazon DynamoDB by using AWS Database Migration Service (AWS DMS).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132855-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 694
 ---
@@ -9251,7 +9251,7 @@ What should a solutions architect do to ensure that the shopping cart data is pr
 - D. Configure an Amazon EC2 instance with Amazon Elastic Block Store (Amazon EBS) storage for the catalog and shopping cart. Configure automated snapshots.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132857-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 695
 ---
@@ -9264,7 +9264,7 @@ Which solution will meet these requirements?
 - D. Use AWS Trusted Advisor to understand the performance of the application.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132858-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 696
 ---
@@ -9278,7 +9278,7 @@ Which solution will meet these requirements?
 - D. Provision an AWS Certificate Manager (ACM) certificate for each customer. Encrypt the data client-side. In the public certificate policy, deny access to the certificate for all principals except an IAM role that the customer provides.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132859-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 697
 ---
@@ -9291,7 +9291,7 @@ What should the solutions architect do to resolve this issue?
 - D. Ensure that the security group that is attached to the EC2 instance allows HTTP traffic on port 80 and HTTPS traffic on port 443. Ensure that the DNS record for the website resolves to the public IP address of the EC2 instance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132860-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 698
 ---
@@ -9304,7 +9304,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create Amazon Elastic File System (Amazon EFS) file systems in the same Availability Zones where EKS worker nodes are placed. Register the file systems in a StorageClass object on an EKS cluster. Create an AWS Lambda function to synchronize the data between file systems.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132861-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 699
 ---
@@ -9318,7 +9318,7 @@ Which solution will meet these requirements?
 - D. Use Amazon Elastic Container Service (Amazon ECS) with an Amazon EC2 launch type. Create an Amazon Elastic File System (Amazon EFS) volume. Add the EFS volume as a persistent storage volume mounted in the containers.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132862-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 700
 ---
@@ -9332,7 +9332,7 @@ Which combination of actions should a solutions architect take to meet these req
 - E. Configure Amazon CloudFront to handle the traffic and route requests to the application in each Region
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132863-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AC
 
 ## Question 701
 ---
