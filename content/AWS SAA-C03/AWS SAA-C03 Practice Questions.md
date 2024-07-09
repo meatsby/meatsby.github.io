@@ -10011,7 +10011,7 @@ Which solution will meet these requirements?
 - D. Attach the SystemAdministrator resource-based policy to the IAM user group. Place each of the five designated employee IAM users in the IAM user group.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133081-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 752
 ---
@@ -10026,7 +10026,7 @@ Which combination of actions will meet these requirements? (Choose two.)
 - E. Use containers that are based on Amazon Elastic Kubernetes Service (Amazon EKS) for the compute layers in the architecture.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133405-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AD
 
 ## Question 753
 ---
@@ -10039,7 +10039,7 @@ Which solution meets these requirements?
 - D. Deploy AWS Transfer for SFTP and an Amazon S3 bucket for storage. Modify the application to pull the batch files from Amazon S3 to an Amazon EC2 instance for processing. Use an EC2 instance in an Auto Scaling group with a scheduled scaling policy to run the batch operation.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132944-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 754
 ---
@@ -10052,7 +10052,7 @@ What should a solutions architect recommend to accomplish this?
 - D. Put the EC2 instances behind Application Load Balancers (ALBs) in each Region. Create an Amazon CloudFront distribution with an origin that uses Amazon Route 53 latency-based routing to route requests to the ALBs. Deploy AWS WAF on the CloudFront distribution.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132945-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, Global Accelerator provides static IP
 
 ## Question 755
 ---
@@ -10065,7 +10065,7 @@ Which solution will meet this requirement?
 - D. Switch to Amazon Redshift with relocation capability.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132946-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 756
 ---
@@ -10075,10 +10075,11 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 - A. Create an Object Lambda Access Point. Create an AWS Lambda function that redacts the PII when the function reads the file. Instruct the external service provider to access the Object Lambda Access Point.
 - B. Create a batch process on an Amazon EC2 instance that regularly reads all new files, redacts the PII from the files, and writes the redacted files to a different S3 bucket. Instruct the external service provider to access the bucket that does not contain the PII.
+- C. Create a web application on an Amazon EC2 instance that presents a list of the files, redacts the PII from the files, and allows the external service provider to download new versions of the files that have the PII redacted.
 - D. Create an Amazon DynamoDB table. Create an AWS Lambda function that reads only the data in the files that does not contain PII. Configure the Lambda function to store the non-PII data in the DynamoDB table when a new file is written to Amazon S3. Grant the external service provider access to the DynamoDB table.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132947-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 757
 ---
@@ -10091,7 +10092,7 @@ What should the solutions architect recommend to meet these requirements?
 - D. Launch the EC2 instance with two Amazon Elastic Block Store (Amazon EBS) volumes that use RAID configurations for storage redundancy.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133082-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 758
 ---
@@ -10104,7 +10105,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use an AWS Lambda function. Configure the Lambda function to connect to a VPC. Configure Application Auto Scaling to use Lambda as a scalable target. Set the minimum capacity to 3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132948-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 759
 ---
@@ -10118,7 +10119,7 @@ Which solution will meet these requirements?
 - D. Store newer movie video files in S3 Standard. Store older movie video files in S3 Glacier Flexible Retrieval. When a user orders an older movie, retrieve the video file by using bulk retrieval.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132949-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, not C as per S3 Glacier Flexible Retrieval, expedited retrieval cannot retrieve files larger than 250MB+ within 1~5mins
 
 ## Question 760
 ---
@@ -10131,7 +10132,7 @@ Which solution meets these requirements with the LEAST operational overhead?
 - D. Create an Amazon Elastic Container Service (Amazon ECS) cluster that uses the Amazon EC2 launch type with an Amazon Elastic Block Store (Amazon EBS) volume that has more than 50 GB of space. Create a task definition for the container image. Create a service with that task definition.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132950-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 761
 ---
