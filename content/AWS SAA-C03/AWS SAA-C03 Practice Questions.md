@@ -10542,7 +10542,7 @@ Which solution will meet these requirements?
 - D. Create an AWS Key Management Service (AWS KMS) key. Enable encryption helpers on the Lambda functions to use the KMS key to store and encrypt the environment variables.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133030-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 792
 ---
@@ -10555,7 +10555,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 - D. Configure an IAM user to handle user authentication. Implement Amazon API Gateway HTTP APIs with an IAM authorizer.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133031-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, Cognito authorizer for access?
 
 ## Question 793
 ---
@@ -10569,7 +10569,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create an AWS CloudTrail trail. Configure the trail to deliver logs to a new Amazon CloudWatch log group. Create a CloudWatch alarm based on the metric filter for the CloudWatch log group. Configure the alarm to use Amazon SNS to notify the administrators when the KMS DeleteKey operation is performed.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133032-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 794
 ---
@@ -10583,7 +10583,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Run the program by using Amazon EC2 Spot Instances. Create an Amazon EventBndge rule to start the EC2 instances when reports are requested. Run the EC2 instances continuously during the last week of each month.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133033-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 795
 ---
@@ -10597,7 +10597,7 @@ Which combination of solutions will meet these requirements? (Choose two.)
 - E. Create an AWS Elastic Beanstalk deployment to manage the environment.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133034-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BD, Elastic Fabric Adapter is for HPC
 
 ## Question 796
 ---
@@ -10610,7 +10610,7 @@ Which solution will meet these requirements?
 - D. Create an AWS Lambda function that uses Amazon Rekognition Video to detect unwanted content. Create a Lambda function URL that the web application invokes when new photos are uploaded.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133035-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 797
 ---
@@ -10623,7 +10623,7 @@ Which solution will meet these requirements?
 - D. Attach the administrator policy to another IAM user when the company cannot access the root account.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133036-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 798
 ---
@@ -10637,7 +10637,7 @@ Which solution will meet these requirements with the LEAST implementation effort
 - D. Create a data stream in Amazon Kinesis Data Streams. Implement producer and consumer applications. Store a list of affiliated partners in the data stream. Send user IDs when the company gives users points.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133037-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 799
 ---
@@ -10651,7 +10651,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use an Amazon EventBridge rule to invoke an AWS Lambda function when a PutObject request occurs. Program the Lambda function to analyze the object and extract the ingredient names by using Amazon SageMaker. Store the inference output from the SageMaker endpoint in the DynamoDB table.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/135257-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 800
 ---
@@ -10664,7 +10664,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Move the contents of the file system to a Lambda layer. Configure the Lambda layer's permissions to allow the company's secondary account to use the Lambda layer.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/135258-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 801
 ---
