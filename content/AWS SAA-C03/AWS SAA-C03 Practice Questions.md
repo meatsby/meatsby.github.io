@@ -10407,7 +10407,7 @@ Which solution will meet these requirements?
 - D. Use AWS Cost Explorer forecasts to determine resource owners. Create usage budgets in AWS Budgets. Add an alert threshold to receive notification when spending exceeds 60% of the budget.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133015-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 782
 ---
@@ -10421,7 +10421,7 @@ Which solution will meet these requirements?
 - D. Deploy the web application on Amazon EC2 instances in private subnets behind a public Application Load Balancer (ALB). Attach an internet gateway to the VPC. Set the outbound destination of the ALB’s security group to 0.0.0.0/0.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133016-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 783
 ---
@@ -10434,7 +10434,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Copy the records from the application into an Amazon Quantum Ledger Database (Amazon QLDB) ledger.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133018-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 784
 ---
@@ -10448,7 +10448,7 @@ Which solution will meet these requirements?
 - D. Use AWS Data Pipeline to process the data. Schedule Data Pipeline to process the data once at midnight.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133019-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, Data preparation = Glue DataBrew, State handling = Step Functions
 
 ## Question 785
 ---
@@ -10462,7 +10462,7 @@ Which solution will meet these requirements?
 - D. Use Lambda to retrieve all due payments. Store the due payments in an Amazon DynamoDB table. Configure streams on the DynamoDB table to invoke another Lambda function to process the due payments.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133021-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 786
 ---
@@ -10475,7 +10475,7 @@ Which solution will meet these requirements?
 - D. Use the AWS Schema Conversion Tool (AWS SCT) to create the relevant templates. Use AWS Database Migration Service (AWS DMS) to collect data about the on-premises servers.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133022-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 787
 ---
@@ -10488,7 +10488,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use AWS Managed Services (AMS) Accelerate to build a multi-account landing zone (MALZ). Submit an RFC to self-service provision AWS Security Hub in the MALZ.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133023-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, auditing all accounts & FSBP standard = Control Tower with Security Hub
 
 ## Question 788
 ---
@@ -10501,7 +10501,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Create an Amazon EMR cluster. Use Apache Spark SQL to run SQL statements directly on the data in the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133024-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 789
 ---
@@ -10514,7 +10514,7 @@ Which solution will meet these requirements?
 - D. Use a service control policy (SCP) to block actions for the EC2 instances and IAM resources if the actions lead to noncompliance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133025-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 790
 ---
@@ -10529,7 +10529,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - E. Configure an Application Load Balancer in a public subnet to distribute web traffic.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133027-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BE
 
 ## Question 791
 ---
