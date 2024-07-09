@@ -10145,7 +10145,7 @@ Which solution meets these requirements?
 - D. Develop an on-premises custom identity broker application or process that uses AWS Security Token Service (AWS STS) to get short-lived credentials.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133326-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, since not compatible with SAML
 
 ## Question 762
 ---
@@ -10158,7 +10158,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Upload the AMIs to an Amazon S3 bucket that has Cross-Region Replication.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132951-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C, Recycle Bin us a data recovery feature to restore accidental deletion of EBS snapshots and EBS-backed AMIs
 
 ## Question 763
 ---
@@ -10171,7 +10171,7 @@ What is the MOST cost-effective mechanism to move this data and meet the migrati
 - D. Create an Amazon S3 VPC endpoint and establish a VPN to upload the data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132952-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 764
 ---
@@ -10185,7 +10185,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Migrate the web tier and the application tier to Amazon EC2 instances in public subnets. Migrate the database tier to Amazon Aurora MySQL in public subnets.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132954-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 765
 ---
@@ -10198,7 +10198,7 @@ How should a solutions architect provide access to the SQS queue?
 - D. Create an Amazon Simple Notification Service (Amazon SNS) access policy that provides the other company access to the SQS queue.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132956-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 766
 ---
@@ -10212,7 +10212,7 @@ What should a solutions architect do to meet these requirements MOST cost-effect
 - D. Attach the AmazonSSMManagedInstanceCore IAM policy to an IAM role that is associated with the EC2 instances. Instruct the developers to use AWS Systems Manager Session Manager to access the EC2 instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132957-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 767
 ---
@@ -10225,7 +10225,7 @@ Which storage solution should a solutions architect recommend to meet these requ
 - D. Configure an AWS Site-to-Site VPN connection from the on-premises environment to AWS. Migrate data to an Amazon Elastic File System (Amazon EFS) file system.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132996-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 768
 ---
@@ -10238,7 +10238,7 @@ Which solution meets these requirements with the LEAST operational overhead?
 - D. Turn on streams on the table to capture a log of all changes to the table in the last 24 hours. Store a copy of the stream in an Amazon S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132960-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 769
 ---
@@ -10251,7 +10251,7 @@ What should the solutions architect recommend?
 - D. Configure an Amazon Simple Notification Service (Amazon SNS) topic to process the files uploaded to Amazon S3. Invoke an AWS Lambda function to process the files.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132997-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 770
 ---
@@ -10265,7 +10265,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use Dedicated Hosts for the production instances. Use EC2 Instance Savings Plans for the nonproduction instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132998-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 771
 ---
