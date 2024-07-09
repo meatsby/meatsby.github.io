@@ -10279,7 +10279,7 @@ Which solution will meet these requirements?
 - D. Use an AWS Snowball device to migrate the data to an Amazon S3 bucket. Import the S3 data to Aurora PostgreSQL by using the Aurora PostgreSQL aws_s3 extension.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132999-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 772
 ---
@@ -10299,7 +10299,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Configure an Auto Scaling group to scale out as traffic increases. Create a launch template to start new instances from a preconfigured Amazon Machine Image (AMI).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133004-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 774
 ---
@@ -10312,7 +10312,7 @@ What should the solutions architect do to meet these requirements with the LEAST
 - D. Configure a service control policy (SCP) that prevents non-administrative users from creating or editing security groups. Create a notification in the ticketing system when a user requests a rule that needs administrator permissions.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133006-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 775
 ---
@@ -10327,7 +10327,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 - D. Create peering connections between VPCs that contain microservices. Create a prefix list for each service that requires a connection to a client. Create route tables to route traffic to the appropriate VPC. Create security groups to allow only HTTPS communication.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133007-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, VPC Lattice is a new capability of VPC designed to simplify networking for service-to-service communications
 
 ## Question 776
 ---
@@ -10340,7 +10340,7 @@ What should the solutions architect recommend to solve these issues?
 - D. Add an Amazon ElastiCache for Memcached layer in front of the database.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133008-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 777
 ---
@@ -10354,7 +10354,7 @@ Which solution will meet these requirements? (Choose two.)
 - E. Recreate the AWS KMS key. Add a key policy to allow the Organizations root Amazon Resource Name (ARN) to use the AWS KMS key.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133009-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AC
 
 ## Question 778
 ---
@@ -10368,7 +10368,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Set up an AWS Storage Gateway Volume Gateway to transfer the data to Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133010-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, not C since Snowmobile is advised over 10PB
 
 ## Question 779
 ---
@@ -10381,7 +10381,7 @@ Which solution will meet these requirements?
 - D. Create an EFS access point for each application. Use Portable Operating System Interface (POSIX) file permissions to allow read-only access to files in the root directory.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133011-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 780
 ---
@@ -10394,7 +10394,7 @@ Which solution will meet these requirements MOST securely?
 - D. Create an IAM user in the company’s account that has a permission boundary that allows the vendor’s account. Attach the appropriate IAM policies to the user for the permissions that the vendor requires.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133014-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 781
 ---
