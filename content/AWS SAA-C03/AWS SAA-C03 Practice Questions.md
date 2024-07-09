@@ -9345,7 +9345,7 @@ Which solution meets these requirements?
 - D. Create an Amazon CloudFront distribution for the application, and set the ALB as the origin. Enable an AWS WAF web ACL on the distribution, and configure rules to block traffic from unknown sources
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132865-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 702
 ---
@@ -9358,7 +9358,7 @@ Which solution will meet these requirements?
 - D. Create an Amazon FSx for Lustre file system. Import the data directly into the FSx for Lustre file system. Access the FSx for Lustre file system from the HPC cluster instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132866-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 703
 ---
@@ -9371,7 +9371,7 @@ Which solution meets these requirements and is MOST cost-effective?
 - D. Set up an AWS Direct Connect connection between the on-premises data center and a VPC, and copy the data to Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132867-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 704
 ---
@@ -9384,7 +9384,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Launch an identical set of game servers on EC2 instances in separate AWS Regions. Route internet traffic to both sets of EC2 instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132868-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 705
 ---
@@ -9399,7 +9399,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - E. Promote the Aurora PostgreSQL read replica to a standalone Aurora PostgreSQL DB cluster when the replica lag is zero.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132870-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AD
 
 ## Question 706
 ---
@@ -9412,7 +9412,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use Amazon ElastiCache to cache the common queries that the script runs against the database.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133216-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 707
 ---
@@ -9425,7 +9425,7 @@ What is the MOST operationally efficient solution that meets these requirements?
 - D. Use Amazon EMR on a dedicated Amazon EC2 instance to directly query the ALB to acquire traffic access log information.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132874-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 708
 ---
@@ -9438,7 +9438,7 @@ Which solution will meet these requirements?
 - D. Create private NAT gateways in public subnets in the same VPCs as the EC2 instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132875-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 709
 ---
@@ -9452,7 +9452,7 @@ Which solutions to deploy the SCP will meet these requirements? (Choose two.)
 - E. Create an OU for the required accounts. Attach the SCP to the OU. Move the nonproduction member accounts into the new OU.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132876-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- BE
 
 ## Question 710
 ---
@@ -9465,7 +9465,7 @@ Which solution meets these requirements?
 - D. Set up an access key ID and a secret access key to access the S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/133462-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 711
 ---
