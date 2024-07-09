@@ -9745,7 +9745,7 @@ Which design change should the solutions architect recommend?
 - D. Request eventually consistent reads for the table.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132914-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 732
 ---
@@ -9758,7 +9758,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Use different database accounts in the application code for different functions. Avoid granting excessive privileges to the database users.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132915-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 733
 ---
@@ -9771,7 +9771,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 - D. Publish all the Aurora PostgreSQL database events in AWS CloudTrail to a central Amazon S3 bucket.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132916-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 734
 ---
@@ -9784,7 +9784,7 @@ What should a solutions architect do to meet these requirements?
 - D. Connect the existing Direct Connect connection to a Direct Connect gateway. Route traffic from the virtual private gateways of the VPCs in each Region to the Direct Connect gateway.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132920-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D, Direct Connect GW = Direct Connect to 1 or more VPCs in different Regions
 
 ## Question 735
 ---
@@ -9797,7 +9797,7 @@ What should the solutions architect do to meet these requirements?
 - D. Push score updates to an Amazon Simple Queue Service (Amazon SQS) queue. Use a fleet of Amazon EC2 instances with Auto Scaling to process the updates in the SQS queue. Store the processed updates in an Amazon RDS Multi-AZ DB instance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132922-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 736
 ---
@@ -9810,7 +9810,7 @@ Which solution meets these requirements and is MOST cost-effective?
 - D. Write AWS Lambda functions in these accounts that are triggered every time logs are delivered to the S3 buckets (s3:ObjectCreated:* event). Copy the logs to another S3 bucket in us-west-2. Use this S3 bucket for log analysis.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132923-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 737
 ---
@@ -9825,7 +9825,7 @@ Which combination of steps will meet these requirements with the FEWEST changes 
 - E. Create an S3 Multi-Region Access Point. Modify the application to use the Amazon Resource Name (ARN) of the Multi-Region Access Point for video streaming and uploads.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132924-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- CE
 
 ## Question 738
 ---
@@ -9839,7 +9839,7 @@ Which solution will optimize the user experience by providing the LOWEST latency
 - D. Upload and store content in Amazon S3 in the Region that is closest to the user. Use multiple distributions of Amazon CloudFront.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132925-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 739
 ---
@@ -9853,7 +9853,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Send the requests from the API Gateway REST API to multiple Amazon Simple Queue Service (Amazon SQS) queues. Configure the target Lambda functions to poll the different SQS queues.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132929-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 740
 ---
@@ -9866,7 +9866,7 @@ Which solution will meet these requirements?
 - D. Create a list of unencrypted objects by filtering the AWS usage report for Amazon S3. Configure the S3 default encryption feature to use a server-side encryption with a customer-provided key (SSE-C).
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132930-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 741
 ---
