@@ -9879,7 +9879,7 @@ What should a solutions architect do to rapidly migrate the DNS hosting service?
 - D. Create an Amazon Route 53 Resolver inbound endpoint in the VPC. Specify the IP addresses that the provider's DNS will forward DNS queries to. Configure the provider's DNS to forward DNS queries for the domain to the IP addresses that are specified in the inbound endpoint.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132931-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 742
 ---
@@ -9892,7 +9892,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 - D. Use AWS AppConfig to store and manage the application configuration. Use Amazon RDS to store and retrieve the credentials.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132932-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 743
 ---
@@ -9905,7 +9905,7 @@ What should a solutions architect do to satisfy the security requirements?
 - D. Download AWS-provided root certificates. Provide the certificates in all connections to the RDS instance.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132933-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 744
 ---
@@ -9918,7 +9918,7 @@ What should a solutions architect recommend to meet the clients’ needs?
 - D. An EC2 instance with a public IP address running as a proxy in front of the load balancer.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132934-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, NLB needs to be before ALB since only NLB can have static IP
 
 ## Question 745
 ---
@@ -9931,7 +9931,7 @@ What should be done to secure the root user?
 - D. Provide the root user credentials to the most senior solutions architect. Have the solutions architect use the root user for daily administration tasks.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132935-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 746
 ---
@@ -9945,7 +9945,7 @@ Which combination of network solutions will meet these requirements? (Choose two
 - E. Use Amazon Elastic Block Store (Amazon EBS) optimized instance types.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132936-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- AC
 
 ## Question 747
 ---
@@ -9958,7 +9958,7 @@ What should a solutions architect do to meet these requirements with the LEAST o
 - D. Use AWS Direct Connect to migrate the data on-premises file storage to an AWS Storage Gateway volume gateway.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132938-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 748
 ---
@@ -9971,7 +9971,7 @@ Which solution will meet these requirements?
 - D. Create a new IAM user in the monitoring account. Create cross-account IAM policies in each AWS account. Attach the IAM policies to the new IAM user.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132939-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 749
 ---
@@ -9984,7 +9984,7 @@ What should a solutions architect do to protect the application?
 - D. Modify the security groups for the EC2 instances in the target groups behind the ALB to deny the malicious IP address.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132940-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 750
 ---
@@ -9997,7 +9997,7 @@ Which solution will meet these requirements?
 - D. Use AWS Resource Access Manager (AWS RAM) to share access to the AWS accounts with the users in the existing IdP.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132941-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 751
 ---
