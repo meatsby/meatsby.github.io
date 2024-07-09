@@ -9358,7 +9358,7 @@ Which solution will meet these requirements?
 - D. Create an Amazon FSx for Lustre file system. Import the data directly into the FSx for Lustre file system. Access the FSx for Lustre file system from the HPC cluster instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132866-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- D
+	- D, but B should be correct as per FSx cannot directly import data from Snowball Edge?
 
 ## Question 703
 ---
@@ -9479,7 +9479,7 @@ Which solution will meet these requirements with the LEAST downtime?
 - D. Create an Amazon ElastiCache for Redis cache. Replicate data from the Aurora cluster to Redis by using AWS Database Migration Service (AWS DMS) with a write-around approach.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132882-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 712
 ---
@@ -9493,7 +9493,7 @@ Which solution will meet these requirements in the MOST secure manner?
 - D. Create a Route 53 public hosted zone. Create a record for each service to allow service communication
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132883-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A, since Outbound Resolver endpoints allows DNS queries from VPC to on-prem or another VPC
 
 ## Question 713
 ---
@@ -9506,7 +9506,7 @@ Which solution provides the appropriate user access MOST cost-effectively?
 - D. Store the photos in the Amazon S3 Glacier storage class. Set up an S3 Lifecycle policy to move photos older than 30 days to the S3 Glacier Deep Archive storage class. Store the photo metadata and its S3 location in Amazon OpenSearch Service.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132885-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, DDB for metadata
 
 ## Question 714
 ---
@@ -9520,7 +9520,7 @@ Which solution will meet these requirements?
 - D. Use the least outstanding requests algorithm based on the RequestCount and TargetResponseTime CloudWatch metrics.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132887-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B, least outstanding requests algorithm = route to targets with the lowest number of in-progress requests
 
 ## Question 715
 ---
@@ -9533,7 +9533,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 - D. Create a Savings Plans alert subscription. Enable all notification options. Enter an email address to receive notifications.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132888-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 716
 ---
@@ -9547,7 +9547,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 - D. Deploy a Network Load Balancer (NLB) that uses private subnets. Configure an NLB listener for HTTPS communication over the internet.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132889-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 717
 ---
@@ -9561,7 +9561,7 @@ Which solution will meet these requirements?
 - D. Create an AWS Transfer Family SFTP internal server in two Availability Zones. Use Amazon S3 storage. Create an AWS Lambda function to process order files. Use a Transfer Family managed workflow to invoke the Lambda function.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132890-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 718
 ---
@@ -9575,7 +9575,7 @@ Which solution will meet these requirements?
 - D. Use an AWS Snowball device to migrate the data to an Amazon S3 bucket. Create an Amazon EMR cluster to process the data.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132891-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 719
 ---
@@ -9589,7 +9589,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Create an Amazon FSx for OpenZFS file system. Migrate the data to the new volume.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132892-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 720
 ---
@@ -9603,7 +9603,7 @@ Which solution will meet these requirements?
 - D. Run the application on AWS Elastic Beanstalk as a single application environment with an all-at-once deployment strategy.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132893-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 721
 ---
