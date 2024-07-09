@@ -9617,7 +9617,7 @@ Which solution will meet these requirements?
 - D. Use an AWS Lambda function that runs custom developed code.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132894-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 722
 ---
@@ -9631,7 +9631,7 @@ Which solution will meet these requirements with the LEAST amount of operational
 - D. Create AWS Site-to-Site VPN connections from on premises to each VPC. Ensure that both VPN tunnels are UP for each connection. Turn on the route propagation feature.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132895-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 723
 ---
@@ -9644,7 +9644,7 @@ Which solution will meet these requirements?
 - D. Remove the existing policies from the existing IAM role. Add the AmazonSSMManagedInstanceCore policy to the existing IAM role.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132900-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 724
 ---
@@ -9664,7 +9664,7 @@ How should a solutions architect reduce costs in this situation?
 - D. Configure Amazon CloudFront to reduce the number of objects stored in Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132904-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 726
 ---
@@ -9678,7 +9678,7 @@ What should a solutions architect do to improve the performance of the data tier
 - D. Deploy an Amazon ElastiCache for Redis cluster in front of the existing DB instance. Modify the game to use Redis.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132906-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- D
 
 ## Question 727
 ---
@@ -9691,7 +9691,7 @@ Which solution will meet this requirement with the LEAST operational overhead?
 - D. Enable point-in-time recovery on the DynamoDB tables.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132907-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- C
 
 ## Question 728
 ---
@@ -9704,7 +9704,7 @@ How can these requirements be met?
 - D. Deploy AWS Direct Connect to connect with the on-premises data center. Configure AWS Storage Gateway to store data locally. Use Storage Gateway to asynchronously back up point-in-time snapshots of the data to Amazon S3.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132910-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 729
 ---
@@ -9718,7 +9718,7 @@ Which scaling strategy should a solutions architect recommend to meet these requ
 - D. Set up a simple scaling policy. Increase the cooldown period based on the EC2 instance startup time.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132911-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- B
 
 ## Question 730
 ---
@@ -9732,7 +9732,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Modify the DB cluster to have multiple writer instances.
 
 - [Answer](https://www.examtopics.com/discussions/amazon/view/132913-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- 
+	- A
 
 ## Question 731
 ---
