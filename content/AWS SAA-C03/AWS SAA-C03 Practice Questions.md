@@ -12049,5 +12049,5 @@ Which change will meet these requirements MOST cost-effectively?
 - C. Use S3 Event Notifications to publish a message with image details to an Amazon Simple Notification Service (Amazon SNS) topic. Configure a container instance in Amazon Elastic Container Service (Amazon ECS) to subscribe to the topic and to process the images.
 - D. Use S3 Event Notifications to publish a message with image details to an Amazon Simple Notification Service (Amazon SNS) topic. Configure an AWS Elastic Beanstalk application to subscribe to the topic and to process the images.
 
-- [Answer](https://www.examtopics.com/discussions/amazon/view/139858-exam-aws-certified-solutions-architect-associate-saa-c03/)
-	- A
+> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/139858-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> A
