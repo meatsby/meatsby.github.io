@@ -23,6 +23,7 @@ tags:
 - GLB = L3 (IP Packets)
 - EBS Fast Snapshot Restore (FSR) = no latency on first use
 - SSO + MSAD = two-way forest trust AWS Directory Service for MSAD
+- AWS Config rules = to check resources that are not properly tagged
 
 - Lambda reserved concurrency vs provisioned concurrency
 	- reserved concurrency
