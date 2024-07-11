@@ -593,8 +593,8 @@ Which combination of steps should a solutions architect take to meet these requi
 ## Question 45
 ---
 A company has a data ingestion workflow that consists of the following:
-• An Amazon Simple Notification Service (Amazon SNS) topic for notifications about new data deliveries
-• An AWS Lambda function to process the data and record metadata
+- An Amazon Simple Notification Service (Amazon SNS) topic for notifications about new data deliveries
+- An AWS Lambda function to process the data and record metadata
 The company observes that the ingestion workflow fails occasionally because of network connectivity issues. When such a failure occurs, the Lambda function does not ingest the corresponding data unless the company manually reruns the job.
 Which combination of actions should a solutions architect take to ensure that the Lambda function ingests all data in the future? (Choose two.)
 
@@ -872,9 +872,6 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 ## Question 66
 ---
-  
-Topic 1
-
 A company has an application that generates a large number of files, each approximately 5 MB in size. The files are stored in Amazon S3. Company policy requires the files to be stored for 4 years before they can be deleted. Immediate accessibility is always required as the files contain critical business data that is not easy to reproduce. The files are frequently accessed in the first 30 days of the object creation but are rarely accessed after the first 30 days.
 Which storage solution is MOST cost-effective?
 
@@ -1668,8 +1665,7 @@ Which combination of configuration options will meet these requirements? (Choose
 - A. Use an Auto Scaling group to launch the EC2 instances in private subnets. Deploy an RDS Multi-AZ DB instance in private subnets.
 - B. Configure a VPC with two private subnets and two NAT gateways across two Availability Zones. Deploy an Application Load Balancer in the private subnets.
 - C. Use an Auto Scaling group to launch the EC2 instances in public subnets across two Availability Zones. Deploy an RDS Multi-AZ DB instance in private subnets.
-- D. Configure a VPC with one public subnet, one private subnet, and two NAT gateways across two Availability Zones. Deploy an Application Load Balancer in the public subnet.  
-    D. Configure a VPC with two public subnets, two private subnets, and two NAT gateways across two Availability Zones. Deploy an Application Load Balancer in the public subnets.
+- D. Configure a VPC with one public subnet, one private subnet, and two NAT gateways across two Availability Zones. Deploy an Application Load Balancer in the public subnet.
 
 > [!done]- Answer
 > AD
