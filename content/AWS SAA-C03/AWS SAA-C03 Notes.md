@@ -27,7 +27,7 @@ tags:
 - AWS Shield Advanced = ELB, CF, GA, R53
 
 - Direct Connect vs VPN vs VPC endpoint & PrivateLink
-- RPO vs RTO
+- DR RPO/RTO order
 - DDB PITR vs AWS Backup
 	- PITR = recover table to any point in time in a rolling 35 day window
 	- Backup = for long-term archiving and retention
@@ -35,6 +35,8 @@ tags:
 - S3 Legal Hold?
 - Control Tower vs SCPs
 - CloudFront field-level encryption profile?
+- Storage Gateway?
+- S3 signed cookies vs signed URLs
 
 - Lambda reserved concurrency vs provisioned concurrency
 	- reserved concurrency
@@ -82,16 +84,28 @@ tags:
 184
 189
 193, Read Replica vs ElastiCache for Redis
+196
+199
+201
+205
 207
 208
+209
+216
+217
 218
 219
+224, randomly access = multivalue
+240
+247
 257
+260
 264
 267
 273
 275
 283
+293
 301
 306
 308
