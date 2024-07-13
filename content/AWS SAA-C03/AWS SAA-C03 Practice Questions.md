@@ -4008,7 +4008,7 @@ Which AWS solution will meet these requirements?
 - C. AWS DataSync
 - D. AWS Transfer Family
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99659-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99659-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, as Snowcone is suitable when network bandwidth is limited, FSx File GW only provides access to files stored in FSx, and Transfer Family is transferring file over SFTP and such
 
 ## Question 302
@@ -4075,7 +4075,7 @@ Which solution meets these requirements?
 - C. Deploy an Auto Scaling group to launch EC2 instances in different Availability Zones based on a network utilization target.
 - D. Deploy an Auto Scaling group with a step scaling policy to launch EC2 instances in different Availability Zones.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99807-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99807-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as BCD distributes instances across AZs which is bad for inter-node network
 
 ## Question 307
@@ -4103,7 +4103,7 @@ Which combination of steps should the finance team take to meet these requiremen
 - D. Review the Trusted Advisor check for Amazon RDS Idle DB Instances.
 - E. Review the Trusted Advisor check for Amazon Redshift Reserved Node Optimization.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99936-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99936-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD, as C is for 1 or 3 years
 
 ## Question 309
@@ -4116,7 +4116,7 @@ Which solution will accomplish this goal with the LEAST operational overhead?
 - C. Turn on the Amazon CloudWatch BucketSizeBytes metric for buckets. Analyze bucket access patterns by using the metrics data with Amazon Athena.
 - D. Turn on AWS CloudTrail for S3 object monitoring. Analyze bucket access patterns by using CloudTrail logs that are integrated with Amazon CloudWatch Logs.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99803-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99803-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as S3 Storage Lens is a fully managed S3 storage analytics solution that provides a comprehensive view of object storage usage, activity trends, and recommendations to optimize costs
 
 ## Question 310
@@ -4130,7 +4130,7 @@ What should a solutions architect do to meet these requirements?
 - C. Set up a second S3 bucket in the eu-central-1 Region with S3 Cross-Region Replication between the buckets. Direct customer requests to the closest Region. Continue to use S3 signed URLs for access control.
 - D. Modify the web application to enable streaming of the datasets to end users. Configure the web application to read the data from the existing S3 bucket. Implement access control directly in the application.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99697-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99697-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as A speeds uploads only
 
 ## Question 311
@@ -4182,7 +4182,7 @@ Which service should a solutions architect recommend?
 - C. Amazon Redshift Spectrum
 - D. Amazon RDS for MySQL
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99769-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99769-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as "without selecting a particular instance type" = serverless
 
 ## Question 315
@@ -4249,7 +4249,7 @@ Which solution will meet this requirement with the LEAST amount of administrativ
 - C. Allow shared SSH access to a set of bastion instances. Configure all other instances to allow only SSH access from the bastion instances.
 - D. Use an Amazon Cognito custom authorizer to authenticate users. Invoke an AWS Lambda function to generate a temporary SSH key.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99628-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99628-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as STS does not generate SSH keys, bastion instances do not remove all shared keys, and Cognito is not meant for internal users
 
 ## Question 320
@@ -4262,7 +4262,7 @@ Which solution provides near-real-time data querying that is scalable with minim
 - C. Store ingested data in an EC2 instance store. Publish data to Amazon Kinesis Data Firehose with Amazon S3 as the destination. Use Amazon Athena to query the data.
 - D. Store ingested data in an Amazon Elastic Block Store (Amazon EBS) volume. Publish data to Amazon ElastiCache for Redis. Subscribe to the Redis channel to query the data.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99752-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99752-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as B does not offer real-time querying
 
 ## Question 321
@@ -4316,7 +4316,7 @@ Which solution will meet these requirements with the LEAST amount of change to t
 - C. Provision an AWS Storage Gateway Volume Gateway cached volume. Set the local cache to 10 TB. Mount the Volume Gateway cached volume to the existing file server by using iSCSI, and copy all files to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.
 - D. Provision an AWS Storage Gateway Volume Gateway stored volume with the same amount of disk space as the existing file storage volume. Mount the Volume Gateway stored volume to the existing file server by using iSCSI, and copy all files to the storage volume. Configure scheduled snapshots of the storage volume. To recover from a disaster, restore a snapshot to an Amazon Elastic Block Store (Amazon EBS) volume and attach the EBS volume to an Amazon EC2 instance.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99711-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99711-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, as C is for frequently accessed data and 10TB limit
 
 ## Question 325
@@ -4357,7 +4357,7 @@ Which solution meets these requirements?
 - C. Implement strict inbound security group rules. Configure an outbound rule that allows traffic only to the authorized software repositories on the internet by specifying the URLs.
 - D. Configure an Application Load Balancer (ALB) in front of the EC2 instances. Direct all outbound traffic to the ALB. Use a URL-based rule listener in the ALB’s target group for outbound access to the internet.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99795-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99795-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as a Network Firewall creates stateful outbound rules to allow certain domains for software patch download and deny all other domains
 
 ## Question 328
@@ -4464,7 +4464,7 @@ Which solution meets these requirements?
 - C. Enable AMI creation and define lifecycle rules in Amazon Data Lifecycle Manager (Amazon DLM). Create an AWS Lambda function that modifies the AMI in the Auto Scaling group.
 - D. Use Amazon EventBridge to invoke AWS Backup lifecycle policies that provision AMIs. Configure Auto Scaling group capacity limits as an event source in EventBridge.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99686-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99686-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Fast Snapshot Restore (FSR) is for initialization latency
 
 ## Question 336
@@ -4505,7 +4505,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Use AWS Database Migration Service (AWS DMS) to continuously replicate data to an Aurora cluster in the secondary Region. Remove the DB instance from the secondary Region.
 - D. Set up an Aurora global database for the DB cluster. Specify a minimum of one DB instance in the secondary Region.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/99758-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99758-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as D is more expensive
 
 ## Question 339
@@ -4792,7 +4792,7 @@ Which solution will meet these requirements with the FEWEST changes to the code?
 - C. Use a gateway endpoint.
 - D. Add an Amazon Simple Queue Service (Amazon SQS) queue between the two REST APIs.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/100238-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/100238-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as C is for S3 or DDB
 
 ## Question 361
@@ -5041,7 +5041,7 @@ Which solution will meet these requirements?
 - C. Cache the results of the queries in Amazon S3 for faster retrieval of similar datasets.
 - D. Increase the size of the database to increase the number of connections Lambda can establish at one time.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/102144-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102144-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, configuring provisioned concurrency would get rid of the "cold start" of the Lambda to load many libraries
 
 ## Question 380
@@ -5107,7 +5107,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Use the Amazon Elastic File System (Amazon EFS) Standard storage class. Create a lifecycle management policy to move infrequently accessed data to EFS Standard-Infrequent Access (EFS Standard-IA).
 - D. Use the Amazon Elastic File System (Amazon EFS) One Zone storage class. Create a lifecycle management policy to move infrequently accessed data to EFS One Zone-Infrequent Access (EFS One Zone-IA).
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/102152-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102152-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, as only EFS supports POSIX
 
 ## Question 385
@@ -5244,7 +5244,7 @@ What should a solutions architect do to improve the application performance?
 - C. Replace the volume with a Provisioned IOPS SSD (io2) volume.
 - D. Replace the 2,000 GB gp3 volume with two 1,000 GB gp3 volumes.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/102161-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102161-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, as gp3's max IOPS is 16,000 and RDS does not support io2
 
 ## Question 395
@@ -5300,7 +5300,7 @@ Which solution meets these requirements MOST cost-effectively?
 - C. Use the AWS Snow Family console to order several AWS Snowball Edge Storage Optimized devices. Use the devices to transfer the data to Amazon S3.
 - D. Set up a 10 Gbps AWS Direct Connect connection between the company location and the nearest AWS Region. Transfer the data over a VPN connection into the Region to store the data in Amazon S3.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/102166-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102166-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, as AB would take around 600 days to transfer and D takes time to setup a connection
 
 ## Question 399
@@ -5354,7 +5354,7 @@ What should a solutions architect do to resolve this issue?
 - C. Update the number of Kinesis shards to handle the throughput of the data that is sent to Kinesis Data Streams.
 - D. Turn on S3 Versioning within the S3 bucket to preserve every version of every object that is ingested in the S3 bucket.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/102175-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102175-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, since Kinesis Data Stream stores 24 hrs by default
 
 ## Question 403
@@ -5394,7 +5394,7 @@ Which combination of actions should the solutions architect take to ensure that 
 - D. Use a target tracking scaling policy to scale the Auto Scaling group based on instance CPU utilization.
 - E. Use scheduled scaling to change the Auto Scaling group minimum, maximum, and desired capacity to zero for weekends. Revert to the default values at the start of the week.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/102181-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102181-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > DE, since ASG cannot adjust ALB capacity
 
 ## Question 406
@@ -5474,7 +5474,7 @@ Which solution will meet these requirements?
 - C. MySQL-compatible Amazon Aurora Serverless
 - D. MySQL deployed on Amazon EC2 in an Auto Scaling group
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/102188-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102188-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since automatically scales compute and memory resources based on application usage
 
 ## Question 412
@@ -5513,7 +5513,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 - C. Use AWS DataSync to transfer the files to Amazon S3. Create an application that uses the DataSync API in the automation workflow.
 - D. Deploy an AWS Transfer for SFTP endpoint. Create a script that checks for new files on the network share and uploads the new files by using SFTP.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/103452-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/103452-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, since near-real time with least administrative overhead
 
 ## Question 415
@@ -5554,7 +5554,7 @@ Which solution will meet these requirements?
 - C. Purchase a Compute Savings Plan. Optimize the Lambda functions’ duration and memory usage, the number of invocations, and the amount of data that is transferred. Connect the Lambda functions to the private subnet that contains the EC2 instances.
 - D. Purchase a Compute Savings Plan. Optimize the Lambda functions’ duration and memory usage, the number of invocations, and the amount of data that is transferred. Keep the Lambda functions in the Lambda service VPC.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/103598-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/103598-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Compute Savings Plan can save costs for both EC2 and Lambda
 
 ## Question 418
@@ -5610,7 +5610,7 @@ Which solution will meet these requirements?
 - C. Create an Amazon S3 bucket with default encryption enabled. Create an AWS Transfer Family SFTP service with a public endpoint that allows only trusted IP addresses. Attach the S3 bucket to the SFTP service endpoint. Grant users access to the SFTP service.
 - D. Create an Amazon S3 bucket with default encryption enabled. Create an AWS Transfer Family SFTP service with a VPC endpoint that has internal access in a private subnet. Attach a security group that allows only trusted IP addresses. Attach the S3 bucket to the SFTP service endpoint. Grant users access to the SFTP service.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109270-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109270-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, since SFTP cannot use EBS, and S3 doesn't guarantee high IOPS
 
 ## Question 422
@@ -5638,7 +5638,7 @@ Which IAM principals can the solutions architect attach this policy to? (Choose 
 - D. Amazon Elastic Container Service (Amazon ECS) resource
 - E. Amazon EC2 resource
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109281-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109281-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AB, since Identity-based policy is used for role and group
 
 ## Question 424
@@ -5665,7 +5665,7 @@ Which Amazon Elastic Block Store (Amazon EBS) volume type will meet these requir
 - C. GP3 volume type
 - D. io1 volume type
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109282-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109282-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since GP3 is cost effective
 
 ## Question 426
@@ -5918,7 +5918,7 @@ What should a solutions architect do to meet these requirements?
 - C. Create an Amazon CloudFront distribution and use the S3 bucket in us-east-1 as an origin. Adjust the application to use the CloudFront URL as the upload and download links for users who have a subscription.
 - D. Enable S3 Transfer Acceleration for the S3 bucket in us-east-1. Configure the application to use the bucket's S3-accelerate endpoint domain name for the upload and download links for users who have a subscription.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/53895-exam-aws-certified-solutions-architect-associate-saa-c02/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/53895-exam-aws-certified-solutions-architect-associate-saa-c02/)
 > D, S3 Transfer Acceleration supports both upload and download
 
 ## Question 445
@@ -6040,7 +6040,7 @@ Which solution will meet these requirements?
 - C. Use Amazon S3 File Gateway to create the backup. Configure the appropriate S3 Lifecycle management.
 - D. Use AWS Backup to create a backup vault that has a vault lock in compliance mode. Create the required backup plan.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109410-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109410-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since we can delete backup in governance mode
 
 ## Question 454
@@ -6094,7 +6094,7 @@ Which solution will meet these requirements?
 - C. Use AWS Transfer Family to transfer the data. Create an AWS Lambda function for IdP authentication.
 - D. Use AWS Storage Gateway to transfer the data. Create an Amazon Cognito identity pool for IdP authentication.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109524-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109524-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since Transfer Family supports AS2
 
 ## Question 458
@@ -6199,7 +6199,7 @@ Which solution will meet these requirements?
 - C. Use Provisioned IOPS SSD (io2) EBS volumes with Amazon Elastic Block Store (Amazon EBS) Multi-Attach
 - D. Use General Purpose SSD (gp2) EBS volumes with Amazon Elastic Block Store (Amazon EBS) Multi-Attach
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109655-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109655-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since Multi-Attach is supported only for io1 and io2 volumes
 
 ## Question 466
@@ -6264,7 +6264,7 @@ What should a solutions architect recommend to resolve this issue?
 - C. Create a virtual private gateway and make it the destination of the subnet's route table
 - D. Create an egress-only internet gateway and make it the destination of the subnet's route table
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109334-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109334-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since egress-only IG is for IPv6 and NATGW is for IPv4
 
 ## Question 471
@@ -6461,7 +6461,7 @@ What is the MOST cost-effective solution?
 - C. Store the video archives in Amazon S3 Standard-Infrequent Access (S3 Standard-IA).
 - D. Store the video archives in Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA).
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109470-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109470-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, since Expedited retrievals typically take 1–5 minutes
 
 ## Question 486
@@ -6487,7 +6487,7 @@ Which storage solution meets these requirements?
 - C. Amazon Elastic File System (Amazon EFS) with multiple mount targets
 - D. Amazon Elastic File System (Amazon EFS) with a single mount target and multiple access points
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109665-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109665-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since A doesn't support native protocol
 
 ## Question 488
@@ -6611,7 +6611,7 @@ Which combination of actions should a solutions architect take to meet these req
 - D. Deploy an AWS Storage Gateway volume gateway to replace the block storage.
 - E. Deploy Amazon Elastic File System (Amazon EFS) volumes and mount them to on-premises servers.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109552-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109552-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD, Storage GW file and volume is for NFS and block storage respectively
 
 ## Question 497
@@ -6692,7 +6692,7 @@ Which combination of actions should a solutions architect take to improve the pe
 - D. Create an Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind an Application Load Balancer as part of an Auto Scaling group. Configure the Auto Scaling group to maintain a minimum of two instances. Configure an accelerator in AWS Global Accelerator for the website
 - E. Create an Amazon Machine Image (AMI) from the existing EC2 instance. Use the AMI to provision new instances behind an Application Load Balancer as part of an Auto Scaling group. Configure the Auto Scaling group to maintain a minimum of two instances. Configure an Amazon CloudFront distribution for the website.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109420-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109420-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > CE, as CMS is dynamic and CloudFront is for content delivery
 
 ## Question 503
@@ -6773,7 +6773,7 @@ Which solutions will meet these requirements with the LEAST administrative effor
 - D. Create a backup vault by using AWS Backup. Use AWS Backup to create a backup plan for the EC2 instances based on tag values. Define the destination for the copy as us-west-2. Specify the backup schedule to run twice daily.
 - E. Create a backup vault by using AWS Backup. Use AWS Backup to create a backup plan for the EC2 instances based on tag values. Specify the backup schedule to run twice daily. Copy on demand to us-west-2.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109530-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109530-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD, since on-demand is wrong and Lambda is overhead
 
 ## Question 509
@@ -6800,7 +6800,7 @@ Which network design will meet these requirements?
 - C. Configure a VPC peering connection between the ap-southeast-2 VPC and the eu-west-1 VPUpdate the subnet route tables. Create an inbound rule in the ap-southeast-2 database security group that allows traffic from the eu-west-1 application server IP addresses.
 - D. Create a transit gateway with a peering attachment between the eu-west-1 VPC and the ap-southeast-2 VPC. After the transit gateways are properly peered and routing is configured, create an inbound rule in the database security group that references the security group ID of the application servers in eu-west-1.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109708-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109708-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since we cannot reference the SG of a peer VPC that's in a different Region
 
 ## Question 511
@@ -6852,7 +6852,7 @@ Which solution will allow the node to join the cluster?
 - C. Recreate nodes in the public subnet. Restrict security groups for EC2 nodes.
 - D. Allow outbound traffic in the security group of the nodes.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/109534-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109534-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, since the EKS control plane is configured with private endpoint access only which requires interface VPC endpoint to communicate
 
 ## Question 515
@@ -7013,7 +7013,7 @@ Which solution will reduce the downtime for scaling exercises with the LEAST ope
 - C. Create an Amazon ElastiCache for Memcached cluster to handle the load during failover.
 - D. Set up an Amazon RDS proxy for the database. Update the application to use the proxy endpoint.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/111245-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111245-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, RDS proxy also allows automatic routing for write requests to healthy writer
 
 ## Question 527
@@ -7134,7 +7134,7 @@ Which solution will meet these requirements?
 - C. Create the Amazon EKS cluster with default options. Use the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver as an add-on.
 - D. Create a new AWS Key Management Service (AWS KMS) key with the alias/aws/ebs alias. Enable default Amazon Elastic Block Store (Amazon EBS) volume encryption for the account.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/111385-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111385-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Secrets Manager does not encrypt etcd store
 
 ## Question 536
@@ -7147,7 +7147,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Change the setup from a Single-AZ to a Multi-AZ instance deployment. Provide two additional read replicas for the data scientists.
 - D. Change the setup from a Single-AZ to a Multi-AZ cluster deployment with two readable standby instances. Provide read endpoints to the data scientists.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/111435-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111435-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since read replicas are async whereas readable standby is synchronous
 
 ## Question 537
@@ -7186,7 +7186,7 @@ Which solution will meet these requirements?
 - C. Use AWS Elastic Disaster Recovery configured to replicate disk changes to AWS as a pilot light.
 - D. Use third-party backup software to capture backups every night. Store a secondary set of backups in Amazon S3.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/111301-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111301-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, since Warm Standby provides (RPO in seconds, RTO in minutes)
 
 ## Question 540
@@ -7199,7 +7199,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 - C. Use Amazon RDS deployed in a Multi-AZ cluster deployment to create an Oracle database. Direct the reporting functions to use the reader instance in the cluster deployment.
 - D. Use Amazon RDS deployed in a Multi-AZ instance deployment to create an Amazon Aurora database. Direct the reporting functions to the reader instances.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/111439-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111439-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since RDS for Oracle doesn't support Multi-AZ DB clusters
 
 ## Question 541
@@ -7214,7 +7214,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 - E. Use AWS Amplify to serve the frontend web content with HTML, CSS, and JS. Use an integrated Amazon CloudFront configuration.
 - F. Use Amazon S3 static web hosting with PHP, CSS, and JS. Use Amazon CloudFront to serve the frontend web content.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/111440-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111440-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > ACE, since B is too much cost, D is for session management, and F doesn't work for S3 + PHP
 
 ## Question 542
@@ -7241,7 +7241,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - D. Create an organization in AWS Organizations in a new payer account. Invite the other AWS accounts to join the organization from the management account.
 - E. Create an organization in AWS Organizations in the existing AWS account with the existing EC2 instances and Savings Plan. Invite the other AWS accounts to join the organization from the management account.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/111442-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111442-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AE, Resource Access Manager is for security not for billing
 
 ## Question 544
@@ -7280,7 +7280,7 @@ What should a solutions architect recommend?
 - C. Set up an Amazon EFS file system that connects with the backup applications using the iSCSI interface.
 - D. Set up AWS Storage Gateway to connect with the backup applications using the iSCSI-virtual tape library (VTL) interface.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/116975-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116975-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since it's tapes
 
 ## Question 547
@@ -7333,7 +7333,7 @@ Which steps must the solutions architect take to implement the correct permissio
 - D. Allow the Lambda execution role in the AWS KMS key policy.
 - E. Allow the Lambda resource policy in the AWS KMS key policy.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/116979-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116979-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD, least privileged == role level
 
 ## Question 551
@@ -7359,7 +7359,7 @@ What should the company do to meet these requirements?
 - C. Purchase All Upfront Reserved Instances for a 1-year term.
 - D. Purchase an All Upfront EC2 Instance Savings Plan for a 1-year term.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/116897-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116897-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, only Compute Savings Plan allows changing instance family
 
 ## Question 553
@@ -7467,7 +7467,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Use AWS Service Catalog to create accounts in Organizations. Use an AWS CloudTrail organization trail to identify the changes to the OU hierarchy.
 - D. Use AWS CloudFormation templates to create accounts in Organizations. Use the drift detection operation on a stack to identify the changes to the OU hierarchy.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/117021-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/117021-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as Control Tower has built-in account drift notifications that detects OU changes automatically
 
 ## Question 561
@@ -7612,7 +7612,7 @@ Which solution will meet these requirements?
 - C. Use AWS Certificate Manager (ACM) to create a certificate that is signed by the third-party CA. Import the certificate into AWS Certificate Manager (ACM). Create an AWS Lambda function with a Lambda function URL. Configure the Lambda function URL to use the certificate.
 - D. Create a certificate in AWS Certificate Manager (ACM) that is signed by the third-party CA. Create an AWS Lambda function with a Lambda function URL. Configure the Lambda function URL to use the certificate.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/116904-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116904-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, since there is no option in ACM to request a certificate from third-party CA
 
 ## Question 572
@@ -7626,7 +7626,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 - C. Provision an Amazon Aurora Serverless v2 database with a minimum capacity of 1 Aurora capacity unit (ACU).
 - D. Provision an Amazon RDS for MySQL database with 2 GiB of memory.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/117029-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/117029-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since provisioned Aurora and RDS have more admin overhead
 
 ## Question 573
@@ -7639,7 +7639,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Increase the memory of the Lambda functions.
 - D. Configure Lambda SnapStart.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/116925-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116925-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, not A because it costs more
 
 ## Question 574
@@ -7848,7 +7848,7 @@ Which solution will meet these requirements?
 - C. Use an AWS Storage Gateway cached volume to store session data. Update the application to use AWS Storage Gateway cached volume to store the session state.
 - D. Use Amazon RDS to store the session state. Update the application to use Amazon RDS to store the session state.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/119487-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/119487-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as Memcache is not HA
 
 ## Question 590
@@ -7967,7 +7967,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 - E. Set up an Amazon Redshift cluster to query the data that is in Amazon S3. Provide access to analysts.
 - F. Setup Amazon Athena to query the data that is in Amazon S3. Provide access to analysts.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/119563-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/119563-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > ACF, as S3 File GW supports SMB
 
 ## Question 599
@@ -7983,7 +7983,7 @@ Which activities are the responsibility of the company's operational team? (Choo
 - E. Physical maintenance of Outposts components
 - F. Providing extra capacity for Amazon ECS clusters to mitigate server failures and maintenance events
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/119530-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/119530-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > ACF, not D and E as it's AWS's responsibility for Outposts
 
 ## Question 600
@@ -8009,7 +8009,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Use data import from Amazon S3 to migrate the database to an Aurora PostgreSQL DB cluster.
 - D. Use the pg_dump utility to back up the RDS for PostgreSQL database. Restore the backup to a new Aurora PostgreSQL DB cluster.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/121210-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121210-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, it is possible to promote RDS to Aurora
 
 ## Question 602
@@ -8035,7 +8035,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 - C. Use AWS Glue to process the data in parallel.
 - D. Use several AWS Lambda functions to process the data in parallel.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/121211-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121211-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Step Functions provide Map state which is for distributed processing
 
 ## Question 604
@@ -8061,7 +8061,7 @@ Which solution will meet these requirements?
 - C. Deploy an AWS Storage Gateway volume gateway that is configured with stored volumes.
 - D. Deploy an AWS Storage Gateway volume gateway that is configured with cached volumes.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/121170-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121170-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, iSCSI = Storage GW, low-latency access to frequently used data = cached volume
 
 ## Question 606
@@ -8088,7 +8088,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Create an Amazon S3 bucket. Update the application to store documents in the S3 bucket. Store the object metadata in the existing database.
 - D. Create an Amazon DynamoDB table. Update the application to use DynamoDB. Use AWS Database Migration Service (AWS DMS) to migrate data from the Oracle database to DynamoDB.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/121215-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121215-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, storing blobs cost-effectively = S3
 
 ## Question 608
@@ -8102,7 +8102,7 @@ What should a solutions architect do to meet these requirements?
 - C. Store the IP addresses in an Amazon DynamoDB table. Configure an AWS Lambda authorization function on the ALB to validate that incoming requests are from the registered IP addresses.
 - D. Configure the network ACL on the subnet that contains the public interface of the ALB. Update the ingress rules on the network ACL with entries for each of the registered IP addresses.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/121216-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121216-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, endpoint restriction by IP addresses = AWS WAF
 
 ## Question 609
@@ -8219,7 +8219,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 - D. Manually use an operating system copy command to push the data into the AWS destination.
 - E. Install an AWS DataSync agent in the on-premises data center. Use a DataSync task between the on-premises location and AWS.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/121176-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121176-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BE, NFS = EFS
 
 ## Question 618
@@ -8285,7 +8285,7 @@ Which solutions will meet these requirements and provide the MOST scalability? (
 - D. Deploy the static content into an Amazon S3 bucket. Provision an Amazon CloudFront distribution with the S3 bucket as the origin.
 - E. Deploy the web servers for static content across a fleet of Amazon EC2 instances in Auto Scaling groups. Configure the instances to periodically refresh the content from an Amazon Elastic File System (Amazon EFS) volume.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/121223-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121223-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AD, not B since Aurora can't rapidly evolve their schema
 
 ## Question 623
@@ -8311,7 +8311,7 @@ What should the solutions architect do to meet these requirements?
 - C. Define cross-account roles with the appropriate policies attached. Map the roles to the Active Directory groups.
 - D. Configure Security Assertion Markup Language (SAML) 2 0-based federation. Create roles with the appropriate policies attached Map the roles to the Active Directory groups.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/125336-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125336-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, not B since Cognito is for providing access to own apps, not AWS resources
 
 ## Question 625
@@ -8390,7 +8390,7 @@ How should the solutions architect address this issue in the MOST cost-effective
 - C. Use an Amazon Elastic Container Service (Amazon ECS) Fargate task triggered by an Amazon EventBridge scheduled event.
 - D. Use an Amazon Elastic Container Service (Amazon ECS) task running on Amazon EC2 triggered by an Amazon EventBridge scheduled event.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/125542-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125542-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Fargate is cheaper than EC2
 
 ## Question 631
@@ -8403,7 +8403,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Use Amazon Quantum Ledger Database (Amazon QLDB) to store the information. Use Amazon Kinesis Data Streams to process changes in the database.
 - D. Use Amazon Quantum Ledger Database (Amazon QLDB) to store the information. Use Neptune Streams to process changes in the database.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/125113-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125113-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Social Network -> Graph data -> Neptune
 
 ## Question 632
@@ -8456,7 +8456,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Create an FSx for ONTAP instance in the secondary Region. Use NetApp SnapMirror to replicate data from the primary Region to the secondary Region.
 - D. Create an Amazon Elastic File System (Amazon EFS) volume. Migrate the current data to the volume. Replicate the volume to the secondary Region.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/125545-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125545-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, as B is one-time copy
 
 ## Question 636
@@ -8603,7 +8603,7 @@ Which solution will meet these requirements?
 - C. Use Amazon FSx for Lustre as a shared file system. Link the file system to an Amazon S3 bucket for postprocessing.
 - D. Configure AWS Resource Access Manager to share an Amazon S3 bucket so that it can be mounted to all instances for processing and postprocessing.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/125584-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125584-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, host a high performance computing (HPC) workload -> FSx lustre
 
 ## Question 647
@@ -8630,7 +8630,7 @@ What should the solutions architect do to meet these requirements?
 - C. Use Amazon Elastic File System (Amazon EFS) with Bursting Throughput mode.
 - D. Use Amazon Elastic File System (Amazon EFS) with Provisioned Throughput mode.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/125586-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125586-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as the entire dataset is required, A is for temporary data storage
 
 ## Question 649
@@ -8670,7 +8670,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Instant Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.
 - D. Transition the objects to S3 Standard-Infrequent Access (S3 Standard-IA) after 180 days, S3 Glacier Flexible Retrieval after 360 days, and S3 Glacier Deep Archive after 5 years.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/125244-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125244-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, "The images cannot be lost during this process"
 
 ## Question 652
@@ -8683,7 +8683,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Configure a transient cluster that runs the primary node on an On-Demand Instance and the core nodes and task nodes on Spot Instances.
 - D. Configure a long-running cluster that runs the primary node on an On-Demand Instance, the core nodes on Spot Instances, and the task nodes on Spot Instances.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/125591-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125591-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as Transient cluster runs until the workload is completed and cannot lose data = primary and core nodes on demand
 
 ## Question 653
@@ -8749,7 +8749,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Create an AWS managed prefix list. Use an AWS Security Hub policy to enforce the security group update across the organization. Use an AWS Lambda function to update the prefix list automatically when the CIDR ranges change.
 - D. Create security groups in a central administrative AWS account. Create an AWS Firewall Manager common security group policy for the whole organization. Select the previously created security groups as primary groups in the policy.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/127524-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/127524-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as RAM is for this usage
 
 ## Question 658
@@ -8763,7 +8763,7 @@ Which solution will meet these requirements with the LEAST latency? (Choose two.
 - D. Attach the EC2 instances to an Amazon FSx for OpenZFS file system.
 - E. Attach the EC2 instances to an Amazon FSx for NetApp ONTAP file system.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/126797-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/126797-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AE, as LEAST latency = cluster, NFS & SMB = NetApp ONTAP
 
 ## Question 659
@@ -8882,7 +8882,7 @@ Which solution will meet these requirements?
 - C. Create interface endpoints for Amazon S3. Use the interface endpoints to securely access the data from the Region and the on-premises location.
 - D. Use an AWS Key Management Service (AWS KMS) key to access the data securely from the Region and the on-premises location.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/126802-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/126802-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, not A since the GW endpoint does not allow access from on-prem, peered VPCs in other Regions, or transit GW
 
 ## Question 668
@@ -8922,7 +8922,7 @@ Which solution will meet these requirements?
 - C. Purchase DynamoDB reserved capacity for a 1-year term.
 - D. Purchase DynamoDB reserved capacity for a 3-year term.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/129711-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/129711-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as applications have predictable traffic patterns
 
 ## Question 671
@@ -9083,7 +9083,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 - C. Use Amazon Macie to detect unencrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Systems Manager Automation rules to automatically encrypt existing and new EBS volumes.
 - D. Use Amazon inspector to detect unencrypted Amazon Elastic Block Store (Amazon EBS) volumes. Use AWS Systems Manager Automation rules to automatically encrypt existing and new EBS volumes.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/129724-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/129724-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, not D inspector is for OS patching and vulnerability detections
 
 ## Question 683
@@ -9353,7 +9353,7 @@ Which solution will meet these requirements?
 - C. Create an Amazon S3 bucket and an Amazon Elastic File System (Amazon EFS) file system. Import the data into the S3 bucket. Copy the data from the S3 bucket to the EFS file system. Access the EFS file system from the HPC cluster instances.
 - D. Create an Amazon FSx for Lustre file system. Import the data directly into the FSx for Lustre file system. Access the FSx for Lustre file system from the HPC cluster instances.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/132866-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132866-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, but B should be correct as per FSx cannot directly import data from Snowball Edge?
 
 ## Question 703
@@ -9488,7 +9488,7 @@ Which solution will meet these requirements in the MOST secure manner?
 - C. Create a Route 53 private hosted zone. Associate the private hosted zone with the VPC.
 - D. Create a Route 53 public hosted zone. Create a record for each service to allow service communication
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/132883-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132883-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, since Outbound Resolver endpoints allows DNS queries from VPC to on-prem or another VPC
 
 ## Question 713
@@ -9501,7 +9501,7 @@ Which solution provides the appropriate user access MOST cost-effectively?
 - C. Store the photos in the Amazon S3 Standard storage class. Set up an S3 Lifecycle policy to move photos older than 30 days to the S3 Standard-Infrequent Access (S3 Standard-IA) storage class. Use the object tags to keep track of metadata.
 - D. Store the photos in the Amazon S3 Glacier storage class. Set up an S3 Lifecycle policy to move photos older than 30 days to the S3 Glacier Deep Archive storage class. Store the photo metadata and its S3 location in Amazon OpenSearch Service.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/132885-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132885-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, DDB for metadata
 
 ## Question 714
@@ -9515,7 +9515,7 @@ Which solution will meet these requirements?
 - C. Use the round robin routing algorithm based on the RequestCount and TargetResponseTime CloudWatch metrics.
 - D. Use the least outstanding requests algorithm based on the RequestCount and TargetResponseTime CloudWatch metrics.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/132887-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132887-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, least outstanding requests algorithm = route to targets with the lowest number of in-progress requests
 
 ## Question 715
@@ -9779,7 +9779,7 @@ What should a solutions architect do to meet these requirements?
 - C. Establish VPN appliances in a fully meshed VPN network hosted by Amazon EC2. Use AWS VPN CloudHub to send and receive data between the data centers and each VPC.
 - D. Connect the existing Direct Connect connection to a Direct Connect gateway. Route traffic from the virtual private gateways of the VPCs in each Region to the Direct Connect gateway.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/132920-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132920-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, Direct Connect GW = Direct Connect to 1 or more VPCs in different Regions
 
 ## Question 735
@@ -9913,7 +9913,7 @@ What should a solutions architect recommend to meet the clients’ needs?
 - C. An A record in an Amazon Route 53 hosted zone pointing to an Elastic IP address.
 - D. An EC2 instance with a public IP address running as a proxy in front of the load balancer.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/132934-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132934-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, NLB needs to be before ALB since only NLB can have static IP
 
 ## Question 745
@@ -10047,7 +10047,7 @@ What should a solutions architect recommend to accomplish this?
 - C. Put the EC2 instances behind Network Load Balancers (NLBs) in each Region. Deploy AWS WAF on the NLBs. Create an Amazon CloudFront distribution with an origin that uses Amazon Route 53 latency-based routing to route requests to the NLBs.
 - D. Put the EC2 instances behind Application Load Balancers (ALBs) in each Region. Create an Amazon CloudFront distribution with an origin that uses Amazon Route 53 latency-based routing to route requests to the ALBs. Deploy AWS WAF on the CloudFront distribution.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/132945-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132945-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Global Accelerator provides static IP
 
 ## Question 755
@@ -10114,7 +10114,7 @@ Which solution will meet these requirements?
 - C. Store newer movie video files in S3 Intelligent-Tiering. Store older movie video files in S3 Glacier Flexible Retrieval. When a user orders an older movie, retrieve the video file by using expedited retrieval.
 - D. Store newer movie video files in S3 Standard. Store older movie video files in S3 Glacier Flexible Retrieval. When a user orders an older movie, retrieve the video file by using bulk retrieval.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/132949-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132949-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, not C as per S3 Glacier Flexible Retrieval, expedited retrieval cannot retrieve files larger than 250MB+ within 1~5mins
 
 ## Question 760
@@ -10140,7 +10140,7 @@ Which solution meets these requirements?
 - C. Set up a process that rotates the IAM credentials whenever LDAP credentials are updated.
 - D. Develop an on-premises custom identity broker application or process that uses AWS Security Token Service (AWS STS) to get short-lived credentials.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/133326-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133326-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since not compatible with SAML
 
 ## Question 762
@@ -10153,7 +10153,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Create a retention rule in Recycle Bin.
 - D. Upload the AMIs to an Amazon S3 bucket that has Cross-Region Replication.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/132951-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132951-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Recycle Bin us a data recovery feature to restore accidental deletion of EBS snapshots and EBS-backed AMIs
 
 ## Question 763
@@ -10322,7 +10322,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 - C. Create a Network Load Balancer (NLB) with an HTTPS listener and target groups for each microservice. Create an AWS PrivateLink endpoint service for each microservice. Create an interface VPC endpoint in each VPC that needs to consume that microservice.
 - D. Create peering connections between VPCs that contain microservices. Create a prefix list for each service that requires a connection to a client. Create route tables to route traffic to the appropriate VPC. Create security groups to allow only HTTPS communication.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/133007-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133007-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, VPC Lattice is a new capability of VPC designed to simplify networking for service-to-service communications
 
 ## Question 776
@@ -10363,7 +10363,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Use an AWS Snowmobile to store and transfer the data to Amazon S3.
 - D. Set up an AWS Storage Gateway Volume Gateway to transfer the data to Amazon S3.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/133010-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133010-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, not C since Snowmobile is advised over 10PB
 
 ## Question 779
@@ -10443,7 +10443,7 @@ Which solution will meet these requirements?
 - C. Use AWS Glue DataBrew to process the data. Use an AWS Step Functions state machine to run the DataBrew data preparation jobs.
 - D. Use AWS Data Pipeline to process the data. Schedule Data Pipeline to process the data once at midnight.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/133019-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133019-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Data preparation = Glue DataBrew, State handling = Step Functions
 
 ## Question 785
@@ -10483,7 +10483,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Use AWS Managed Services (AMS) Accelerate to build a multi-account landing zone (MALZ). Submit an RFC to self-service provision Amazon GuardDuty in the MALZ.
 - D. Use AWS Managed Services (AMS) Accelerate to build a multi-account landing zone (MALZ). Submit an RFC to self-service provision AWS Security Hub in the MALZ.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/133023-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133023-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, auditing all accounts & FSBP standard = Control Tower with Security Hub
 
 ## Question 788
@@ -10550,7 +10550,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 - C. Configure an AWS Lambda function to handle user authentication. Implement Amazon API Gateway REST APIs with a Lambda authorizer.
 - D. Configure an IAM user to handle user authentication. Implement Amazon API Gateway HTTP APIs with an IAM authorizer.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/133031-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133031-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, Cognito authorizer for access?
 
 ## Question 793
@@ -10592,7 +10592,7 @@ Which combination of solutions will meet these requirements? (Choose two.)
 - D. Launch Amazon EC2 instances. Attach an Elastic Fabric Adapter (EFA) to the instances.
 - E. Create an AWS Elastic Beanstalk deployment to manage the environment.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/133034-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133034-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD, Elastic Fabric Adapter is for HPC
 
 ## Question 796
@@ -10713,7 +10713,7 @@ Which solution will meet these requirements?
 - C. Run a daily AWS Glue job to transform the data and load the data into Amazon Redshift Serverless. Use Amazon Redshift ML to create and train the ML models.
 - D. Run a daily AWS Glue job to transform the data and load the data into Amazon Athena tables. Use Amazon Athena ML to create and train the ML models.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/135261-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/135261-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, MPP = Redshift, serverless = Glue job
 
 ## Question 805
@@ -10739,7 +10739,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Use the Amazon Elastic File System (Amazon EFS) Standard-Infrequent Access (Standard-IA) storage class. Activate the infrequent access lifecycle policy.
 - D. Use the Amazon Elastic File System (Amazon EFS) One Zone-Infrequent Access (One Zone-IA) storage class. Activate the infrequent access lifecycle policy.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/135263-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/135263-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, S3 supports NFS
 
 ## Question 807
@@ -10791,7 +10791,7 @@ Which solution will meet this requirement?
 - C. Instruct the vendor to create a Network Load Balancer (NLB). Place the NLB in front of the Amazon RDS for MySQL database. Use AWS PrivateLink to integrate the company's VPC and the vendor's VPC.
 - D. Use AWS Transit Gateway to integrate the company's VPC and the vendor's VPC. Use VPC peering to connect the company’s VPC and the vendor's VPC.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/135264-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/135264-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, PrivateLink allows to connect some AWS services hosted by other AWS accounts
 
 ## Question 811
@@ -10845,7 +10845,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Use highly available Amazon EC2 instances to run the application. Use Amazon MQ to retrieve the messages.
 - D. Use AWS Lambda functions to run the application. Use Amazon Simple Queue Service (Amazon SQS) to retrieve the messages.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/135266-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/135266-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, AMQP = Amazon MQ
 
 ## Question 815
@@ -11008,7 +11008,7 @@ Which solution will meet these requirements?
 - C. Use AWS Directory Service and create a two-way trust relationship with the company's self-managed Active Directory.
 - D. Deploy an identity provider (IdP) on Amazon EC2. Link the IdP as an identity source within AWS IAM Identity Center.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/136806-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/136806-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, need IAM Identity Center
 
 ## Question 827
@@ -11021,7 +11021,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Configure the cluster storage type as General Purpose.
 - D. Configure the cluster to use the Aurora I/O-Optimized storage configuration.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/136807-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/136807-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, Aurora has 2 storage options, Standard & I/O-Optimized
 
 ## Question 828
@@ -11035,7 +11035,7 @@ Which solution will meet these requirements?
 - C. Configure an AWS CloudTrail organization trail in the Organizations management account. Designate one account as the compliance account. Enable CloudTrail security standards for NIST and PCI DSS in the compliance account.
 - D. Designate one account as the AWS Security Hub delegated administrator account from the Organizations management account. In the designated Security Hub administrator account, enable Security Hub for all member accounts. Enable Security Hub standards for NIST and PCI DSS.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/136994-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/136994-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, Security Hub = assess AWS environment against security industry standards
 
 ## Question 829
@@ -11087,7 +11087,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Create an AWS Transfer Family server with SFTP endpoints. Choose the AWS Directory Service option as the identity provider. Use AD Connector to connect the on-premises Active Directory.
 - D. Create an AWS Transfer Family SFTP endpoint. Configure the endpoint to use the AWS Directory Service option as the identity provider to connect to the existing Active Directory.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/136998-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/136998-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, need SFTP enabled server with SFTP endpoint and AWS Directory Service with AD connector to reach on-prem AD for authentication and authorization
 
 ## Question 833
@@ -11101,7 +11101,7 @@ Which solution will meet these requirements?
 - C. Create an Amazon EventBridge event bus. Create an event rule for each validation step. Configure the input transformer to send only the required data to each target validation step Lambda function.
 - D. Create an Amazon Simple Queue Service (Amazon SQS) queue. Create a new Lambda function to subscribe to the SQS queue and to transform the order data to the format that each validation step requires. Use the new Lambda function to perform synchronous invocations of the validation step Lambda functions in parallel on separate threads.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/137000-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/137000-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Event bus can manipulate event, D is also possible but too much operations
 
 ## Question 834
@@ -11209,7 +11209,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Keep the daily snapshot in the EBS snapshot standard tier for 1 month. Keep the monthly snapshot in the standard tier for 7 years. Use incremental snapshots.
 - D. Keep the daily snapshot in the EBS snapshot standard tier. Use EBS direct APIs to take snapshots of all the EBS volumes every month. Store the snapshots in an Amazon S3 bucket in the Infrequent Access tier for 7 years.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/137844-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/137844-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, EBS Snapshots Archive is most cost-effective
 
 ## Question 842
@@ -11555,7 +11555,7 @@ Which solution will meet these requirements?
 - C. Use Amazon CloudWatch metrics reporting to determine EBS volume recommendations for optimization.
 - D. Use AWS Compute Optimizer to generate EBS volume recommendations for optimization.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/137854-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/137854-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, Compute Optimizer helps avoid overprovisioning and underprovisioning four types of AWS resources
 
 ## Question 868
@@ -11815,7 +11815,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - D. Use Amazon RDS Proxy to connect the applications to Aurora PostgreSQL.
 - E. Use AWS Database Migration Service (AWS DMS) to rewrite the SQL queries in the applications.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/139802-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/139802-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BC, Babelfish for Aurora PostgreSQL is a new capability for Amazon Aurora PostgreSQL-Compatible Edition that enables Aurora to understand commands from applications written for Microsoft SQL Server
 
 ## Question 887
@@ -11842,7 +11842,7 @@ Which solution will meet these requirements?
 - C. Use Amazon Kinesis Video Streams to capture the clickstream data. Use AWS Glue to process the data in real time.
 - D. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analytics) to capture the clickstream data. Use AWS Lambda to process the data in real time.
 
-> [!hint]- [Answer](https://www.examtopics.com/discussions/amazon/view/139803-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/139803-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as Glue does not process data in real-time
 
 ## Question 889
