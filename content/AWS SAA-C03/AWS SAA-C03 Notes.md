@@ -11,7 +11,6 @@ tags:
 - S3 Transfer Acceleration = Edge Location 으로 transfer 해서 transfer speed 올리는 법
 - PrincipalOrgID = AWS Organization member accounts 만 접근 가능하게 for resource policies
 - GW VPC Endpoint vs Interface VPC Endpoint
-- S3 File GW = extend storage space by leveraging Amazon S3
 - Secrets Manager vs Parameter Store
 	- Secrets Manager = Auto Rotation
 - CloudFront vs Global Accelerator (both support Shield for DDoS)
@@ -35,8 +34,17 @@ tags:
 - S3 Legal Hold?
 - Control Tower vs SCPs
 - CloudFront field-level encryption profile?
-- Storage Gateway?
+- Storage Gateway
+	- S3 File GW = extend storage space by leveraging Amazon S3
+	- FSx File GW
+	- Volume GW
+		- stored volumes
+		- cached volumes
+	- Tape GW
 - S3 signed cookies vs signed URLs
+- Compute Savings Plan vs EC2 Instance Savings Plan
+	- EC2 Instance Savings Plan = EC2 only & instance family committed
+- io vs gp
 
 - Lambda reserved concurrency vs provisioned concurrency
 	- reserved concurrency
