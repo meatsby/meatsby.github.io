@@ -6872,7 +6872,7 @@ Which use cases are suitable for Amazon Redshift in this scenario? (Choose three
 - E. Scaling globally to support petabytes of data and tens of millions of requests per minute
 - F. Creating a secondary replica of the cluster by using the AWS Management Console
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/109535-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109535-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BCE
 
 ## Question 516
@@ -6912,7 +6912,7 @@ Which solution meets these requirements with the LEAST amount of effort?
 - C. Change the RDS database instance storage type to Provisioned IOPS
 - D. Back up the RDS database, increase the storage capacity, restore the database, and stop the previous instance
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/109721-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109721-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
 ## Question 519
@@ -6971,7 +6971,7 @@ Which combination of steps will meet these requirements with the LEAST operation
 
 ## Question 523
 ---
-A company runs a microservice-based serverless web application. The application must be able to retrieve data from multiple Amazon DynamoDB tables A solutions architect needs to give the application the ability to retrieve the data with no impact on the baseline performance of the application.
+A company runs a microservice-based serverless web application. The application must be able to retrieve data from multiple Amazon DynamoDB tables. A solutions architect needs to give the application the ability to retrieve the data with no impact on the baseline performance of the application.
 Which solution will meet these requirements in the MOST operationally efficient way?
 
 - A. AWS AppSync pipeline resolvers
@@ -6979,7 +6979,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 - C. Edge-optimized Amazon API Gateway with AWS Lambda functions
 - D. Amazon Athena Federated Query with a DynamoDB connector
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/109701-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109701-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D
 
 ## Question 524
@@ -7100,7 +7100,7 @@ Which combination of steps will meet these requirements with the MOST operationa
 - E. Create multiple API endpoints for each customer in API Gateway.
 - F. Create a custom domain name in API Gateway for the REST API. Import the certificate from AWS Certificate Manager (ACM).
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/111382-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111382-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > ADF
 
 ## Question 533
@@ -7259,7 +7259,7 @@ Which solution will meet these requirements?
 - C. Create a new API Gateway endpoint with a new version of the API in OpenAPI JSON file format. Use the import-to-update operation in overwrite mode into the API in API Gateway. Deploy the new version of the API to the production stage.
 - D. Create a new API Gateway endpoint with new versions of the API definitions. Create a custom domain name for the new API Gateway API. Point the Route 53 alias record to the new API Gateway API custom domain name.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/111450-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111450-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
 ## Question 545
@@ -7351,8 +7351,15 @@ Which solution meets these requirements MOST cost-effectively?
 - C. Use S3 Intelligent-Tiering. Configure S3 Intelligent-Tiering to transition the reports to S3 Standard-Infrequent Access (S3 Standard-IA) and S3 Glacier.
 - D. Use S3 Standard. Use an S3 Lifecycle rule to transition the reports to S3 Glacier Deep Archive after 7 days.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/116896-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116896-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> A, as per
+> - Amazon S3 Glacier:
+> 	- Expedited Retrieval: Provides access to data within 1-5 minutes.
+> 	- Standard Retrieval: Provides access to data within 3-5 hours.
+> 	- Bulk Retrieval: Provides access to data within 5-12 hours.
+> - Amazon S3 Glacier Deep Archive:
+> 	- Standard Retrieval: Provides access to data within 12 hours.
+> 	- Bulk Retrieval: Provides access to data within 48 hours.
 
 ## Question 552
 ---
@@ -7430,8 +7437,8 @@ Which solution will meet these requirements?
 - C. Use Amazon EMR to process the S3 data. Use Amazon Kinesis Data Streams to move the S3 data into Amazon Redshift so that the data can be enriched.
 - D. Use AWS Glue to process the S3 data. Use AWS Lake Formation with the Amazon Redshift data to enrich the S3 data.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/117344-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/117344-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> B, EMR can integrate directly with Amazon Redshift using the EMR-Redshift integration
 
 ## Question 558
 ---
@@ -7591,8 +7598,8 @@ Which solution will meet these requirements?
 - C. Check for the events in Amazon CloudWatch Logs.
 - D. Check the trails in AWS CloudTrail for the EventBridge events.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/117377-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/117377-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> A, EventBridge only send metrics not logs
 
 ## Question 570
 ---
@@ -7735,8 +7742,8 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Configure an Auto Scaling group with an Amazon EC2 instance. Use an Amazon FSx for OpenZFS file system to run the application.
 - D. Host the application on an Amazon EC2 instance. Use an Amazon Elastic Block Store (Amazon EBS) GP3 volume to run the application.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/117663-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> D
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/117663-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> D, GP3 most cost-effective
 
 ## Question 581
 ---
@@ -7879,7 +7886,7 @@ Which solution will meet this requirement MOST cost-effectively?
 - C. Use an AWS Lambda function to connect the requests to Amazon EKS.
 - D. Use Amazon API Gateway to connect the requests to Amazon EKS.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/119574-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/119574-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B
 
 ## Question 592
@@ -7905,7 +7912,7 @@ Which solution will meet these requirements?
 - C. Use a Multi-AZ Redis cluster with more than one read replica in the replication group.
 - D. Use Redis shards that contain multiple nodes with Auto Scaling turned on.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/119572-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/119572-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
 ## Question 594
