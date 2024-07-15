@@ -6,7 +6,7 @@ draft: false
 tags:
   - AWS
 ---
-## Question 6
+## 1. Question 6
 ---
 A company uses NFS to store large video files in on-premises network attached storage. Each video file ranges in size from 1 MB to 500 GB. The total storage is 70 TB and is no longer growing. The company decides to migrate the video files to Amazon S3. The company must migrate the video files as soon as possible while using the least possible network bandwidth.
 Which solution will meet these requirements?
@@ -19,7 +19,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > B, as using the least possible network bandwidth
 
-## Question 9
+## 2. Question 9
 ---
 A company is running an SMB file server in its data center. The file server stores large files that are accessed frequently for the first few days after the files are created. After 7 days the files are rarely accessed.
 The total data size is increasing and is close to the company's total storage capacity. A solutions architect must increase the company's available storage space without losing low-latency access to the most recently accessed files. The solutions architect must also provide file lifecycle management to avoid future storage issues.
@@ -33,7 +33,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > B, S3 File GW = extend storage space by leveraging Amazon S3
 
-## Question 12
+## 3. Question 12
 ---
 A global company hosts its web application on Amazon EC2 instances behind an Application Load Balancer (ALB). The web application has static data and dynamic data. The company stores its static data in an Amazon S3 bucket. The company wants to improve performance and reduce latency for the static data and dynamic data. The company is using its own domain name registered with Amazon Route 53.
 What should a solutions architect do to meet these requirements?
@@ -46,7 +46,7 @@ What should a solutions architect do to meet these requirements?
 > [!help]- Answer
 > A, No need for Global Accelerator since there is no static IP
 
-## Question 15
+## 4. Question 15
 ---
 A company recently migrated to AWS and wants to implement a solution to protect the traffic that flows in and out of the production VPC. The company had an inspection server in its on-premises data center. The inspection server performed specific operations such as traffic flow inspection and traffic filtering. The company wants to have the same functionalities in the AWS Cloud.
 Which solution will meet these requirements?
@@ -59,7 +59,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > C
 
-## Question 16
+## 5. Question 16
 ---
 A company hosts a data lake on AWS. The data lake consists of data in Amazon S3 and Amazon RDS for PostgreSQL. The company needs a reporting solution that provides data visualization and includes all the data sources within the data lake. Only the company's management team should have full access to all the visualizations. The rest of the company should have only limited access.
 Which solution will meet these requirements?
@@ -72,7 +72,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > B, Amazon QuickSight only supports users(standard version) and groups(enterprise version)
 
-## Question 19
+## 6. Question 19
 ---
 A company has a three-tier web application that is deployed on AWS. The web servers are deployed in a public subnet in a VPC. The application servers and database servers are deployed in private subnets in the same VPC. The company has deployed a third-party virtual firewall appliance from AWS Marketplace in an inspection VPC. The appliance is configured with an IP interface that can accept IP packets.
 A solutions architect needs to integrate the web application with the appliance to inspect all traffic to the application before the traffic reaches the web server.
@@ -86,7 +86,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- Answer
 > D, IP Packet = GLB
 
-## Question 20
+## 7. Question 20
 ---
 A company wants to improve its ability to clone large amounts of production data into a test environment in the same AWS Region. The data is stored in Amazon EC2 instances on Amazon Elastic Block Store (Amazon EBS) volumes. Modifications to the cloned data must not affect the production environment. The software that accesses this data requires consistently high I/O performance.
 A solutions architect needs to minimize the time that is required to clone the production data into the test environment.
@@ -100,7 +100,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > D, EBS Fast Snapshot Restore (FSR) = no latency on first use
 
-## Question 24
+## 8. Question 24
 ---
 A company observes an increase in Amazon EC2 costs in its most recent bill. The billing team notices unwanted vertical scaling of instance types for a couple of EC2 instances. A solutions architect needs to create a graph comparing the last 2 months of EC2 costs and perform an in-depth analysis to identify the root cause of the vertical scaling.
 How should the solutions architect generate the information with the LEAST operational overhead?
@@ -113,7 +113,7 @@ How should the solutions architect generate the information with the LEAST opera
 > [!help]- Answer
 > B
 
-## Question 39
+## 9. Question 39
 ---
 A company maintains a searchable repository of items on its website. The data is stored in an Amazon RDS for MySQL database table that contains more than 10 million rows. The database has 2 TB of General Purpose SSD storage. There are millions of updates against this data every day through the company's website.
 The company has noticed that some insert operations are taking 10 seconds or longer. The company has determined that the database storage performance is the problem.
@@ -127,7 +127,7 @@ Which solution addresses this performance issue?
 > [!help]- Answer
 > A, not B as B does not improve storage performance
 
-## Question 47
+## 10. Question 47
 ---
 A company needs guaranteed Amazon EC2 capacity in three specific Availability Zones in a specific AWS Region for an upcoming event that will last 1 week.
 What should the company do to guarantee the EC2 capacity?
@@ -140,7 +140,7 @@ What should the company do to guarantee the EC2 capacity?
 > [!help]- Answer
 > D, not A as purchasing Reserved Instances that specify the Region needed, would not guarantee capacity in specific Availability Zones
 
-## Question 50
+## 11. Question 50
 ---
 A company has a production workload that runs on 1,000 Amazon EC2 Linux instances. The workload is powered by third-party software. The company needs to patch the third-party software on all EC2 instances as quickly as possible to remediate a critical security vulnerability.
 What should a solutions architect do to meet these requirements?
@@ -153,7 +153,7 @@ What should a solutions architect do to meet these requirements?
 > [!help]- Answer
 > D, not B as B is for OS level patches only while the question asks for 3rd party app patches
 
-## Question 52
+## 12. Question 52
 ---
 A company wants to migrate its on-premises application to AWS. The application produces output files that vary in size from tens of gigabytes to hundreds of terabytes. The application data must be stored in a standard file system structure. The company wants a solution that scales automatically. is highly available, and requires minimum operational overhead.
 Which solution will meet these requirements?
@@ -166,7 +166,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > C
 
-## Question 56
+## 13. Question 56
 ---
 A company has registered its domain name with Amazon Route 53. The company uses Amazon API Gateway in the ca-central-1 Region as a public interface for its backend microservice APIs. Third-party services consume the APIs securely. The company wants to design its API Gateway URL with the company's domain name and corresponding certificate so that the third-party services can use HTTPS.
 Which solution will meet these requirements?
@@ -179,7 +179,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > C, as for an API Gateway Regional custom domain name, you must request or import the certificate in the same Region as your API
 
-## Question 71
+## 14. Question 71
 ---
 A company runs a shopping application that uses Amazon DynamoDB to store customer information. In case of data corruption, a solutions architect needs to design a solution that meets a recovery point objective (RPO) of 15 minutes and a recovery time objective (RTO) of 1 hour.
 What should the solutions architect recommend to meet these requirements?
@@ -192,7 +192,7 @@ What should the solutions architect recommend to meet these requirements?
 > [!help]- Answer
 > B
 
-## Question 78
+## 15. Question 78
 ---
 A company needs to keep user transaction data in an Amazon DynamoDB table. The company must retain the data for 7 years.
 What is the MOST operationally efficient solution that meets these requirements?
@@ -205,7 +205,7 @@ What is the MOST operationally efficient solution that meets these requirements?
 > [!help]- Answer
 > B
 
-## Question 82
+## 16. Question 82
 ---
 A company hosts its web applications in the AWS Cloud. The company configures Elastic Load Balancers to use certificates that are imported into AWS Certificate Manager (ACM). The company's security team must be notified 30 days before the expiration of each certificate.
 What should a solutions architect recommend to meet this requirement?
@@ -218,7 +218,7 @@ What should a solutions architect recommend to meet this requirement?
 > [!help]- Answer
 > B, AWS Config has a managed rule named acm-certificate-expiration-check to check for expiring certificates (configurable number of days)
 
-## Question 84
+## 17. Question 84
 ---
 A company wants to reduce the cost of its existing three-tier web architecture. The web, application, and database servers are running on Amazon EC2 instances for the development, test, and production environments. The EC2 instances average 30% CPU utilization during peak hours and 10% CPU utilization during non-peak hours.
 The production EC2 instances run 24 hours a day. The development and test EC2 instances run for at least 8 hours each day. The company plans to implement automation to stop the development and test EC2 instances when they are not in use.
@@ -232,7 +232,7 @@ Which EC2 instance purchasing solution will meet the company's requirements MOST
 > [!help]- Answer
 > B
 
-## Question 93
+## 18. Question 93
 ---
 A company runs an on-premises application that is powered by a MySQL database. The company is migrating the application to AWS to increase the application's elasticity and availability.
 The current architecture shows heavy read activity on the database during times of normal operation. Every 4 hours, the company's development team pulls a full export of the production database to populate a database in the staging environment. During this period, users experience unacceptable application latency. The development team is unable to use the staging environment until the procedure completes.
@@ -246,7 +246,8 @@ Which solution meets these requirements?
 
 > [!help]- Answer
 > B
-## Question 98
+
+## 19. Question 98
 ---
 An image-processing company has a web application that users use to upload images. The application uploads the images into an Amazon S3 bucket. The company has set up S3 event notifications to publish the object creation events to an Amazon Simple Queue Service (Amazon SQS) standard queue. The SQS queue serves as the event source for an AWS Lambda function that processes the images and sends the results to users through email.
 Users report that they are receiving multiple email messages for every uploaded image. A solutions architect determines that SQS messages are invoking the Lambda function more than once, resulting in multiple email messages.
@@ -260,7 +261,7 @@ What should the solutions architect do to resolve this issue with the LEAST oper
 > [!help]- Answer
 > C
 
-## Question 103
+## 20. Question 103
 ---
 A company has an AWS Glue extract, transform, and load (ETL) job that runs every day at the same time. The job processes XML data that is in an Amazon S3 bucket. New data is added to the S3 bucket every day. A solutions architect notices that AWS Glue is processing all the data during each run.
 What should the solutions architect do to prevent AWS Glue from reprocessing old data?
@@ -273,7 +274,7 @@ What should the solutions architect do to prevent AWS Glue from reprocessing old
 > [!help]- Answer
 > A
 
-## Question 105
+## 21. Question 105
 ---
 A company is preparing to deploy a new serverless workload. A solutions architect must use the principle of least privilege to configure permissions that will be used to run an AWS Lambda function. An Amazon EventBridge (Amazon CloudWatch Events) rule will invoke the function.
 Which solution meets these requirements?
@@ -284,9 +285,9 @@ Which solution meets these requirements?
 - D. Add a resource-based policy to the function with lambda:InvokeFunction as the action and Service: events.amazonaws.com as the principal.
 
 > [!help]- Answer
-> D
+> D, as execution role will allow any lambdas to execute this while resource-based is for EB only
 
-## Question 107
+## 22. Question 107
 ---
 A bicycle sharing company is developing a multi-tier architecture to track the location of its bicycles during peak operating hours. The company wants to use these data points in its existing analytics platform. A solutions architect must determine the most viable multi-tier option to support this architecture. The data points must be accessible from the REST API.
 Which action meets these requirements for storing and retrieving location data?
@@ -299,7 +300,7 @@ Which action meets these requirements for storing and retrieving location data?
 > [!help]- Answer
 > B
 
-## Question 108
+## 23. Question 108
 ---
 A company has an automobile sales website that stores its listings in a database on Amazon RDS. When an automobile is sold, the listing needs to be removed from the website and the data must be sent to multiple target systems.
 Which design should a solutions architect recommend?
@@ -312,7 +313,7 @@ Which design should a solutions architect recommend?
 > [!help]- Answer
 > A
 
-## Question 110
+## 24. Question 110
 ---
 A social media company allows users to upload images to its website. The website runs on Amazon EC2 instances. During upload requests, the website resizes the images to a standard size and stores the resized images in Amazon S3. Users are experiencing slow upload requests to the website.
 The company needs to reduce coupling within the application and improve website performance. A solutions architect must design the most operationally efficient process for image uploads.
@@ -327,7 +328,7 @@ Which combination of actions should the solutions architect take to meet these r
 > [!help]- Answer
 > BD
 
-## Question 117
+## 25. Question 117
 ---
 A company stores its application logs in an Amazon CloudWatch Logs log group. A new policy requires the company to store all application logs in Amazon OpenSearch Service (Amazon Elasticsearch Service) in near-real time.
 Which solution will meet this requirement with the LEAST operational overhead?
@@ -340,7 +341,7 @@ Which solution will meet this requirement with the LEAST operational overhead?
 > [!help]- Answer
 > A
 
-## Question 119
+## 26. Question 119
 ---
 A global company is using Amazon API Gateway to design REST APIs for its loyalty club users in the us-east-1 Region and the ap-southeast-2 Region. A solutions architect must design a solution to protect these API Gateway managed REST APIs across multiple accounts from SQL injection and cross-site scripting attacks.
 Which solution will meet these requirements with the LEAST amount of administrative effort?
@@ -353,7 +354,7 @@ Which solution will meet these requirements with the LEAST amount of administrat
 > [!help]- Answer
 > B
 
-## Question 120
+## 27. Question 120
 ---
 A company has implemented a self-managed DNS solution on three Amazon EC2 instances behind a Network Load Balancer (NLB) in the us-west-2 Region. Most of the company's users are located in the United States and Europe. The company wants to improve the performance and availability of the solution. The company launches and configures three EC2 instances in the eu-west-1 Region and adds the EC2 instances as targets for a new NLB.
 Which solution can the company use to route traffic to all the EC2 instances?
@@ -366,7 +367,7 @@ Which solution can the company use to route traffic to all the EC2 instances?
 > [!help]- Answer
 > B
 
-## Question 121
+## 28. Question 121
 ---
 A company is running an online transaction processing (OLTP) workload on AWS. This workload uses an unencrypted Amazon RDS DB instance in a Multi-AZ deployment. Daily database snapshots are taken from this instance.
 What should a solutions architect do to ensure the database and snapshots are always encrypted moving forward?
@@ -379,7 +380,7 @@ What should a solutions architect do to ensure the database and snapshots are al
 > [!help]- Answer
 > A
 
-## Question 133
+## 29. Question 133
 ---
 A company runs an Oracle database on premises. As part of the company’s migration to AWS, the company wants to upgrade the database to the most recent available version. The company also wants to set up disaster recovery (DR) for the database. The company needs to minimize the operational overhead for normal operations and DR setup. The company also needs to maintain access to the database's underlying operating system.
 Which solution will meet these requirements?
@@ -392,7 +393,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > C
 
-## Question 134
+## 30. Question 134
 ---
 A company wants to move its application to a serverless solution. The serverless solution needs to analyze existing and new data by using SL. The company stores the data in an Amazon S3 bucket. The data requires encryption and must be replicated to a different AWS Region.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -405,7 +406,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- Answer
 > C
 
-## Question 135
+## 31. Question 135
 ---
 A company runs workloads on AWS. The company needs to connect to a service from an external provider. The service is hosted in the provider's VPC. According to the company’s security team, the connectivity must be private and must be restricted to the target service. The connection must be initiated only from the company’s VPC.
 Which solution will mast these requirements?
@@ -418,7 +419,7 @@ Which solution will mast these requirements?
 > [!help]- Answer
 > D
 
-## Question 141
+## 32. Question 141
 ---
 A company runs a web-based portal that provides users with global breaking news, local alerts, and weather updates. The portal delivers each user a personalized view by using mixture of static and dynamic content. Content is served over HTTPS through an API server running on an Amazon EC2 instance behind an Application Load Balancer (ALB). The company wants the portal to provide this content to its users across the world as quickly as possible.
 How should a solutions architect design the application to ensure the LEAST amount of latency for all users?
@@ -431,7 +432,7 @@ How should a solutions architect design the application to ensure the LEAST amou
 > [!help]- Answer
 > A
 
-## Question 143
+## 33. Question 143
 ---
 A company wants to migrate its existing on-premises monolithic application to AWS. The company wants to keep as much of the front-end code and the backend code as possible. However, the company wants to break the application into smaller applications. A different team will manage each application. The company needs a highly scalable solution that minimizes operational overhead.
 Which solution will meet these requirements?
@@ -444,7 +445,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > D
 
-## Question 145
+## 34. Question 145
 ---
 A company hosts a website analytics application on a single Amazon EC2 On-Demand Instance. The analytics software is written in PHP and uses a MySQL database. The analytics software, the web server that provides PHP, and the database server are all hosted on the EC2 instance. The application is showing signs of performance degradation during busy times and is presenting 5xx errors. The company needs to make the application scale seamlessly.
 Which solution will meet these requirements MOST cost-effectively?
@@ -457,7 +458,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- Answer
 > D
 
-## Question 150
+## 35. Question 150
 ---
 A company is migrating an application from on-premises servers to Amazon EC2 instances. As part of the migration design requirements, a solutions architect must implement infrastructure metric alarms. The company does not need to take action if CPU utilization increases to more than 50% for a short burst of time. However, if the CPU utilization increases to more than 50% and read IOPS on the disk are high at the same time, the company needs to act as soon as possible. The solutions architect also must reduce false alarms.
 What should the solutions architect do to meet these requirements?
@@ -470,7 +471,7 @@ What should the solutions architect do to meet these requirements?
 > [!help]- Answer
 > A
 
-## Question 151
+## 36. Question 151
 ---
 A company wants to migrate its on-premises data center to AWS. According to the company's compliance requirements, the company can use only the ap-northeast-3 Region. Company administrators are not permitted to connect VPCs to the internet.
 Which solutions will meet these requirements? (Choose two.)
@@ -484,7 +485,7 @@ Which solutions will meet these requirements? (Choose two.)
 > [!help]- Answer
 > AC
 
-## Question 172
+## 37. Question 172
 ---
 A solutions architect is creating a new Amazon CloudFront distribution for an application. Some of the information submitted by users is sensitive. The application uses HTTPS but needs another layer of security. The sensitive information should.be protected throughout the entire application stack, and access to the information should be restricted to certain applications.
 Which action should the solutions architect take?
@@ -497,7 +498,7 @@ Which action should the solutions architect take?
 > [!help]- Answer
 > C
 
-## Question 184
+## 38. Question 184
 ---
 A company has an AWS account used for software engineering. The AWS account has access to the company’s on-premises data center through a pair of AWS Direct Connect connections. All non-VPC traffic routes to the virtual private gateway.
 A development team recently created an AWS Lambda function through the console. The development team needs to allow the function to access a database that runs in a private subnet in the company’s data center.
@@ -511,7 +512,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > A
 
-## Question 189
+## 39. Question 189
 ---
 A company needs to store contract documents. A contract lasts for 5 years. During the 5-year period, the company must ensure that the documents cannot be overwritten or deleted. The company needs to encrypt the documents at rest and rotate the encryption keys automatically every year.
 Which combination of steps should a solutions architect take to meet these requirements with the LEAST operational overhead? (Choose two.)
@@ -525,7 +526,7 @@ Which combination of steps should a solutions architect take to meet these requi
 > [!help]- Answer
 > BD, why not C? Because we do not have control over rotation for SSE-S3 keys
 
-## Question 193
+## 40. Question 193
 ---
 A company is running a batch application on Amazon EC2 instances. The application consists of a backend with multiple Amazon RDS databases. The application is causing a high number of reads on the databases. A solutions architect must reduce the number of database reads while ensuring high availability.
 What should the solutions architect do to meet this requirement?
@@ -538,7 +539,7 @@ What should the solutions architect do to meet this requirement?
 > [!help]- Answer
 > B
 
-## Question 196
+## 41. Question 196
 ---
 A company runs an application on a large fleet of Amazon EC2 instances. The application reads and writes entries into an Amazon DynamoDB table. The size of the DynamoDB table continuously grows, but the application needs only data from the last 30 days. The company needs a solution that minimizes cost and development effort.
 Which solution meets these requirements?
@@ -551,7 +552,7 @@ Which solution meets these requirements?
 > [!help]- Answer
 > D
 
-## Question 199
+## 42. Question 199
 ---
 A telemarketing company is designing its customer call center functionality on AWS. The company needs a solution that provides multiple speaker recognition and generates transcript files. The company wants to query the transcript files to analyze the business patterns. The transcript files must be stored for 7 years for auditing purposes.
 Which solution will meet these requirements?
@@ -564,7 +565,7 @@ Which solution will meet these requirements?
 > [!help]- Answer
 > B
 
-## Question 201
+## 43. Question 201
 ---
 A company is developing a marketing communications service that targets mobile app users. The company needs to send confirmation messages with Short Message Service (SMS) to its users. The users must be able to reply to the SMS messages. The company must store the responses for a year for analysis.
 What should a solutions architect do to meet these requirements?
@@ -577,7 +578,7 @@ What should a solutions architect do to meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/89080-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B
 
-## Question 205
+## 44. Question 205
 ---
 A company hosts a marketing website in an on-premises data center. The website consists of static documents and runs on a single server. An administrator updates the website content infrequently and uses an SFTP client to upload new documents.
 The company decides to host its website on AWS and to use Amazon CloudFront. The company’s solutions architect creates a CloudFront distribution. The solutions architect must design the most cost-effective and resilient architecture for website hosting to serve as the CloudFront origin.
@@ -591,7 +592,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/89085-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C
 
-## Question 207
+## 45. Question 207
 ---
 A company owns an asynchronous API that is used to ingest user requests and, based on the request type, dispatch requests to the appropriate microservice for processing. The company is using Amazon API Gateway to deploy the API front end, and an AWS Lambda function that invokes Amazon DynamoDB to store user requests before dispatching them to the processing microservices.
 The company provisioned as much DynamoDB throughput as its budget allows, but the company is still experiencing availability issues and is losing user requests.
@@ -605,7 +606,7 @@ What should a solutions architect do to address this issue without impacting exi
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/89087-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, not B because DAX caches reads not writing
 
-## Question 208
+## 46. Question 208
 ---
 A company needs to move data from an Amazon EC2 instance to an Amazon S3 bucket. The company must ensure that no API calls and no data are routed through public internet routes. Only the EC2 instance can have access to upload data to the S3 bucket.
 Which solution will meet these requirements?
@@ -618,7 +619,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/89088-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, not B because GW VPC EP does not guarantee that the data won't be routed through public internet
 
-## Question 209
+## 47. Question 209
 ---
 A solutions architect is designing the architecture of a new application being deployed to the AWS Cloud. The application will run on Amazon EC2 On-Demand Instances and will automatically scale across multiple Availability Zones. The EC2 instances will scale up and down frequently throughout the day. An Application Load Balancer (ALB) will handle the load distribution. The architecture needs to support distributed session data management. The company is willing to make changes to code if needed.
 What should the solutions architect do to ensure that the architecture supports distributed session data management?
@@ -631,7 +632,7 @@ What should the solutions architect do to ensure that the architecture supports 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/89089-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
-## Question 216
+## 48. Question 216
 ---
 A company has a serverless website with millions of objects in an Amazon S3 bucket. The company uses the S3 bucket as the origin for an Amazon CloudFront distribution. The company did not set encryption on the S3 bucket before the objects were loaded. A solutions architect needs to enable encryption for all existing objects and for all objects that are added to the S3 bucket in the future.
 Which solution will meet these requirements with the LEAST amount of effort?
@@ -644,7 +645,7 @@ Which solution will meet these requirements with the LEAST amount of effort?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95040-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B
 
-## Question 217
+## 49. Question 217
 ---
 A company runs a global web application on Amazon EC2 instances behind an Application Load Balancer. The application stores data in Amazon Aurora. The company needs to create a disaster recovery solution and can tolerate up to 30 minutes of downtime and potential data loss. The solution does not need to handle the load when the primary infrastructure is healthy.
 What should a solutions architect do to meet these requirements?
@@ -657,7 +658,7 @@ What should a solutions architect do to meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95015-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
-## Question 218
+## 50. Question 218
 ---
 A company has a web server running on an Amazon EC2 instance in a public subnet with an Elastic IP address. The default security group is assigned to the EC2 instance. The default network ACL has been modified to block all traffic. A solutions architect needs to make the web server accessible from everywhere on port 443.
 Which combination of steps will accomplish this task? (Choose two.)
@@ -671,7 +672,7 @@ Which combination of steps will accomplish this task? (Choose two.)
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95056-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AE, as NACL is stateless and outbound traffic is going to be dynamic ports
 
-## Question 219
+## 51. Question 219
 ---
 A company’s application is having performance issues. The application is stateful and needs to complete in-memory tasks on Amazon EC2 instances. The company used AWS CloudFormation to deploy infrastructure and used the M5 EC2 instance family. As traffic increased, the application performance degraded. Users are reporting delays when the users attempt to access the application.
 Which solution will resolve these issues in the MOST operationally efficient way?
@@ -684,7 +685,7 @@ Which solution will resolve these issues in the MOST operationally efficient way
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95162-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, as EC2 requires CW agents to collect memory metrics
 
-## Question 224
+## 52. Question 224
 ---
 A company recently migrated its web application to AWS by rehosting the application on Amazon EC2 instances in a single AWS Region. The company wants to redesign its application architecture to be highly available and fault tolerant. Traffic must reach all running EC2 instances randomly.
 Which combination of steps should the company take to meet these requirements? (Choose two.)
@@ -698,7 +699,7 @@ Which combination of steps should the company take to meet these requirements? (
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95311-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > CE
 
-## Question 240
+## 53. Question 240
 ---
 A company previously migrated its data warehouse solution to AWS. The company also has an AWS Direct Connect connection. Corporate office users query the data warehouse using a visualization tool. The average size of a query returned by the data warehouse is 50 MB and each webpage sent by the visualization tool is approximately 500 KB. Result sets returned by the data warehouse are not cached.
 Which solution provides the LOWEST data transfer egress cost for the company?
@@ -711,7 +712,7 @@ Which solution provides the LOWEST data transfer egress cost for the company?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/94998-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D
 
-## Question 247
+## 54. Question 247
 ---
 A company has deployed a database in Amazon RDS for MySQL. Due to increased transactions, the database support team is reporting slow reads against the DB instance and recommends adding a read replica.
 Which combination of actions should a solutions architect take before implementing this change? (Choose two.)
@@ -725,7 +726,7 @@ Which combination of actions should a solutions architect take before implementi
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95004-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > CE
 
-## Question 257
+## 55. Question 257
 ---
 A company is building a solution that will report Amazon EC2 Auto Scaling events across all the applications in an AWS account. The company needs to use a serverless solution to store the EC2 Auto Scaling status data in Amazon S3. The company then will use the data in Amazon S3 to provide near-real-time updates in a dashboard. The solution must not affect the speed of EC2 instance launches.
 How should the company move the data to Amazon S3 to meet these requirements?
@@ -738,7 +739,7 @@ How should the company move the data to Amazon S3 to meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95027-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, since near-real-time == Kinesis Data Firehose
 
-## Question 260
+## 56. Question 260
 ---
 A company’s compliance team needs to move its file shares to AWS. The shares run on a Windows Server SMB file share. A self-managed on-premises Active Directory controls access to the files and folders.
 The company wants to use Amazon FSx for Windows File Server as part of the solution. The company must ensure that the on-premises Active Directory groups restrict access to the FSx for Windows File Server SMB compliance shares, folders, and files after the move to AWS. The company has created an FSx for Windows File Server file system.
@@ -752,7 +753,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95343-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D
 
-## Question 264
+## 57. Question 264
 ---
 A company has a web application hosted over 10 Amazon EC2 instances with traffic directed by Amazon Route 53. The company occasionally experiences a timeout error when attempting to browse the application. The networking team finds that some DNS queries return IP addresses of unhealthy instances, resulting in the timeout error.
 What should a solutions architect implement to overcome these timeout errors?
@@ -765,7 +766,7 @@ What should a solutions architect implement to overcome these timeout errors?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95345-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, not B because DNS cache in clients could drive timeouts
 
-## Question 267
+## 58. Question 267
 ---
 A company has one million users that use its mobile app. The company must analyze the data usage in near-real time. The company also must encrypt the data in near-real time and must store the data in a centralized location in Apache Parquet format for further processing.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -778,7 +779,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95347-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, not C because it introduces unnecessary complexity by involving EMR
 
-## Question 273
+## 59. Question 273
 ---
 A rapidly growing ecommerce company is running its workloads in a single AWS Region. A solutions architect must create a disaster recovery (DR) strategy that includes a different AWS Region. The company wants its database to be up to date in the DR Region with the least possible latency. The remaining infrastructure in the DR Region needs to run at reduced capacity and must be able to scale up if necessary.
 Which solution will meet these requirements with the LOWEST recovery time objective (RTO)?
@@ -791,7 +792,7 @@ Which solution will meet these requirements with the LOWEST recovery time object
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99505-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as Multi-AZ is not for DR and warm standby has lowest RTO
 
-## Question 275
+## 60. Question 275
 ---
 A company runs an internal browser-based application. The application runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales up to 20 instances during work hours, but scales down to 2 instances overnight. Staff are complaining that the application is very slow when the day begins, although it runs well by mid-morning.
 How should the scaling be changed to address the staff complaints and keep costs to a minimum?
@@ -804,7 +805,7 @@ How should the scaling be changed to address the staff complaints and keep costs
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99584-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, not A as C has better cost effectiveness
 
-## Question 283
+## 61. Question 283
 ---
 A research company runs experiments that are powered by a simulation application and a visualization application. The simulation application runs on Linux and outputs intermediate data to an NFS share every 5 minutes. The visualization application is a Windows desktop application that displays the simulation output and requires an SMB file system.
 The company maintains two synchronized file systems. This strategy is causing data duplication and inefficient resource usage. The company needs to migrate the applications to AWS without making code changes to either application.
@@ -818,7 +819,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99512-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since FSx for NetApp ONTAP provides shared storage between Linux and Windows file systems
 
-## Question 293
+## 62. Question 293
 ---
 A company has an on-premises volume backup solution that has reached its end of life. The company wants to use AWS as part of a new backup solution and wants to maintain local access to all the data while it is backed up on AWS. The company wants to ensure that the data backed up on AWS is automatically and securely transferred.
 Which solution meets these requirements?
@@ -831,7 +832,7 @@ Which solution meets these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99692-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D
 
-## Question 301
+## 63. Question 301
 ---
 A university research laboratory needs to migrate 30 TB of data from an on-premises Windows file server to Amazon FSx for Windows File Server. The laboratory has a 1 Gbps network link that many other departments in the university share.
 The laboratory wants to implement a data migration service that will maximize the performance of the data transfer. However, the laboratory needs to be able to control the amount of bandwidth that the service uses to minimize the impact on other departments. The data migration must take place within the next 5 days.
@@ -845,7 +846,7 @@ Which AWS solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99659-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, as Snowcone is suitable when network bandwidth is limited, FSx File GW only provides access to files stored in FSx, and Transfer Family is transferring file over SFTP and such
 
-## Question 306
+## 64. Question 306
 ---
 A company wants to run an in-memory database for a latency-sensitive application that runs on Amazon EC2 instances. The application processes more than 100,000 transactions each minute and requires high network throughput. A solutions architect needs to provide a cost-effective network design that minimizes data transfer charges.
 Which solution meets these requirements?
@@ -858,7 +859,7 @@ Which solution meets these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99807-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as BCD distributes instances across AZs which is bad for inter-node network
 
-## Question 308
+## 65. Question 308
 ---
 A company has multiple AWS accounts that use consolidated billing. The company runs several active high performance Amazon RDS for Oracle On-Demand DB instances for 90 days. The company’s finance team has access to AWS Trusted Advisor in the consolidated billing account and all other AWS accounts.
 The finance team needs to use the appropriate AWS account to access the Trusted Advisor check recommendations for RDS. The finance team must review the appropriate Trusted Advisor check to reduce RDS costs.
@@ -873,7 +874,7 @@ Which combination of steps should the finance team take to meet these requiremen
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99936-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD, as C is for 1 or 3 years
 
-## Question 309
+## 66. Question 309
 ---
 A solutions architect needs to optimize storage costs. The solutions architect must identify any Amazon S3 buckets that are no longer being accessed or are rarely accessed.
 Which solution will accomplish this goal with the LEAST operational overhead?
@@ -886,7 +887,7 @@ Which solution will accomplish this goal with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99803-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as S3 Storage Lens is a fully managed S3 storage analytics solution that provides a comprehensive view of object storage usage, activity trends, and recommendations to optimize costs
 
-## Question 310
+## 67. Question 310
 ---
 A company sells datasets to customers who do research in artificial intelligence and machine learning (AI/ML). The datasets are large, formatted files that are stored in an Amazon S3 bucket in the us-east-1 Region. The company hosts a web application that the customers use to purchase access to a given dataset. The web application is deployed on multiple Amazon EC2 instances behind an Application Load Balancer. After a purchase is made, customers receive an S3 signed URL that allows access to the files.
 The customers are distributed across North America and Europe. The company wants to reduce the cost that is associated with data transfers and wants to maintain or improve performance.
@@ -900,7 +901,7 @@ What should a solutions architect do to meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99697-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as A speeds uploads only
 
-## Question 314
+## 68. Question 314
 ---
 A company has an on-premises MySQL database used by the global sales team with infrequent access patterns. The sales team requires the database to have minimal downtime. A database administrator wants to migrate this database to AWS without selecting a particular instance type in anticipation of more users in the future.
 Which service should a solutions architect recommend?
@@ -913,7 +914,7 @@ Which service should a solutions architect recommend?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99769-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as "without selecting a particular instance type" = serverless
 
-## Question 318
+## 69. Question 318
 ---
 A company recently migrated its entire IT environment to the AWS Cloud. The company discovers that users are provisioning oversized Amazon EC2 instances and modifying security group rules without using the appropriate change control process. A solutions architect must devise a strategy to track and audit these inventory and configuration changes.
 Which actions should the solutions architect take to meet these requirements? (Choose two.)
@@ -927,7 +928,7 @@ Which actions should the solutions architect take to meet these requirements? (C
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99804-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AD
 
-## Question 319
+## 70. Question 319
 ---
 A company has hundreds of Amazon EC2 Linux-based instances in the AWS Cloud. Systems administrators have used shared SSH keys to manage the instances. After a recent audit, the company’s security team is mandating the removal of all shared keys. A solutions architect must design a solution that provides secure access to the EC2 instances.
 Which solution will meet this requirement with the LEAST amount of administrative overhead?
@@ -940,7 +941,7 @@ Which solution will meet this requirement with the LEAST amount of administrativ
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99628-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as STS does not generate SSH keys, bastion instances do not remove all shared keys, and Cognito is not meant for internal users
 
-## Question 320
+## 71. Question 320
 ---
 A company is using a fleet of Amazon EC2 instances to ingest data from on-premises data sources. The data is in JSON format and ingestion rates can be as high as 1 MB/s. When an EC2 instance is rebooted, the data in-flight is lost. The company’s data science team wants to query ingested data in near-real time.
 Which solution provides near-real-time data querying that is scalable with minimal data loss?
@@ -953,7 +954,7 @@ Which solution provides near-real-time data querying that is scalable with minim
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99752-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as B does not offer real-time querying
 
-## Question 324
+## 72. Question 324
 ---
 A company wants to implement a disaster recovery plan for its primary on-premises file storage volume. The file storage volume is mounted from an Internet Small Computer Systems Interface (iSCSI) device on a local storage server. The file storage volume holds hundreds of terabytes (TB) of data.
 The company wants to ensure that end users retain immediate access to all file types from the on-premises systems without experiencing latency.
@@ -967,7 +968,7 @@ Which solution will meet these requirements with the LEAST amount of change to t
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99711-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, as C is for frequently accessed data and 10TB limit
 
-## Question 327
+## 73. Question 327
 ---
 A solutions architect must secure a VPC network that hosts Amazon EC2 instances. The EC2 instances contain highly sensitive data and run in a private subnet. According to company policy, the EC2 instances that run in the VPC can access only approved third-party software repositories on the internet for software product updates that use the third party’s URL. Other internet traffic must be blocked.
 Which solution meets these requirements?
@@ -980,7 +981,7 @@ Which solution meets these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99795-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as a Network Firewall creates stateful outbound rules to allow certain domains for software patch download and deny all other domains
 
-## Question 335
+## 74. Question 335
 ---
 A company is experiencing sudden increases in demand. The company needs to provision large Amazon EC2 instances from an Amazon Machine Image (AMI). The instances will run in an Auto Scaling group. The company needs a solution that provides minimum initialization latency to meet the demand.
 Which solution meets these requirements?
@@ -993,7 +994,7 @@ Which solution meets these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99686-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Fast Snapshot Restore (FSR) is for initialization latency
 
-## Question 338
+## 75. Question 338
 ---
 A solutions architect must create a disaster recovery (DR) plan for a high-volume software as a service (SaaS) platform. All data for the platform is stored in an Amazon Aurora MySQL DB cluster.
 The DR plan must replicate data to a secondary AWS Region.
@@ -1007,7 +1008,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99758-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as D is more expensive
 
-## Question 347
+## 76. Question 347
 ---
 A company has an application that is running on Amazon EC2 instances. A solutions architect has standardized the company on a particular instance family and various instance sizes based on the current needs of the company.
 The company wants to maximize cost savings for the application over the next 3 years. The company needs to be able to change the instance family and sizes in the next 6 months based on application popularity and usage.
@@ -1021,7 +1022,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/100221-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, EC2 Instance Savings Plan cannot change instance family
 
-## Question 348
+## 77. Question 348
 ---
 A company collects data from a large number of participants who use wearable devices. The company stores the data in an Amazon DynamoDB table and uses applications to analyze the data. The data workload is constant and predictable. The company wants to stay at or below its forecasted budget for DynamoDB.
 Which solution will meet these requirements MOST cost-effectively?
@@ -1034,7 +1035,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/100222-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, on-demand mode cannot set RCUs and WCUs
 
-## Question 360
+## 78. Question 360
 ---
 A company uses Amazon API Gateway to run a private gateway with two REST APIs in the same VPC. The BuyStock RESTful web service calls the CheckFunds RESTful web service to ensure that enough funds are available before a stock can be purchased. The company has noticed in the VPC flow logs that the BuyStock RESTful web service calls the CheckFunds RESTful web service over the internet instead of through the VPC. A solutions architect must implement a solution so that the APIs communicate through the VPC.
 Which solution will meet these requirements with the FEWEST changes to the code?
@@ -1047,7 +1048,7 @@ Which solution will meet these requirements with the FEWEST changes to the code?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/100238-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as C is for S3 or DDB
 
-## Question 362
+## 79. Question 362
 ---
 A company uses a payment processing system that requires messages for a particular payment ID to be received in the same order that they were sent. Otherwise, the payments might be processed incorrectly.
 Which actions should a solutions architect take to meet this requirement? (Choose two.)
@@ -1061,7 +1062,7 @@ Which actions should a solutions architect take to meet this requirement? (Choos
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102121-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BE, Amazon Kinesis Data Streams inherently maintain the order of records within a shard
 
-## Question 363
+## 80. Question 363
 ---
 A company is building a game system that needs to send unique events to separate leaderboard, matchmaking, and authentication services concurrently. The company needs an AWS event-driven system that guarantees the order of the events.
 Which solution will meet these requirements?
@@ -1074,7 +1075,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102124-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, not D as multiple destinations
 
-## Question 364
+## 81. Question 364
 ---
 A hospital is designing a new application that gathers symptoms from patients. The hospital has decided to use Amazon Simple Queue Service (Amazon SQS) and Amazon Simple Notification Service (Amazon SNS) in the architecture.
 A solutions architect is reviewing the infrastructure design. Data must be encrypted at rest and in transit. Only authorized personnel of the hospital should be able to access the data.
@@ -1089,7 +1090,7 @@ Which combination of steps should the solutions architect take to meet these req
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102125-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD
 
-## Question 371
+## 82. Question 371
 ---
 A company needs to create an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to host a digital media streaming application. The EKS cluster will use a managed node group that is backed by Amazon Elastic Block Store (Amazon EBS) volumes for storage. The company must encrypt all data at rest by using a customer managed key that is stored in AWS Key Management Service (AWS KMS).
 Which combination of actions will meet this requirement with the LEAST operational overhead? (Choose two.)
@@ -1103,7 +1104,7 @@ Which combination of actions will meet this requirement with the LEAST operation
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102135-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > CD
 
-## Question 379
+## 83. Question 379
 ---
 A company hosts a frontend application that uses an Amazon API Gateway API backend that is integrated with AWS Lambda. When the API receives requests, the Lambda function loads many libraries. Then the Lambda function connects to an Amazon RDS database, processes the data, and returns the data to the frontend application. The company wants to ensure that response latency is as low as possible for all its users with the fewest number of changes to the company's operations.
 Which solution will meet these requirements?
@@ -1116,7 +1117,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102144-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, configuring provisioned concurrency would get rid of the "cold start" of the Lambda to load many libraries
 
-## Question 384
+## 84. Question 384
 ---
 A company runs an application on Amazon EC2 Linux instances across multiple Availability Zones. The application needs a storage layer that is highly available and Portable Operating System Interface (POSIX)-compliant. The storage layer must provide maximum data durability and must be shareable across the EC2 instances. The data in the storage layer will be accessed frequently for the first 30 days and will be accessed infrequently after that time.
 Which solution will meet these requirements MOST cost-effectively?
@@ -1129,7 +1130,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102152-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, as only EFS supports POSIX
 
-## Question 394
+## 85. Question 394
 ---
 A company is running a multi-tier ecommerce web application in the AWS Cloud. The application runs on Amazon EC2 instances with an Amazon RDS for MySQL Multi-AZ DB instance. Amazon RDS is configured with the latest generation DB instance with 2,000 GB of storage in a General Purpose SSD (gp3) Amazon Elastic Block Store (Amazon EBS) volume. The database performance affects the application during periods of high demand.
 A database administrator analyzes the logs in Amazon CloudWatch Logs and discovers that the application performance always degrades when the number of read and write IOPS is higher than 20,000.
@@ -1143,7 +1144,7 @@ What should a solutions architect do to improve the application performance?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102161-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, as gp3's max IOPS is 16,000 and RDS does not support io2
 
-## Question 398
+## 86. Question 398
 ---
 A company needs to transfer 600 TB of data from its on-premises network-attached storage (NAS) system to the AWS Cloud. The data transfer must be complete within 2 weeks. The data is sensitive and must be encrypted in transit. The company’s internet connection can support an upload speed of 100 Mbps.
 Which solution meets these requirements MOST cost-effectively?
@@ -1156,7 +1157,7 @@ Which solution meets these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102166-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, as AB would take around 600 days to transfer and D takes time to setup a connection
 
-## Question 402
+## 87. Question 402
 ---
 A company needs to ingest and handle large amounts of streaming data that its application generates. The application runs on Amazon EC2 instances and sends data to Amazon Kinesis Data Streams, which is configured with default settings. Every other day, the application consumes the data and writes the data to an Amazon S3 bucket for business intelligence (BI) processing. The company observes that Amazon S3 is not receiving all the data that the application sends to Kinesis Data Streams.
 What should a solutions architect do to resolve this issue?
@@ -1169,7 +1170,7 @@ What should a solutions architect do to resolve this issue?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102175-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, since Kinesis Data Stream stores 24 hrs by default
 
-## Question 405
+## 88. Question 405
 ---
 A solutions architect is designing the architecture for a software demonstration environment. The environment will run on Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer (ALB). The system will experience significant increases in traffic during working hours but is not required to operate on weekends.
 Which combination of actions should the solutions architect take to ensure that the system can scale to meet demand? (Choose two.)
@@ -1183,7 +1184,7 @@ Which combination of actions should the solutions architect take to ensure that 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102181-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > DE, since ASG cannot adjust ALB capacity
 
-## Question 410
+## 89. Question 410
 ---
 A company is deploying a new application on Amazon EC2 instances. The application writes data to Amazon Elastic Block Store (Amazon EBS) volumes. The company needs to ensure that all data that is written to the EBS volumes is encrypted at rest.
 Which solution will meet this requirement?
@@ -1196,7 +1197,7 @@ Which solution will meet this requirement?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102187-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, not D as D is inefficient
 
-## Question 411
+## 90. Question 411
 ---
 A company has a web application with sporadic usage patterns. There is heavy usage at the beginning of each month, moderate usage at the start of each week, and unpredictable usage during the week. The application consists of a web server and a MySQL database server running inside the data center. The company would like to move the application to the AWS Cloud, and needs to select a cost-effective database platform that will not require database modifications.
 Which solution will meet these requirements?
@@ -1209,7 +1210,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/102188-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since automatically scales compute and memory resources based on application usage
 
-## Question 414
+## 91. Question 414
 ---
 A company has a business system that generates hundreds of reports each day. The business system saves the reports to a network share in CSV format. The company needs to store this data in the AWS Cloud in near-real time for analysis.
 Which solution will meet these requirements with the LEAST administrative overhead?
@@ -1222,7 +1223,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/103452-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, since near-real time with least administrative overhead
 
-## Question 417
+## 92. Question 417
 ---
 A company uses Amazon EC2 instances and AWS Lambda functions to run its application. The company has VPCs with public subnets and private subnets in its AWS account. The EC2 instances run in a private subnet in one of the VPCs. The Lambda functions need direct network access to the EC2 instances for the application to work.
 The application will run for at least 1 year. The company expects the number of Lambda functions that the application uses to increase during that time. The company wants to maximize its savings on all application resources and to keep network latency between the services low.
@@ -1236,7 +1237,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/103598-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Compute Savings Plan can save costs for both EC2 and Lambda
 
-## Question 420
+## 93. Question 420
 ---
 A company wants to use an Amazon RDS for PostgreSQL DB cluster to simplify time-consuming database administrative tasks for production database workloads. The company wants to ensure that its database is highly available and will provide automatic failover support in most scenarios in less than 40 seconds. The company wants to offload reads off of the primary instance and keep costs as low as possible.
 Which solution will meet these requirements?
@@ -1252,7 +1253,7 @@ Which solution will meet these requirements?
 > - multi-az cluster: failover around 35 sec
 > - "Reader endpoint" for an Amazon RDS DB cluster provides load-balancing support for read-only connections to the DB cluster
 
-## Question 421
+## 94. Question 421
 ---
 A company runs a highly available SFTP service. The SFTP service uses two Amazon EC2 Linux instances that run with elastic IP addresses to accept traffic from trusted IP sources on the internet. The SFTP service is backed by shared storage that is attached to the instances. User accounts are created and managed as Linux users in the SFTP servers.
 The company wants a serverless option that provides high IOPS performance and highly configurable security. The company also wants to maintain control over user permissions.
@@ -1266,7 +1267,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109270-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, since SFTP cannot use EBS, and S3 doesn't guarantee high IOPS
 
-## Question 423
+## 95. Question 423
 ---
 A solutions architect wants to use the following JSON text as an identity-based policy to grant specific permissions:
 Which IAM principals can the solutions architect attach this policy to? (Choose two.)
@@ -1280,7 +1281,7 @@ Which IAM principals can the solutions architect attach this policy to? (Choose 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109281-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AB, since Identity-based policy is used for role and group
 
-## Question 425
+## 96. Question 425
 ---
 A company uses high block storage capacity to runs its workloads on premises. The company's daily peak input and output transactions per second are not more than 15,000 IOPS. The company wants to migrate the workloads to Amazon EC2 and to provision disk performance independent of storage capacity.
 Which Amazon Elastic Block Store (Amazon EBS) volume type will meet these requirements MOST cost-effectively?
@@ -1293,7 +1294,7 @@ Which Amazon Elastic Block Store (Amazon EBS) volume type will meet these requir
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109282-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since GP3 is cost effective
 
-## Question 436
+## 97. Question 436
 ---
 A company moved its on-premises PostgreSQL database to an Amazon RDS for PostgreSQL DB instance. The company successfully launched a new product. The workload on the database has increased. The company wants to accommodate the larger workload without adding infrastructure.
 Which solution will meet these requirements MOST cost-effectively?
@@ -1306,7 +1307,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109277-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as larger workload without adding infrastructure & cost-effectively
 
-## Question 444
+## 98. Question 444
 ---
 A company is running a global application. The application's users submit multiple videos that are then merged into a single video file. The application uses a single Amazon S3 bucket in the us-east-1 Region to receive uploads from users. The same S3 bucket provides the download location of the single video file that is produced. The final video file output has an average size of 250 GB.
 The company needs to develop a solution that delivers faster uploads and downloads of the video files that are stored in Amazon S2. The company will offer the solution as a subscription to users who want to pay for the increased speed.
@@ -1320,7 +1321,7 @@ What should a solutions architect do to meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/53895-exam-aws-certified-solutions-architect-associate-saa-c02/)
 > D, S3 Transfer Acceleration supports both upload and download
 
-## Question 445
+## 99. Question 445
 ---
 A company is storing 700 terabytes of data on a large network-attached storage (NAS) system in its corporate data center. The company has a hybrid environment with a 10 Gbps AWS Direct Connect connection.
 After an audit from a regulator, the company has 90 days to move the data to the cloud. The company needs to move the data efficiently and without disruption. The company still needs to be able to access and update the data during the transfer window.
@@ -1334,7 +1335,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109403-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, 10GbpS = 10.8 TB per day, B causes disruption
 
-## Question 447
+## 100. Question 447
 ---
 A company has a stateless web application that runs on AWS Lambda functions that are invoked by Amazon API Gateway. The company wants to deploy the application across multiple AWS Regions to provide Regional failover capabilities.
 What should a solutions architect do to route traffic to multiple Regions?
@@ -1349,7 +1350,7 @@ What should a solutions architect do to route traffic to multiple Regions?
 > - Global, Reduce latency, health checks, no failover = Amazon CloudFront
 > - Global ,Reduce latency, health checks, failover, Route traffic = Amazon Route 53
 
-## Question 450
+## 101. Question 450
 ---
 A company has a three-tier web application that is in a single server. The company wants to migrate the application to the AWS Cloud. The company also wants the application to align with the AWS Well-Architected Framework and to be consistent with AWS recommended best practices for security, scalability, and resiliency.
 Which combination of solutions will meet these requirements? (Choose three.)
@@ -1364,7 +1365,7 @@ Which combination of solutions will meet these requirements? (Choose three.)
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109406-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > CEF, not A as existing architecture is single server
 
-## Question 453
+## 102. Question 453
 ---
 A company wants to implement a backup strategy for Amazon EC2 data and multiple Amazon S3 buckets. Because of regulatory requirements, the company must retain backup files for a specific time period. The company must not alter the files for the duration of the retention period.
 Which solution will meet these requirements?
@@ -1377,7 +1378,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109410-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since we can delete backup in governance mode
 
-## Question 454
+## 103. Question 454
 ---
 A company has resources across multiple AWS Regions and accounts. A newly hired solutions architect discovers a previous employee did not provide details about the resources inventory. The solutions architect needs to build and map the relationship details of the various workloads across all accounts.
 Which solution will meet these requirements in the MOST operationally efficient way?
@@ -1390,7 +1391,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109433-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Workload Discovery is purpose built tool for this type of usage
 
-## Question 457
+## 104. Question 457
 ---
 A company that uses AWS is building an application to transfer data to a product manufacturer. The company has its own identity provider (IdP). The company wants the IdP to authenticate application users while the users use the application to transfer data. The company must use Applicability Statement 2 (AS2) protocol.
 Which solution will meet these requirements?
@@ -1403,7 +1404,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109524-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since Transfer Family supports AS2
 
-## Question 465
+## 105. Question 465
 ---
 A company is developing an application to support customer demands. The company wants to deploy the application on multiple Amazon EC2 Nitro-based instances within the same Availability Zone. The company also wants to give the application the ability to write to multiple block storage volumes in multiple EC2 Nitro-based instances simultaneously to achieve higher application availability.
 Which solution will meet these requirements?
@@ -1416,7 +1417,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109655-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since Multi-Attach is supported only for io1 and io2 volumes
 
-## Question 468
+## 106. Question 468
 ---
 A company is developing a microservices application that will provide a search catalog for customers. The company must use REST APIs to present the frontend of the application to users. The REST APIs must access the backend services that the company hosts in containers in private VPC subnets.
 Which solution will meet these requirements?
@@ -1429,7 +1430,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109451-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Private VPC Link: To enable the REST API in API Gateway to access the backend services hosted in Amazon ECS
 
-## Question 470
+## 107. Question 470
 ---
 A company has applications hosted on Amazon EC2 instances with IPv6 addresses. The applications must initiate communications with other external applications using the internet. However the company’s security policy states that any external service cannot initiate a connection to the EC2 instances.
 What should a solutions architect recommend to resolve this issue?
@@ -1442,7 +1443,7 @@ What should a solutions architect recommend to resolve this issue?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109334-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since egress-only IG is for IPv6 and NATGW is for IPv4
 
-## Question 482
+## 108. Question 482
 ---
 A company wants to migrate 100 GB of historical data from an on-premises location to an Amazon S3 bucket. The company has a 100 megabits per second (Mbps) internet connection on premises. The company needs to encrypt the data in transit to the S3 bucket. The company will store new data directly in Amazon S3.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -1455,7 +1456,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109490-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B
 
-## Question 484
+## 109. Question 484
 ---
 A company wants to move from many standalone AWS accounts to a consolidated, multi-account architecture. The company plans to create many new AWS accounts for different business units. The company needs to authenticate access to these AWS accounts by using a centralized corporate directory service.
 Which combination of actions should a solutions architect recommend to meet these requirements? (Choose two.)
@@ -1469,7 +1470,7 @@ Which combination of actions should a solutions architect recommend to meet thes
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109467-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AE
 
-## Question 485
+## 110. Question 485
 ---
 A company is looking for a solution that can store video archives in AWS from old news footage. The company needs to minimize costs and will rarely need to restore these files. When the files are needed, they must be available in a maximum of five minutes.
 What is the MOST cost-effective solution?
@@ -1482,7 +1483,7 @@ What is the MOST cost-effective solution?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109470-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, since Expedited retrievals typically take 1–5 minutes
 
-## Question 487
+## 111. Question 487
 ---
 A company seeks a storage solution for its application. The solution must be highly available and scalable. The solution also must function as a file system be mountable by multiple Linux instances in AWS and on premises through native protocols, and have no minimum size requirements. The company has set up a Site-to-Site VPN for access from its on-premises network to its VPC.
 Which storage solution meets these requirements?
@@ -1495,7 +1496,7 @@ Which storage solution meets these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109665-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since A doesn't support native protocol
 
-## Question 491
+## 112. Question 491
 ---
 A solutions architect is designing an asynchronous application to process credit card data validation requests for a bank. The application must be secure and be able to process each request at least once.
 Which solution will meet these requirements MOST cost-effectively?
@@ -1508,7 +1509,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109513-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, not C no need to be FIFO
 
-## Question 496
+## 113. Question 496
 ---
 A company uses on-premises servers to host its applications. The company is running out of storage capacity. The applications use both block storage and NFS storage. The company needs a high-performing solution that supports local caching without re-architecting its existing applications.
 Which combination of actions should a solutions architect take to meet these requirements? (Choose two.)
@@ -1522,7 +1523,7 @@ Which combination of actions should a solutions architect take to meet these req
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109552-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD, Storage GW file and volume is for NFS and block storage respectively
 
-## Question 499
+## 114. Question 499
 ---
 A company needs to minimize the cost of its 1 Gbps AWS Direct Connect connection. The company's average connection utilization is less than 10%. A solutions architect must recommend a solution that will reduce the cost without compromising security.
 Which solution will meet these requirements?
@@ -1535,7 +1536,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109515-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D
 
-## Question 500
+## 115. Question 500
 ---
 A company has multiple Windows file servers on premises. The company wants to migrate and consolidate its files into an Amazon FSx for Windows File Server file system. File permissions must be preserved to ensure that access rights do not change.
 Which solutions will meet these requirements? (Choose two.)
@@ -1549,7 +1550,7 @@ Which solutions will meet these requirements? (Choose two.)
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109689-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AD, options involving S3 will loss the file permissions
 
-## Question 502
+## 116. Question 502
 ---
 A company runs a website that uses a content management system (CMS) on Amazon EC2. The CMS runs on a single EC2 instance and uses an Amazon Aurora MySQL Multi-AZ DB instance for the data tier. Website images are stored on an Amazon Elastic Block Store (Amazon EBS) volume that is mounted inside the EC2 instance.
 Which combination of actions should a solutions architect take to improve the performance and resilience of the website? (Choose two.)
@@ -1563,7 +1564,7 @@ Which combination of actions should a solutions architect take to improve the pe
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109420-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > CE, as CMS is dynamic and CloudFront is for content delivery
 
-## Question 508
+## 117. Question 508
 ---
 A company has migrated multiple Microsoft Windows Server workloads to Amazon EC2 instances that run in the us-west-1 Region. The company manually backs up the workloads to create an image as needed.
 In the event of a natural disaster in the us-west-1 Region, the company wants to recover workloads quickly in the us-west-2 Region. The company wants no more than 24 hours of data loss on the EC2 instances. The company also wants to automate any backups of the EC2 instances.
@@ -1578,7 +1579,7 @@ Which solutions will meet these requirements with the LEAST administrative effor
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109530-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD, since on-demand is wrong and Lambda is overhead
 
-## Question 510
+## 118. Question 510
 ---
 A global marketing company has applications that run in the ap-southeast-2 Region and the eu-west-1 Region. Applications that run in a VPC in eu-west-1 need to communicate securely with databases that run in a VPC in ap-southeast-2.
 Which network design will meet these requirements?
@@ -1591,7 +1592,7 @@ Which network design will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109708-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since we cannot reference the SG of a peer VPC that's in a different Region
 
-## Question 514
+## 119. Question 514
 ---
 A company is running a microservices application on Amazon EC2 instances. The company wants to migrate the application to an Amazon Elastic Kubernetes Service (Amazon EKS) cluster for scalability. The company must configure the Amazon EKS control plane with endpoint private access set to true and endpoint public access set to false to maintain security compliance. The company must also put the data plane in private subnets. However, the company has received error notifications because the node cannot join the cluster.
 Which solution will allow the node to join the cluster?
@@ -1604,7 +1605,7 @@ Which solution will allow the node to join the cluster?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109534-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, since the EKS control plane is configured with private endpoint access only which requires interface VPC endpoint to communicate
 
-## Question 515
+## 120. Question 515
 ---
 A company is migrating an on-premises application to AWS. The company wants to use Amazon Redshift as a solution.
 Which use cases are suitable for Amazon Redshift in this scenario? (Choose three.)
@@ -1619,7 +1620,7 @@ Which use cases are suitable for Amazon Redshift in this scenario? (Choose three
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109535-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BCE
 
-## Question 518
+## 121. Question 518
 ---
 An application uses an Amazon RDS MySQL DB instance. The RDS database is becoming low on disk space. A solutions architect wants to increase the disk space without downtime.
 Which solution meets these requirements with the LEAST amount of effort?
@@ -1632,7 +1633,7 @@ Which solution meets these requirements with the LEAST amount of effort?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109721-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
-## Question 523
+## 122. Question 523
 ---
 A company runs a microservice-based serverless web application. The application must be able to retrieve data from multiple Amazon DynamoDB tables. A solutions architect needs to give the application the ability to retrieve the data with no impact on the baseline performance of the application.
 Which solution will meet these requirements in the MOST operationally efficient way?
@@ -1645,7 +1646,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109701-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D
 
-## Question 526
+## 123. Question 526
 ---
 A solutions architect is reviewing the resilience of an application. The solutions architect notices that a database administrator recently failed over the application's Amazon Aurora PostgreSQL database writer instance as part of a scaling exercise. The failover resulted in 3 minutes of downtime for the application.
 Which solution will reduce the downtime for scaling exercises with the LEAST operational overhead?
@@ -1658,7 +1659,7 @@ Which solution will reduce the downtime for scaling exercises with the LEAST ope
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111245-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, RDS proxy also allows automatic routing for write requests to healthy writer
 
-## Question 532
+## 124. Question 532
 ---
 A company has a workload in an AWS Region. Customers connect to and access the workload by using an Amazon API Gateway REST API. The company uses Amazon Route 53 as its DNS provider. The company wants to provide individual and secure URLs for all customers.
 Which combination of steps will meet these requirements with the MOST operational efficiency? (Choose three.)
@@ -1673,7 +1674,7 @@ Which combination of steps will meet these requirements with the MOST operationa
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111382-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > ADF
 
-## Question 535
+## 125. Question 535
 ---
 A company is building an Amazon Elastic Kubernetes Service (Amazon EKS) cluster for its workloads. All secrets that are stored in Amazon EKS must be encrypted in the Kubernetes etcd key-value store.
 Which solution will meet these requirements?
@@ -1686,7 +1687,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111385-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Secrets Manager does not encrypt etcd store
 
-## Question 536
+## 126. Question 536
 ---
 A company wants to provide data scientists with near real-time read-only access to the company's production Amazon RDS for PostgreSQL database. The database is currently configured as a Single-AZ database. The data scientists use complex queries that will not affect the production database. The company needs a solution that is highly available.
 Which solution will meet these requirements MOST cost-effectively?
@@ -1699,7 +1700,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111435-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since read replicas are async whereas readable standby is synchronous
 
-## Question 539
+## 127. Question 539
 ---
 A company wants to use the AWS Cloud to improve its on-premises disaster recovery (DR) configuration. The company's core production business application uses Microsoft SQL Server Standard, which runs on a virtual machine (VM). The application has a recovery point objective (RPO) of 30 seconds or fewer and a recovery time objective (RTO) of 60 minutes. The DR solution needs to minimize costs wherever possible.
 Which solution will meet these requirements?
@@ -1712,7 +1713,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111301-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, since Warm Standby provides (RPO in seconds, RTO in minutes)
 
-## Question 540
+## 128. Question 540
 ---
 A company has an on-premises server that uses an Oracle database to process and store customer information. The company wants to use an AWS database service to achieve higher availability and to improve application performance. The company also wants to offload reporting from its primary database system.
 Which solution will meet these requirements in the MOST operationally efficient way?
@@ -1725,7 +1726,7 @@ Which solution will meet these requirements in the MOST operationally efficient 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111439-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since RDS for Oracle doesn't support Multi-AZ DB clusters
 
-## Question 541
+## 129. Question 541
 ---
 A company wants to build a web application on AWS. Client access requests to the website are not predictable and can be idle for a long time. Only customers who have paid a subscription fee can have the ability to sign in and use the web application.
 Which combination of steps will meet these requirements MOST cost-effectively? (Choose three.)
@@ -1740,7 +1741,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111440-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > ACE, since B is too much cost, D is for session management, and F doesn't work for S3 + PHP
 
-## Question 543
+## 130. Question 543
 ---
 A company runs Amazon EC2 instances in multiple AWS accounts that are individually bled. The company recently purchased a Savings Pian. Because of changes in the company’s business requirements, the company has decommissioned a large number of EC2 instances. The company wants to use its Savings Plan discounts on its other AWS accounts.
 Which combination of steps will meet these requirements? (Choose two.)
@@ -1754,7 +1755,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111442-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AE, Resource Access Manager is for security not for billing
 
-## Question 544
+## 131. Question 544
 ---
 A retail company uses a regional Amazon API Gateway API for its public REST APIs. The API Gateway endpoint is a custom domain name that points to an Amazon Route 53 alias record. A solutions architect needs to create a solution that has minimal effects on customers and minimal data loss to release the new version of APIs.
 Which solution will meet these requirements?
@@ -1767,7 +1768,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/111450-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
-## Question 546
+## 132. Question 546
 ---
 A recent analysis of a company's IT expenses highlights the need to reduce backup costs. The company's chief information officer wants to simplify the on-premises backup infrastructure and reduce costs by eliminating the use of physical backup tapes. The company must preserve the existing investment in the on-premises backup applications and workflows.
 What should a solutions architect recommend?
@@ -1780,7 +1781,7 @@ What should a solutions architect recommend?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116975-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since it's tapes
 
-## Question 550
+## 133. Question 550
 ---
 A company is using AWS Key Management Service (AWS KMS) keys to encrypt AWS Lambda environment variables. A solutions architect needs to ensure that the required permissions are in place to decrypt and use the environment variables.
 Which steps must the solutions architect take to implement the correct permissions? (Choose two.)
@@ -1794,7 +1795,7 @@ Which steps must the solutions architect take to implement the correct permissio
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116979-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD, least privileged == role level
 
-## Question 551
+## 134. Question 551
 ---
 A company has a financial application that produces reports. The reports average 50 KB in size and are stored in Amazon S3. The reports are frequently accessed during the first week after production and must be stored for several years. The reports must be retrievable within 6 hours.
 Which solution meets these requirements MOST cost-effectively?
@@ -1814,7 +1815,7 @@ Which solution meets these requirements MOST cost-effectively?
 > 	- Standard Retrieval: Provides access to data within 12 hours.
 > 	- Bulk Retrieval: Provides access to data within 48 hours.
 
-## Question 552
+## 135. Question 552
 ---
 A company needs to optimize the cost of its Amazon EC2 instances. The company also needs to change the type and family of its EC2 instances every 2-3 months.
 What should the company do to meet these requirements?
@@ -1827,7 +1828,7 @@ What should the company do to meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116897-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, only Compute Savings Plan allows changing instance family
 
-## Question 557
+## 136. Question 557
 ---
 A solutions architect manages an analytics application. The application stores large amounts of semistructured data in an Amazon S3 bucket. The solutions architect wants to use parallel data processing to process the data more quickly. The solutions architect also wants to use information that is stored in an Amazon Redshift database to enrich the data.
 Which solution will meet these requirements?
@@ -1840,7 +1841,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/117344-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, EMR can integrate directly with Amazon Redshift using the EMR-Redshift integration
 
-## Question 560
+## 137. Question 560
 ---
 A company's solutions architect is designing an AWS multi-account solution that uses AWS Organizations. The solutions architect has organized the company's accounts into organizational units (OUs).
 The solutions architect needs a solution that will identify any changes to the OU hierarchy. The solution also needs to notify the company's operations team of any changes.
@@ -1854,7 +1855,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/117021-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as Control Tower has built-in account drift notifications that detects OU changes automatically
 
-## Question 569
+## 138. Question 569
 ---
 An Amazon EventBridge rule targets a third-party API. The third-party API has not received any incoming traffic. A solutions architect needs to determine whether the rule conditions are being met and if the rule's target is being invoked.
 Which solution will meet these requirements?
@@ -1867,7 +1868,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/117377-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, EventBridge only send metrics not logs
 
-## Question 571
+## 139. Question 571
 ---
 A company is creating a REST API. The company has strict requirements for the use of TLS. The company requires TLSv1.3 on the API endpoints. The company also requires a specific public third-party certificate authority (CA) to sign the TLS certificate.
 Which solution will meet these requirements?
@@ -1880,7 +1881,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116904-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, since there is no option in ACM to request a certificate from third-party CA
 
-## Question 572
+## 140. Question 572
 ---
 A company runs an application on AWS. The application receives inconsistent amounts of usage. The application uses AWS Direct Connect to connect to an on-premises MySQL-compatible database. The on-premises database consistently uses a minimum of 2 GiB of memory.
 The company wants to migrate the on-premises database to a managed AWS service. The company wants to use auto scaling capabilities to manage unexpected workload increases.
@@ -1894,7 +1895,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/117029-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, since provisioned Aurora and RDS have more admin overhead
 
-## Question 573
+## 141. Question 573
 ---
 A company wants to use an event-driven programming model with AWS Lambda. The company wants to reduce startup latency for Lambda functions that run on Java 11. The company does not have strict latency requirements for the applications. The company wants to reduce cold starts and outlier latencies when a function scales up.
 Which solution will meet these requirements MOST cost-effectively?
@@ -1907,7 +1908,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/116925-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, not A because it costs more
 
-## Question 580
+## 142. Question 580
 ---
 A company uses locally attached storage to run a latency-sensitive application on premises. The company is using a lift and shift method to move the application to the AWS Cloud. The company does not want to change the application architecture.
 Which solution will meet these requirements MOST cost-effectively?
@@ -1920,7 +1921,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/117663-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, GP3 most cost-effective
 
-## Question 589
+## 143. Question 589
 ---
 A company runs a web application on Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer that has sticky sessions enabled. The web server currently hosts the user session state. The company wants to ensure high availability and avoid user session state loss in the event of a web server outage.
 Which solution will meet these requirements?
@@ -1933,7 +1934,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/119487-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as Memcache is not HA
 
-## Question 591
+## 144. Question 591
 ---
 A company runs a container application by using Amazon Elastic Kubernetes Service (Amazon EKS). The application includes microservices that manage customers and place orders. The company needs to route incoming requests to the appropriate microservices.
 Which solution will meet this requirement MOST cost-effectively?
@@ -1946,7 +1947,7 @@ Which solution will meet this requirement MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/119574-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B
 
-## Question 593
+## 145. Question 593
 ---
 A solutions architect is designing a highly available Amazon ElastiCache for Redis based solution. The solutions architect needs to ensure that failures do not result in performance degradation or loss of data locally and within an AWS Region. The solution needs to provide high availability at the node level and at the Region level.
 Which solution will meet these requirements?
@@ -1959,7 +1960,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/119572-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
-## Question 598
+## 146. Question 598
 ---
 A research company uses on-premises devices to generate data for analysis. The company wants to use the AWS Cloud to analyze the data. The devices generate .csv files and support writing the data to an SMB file share. Company analysts must be able to use SQL commands to query the data. The analysts will run queries periodically throughout the day.
 Which combination of steps will meet these requirements MOST cost-effectively? (Choose three.)
@@ -1974,7 +1975,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/119563-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > ACF, as S3 File GW supports SMB
 
-## Question 599
+## 147. Question 599
 ---
 A company wants to use Amazon Elastic Container Service (Amazon ECS) clusters and Amazon RDS DB instances to build and run a payment processing application. The company will run the application in its on-premises data center for compliance purposes.
 A solutions architect wants to use AWS Outposts as part of the solution. The solutions architect is working with the company's operational team to build the application.
@@ -1990,7 +1991,7 @@ Which activities are the responsibility of the company's operational team? (Choo
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/119530-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > ACF, not D and E as it's AWS's responsibility for Outposts
 
-## Question 601
+## 148. Question 601
 ---
 A company runs its critical database on an Amazon RDS for PostgreSQL DB instance. The company wants to migrate to Amazon Aurora PostgreSQL with minimal downtime and data loss.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -2003,7 +2004,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121210-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, it is possible to promote RDS to Aurora
 
-## Question 603
+## 149. Question 603
 ---
 A company recently migrated to the AWS Cloud. The company wants a serverless solution for large-scale parallel on-demand processing of a semistructured dataset. The data consists of logs, media files, sales transactions, and IoT sensor data that is stored in Amazon S3. The company wants the solution to process thousands of items in the dataset in parallel.
 Which solution will meet these requirements with the MOST operational efficiency?
@@ -2016,7 +2017,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121211-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Step Functions provide Map state which is for distributed processing
 
-## Question 605
+## 150. Question 605
 ---
 A company has several on-premises Internet Small Computer Systems Interface (ISCSI) network storage servers. The company wants to reduce the number of these servers by moving to the AWS Cloud. A solutions architect must provide low-latency access to frequently used data and reduce the dependency on on-premises servers with a minimal number of infrastructure changes.
 Which solution will meet these requirements?
@@ -2029,7 +2030,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121170-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, iSCSI = Storage GW, low-latency access to frequently used data = cached volume
 
-## Question 607
+## 151. Question 607
 ---
 A company has migrated a two-tier application from its on-premises data center to the AWS Cloud. The data tier is a Multi-AZ deployment of Amazon RDS for Oracle with 12 TB of General Purpose SSD Amazon Elastic Block Store (Amazon EBS) storage. The application is designed to process and store documents in the database as binary large objects (blobs) with an average document size of 6 MB.
 The database size has grown over time, reducing the performance and increasing the cost of storage. The company must improve the database performance and needs a solution that is highly available and resilient.
@@ -2043,7 +2044,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121215-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, storing blobs cost-effectively = S3
 
-## Question 608
+## 152. Question 608
 ---
 A company has an application that serves clients that are deployed in more than 20.000 retail storefront locations around the world. The application consists of backend web services that are exposed over HTTPS on port 443. The application is hosted on Amazon EC2 instances behind an Application Load Balancer (ALB). The retail locations communicate with the web application over the public internet. The company allows each retail location to register the IP address that the retail location has been allocated by its local ISP.
 The company's security team recommends to increase the security of the application endpoint by restricting access to only the IP addresses registered by the retail locations.
@@ -2057,7 +2058,7 @@ What should a solutions architect do to meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121216-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, endpoint restriction by IP addresses = AWS WAF
 
-## Question 617
+## 153. Question 617
 ---
 A company wants to migrate an on-premises data center to AWS. The data center hosts a storage server that stores data in an NFS-based file system. The storage server holds 200 GB of data. The company needs to migrate the data without interruption to existing services. Multiple resources in AWS must be able to access the data by using the NFS protocol.
 Which combination of steps will meet these requirements MOST cost-effectively? (Choose two.)
@@ -2071,7 +2072,7 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121176-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BE, NFS = EFS
 
-## Question 622
+## 154. Question 622
 ---
 A company is creating a new web application for its subscribers. The application will consist of a static single page and a persistent database layer. The application will have millions of users for 4 hours in the morning, but the application will have only a few thousand users during the rest of the day. The company's data architects have requested the ability to rapidly evolve their schema.
 Which solutions will meet these requirements and provide the MOST scalability? (Choose two.)
@@ -2085,7 +2086,7 @@ Which solutions will meet these requirements and provide the MOST scalability? (
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/121223-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AD, not B since Aurora can't rapidly evolve their schema
 
-## Question 624
+## 155. Question 624
 ---
 A company wants to provide users with access to AWS resources. The company has 1,500 users and manages their access to on-premises resources through Active Directory user groups on the corporate network. However, the company does not want users to have to maintain another identity to access the resources. A solutions architect must manage user access to the AWS resources while preserving access to the on-premises resources.
 What should the solutions architect do to meet these requirements?
@@ -2098,7 +2099,7 @@ What should the solutions architect do to meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125336-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, not B since Cognito is for providing access to own apps, not AWS resources
 
-## Question 630
+## 156. Question 630
 ---
 A solutions architect is creating a data processing job that runs once daily and can take up to 2 hours to complete. If the job is interrupted, it has to restart from the beginning.
 How should the solutions architect address this issue in the MOST cost-effective manner?
@@ -2111,7 +2112,7 @@ How should the solutions architect address this issue in the MOST cost-effective
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125542-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Fargate is cheaper than EC2
 
-## Question 631
+## 157. Question 631
 ---
 A social media company wants to store its database of user profiles, relationships, and interactions in the AWS Cloud. The company needs an application to monitor any changes in the database. The application needs to analyze the relationships between the data entities and to provide recommendations to users.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -2124,7 +2125,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125113-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Social Network -> Graph data -> Neptune
 
-## Question 635
+## 158. Question 635
 ---
 A company uses Amazon FSx for NetApp ONTAP in its primary AWS Region for CIFS and NFS file shares. Applications that run on Amazon EC2 instances access the file shares. The company needs a storage disaster recovery (DR) solution in a secondary Region. The data that is replicated in the secondary Region needs to be accessed by using the same protocols as the primary Region.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -2137,7 +2138,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125545-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, as B is one-time copy
 
-## Question 638
+## 159. Question 638
 ---
 A company collects and shares research data with the company's employees all over the world. The company wants to collect and store the data in an Amazon S3 bucket and process the data in the AWS Cloud. The company will share the data with the company's employees. The company needs a secure solution in the AWS Cloud that minimizes operational overhead.
 Which solution will meet these requirements?
@@ -2150,7 +2151,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125574-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, SFTP endpoints can provide a secure and convenient way for employees to access and transfer data to and from the S3 bucket
 
-## Question 646
+## 160. Question 646
 ---
 A solutions architect needs to host a high performance computing (HPC) workload in the AWS Cloud. The workload will run on hundreds of Amazon EC2 instances and will require parallel access to a shared file system to enable distributed processing of large datasets. Datasets will be accessed across multiple instances simultaneously. The workload requires access latency within 1 ms. After processing has completed, engineers will need access to the dataset for manual postprocessing.
 Which solution will meet these requirements?
@@ -2163,7 +2164,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125584-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, host a high performance computing (HPC) workload -> FSx lustre
 
-## Question 648
+## 161. Question 648
 ---
 A weather forecasting company needs to process hundreds of gigabytes of data with sub-millisecond latency. The company has a high performance computing (HPC) environment in its data center and wants to expand its forecasting capabilities.
 A solutions architect must identify a highly available cloud storage solution that can handle large amounts of sustained throughput. Files that are stored in the solution should be accessible to thousands of compute instances that will simultaneously access and process the entire dataset.
@@ -2177,7 +2178,7 @@ What should the solutions architect do to meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125586-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as the entire dataset is required, A is for temporary data storage
 
-## Question 651
+## 162. Question 651
 ---
 A company stores a large volume of image files in an Amazon S3 bucket. The images need to be readily available for the first 180 days. The images are infrequently accessed for the next 180 days. After 360 days, the images need to be archived but must be available instantly upon request. After 5 years, only auditors can access the images. The auditors must be able to retrieve the images within 12 hours. The images cannot be lost during this process.
 A developer will use S3 Standard storage for the first 180 days. The developer needs to configure an S3 Lifecycle rule.
@@ -2191,7 +2192,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125244-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, "The images cannot be lost during this process"
 
-## Question 652
+## 163. Question 652
 ---
 A company has a large data workload that runs for 6 hours each day. The company cannot lose any data while the process is running. A solutions architect is designing an Amazon EMR cluster configuration to support this critical data workload.
 Which solution will meet these requirements MOST cost-effectively?
@@ -2204,7 +2205,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125591-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as Transient cluster runs until the workload is completed and cannot lose data = primary and core nodes on demand
 
-## Question 657
+## 164. Question 657
 ---
 A company has multiple AWS accounts in an organization in AWS Organizations that different business units use. The company has multiple offices around the world. The company needs to update security group rules to allow new office CIDR ranges or to remove old CIDR ranges across the organization. The company wants to centralize the management of security group rules to minimize the administrative overhead that updating CIDR ranges requires.
 Which solution will meet these requirements MOST cost-effectively?
@@ -2217,7 +2218,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/127524-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as RAM is for this usage
 
-## Question 658
+## 165. Question 658
 ---
 A company uses an on-premises network-attached storage (NAS) system to provide file shares to its high performance computing (HPC) workloads. The company wants to migrate its latency-sensitive HPC workloads and its storage to the AWS Cloud. The company must be able to provide NFS and SMB multi-protocol access from the file system.
 Which solution will meet these requirements with the LEAST latency? (Choose two.)
@@ -2231,7 +2232,7 @@ Which solution will meet these requirements with the LEAST latency? (Choose two.
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/126797-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AE, as LEAST latency = cluster, NFS & SMB = NetApp ONTAP
 
-## Question 663
+## 166. Question 663
 ---
 A company is developing a new application on AWS. The application consists of an Amazon Elastic Container Service (Amazon ECS) cluster, an Amazon S3 bucket that contains assets for the application, and an Amazon RDS for MySQL database that contains the dataset for the application. The dataset contains sensitive information. The company wants to ensure that only the ECS cluster can access the data in the RDS for MySQL database and the data in the S3 bucket.
 Which solution will meet these requirements?
@@ -2244,7 +2245,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/126798-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, not D as only the ECS cluster can access the data in the RDS for MySQL database and the data in the S3 bucket
 
-## Question 664
+## 167. Question 664
 ---
 A company has a web application that runs on premises. The application experiences latency issues during peak hours. The latency issues occur twice each month. At the start of a latency issue, the application's CPU utilization immediately increases to 10 times its normal amount.
 The company wants to migrate the application to AWS to improve latency. The company also wants to scale the application automatically when application demand increases. The company will use AWS Elastic Beanstalk for application deployment.
@@ -2258,7 +2259,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/126800-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, not D as it's not predictive
 
-## Question 667
+## 168. Question 667
 ---
 A company is moving its data and applications to AWS during a multiyear migration project. The company wants to securely access data on Amazon S3 from the company's AWS Region and from the company's on-premises location. The data must not traverse the internet. The company has established an AWS Direct Connect connection between its Region and its on-premises location.
 Which solution will meet these requirements?
@@ -2271,7 +2272,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/126802-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, not A since the GW endpoint does not allow access from on-prem, peered VPCs in other Regions, or transit GW
 
-## Question 670
+## 169. Question 670
 ---
 A company performs tests on an application that uses an Amazon DynamoDB table. The tests run for 4 hours once a week. The company knows how many read and write operations the application performs to the table each second during the tests. The company does not currently use DynamoDB for any other use case. A solutions architect needs to optimize the costs for the table.
 Which solution will meet these requirements?
@@ -2284,7 +2285,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/129711-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, as applications have predictable traffic patterns
 
-## Question 671
+## 170. Question 671
 ---
 A company runs its applications on Amazon EC2 instances. The company performs periodic financial assessments of its AWS costs. The company recently identified unusual spending.
 The company needs a solution to prevent unusual spending. The solution must monitor costs and notify responsible stakeholders in the event of unusual spending.
@@ -2298,7 +2299,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/129712-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, AWS Cost Anomaly Detection is designed to automatically detect unusual spending patterns
 
-## Question 682
+## 171. Question 682
 ---
 A company needs a solution to enforce data encryption at rest on Amazon EC2 instances. The solution must automatically identify noncompliant resources and enforce compliance policies on findings.
 Which solution will meet these requirements with the LEAST administrative overhead?
@@ -2311,7 +2312,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/129724-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, not D inspector is for OS patching and vulnerability detections
 
-## Question 684
+## 172. Question 684
 ---
 A company wants to migrate its web applications from on premises to AWS. The company is located close to the eu-central-1 Region. Because of regulations, the company cannot launch some of its applications in eu-central-1. The company wants to achieve single-digit millisecond latency.
 Which solution will meet these requirements?
@@ -2324,7 +2325,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/129726-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, AWS Local Zones are a type of AWS infrastructure deployment that place compute, storage, database, and other select services closer to large population, industry, and IT centers, enabling you to deliver applications that require single-digit millisecond latency to end-users
 
-## Question 692
+## 173. Question 692
 ---
 A company is deploying an application in three AWS Regions using an Application Load Balancer. Amazon Route 53 will be used to distribute traffic between these Regions.
 Which Route 53 configuration should a solutions architect use to provide the MOST high-performing experience?
@@ -2337,7 +2338,7 @@ Which Route 53 configuration should a solutions architect use to provide the MOS
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132854-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
-## Question 695
+## 174. Question 695
 ---
 A company is building a microservices-based application that will be deployed on Amazon Elastic Kubernetes Service (Amazon EKS). The microservices will interact with each other. The company wants to ensure that the application is observable to identify performance issues in the future.
 Which solution will meet these requirements?
@@ -2350,7 +2351,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132858-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B
 
-## Question 702
+## 175. Question 702
 ---
 A company copies 200 TB of data from a recent ocean survey onto AWS Snowball Edge Storage Optimized devices. The company has a high performance computing (HPC) cluster that is hosted on AWS to look for oil and gas deposits. A solutions architect must provide the cluster with consistent sub-millisecond latency and high-throughput access to the data on the Snowball Edge Storage Optimized devices. The company is sending the devices back to AWS.
 Which solution will meet these requirements?
@@ -2363,7 +2364,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132866-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, but B should be correct as per FSx cannot directly import data from Snowball Edge?
 
-## Question 712
+## 176. Question 712
 ---
 A company is designing a web application on AWS. The application will use a VPN connection between the company’s existing data centers and the company's VPCs.
 The company uses Amazon Route 53 as its DNS service. The application must use private DNS records to communicate with the on-premises services from a VPC.
@@ -2377,7 +2378,7 @@ Which solution will meet these requirements in the MOST secure manner?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132883-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, since Outbound Resolver endpoints allows DNS queries from VPC to on-prem or another VPC
 
-## Question 713
+## 177. Question 713
 ---
 A company is running a photo hosting service in the us-east-1 Region. The service enables users across multiple countries to upload and view photos. Some photos are heavily viewed for months, and others are viewed for less than a week. The application allows uploads of up to 20 MB for each photo. The service uses the photo metadata to determine which photos to display to each user.
 Which solution provides the appropriate user access MOST cost-effectively?
@@ -2390,7 +2391,7 @@ Which solution provides the appropriate user access MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132885-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, DDB for metadata
 
-## Question 714
+## 178. Question 714
 ---
 A company runs a highly available web application on Amazon EC2 instances behind an Application Load Balancer. The company uses Amazon CloudWatch metrics.
 As the traffic to the web application increases, some EC2 instances become overloaded with many outstanding requests. The CloudWatch metrics show that the number of requests processed and the time to receive the responses from some EC2 instances are both higher compared to other EC2 instances. The company does not want new requests to be forwarded to the EC2 instances that are already overloaded.
@@ -2404,7 +2405,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132887-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, least outstanding requests algorithm = route to targets with the lowest number of in-progress requests
 
-## Question 723
+## 179. Question 723
 ---
 A company has applications that run on Amazon EC2 instances. The EC2 instances connect to Amazon RDS databases by using an IAM role that has associated policies. The company wants to use AWS Systems Manager to patch the EC2 instances without disrupting the running applications.
 Which solution will meet these requirements?
@@ -2417,7 +2418,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132900-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Default Host Management Configuration creates and applies a default IAM role to ensure that Systems Manager has permission to manage all instances in the Region and perform automated patch scans using Patch Manager
 
-## Question 734
+## 180. Question 734
 ---
 A company has an AWS Direct Connect connection from its corporate data center to its VPC in the us-east-1 Region. The company recently acquired a corporation that has several VPCs and a Direct Connect connection between its on-premises data center and the eu-west-2 Region. The CIDR blocks for the VPCs of the company and the corporation do not overlap. The company requires connectivity between two Regions and the data centers. The company needs a solution that is scalable while reducing operational overhead.
 What should a solutions architect do to meet these requirements?
@@ -2430,7 +2431,7 @@ What should a solutions architect do to meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132920-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, Direct Connect GW = Direct Connect to 1 or more VPCs in different Regions
 
-## Question 740
+## 181. Question 740
 ---
 A company migrated millions of archival files to Amazon S3. A solutions architect needs to implement a solution that will encrypt all the archival data by using a customer-provided key. The solution must encrypt existing unencrypted objects and future objects.
 Which solution will meet these requirements?
@@ -2443,7 +2444,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132930-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
-## Question 744
+## 182. Question 744
 ---
 A company is designing a new web service that will run on Amazon EC2 instances behind an Elastic Load Balancing (ELB) load balancer. However, many of the web service clients can only reach IP addresses authorized on their firewalls.
 What should a solutions architect recommend to meet the clients’ needs?
@@ -2456,7 +2457,7 @@ What should a solutions architect recommend to meet the clients’ needs?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132934-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, NLB needs to be before ALB since only NLB can have static IP
 
-## Question 748
+## 183. Question 748
 ---
 A company uses an organization in AWS Organizations to manage AWS accounts that contain applications. The company sets up a dedicated monitoring member account in the organization. The company wants to query and visualize observability data across the accounts by using Amazon CloudWatch.
 Which solution will meet these requirements?
@@ -2469,7 +2470,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132939-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
-## Question 754
+## 184. Question 754
 ---
 A company has users all around the world accessing its HTTP-based application deployed on Amazon EC2 instances in multiple AWS Regions. The company wants to improve the availability and performance of the application. The company also wants to protect the application against common web exploits that may affect availability, compromise security, or consume excessive resources. Static IP addresses are required.
 What should a solutions architect recommend to accomplish this?
@@ -2482,7 +2483,7 @@ What should a solutions architect recommend to accomplish this?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132945-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, Global Accelerator provides static IP
 
-## Question 759
+## 185. Question 759
 ---
 A media company stores movies in Amazon S3. Each movie is stored in a single video file that ranges from 1 GB to 10 GB in size.
 The company must be able to provide the streaming content of a movie within 5 minutes of a user purchase. There is higher demand for movies that are less than 20 years old than for movies that are more than 20 years old. The company wants to minimize hosting service costs based on demand.
@@ -2496,7 +2497,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132949-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, not C as per S3 Glacier Flexible Retrieval, expedited retrieval cannot retrieve files larger than 250MB+ within 1~5mins
 
-## Question 761
+## 186. Question 761
 ---
 A company needs to use its on-premises LDAP directory service to authenticate its users to the AWS Management Console. The directory service is not compatible with Security Assertion Markup Language (SAML).
 Which solution meets these requirements?
@@ -2509,7 +2510,7 @@ Which solution meets these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133326-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, since not compatible with SAML
 
-## Question 762
+## 187. Question 762
 ---
 A company stores multiple Amazon Machine Images (AMIs) in an AWS account to launch its Amazon EC2 instances. The AMIs contain critical data and configurations that are necessary for the company’s operations. The company wants to implement a solution that will recover accidentally deleted AMIs quickly and efficiently.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -2522,7 +2523,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132951-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Recycle Bin us a data recovery feature to restore accidental deletion of EBS snapshots and EBS-backed AMIs
 
-## Question 766
+## 188. Question 766
 ---
 A company’s developers want a secure way to gain SSH access on the company's Amazon EC2 instances that run the latest version of Amazon Linux. The developers work remotely and in the corporate office.
 The company wants to use AWS services as a part of the solution. The EC2 instances are hosted in a VPC private subnet and access the internet through a NAT gateway that is deployed in a public subnet.
@@ -2536,7 +2537,7 @@ What should a solutions architect do to meet these requirements MOST cost-effect
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132957-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D
 
-## Question 775
+## 189. Question 775
 ---
 Use Amazon Elastic Kubernetes Service (Amazon EKS) with Amazon EC2 worker nodes.
 A company has deployed an application in an AWS account. The application consists of microservices that run on AWS Lambda and Amazon Elastic Kubernetes Service (Amazon EKS). A separate team supports each microservice. The company has multiple AWS accounts and wants to give each team its own account for its microservices.
@@ -2551,7 +2552,7 @@ Which solution will meet these requirements with the LEAST administrative overhe
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133007-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, VPC Lattice is a new capability of VPC designed to simplify networking for service-to-service communications
 
-## Question 778
+## 190. Question 778
 ---
 A data analytics company has 80 offices that are distributed globally. Each office hosts 1 PB of data and has between 1 and 2 Gbps of internet bandwidth.
 The company needs to perform a one-time migration of a large amount of data from its offices to Amazon S3. The company must complete the migration within 4 weeks.
@@ -2565,7 +2566,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133010-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, not C since Snowmobile is advised over 10PB
 
-## Question 779
+## 191. Question 779
 ---
 A company has an Amazon Elastic File System (Amazon EFS) file system that contains a reference dataset. The company has applications on Amazon EC2 instances that need to read the dataset. However, the applications must not be able to change the dataset. The company wants to use IAM access control to prevent the applications from being able to modify or delete the dataset.
 Which solution will meet these requirements?
@@ -2578,7 +2579,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133011-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B
 
-## Question 784
+## 192. Question 784
 ---
 A company's marketing data is uploaded from multiple sources to an Amazon S3 bucket. A series of data preparation jobs aggregate the data for reporting. The data preparation jobs need to run at regular intervals in parallel. A few jobs need to run in a specific order later.
 The company wants to remove the operational overhead of job error handling, retry logic, and state management.
@@ -2592,7 +2593,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133019-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Data preparation = Glue DataBrew, State handling = Step Functions
 
-## Question 787
+## 193. Question 787
 ---
 A company has an organization in AWS Organizations that has all features enabled. The company requires that all API calls and logins in any existing or new AWS account must be audited. The company needs a managed solution to prevent additional work and to minimize costs. The company also needs to know when any AWS account is not compliant with the AWS Foundational Security Best Practices (FSBP) standard.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -2605,7 +2606,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133023-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, auditing all accounts & FSBP standard = Control Tower with Security Hub
 
-## Question 789
+## 194. Question 789
 ---
 A company needs a solution to prevent AWS CloudFormation stacks from deploying AWS Identity and Access Management (IAM) resources that include an inline policy or “*” in the statement. The solution must also prohibit deployment of Amazon EC2 instances with public IP addresses. The company has AWS Control Tower enabled in its organization in AWS Organizations.
 Which solution will meet these requirements?
@@ -2618,7 +2619,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133025-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, Proactive controls are implemented using AWS CloudFormation hooks within AWS Control Tower
 
-## Question 792
+## 195. Question 792
 ---
 An analytics company uses Amazon VPC to run its multi-tier services. The company wants to use RESTful APIs to offer a web analytics service to millions of users. Users must be verified by using an authentication service to access the APIs.
 Which solution will meet these requirements with the MOST operational efficiency?
@@ -2631,7 +2632,7 @@ Which solution will meet these requirements with the MOST operational efficiency
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133031-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, Cognito authorizer for access?
 
-## Question 793
+## 196. Question 793
 ---
 A company has a mobile app for customers. The app’s data is sensitive and must be encrypted at rest. The company uses AWS Key Management Service (AWS KMS).
 The company needs a solution that prevents the accidental deletion of KMS keys. The solution must use Amazon Simple Notification Service (Amazon SNS) to send an email notification to administrators when a user attempts to delete a KMS key.
@@ -2645,7 +2646,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133032-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, not A as C directly detects KMS DeleteKey operation and pre-built automation runbook can be used
 
-## Question 795
+## 197. Question 795
 ---
 A company is designing a tightly coupled high performance computing (HPC) environment in the AWS Cloud. The company needs to include features that will optimize the HPC environment for networking and storage.
 Which combination of solutions will meet these requirements? (Choose two.)
@@ -2659,7 +2660,7 @@ Which combination of solutions will meet these requirements? (Choose two.)
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133034-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BD, Elastic Fabric Adapter is for HPC
 
-## Question 800
+## 198. Question 800
 ---
 A company needs to create an AWS Lambda function that will run in a VPC in the company's primary AWS account. The Lambda function needs to access files that the company stores in an Amazon Elastic File System (Amazon EFS) file system. The EFS file system is located in a secondary AWS account. As the company adds files to the file system, the solution must scale to meet the demand.
 Which solution will meet these requirements MOST cost-effectively?
@@ -2672,7 +2673,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/135258-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, it is possible to create a VPC peering connection between 2 different accounts
 
-## Question 804
+## 199. Question 804
 ---
 A company has an Amazon S3 data lake. The company needs a solution that transforms the data from the data lake and loads the data into a data warehouse every day. The data warehouse must have massively parallel processing (MPP) capabilities.
 Data analysts then need to create and train machine learning (ML) models by using SQL commands on the data. The solution must use serverless AWS services wherever possible.
@@ -2686,7 +2687,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/135261-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, MPP = Redshift, serverless = Glue job
 
-## Question 806
+## 200. Question 806
 ---
 A social media company has workloads that collect and process data. The workloads store the data in on-premises NFS storage. The data store cannot scale fast enough to meet the company’s expanding business needs. The company wants to migrate the current data store to AWS.
 Which solution will meet these requirements MOST cost-effectively?
@@ -2699,7 +2700,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/135263-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, S3 supports NFS
 
-## Question 810
+## 201. Question 810
 ---
 A company collects and processes data from a vendor. The vendor stores its data in an Amazon RDS for MySQL database in the vendor's own AWS account. The company’s VPC does not have an internet gateway, an AWS Direct Connect connection, or an AWS Site-to-Site VPN connection. The company needs to access the data that is in the vendor database.
 Which solution will meet this requirement?
@@ -2712,7 +2713,7 @@ Which solution will meet this requirement?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/135264-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, PrivateLink allows to connect some AWS services hosted by other AWS accounts
 
-## Question 814
+## 202. Question 814
 ---
 A company runs a container application on a Kubernetes cluster in the company's data center. The application uses Advanced Message Queuing Protocol (AMQP) to communicate with a message queue. The data center cannot scale fast enough to meet the company’s expanding business needs. The company wants to migrate the workloads to AWS.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -2725,7 +2726,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/135266-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, AMQP = Amazon MQ
 
-## Question 826
+## 203. Question 826
 ---
 A company is migrating applications from an on-premises Microsoft Active Directory that the company manages to AWS. The company deploys the applications in multiple AWS accounts. The company uses AWS Organizations to manage the accounts centrally.
 The company's security team needs a single sign-on solution across all the company's AWS accounts. The company must continue to manage users and groups that are in the on-premises Active Directory.
@@ -2739,7 +2740,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/136806-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, need IAM Identity Center
 
-## Question 827
+## 204. Question 827
 ---
 A company is planning to deploy its application on an Amazon Aurora PostgreSQL Serverless v2 cluster. The application will receive large amounts of traffic. The company wants to optimize the storage performance of the cluster as the load on the application increases.
 Which solution will meet these requirements MOST cost-effectively?
@@ -2752,7 +2753,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/136807-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, Aurora has 2 storage options, Standard & I/O-Optimized
 
-## Question 828
+## 205. Question 828
 ---
 A financial services company that runs on AWS has designed its security controls to meet industry standards. The industry standards include the National Institute of Standards and Technology (NIST) and the Payment Card Industry Data Security Standard (PCI DSS).
 The company's third-party auditors need proof that the designed controls have been implemented and are functioning correctly. The company has hundreds of AWS accounts in a single organization in AWS Organizations. The company needs to monitor the current state of the controls across accounts.
@@ -2766,7 +2767,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/136994-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, Security Hub = assess AWS environment against security industry standards
 
-## Question 831
+## 206. Question 831
 ---
 A company needs a secure connection between its on-premises environment and AWS. This connection does not need high bandwidth and will handle a small amount of traffic. The connection should be set up quickly.
 What is the MOST cost-effective method to establish this type of connection?
@@ -2779,7 +2780,7 @@ What is the MOST cost-effective method to establish this type of connection?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/136997-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D
 
-## Question 832
+## 207. Question 832
 ---
 A company has an on-premises SFTP file transfer solution. The company is migrating to the AWS Cloud to scale the file transfer solution and to optimize costs by using Amazon S3. The company's employees will use their credentials for the on-premises Microsoft Active Directory (AD) to access the new solution. The company wants to keep the current authentication and file access mechanisms.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -2792,7 +2793,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/136998-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, need SFTP enabled server with SFTP endpoint and AWS Directory Service with AD connector to reach on-prem AD for authentication and authorization
 
-## Question 833
+## 208. Question 833
 ---
 A company is designing an event-driven order processing system. Each order requires multiple validation steps after the order is created. An idempotent AWS Lambda function performs each validation step. Each validation step is independent from the other validation steps. Individual validation steps need only a subset of the order event information.
 The company wants to ensure that each validation step Lambda function has access to only the information from the order event that the function requires. The components of the order processing system should be loosely coupled to accommodate future business changes.
@@ -2806,7 +2807,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/137000-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C, Event bus can manipulate event, D is also possible but too much operations
 
-## Question 841
+## 209. Question 841
 ---
 A company uses Amazon EC2 instances and Amazon Elastic Block Store (Amazon EBS) to run its self-managed database. The company has 350 TB of data spread across all EBS volumes. The company takes daily EBS snapshots and keeps the snapshots for 1 month. The daily change rate is 5% of the EBS volumes.
 Because of new regulations, the company needs to keep the monthly snapshots for 7 years. The company needs to change its backup strategy to comply with the new regulations and to ensure that data is available with minimal administrative effort.
@@ -2820,7 +2821,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/137844-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B, EBS Snapshots Archive is most cost-effective
 
-## Question 842
+## 210. Question 842
 ---
 A company runs an application on several Amazon EC2 instances that store persistent data on an Amazon Elastic File System (Amazon EFS) file system. The company needs to replicate the data to another AWS Region by using an AWS managed service solution.
 Which solution will meet these requirements MOST cost-effectively?
@@ -2833,7 +2834,7 @@ Which solution will meet these requirements MOST cost-effectively?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/137845-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, not A as EFS-to-EFS backup solution is not a managed solution
 
-## Question 867
+## 211. Question 867
 ---
 A company runs its production workload on Amazon EC2 instances with Amazon Elastic Block Store (Amazon EBS) volumes. A solutions architect needs to analyze the current EBS volume cost and to recommend optimizations. The recommendations need to include estimated monthly saving opportunities.
 Which solution will meet these requirements?
@@ -2846,7 +2847,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/137854-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D, Compute Optimizer helps avoid overprovisioning and underprovisioning four types of AWS resources
 
-## Question 881
+## 212. Question 881
 ---
 A company is hosting a high-traffic static website on Amazon S3 with an Amazon CloudFront distribution that has a default TTL of 0 seconds. The company wants to implement caching to improve performance for the website. However, the company also wants to ensure that stale content is not served for more than a few minutes after a deployment.
 Which combination of caching methods should a solutions architect implement to meet these requirements? (Choose two.)
@@ -2860,7 +2861,7 @@ Which combination of caching methods should a solutions architect implement to m
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/137850-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AE
 
-## Question 886
+## 213. Question 886
 ---
 A company uses a Microsoft SQL Server database. The company's applications are connected to the database. The company wants to migrate to an Amazon Aurora PostgreSQL database with minimal changes to the application code.
 Which combination of steps will meet these requirements? (Choose two.)
@@ -2874,7 +2875,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/139802-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > BC, Babelfish for Aurora PostgreSQL is a new capability for Amazon Aurora PostgreSQL-Compatible Edition that enables Aurora to understand commands from applications written for Microsoft SQL Server
 
-## Question 887
+## 214. Question 887
 ---
 A company plans to rehost an application to Amazon EC2 instances that use Amazon Elastic Block Store (Amazon EBS) as the attached storage.
 A solutions architect must design a solution to ensure that all newly created Amazon EBS volumes are encrypted by default. The solution must also prevent the creation of unencrypted EBS volumes.
@@ -2888,7 +2889,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/140296-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
-## Question 888
+## 215. Question 888
 ---
 An ecommerce company wants to collect user clickstream data from the company's website for real-time analysis. The website experiences fluctuating traffic patterns throughout the day. The company needs a scalable solution that can adapt to varying levels of traffic.
 Which solution will meet these requirements?
@@ -2901,7 +2902,7 @@ Which solution will meet these requirements?
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/139803-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, as Glue does not process data in real-time
 
-## Question 903
+## 216. Question 903
 ---
 A company manages a data lake in an Amazon S3 bucket that numerous applications access. The S3 bucket contains a unique prefix for each application. The company wants to restrict each application to its specific prefix and to have granular control of the objects under each prefix.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -2913,3 +2914,4 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/139857-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A, access point policies = prefix
+

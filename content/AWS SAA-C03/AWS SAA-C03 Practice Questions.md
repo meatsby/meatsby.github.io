@@ -1242,6 +1242,7 @@ Which solution meets these requirements?
 
 > [!help]- Answer
 > B
+
 ## Question 94
 ---
 A company is designing an application where users upload small files into Amazon S3. After a user uploads a file, the file requires one-time simple processing to transform the data and save the data in JSON format for later analysis.
@@ -1401,7 +1402,7 @@ Which solution meets these requirements?
 - D. Add a resource-based policy to the function with lambda:InvokeFunction as the action and Service: events.amazonaws.com as the principal.
 
 > [!help]- Answer
-> D
+> D, as execution role will allow any lambdas to execute this while resource-based is for EB only
 
 ## Question 106
 ---
