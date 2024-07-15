@@ -755,7 +755,7 @@ Which solution will meet these requirements?
 - D. Join the file system to the Active Directory to restrict access.
 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95343-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> D
+> D, Joining the FSx for Windows File Server file system to the on-premises Active Directory will allow the company to use the existing Active Directory groups to restrict access
 
 ## 57. Question 264
 ---
@@ -903,7 +903,7 @@ What should a solutions architect do to meet these requirements?
 - D. Modify the web application to enable streaming of the datasets to end users. Configure the web application to read the data from the existing S3 bucket. Implement access control directly in the application.
 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/99697-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> B, as A speeds uploads only
+> B, CloudFront suits this case
 
 ## 68. Question 314
 ---

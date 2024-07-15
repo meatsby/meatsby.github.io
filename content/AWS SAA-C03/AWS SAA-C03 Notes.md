@@ -10,7 +10,6 @@ tags:
 ---
 - S3 Transfer Acceleration = Edge Location 으로 transfer 해서 transfer speed 올리는 법
 - PrincipalOrgID = AWS Organization member accounts 만 접근 가능하게 for resource policies
-- GW VPC Endpoint vs Interface VPC Endpoint
 - Secrets Manager vs Parameter Store
 	- Secrets Manager = Auto Rotation
 - CloudFront vs Global Accelerator (both support Shield for DDoS)
@@ -24,10 +23,8 @@ tags:
 - SSO + MSAD = two-way forest trust AWS Directory Service for MSAD
 - AWS Config rules = to check resources that are not properly tagged
 - AWS Shield Advanced = ELB, CF, GA, R53
-
-- Direct Connect vs VPN
-	- PrivateLink with VPC endpoint allows to connect services across different accounts and VPCs
 - DR RPO/RTO order
+![[AWS Disaster Recovery Strategies.png]]
 - DDB PITR vs AWS Backup
 	- PITR = recover table to any point in time in a rolling 35 day window
 	- Backup = for long-term archiving and retention
@@ -35,33 +32,36 @@ tags:
 - S3 Legal Hold
     - Protect the object indefinitely, independent from the retention period
     - Can be freely placed and removed using the `s3:PutObjectLegalHold` IAM permission
-- Control Tower vs SCPs
-- CloudFront field-level encryption profile?
-- Storage Gateway
+- Control Tower & SCPs can prevent VPCs from having access to Internet
+- CloudFront field-level encryption = allow to protect sensitive information throughout the application stack
+- Storage Gateway = iSCSI
 	- S3 File GW = extend storage space by leveraging Amazon S3
-	- FSx File GW
+	- FSx File GW?
 	- Volume GW
-		- stored volumes
-		- cached volumes
-	- Tape GW
-- S3 signed cookies vs signed URLs
+		- stored volumes = your primary data is stored locally and your entire dataset is available for low-latency access while asynchronously backed up to AWS
+		- cached volumes = your primary data is written to S3, while retaining your frequently accessed data locally in a cache for low-latency access
+	- Tape GW?
+- S3 signed cookies & signed URLs for who do not have cookie support or unable to change hardcoded URLs
 - Compute Savings Plan vs EC2 Instance Savings Plan
 	- EC2 Instance Savings Plan = EC2 only & instance family committed
-- io vs gp
-	- gp2 vs gp3 = gp3 is cheaper and better
-- Kinesis Firehose vs Streams
-- S3 Storage Lens = identify versioning enabled
+- S3 Storage Lens
+	- Identify S3 buckets that are no longer being accessed or are rarely accessed
+	- Identify versioning enabled
 - S3 Inventory Report = List of unencrypted objects
 - SQS FIFO vs SQS
 	- FIFO = more expensive, guarantees processing exactly once
-- Amazon FSx for Lustre = SMB
-- Amazon FSx for OpenZFS = NFS
-- Amazon FSx for NetApp ONTAP = NFS, SMB, iSCSI
-
+	- Standard = at least once
+- FSx
+	- Amazon FSx for Lustre = SMB
+	- Amazon FSx for OpenZFS = NFS
+	- Amazon FSx for NetApp ONTAP = NFS, SMB, iSCSI
 - Lambda reserved concurrency vs provisioned concurrency
 	- reserved concurrency?
 	- provisioned concurrency
 
-## References
----
-- 
+- Direct Connect vs VPN vs PrivateLink?
+	- PrivateLink with VPC endpoint allows to connect services across different accounts and VPCs
+- GW VPC Endpoint vs Interface VPC Endpoint?
+- Kinesis Firehose vs Streams
+- io vs gp
+	- gp2 vs gp3 = gp3 is cheaper and better
