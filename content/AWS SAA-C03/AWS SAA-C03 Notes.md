@@ -25,13 +25,16 @@ tags:
 - AWS Config rules = to check resources that are not properly tagged
 - AWS Shield Advanced = ELB, CF, GA, R53
 
-- Direct Connect vs VPN vs VPC endpoint & PrivateLink
+- Direct Connect vs VPN
+	- PrivateLink with VPC endpoint allows to connect services across different accounts and VPCs
 - DR RPO/RTO order
 - DDB PITR vs AWS Backup
 	- PITR = recover table to any point in time in a rolling 35 day window
 	- Backup = for long-term archiving and retention
 - Glue Job Bookmarks = prevent re-processing old data
-- S3 Legal Hold?
+- S3 Legal Hold
+    - Protect the object indefinitely, independent from the retention period
+    - Can be freely placed and removed using the `s3:PutObjectLegalHold` IAM permission
 - Control Tower vs SCPs
 - CloudFront field-level encryption profile?
 - Storage Gateway
@@ -56,7 +59,7 @@ tags:
 - Amazon FSx for NetApp ONTAP = NFS, SMB, iSCSI
 
 - Lambda reserved concurrency vs provisioned concurrency
-	- reserved concurrency
+	- reserved concurrency?
 	- provisioned concurrency
 
 ## References

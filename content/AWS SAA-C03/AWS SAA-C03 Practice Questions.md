@@ -1564,7 +1564,7 @@ Which solution will meet this requirement with the LEAST operational overhead?
 - D. Install and configure Amazon Kinesis Agent on each application server to deliver the logs to Amazon Kinesis Data Streams. Configure Kinesis Data Streams to deliver the logs to Amazon OpenSearch Service (Amazon Elasticsearch Service).
 
 > [!help]- Answer
-> A
+> A, can configure a CloudWatch Logs log group to stream data it receives to your Amazon OpenSearch Service cluster in NEAR REAL-TIME through a CloudWatch Logs subscription
 
 ## Question 118
 ---
@@ -1603,7 +1603,7 @@ Which solution can the company use to route traffic to all the EC2 instances?
 - D. Replace the two NLBs with two Application Load Balancers (ALBs). Create an Amazon Route 53 latency routing policy to route requests to one of the two ALBs. Create an Amazon CloudFront distribution. Use the Route 53 record as the distribution’s origin.
 
 > [!help]- Answer
-> B
+> B, Endpoint Groups: By creating endpoint groups in both the us-west-2 and eu-west-1 Regions, the company can effectively distribute traffic to the NLBs in both Regions
 
 ## Question 121
 ---
@@ -1616,7 +1616,7 @@ What should a solutions architect do to ensure the database and snapshots are al
 - D. Copy the snapshots to an Amazon S3 bucket that is encrypted using server-side encryption with AWS Key Management Service (AWS KMS) managed keys (SSE-KMS).
 
 > [!help]- Answer
-> A
+> A, not C as you cannot encrypt the snapshot
 
 ## Question 122
 ---
@@ -1787,7 +1787,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Load the data into the existing S3 bucket. Use S3 Cross-Region Replication (CRR) to replicate encrypted objects to an S3 bucket in another Region. Use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Use Amazon RDS to query the data.
 
 > [!help]- Answer
-> C
+> C, debatable with A but C is more suitable as no mention on KMS encryption
 
 ## Question 135
 ---
@@ -1800,7 +1800,7 @@ Which solution will mast these requirements?
 - D. Ask the provider to create a VPC endpoint for the target service. Use AWS PrivateLink to connect to the target service.
 
 > [!help]- Answer
-> D
+> D, PrivateLink with VPC endpoint allows to connect services across different accounts and VPCs
 
 ## Question 136
 ---
@@ -1935,7 +1935,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Migrate the database to an Amazon Aurora MySQL DB instance. Create an AMI of the web application. Apply the AMI to a launch template. Create an Auto Scaling group with the launch template Configure the launch template to use a Spot Fleet. Attach an Application Load Balancer to the Auto Scaling group.
 
 > [!help]- Answer
-> D
+> D, as Spot Fleet is a set of Spot Instances and optionally On-Demand Instances
 
 ## Question 146
 ---
@@ -2004,7 +2004,7 @@ What should the solutions architect do to meet these requirements?
 - D. Create single Amazon CloudWatch metric alarms with multiple metric thresholds where possible.
 
 > [!help]- Answer
-> A
+> A, Composite for multiple conditions like AND/OR combinations
 
 ## Question 151
 ---
@@ -2018,7 +2018,7 @@ Which solutions will meet these requirements? (Choose two.)
 - E. Use AWS Config to activate managed rules to detect and alert for internet gateways and to detect and alert for new resources deployed outside of ap-northeast-3.
 
 > [!help]- Answer
-> AC
+> AC, Control Tower to implement data residency guardrails and Service Control Policies (SCPS) to prevent VPCs from gaining internet access
 
 ## Question 152
 ---
@@ -2295,7 +2295,7 @@ Which action should the solutions architect take?
 - D. Configure CloudFront and set the Origin Protocol Policy setting to HTTPS Only for the Viewer Protocol Policy.
 
 > [!help]- Answer
-> C
+> C, field level encryption allow to protect sensitive information throughout the application stack
 
 ## Question 173
 ---
@@ -2577,7 +2577,7 @@ What should the solutions architect do to meet this requirement?
 - D. Use Amazon ElastiCache for Memcached.
 
 > [!help]- Answer
-> B
+> B, should be A but debatable
 
 ## Question 194
 ---
@@ -2616,7 +2616,7 @@ Which solution meets these requirements?
 - D. Extend the application to add an attribute that has a value of the current timestamp plus 30 days to each new item that is created in the table. Configure DynamoDB to use the attribute as the TTL attribute.
 
 > [!help]- Answer
-> D
+> D, DynamoDB TTL feature allows you to define a per-item timestamp to determine when an item is no longer needed
 
 ## Question 197
 ---
@@ -2656,7 +2656,7 @@ Which solution will meet these requirements?
 - D. Use Amazon Rekognition for multiple speaker recognition. Store the transcript files in Amazon S3. Use Amazon Textract for transcript file analysis.
 
 > [!help]- Answer
-> B
+> B, Transcribe can handle multiple speakers
 
 ## Question 200
 ---
@@ -2898,7 +2898,11 @@ What should a solutions architect do to meet these requirements?
 - D. Back up data with AWS Backup. Use the backup to create the required infrastructure in a second AWS Region. Use Amazon Route 53 to configure active-passive failover. Create an Aurora second primary instance in the second Region.
 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/95015-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> A
+> A, as per
+> 1. Aws Backup(least op overhead) - RTO/RPO = hours
+> 2. Pilot Light (Basic Infra is already deployed, but needs to be fully implemented) - RTO/RPO = 10's of minutes.
+> 3. Warm Standby - (Basic infra + runs small loads (might need to add auto scaling) - RTO/RPO = minutes
+> 4. (ACTIVE-ACTIVE) Multi AZ option = instant
 
 ## Question 218
 ---
