@@ -45,6 +45,15 @@ tags:
 - Compute Savings Plan vs EC2 Instance Savings Plan
 	- EC2 Instance Savings Plan = EC2 only & instance family committed
 - io vs gp
+	- gp2 vs gp3 = gp3 is cheaper and better
+- Kinesis Firehose vs Streams
+- S3 Storage Lens = identify versioning enabled
+- S3 Inventory Report = List of unencrypted objects
+- SQS FIFO vs SQS
+	- FIFO = more expensive, guarantees processing exactly once
+- Amazon FSx for Lustre = SMB
+- Amazon FSx for OpenZFS = NFS
+- Amazon FSx for NetApp ONTAP = NFS, SMB, iSCSI
 
 - Lambda reserved concurrency vs provisioned concurrency
 	- reserved concurrency

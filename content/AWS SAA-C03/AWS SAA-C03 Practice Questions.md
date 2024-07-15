@@ -6546,7 +6546,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - D. Use the AWS Lambda event source mapping. Set Amazon Simple Queue Service (Amazon SQS) standard queues as the event source. Use AWS KMS keys (SSE-KMS) for encryption. Add the encryption key invocation permission for the Lambda function.
 
 > [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/109513-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> A, no need to be FIFO
+> A, not C no need to be FIFO
 
 ## Question 492
 ---
@@ -8180,8 +8180,8 @@ Which solution will meet these requirements with the LEAST operational overhead?
 ## Question 614
 ---
 A company is designing a new multi-tier web application that consists of the following components:
-•	Web and application servers that run on Amazon EC2 instances as part of Auto Scaling groups
-•	An Amazon RDS DB instance for data storage
+- Web and application servers that run on Amazon EC2 instances as part of Auto Scaling groups
+- An Amazon RDS DB instance for data storage
 A solutions architect needs to limit access to the application servers so that only the web servers can access them.
 Which solution will meet these requirements?
 
@@ -8478,8 +8478,8 @@ What should a solutions architect do to process the events from Amazon S3 in a s
 
 - A. Create an SNS subscription that processes the event in Amazon Elastic Container Service (Amazon ECS) before the event runs in Lambda.
 - B. Create an SNS subscription that processes the event in Amazon Elastic Kubernetes Service (Amazon EKS) before the event runs in Lambda
-- C. Create an SNS subscription that sends the event to Amazon Simple Queue Service (Amazon SQS). Configure the SOS queue to trigger a Lambda function.
-- D. Create an SNS subscription that sends the event to AWS Server Migration Service (AWS SMS). Configure the Lambda function to poll from the SMS event.
+- C. Create an SNS subscription that sends the event to Amazon Simple Queue Service (Amazon SQS). Configure the SQS queue to trigger a Lambda function.
+- D. Create an SNS subscription that sends the event to AWS Server Migration Service (AWS SMS). Configure the Lambda function to poll from the SNS event.
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/125546-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > C
@@ -8508,12 +8508,12 @@ Which solution will meet these requirements?
 - C. Create an S3 File Gateway. Create a share for uploading and a share for downloading. Allow employees to mount shares on their local computers to use S3 File Gateway.
 - D. Configure AWS Transfer Family SFTP endpoints. Select the custom identity provider options. Use AWS Secrets Manager to manage the user credentials Instruct employees to use Transfer Family.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/125574-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> D
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/125574-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> D, SFTP endpoints can provide a secure and convenient way for employees to access and transfer data to and from the S3 bucket
 
 ## Question 639
 ---
-A company is building a new furniture inventory application. The company has deployed the application on a fleet ofAmazon EC2 instances across multiple Availability Zones. The EC2 instances run behind an Application Load Balancer (ALB) in their VPC.
+A company is building a new furniture inventory application. The company has deployed the application on a fleet of Amazon EC2 instances across multiple Availability Zones. The EC2 instances run behind an Application Load Balancer (ALB) in their VPC.
 A solutions architect has observed that incoming traffic seems to favor one EC2 instance, resulting in latency for some requests.
 What should the solutions architect do to resolve this issue?
 
@@ -8663,7 +8663,7 @@ Which solution will meet these requirements MOST cost-effectively?
 A company wants to migrate its on-premises Microsoft SQL Server Enterprise edition database to AWS. The company's online application uses the database to process transactions. The data analysis team uses the same production database to run reports for analytical processing. The company wants to reduce operational overhead by moving to managed services wherever possible.
 Which solution will meet these requirements with the LEAST operational overhead?
 
-- A. Migrate to Amazon RDS for Microsoft SOL Server. Use read replicas for reporting purposes
+- A. Migrate to Amazon RDS for Microsoft SQL Server. Use read replicas for reporting purposes
 - B. Migrate to Microsoft SQL Server on Amazon EC2. Use Always On read replicas for reporting purposes
 - C. Migrate to Amazon DynamoDB. Use DynamoDB on-demand replicas for reporting purposes
 - D. Migrate to Amazon Aurora MySQL. Use Aurora read replicas for reporting purposes
@@ -8840,8 +8840,8 @@ Which solution will meet these requirements?
 - C. Create an S3 bucket policy that restricts bucket access to the ECS task execution role. Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to allow access from only the subnets that the ECS cluster will generate tasks in.
 - D. Create a VPC endpoint for Amazon RDS for MySQL. Update the RDS for MySQL security group to allow access from only the subnets that the ECS cluster will generate tasks in. Create a VPC endpoint for Amazon S3. Update the S3 bucket policy to allow access from only the S3 VPC endpoint.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/126798-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/126798-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> A, not D as only the ECS cluster can access the data in the RDS for MySQL database and the data in the S3 bucket
 
 ## Question 664
 ---
@@ -8854,8 +8854,8 @@ Which solution will meet these requirements?
 - C. Configure an Elastic Beanstalk environment to use compute optimized instances. Configure the environment to scale on a schedule.
 - D. Configure an Elastic Beanstalk environment to use burstable performance instances in unlimited mode. Configure the environment to scale on predictive metrics.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/126800-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/126800-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> A, not D as it's not predictive
 
 ## Question 665
 ---
@@ -8948,8 +8948,8 @@ Which solution will meet these requirements?
 - C. Create AWS Pricing Calculator estimates for the current running workload pricing details.
 - D. Use Amazon CloudWatch to monitor costs and to identify unusual spending.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/129712-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/129712-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> B, AWS Cost Anomaly Detection is designed to automatically detect unusual spending patterns
 
 ## Question 672
 ---
@@ -9122,8 +9122,8 @@ Which solution will meet these requirements?
 - C. Deploy the applications in eu-central-1. Extend the company’s VPC from eu-central-1 to the regional edge caches in Amazon CloudFront.
 - D. Deploy the applications in AWS Wavelength Zones by extending the company’s VPC from eu-central-1 to the chosen Wavelength Zone.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/129726-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/129726-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> B, AWS Local Zones are a type of AWS infrastructure deployment that place compute, storage, database, and other select services closer to large population, industry, and IT centers, enabling you to deliver applications that require single-digit millisecond latency to end-users
 
 ## Question 685
 ---
@@ -9231,7 +9231,7 @@ Which Route 53 configuration should a solutions architect use to provide the MOS
 - C. Create a CNAME record with a failover policy.
 - D. Create a CNAME record with a geoproximity policy.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/132854-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132854-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
 ## Question 693
@@ -9271,7 +9271,7 @@ Which solution will meet these requirements?
 - C. Configure AWS CloudTrail to review the API calls. Build an Amazon QuickSight dashboard to observe the microservice interactions.
 - D. Use AWS Trusted Advisor to understand the performance of the application.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/132858-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132858-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B
 
 ## Question 696
@@ -9651,8 +9651,8 @@ Which solution will meet these requirements?
 - C. Enable Default Host Configuration Management in Systems Manager to manage the EC2 instances.
 - D. Remove the existing policies from the existing IAM role. Add the AmazonSSMManagedInstanceCore policy to the existing IAM role.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/132900-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> C
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132900-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> C, Default Host Management Configuration creates and applies a default IAM role to ensure that Systems Manager has permission to manage all instances in the Region and perform automated patch scans using Patch Manager
 
 ## Question 724
 ---
@@ -9873,7 +9873,7 @@ Which solution will meet these requirements?
 - C. Create a list of unencrypted objects by filtering the AWS usage report for Amazon S3. Configure an AWS Batch job to encrypt the objects from the list with a server-side encryption with AWS KMS keys (SSE-KMS). Configure the S3 default encryption feature to use a server-side encryption with AWS KMS keys (SSE-KMS).
 - D. Create a list of unencrypted objects by filtering the AWS usage report for Amazon S3. Configure the S3 default encryption feature to use a server-side encryption with a customer-provided key (SSE-C).
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/132930-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132930-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
 ## Question 741
@@ -9978,7 +9978,7 @@ Which solution will meet these requirements?
 - C. Configure a new IAM user in the monitoring account. In each AWS account, configure an IAM policy to have access to query and visualize the CloudWatch data in the account. Attach the new IAM policy to the new IAM user.
 - D. Create a new IAM user in the monitoring account. Create cross-account IAM policies in each AWS account. Attach the IAM policies to the new IAM user.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/132939-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132939-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
 ## Question 749
@@ -10216,10 +10216,10 @@ What should a solutions architect do to meet these requirements MOST cost-effect
 
 - A. Create a bastion host in the same subnet as the EC2 instances. Grant the ec2:CreateVpnConnection IAM permission to the developers. Install EC2 Instance Connect so that the developers can connect to the EC2 instances.
 - B. Create an AWS Site-to-Site VPN connection between the corporate network and the VPC. Instruct the developers to use the Site-to-Site VPN connection to access the EC2 instances when the developers are on the corporate network. Instruct the developers to set up another VPN connection for access when they work remotely.
-- C. Create a bastion host in the public subnet of the VPConfigure the security groups and SSH keys of the bastion host to only allow connections and SSH authentication from the developers’ corporate and remote networks. Instruct the developers to connect through the bastion host by using SSH to reach the EC2 instances.
+- C. Create a bastion host in the public subnet of the VPC. Configure the security groups and SSH keys of the bastion host to only allow connections and SSH authentication from the developers’ corporate and remote networks. Instruct the developers to connect through the bastion host by using SSH to reach the EC2 instances.
 - D. Attach the AmazonSSMManagedInstanceCore IAM policy to an IAM role that is associated with the EC2 instances. Instruct the developers to use AWS Systems Manager Session Manager to access the EC2 instances.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/132957-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/132957-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D
 
 ## Question 767
@@ -10388,7 +10388,7 @@ Which solution will meet these requirements?
 - C. Create an identity policy for the EFS file system that denies the elasticfilesystem:ClientWrite action on the EFS file system.
 - D. Create an EFS access point for each application. Use Portable Operating System Interface (POSIX) file permissions to allow read-only access to files in the root directory.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/133011-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133011-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > B
 
 ## Question 780
@@ -10521,8 +10521,8 @@ Which solution will meet these requirements?
 - C. Use AWS Config to create rules for EC2 and IAM compliance. Configure the rules to run an AWS Systems Manager Session Manager automation to delete a resource when it is not compliant.
 - D. Use a service control policy (SCP) to block actions for the EC2 instances and IAM resources if the actions lead to noncompliance.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/133025-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133025-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> A, Proactive controls are implemented using AWS CloudFormation hooks within AWS Control Tower
 
 ## Question 790
 ---
@@ -10576,8 +10576,8 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Create an Amazon EventBridge rule that reacts when the KMS DeleteKey operation is performed. Configure the rule to initiate an AWS Systems Manager Automation runbook. Configure the runbook to cancel the deletion of the KMS key. Create an SNS topic. Configure the EventBridge rule to publish an SNS message that notifies the administrators.
 - D. Create an AWS CloudTrail trail. Configure the trail to deliver logs to a new Amazon CloudWatch log group. Create a CloudWatch alarm based on the metric filter for the CloudWatch log group. Configure the alarm to use Amazon SNS to notify the administrators when the KMS DeleteKey operation is performed.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/133032-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> C
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/133032-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> C, not A as C directly detects KMS DeleteKey operation and pre-built automation runbook can be used
 
 ## Question 794
 ---
@@ -10671,8 +10671,8 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Create a second Lambda function in the secondary account that has a mount that is configured for the file system. Use the primary account's Lambda function to invoke the secondary account's Lambda function.
 - D. Move the contents of the file system to a Lambda layer. Configure the Lambda layer's permissions to allow the company's secondary account to use the Lambda layer.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/135258-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/135258-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> B, it is possible to create a VPC peering connection between 2 different accounts
 
 ## Question 801
 ---
@@ -11086,7 +11086,7 @@ What is the MOST cost-effective method to establish this type of connection?
 - C. Implement a bastion host on Amazon EC2.
 - D. Implement an AWS Site-to-Site VPN connection.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/136997-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/136997-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > D
 
 ## Question 832
@@ -11234,8 +11234,8 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Create a VPC in another Region. Establish a cross-Region VPC peer. Run a nightly rsync to copy data from the original Region to the new Region.
 - D. Use AWS Backup to create a backup plan with a rule that takes a daily backup and replicates it to another Region. Assign the EFS file system resource to the backup plan.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/137845-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> D
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/137845-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> D, not A as EFS-to-EFS backup solution is not a managed solution
 
 ## Question 843
 ---
@@ -11726,7 +11726,7 @@ Which combination of actions will meet these requirements MOST cost-effectively?
 - B. Configure the application to use an Amazon ElastiCache cluster in front of the Aurora PostgreSQL DB cluster.
 - C. Update the application to send the purchase requests to an Amazon Simple Queue Service (Amazon SQS) queue. Configure an Auto Scaling group of new EC2 instances that read from the SQS queue.
 - D. Configure an AWS Lambda function to retry the ticket purchases until the processing is complete.
-- E. Configure an Amazon AP! Gateway REST API with a usage plan.
+- E. Configure an Amazon API Gateway REST API with a usage plan.
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/139619-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AC
@@ -11756,7 +11756,7 @@ Which combination of caching methods should a solutions architect implement to m
 - D. Create an AWS Lambda@Edge function to add an Expires header to HTTP responses. Configure the function to run on viewer response.
 - E. Add a Cache-Control max-age directive of 24 hours to the objects in Amazon S3. On deployment, create a CloudFront invalidation to clear any changed files from edge caches.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/137850-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/137850-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AE
 
 ## Question 882
@@ -11841,7 +11841,7 @@ Which solution will meet these requirements?
 - C. Configure AWS Systems Manager to create encrypted copies of the EBS volumes. Reconfigure the EC2 instances to use the encrypted volumes.
 - D. Create a customer managed key in AWS Key Management Service (AWS KMS). Configure AWS Migration Hub to use the key when the company migrates workloads.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/140296-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/140296-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > A
 
 ## Question 888
@@ -12043,8 +12043,8 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Replicate the objects in the S3 bucket to new S3 buckets for each application. Create replication rules by prefix.
 - D. Replicate the objects in the S3 bucket to new S3 buckets for each application. Create dedicated S3 access points for each application.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/139857-exam-aws-certified-solutions-architect-associate-saa-c03/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/amazon/view/139857-exam-aws-certified-solutions-architect-associate-saa-c03/)
+> A, access point policies = prefix
 
 ## Question 904
 ---
