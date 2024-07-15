@@ -83,7 +83,7 @@ Which solution will meet these requirements?
 - D. Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.
 
 > [!help]- Answer
-> B
+> B, as using the least possible network bandwidth
 
 ## Question 7
 ---
@@ -123,7 +123,7 @@ Which solution will meet these requirements?
 - D. Install a utility on each user's computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days.
 
 > [!help]- Answer
-> B
+> B, S3 File GW = extend storage space by leveraging Amazon S3
 
 ## Question 10
 ---
@@ -162,7 +162,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint. Create two domain names. Point one domain name to the CloudFront DNS name for dynamic content. Point the other domain name to the accelerator DNS name for static content. Use the domain names as endpoints for the web application.
 
 > [!help]- Answer
-> A
+> A, No need for Global Accelerator since there is no static IP
 
 ## Question 13
 ---
@@ -215,7 +215,7 @@ Which solution will meet these requirements?
 - D. Create an AWS Glue table and crawler for the data in Amazon S3. Use Amazon Athena Federated Query to access data within Amazon RDS for PostgreSQL. Generate reports by using Amazon Athena. Publish the reports to Amazon S3. Use S3 bucket policies to limit access to the reports.
 
 > [!help]- Answer
-> B
+> B, Amazon QuickSight only supports users(standard version) and groups(enterprise version)
 
 ## Question 17
 ---
@@ -257,7 +257,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - D. Deploy a Gateway Load Balancer in the inspection VPC. Create a Gateway Load Balancer endpoint to receive the incoming packets and forward the packets to the appliance.
 
 > [!help]- Answer
-> D
+> D, IP Packet = GLB
 
 ## Question 20
 ---
@@ -271,7 +271,7 @@ Which solution will meet these requirements?
 - D. Take EBS snapshots of the production EBS volumes. Turn on the EBS fast snapshot restore feature on the EBS snapshots. Restore the snapshots into new EBS volumes. Attach the new EBS volumes to EC2 instances in the test environment.
 
 > [!help]- Answer
-> D
+> D, EBS Fast Snapshot Restore (FSR) = no latency on first use
 
 ## Question 21
 ---
@@ -521,7 +521,7 @@ Which solution addresses this performance issue?
 - D. Enable Multi-AZ RDS read replicas with MySQL native asynchronous replication.
 
 > [!help]- Answer
-> A
+> A, not B as B does not improve storage performance
 
 ## Question 40
 ---
@@ -632,7 +632,7 @@ What should the company do to guarantee the EC2 capacity?
 - D. Create an On-Demand Capacity Reservation that specifies the Region and three Availability Zones needed.
 
 > [!help]- Answer
-> D
+> D, not A as purchasing Reserved Instances that specify the Region needed, would not guarantee capacity in specific Availability Zones
 
 ## Question 48
 ---
@@ -671,7 +671,7 @@ What should a solutions architect do to meet these requirements?
 - D. Use AWS Systems Manager Run Command to run a custom command that applies the patch to all EC2 instances.
 
 > [!help]- Answer
-> D
+> D, not B as B is for OS level patches only while the question asks for 3rd party app patches
 
 ## Question 51
 ---
@@ -750,7 +750,7 @@ Which solution will meet these requirements?
 - D. Create a Regional API Gateway endpoint. Associate the API Gateway endpoint with the company's domain name. Import the public certificate associated with the company's domain name into AWS Certificate Manager (ACM) in the us-east-1 Region. Attach the certificate to the API Gateway APIs. Create Route 53 DNS records with the company's domain name. Point an A record to the company's domain name.
 
 > [!help]- Answer
-> C
+> C, as for an API Gateway Regional custom domain name, you must request or import the certificate in the same Region as your API
 
 ## Question 57
 ---
