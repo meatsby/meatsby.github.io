@@ -65,3 +65,7 @@ tags:
 - Kinesis Firehose vs Streams
 - io vs gp
 	- gp2 vs gp3 = gp3 is cheaper and better
+- Global, Reduce latency, health checks, no failover = Amazon CloudFront
+- Global ,Reduce latency, health checks, failover, Route traffic = Amazon Route 53
+- Use Workload Discovery on AWS to generate architecture diagrams of the workloads
+- Transfer Family supports AS2
