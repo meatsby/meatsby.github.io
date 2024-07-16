@@ -17,6 +17,7 @@ tags:
 		- Origin = S3, ALB, EC2, HTTP backend
 	- Global Accelerator = Best routing by using Edge Locations
 		- TCP/UDP, MQTT(IoT), VoIP, HTTP with static IP address
+		- Provides static IP
 - Network Firewall = provides filtering for both inbound and outbound network traffic
 - GLB = L3 (IP Packets)
 - EBS Fast Snapshot Restore (FSR) = no latency on first use
@@ -35,7 +36,7 @@ tags:
 - Control Tower & SCPs can prevent VPCs from having access to Internet
 - CloudFront field-level encryption = allow to protect sensitive information throughout the application stack
 - Storage Gateway = iSCSI
-	- S3 File GW = extend storage space by leveraging Amazon S3
+	- S3 File GW = extend storage space by leveraging Amazon S3, supports SMB
 	- FSx File GW?
 	- Volume GW
 		- stored volumes = your primary data is stored locally and your entire dataset is available for low-latency access while asynchronously backed up to AWS
@@ -58,14 +59,25 @@ tags:
 - Lambda reserved concurrency vs provisioned concurrency
 	- reserved concurrency?
 	- provisioned concurrency
+	- SnapStart for Java can improve startup performance for latency-sensitive applications by up to 10x at no extra cost
 
 - Direct Connect vs VPN vs PrivateLink?
 	- PrivateLink with VPC endpoint allows to connect services across different accounts and VPCs
-- GW VPC Endpoint vs Interface VPC Endpoint?
+- GW VPC Endpoint vs Interface VPC Endpoint
+	- GW Endpoint = for S3 and DDB, doesn't allow from on-prem, peered VPCs in other Regions, or TGW
 - Kinesis Firehose vs Streams
 - io vs gp
 	- gp2 vs gp3 = gp3 is cheaper and better
+	- io1/2 supports Multi-Attach
 - Global, Reduce latency, health checks, no failover = Amazon CloudFront
 - Global ,Reduce latency, health checks, failover, Route traffic = Amazon Route 53
 - Use Workload Discovery on AWS to generate architecture diagrams of the workloads
 - Transfer Family supports AS2
+- Amazon S3 Glacier:
+    - Expedited Retrieval: Provides access to data within 1-5 minutes.
+    - Standard Retrieval: Provides access to data within 3-5 hours.
+    - Bulk Retrieval: Provides access to data within 5-12 hours.
+- Amazon S3 Glacier Deep Archive:
+    - Standard Retrieval: Provides access to data within 12 hours.
+    - Bulk Retrieval: Provides access to data within 48 hours.
+- X-Ray = trace the requests between the microservices
