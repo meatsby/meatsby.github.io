@@ -1,9 +1,8 @@
 ---
 title: Welcome to meatsby.github.io
 ---
-## [[Amazon Web Services]]
-
 ## :LiComputer: Computer Science
+---
 - :BoBxCodeAlt: Data Structure & Algorithm
 - :FasNetworkWired: Network
 - :FasDatabase: Database
@@ -13,6 +12,9 @@ title: Welcome to meatsby.github.io
 - :BoBxsPalette: Design Pattern
 
 ## 🛠️ Tech Stacks
+---
+- [[Amazon Web Services]]
+- 
 - :FabJava: Java
 - :SiGradle: Gradle
 - :BoBxsCheckCircle: Testing
