@@ -14,7 +14,7 @@ title: Welcome to meatsby.github.io
 ## 🛠️ Tech Stacks
 ---
 - [[Amazon Web Services]]
-- 
+- [[DevOps]]
 - :FabJava: Java
 - :SiGradle: Gradle
 - :BoBxsCheckCircle: Testing
