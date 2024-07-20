@@ -1,7 +1,8 @@
 ## BOJ
+---
 
 ```dataview
 table date
-from "content/Algorithms/BOJ"
+from "Computer Science/Data Structure & Algorithm/Algorithms/BOJ"
 sort date desc
 ```

@@ -1,4 +1,4 @@
-![Untitled](Python%20517fbeb992194053ad973661977ae5cb/Untitled.png)
+
 
 ```python
 # List Comprehension
