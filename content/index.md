@@ -16,7 +16,7 @@ title: Welcome to meatsby.github.io
 ---
 - [[Amazon Web Services]]
 - [[DevOps]]
-- :FabJava: Java
+- :FabJava: [[Java]]
 - :SiGradle: Gradle
 - :BoBxsCheckCircle: Testing
 - :SiJunit5: JUnit5
