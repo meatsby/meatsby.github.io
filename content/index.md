@@ -21,9 +21,8 @@ title: Welcome to meatsby.github.io
 - :BoBxsCheckCircle: Testing
 - :SiJunit5: JUnit5
 - :SiApachetomcat: Tomcat
-- :SiSpring: Spring
+- :SiSpring: [[Spring]]
 - :SiHibernate: Hibernate
-- :SiAmazonec2: AWS EC2
 - :SiLinux: Linux
 - :SiJenkins: Jenkins
 - :SiNginx: Nginx
