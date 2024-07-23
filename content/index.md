@@ -16,7 +16,7 @@ title: Welcome to meatsby.github.io
 ---
 - [[Amazon Web Services]]
 - [[DevOps]]
-- [[Splunk]]
+- :SiSplunk: [[Splunk]]
 - :FabJava: [[Java]]
 - :SiGradle: Gradle
 - :BoBxsCheckCircle: Testing
