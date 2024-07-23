@@ -8,9 +8,9 @@ tags:
 ---
 ## Splunk
 ---
-[[Intro to Splunk]]
-[[Using Fields]]
+- [[Intro to Splunk]]
+- [[Using Fields]]
 
-## Docs
+## Posts
 ---
-[[Splunk API]]
+- [[Splunk API]]
