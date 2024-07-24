@@ -5,7 +5,7 @@ title: Welcome to meatsby.github.io
 ---
 - [[Algorithms]]
 - :BoBxCodeAlt: Data Structure & Algorithm
-- :FasNetworkWired: Network
+- :FasNetworkWired: [[Network]]
 - :FasDatabase: Database
 - :LiCpu: Operating System
 - :LiComputer: Computer Architecture
