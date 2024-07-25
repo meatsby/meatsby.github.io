@@ -9,7 +9,7 @@ title: Welcome to meatsby.github.io
 - :FasDatabase: Database
 - :LiCpu: Operating System
 - :LiComputer: Computer Architecture
-- :TiWorldWww: Web
+- :TiWorldWww: [[Web]]
 - :BoBxsPalette: Design Pattern
 
 ## 🛠️ Tech Stacks
