@@ -66,6 +66,7 @@ tags:
 - GW VPC Endpoint vs Interface VPC Endpoint
 	- GW Endpoint = for S3 and DDB, doesn't allow from on-prem, peered VPCs in other Regions, or TGW
 - Kinesis Firehose vs Streams
+- EBS
 - io vs gp
 	- gp2 vs gp3 = gp3 is cheaper and better
 	- io1/2 supports Multi-Attach
