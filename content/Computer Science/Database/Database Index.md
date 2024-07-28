@@ -1,5 +1,5 @@
 ---
-title: "Index"
+title: Database Index
 date: 2022-10-01 21:00:00 +0900
 status: In Progress
 tags:

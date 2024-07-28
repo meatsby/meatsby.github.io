@@ -10,7 +10,7 @@ tags:
 ---
 - [[DDL & DML & DCL]]
 - [[DELETE & TRUNCATE & DROP]]
-- [[Computer Science/Database/Index]]
+- [[Database Index]]
 - [[Lock]]
 - [[Transaction]]
 
