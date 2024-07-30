@@ -53,6 +53,7 @@ class GetSecretWrapper:
 ```
 - Other type key-value pair 로 저장 시 `get_secret_value_response` 는 json 형식의 String 이 반환됨
 - `json.loads()` 로 dictionary 로 전환해 사용 가능
+- 물론 Lambda 에 할당된 IAM Role 에 GetSecrets permission 을 적용해야 호출 가능
 
 ## 
 ---
