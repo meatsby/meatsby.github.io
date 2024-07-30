@@ -55,8 +55,11 @@ class GetSecretWrapper:
 - `json.loads()` 로 dictionary 로 전환해 사용 가능
 - 물론 Lambda 에 할당된 IAM Role 에 GetSecrets permission 을 적용해야 호출 가능
 
-## 
+## AWS-Parameters-and-Secrets-Lambda-Extension
 ---
+- AWS Secrets Manager 는 API 호출 마다 비용이 발생함
+- 1M per 5USD 로 저렴해서 호출이 많이 발생하지 않는 경우 비용을 감수해도 무관
+- 호출이 많은 서비스 개발 시 Lambda Layer 에서 해당 Extension 을 통해 호출한 secrets 를 캐싱하여 사용 가능 + 응답속도 향상 역시 이점으로 챙길 수 있음
 
 ## References
 ---
