@@ -51,6 +51,11 @@ class GetSecretWrapper:
             logger.error(f"An unknown error occurred: {str(e)}.")
             raise
 ```
+- Other type key-value pair 로 저장 시 `get_secret_value_response` 는 json 형식의 String 이 반환됨
+- `json.loads()` 로 dictionary 로 전환해 사용 가능
+
+## 
+---
 
 ## References
 ---
