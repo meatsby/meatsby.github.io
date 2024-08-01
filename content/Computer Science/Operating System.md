@@ -8,4 +8,7 @@ tags:
 ---
 ## Operating System
 ---
-- 
+- [[POSIX new line]]
+- [[Process & Thread]]
+- [[Semaphore & Mutex]]
+- [[Dead Lock & Starvation]]
