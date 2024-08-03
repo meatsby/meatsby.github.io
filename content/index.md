@@ -10,7 +10,7 @@ title: Welcome to meatsby.github.io
 - :LiCpu: [[Operating System]]
 - :LiComputer: Computer Architecture
 - :TiWorldWww: [[Web]]
-- :BoBxsPalette: Design Pattern
+- :BoBxsPalette: [[Design Pattern]]
 
 ## 🛠️ Tech Stacks
 ---
