@@ -21,6 +21,12 @@ tags:
 	- ETCD Cluster = HA Key-Value Store
 	- Kube-scheduler = Identifies the right node to place a container
 
+### Docker vs containerd
+- Back in time, K8s only supported Docker as its container runtime
+- CRI(Container Runtime Interface) was introduced as demand for various container runtime increases
+- CRI allowed any vendor to work as a container runtime as long as they follow OCI(Open Container Initiative) standards
+	- OCI consists of `imagespec` and `runtimespec`
+
 ### ETCD
 
 
