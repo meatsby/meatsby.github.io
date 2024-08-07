@@ -26,6 +26,12 @@ tags:
 - CRI(Container Runtime Interface) was introduced as demand for various container runtime increases
 - CRI allowed any vendor to work as a container runtime as long as they follow OCI(Open Container Initiative) standards
 	- OCI consists of `imagespec` and `runtimespec`
+- Docker consists of `containerd` and many other components such as CLI, API, etc.
+- `containerd` is compatible with CRI however other components need `dockershim` to be compatible with K8s
+	- But now K8s no longer supports Docker engine through `dockershim`
+- We can use below 2 CLIs instead of docker to work with K8s
+	- `nerdctl` = for general purpose from ContainerD community
+	- `crictl` = for debugging from K8s community (works with all CRI compatible container runtimes)
 
 ### ETCD
 
