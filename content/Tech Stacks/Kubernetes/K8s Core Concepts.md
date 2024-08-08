@@ -6,6 +6,16 @@ draft: false
 tags:
   - K8s
 ---
+## Container Orchestration
+---
+Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 관리하기 위한 도구로 K8s 가 주로 쓰인다.
+- Cluster = Master Node 가 중앙제어, 다수의 Worker Node 가 클러스터를 이루어 서로 통신하며 작동
+- State = Desired State 선언 시 관리자의 개입 없이 자동으로 상태를 유지
+- Scheduling = Container 를 배치할 적합한 Worker Node 를 찾아 배포
+- Rollout Rollback = 배포 버전관리
+- Service Discovery = 서비스 등록 및 조회
+- Volume = NFS, EBS 등 다양한 스토리지 마운팅
+
 ## Cluster Architecture
 ---
 ### K8s Architecture
