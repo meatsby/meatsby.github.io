@@ -44,21 +44,38 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 	- `crictl` = for debugging from K8s community (works with all CRI compatible container runtimes)
 
 ### ETCD
-
+- K8s 의 모든 상태와 데이터를 저장
+- Key-Value 형태로 데이터를 저장
+- 분산 시스템으로 구성하여 고가용성 확보
+- TTL, watch 등 부가 기능 제공
 
 ### Kube-API Server
-
+- 상태를 바꾸거나 조회
+- etcd 와 유일하게 통신하는 모듈
+- REST API 형태로 제공
+- 요청에 대한 권한 체크
+- 수평적 확장 가능
 
 ### Controller Managers
-
+- 다양한 Controller 가 존재
+	- Replication Controller, Node Controller, Endpoint Controller, ...
+	- 끊임 없이 상태를 체크하고 원하는 상태를 유지
+	- 복잡성을 낮추기 위해 하나의 프로세스로 실행
 
 ### Kube Scheduler
-
+- 새로 생성된 Pod 를 감지하고 실행할 Node 를 선택
+- Node 의 현재 상태와 Pod 의 요구사항을 체크
+	- Node 에 Label 부여
+		- e.g. a-zone, b-zone, gpu-enabled, ...
 
 ### Kubelet
-
+- 각 Node 에서 실행
+- Pod 을 실행/중지하고 상태 체크
+- CRI
 
 ### Kube Proxy
+- 네트워크 프록시와 부하 분산 역할
+- 성능상의 이유로 별도의 프록시 프로그램 대신 iptables 또는 IPVS 를 사용하여 설정만 관리
 
 
 ## API Primitives
