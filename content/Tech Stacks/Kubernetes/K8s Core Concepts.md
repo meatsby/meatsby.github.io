@@ -77,6 +77,36 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 - 네트워크 프록시와 부하 분산 역할
 - 성능상의 이유로 별도의 프록시 프로그램 대신 iptables 또는 IPVS 를 사용하여 설정만 관리
 
+## K8s Objects
+---
+### Pod
+- 가장 작은 배포 단위
+- 전체 클러스터에서 고유한 IP 할당
+- 1~N 개의 Container 를 포함
+- host 폴더 공유, localhost 네트워크 공유
+
+### ReplicaSet
+- 여러개의 Pod 을 관리
+- Pod 을 생성 또는 제거하여 원하는 수를 유지
+
+### Deployment
+- 내부적으로 ReplicaSet 을 이용하여 배포 버전을 관리
+
+### Service - ClusterIP
+- 클러스터 내부에서 사용하는 프록시
+- Pod 은 동적이지만 서비스는 고유 IP 를 가짐
+- 클러스터 내부에서 서비스 연결은 DNS 를 이용
+
+### Service - NodePort
+- Node(host) 에 노출되어 외부에서 접근 가능한 서비스
+- 모든 Node 에 동일한 포트로 생성
+
+### Service - LoadBalancer
+- 하나의 IP 주소를 외부에 노출
+
+### Ingress
+- 도메인 또는 경로별 라우팅
+	- Nginx, HAProxy, ALB, ...
 
 ## API Primitives
 ---
