@@ -44,6 +44,7 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 	- `crictl` = for debugging from K8s community (works with all CRI compatible container runtimes)
 
 ### ETCD
+- ETCD is a distributed reliable key-value store that is Simple, Secure & Fast
 - K8s 의 모든 상태와 데이터를 저장
 - Key-Value 형태로 데이터를 저장
 - 분산 시스템으로 구성하여 고가용성 확보
@@ -55,6 +56,13 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 - REST API 형태로 제공
 - 요청에 대한 권한 체크
 - 수평적 확장 가능
+
+1. Authenticate User
+2. Validate Request
+3. Retrieve data
+4. Update ETCD
+5. Scheduler
+6. Kubelet
 
 ### Controller Managers
 - 다양한 Controller 가 존재
