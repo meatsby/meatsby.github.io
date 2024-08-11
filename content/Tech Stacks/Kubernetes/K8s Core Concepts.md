@@ -18,6 +18,7 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 
 ## Cluster Architecture
 ---
+![[K8s Architecture.png]]
 ### K8s Architecture
 - Worker Nodes = Host Application as Containers
 	- Container Runtime
