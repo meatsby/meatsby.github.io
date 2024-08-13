@@ -65,11 +65,16 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 5. Scheduler
 6. Kubelet
 
-### Controller Managers
+### Kube Controller Manager
 - 다양한 Controller 가 존재
+	- A `controller` is a `process` that continuously monitors the state of the components within the system and works towards bringing the whole system to the desired functioning state
 	- Replication Controller, Node Controller, Endpoint Controller, ...
 	- 끊임 없이 상태를 체크하고 원하는 상태를 유지
 	- 복잡성을 낮추기 위해 하나의 프로세스로 실행
+
+```
+wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kube-controller-manager
+```
 
 ### Kube Scheduler
 - 새로 생성된 Pod 를 감지하고 실행할 Node 를 선택
