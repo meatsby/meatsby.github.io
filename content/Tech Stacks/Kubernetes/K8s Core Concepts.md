@@ -16,10 +16,9 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 - Service Discovery = 서비스 등록 및 조회
 - Volume = NFS, EBS 등 다양한 스토리지 마운팅
 
-## Cluster Architecture
+## K8s Architecture
 ---
 ![[K8s Architecture.png]]
-### K8s Architecture
 - Worker Nodes = Host Application as Containers
 	- Container Runtime
 	- Kubelet
@@ -32,7 +31,8 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 	- ETCD Cluster = HA Key-Value Store
 	- Kube-scheduler = Identifies the right node to place a container
 
-### Docker vs containerd
+## Docker vs containerd
+---
 - Back in time, K8s only supported Docker as its container runtime
 - CRI(Container Runtime Interface) was introduced as demand for various container runtime increases
 - CRI allowed any vendor to work as a container runtime as long as they follow OCI(Open Container Initiative) standards
@@ -44,14 +44,16 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 	- `nerdctl` = for general purpose from ContainerD community
 	- `crictl` = for debugging from K8s community (works with all CRI compatible container runtimes)
 
-### ETCD
+## ETCD
+---
 - ETCD is a distributed reliable key-value store that is Simple, Secure & Fast
 - K8s 의 모든 상태와 데이터를 저장
 - Key-Value 형태로 데이터를 저장
 - 분산 시스템으로 구성하여 고가용성 확보
 - TTL, watch 등 부가 기능 제공
 
-### Kube-API Server
+## Kube-API Server
+---
 - 상태를 바꾸거나 조회
 - etcd 와 유일하게 통신하는 모듈
 - REST API 형태로 제공
@@ -65,29 +67,34 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 5. Scheduler
 6. Kubelet
 
-### Kube Controller Manager
+## Kube Controller Manager
+---
 - 다양한 Controller 가 존재
 	- A `controller` is a `process` that continuously monitors the state of the components within the system and works towards bringing the whole system to the desired functioning state
 	- Replication Controller, Node Controller, Endpoint Controller, ...
 	- 끊임 없이 상태를 체크하고 원하는 상태를 유지
 	- 복잡성을 낮추기 위해 하나의 프로세스로 실행
 
+### Installing Kube Controller Manager
 ```
 wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kube-controller-manager
 ```
 
-### Kube Scheduler
+## Kube Scheduler
+---
 - 새로 생성된 Pod 를 감지하고 실행할 Node 를 선택
 - Node 의 현재 상태와 Pod 의 요구사항을 체크
 	- Node 에 Label 부여
 		- e.g. a-zone, b-zone, gpu-enabled, ...
 
-### Kubelet
+## Kubelet
+---
 - 각 Node 에서 실행
 - Pod 을 실행/중지하고 상태 체크
 - CRI
 
-### Kube Proxy
+## Kube Proxy
+---
 - 네트워크 프록시와 부하 분산 역할
 - 성능상의 이유로 별도의 프록시 프로그램 대신 iptables 또는 IPVS 를 사용하여 설정만 관리
 
