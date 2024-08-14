@@ -82,10 +82,20 @@ wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux
 
 ## Kube Scheduler
 ---
-- 새로 생성된 Pod 를 감지하고 실행할 Node 를 선택
+- Kube Scheduler decides which pod goes on which node. In other words, it schedules pods on nodes.
+- It doesn't actually place the pod on the node, Kubelet is responsible for that instead.
 - Node 의 현재 상태와 Pod 의 요구사항을 체크
 	- Node 에 Label 부여
 		- e.g. a-zone, b-zone, gpu-enabled, ...
+
+### How does it work?
+- It filters nodes based on the remaining resources of the nodes.
+- Then it ranks the nodes based on the remaining resources that the nodes will have after placing the pod.
+
+### Installing Kube Scheduler
+```
+wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kube-scheduler
+```
 
 ## Kubelet
 ---
