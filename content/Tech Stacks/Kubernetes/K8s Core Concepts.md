@@ -99,12 +99,19 @@ wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux
 
 ## Kubelet
 ---
-- 각 Node 에서 실행
-- Pod 을 실행/중지하고 상태 체크
-- CRI
+- Kubelet is the sole point of contact for the K8s cluster.
+- It will create the pods on the nodes based on the instructions from the Kube Scheduler through the Kube API Server.
+- It monitors nodes and pods and continuously communicates with the Kube API Server.
+
+### Installing Kubelet
+```
+wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kubelet
+```
 
 ## Kube Proxy
 ---
+- Kube Proxy is a process that runs on each node.
+- Every pod in the K8s cluster can reach every other pod through a pod networking solution.
 - 네트워크 프록시와 부하 분산 역할
 - 성능상의 이유로 별도의 프록시 프로그램 대신 iptables 또는 IPVS 를 사용하여 설정만 관리
 
