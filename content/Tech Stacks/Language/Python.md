@@ -1,5 +1,13 @@
-
-
+---
+title: Python
+date: 2024-08-16 18:17:41 +0800
+status: To Do
+draft: false
+tags:
+  - example-tag
+---
+## Python
+---
 ```python
 # List Comprehension
 arr = [i for i in range(20) if i % 2 == 1]
@@ -38,3 +46,15 @@ list(combinations(items, 2))
 # [('1', '2'), ('1', '3'), ('1', '4'), ('1', '5'), ('2', '3'), ('2', '4'), ('2', '5'), ('3', '4'), ('3', '5'), ('4', '5')]
 view rawcombination_single_list.py hosted with ❤ by GitHub
 ```
+
+## Tips
+---
+```python
+def serialize_number(number: str) -> Union[float, int]:
+	if '.' in number:
+		return float(number)
+	return int(number)
+
+setattr(TypeDeserializer, '_deserialize_n', lambda _, number: serialize_number(number))
+```
+- Convert Integer type DynamoDB data into int or float type when retrieving.
