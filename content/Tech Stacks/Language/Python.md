@@ -58,3 +58,9 @@ def serialize_number(number: str) -> Union[float, int]:
 setattr(TypeDeserializer, '_deserialize_n', lambda _, number: serialize_number(number))
 ```
 - Convert Integer type DynamoDB data into int or float type when retrieving.
+
+```python
+def to_dict(self) -> dict:
+	return asdict(self, dict_factory=lambda x: {k: v for (k, v) in x if v is not None})
+```
+- Recursively convert objects into a dictionary if the field is not None.
