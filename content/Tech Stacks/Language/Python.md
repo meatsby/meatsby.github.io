@@ -64,3 +64,8 @@ def to_dict(self) -> dict:
 	return asdict(self, dict_factory=lambda x: {k: v for (k, v) in x if v is not None})
 ```
 - Recursively convert objects into a dictionary if the field is not None.
+
+```python
+d = {k: v[k] for v in d.values() for k in v}
+```
+- Creates a new dictionary with values only excluding keys
