@@ -121,7 +121,17 @@ wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux
 - 가장 작은 배포 단위
 - 전체 클러스터에서 고유한 IP 할당
 - 1~N 개의 Container 를 포함
+	- Pods usually have a one-to-one relationship with containers running the app.
+	- A single pod can have multiple containers, not the same kind of container but helper containers instead.
 - host 폴더 공유, localhost 네트워크 공유
+	- This means the app container and the helper container can communicate through localhost.
+
+### How to deploy pods
+```
+kubectl run nginx --image nginx
+kubectl get pods
+```
+- The first line of command will pull the image from wherever K8s is configured to pull the image from such as public Docker Hub or private registries.
 
 ### ReplicaSet
 - 여러개의 Pod 을 관리
