@@ -133,6 +133,40 @@ kubectl get pods
 ```
 - The first line of command will pull the image from wherever K8s is configured to pull the image from such as public Docker Hub or private registries.
 
+### YAML in K8s
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: myapp
+		type: front-end
+spec:
+	containers:
+	  - name: nginx-container
+		image: nginx
+```
+- K8s uses YAML files as inputs for creating objects and all objects contains 4 top-level fields.
+	- `apiVersion`
+		- The version of K8s API that is used for creating the object.
+		- e.g. v1, apps/v1, etc
+	- `kind`
+		- The type of the object to be created.
+		- e.g. Pod, Service, ReplicaSet, Deployment, etc
+	- `metadata`
+		- A dictionary for metadata describing the object.
+		- e.g. name, labels, etc
+	- `spec`
+		- A specification of the object to be created.
+		- For the above example, `containers` section is a list that can be listed with `-` character.
+
+```
+kubectl create -f pod-definition.yaml
+kubectl get pods
+kubectl describe pod myapp-pod
+```
+
 ### ReplicaSet
 - 여러개의 Pod 을 관리
 - Pod 을 생성 또는 제거하여 원하는 수를 유지
