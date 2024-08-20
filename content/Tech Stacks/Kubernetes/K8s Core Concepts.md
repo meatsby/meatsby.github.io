@@ -138,14 +138,14 @@ kubectl get pods
 apiVersion: v1
 kind: Pod
 metadata:
-	name: myapp-pod
-	labels:
-		app: myapp
-		type: front-end
+  name: myapp-pod
+  labels:
+    app: myapp
+    type: front-end
 spec:
-	containers:
-	  - name: nginx-container
-		image: nginx
+  containers:
+    - name: nginx-container
+      image: nginx
 ```
 - K8s uses YAML files as inputs for creating objects and all objects contains 4 top-level fields.
 	- `apiVersion`
