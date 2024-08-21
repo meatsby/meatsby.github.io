@@ -5,11 +5,8 @@ date: 2021-11-02 10:00:04 +0900
 categories: [TIL, Java]
 tags: [Java]
 ---
-
-## **== 연산자**
-
+## == 연산자
 ---
-
 - 항등 연산자(Operator) 이다.
     - 반의어로 != 가 존재한다.
 - 참조 비교(Reference Comparison) 혹은 주소 비교(Address Comparison)
@@ -22,12 +19,8 @@ tags: [Java]
     - 같은 내용을 갖고 있더라도 주소값이 다르기 때문
 - Boolean Type 으로 반환한다.
 
-<br>
-
-## **equals()**
-
+## equals()
 ---
-
 - 객체 비교 메서드(Method) 이다.
 - 내용 비교(Content Comparison)
     - 두 객체의 값이 같은지 확인한다.
@@ -35,12 +28,8 @@ tags: [Java]
 - 기본 유형(Primitive Types)에 적용할 수 없다.
 - Boolean Type 으로 반환한다.
 
-<br>
-
-## **예시**
-
+## 예시
 ---
-
 ```java
 public class Test {
     public static void main(String[] args) {
@@ -60,11 +49,6 @@ public class Test {
 }
 ```
 
-<br>
-
-## **References**
-
+## References
 ---
-
-- [https://gmlwjd9405.github.io/2018/10/06/java-==-and-equals.html](https://gmlwjd9405.github.io/2018/10/06/java-==-and-equals.html)
 - [https://brunch.co.kr/@mystoryg/132](https://brunch.co.kr/@mystoryg/132)

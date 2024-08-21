@@ -1,15 +1,15 @@
 ---
-title: '[Java] Scanner와 BufferedReader'
+title: "[Java] Scanner 와 BufferedReader"
 author: meatsby
 date: 2021-11-02 10:00:01 +0900
-categories: [TIL, Java]
-tags: [Java]
+categories:
+  - TIL
+  - Java
+tags:
+  - Java
 ---
-
-## **Scanner**
-
+## Scanner
 ---
-
 - 공란과 줄바꿈 모두 입력값의 경계로 인식하기 때문에 쉬운 데이터 입력이 가능
 - 사용하는 함수에 따라 데이터 타입을 결정할 수 있음 (문자열 파싱 기능 제공)
 
@@ -30,12 +30,8 @@ public class study {
 }
 ```
 
-<br>
-
-## **BufferedReader**
-
+## BufferedReader
 ---
-
 - InputStreamReader 에 버퍼링 기능이 추가된 클래스
     - InputStreamReader 는 문자열을 Character 단위로 읽음
 - 일정한 크기의 데이터를 한 번에 읽어와 버퍼에 보관 후 버퍼에서 데이터를 가져오는 방식
@@ -61,12 +57,8 @@ public class study {
 }
 ```
 
-<br>
-
-## **Difference**
-
+## Difference
 ---
-
 ![Untitled](/assets/img/2021-11-02-scanner-and-buffered-reader/buffer.png)
 
 ![Untitled](/assets/img/2021-11-02-scanner-and-buffered-reader/difference.png)
