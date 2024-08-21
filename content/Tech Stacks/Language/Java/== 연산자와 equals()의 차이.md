@@ -1,9 +1,8 @@
 ---
-title: '[Java] == 연산자와 equals()의 차이'
-author: meatsby
+title: "[Java] == 연산자와 equals()의 차이"
 date: 2021-11-02 10:00:04 +0900
-categories: [TIL, Java]
-tags: [Java]
+tags:
+  - Java
 ---
 ## == 연산자
 ---

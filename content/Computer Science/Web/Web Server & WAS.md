@@ -1,5 +1,5 @@
 ---
-title: "Web Server & WAS"
+title: Web Server & WAS
 date: 2022-08-02 19:30:00 +0900
 status: In Progress
 tags:

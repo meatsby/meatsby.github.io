@@ -1,5 +1,5 @@
 ---
-title: "Semaphore & Mutex"
+title: Semaphore & Mutex
 date: 2022-10-08 23:45:00 +0900
 status: In Progress
 tags:

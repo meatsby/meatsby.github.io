@@ -1,5 +1,5 @@
 ---
-title: "Linux Commands"
+title: Linux Commands
 date: 2022-09-16 19:10:00 +0900
 status: In Progress
 tags:

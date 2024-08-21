@@ -1,5 +1,5 @@
 ---
-title: "DDL & DML & DCL"
+title: DDL & DML & DCL
 date: 2022-12-26 16:00:00 +0900
 status: In Progress
 tags:

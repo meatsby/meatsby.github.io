@@ -1,5 +1,5 @@
 ---
-title: "Process & Thread"
+title: Process & Thread
 date: 2022-10-04 19:00:00 +0900
 status: In Progress
 tags:

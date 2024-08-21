@@ -1,5 +1,5 @@
 ---
-title: "GRASP 객체지향 설계 기법"
+title: GRASP 객체지향 설계 기법
 date: 2022-03-21 23:30:00 +0900
 status: In Progress
 tags:

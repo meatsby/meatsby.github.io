@@ -1,5 +1,5 @@
 ---
-title: "Transaction"
+title: Transaction
 date: 2022-09-26 12:50:00 +0900
 status: In Progress
 tags:

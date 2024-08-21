@@ -1,5 +1,5 @@
 ---
-title: "Broken pipe 오류 원인, 해결 방법"
+title: Broken pipe 오류 원인, 해결 방법
 date: 2022-04-06 23:20:00 +0900
 status: In Progress
 tags:

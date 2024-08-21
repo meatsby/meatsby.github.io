@@ -1,5 +1,5 @@
 ---
-title: "Git Commands"
+title: Git Commands
 date: 2022-11-10 12:10:00 +0900
 status: In Progress
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "SSE"
+title: SSE
 date: 2022-08-10 12:40:00 +0900
 status: In Progress
 tags:

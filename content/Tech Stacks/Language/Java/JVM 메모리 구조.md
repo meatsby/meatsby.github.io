@@ -1,9 +1,9 @@
 ---
-title: '[Java] JVM 메모리 구조'
-author: meatsby
+title: "[Java] JVM 메모리 구조"
 date: 2021-11-02 10:00:03 +0900
-categories: [TIL, Java]
-tags: [Java, JVM]
+tags:
+  - Java
+  - JVM
 ---
 ## Java Virtual Machine
 ---

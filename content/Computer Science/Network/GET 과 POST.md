@@ -1,5 +1,5 @@
 ---
-title: "GET 과 POST"
+title: GET 과 POST
 date: 2022-04-01 17:20:00 +0900
 status: In Progress
 tags:

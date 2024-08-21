@@ -1,5 +1,5 @@
 ---
-title: "Value Object"
+title: Value Object
 date: 2022-03-07 13:30:00 +0900
 status: In Progress
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "DELETE & TRUNCATE & DROP"
+title: DELETE & TRUNCATE & DROP
 date: 2022-12-26 16:10:00 +0900
 status: In Progress
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "nGrinder 시작하기"
+title: nGrinder 시작하기
 date: 2022-09-16 20:20:00 +0900
 status: In Progress
 tags:

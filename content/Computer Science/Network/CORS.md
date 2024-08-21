@@ -1,5 +1,5 @@
 ---
-title: "CORS"
+title: CORS
 date: 2022-10-04 13:20:00 +0900
 status: In Progress
 tags:
