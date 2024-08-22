@@ -147,7 +147,7 @@ spec:
     - name: nginx-container
       image: nginx
 ```
-- K8s uses YAML files as inputs for creating objects and all objects contains 4 top-level fields.
+- K8s uses YAML files as inputs for creating objects and all objects contain 4 top-level fields.
 	- `apiVersion`
 		- The version of K8s API that is used for creating the object.
 		- e.g. v1, apps/v1, etc
