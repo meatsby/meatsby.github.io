@@ -161,6 +161,11 @@ spec:
 		- A specification of the object to be created.
 		- For the above example, `containers` section is a list that can be listed with `-` character.
 
+A pod can be created with the command below:
+```
+kubectl run nginx --image=nginx
+```
+or using a YAML file:
 ```
 kubectl create -f pod-definition.yaml
 kubectl get pods
