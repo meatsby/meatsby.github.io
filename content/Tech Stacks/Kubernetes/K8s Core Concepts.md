@@ -213,6 +213,60 @@ kubectl get replicationcontroller
 kubectl get pods
 ```
 
+### Creating ReplicaSet with YAML
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
+```
+- `template`
+	- A template of the pod definition.
+- `replicas`
+	- Number of replicas of the template.
+- `selector`
+	- It helps identify pods that fall under it so that it can monitor the selected pods and maintain the number of replicas in the cluster.
+
+Then run the below commands to create and see the objects created.
+```
+kubectl create -f replicaset-definition.yaml
+kubectl get replicaset
+kubectl get pods
+```
+
+To scale the number of replicas by file:
+```
+kubectl replace -f replicaset-definition.yaml
+```
+
+To scale the number of replicas by command:
+```
+kubectl scale --replicas=6 -f replicaset-definition.yaml
+```
+or
+```
+kubectl scale --replicas=6 replicaset myapp-replicaset
+```
+- Note these two commands will not change the definition file.
+
 ### Deployment
 - 내부적으로 ReplicaSet 을 이용하여 배포 버전을 관리
 
