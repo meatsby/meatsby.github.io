@@ -117,7 +117,8 @@ wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux
 
 ## K8s Objects
 ---
-### Pod
+## Pod
+---
 - 가장 작은 배포 단위
 - 전체 클러스터에서 고유한 IP 할당
 - 1~N 개의 Container 를 포함
@@ -172,9 +173,45 @@ kubectl get pods
 kubectl describe pod myapp-pod
 ```
 
-### ReplicaSet
-- 여러개의 Pod 을 관리
-- Pod 을 생성 또는 제거하여 원하는 수를 유지
+## ReplicaSet
+---
+- Replication Controller & ReplicaSet is similar but different. The Replication Controller is the older technology that ReplicaSet replaces.
+- The ReplicaSet helps to run and maintain the desired number of pods in the K8s cluster by creating and deleting pods based on the configuration. This allows the K8s cluster to achieve high availability.
+- It also provides load-balancing & scaling capability by deploying additional pods in existing or additional nodes. This means the ReplicaSet spans across multiple nodes in the cluster.
+
+### Creating Replication Controller with YAML
+```yaml
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp-rc
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+  replicas: 3
+```
+- `template`
+	- A template of the pod definition.
+- `replicas`
+	- Number of replicas of the template.
+
+Then run the below commands to create and see the objects created.
+```
+kubectl create -f rc-definition.yaml
+kubectl get replicationcontroller
+kubectl get pods
+```
 
 ### Deployment
 - 내부적으로 ReplicaSet 을 이용하여 배포 버전을 관리
