@@ -1,10 +1,10 @@
 ---
 title: Packer & Ansible
 date: 2024-08-12 21:13:02 +0800
-status: To Do
+status: In Progress
 draft: false
 tags:
-  - example-tag
+  - DevOps
 ---
 ## Packer
 ---
