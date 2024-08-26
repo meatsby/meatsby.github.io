@@ -267,8 +267,49 @@ kubectl scale --replicas=6 replicaset myapp-replicaset
 ```
 - Note these two commands will not change the definition file.
 
-### Deployment
+## Deployment
+---
 - 내부적으로 ReplicaSet 을 이용하여 배포 버전을 관리
+- The Deployment provides the capability of upgrading underlying instances seamlessly using rolling updates, undo changes, pauses, and resume changes as required.
+
+### Creating Deployment with YAML
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
+```
+- All contents of the Deployment are exactly similar to the ReplicaSet definition file.
+
+Run the below commands to create and find the objects created:
+```
+kubectl create -f deployment-definition.yaml
+kubectl get deployments
+kubectl get replicaset
+kubectl get pods
+```
+or
+```
+kubectl get all
+```
 
 ### Service - ClusterIP
 - 클러스터 내부에서 사용하는 프록시
