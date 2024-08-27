@@ -1,15 +1,14 @@
 ---
-title: "[백준] 1260번 DFS와 BFS (Python)"
+title: "BOJ 1260 - DFS와 BFS"
 date: 2021-10-12 22:00:00 +0900
+status: Done
+draft: false
 tags:
   - Algorithms
   - BOJ
 ---
-
 ## 풀이
-
 ---
-
 그래프탐색을 이해하기 위한 기본문제이다.
 
 정점과 간선이 주어졌을 때 이를 DFS 와 BFS 를 통해 수행할 경우 방문된 순서대로 출력하는 문제다.
@@ -29,9 +28,7 @@ tags:
 DFS 에서는 재귀를 활용해 방분하지 않았던 정점이라면 DFS 를 재귀적으로 실행시켜주는 방식으로 구현된다.
 
 ## 소스코드
-
 ---
-
 ```python
 # DFS와 BFS
 from collections import deque
@@ -73,7 +70,5 @@ bfs(v)
 ```
 
 ## References
-
 ---
-
 - [BOJ 1260 - DFS와 BFS](https://www.acmicpc.net/problem/1260)
