@@ -6,11 +6,8 @@ draft: false
 tags:
   - Java
 ---
-
 ## 패키지
-
 ---
-
 ### 패키지 구조
 
 - 세부 구조는 ~~도메인 형~~ vs **레이어 형 으로 결정**
@@ -23,9 +20,7 @@ tags:
 - 인프라 계층 - infrastructure
 
 ## 코드
-
 ---
-
 ### 클래스 구성 순서
 
 - 상수
@@ -119,9 +114,7 @@ public class Convention extends Parent {
 ```
 
 ## 테스트
-
 ---
-
 ### 테스트 컨벤션
 
 - `@DisplayName` 대신 메서드 명을 한글로 작성한다.

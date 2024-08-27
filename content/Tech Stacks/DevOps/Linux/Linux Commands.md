@@ -6,7 +6,6 @@ draft: false
 tags:
   - Linux
 ---
-
 ### 로그 파일 생성 없이, 세션 종료 없이 백그라운드 실행
 
 ```bash
@@ -57,9 +56,7 @@ ssh -i ssh-key-2023-08-09.key opc@129.154.55.231
 ```
 
 ## Insufficient space for shared memory file
-
 ---
-
 ### 디스크 용량 확인
 
 ```bash

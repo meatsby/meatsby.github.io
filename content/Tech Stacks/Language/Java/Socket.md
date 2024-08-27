@@ -6,5 +6,4 @@ draft: false
 tags:
   - Java
 ---
-
 [https://docs.oracle.com/javase/tutorial/networking/sockets/definition.html](https://docs.oracle.com/javase/tutorial/networking/sockets/definition.html)

@@ -6,11 +6,8 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## 개요
-
 ---
-
 안녕하세요 공책팀에서 백엔드 개발을 맡고 있는 쿼리치입니다.
 
 1차 스프린트를 진행하면서 다양한 상황들을 마주했는데요.
@@ -18,9 +15,7 @@ tags:
 이번 글을 통해 1차 스프린트 진행 중 마주치게 된 한 상황에 대해 기록해보고자 합니다.
 
 ## @WebMvcTest 사용 중..
-
 ---
-
 Presentation Layer 를 테스트하기 위해 우린 흔히 `@WebMvcTest` 를 사용합니다.
 
 `@SpringBootTest` 는 Application Context 를 완전히 실행하여 모든 빈을 등록하는 반면, `@WebMvcTest` 는 Presentation Layer 관련 빈만을 스캔 및 등록하기 때문에 보다 쾌적한 슬라이스 테스트를 진행할 수 있습니다.
@@ -79,7 +74,5 @@ Presentation Layer 를 테스트하기 위해 우린 흔히 `@WebMvcTest` 를 �
 놀랍게도 위와 같은 문장이 적혀있는 것을 확인하실 수 있습니다.
 
 ## 결론
-
 ---
-
 이번 사건을 통해 버전 확인에 대한 중요성을 알 수 있었고 공식 문서에 아직 반영되지 않은 기능들이 있을 수 있기 때문에 spring-boot GitHub 의 Release Note 를 잘 활용한다면 원하는 정보를 공식적으로 찾을 수 있다는 것을 알 수 있었습니다.

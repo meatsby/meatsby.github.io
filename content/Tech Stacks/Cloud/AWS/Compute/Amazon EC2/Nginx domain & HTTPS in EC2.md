@@ -7,7 +7,6 @@ tags:
   - AWS
   - EC2
 ---
-
 ### Nginx 란?
 
 `Nginx` 란 웹서버의 일종이다.
@@ -86,9 +85,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 이런 결과가 보인다면 테스트에 성공했다는 의미이다.
 
 ## CertBot
-
 ---
-
 ### CertBot 이란?
 
 `CertBot` 은 Let’s Encrypt 의 SSL 인증서를 쉽게 발급 받을 수 있도록 도와주는 프로그램이다.
@@ -161,9 +158,7 @@ server {
 이를 통해 해당 도메인으로 들어온 요청을 모두 백엔드 서버로 보낼 수 있다.
 
 ## References
-
 ---
-
 - [https://suyeoniii.tistory.com/77](https://suyeoniii.tistory.com/77)
 - [https://www.sunny-son.space/AWS/HTTPS 설정하기/](https://www.sunny-son.space/AWS/HTTPS%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/)
 - [https://yeni-days.tistory.com/9](https://yeni-days.tistory.com/9)

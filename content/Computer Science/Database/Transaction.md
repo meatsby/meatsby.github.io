@@ -6,11 +6,8 @@ draft: false
 tags:
   - Database
 ---
-
 ## 트랜잭션이란?
-
 ---
-
 트랜잭션이란 데이터의 정합성을 보장하기 위해 고안된 방법으로, 다른 트랜잭션과 독립적이고 일관되고 신뢰할 수 있는 방식으로 처리되어야 한다.
 
 ### 트랜잭션의 목적
@@ -19,9 +16,7 @@ tags:
 - 동시에 접근하는 여러 프로그램 간에 격리를 제공
 
 ## ACID
-
 ---
-
 트랜잭션의 목적을 달성하기 위해 트랜잭션이 가져야 하는 속성
 
 ### Atomicity, 원자성
@@ -41,7 +36,5 @@ tags:
 - 커밋이 완료된 트랜잭션은 손상되지 않는 성질을 말한다.
 
 ## References
-
 ---
-
 - [https://vladmihalcea.com/a-beginners-guide-to-acid-and-database-transactions/](https://vladmihalcea.com/a-beginners-guide-to-acid-and-database-transactions/)

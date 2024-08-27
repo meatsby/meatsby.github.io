@@ -6,7 +6,6 @@ draft: false
 tags:
   - Gradle
 ---
-
 [https://jojoldu.tistory.com/123](https://jojoldu.tistory.com/123)
 
 [https://kwonnam.pe.kr/wiki/gradle/multiproject](https://kwonnam.pe.kr/wiki/gradle/multiproject)

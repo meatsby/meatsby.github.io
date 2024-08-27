@@ -6,11 +6,8 @@ draft: false
 tags:
   - Database
 ---
-
 ## DDL, Data Definition Language 데이터 정의어
-
 ---
-
 | 종류 | 역할 |
 | --- | --- |
 | CREATE | 데이터베이스, 테이블 등을 생성 |
@@ -22,9 +19,7 @@ tags:
 - 데이터베이스 관리자나 데이터베이스 설계자가 사용
 
 ## DML, Data Manipulation Language 데이터 조작어
-
 ---
-
 | 종류 | 역할 |
 | --- | --- |
 | SELECT | 데이터 조회 |
@@ -36,9 +31,7 @@ tags:
 - 데이터베이스 사용자와 데이터베이스 관리 시스템 간의 인터페이스 제공
 
 ## DCL, Data Control Language 데이터 제어어
-
 ---
-
 | 종류 | 역할 |
 | --- | --- |
 | GRANT | 특정 DB 사용자에게 특정 작업에 대한 권한 부여 |

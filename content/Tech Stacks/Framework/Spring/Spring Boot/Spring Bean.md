@@ -6,19 +6,14 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## Spring Bean
-
 ---
-
 Spring Bean 이란 IoC Container 내부에 들어있는 객체로 필요할 때 꺼내서 사용할 수 있다.
 
 `@Bean` 이나 `xml` 설정을 통해 일반 객체를 Bean 으로 등록할 수 있다.
 
 ## Spring Bean 생성 과정
-
 ---
-
 ### Spring Bean 의 생명주기
 
 1. 객체 생성
@@ -32,9 +27,7 @@ Bean 은 IoC Container 에 의해 생명주기를 관리하며 초기화 방법�
 생성한 Bean 을 등록할 때는 `@ComponentScan` 을 이용하거나 `@Configuration` 의 `@Bean` 을 사용하여 Bean 설정 파일에 직접 Bean 을 등록할 수 있다.
 
 ## Bean 등록 방법
-
 ---
-
 ### @Component
 
 Bean 으로 등록하고자 하는 클래스 선언부 상단에 `@Component` 애너테이션을 추가하여 Bean 으로 등록할 수 있다.
@@ -52,9 +45,7 @@ Bean 으로 등록할 클래스를 반환하는 메서드를 만들고 해당 �
 이 때 생성되는 Bean 의 이름은 기본적으로 메서드명으로 지정되며, `@Bean(name = "name")` 을 통해 직접 이름을 지정해줄 수 도 있다.
 
 ## Bean Scope
-
 ---
-
 Bean Scope 는 Bean 이 존재할 수 있는 범위를 뜻하며 `Singleton` `Prototype` `Request` `Session` `Application` 등이 존재한다.
 
 ### Singleton
@@ -78,7 +69,5 @@ Session 은 웹 세션 생성부터 종료까지 유지하는 Scope 다.
 Application 은 WebServletContext 와 같은 범위로 유지하는 Scope 다.
 
 ## References
-
 ---
-
 - [https://dev-coco.tistory.com/69?category=1009530](https://dev-coco.tistory.com/69?category=1009530)

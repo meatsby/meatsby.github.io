@@ -6,7 +6,6 @@ draft: false
 tags:
   - Design Pattern
 ---
-
 - SRP (단일책임의 원칙: Single Responsibility Principle)
     - 작성된 클래스는 하나의 기능만 가지며 클래스가 제공하는 모든 서비스는 그 하나의 책임(변화의 축: axis of change)을 수행하는 데 집중되어 있어야 한다
 - OCP (개방폐쇄의 원칙: Open Close Principle)

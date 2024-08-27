@@ -6,11 +6,8 @@ draft: false
 tags:
   - Java
 ---
-
 ## String 타입
-
 ---
-
 ```java
 String str = "hello";
 str = str + " world";
@@ -42,9 +39,7 @@ String str = sb.toString();
 위 코드 처럼 `.append()` `.delete()` 등의 API 를 사용하여 동일 객체 내에서 문자열을 변경하는 것이 가능하다. 때문에 변경이 빈번한 로직을 사용해야 할 경우 `StringBuilder` 와 `StringBuffer` 를 사용하는 것이 효과적이다.
 
 ## StringBuilder 와 StringBuffer 의 차이
-
 ---
-
 ```java
 public final class StringBuilder
     extends AbstractStringBuilder
@@ -88,15 +83,11 @@ public synchronized StringBuffer append(Object obj) {
 하지만, `StringBuilder` 는 동기화를 고려하지 않기 때문에 단일 스레드 환경에선 `StringBuffer` 보다 성능이 뛰어나다는 것을 알 수 있다.
 
 ## 결론
-
 ---
-
 ![[StringBuilder vs StringBuffer.png]]
 
 위 그림은 `String` `StringBuilder` `StringBuffer` 의 특징에 대해서 정리된 표이다. 문자열을 사용해야하는 상황에 맞춰 알맞게 사용하면 될 것 같다.
 
 ## References
-
 ---
-
 - [https://ifuwanna.tistory.com/221](https://ifuwanna.tistory.com/221)

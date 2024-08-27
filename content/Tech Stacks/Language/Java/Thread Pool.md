@@ -6,11 +6,8 @@ draft: false
 tags:
   - Java
 ---
-
 ## Java Thread Pool
-
 ---
-
 ![[Executor Service.png]]
 
 OS 는 병렬 처리를 모방하기 위해 Thread 간의 Context Switching 을 수행합니다. Java 에서 Thread 는 OS 의 Thread 에 매핑됩니다. 때문에 Thread 를 너무 많이 생성하게 된다면 OS 의 자원이 빠르게 소진될 수 있으며 Context Switching 비용 역시 증가할 수 있습니다.
@@ -24,9 +21,7 @@ Java 에서는 `Executor` 인터페이스를 통해 Thread Pool 을 구현하였
 이번 글에선 `ExecutorService` `ThreadPoolExecutor` `ScheduledThreadPoolExecutor` `Executors` 에 대해 알아보겠습니다.
 
 ## ExecutorService
-
 ---
-
 ```java
 @Test
 void executorServiceTest() throws ExecutionException, InterruptedException {
@@ -191,9 +186,7 @@ boolean isCancelled = future.isCancelled();
 `Future` 인터페이스는 작업을 도중에 취소하는 `cancel()` 메서드를 제공하며 `isCancelled()` 메서드를 통해 작업의 취소 여부를 확인할 수 있습니다.
 
 ## ScheduledExecutorService
-
 ---
-
 `ScheduledExecutorService` 인터페이스는 미리 정의된 지연 또는 주기적으로 작업을 실행할 수 있게 도와주는 인터페이스입니다.
 
 ```java
@@ -218,9 +211,7 @@ executorService.scheduleWithFixedDelay(task, 100, 150, TimeUnit.MILLISECONDS);
 `scheduleAtFixedRate()` 및 `scheduleWithFixedDelay()` 메서드는 `ExecutorService` 가 종료되거나 실행 중 예외가 발생하는 경우 종료됩니다.
 
 ## Executors
-
 ---
-
 `Executors` 클래스는 미리 구성된 Thread Pool 인스턴스를 만들기 위한 여러 메서드가 포함되어 있습니다. 커스텀 튜닝이 필요하지 않다면 해당 클래스를 통해 Thread Pool 을 생성하여 사용할 수 있습니다.
 
 `Executor` 와 `ExecutorService` 인터페이스를 통해 다양한 Thread Pool 을 사용할 수 있습니다.
@@ -344,9 +335,7 @@ void scheduleAtFixedRateTest() throws InterruptedException {
 위 코드는 0.5초 대기 후 매 0.1초 마다 Hello World 를 출력하는 스케줄링 입니다.
 
 ## References
-
 ---
-
 - [Baeldung - Introduction to Thread Pools in Java](https://www.baeldung.com/thread-pool-java-and-guava)
 - [Baeldung - A Guide to the Java ExecutorService](https://www.baeldung.com/java-executor-service-tutorial)
 - [Tecoble - Java 에서 스레드 풀(Thread Pool) 을 사용해 보자](https://tecoble.techcourse.co.kr/post/2021-09-18-java-thread-pool/)

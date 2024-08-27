@@ -6,7 +6,6 @@ draft: false
 tags:
   - ZooKeeper
 ---
-
 - Zookeeper 는 단순히 디렉토리 형태의 데이터 저장소
 - Coordinaton Service System
     - Info sharing between systems

@@ -6,11 +6,8 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## Dependency Injection
-
 ---
-
 Dependency Injection, DI 는 의존관계 주입으로 Spring 프레임워크에서 제공하는 IoC 의 형태이다. 클래스 사이의 의존관계를 빈 설정 정보를 바탕으로 컨테이너가 자동으로 연결해준다.
 
 DI 를 통해 의존성을 주입하면 모듈 간의 결합도가 낮아지고 유연성이 높아지는 장점을 활용할 수 있다.
@@ -18,9 +15,7 @@ DI 를 통해 의존성을 주입하면 모듈 간의 결합도가 낮아지고 
 스프링에선 스프링 컨테이너 `ApplicationContext` 를 통해 설정 정보를 생성 및 등록하고 객체를 생성자 혹은 `setter` 를 통해 주입한다.
 
 ## DI 종류
-
 ---
-
 ### 생성자 주입
 
 ```java
@@ -73,7 +68,5 @@ DI 프레임워크 없이는 작동하기 힘들며, 외부에서 변경이 불�
 주로 애플리케이션과 관계없는 테스트코드나 `@Configuration` 과 같은 스프링 설정 목적으로 사용한다.
 
 ## References
-
 ---
-
 - [https://dev-coco.tistory.com/70?category=1009530](https://dev-coco.tistory.com/70?category=1009530)

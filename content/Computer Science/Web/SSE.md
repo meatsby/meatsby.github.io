@@ -6,11 +6,8 @@ draft: false
 tags:
   - Web
 ---
-
 ## HTTP
-
 ---
-
 ### HTTP 1.0
 
 - Open TCP connection
@@ -28,9 +25,7 @@ TCP 3-way handshake expensive
 - Close TCP connection if I want to
 
 ## WebSockets
-
 ---
-
 - Open connection
 - GET 1.1 UPGRADE
 - 101 - Switching Protocols
@@ -38,9 +33,7 @@ TCP 3-way handshake expensive
 - Bidirectional no order
 
 ## Server Sent Events
-
 ---
-
 - Open connection
 - Send GET text/event-stream
 - Respond : Content-Type = text/event-stream / Transfer-Encoding chunked
@@ -48,9 +41,7 @@ TCP 3-way handshake expensive
 - Server or Client can close connection
 
 ## SSE Example
-
 ---
-
 ### SSE use cases
 
 - Live Feed
@@ -65,9 +56,7 @@ res.write("data: " + "hello!\n\n")
 ```
 
 ## SSE Pros and Cons
-
 ---
-
 ### Pros
 
 - Lightweight
@@ -90,9 +79,7 @@ res.write("data: " + "hello!\n\n")
 - Long polling
 
 ## 실시간 기술
-
 ---
-
 ### Polling
 
 - 특정 주기로 요청을 보낸다.
@@ -115,9 +102,7 @@ res.write("data: " + "hello!\n\n")
 - Web Socket 은 금지 기술이었고 SSE 로도 충분히 원하는 결과를 얻어낼 수 있을 것이라 판단하여 SSE 를 사용했다.
 
 ## Spring SseEmitter
-
 ---
-
 Polling
 
 ### NginX 설정
@@ -148,9 +133,7 @@ server {
 SSE 를 NginX 를 통해 클라이언트에게 보내주기 위해선 `location` 내부에 위와 같은 설정이 추가되어야 한다.
 
 ## References
-
 ---
-
 - [Server-Sent Events Crash Course](https://www.youtube.com/watch?v=4HlNv1qpZFY)
 - [[Spring + SSE] Server-Sent Events를 이용한 실시간 알림](https://velog.io/@max9106/Spring-SSE-Server-Sent-Events%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EC%95%8C%EB%A6%BC)
 - [Spring Event와 SSE 로 리액티브하게 접근하기 (EventListener, Server-Sent Events, 비동기 컨트롤러, RxJava로 동일하게 재구현)](https://xzio.tistory.com/1000)

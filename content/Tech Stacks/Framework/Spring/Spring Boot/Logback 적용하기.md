@@ -6,11 +6,8 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## 로깅
-
 ---
-
 ### 로깅이란?
 
 프로그램 동작 시 발생하는 모든 일을 기록하는 행위를 말한다.
@@ -36,9 +33,7 @@ tags:
 하지만 디버깅을 할 수 없는 상황에서는 기록을 통해 문제점을 파악하여 추후에 개선하는 방향을 도모해야하기 때문에 로깅이 최선의 선택이 되는 것이다.
 
 ## Logback
-
 ---
-
 ### Logback 이란?
 
 Logback 이란 Log4J 를 기반으로 개발된 SLF4J 의 구현체, 로깅 라이브러리다.
@@ -75,9 +70,7 @@ Logback 은 로그에 특정 레벨을 설정할 수 있는데, 실운영과 테
 | Trace | Debug 레벨보다 더 자세함. Dev 환경에서 버그를 해결하기 위해 사용. |
 
 ## Logback 구조
-
 ---
-
 ### logback-core
 
 다른 두 모듈을 위한 기반 역할을 하는 모듈이며, Appender 와 Layout 인터페이스가 이 모듈에 속한다.
@@ -99,9 +92,7 @@ Servlet Container 와 통합되어 HTTP 엑세스에 대한 로깅 기능을 제
 웹 애플리케이션 레벨이 아닌 컨테이너 레벨에서 설치 되어야한다.
 
 ## Logback 설정
-
 ---
-
 ### Logback 설정 파일 형식
 
 ![[Logback Config.png]]
@@ -169,9 +160,7 @@ root 는 전역 설정, 지역 설정을 하기 위해선 logger 를 사용
 - `%r` 어플리케이션 실행 후 로깅이 발생한 시점까지의 시간
 
 ## 프로젝트 적용
-
 ---
-
 ### 왜 로깅을 해야할까?
 
 로깅을 적용하기에 앞서 로깅을 왜 적용해야 하는가에 대한 의논이 필요했다.
@@ -213,9 +202,7 @@ root 는 전역 설정, 지역 설정을 하기 위해선 logger 를 사용
 - `Info` 정상적인 사용 시 발생할 수 있는 예외
 
 ## References
-
 ---
-
 - [https://www.youtube.com/watch?v=fkwb8coxBJM&t=531s](https://www.youtube.com/watch?v=fkwb8coxBJM&t=531s)
 - [https://livenow14.tistory.com/63](https://livenow14.tistory.com/63)
 - [https://livenow14.tistory.com/64](https://livenow14.tistory.com/64)

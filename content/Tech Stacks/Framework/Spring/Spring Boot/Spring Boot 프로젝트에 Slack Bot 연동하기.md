@@ -6,11 +6,8 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## 개요
-
 ---
-
 안녕하세요 공책팀에서 백엔드 개발을 맡고 있는 쿼리치입니다.
 
 2차 스프린트를 진행하면서 저희 공책 프로젝트에 새로운 기능들이 많이 추가될 예정인데요.
@@ -27,9 +24,7 @@ Slack 에서 제공하는 API 로 메시지 봇을 만드는 방법은 총 두 �
 하나하나 방법을 알아보면서 두 가지의 차이점을 먼저 알아보겠습니다.
 
 ## 토큰 + 채널명으로 Slack Bot 연동하기
-
 ---
-
 ### 앱 생성하기
 
 ![[Slack App Create.png]]
@@ -79,9 +74,7 @@ Install App 으로 이동 후 `Install to Workspace` 를 통해 워크스페이�
 여기까지 완료했다면 토큰 + 채널명을 기반으로 한 봇 사용이 가능합니다.
 
 ## Webhook URL 을 통해 Slack Bot 연동하기
-
 ---
-
 Webhook 의 경우 권한 설정까지는 동일하게 설정해주고 시작해줍니다.
 
 ![[Slack Incoming Webhook.png]]
@@ -105,9 +98,7 @@ Webhook URL 이 생성되었습니다.
 해당 URL 을 통해 메시지를 보내줄 수 있습니다.
 
 ## Spring Boot 프로젝트에 연동하기
-
 ---
-
 ### build.gradle
 
 ```java
@@ -183,9 +174,7 @@ public void sendMessageWithAppUrl(final SubmissionResponse submissionResponse) {
 Slack App 을 만드는 과정이나 코드를 작성하는 과정을 보았을 때 두 방법 모두 큰 차이점은 없는 것 같습니다. 그렇다면 외부 사용자 입장에선 어떤 방식이 더 좋은 접근성을 가지고 있을까요?
 
 ## 외부인 입장으로 봇 연동해보기
-
 ---
-
 외부인의 입장으로 생각해봅시다.
 
 공책 서비스를 사용하고 슬랙으로 알림으로 받고 싶은데 Slack App 을 만드는 과정은 너무 복잡합니다.
@@ -235,9 +224,7 @@ public void sendMessageWithIncomingWebhookAppUrl(final SubmissionResponse submis
 코드 역시 Webhook URL 만 변경해주면 되기 때문에 사용자가 기입한 URL 을 가져와 사용할 수 있습니다.
 
 ## 외부 API 비동기 처리하기
-
 ---
-
 현재 구조에선 Slack 에서 제공하는 API 를 활용해 요청을 보내고 있습니다.
 
 외부 API 를 사용하는 것이기 때문에 해당 기능에 장애가 생겼을 경우를 따져봐야합니다.
@@ -342,9 +329,7 @@ public ResponseEntity<Void> submitJobCompletion(@AuthenticationPrincipal final L
 저희에게 해당하는 사항은 `TaskRejectedException` 에 대한 방어 처리이기 때문에 해당 메서드를 사용하는 쪽에 방어 코드를 작성해주도록 하겠습니다.
 
 ## 결론
-
 ---
-
 메시지 봇을 적용하는 두 가지 방법을 비교해본 결과 개발하는 입장에선 큰 차이를 느끼지 못했습니다.
 
 하지만, 공책 앱이 public 하게 distribute 되는 것이 아닌 이상 외부인이 공책 앱을 설치하고 사용하는 것에 불편함이 있을 수 있다는 것을 생각해볼 수 있었습니다.
@@ -354,9 +339,7 @@ public ResponseEntity<Void> submitJobCompletion(@AuthenticationPrincipal final L
 또한, 외부 API 의 의존성을 최소화하기 위해 비동기 처리를 생각해볼 수 있었습니다.
 
 ## References
-
 ---
-
 - [https://velog.io/@jimin3263/Spring-boot-Slack](https://velog.io/@jimin3263/Spring-boot-Slack)
 - [https://vixxcode.tistory.com/188](https://vixxcode.tistory.com/188)
 - [https://velog.io/@rudwnd33/springboot-slack](https://velog.io/@rudwnd33/springboot-slack)

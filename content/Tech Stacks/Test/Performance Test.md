@@ -6,11 +6,8 @@ draft: false
 tags:
   - Test
 ---
-
 ## Performance Test
-
 ---
-
 ### 성능 테스트의 목적
 
 서비스를 운영하다보면 현재 아키텍처의 가용성에 대한 고민이 자연스럽게 따라옵니다. 가용성을 높인다는 것은 서비스의 안정적인 운영을 보장한다는 의미이기도 합니다. 때문에 고가용성 아키텍처를 구성하는 것은 안정적인 서비스 운영을 위해 필수적입니다.
@@ -37,9 +34,7 @@ tags:
 - Latency, 지연율입니다. MTT 등으로 많이 사용될 예정입니다.
 
 ## Load Test
-
 ---
-
 Load Test, 부하 테스트는 평소 트래픽과 최대 트래픽 시나리오에서 시스템의 성능을 확인하기 위한 성능 테스트입니다. 즉, 시스템의 성능을 확인하고 기대 성능에 도달하기 위해 수행하는 테스트입니다.
 
 시스템이 실제 서비스 중이라고 가정하고 성능을 확인 및 개선하기 위한 테스트인 만큼 너무 낮거나 너무 높은 수치의 부하는 서버가 충분한 부하를 견디지 못하거나 너무 많은 비용을 초래할 수 있기 때문에 적절한 수준의 부하를 지정하는 것이 중요합니다.
@@ -89,9 +84,7 @@ Submission 목록 조회 API 는 단순 조회 API 이기 때문에 보다 유�
 현재 WAS 는 Spring Boot 로 이루어져 있기 때문에 Tomcat 과 Hikari CP 설정을 적절히 조절하여 성능을 최대로 끌어올려보는 작업을 진행해보겠습니다.
 
 ## Tomcat Tuning
-
 ---
-
 ### MaxThread Default 200
 
 ![[MaxThread 200.png]]
@@ -135,9 +128,7 @@ $$
 이를 통해 공식을 통해 계산한 것과 비슷하게 `MaxThread` 5가 가장 적절한 값임을 확인할 수 있었습니다.
 
 ## Hikari CP Tuning
-
 ---
-
 두 번째로 조정해볼 수 있는 지점은 DB 커넥션을 관리하는 Hikari CP 의 Connection Pool Size 입니다.
 
 Hikari CP 공식문서에 따르면 아래 공식을 통한 Connection Pool Size 가 가장 적절하다고 소개합니다.
@@ -169,9 +160,7 @@ $$
 이로써 300,000 MAU 환경에서의 WAS 설정을 모두 마무리할 수 있었습니다. Tomcat Thread 와 Hikari CP 를 5로 설정함으로써 TPS 를 92.6에서 130.3으로 약 40% 개선했으며 MTT 또한 73.52에서 51.64으로 현저히 줄어든 것을 확인할 수 있었습니다.
 
 ## Stress Test
-
 ---
-
 ### Saturation Point
 
 ![[Saturation Point.png]]
@@ -216,9 +205,7 @@ Saturation Point 를 찾음으로써 현재 아키텍처의 한계를 파악하�
 이를 해결하기 위해 스케일 업 또는 스케일 아웃 등의 방법을 생각해볼 수 있는데요. 이번엔 간단하게 WAS 한 대를 추가하고 로드 밸런싱을 통해 스케일 아웃 하는 작업을 진행한 뒤 TPS 를 다시 측정해보겠습니다.
 
 ## Scale Out
-
 ---
-
 ### VUser 50
 
 ![[VUser 50 TPS.png]]
@@ -248,9 +235,7 @@ Saturation Point 를 찾음으로써 현재 아키텍처의 한계를 파악하�
 스케일 아웃을 통해 요청을 처리하는 WAS 가 이중화되자 Saturation Point 는 VUser 가 400 이 되는 지점까지 증가했고 TPS 와 MTT 역시 상당히 많이 개선된 것을 확인할 수 있습니다.
 
 ## 마주친 문제들
-
 ---
-
 ### Pinpoint Agent 와 같이 실행 시 G1GC 가 적용되지 않는 이슈
 
 ```groovy
@@ -260,15 +245,11 @@ sudo nohup java -XX:+UseG1GC -XX:+DisableExplicitGC -XX:MaxGCPauseMillis=200 -ja
 모니터링을 위해 `Pinpoint Agent` 와 함께 서버를 실행하자 Java 11 의 기본 GC 인 G1GC 가 아닌 Serial GC 가 적용되는 이슈가 있었습니다. 때문에 STW 가 더 자주 발생하여 제대로 된 성능 테스트를 수행할 수 없었고 서버 실행 시 직접 G1GC 를 적용해줌으로써 정상적인 성능 테스트를 수행할 수 있었습니다.
 
 ## 마무리
-
 ---
-
 지금까지 `nGrinder` 를 통해 `Load Test` 와 `Stress Test` 를 수행하고 `Pinpoint` 모니터링과 함께 Tomcat 과 Hikari CP 설정을 튜닝해보는 경험을 소개해드렸습니다. 처음 수행해보는 성능 테스트였기에 오점도 조금씩 보이고 아쉬운 부분이 많은 것 같습니다. 그래도 성능 테스트에 대한 이해와 직접 WAS 를 튜닝해보는 경험 등을 통해 Tomcat, Hikari CP, JVM, GC 등 많은 것을 학습할 수 있었던 것 같습니다.
 
 ## References
-
 ---
-
 - [WhaTap - TPS 지표 이해하기](https://www.whatap.io/ko/blog/14/)
 - [QAInsights - Calculating Virtual Users (VUsers) for Load/Stress Testing](https://qainsights.com/calculating-virtual-users-vusers-for-loadstress-testing/)
 - [우아한형제들 기술블로그 - 결제 시스템 성능, 부하, 스트레트 테스트](https://techblog.woowahan.com/2572/)

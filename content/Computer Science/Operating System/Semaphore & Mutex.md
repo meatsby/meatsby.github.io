@@ -6,11 +6,8 @@ draft: false
 tags:
   - OS
 ---
-
 ## Semaphore 란?
-
 ---
-
 공유자원에 여러 프로세스가 동시에 접근하면서 문제가 발생할 수 있다. 이때 공유자원의 데이터는 한 번에 하나의 프로세스만 접근할 수 있도록 제한을 줘야한다.
 
 Semaphore 는 멀티 프로그래밍 환경에서 공유자원에 대한 접근을 제한하는 방법이다.
@@ -27,9 +24,7 @@ Semaphore 는 멀티 프로그래밍 환경에서 공유자원에 대한 접근�
 - V(S) - 임계 구역에서 나올 때 수행
 
 ## Mutex 란?
-
 ---
-
 Mutual Exclusion, Mutex 는 임계 구역을 가진 스레드들의 실행시간이 서로 겹치지 않고 단독으로 실행되게 하는 기술을 의미한다.
 
 해당 접근을 조율하기 위해 `lock` 과 `unlock` 을 사용한다.
@@ -40,9 +35,7 @@ Mutual Exclusion, Mutex 는 임계 구역을 가진 스레드들의 실행시간
 Semaphore 와 다르게 `lock` 을 획득한 프로세스만 `lock` 을 반환할 수 있다.
 
 ## Mutex 알고리즘
-
 ---
-
 ### Dekker 알고리즘
 
 `flag` 와 `turn` 변수를 통해 임계 구역에 들어갈 스레드를 결정하는 방식이다.
@@ -56,7 +49,5 @@ Dekker 와 유사하지만, 상대 스레드에게 진입 기회를 양보하는
 여러 스레드에 대한 처리가 가능한 알고리즘이다. 가장 작은 수의 번호표를 가지고 있는 프로세스가 임계 구역에 진입한다.
 
 ## References
-
 ---
-
 - [https://gyoogle.dev/blog/computer-science/operating-system/Semaphore & Mutex.html](https://gyoogle.dev/blog/computer-science/operating-system/Semaphore%20&%20Mutex.html)

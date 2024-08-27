@@ -6,7 +6,6 @@ draft: false
 tags:
   - Tomcat
 ---
-
 Spring Boot 를 사용하다보면 내장 톰캣을 Servlet Container 로 사용하여 웹 요청을 처리할 수 있다고 합니다. Tomcat 은 또한 다중 요청을 처리하는데, 이는 Thread Pool 을 통해 구현되어 있습니다.
 
 Tomcat 은 Java 로 만들어져 있기 때문에 Java Thread Pool 을 사용합니다.
@@ -31,7 +30,6 @@ org.apache.tomcat.embed:tomcat-embed-core:9.0.64
 Tomcat 이 사용하는 StandardServer 를 보면 ScheduledThreadPoolExecutor 를 사용하고 있음
 
 ## 선수 지식
-
 1. Tomcat 은 왜 ScheduledThreadPoolExecutor 를 사용하는가?
 2. NIO Connector 에 대한 이해 필요
 3. 스트림 vs 채널에 대한 이해 필요

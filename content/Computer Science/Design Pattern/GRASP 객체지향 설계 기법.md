@@ -6,7 +6,6 @@ draft: false
 tags:
   - Design Pattern
 ---
-
 - GRASP 패턴
     - GRASP 패턴은 “객체 설계와 책임 할당에 관한 기본적인 원리”를, 패턴 형식에 맞추어 기술한 것.
 - 5-GRASP 패턴
@@ -22,5 +21,4 @@ tags:
     - 보호변형패턴 protected variations
 
 ## References
-
 - [GRASP: 책임할당에 기반한 객체 설계 원칙](http://contents.kocw.or.kr/KOCW/document/2014/Seowon/SongHaesang/08.pdf)

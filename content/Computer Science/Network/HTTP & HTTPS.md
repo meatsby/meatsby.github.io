@@ -6,11 +6,8 @@ draft: false
 tags:
   - Network
 ---
-
 ## HTTP 와 HTTPS 의 차이
-
 ---
-
 HTTPS 는 HTTP 에 보안 계층을 추가한 것이다.
 
 HTTPS 는 제 3자 인증, 공개키 암호화, 비밀키 암호화를 사용한다.
@@ -27,9 +24,7 @@ HTTPS 는 제 3자 인증, 공개키 암호화, 비밀키 암호화를 사용한
 ### HTTP/2.0
 
 ## HTTP 메서드
-
 ---
-
 ### GET
 
 GET 요청은 서버에 존재하는 데이터를 요청하는 것이다.
@@ -63,9 +58,7 @@ DELETE 요청은 서버에 데이터를 제거할 것을 요청한다.
 PATCH 요청은 서버에 존재하는 데이터를 일부 수정한다.
 
 ## SSL handshake
-
 ---
-
 클라이언트는 TCP 3 way handshake 를 수행한 후 Client Hello 를 전송한다.
 
 서버는 인증서를 보낸다.

@@ -6,11 +6,8 @@ draft: false
 tags:
   - Java
 ---
-
 ## Garbage Collection
-
 ---
-
 Garbage Collection 이란 Java 메모리 관리 방법 중 하나로 더 이상 참조되지 않는 객체들을 제거하는 작업을 의미하며 JVM 의 Heap Area 에서 주로 동작한다.
 
 ### Garbage Collection 의 대상
@@ -36,9 +33,7 @@ GC 를 수행할 때 GC 를 수행하는 스레드를 제외한 모든 스레드
 빈번한 GC 는 더 많은 `Stop-The-World` 를 발생시키고 이는 애플리케이션 성능 저하로 이어지기 때문에 `Stop-The-World` 시간을 줄여 스레드가 정지되는 시간을 줄이는 것이 중요하다.
 
 ## Garbage Collection 동작 과정
-
 ---
-
 GC 는 Minor GC 와 Major GC 로 구분할 수 있다. Minor GC 는 `young` 영역에서 Major GC 는 `old` 영역에서 일어난다.
 
 ### Minor GC
@@ -66,9 +61,7 @@ Major GC 는 `old` 영역에서 일어나며 Minor GC 와 반대로 참조되지
 이를 해결하기 위해 Full GC 에선 `Mark-Sweep-Compact` Algorithm 을 기반한 여러 GC 방식들이 선택 및 적용된다.
 
 ## Garbage Collection Algorithm
-
 ---
-
 ### Weak Generational Hypothesis
 
 Weak Generational Hypothesis 는 대부분의 객체는 빠르게 `unreachable` 상태로 전환된다는 가설이다. 이는 GC 를 성공적으로 수행하는 Algorithm 을 설계하기 위해서 사용되는 대표적인 가설이다.
@@ -84,9 +77,7 @@ GC 가 수행될 때 `reachable` 객체들은 `mark` 된다. `unreachable` 한 �
 정렬되지 않은 `Fragmentation` 된 메모리 공간은 절대적인 공간은 충분해도 연속되는 메모리 공간이 부족해 메모리 할당이 어려울 수 있다. 때문에 메모리를 정리해주는데 이 방식을 `Compaction` 이라고 한다.
 
 ## Garbage Collection 적용
-
 ---
-
 ```bash
 java -XX:+UseG1GC -XX:+DisableExplicitGC SampleProgram
 ```
@@ -94,9 +85,7 @@ java -XX:+UseG1GC -XX:+DisableExplicitGC SampleProgram
 Java 애플리케이션 실행 시 위처럼 GC 를 선택해서 사용할 수 있다. 가장 간단한 `SerialGC` 가 대표적이고 조금 더 진보된 `G1GC` `ZGC` 등이 있다.
 
 ## References
-
 ---
-
 - [https://tecoble.techcourse.co.kr/post/2021-08-30-jvm-gc/](https://tecoble.techcourse.co.kr/post/2021-08-30-jvm-gc/)
 - [https://jeong-pro.tistory.com/148](https://jeong-pro.tistory.com/148)
 - [https://coding-factory.tistory.com/829](https://coding-factory.tistory.com/829)

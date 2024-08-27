@@ -6,11 +6,8 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## 경로 조회 미션 진행 도중 받은 피드백
-
 ---
-
 ![[Mission Feedback.png]]
 
 해당 리뷰는 DTO 의 기본 생성자에 대한 피드백이다.
@@ -39,9 +36,7 @@ tags:
 위와 같은 궁금증들을 해결하기 위해 코드 여행을 떠나보기로 했다.
 
 ## 객체 생성하기
-
 ---
-
 ### `RequestResponseBodyMethodProcessor.java`
 
 ![[RequestResponseBodyMethodProcessor.png]]
@@ -136,9 +131,7 @@ Java Reflection 은 구체적인 클래스 타입을 알지 못해도, 그 클�
 Reflection 을 통해 가져올 수 없는 정보 중 하나가 바로 생성자의 인자 정보들이다. 때문에, 기본 생성자 없이 인자가 포함된 생성자만 존재한다면 Reflection 을 통해 객체를 생성할 수 없다.
 
 ## 기본 생성자가 없다면?
-
 ---
-
 ### `BeanDeserializer.java`
 
 ![[deserializeFromObjectUsingNonDefault.png]]
@@ -154,16 +147,12 @@ Reflection 을 통해 가져올 수 없는 정보 중 하나가 바로 생성자
 현재 사용하는 RequestDTO 는 delegate 을 하거나 property 설정을 해준 것이 아니기 때문에 이 부분에서 예외가 발생한다.
 
 ## 여기까지 객체 생성 과정 정리
-
 ---
-
 - `@RequestBody` 를 바인딩하기 위해 `ObjectMapper` 를 사용하는데, Java Reflection API 를 통해 객체를 생성하기 때문에 기본 생성자가 필수적이다.
 - `@JsonProperty` `@JsonAutoDetect` 등을 사용한 `propertBasedCreator` 나 생성자가 위임되어 `delegateBasedCreator` 가 있다면 기본 생성자가 없어도 된다.
 
 ## 생성된 객체에 필드값 주입하기
-
 ---
-
 ### ObjectMapper 가 JSON 과 Java Object 를 매칭하는 방법?
 
 기본적으로 Jackson 은 JSON 필드의 이름을 Java Object 의 getter 와 setter 메서드와 일치시켜 각 필드값을 매칭한다.
@@ -197,9 +186,7 @@ Jackson 은 `getter` 및 `setter` 메서드의 `"get"` `"set"` 을 제거한 후
 따라서, Reflection API 를 통해 값을 주입하기에 `setter` 가 불필요하다는 것을 알 수 있다.
 
 ## 결론
-
 ---
-
 - `@RequestBody` 를 바인딩하기 위해 `ObjectMapper` 를 사용하는데, Java Reflection API 를 통해 객체를 생성하기 때문에 기본 생성자가 필수적이다.
 - `@JsonProperty` `@JsonAutoDetect` 등을 사용한 `propertBasedCreator` 나 생성자가 위임되어 `delegateBasedCreator` 가 있다면 기본 생성자가 없어도 된다.
 - `ObjectMapper` 는 Jackson 을 통해 `getter` 와 `setter` 로 DTO 필드값을 가져오며 `getter` 혹은 `setter` 만 있어도 된다.
@@ -211,9 +198,7 @@ Jackson 은 `getter` 및 `setter` 메서드의 `"get"` `"set"` 을 제거한 후
 - Reflection 으로 주입하는 과정
 
 ## References
-
 ---
-
 - [https://da-nyee.github.io/posts/woowacourse-why-the-default-constructor-is-needed/](https://da-nyee.github.io/posts/woowacourse-why-the-default-constructor-is-needed/)
 - [https://velog.io/@conatuseus/RequestBody에-기본-생성자는-왜-필요한가](https://velog.io/@conatuseus/RequestBody%EC%97%90-%EA%B8%B0%EB%B3%B8-%EC%83%9D%EC%84%B1%EC%9E%90%EB%8A%94-%EC%99%9C-%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80)
 - [https://velog.io/@conatuseus/RequestBody에-왜-기본-생정자는-필요하고-Setter는-필요-없을까-2-ejk5siejhh](https://velog.io/@conatuseus/RequestBody%EC%97%90-%EC%99%9C-%EA%B8%B0%EB%B3%B8-%EC%83%9D%EC%A0%95%EC%9E%90%EB%8A%94-%ED%95%84%EC%9A%94%ED%95%98%EA%B3%A0-Setter%EB%8A%94-%ED%95%84%EC%9A%94-%EC%97%86%EC%9D%84%EA%B9%8C-2-ejk5siejhh)

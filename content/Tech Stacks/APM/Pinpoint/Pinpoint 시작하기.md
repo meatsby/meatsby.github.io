@@ -6,11 +6,8 @@ draft: false
 tags:
   - Pinpoint
 ---
-
 ## Pinpoint Collector 인스턴스
-
 ---
-
 ### GCP Compute Engine 인스턴스 생성
 
 ![[GCP Machine Config.png]]
@@ -105,9 +102,7 @@ nohup java -jar -Dpinpoint.zookeeper.address=localhost pinpoint-web-boot-2.2.2.j
 - `{Instance Public IP}:8080/main` 접속 후 빈 화면이 보이면 성공
 
 ## WAS EC2 인스턴스
-
 ---
-
 ### Pinpoint Agent 설치
 
 ```bash
@@ -132,9 +127,7 @@ sudo nohup java -jar -javaagent:pinpoint-agent-2.2.2/pinpoint-bootstrap-2.2.2.ja
 ![[Pinpoint.png]]
 
 ## 트러블 슈팅
-
 ---
-
 ```bash
 09-15 12:18:36.036 [-Executor(12-0)] WARN  c.n.p.p.r.g.GrpcCommandService           -- Failed to command stream, cause=UNAVAILABLE: io exception
 io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
@@ -164,9 +157,7 @@ Caused by: io.netty.channel.ConnectTimeoutException: connection timed out: /{Col
 - `connection timed out: /{Collector IP xxx.xxx.xxx.xxx}:9991` 방화벽 설정을 추가해야 한다.
 
 ## References
-
 ---
-
 - [https://backtony.github.io/spring/2021-10-24-spring-test-4/](https://backtony.github.io/spring/2021-10-24-spring-test-4/)
 - [https://bkjeon1614.tistory.com/662](https://bkjeon1614.tistory.com/662)
 - [https://yamerong.tistory.com/55](https://yamerong.tistory.com/55)

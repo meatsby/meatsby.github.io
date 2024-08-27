@@ -6,11 +6,8 @@ draft: false
 tags:
   - Jenkins
 ---
-
 ## 무중단 배포
-
 ---
-
 서비스를 운영할 때 새로운 버전을 배포하는 동안 운영중인 애플리케이션이 종료되는 문제가 있다.
 
 이런 문제는 사용자에게 안 좋은 경험을 제공하기 때문에 서비스가 정지되지 않고 배포할 수 있는 환경을 구성하기 위한 여러 전략이 존재한다.
@@ -22,9 +19,7 @@ tags:
 - Canary Release
 
 ## Rolling Update
-
 ---
-
 ![[Rolling Update.png]]
 
 롤링 전략은 사용중인 인스턴스 내에서 새 버전을 교체하는 가장 기본적인 전략이다. 서비스중인 인스턴스 하나를 로드밸런서에서 라우팅하지 않도록 한 뒤 새 버전을 적용하여 다시 라우팅하는 전략으로 모든 인스턴스를 순차적으로 새로운 버전으로 교체하는 전략이다.
@@ -40,9 +35,7 @@ tags:
 - 배포가 진행되는 동안 구버전과 신버전이 공존하기 때문에 호환성 문제가 발생할 수 있다.
 
 ## Blue-Green Deployment
-
 ---
-
 ![[Blue-Green Deployment.png]]
 
 운영 환경에서 구 버전과 동일하게 신 버전을 배포하고 일제히 전환하여 모든 트래픽을 신 버전으로 전환하는 전략이다. 블루 그린 전략은 물리적인 서버를 대상으로 사용하기에는 비용상 버겁다. 그래서 클라우드 환경에서 쉽게 인스턴스를 생성하거나 없앨 수 있는 AWS 나 Docker 와 같은 가상 환경에서 사용하는 것이 효과적이다.
@@ -55,9 +48,7 @@ tags:
 - 신버전 배포가 진행되는 동안 서버 과부화가 일어날 확률이 적다.
 
 ## Canary Release
-
 ---
-
 ![[Canary Release.png]]
 
 `카나리아` 라는 새는 유독가스에 굉장히 민감한 동물이다. 과거 광부들은 유독가스에 민감한 카나리아 새를 유독가스 누출의 위험을 감지하는 용도로 사용하였다.
@@ -74,9 +65,7 @@ tags:
 - 롤링 전략과 마찬가지로 구버전과 신버전이 모두 운영되기 때문에 버전 관리가 필요하다.
 
 ## 사전 준비
-
 ---
-
 ### 전략 구성
 
 무중단 배포를 구현하기 위해 위 전략 중 하나를 선택해야 했고 공책 프로젝트에선 블루 그린 전략을 선택했는데 그 이유는 다음과 같다.
@@ -107,9 +96,7 @@ Manage Jenkins → Configure System → Global properties 에서 설정할 수 �
 명시된 IP 들과 SSH 통신이 이루어져야하기 때문에 Publish over SSH 항목에 모두 등록되어 있어야 한다.
 
 ## Pipeline 코드
-
 ---
-
 ```groovy
 pipeline {
     agent any
@@ -513,17 +500,13 @@ fi
 `sshPublisher` 는 인스턴스 내부에 있는 `kill.sh` 를 실행시키는데, 이는 위와 같다.
 
 ## 개선 사항
-
 ---
-
 추후 WAS 를 다중화한다면 로드 밸런싱을 적용해야하기 때문에 `Nginx` 설정을 변경하는 스크립트를 수정해주어야 한다. 로드 밸런싱 설정 적용은 크게 어렵지 않기 때문에 추후에 서비스가 WAS 다중화를 요구한다면 그때 수정해주어도 무방하다.
 
 추가로 `blue` 그룹에 해당하는 EC2 인스턴스가 `idle` 상태로 대기하고 있기 때문에 불필요한 비용이 발생하고 있는 것을 알 수 있다. 때문에 배포가 이루어질 때 마다 EC2 인스턴스를 자동으로 생성 및 제거해주는 방식을 고려해 볼 필요가 있다.
 
 ## References
-
 ---
-
 - [https://loosie.tistory.com/781](https://loosie.tistory.com/781)
 - [https://xlffm3.github.io/devops/mock-blue-green-cd/](https://xlffm3.github.io/devops/mock-blue-green-cd/)
 - [https://jiyeonseo.github.io/2020/03/19/jenkins-health-check/](https://jiyeonseo.github.io/2020/03/19/jenkins-health-check/)

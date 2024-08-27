@@ -6,9 +6,7 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## AOP 로 적용
-
 ```java
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
@@ -44,7 +42,6 @@ public class HostVerifier {
 - 인가가 먼저 터져야 함
 
 ## Interceptor 로 적용
-
 [참고](https://stackoverflow.com/questions/28975025/advise-controller-method-before-valid-annotation-is-handled/29397494#29397494)
 
 ```java

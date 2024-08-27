@@ -6,11 +6,8 @@ draft: false
 tags:
   - Java
 ---
-
 ## DTO 와 VO 란?
-
 ---
-
 Data Transfer Object 와 Value Object 는 각 계층 간 데이터 교환을 위한 자바 객체를 의미한다.
 
 데이터를 각 레이어 간에 전달하는 목적을 가지고 있으며, 객체의 속성과 getter, setter 만 가지고 있다.
@@ -18,9 +15,7 @@ Data Transfer Object 와 Value Object 는 각 계층 간 데이터 교환을 위
 두 가지 모두 비슷한 의미를 가졌지만 차이점이 있다.
 
 ## VO 란?
-
 ---
-
 VO 란 도메인에서 한 개 또는 그 이상의 속성들을 묶어서 **특정 값을 나타내는 객체**를 의미한다.
 
 이로 인해 객체를 값처럼 사용할 수 있고, 생성자를 통해 설정된 상태 값은 절대 변하지 않는다.
@@ -36,9 +31,7 @@ VO 란 도메인에서 한 개 또는 그 이상의 속성들을 묶어서 **특
 로또 번호는 1 에서 45 의 숫자로 범위가 정해져 있으며 서로에 대한 연산이 가능하지 않기 때문에 `LottoNumber` 라는 VO 를 통해 관리하는 것이 효과적이다.
 
 ## VO 의 특성
-
 ---
-
 ### 1. Immutable(불변성) - setter 가 없는 불변 객체여야 한다.
 
 속성 값 자체가 식별 값인 VO 는 값이 바뀌면 다른 값이 되어 추적이 불가하고, 복사될 때는 의도치 않은 객체들이 함께 변경되는 문제를 유발한다.
@@ -174,9 +167,7 @@ public class LottoNumbers {
 Multi-Thread 환경에서는 `validate` 를 마친 `lottoNumber` 를 다른 쓰레드에서 변경하게되면 변경된 상태로 객체에 할당되기 때문에 `validate` 를 후순위로 미루는 것이다.
 
 ## VO 는 원시값 포장과 같은가?
-
 ---
-
 결론부터 말하자면 다르다. 원시값 포장과 동시에 VO 로 만들 순 있지만, 원시값 포장이 VO 는 아니다.
 
 ### 원시값 포장
@@ -190,9 +181,7 @@ Multi-Thread 환경에서는 `validate` 를 마친 `lottoNumber` 를 다른 쓰�
 - Self Validation(자기 유효성 검사) - 생성자에서 validate.
 
 ## DTO 란?
-
 ---
-
 DTO 는 계층 간 데이터 교환을 위해 사용되는 객체로, 로직을 가지지 않고 getter 와 setter 만 갖고 있는 순수한 데이터 객체다.
 
 예를 들어 유저가 입력한 데이터를 DB 에 넣는 과정을 보자.
@@ -202,9 +191,7 @@ DTO 는 계층 간 데이터 교환을 위해 사용되는 객체로, 로직을 
 해당 DTO 를 받은 서버가 DAO 를 이용하여 DB 로 데이터를 집어넣는다.
 
 ## References
-
 ---
-
 - [https://m.blog.naver.com/jysaa5/221751719334](https://m.blog.naver.com/jysaa5/221751719334)
 - [https://tecoble.techcourse.co.kr/post/2020-06-11-value-object/](https://tecoble.techcourse.co.kr/post/2020-06-11-value-object/)
 - [https://livenow14.tistory.com/37](https://livenow14.tistory.com/37)

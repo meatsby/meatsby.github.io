@@ -6,11 +6,8 @@ draft: false
 tags:
   - Spark
 ---
-
 ## Spark 시작하기
-
 ---
-
 웹 프로그래밍 입문을 위해 `Java` 의 간단한 웹 프레임워크인 `Spark` 를 알아보자.
 
 우선 인텔리제이에서 `gradle` 프로젝트를 생성한다.
@@ -48,9 +45,7 @@ public class HelloWorld {
 성공적으로 `Hello World` 가 출력된 것을 확인할 수 있다.
 
 ## GET 사용법
-
 ---
-
 ```java
 public class HelloWorld {
     public static void main(String[] args) {
@@ -154,9 +149,7 @@ public class HelloWorld {
 이 때 적용할 수 있는 것이 `POST` 메서드이다.
 
 ## POST 사용법
-
 ---
-
 ```java
 public class HelloWorld {
     public static void main(String[] args) {
@@ -176,9 +169,7 @@ public class HelloWorld {
 다만 주의할 점은 `form` 태그의 기본 메서드는 `get` 이기 때문에 `post` 로 변경해줘야한다.
 
 ## template engine 사용법
-
 ---
-
 ### template engine 이란?
 
 template engine 은 `html` 파일을 동적으로 만들 때 사용하는 도구이다.
@@ -273,9 +264,7 @@ Name : {{name}}, Age : {{age}}
 handlebars 는 Mustache 문법을 사용하는데, `{{name}}` 은 `model` 에서 키값이 `name` 인 값을 가져온다.
 
 ## java bean 과  handlebars 반복문
-
 ---
-
 ### java bean 이란?
 
 java bean 이란, 기본 생성자가 있고, iv 를 가지고 있으며, iv 에 대한 getter 와 setter 가 존재하는 클래스다.
@@ -328,8 +317,6 @@ Name : {{name}}, Age : {{age}}
 여기서 `{{user.name}}` 은 `user.getName()` 과 같다.
 
 ## References
-
 ---
-
 - [https://sparkjava.com/](https://sparkjava.com/)
 - [https://stackoverflow.com/questions/67366255/could-not-find-method-compile-for-arguments-com-sparkjavaspark-core2-9-3-o](https://stackoverflow.com/questions/67366255/could-not-find-method-compile-for-arguments-com-sparkjavaspark-core2-9-3-o)

@@ -6,13 +6,10 @@ draft: false
 tags:
   - Database
 ---
-
 ![[DELETE & TRUNCATE & DROP.png]]
 
 ## DELETE
-
 ---
-
 ```sql
 DELETE FROM dbtable;
 DELETE FROM dbtable WHERE {조건};
@@ -29,9 +26,7 @@ COMMIT;
 - DELETE 된 데이터는 COMMIT 되기 전에 ROLLBACK 할 수 있음
 
 ## TRUNCATE
-
 ---
-
 ```sql
 TRUNCATE TABLE dbtable;
 ```
@@ -42,9 +37,7 @@ TRUNCATE TABLE dbtable;
 - 자동 COMMIT 되는 명령어이기 때문에 지운 데이터를 되돌릴 수 없음
 
 ## DROP
-
 ---
-
 ```sql
 DROP TABLE dbtable;
 ```

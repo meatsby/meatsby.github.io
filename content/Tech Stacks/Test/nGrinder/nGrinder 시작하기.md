@@ -6,11 +6,8 @@ draft: false
 tags:
   - nGrinder
 ---
-
 ## nGrinder 설치
-
 ---
-
 - [nGrinder 설치 가이드](https://github.com/naver/ngrinder/wiki/Installation-Guide) 참고
 
 ### nGrinder Controller 실행
@@ -34,9 +31,7 @@ java -jar ngrinder-controller-3.5.5-p1.war
 ```
 
 ## 스크립트 작성
-
 ---
-
 ```groovy
 import HTTPClient.HTTPResponse
 import HTTPClient.NVPair
@@ -204,9 +199,7 @@ class TestRunner {
 ```
 
 ## 성능 테스트 생성
-
 ---
-
 ![[Creating Load Test.png]]
 
 - `Agent`
@@ -215,8 +208,6 @@ class TestRunner {
 - `Duration`
 
 ## References
-
 ---
-
 - [https://github.com/naver/ngrinder](https://github.com/naver/ngrinder)
 - [https://velog.io/@max9106/nGrinderPinpoint-test1](https://velog.io/@max9106/nGrinderPinpoint-test1)

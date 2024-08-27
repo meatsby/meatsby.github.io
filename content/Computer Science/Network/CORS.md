@@ -6,11 +6,8 @@ draft: false
 tags:
   - Network
 ---
-
 ## CORS
-
 ---
-
 Cross-Origin Resource Sharing, CORS 란 서로 다른 Origin 간에 자원을 공유하는 것을 의미한다.
 
 CORS 를 이해하기 위해선 먼저 Origin 과 SOP 라는 개념을 알아야 한다.
@@ -54,9 +51,7 @@ Same-Origin Policy, SOP 는 직역하면 `동일 출처 정책` 으로 다른 Or
 SOP 정책은 이런 문제를 근본적으로 해결한다. `www.hacker.com` 이라는 Origin 에서 네이버에게 요청을 보냈으니 브라우저 입장에선 서로 다른 Origin 에서 요청을 하는 것으로 간주하게 되어 해당 요청 자체를 막아버리는 것이다.
 
 ## CORS 접근 제어 시나리오
-
 ---
-
 ### Simple Request
 
 ![[CORS - Simple Request.png]]
@@ -137,9 +132,7 @@ Allow-Control-Allow-Credentials: true
 그렇지 않을 경우 브라우저에 의해 응답이 거부된다.
 
 ## 정리
-
 ---
-
 CORS 는 서버가 아닌 브라우저 구현 스펙에 포함된 정책이다. 때문에 서버는 CORS 위반 여부와 관계없이 요청이 들어오면 일단 처리하고 응답한다. 그 응답을 받아서 브라우저가 응답 헤더를 확인하고 응답의 파기 여부를 결정하게 된다.
 
 `GET` `HEAD` 와 같은 단순 조회 요청은 상관 없어도 `POST` `PUT` `DELETE` 와 같은 메서드는 서버에 부작용을 야기할 수 있다. 이는 응답이 유효하지 않아 파기한 브라우저의 의사와 상관없이 발생한다.
@@ -149,9 +142,7 @@ Preflight 는 실제 요청이 CORS 를 위반하지 않는지 미리 확인하�
 하지만 `POST` 같은 경우 조건만 만족한다면 Preflight 대신 Simple Request 로 전송될 수 있기 때문에 백엔드에서 이에 대한 처리가 필요하다.
 
 ## References
-
 ---
-
 - [https://hudi.blog/sop-and-cors/](https://hudi.blog/sop-and-cors/)
 - [https://developer.mozilla.org/ko/docs/Web/HTTP/CORS#접근_제어_시나리오_예제](https://developer.mozilla.org/ko/docs/Web/HTTP/CORS#%EC%A0%91%EA%B7%BC_%EC%A0%9C%EC%96%B4_%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4_%EC%98%88%EC%A0%9C)
 - [https://it-eldorado.tistory.com/163](https://it-eldorado.tistory.com/163)

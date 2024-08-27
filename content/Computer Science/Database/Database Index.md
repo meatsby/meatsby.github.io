@@ -6,11 +6,8 @@ draft: false
 tags:
   - Database
 ---
-
 ## Index 란?
-
 ---
-
 데이터베이스에서 검색 성능을 향상시키기 위해 Index 를 사용한다.
 
 하지만 검색 성능을 실질적으로 향상시키기 위해선 해당 쿼리가 Index 를 사용하는지, Cardinality Selectivity 같은 요소들을 고려된 Index 를 사용해야 한다.

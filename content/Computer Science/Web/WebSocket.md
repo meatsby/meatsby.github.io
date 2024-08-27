@@ -6,5 +6,4 @@ draft: false
 tags:
   - Web
 ---
-
 [https://github.com/woowacourse-teams/2022-gong-check/pull/616](https://github.com/woowacourse-teams/2022-gong-check/pull/616)

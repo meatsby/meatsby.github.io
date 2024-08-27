@@ -330,10 +330,8 @@ kubectl get all
 ## API Primitives
 ---
 
-
 ## Services & Other Network Primitives
 ---
-
 
 ## References
 ---

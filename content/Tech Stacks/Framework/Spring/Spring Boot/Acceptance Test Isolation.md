@@ -6,11 +6,8 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## Test Isolation
-
 ---
-
 애플리케이션 개발에 있어서 테스트코드는 개발 생산성과 애플리케이션 신뢰도 향상에 큰 도움을 줍니다. 이런 테스트코드는 순서에 상관없이 독립적으로 수행되어야 비로소 신뢰성 있고 안정적일 수 있는데요. 아무리 테스트코드를 꼼꼼히 작성하더라도 동일한 입력값에 대해 항상 같은 결과를 출력하지 않는 비결정적 테스트가 된다면 테스트코드의 의미를 상실할 수 있습니다. 때문에 충분한 테스트 격리를 통해 안정적인 테스트가 수행될 수 있도록 하는 것이 매우 중요합니다.
 
 테스트 격리가 이루어지지 않는 근본적인 원인은 각각의 테스트가 하나의 자원을 공유하기 때문입니다. JUnit 과 Spring 에선 `@AfterEach` 와 `@Transactional` 등을 통해 테스트 격리가 가능합니다. 뿐만 아니라 Mock 프레임워크를 활용하여 테스트 격리에 신경쓰지않고 계층 구조에서 단위 테스트를 수행할 수 있는 방법 역시 존재합니다.
@@ -20,9 +17,7 @@ tags:
 이번 글에선 인수 테스트를 수행할 때 테스트를 격리하는 다양한 방법에 대해 알아보겠습니다.
 
 ## Acceptance Test Isolation
-
 ---
-
 ### @Transactional
 
 ```java
@@ -147,9 +142,7 @@ class AcceptanceTest {
 해당 방법을 통해 관리 포인트를 줄이며 인수 테스트 시 충분한 격리성을 확보했습니다. 하지만 여전히 테스트 클래스가 추가될 때마다 해당 코드를 사용해야 하기 때문에 중복이 발생할 수 있습니다. 테스트 코드를 고도화하여 문제점을 해결해보겠습니다.
 
 ## Advancement
-
 ---
-
 ### Spring 의 TestExecutionListener 사용
 
 ```java
@@ -284,15 +277,11 @@ public class DatabaseCleanerExtension implements AfterEachCallback {
 이제 `DatabaseCleaner` 만 가져와서 메서드 하나만 실행하는 것으로 인수 테스트 격리가 완성됩니다.
 
 ## 마무리
-
 ---
-
 인수 테스트는 실제 애플리케이션이 서비스 되는 것과 가장 비슷환 환경에서 이루지는 테스트인 만큼 안정성있는 테스트 코드 구축이 매우 중요합니다. `@DirtiesContext` 부터 `TRUNCATE` 쿼리 사용, Spring 의 `TestExecutionListener` 와 JUnit5 의 `Extension` 까지 다양한 방법을 통해 인수 테스트를 격리하는 방법에 대해 알아보았습니다. `TestExecutionListener` 와 `Extension` 의 차이에 대해 추가적으로 학습하여 어떤점이 다르고 어떤 상황에 사용하는 것이 좋은지 까지 알아보면 좋을 것 같습니다.
 
 ## References
-
 ---
-
 - [Tecoble - 인수테스트에서 테스트 격리하기](https://tecoble.techcourse.co.kr/post/2020-09-15-test-isolation/)
 - [Spring Docs - TestExecutionListener Configuration](https://docs.spring.io/spring-framework/docs/current/reference/html/testing.html#testcontext-tel-config)
 - [JUnit5 Docs - Test Lifecycle Callbacks](https://junit.org/junit5/docs/current/user-guide/#extensions-lifecycle-callbacks)

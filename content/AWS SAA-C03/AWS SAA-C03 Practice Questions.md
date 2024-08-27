@@ -3357,7 +3357,6 @@ What should a solutions architect do to meet these requirements?
 ## Question 252
 ---
 
-
 > [!done]- Answer
 > 
 
@@ -4782,7 +4781,6 @@ Which solution will meet these requirements with the LEAST operational overhead?
 ## Question 359
 ---
 
-
 > [!done]- Answer
 > 
 
@@ -4856,7 +4854,6 @@ Which combination of steps should the solutions architect take to meet these req
 
 ## Question 365
 ---
-
 
 > [!done]- Answer
 > 
@@ -8125,7 +8122,6 @@ What should a solutions architect do to meet these requirements?
 ## Question 609
 ---
 
-
 > [!done]- Answer
 > 
 
@@ -9662,7 +9658,6 @@ Which solution will meet these requirements?
 ## Question 724
 ---
 
-
 > [!done]- Answer
 > 
 
@@ -10296,7 +10291,6 @@ Which solution will meet these requirements?
 
 ## Question 772
 ---
-
 
 > [!done]- Answer
 > 
@@ -11892,13 +11886,11 @@ Which solution will meet these requirements MOST cost-effectively?
 ## Question 891
 ---
 
-
 > [!done]- Answer
 > 
 
 ## Question 892
 ---
-
 
 > [!done]- Answer
 > 

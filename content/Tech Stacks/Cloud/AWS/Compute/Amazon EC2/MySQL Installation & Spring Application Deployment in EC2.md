@@ -7,11 +7,8 @@ tags:
   - AWS
   - EC2
 ---
-
 ## 서버 EC2 에서 Spring Boot Application 생성
-
 ---
-
 ### 서버 EC2 로 cer 인증서 이동
 
 ```bash
@@ -28,9 +25,7 @@ $ git clone https://github.com/meatsby/jwp-shopping-cart.git
 ```
 
 ## DB EC2 에 MySQL 설치
-
 ---
-
 ### DB EC2 인스턴스 생성
 
 - 이름: `ec2-크루1-크루2-db`
@@ -101,9 +96,7 @@ $ sudo service mysql restart
 ```
 
 ## 서버 EC2 와 DB EC2 연결
-
 ---
-
 ### `build.gradle` 의존성 변경
 
 ```bash
@@ -149,9 +142,7 @@ http://13.125.173.161:8080/api/products?page=1&limit=12
 ```
 
 ## Shell Script 로 배포 자동화 하기
-
 ---
-
 ```bash
 #!/bin/bash
 
@@ -180,8 +171,6 @@ nohup java -jar jwp-shopping-cart-0.0.1-SNAPSHOT.jar >> application.log 2> /dev/
 ```
 
 ## References
-
 ---
-
 - [https://prolog.techcourse.co.kr/studylogs/1612](https://prolog.techcourse.co.kr/studylogs/1612)
 - [https://bibi6666667.tistory.com/312](https://bibi6666667.tistory.com/312)

@@ -6,17 +6,12 @@ draft: false
 tags:
   - Spring Data JPA
 ---
-
 ## Persistence Context
-
 ---
-
 Persistence Context, 영속성 컨텍스트는 엔티티를 영구 저장하는 환경을 의미한다.
 
 ## Persistence Context 의 장점
-
 ---
-
 ### 1차 캐시
 
 1차 캐시에서 조회가 가능하며 1차 캐시에 없다면 DB 에서 조회하여 1차 캐시에 올려 놓는다.

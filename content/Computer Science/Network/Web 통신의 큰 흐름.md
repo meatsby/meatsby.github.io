@@ -6,7 +6,6 @@ draft: false
 tags:
   - Network
 ---
-
 1. 브라우저가 URL 에 적힌 값을 파싱해서 HTTP Request Message 를 생성
 2. OS 에 전송 요청
 3. DNS Lookup 수행
@@ -36,12 +35,8 @@ tags:
 ### 클라이언트 측에서 공유기를 사용하게 된다면?
 
 ## GSLB
-
 ---
-
 ## CDN
-
 ---
-
 - akamai
 - KT

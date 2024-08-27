@@ -6,7 +6,6 @@ draft: false
 tags:
   - Network
 ---
-
 ## IPv4 의 역사
 - 1981년 본격적으로 사용
 - 1985년 전체 주소 1/16 사용

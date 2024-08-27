@@ -6,11 +6,8 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## Dispatcher Servlet
-
 ---
-
 `DispatcherServlet` 이란 Presentation Layer 전면에서 모든 HTTP 요청을 중앙집중식으로 처리하는 Front Controller 패턴을 적용한 `Servlet` 이다.
 
 `ServletContainer` 가 받은 클라이언트 요청의 공통적인 작업은 `DispatcherServlet` 이 처리하고 그 외 작업은 적절한 Controller 에게 위임한다.
@@ -26,9 +23,7 @@ Front Controller 패턴은 모든 요청을 처리하는 하나의 대표 Contro
 Front Controller 는 모든 요청의 진입점이 되어 요청을 일괄적으로 처리할 수 있다. Spring 에서는 `DispatcherServlet` 이 Front Controller 역할을 한다.
 
 ## Dispatcher Servlet 동작 과정
-
 ---
-
 ![[Dispatcher Servlet Mechanism.png]]
 
 1. `ServletContainer` 가 받은 요청이 `HttpServletRequest` 로 가공되어`DispatcherServlet` 에게 전달된다. 이때 `MultipartResolver` `LocaleResolver` `ThemeResolver` 인터페이스의 구현체가 요청을 분석한다.
@@ -290,17 +285,13 @@ void triggerAfterCompletion(HttpServletRequest request, HttpServletResponse resp
 마지막으로 `Interceptor` 의 `triggerAfterCompletion()` 메서드를 실행하면 요청에 대한 처리가 전부 마무리된다.
 
 ## 정리
-
 ---
-
 ![[Holistic Dispatcher Servlet.png]]
 
 `DispatcherServlet` 을 간단히 알아보고 실제 내부 동작 과정을 살펴봤다. 전체적인 흐름을 정리하면 위 그림과 같다.
 
 ## References
-
 ---
-
 - [https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-servlet-context-hierarchy](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-servlet-context-hierarchy)
 - [https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html#mvc-servlet](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html#mvc-servlet)
 - [https://tecoble.techcourse.co.kr/post/2021-06-25-dispatcherservlet-part-1/](https://tecoble.techcourse.co.kr/post/2021-06-25-dispatcherservlet-part-1/)

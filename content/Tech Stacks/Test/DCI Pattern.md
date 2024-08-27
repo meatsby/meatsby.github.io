@@ -6,11 +6,8 @@ draft: false
 tags:
   - Test
 ---
-
 ## DCI 패턴이란?
-
 ---
-
 DCI 패턴이란 `Describe` `Context` `It` 의 약자로 일종의 테스트 코드 작성 패턴이다.
 
 `Given` `When` `Then` 과 비슷하지만 미묘한 차이점이 존재한다.
@@ -29,9 +26,7 @@ DCI 패턴이란 `Describe` `Context` `It` 의 약자로 일종의 테스트 코
 - 작성하지 못한 테스트 코드를 찾기 쉽다.
 
 ## JUnit5 @Nested 활용
-
 ---
-
 ```java
 @Nested
 class changeSlackUrl_메소드는 {
@@ -71,8 +66,6 @@ class changeSlackUrl_메소드는 {
 테스트를 실행할 때도 실패하는 케이스등을 찾을 때 훨씬 수월하게 찾을 수 있다.
 
 ## References
-
 ---
-
 - [https://johngrib.github.io/wiki/junit5-nested/#상속을-사용한-테스트-중복-제거](https://johngrib.github.io/wiki/junit5-nested/#%EC%83%81%EC%86%8D%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%A4%91%EB%B3%B5-%EC%A0%9C%EA%B1%B0)
 - [https://github.com/johngrib/example-junit5/blob/81a12afe2c9405afb5faa43da7eb46d7aad188a7/src/test/java/com/johngrib/example/math/ComplexNumberTest.java](https://github.com/johngrib/example-junit5/blob/81a12afe2c9405afb5faa43da7eb46d7aad188a7/src/test/java/com/johngrib/example/math/ComplexNumberTest.java)

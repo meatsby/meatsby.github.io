@@ -6,11 +6,8 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## Transaction Propagation
-
 ---
-
 Transaction Propagation, 트랜잭션 전파는 트랜잭션의 경계에서 이미 진행중인 트랜잭션이 있을 때 또는 없을 때 어떻게 동작할 것인가를 결정하는 방식을 의미한다.
 
 `@Transactional` 의 `propagation` 속성을 통해 피호출 트랜잭션 입장에서 호출한 쪽의 트랜잭션을 그대로 사용할 수도 있고, 새롭게 트랜잭션을 생성할 수 도 있다.
@@ -28,9 +25,7 @@ Transaction Propagation 에는 총 7가지 전파 속성이 존재한다.
 - `NESTED`
 
 ## Physical Transaction & Logical Transaction
-
 ---
-
 ### Physical Transaction
 
 - 물리적 트랜잭션은 실제 트랜잭션이 실행되는 스레드를 의미한다.
@@ -45,9 +40,7 @@ Transaction Propagation 에는 총 7가지 전파 속성이 존재한다.
     - `UnexpectedRollbackException` 을 발생시킴으로써 외부 트랜잭션이 그 사실을 알 수 있다.
 
 ## REQUIRED (DEFAULT)
-
 ---
-
 ```java
 @Nested
 class testRequired {
@@ -94,9 +87,7 @@ PropagationTest : transactions : [ChildService]
 ```
 
 ## SUPPORTS
-
 ---
-
 ```java
 @Nested
 class testSupports {
@@ -143,9 +134,7 @@ ChildService    :  Child Transaction Active : 🚫
 ```
 
 ## MANDATORY
-
 ---
-
 ```java
 @Nested
 class testMandatory {
@@ -190,9 +179,7 @@ org.springframework.transaction.IllegalTransactionStateException: No existing tr
 ```
 
 ## REQUIRES_NEW
-
 ---
-
 ```java
 @Nested
 class testRequiredNew {
@@ -257,9 +244,7 @@ PropagationTest : transactions : [ChildService]
 ```
 
 ## NOT_SUPPORTED
-
 ---
-
 ```java
 @Nested
 class testNotSupported {
@@ -305,9 +290,7 @@ ChildService    :  Child Transaction Active : 🚫
 ```
 
 ## NEVER
-
 ---
-
 ```java
 @Nested
 class testNever {
@@ -350,9 +333,7 @@ ChildService    :  Child Transaction Active : 🚫
 ```
 
 ## NESTED
-
 ---
-
 ```java
 @Nested
 class testNested {
@@ -401,9 +382,7 @@ PropagationTest : transactions : [ChildService]
 ```
 
 ## References
-
 ---
-
 - [https://docs.spring.io/spring-framework/docs/current/reference/html/data-access.html#tx-propagation](https://docs.spring.io/spring-framework/docs/current/reference/html/data-access.html#tx-propagation)
 - [https://www.baeldung.com/spring-transactional-propagation-isolation](https://www.baeldung.com/spring-transactional-propagation-isolation)
 - [https://reiphiel.tistory.com/m/entry/understanding-of-spring-transaction-management-practice](https://reiphiel.tistory.com/m/entry/understanding-of-spring-transaction-management-practice)

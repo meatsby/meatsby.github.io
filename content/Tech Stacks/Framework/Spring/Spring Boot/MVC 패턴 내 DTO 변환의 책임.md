@@ -6,11 +6,8 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 ## 경로 조회 미션 중에
-
 ---
-
 ![[Mission Review for DTO.png]]
 
 경로 조회 미션 도중 리뷰어께서 위와 같은 리뷰를 남겨주셨다.
@@ -65,9 +62,7 @@ MVC 패턴에서 DTO 를 사용한다면 도메인 `Model` 을 캡슐화하고 `
 이런 문제점들을 보면 DTO 를 `Service` 레이어까지 전달하여 `Service` 내부에서 도메인을 구성하는 것이 더 적절한 방법이라고 생각해볼 수 있다.
 
 ## 결론
-
 ---
-
 결론적으로 생각해보면 `Service` 가 DTO 를 소비하고 DTO 를 반환하는 것이 가장 적절하다고 생각해볼 수 있다.
 
 하지만, 글 초반에 소개한 리뷰를 생각해보면 마냥 이게 정답이라고 볼 순 없을 것 같다.
@@ -75,7 +70,5 @@ MVC 패턴에서 DTO 를 사용한다면 도메인 `Model` 을 캡슐화하고 `
 프로젝트의 종합적인 상황을 고려해서 상황에 맞는 적절한 방식으로 DTO 를 사용하는 것이 가장 적절하다고 정리하는 것이 좋을 것 같다.
 
 ## References
-
 ---
-
 - [https://tecoble.techcourse.co.kr/post/2021-04-25-dto-layer-scope/](https://tecoble.techcourse.co.kr/post/2021-04-25-dto-layer-scope/)

@@ -6,7 +6,6 @@ draft: false
 tags:
   - Terraform
 ---
-
 - AWS WAF
 	- Security Ingress
 	- Set of rules to decide what to allow and detect some suspicious reequests

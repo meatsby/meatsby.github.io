@@ -6,11 +6,8 @@ draft: false
 tags:
   - Web
 ---
-
 ## Static Pages & Dynamic Pages
-
 ---
-
 ### Static Pages
 
 - 파일 경로 이름을 통해 경로와 일치하는 File Contents 를 반환
@@ -25,9 +22,7 @@ tags:
     - `Servlet` 의 `doGet()` 을 구현하여 동적인 Contents 반환
 
 ## Web Server
-
 ---
-
 ### Web Server란?
 
 - 클라이언트로부터 HTTP 요청을 받아 정적인 Contents 를 제공하는 컴퓨터 프로그램
@@ -37,9 +32,7 @@ tags:
 - e.g. `Apache` `NginX` 등
 
 ## WAS(Web Application Server)
-
 ---
-
 ### WAS 란?
 
 - DB 조회나 비즈니스 로직 처리를 요구하는 동적 Contents 제공을 위한 Application Server
@@ -51,9 +44,7 @@ tags:
 - e.g. `Tomcat` `JBoss` `Jeus` `Web Sphere` 등
 
 ## Web Server 와 WAS 분리하는 이유
-
 ---
-
 ### Web Server 가 필요한 이유
 
 - `html` 에 포함된 `css` `js` `img` 등은 브라우저가 해당 파일을 필요로 할 때 요청함
@@ -82,9 +73,7 @@ tags:
 - 즉, 효율적인 자원 사용 및 분산 처리, 장애 극복, 배포 및 유지보수의 편의성을 위해 분리
 
 ## Web Service Architecture
-
 ---
-
 ![[Web Service Architecture.png]]
 
 1. Client 는 Web Server 에게 HTTP 요청을 보냄
@@ -97,9 +86,7 @@ tags:
 8. WAS 는 사용한 Thread 를 Thread Pool 에 반납하고 사용된 요청 응답 객체들은 제거됨
 
 ## References
-
 ---
-
 - [https://www.youtube.com/watch?v=NyhbNtOq0Bc](https://www.youtube.com/watch?v=NyhbNtOq0Bc)
 - [https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html](https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html)
 - [https://gyoogle.dev/blog/web-knowledge/Web Server와 WAS의 차이.html](https://gyoogle.dev/blog/web-knowledge/Web%20Server%EC%99%80%20WAS%EC%9D%98%20%EC%B0%A8%EC%9D%B4.html)

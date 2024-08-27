@@ -6,11 +6,8 @@ draft: false
 tags:
   - Java
 ---
-
 ## Abstract Class
-
 ---
-
 ```java
 public abstract class AbstractClass {
 
@@ -38,9 +35,7 @@ Abstract Class, 추상 클래스란 하나 이상의 `abstract` 메서드를 선
 - 추상 클래스를 상속하는 집합간에는 연관 관계가 있다.
 
 ## Interface
-
 ---
-
 ```java
 interface Interface {
 

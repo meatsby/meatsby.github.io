@@ -6,11 +6,8 @@ draft: false
 tags:
   - Network
 ---
-
 ## REST 란?
-
 ---
-
 HTTP URI 를 통해 자원을 표시하고 HTTP Method 를 통해 자원에 대한 처리를 표현한다.
 
 사람이 읽을 수 있는 API 라는 것이 특징이다.

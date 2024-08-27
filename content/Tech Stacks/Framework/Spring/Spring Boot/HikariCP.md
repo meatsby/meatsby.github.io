@@ -6,5 +6,4 @@ draft: false
 tags:
   - Spring Boot
 ---
-
 [https://netmarble.engineering/hikaricp-options-optimization-for-game-server/](https://netmarble.engineering/hikaricp-options-optimization-for-game-server/)
