@@ -1,5 +1,5 @@
 ---
-title: Intro to Splunk
+title: "Intro to Splunk"
 date: 2024-03-21 15:23:44 +0800
 status: In Progress
 draft: false

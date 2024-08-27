@@ -1,7 +1,8 @@
 ---
-title: Garbage Collection
+title: "Garbage Collection"
 date: 2022-09-29 16:10:00 +0900
 status: In Progress
+draft: false
 tags:
   - Java
 ---

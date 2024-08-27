@@ -1,7 +1,8 @@
 ---
-title: POSIX new line
+title: "POSIX new line"
 date: 2022-02-20 14:50:00 +0900
 status: In Progress
+draft: false
 tags:
   - OS
 ---

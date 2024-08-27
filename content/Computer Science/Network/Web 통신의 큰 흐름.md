@@ -1,7 +1,8 @@
 ---
-title: Web 통신의 큰 흐름
+title: "Web 통신의 큰 흐름"
 date: 2022-10-01 21:00:00 +0900
 status: In Progress
+draft: false
 tags:
   - Network
 ---

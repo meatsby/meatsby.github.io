@@ -1,6 +1,8 @@
 ---
-title: "[Java] Array 와 List 의 차이"
+title: "Array 와 List 의 차이"
 date: 2021-11-11 10:00:00 +0900
+status: In Progress
+draft: false
 tags:
   - Java
 ---

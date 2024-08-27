@@ -1,5 +1,5 @@
 ---
-title: AWS SAA-C03 Notes
+title: "AWS SAA-C03 Notes"
 date: 2024-07-10 21:48:33 +0800
 status: In Progress
 draft: false

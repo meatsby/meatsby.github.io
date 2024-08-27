@@ -1,5 +1,5 @@
 ---
-title: Amazon Elastic MapReduce (EMR)
+title: "Amazon Elastic MapReduce (EMR)"
 date: 2024-05-27 21:30:04 +0800
 status: In Progress
 draft: false

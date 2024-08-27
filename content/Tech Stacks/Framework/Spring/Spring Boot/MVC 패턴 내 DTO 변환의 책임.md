@@ -1,7 +1,8 @@
 ---
-title: MVC 패턴 내 DTO 변환의 책임
+title: "MVC 패턴 내 DTO 변환의 책임"
 date: 2022-05-21 18:10:00 +0900
 status: In Progress
+draft: false
 tags:
   - Spring Boot
 ---

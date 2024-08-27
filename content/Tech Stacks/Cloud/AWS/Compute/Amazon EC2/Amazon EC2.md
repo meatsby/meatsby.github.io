@@ -1,5 +1,5 @@
 ---
-title: Amazon EC2
+title: "Amazon EC2"
 date: 2024-04-15 23:05:56 +0800
 status: In Progress
 draft: false

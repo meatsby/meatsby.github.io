@@ -1,7 +1,8 @@
 ---
-title: AWS Elastic Beanstalk
+title: "AWS Elastic Beanstalk"
 date: 2023-12-08 13:00:00 +0800
 status: In Progress
+draft: false
 tags:
   - AWS
 ---

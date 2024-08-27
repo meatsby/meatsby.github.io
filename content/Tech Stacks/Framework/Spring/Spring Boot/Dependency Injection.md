@@ -1,7 +1,8 @@
 ---
-title: Dependency Injection
+title: "Dependency Injection"
 date: 2022-10-06 18:40:00 +0900
 status: In Progress
+draft: false
 tags:
   - Spring Boot
 ---

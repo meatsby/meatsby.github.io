@@ -1,7 +1,8 @@
 ---
-title: Dead Lock & Starvation
+title: "Dead Lock & Starvation"
 date: 2022-10-07 14:40:00 +0900
 status: In Progress
+draft: false
 tags:
   - OS
 ---

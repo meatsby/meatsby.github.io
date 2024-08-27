@@ -1,7 +1,8 @@
 ---
-title: Gradle Multi Project
+title: "Gradle Multi Project"
 date: 2023-01-17 20:30:00 +0800
 status: To Do
+draft: false
 tags:
   - Gradle
 ---

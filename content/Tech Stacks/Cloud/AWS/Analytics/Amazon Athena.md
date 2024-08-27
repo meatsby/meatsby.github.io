@@ -1,5 +1,5 @@
 ---
-title: "\bAmazon Athena"
+title: "Amazon Athena"
 date: 2024-05-24 23:24:28 +0800
 status: In Progress
 draft: false

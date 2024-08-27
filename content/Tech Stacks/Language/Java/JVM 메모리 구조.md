@@ -1,6 +1,8 @@
 ---
-title: "[Java] JVM 메모리 구조"
+title: "JVM 메모리 구조"
 date: 2021-11-02 10:00:03 +0900
+status: In Progress
+draft: false
 tags:
   - Java
   - JVM

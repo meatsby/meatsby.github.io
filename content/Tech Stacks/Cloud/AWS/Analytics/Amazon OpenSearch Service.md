@@ -1,5 +1,5 @@
 ---
-title: Amazon OpenSearch Service
+title: "Amazon OpenSearch Service"
 date: 2024-05-27 19:09:59 +0800
 status: In Progress
 draft: false

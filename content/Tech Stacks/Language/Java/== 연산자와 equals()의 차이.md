@@ -1,6 +1,8 @@
 ---
-title: "[Java] == 연산자와 equals()의 차이"
+title: "== 연산자와 equals()의 차이"
 date: 2021-11-02 10:00:04 +0900
+status: In Progress
+draft: false
 tags:
   - Java
 ---

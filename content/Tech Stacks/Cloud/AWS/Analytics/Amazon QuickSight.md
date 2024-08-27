@@ -1,5 +1,5 @@
 ---
-title: Amazon QuickSight
+title: "Amazon QuickSight"
 date: 2024-05-27 22:09:25 +0800
 status: In Progress
 draft: false

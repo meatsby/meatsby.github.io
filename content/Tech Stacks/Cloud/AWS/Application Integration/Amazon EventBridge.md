@@ -1,5 +1,5 @@
 ---
-title: Amazon EventBridge
+title: "Amazon EventBridge"
 date: 2024-05-29 20:20:39 +0800
 status: In Progress
 draft: false

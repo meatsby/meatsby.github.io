@@ -1,5 +1,5 @@
 ---
-title: K8s Core Concepts
+title: "K8s Core Concepts"
 date: 2024-08-05 21:58:02 +0800
 status: In Progress
 draft: false

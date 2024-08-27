@@ -1,5 +1,5 @@
 ---
-title: Amazon Redshift
+title: "Amazon Redshift"
 date: 2024-05-27 19:07:10 +0800
 status: In Progress
 draft: false

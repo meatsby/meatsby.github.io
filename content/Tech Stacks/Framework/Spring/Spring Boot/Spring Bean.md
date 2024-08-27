@@ -1,7 +1,8 @@
 ---
-title: Spring Bean
+title: "Spring Bean"
 date: 2022-10-07 14:30:00 +0900
 status: In Progress
+draft: false
 tags:
   - Spring Boot
 ---

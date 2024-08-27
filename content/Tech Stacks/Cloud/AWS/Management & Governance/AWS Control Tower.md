@@ -1,5 +1,5 @@
 ---
-title: AWS Control Tower
+title: "AWS Control Tower"
 date: 2024-05-30 22:16:53 +0800
 status: In Progress
 draft: false

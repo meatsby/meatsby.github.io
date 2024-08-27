@@ -1,7 +1,8 @@
 ---
-title: IPv4 와 IPv6
+title: "IPv4 와 IPv6"
 date: 2022-04-28 14:00:00 +0900
 status: In Progress
+draft: false
 tags:
   - Network
 ---

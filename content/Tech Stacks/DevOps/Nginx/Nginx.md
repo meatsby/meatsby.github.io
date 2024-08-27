@@ -1,7 +1,8 @@
 ---
-title: Nginx
+title: "Nginx"
 date: 2023-01-17 20:30:00 +0800
 status: To Do
+draft: false
 tags:
   - Nginx
 ---

@@ -1,7 +1,8 @@
 ---
-title: Project Setup
+title: "Project Setup"
 date: 2023-02-03 13:30:00 +0800
 status: In Progress
+draft: false
 tags:
   - GitHub
 ---

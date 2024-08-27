@@ -1,5 +1,5 @@
 ---
-title: Python
+title: "Python"
 date: 2024-08-16 18:17:41 +0800
 status: To Do
 draft: false

@@ -1,7 +1,8 @@
 ---
-title: DB 형상관리 Flyway
+title: "DB 형상관리 Flyway"
 date: 2023-01-17 20:40:00 +0800
 status: To Do
+draft: false
 tags:
   - Database
   - Flyway

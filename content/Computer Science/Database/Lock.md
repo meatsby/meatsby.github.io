@@ -1,7 +1,8 @@
 ---
-title: Lock
+title: "Lock"
 date: 2022-09-21 21:30:00 +0900
 status: In Progress
+draft: false
 tags:
   - Database
 ---

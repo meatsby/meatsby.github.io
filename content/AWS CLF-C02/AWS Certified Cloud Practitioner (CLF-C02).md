@@ -1,5 +1,5 @@
 ---
-title: AWS Certified Cloud Practitioner (CLF-C02)
+title: "AWS Certified Cloud Practitioner (CLF-C02)"
 date: 2023-11-20 17:00:00 +0800
 status: In Progress
 draft: false

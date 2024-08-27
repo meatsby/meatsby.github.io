@@ -1,7 +1,8 @@
 ---
-title: Abstract Class & Interface
+title: "Abstract Class & Interface"
 date: 2022-09-29 18:50:00 +0900
 status: In Progress
+draft: false
 tags:
   - Java
 ---

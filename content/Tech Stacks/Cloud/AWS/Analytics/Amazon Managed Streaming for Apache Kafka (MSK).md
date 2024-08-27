@@ -1,5 +1,5 @@
 ---
-title: Amazon Managed Streaming for Apache Kafka (MSK)
+title: "Amazon Managed Streaming for Apache Kafka (MSK)"
 date: 2024-05-27 22:34:21 +0800
 status: In Progress
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: Packer & Ansible
+title: "Packer & Ansible"
 date: 2024-08-12 21:13:02 +0800
 status: In Progress
 draft: false

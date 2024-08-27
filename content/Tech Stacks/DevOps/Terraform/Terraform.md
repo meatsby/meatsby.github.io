@@ -1,7 +1,8 @@
 ---
-title: Terraform
+title: "Terraform"
 date: 2023-09-25 09:30:00 +0800
 status: In Progress
+draft: false
 tags:
   - Terraform
 ---

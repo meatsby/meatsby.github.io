@@ -1,5 +1,5 @@
 ---
-title: AWS Storage Gateway
+title: "AWS Storage Gateway"
 date: 2024-05-14 13:58:17 +0800
 status: In Progress
 draft: false

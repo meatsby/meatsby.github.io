@@ -1,5 +1,5 @@
 ---
-title: Amazon DynamoDB
+title: "Amazon DynamoDB"
 date: 2024-04-21 22:58:53 +0800
 status: In Progress
 draft: false

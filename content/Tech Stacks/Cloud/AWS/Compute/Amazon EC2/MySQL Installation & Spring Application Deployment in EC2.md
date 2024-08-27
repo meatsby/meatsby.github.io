@@ -1,7 +1,8 @@
 ---
-title: MySQL Installation & Spring Application Deployment in EC2
+title: "MySQL Installation & Spring Application Deployment in EC2"
 date: 2022-06-08 18:00:00 +0900
 status: In Progress
+draft: false
 tags:
   - AWS
   - EC2

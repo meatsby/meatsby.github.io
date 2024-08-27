@@ -1,6 +1,8 @@
 ---
-title: "[Java] Scanner 와 BufferedReader"
+title: "Scanner 와 BufferedReader"
 date: 2021-11-02 10:00:01 +0900
+status: In Progress
+draft: false
 tags:
   - Java
 ---

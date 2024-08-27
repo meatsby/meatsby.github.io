@@ -1,7 +1,8 @@
 ---
-title: DCI Pattern
+title: "DCI Pattern"
 date: 2022-09-25 23:30:00 +0900
 status: To Do
+draft: false
 tags:
   - Test
 ---
