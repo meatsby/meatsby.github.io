@@ -48,6 +48,40 @@ Dekker 와 유사하지만, 상대 스레드에게 진입 기회를 양보하는
 
 여러 스레드에 대한 처리가 가능한 알고리즘이다. 가장 작은 수의 번호표를 가지고 있는 프로세스가 임계 구역에 진입한다.
 
+## Semaphores
+---
+- A tool that can be used to enforce mutual exclusion
+    - Is a protected variable with methods for restricting access to `critical resources`
+    - A binary semaphore takes values 0 and 1
+    - A counting semaphore takes 0 ~ infinity
+
+### Producer-Consumer Problem
+- It is a classical example of a multi-process synchronization problem
+- Also known as the Bounded-Buffer Problem
+- Occurs when a critical section is `not mutually exclusive`
+- It can be solved by enforcing mutual exclusion
+
+### Problem using semaphore - Deadlock
+- Permanent blocking of a set of processes that either compete for the system resources
+- Deadlock only occurs in a system where all 4 conditions are met
+- Conditions
+    - Mutual Exclusion: Only one process can use a resource at a time
+    - Hold and Wait: Processes already holding resources may request new resources
+    - No Preemption: No resource can be forcibly removed from a process holding it
+    - Circular Wait: Two or more processes form a circular chain where each process waits for a resource that the next process in the chain holds
+- Dining Philosopher Problem is a famous example of deadlock
+    - It explains the solution by introducing binary semaphore as a waiter
+
+### Monitor
+- Improved version of multi-process synchronization
+- Provided through OOP languages
+- Enforces one process at a time to ensure mutual exclusion
+
+### Problem using semaphore - Starvation
+- The process is perpetually denied necessary resources
+- Solution
+    - Use a scheduling algorithm with a priority queue that also uses the aging technique
+
 ## References
 ---
 - [https://gyoogle.dev/blog/computer-science/operating-system/Semaphore & Mutex.html](https://gyoogle.dev/blog/computer-science/operating-system/Semaphore%20&%20Mutex.html)
