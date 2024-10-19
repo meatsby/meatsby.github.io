@@ -85,3 +85,11 @@ chmod {권한} {변경할 파일 or 디렉토리}
 ```
 - `rwx(User)rwx(Group)rwx(Other)`
 - `rwx(421)`
+
+### 심볼릭 링크
+```
+ln [option] [source] [link]
+ln -s  ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Vault\ Name ~/path/to/local
+```
+- link 의 약자인 `ln` 명령어를 통해 링크파일 생성 가능
+- Obsidian 을 사용할 경우 iCloud Drive 를 통해 기기간 연동이 가능한데 로컬에서의 변경사항을 iCloud Drive 내에 링크파일을 생성해서 동기화 및 백업을 수행할 수 있음
