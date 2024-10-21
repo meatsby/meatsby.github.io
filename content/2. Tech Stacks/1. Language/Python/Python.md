@@ -69,3 +69,21 @@ def to_dict(self) -> dict:
 d = {k: v[k] for v in d.values() for k in v}
 ```
 - Creates a new dictionary with values only excluding keys
+
+## ConfigParser
+---
+```cfg
+[System]
+env=dev
+#env=stg
+#env=prod
+```
+
+```python
+import configparser
+
+properties = configparser.ConfigParser()
+properties.read('config.cfg')
+
+print(properties["System"]["env"]) # dev
+```
