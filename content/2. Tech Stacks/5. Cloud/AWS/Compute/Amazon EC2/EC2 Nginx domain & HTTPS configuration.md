@@ -1,5 +1,5 @@
 ---
-title: "Nginx domain & HTTPS in EC2"
+title: EC2 Nginx domain & HTTPS configuration
 date: 2022-07-25 14:40:00 +0900
 status: In Progress
 draft: false
