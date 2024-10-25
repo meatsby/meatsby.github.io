@@ -201,15 +201,15 @@ Cloud computing is the on-demand delivery of IT resources over the internet with
     - active/passive
     - RPO/RTO: Hours
     - Cost `$`
-- Pilot Light
+- Pilot Light: A small version of the app is always running in the cloud which is useful for critical core.
     - active/passive
     - RPO/RTO: 10s of minutes
     - Cost `$$`
-- Warm Standby
+- Warm Standby: The full system is up and running, but at minimum size. Upon disaster, we can scale to production load.
     - active/passive
     - RPO/RTO: Minutes
     - Cost `$$$`
-- Multi-site
+- Multi-site: Full Production Scale is running AWS and On-Premise.
     - active/active
     - RPO/RTO: Real-time
     - Cost `$$$$`
