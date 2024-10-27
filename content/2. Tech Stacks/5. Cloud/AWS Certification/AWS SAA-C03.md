@@ -1,5 +1,5 @@
 ---
-title: "AWS Certified Solutions Architect Associate (SAA-C03)"
+title: AWS SAA-C03
 date: 2024-04-26 22:34:49 +0800
 status: In Progress
 draft: false
