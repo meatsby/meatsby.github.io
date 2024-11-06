@@ -1,7 +1,7 @@
 ---
-title: AWS CLF-C02
+title: AWS CLF-C02 Notes
 date: 2023-11-20 17:00:00 +0800
-status: In Progress
+status: Done
 draft: false
 tags:
   - AWS

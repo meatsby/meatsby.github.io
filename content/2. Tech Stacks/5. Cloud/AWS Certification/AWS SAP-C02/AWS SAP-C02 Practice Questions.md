@@ -16,11 +16,16 @@ A company needs to architect a hybrid DNS solution. This solution will use an Am
 - D. Associate the private hosted zone to the shared services VPC. Create a Route 53 inbound resolver in the shared services VPC. Attach the shared services VPC to the transit gateway and create forwarding rules in the on-premises DNS server for cloud.example.com that point to the inbound resolver.
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/90837-exam-aws-certified-solutions-architect-professional-sap-c02/)
-> A
+> ![[Pasted image 20241105220019.png]]
+> - A, 모든 VPC 에 Private hosted zone 연결, R53 inbound resolver 를 shared services VPC 에 생성, 모든 VPC 를 Transit Gateway 에 연결, 온프레미스 DNS 서버에서 R53 inbound resolver 로의 forwarding rules 생성
+>   - shared services VPC 는 조직의 AWS 환경에서 공통으로 사용되는 서비스들을 호스팅하는 VPC
+> - Not B, EC2 기반 conditional forwarder 는 관리 오버헤드가 크고 성능이 제한적
+> - Not C, Outbound resolver 는 AWS -> On-premise 로의 DNS 쿼리에 사용됨
+> - Not D, Private hosted zone 을 shared services VPC 에만 연결하면 다른 VPC 들의 직접 DNS 해석이 불가능
 
 ## Question 2
 ---
-A company is providing weather data over a REST-based API to several customers. The API is hosted by Amazon API Gateway and is integrated with different AWS Lambda functions for each API operation. The company uses Amazon Route 53 for DNS and has created a resource record of weather.example.com. The company stores data for the API in Amazon DynamoDB tables. The company needs a solution that will give the API the ability to fail over to a different AWS Region.Which solution will meet these requirements?
+A company is providing weather data over a REST-based API to several customers. The API is hosted by Amazon API Gateway and is integrated with different AWS Lambda functions for each API operation. The company uses Amazon Route 53 for DNS and has created a resource record of weather.example.com. The company stores data for the API in Amazon DynamoDB tables. The company needs a solution that will give the API the ability to fail over to a different AWS Region. Which solution will meet these requirements?
 
 - A. Deploy a new set of Lambda functions in a new Region. Update the API Gateway API to use an edge-optimized API endpoint with Lambda functions from both Regions as targets. Convert the DynamoDB tables to global tables.
 - B. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables.

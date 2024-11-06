@@ -87,6 +87,15 @@ tags:
 - Private Hosted Zones - contains records that specify how you route traffic within one or more VPCs (private domain names)
 - $0.5 per month per hosted zone
 
+### Resolver Endpoints
+- Inbound Endpoint
+	- On-premises 네트워크에서 들어오는 DNS 쿼리를 처리하는 VPC 의 엔드포인트
+	- VPC 내의 도메인 이름에 대한 DNS 쿼리를 처리하는 데 사용
+	- On-premises DNS Resolver 가 DNS 쿼리를 R53 Resolver 로 전달 가능
+	- On-premises DNS Resolver 가 R53 Private Hosted Zone 에서 AWS 리소스 및 레코드에 대한 도메인 이름 확인 가능
+- Outbound Endpoint
+	- VPC 에서 On-premises 네트워크로 DNS 쿼리를 전달하는 VPC 의 엔드포인트
+
 ### Health Checks
 - HTTP Health Checks are only for Public Resources
 - Health Check -> Automated DNS Failover:
