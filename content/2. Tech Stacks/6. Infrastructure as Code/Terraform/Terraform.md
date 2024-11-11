@@ -39,6 +39,30 @@ VM 을 예로, Mutable Infrastructure 는 클라우드 인프라가 배포된 �
 
 ## 3. Understand Terraform Basics
 ---
+```
+terraform init
+```
+- `terraform init` 을 통해 Terraform config 파일을 initialize 할 수 있다. 이때 config 파일에 사용된 각종 plugin 을 설치하기도 한다.
+
+```
+terraform validate
+```
+- `terraform validate` 을 통해 작성된 config 파일이 문법적으로 오류가 없는지 확인한다. 가령 module 을 호출할 때 잘못된 variable 값을 작성했을 때 해당 부분을 잡아준다.
+
+```
+terraform plan
+```
+- `terraform plan` 을 호출하면 Terraform 은 local 또는 backend 에 저장된 state 파일과 실제 배포된 클라우드 환경의 리소스를 비교하여 상태가 일정한지 확인하고, 만약 Terraform config 파일에 수정된 부분이 있다면 이를 토대로 apply 전에 어떤 변화가 있을 지 알려준다.
+
+```
+terraform apply
+```
+- `terraform apply` 를 호출하면 plan 에서 확인된 변경사항을 적용한다. 이때 provider 들의 API 를 호출하고 실제 인프라에 리소스들이 생성된다.
+
+```
+terraform destroy
+```
+- `terraform destroy` 는 말 그대로 배포된 리소스들을 제거한다.
 
 ## 4. Use Terraform outside the Core Workflow
 ---
