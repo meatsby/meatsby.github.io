@@ -42,7 +42,7 @@ VM 을 예로, Mutable Infrastructure 는 클라우드 인프라가 배포된 �
 ```
 terraform init
 ```
-- `terraform init` 을 통해 Terraform config 파일을 initialize 할 수 있다. 이때 config 파일에 사용된 각종 plugin 을 설치하기도 한다.
+- `terraform init` 을 통해 Terraform config 파일을 initialize 할 수 있다. 이때 config 파일에 사용된 각종 plugin 과 lock 파일을 설치한다.
 
 ```
 terraform validate
