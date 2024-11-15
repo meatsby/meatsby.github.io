@@ -54,6 +54,35 @@ Ansible 을 설치하면 기본적으로 `/etc/ansible/ansible.cfg` 이라는 �
 3. `.ansible.cfg` 유저의 홈 디렉터리에 있는 config 파일
 4. `/etc/ansible/ansible.cfg` 기본 config 파일
 
+## Ansible Inventory
+---
+```ini
+server1.company.com
+server2.company.com
+
+[mail]
+server3.company.com
+server4.company.com
+
+[db]
+server5.company.com
+server6.company.com
+
+[web]
+server7.company.com
+server8.company.com
+```
+Ansible 은 1대 또는 여러대의 머신을 동시에 설정할 수 있다. Linux 의 경우엔 SSH, Windows 의 경우엔 Powershell Remoting 을 통해 통신하여 머신들을 설정한다. Ansible 은 이런 target systems 를 Inventory 를 통해 관리하는데 기본적으로 `/etc/ansible/hosts` 에 위치한다. Inventory 파일은 ini 또는 yaml 형태의 파일로 작성할 수 있다.
+
+```ini
+web  ansible_host=server1.company.com ansible_connection=ssh   ansible_user=root
+db   ansible_host=server2.company.com ansible_connection=winrm ansible_user=admin
+mail ansible_host=server3.company.com ansible_connection=ssh   ansible_ssh_pass=P
+
+localhost ansible_connection=localhost
+```
+Inventory 파일에서 target host 를 그룹으로 분류하는 것 외에도 alias 를 통해 target system 에 대한 설정을 세분화 할 수도 있다. 이런 설정값들은 기본적으로 linux 를 기준으로 기본값이 설정된다.
+
 ## References
 ---
 - [IBM Technology - What is Ansible?](https://www.youtube.com/watch?v=fHO1X93e4WA)
