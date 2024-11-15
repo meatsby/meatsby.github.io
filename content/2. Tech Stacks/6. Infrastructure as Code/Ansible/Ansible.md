@@ -83,6 +83,20 @@ localhost ansible_connection=localhost
 ```
 Inventory 파일에서 target host 를 그룹으로 분류하는 것 외에도 alias 를 통해 target system 에 대한 설정을 세분화 할 수도 있다. 이런 설정값들은 기본적으로 linux 를 기준으로 기본값이 설정된다.
 
+## Ansible Variables
+---
+```yaml
+name: Add DNS server to resolv.conf
+hosts: localhost
+vars:
+  dns_server: 10.1.250.10
+tasks:
+  - lineinfile:
+      path: /etc/resolv.conf
+      line: 'nameserver {{ dns_server }}'
+```
+Ansible 에선 변수를 선언할 때 Playbook vars 딕셔너리에 선언하거나 variables 파일에 따로 선언할 수 있다. 변수를 사용할 때엔 Jinja2 템플릿 형식으로 적용할 수 있다.
+
 ## References
 ---
 - [IBM Technology - What is Ansible?](https://www.youtube.com/watch?v=fHO1X93e4WA)
