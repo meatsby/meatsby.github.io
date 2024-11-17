@@ -142,6 +142,51 @@ ansible-playbook configure_nginx.yml --syntax-check
 ```
 syntax-check mode 로 Playbook 의 오타를 찾아낼 수도 있다.
 
+## Ansible Conditionals
+---
+```yaml
+---
+- name: Install NGINX
+  hosts: all
+  tasks:
+  - name: Install NGINX on Debian
+    apt:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Debian" and
+          ansible_distribution_version == "16.04"
+
+  - name: Install NGINX on Redhat
+    yum:
+      name: nginx
+      state: present
+    when: ansible_os_family == "RedHat" or
+          ansible_os_family == "SUSE"
+```
+Ansible 에선 Play 내 when 필드를 통해 적용될 task 를 조건부로 실행할 수 있다.
+
+```yaml
+---
+- name: Install Softwares
+  hosts: all
+  vars:
+    packages:
+      - name: nginx
+	    required: True
+      - name: mysql
+        required: True
+      - name: apache
+        required: False
+  tasks:
+  - name: Install "{{ item.name }}" on Debian
+    apt:
+      name: "{{ item.name }}"
+      state: present
+    when: item.required == True
+    loop: "{{ packages }}"
+```
+또한 loop 와 vars 를 조합하여 필요한 task 만 실행되게끔 작성도 가능하다.
+
 ## References
 ---
 - [IBM Technology - What is Ansible?](https://www.youtube.com/watch?v=fHO1X93e4WA)
