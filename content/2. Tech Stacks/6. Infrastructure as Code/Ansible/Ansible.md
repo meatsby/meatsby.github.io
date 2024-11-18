@@ -219,6 +219,7 @@ Ansible 에선 task 내에서 loop 를 돌릴 수 있고 각 요소를 item 을 
 ---
 Ansible 은 target node 에 실행할 명령들을 module 을 통해 작성한다. User, Group, Iptable 등 System 수준의 설정에서 부터 Shell Script 등을 실행할 수 있는 Command 수준, Copy, Lineinfile 등 File 수준, Database, Cloud 수준 등 다양한 module 이 존재한다.
 
+### Command
 ```yaml
 - name: Play 1
   hosts: localhost
@@ -231,6 +232,7 @@ Ansible 은 target node 에 실행할 명령들을 module 을 통해 작성한�
 ```
 이런 module 들은 다양한 parameter 를 제공하는데, command module 을 예로 chdir, creates 등 명령어를 실행하기 전에 필요한 옵션들이 존재한다.
 
+### Service
 ```yaml
 - name: Start Postgresql
   hosts: localhost
@@ -242,6 +244,7 @@ Ansible 은 target node 에 실행할 명령들을 module 을 통해 작성한�
 ```
 Service module 의 state 의 경우 started 를 통해 서비스가 실행중이지 않을 때만 실행하여 idempotency 를 보장한다.
 
+### Fileinline
 ```yaml
 - name: Add DNS server to resolv.conf
   hosts: localhost
@@ -251,6 +254,58 @@ Service module 의 state 의 경우 started 를 통해 서비스가 실행중이
         line: 'nameserver 10.1.250.10'
 ```
 lineinfile module 의 경우 echo script 를 사용하는 것과 다르게 한 번의 라인 추가만 작동한다는 것 역시 idempotency 를 보장한다.
+
+## Ansible Roles
+---
+Ansible 에서 Role 은 사람이 직업을 가지듯 target system node 가 mysql 을 호스팅할 지 nginx 를 호스팅할 지 역할을 부여하는 개념이다.
+
+```yaml
+- name: Install and Configure MySQL
+  hosts: db-server
+  tasks:
+    - name: Install Pre-Requisites
+      yum:
+        name: pre-req-packages
+        state: present
+
+	- name: Install MySQL Packages
+      yum:
+        name: mysql
+        state: present
+
+	- name: Start MySQL Service
+      service:
+        name: mysql
+        state: present
+
+	- name: Configure Database
+      mysql_db:
+        name: db1
+        state: present
+```
+가령 MySQL 을 호스팅하기 위해선 위와같은 tasks 가 필요하다고 하자.
+
+```yaml
+- name: Install and Configure MySQL
+  hosts: db-server1 ... db-server100
+  roles:
+    - mysql
+```
+MySQL-Role 을 위한 tasks 만 따로 모아서 다른 파일에 저장한 뒤 Playbook 에서 참조해서 사용하도록 구성할 수 있다.
+
+```
+my-playbook/
+- playbook.yml
+- roles/
+	- mysql/
+		- templates/
+		- tasks/
+		- handlers/
+		- vars/
+		- defaults/
+		- meta/
+```
+Role 을 사용할 경우 위와 같은 file structure 로 사용하거나 /etc/ansible/roles directory 에 저장하여 전역에서 사용할 수도 있다.
 
 ## References
 ---
