@@ -215,6 +215,43 @@ Ansible 에선 task 내에서 loop 를 돌릴 수 있고 각 요소를 item 을 
 ```
 비슷하게 with_ 로 시작하는 필드들이 있는데 이는 loop 와 같은 방식으로 작동한다.
 
+## Ansible Modules
+---
+Ansible 은 target node 에 실행할 명령들을 module 을 통해 작성한다. User, Group, Iptable 등 System 수준의 설정에서 부터 Shell Script 등을 실행할 수 있는 Command 수준, Copy, Lineinfile 등 File 수준, Database, Cloud 수준 등 다양한 module 이 존재한다.
+
+```yaml
+- name: Play 1
+  hosts: localhost
+  tasks:
+    - name: Execute command 'date'
+      command: date
+
+    - name: Display resolv.conf contents
+      command: cat resolv.conf chdir=/etc
+```
+이런 module 들은 다양한 parameter 를 제공하는데, command module 을 예로 chdir, creates 등 명령어를 실행하기 전에 필요한 옵션들이 존재한다.
+
+```yaml
+- name: Start Postgresql
+  hosts: localhost
+  tasks:
+    - name: Start the database service
+      service:
+        name: postgresql
+        state: started
+```
+Service module 의 state 의 경우 started 를 통해 서비스가 실행중이지 않을 때만 실행하여 idempotency 를 보장한다.
+
+```yaml
+- name: Add DNS server to resolv.conf
+  hosts: localhost
+  tasks:
+    - lineinfile:
+        path: /etc/resolv.conf
+        line: 'nameserver 10.1.250.10'
+```
+lineinfile module 의 경우 echo script 를 사용하는 것과 다르게 한 번의 라인 추가만 작동한다는 것 역시 idempotency 를 보장한다.
+
 ## References
 ---
 - [IBM Technology - What is Ansible?](https://www.youtube.com/watch?v=fHO1X93e4WA)
