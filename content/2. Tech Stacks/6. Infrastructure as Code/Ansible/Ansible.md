@@ -187,6 +187,34 @@ Ansible 에선 Play 내 when 필드를 통해 적용될 task 를 조건부로 �
 ```
 또한 loop 와 vars 를 조합하여 필요한 task 만 실행되게끔 작성도 가능하다.
 
+## Ansible Loops
+---
+```yaml
+- name: Create users
+  hosts: localhost
+  tasks:
+    - user: name='{{ item.name }}' state=present uid='{{ item.uid }}'
+      loop:
+        - name: joe
+          uid: 1010
+        - name: george
+          uid: 1011
+```
+Ansible 에선 task 내에서 loop 를 돌릴 수 있고 각 요소를 item 을 통해 참조할 수 있다.
+
+```yaml
+- name: Check multiple mongodbs
+  hosts: localhost
+  tasks:
+    - debug: msg="DB={{ item.database }} PID={{ item.pid }}"
+      with_mongodb:
+        - database: dev
+          connection_string: "mongodb://dev.mongo/"
+        - database: prod
+          connection_string: "mongodb://prod.mongo/"
+```
+비슷하게 with_ 로 시작하는 필드들이 있는데 이는 loop 와 같은 방식으로 작동한다.
+
 ## References
 ---
 - [IBM Technology - What is Ansible?](https://www.youtube.com/watch?v=fHO1X93e4WA)
