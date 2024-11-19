@@ -93,3 +93,19 @@ ln -s  ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Vault\ Name ~/
 ```
 - link 의 약자인 `ln` 명령어를 통해 링크파일 생성 가능
 - Obsidian 을 사용할 경우 iCloud Drive 를 통해 기기간 연동이 가능한데 로컬에서의 변경사항을 iCloud Drive 내에 링크파일을 생성해서 동기화 및 백업을 수행할 수 있음
+
+### set -exuo pipefail
+```
+set -exuo pipefail
+```
+쉘 스크립트의 오동작, 버그를 줄이는 명령어
+- `set -e` (errexit) 오류가 발생하면 스크립트 종료
+- `set -x` (xtrace) 실행되는 명령어와 인수들 출력
+- `set -u` (nounset) 설정되지 않은 변수 사용 시 종료
+- `set -o pipefail` (옵션 on/off(+o)) 파이프 사용 시 오류 코드를 이어 받음
+
+### mkdir
+```
+mkdir -p /not_yet_parent/target_dir
+```
+- `-p` (parents) 필요한 상위 디렉토리 생성
