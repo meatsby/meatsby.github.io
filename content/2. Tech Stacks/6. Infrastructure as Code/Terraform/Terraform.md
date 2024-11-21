@@ -39,6 +39,7 @@ VM 을 예로, Mutable Infrastructure 는 클라우드 인프라가 배포된 �
 
 ## 3. Understand Terraform Basics
 ---
+### Terraform Basics
 ```
 terraform init
 ```
@@ -63,6 +64,32 @@ terraform apply
 terraform destroy
 ```
 - `terraform destroy` 는 말 그대로 배포된 리소스들을 제거한다.
+
+### HashiCorp Configuration Language (HCL)
+```
+# Template
+<BLOCK TYPE> "<BLOCK LABEL>" "<BLOCK LABEL>" {
+  # Block body
+  <IDENTIFIER> = <EXPRESSION> # Argument
+}
+
+# AWS EC2 Example
+resource "aws_instance" "web_server" {
+  ami           = "ami-..."
+  instance_type = var.instance_type
+}
+```
+Terraform 은 HCL 로 작성되고 위와 같은 구조로 이루어져있다.
+
+Terraform 은 아래와 같은 다양한 종류의 `<BLOCK TYPE>` 을 제공한다.
+- Setting Block
+- Provider Block
+- Resource Block
+- Data Block
+- Input Variable Block
+- Local Variable Block
+- Output Values Block
+- Modules Block
 
 ## 4. Use Terraform outside the Core Workflow
 ---
