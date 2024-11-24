@@ -138,6 +138,18 @@ Providers required by configuration:
 ```
 `terraform providers` 를 실행해 어떤 provider 들이 요구되는지 확인할 수 있다.
 
+### Terraform Provider Block
+```
+provider "aws" {
+  region                  = "ap-east-1"  
+  access_key              = "my-access-key"
+  secret_key              = "my-secret-key"
+  shared_credentials_file = "/Users/tf_user/.aws/creds"
+  profile                 = "customprofile"
+}
+```
+Provider Block 은 설치된 provider 에 대한 설정을 해주기 위한 block 이다. AWS provider 를 예시로 위처럼 region 을 지정해줄 수 있고, access_key 와 secret_key 등을 명시해줄 수도 있다.
+
 ## 4. Use Terraform outside the Core Workflow
 ---
 
