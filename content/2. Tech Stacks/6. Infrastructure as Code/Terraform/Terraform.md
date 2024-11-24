@@ -91,6 +91,53 @@ Terraform 은 아래와 같은 다양한 종류의 `<BLOCK TYPE>` 을 제공한�
 - Output Values Block
 - Modules Block
 
+### Terraform Plug-in-Based Architecture
+```
+Terraform Core <-> Providers(Plugins) <-> Upstream APIs
+```
+Terraform은 remote system 에 인프라를 구축하기 위해 plug-in-based architecture 로 구성되어 있다. 이는 remote system 이 제공하는 API 를 Provider 형태로 구성하여 Terraform Core 가 Provider 와 상호작용하여 API 를 호출하는 방식이다. 예를 들어 AWS 인프라를 구축하고 싶다면 AWS Provider 를 통해 AWS resource 생성 API 를 호출하는 형태다. Provider 는 [Terraform Registry](https://registry.terraform.io/browse/providers) 에서 확인할 수 있다.
+
+```
+# terraform.tf
+terraform {
+  required_version = ">= 1.0.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+```
+Terraform provider 를 설치하기 위해선 `terraform.tf` 파일에 설치하고자 하는 provider 들 위처럼 추가해주어야 한다.
+
+```
+terraform init
+```
+원하는 provider 를 모두 추가해주었다면 `terraform init` 을 통해 provider 를 설치하자.
+
+```
+terraform version
+```
+
+```
+Terraform v1.9.8
+on darwin_arm64
++ provider registry.terraform.io/hashicorp/aws v3.76.1
+```
+`terraform version` 을 실행해 어느 버전의 provider 가 설치되었는지 확인할 수 있고,
+
+```
+terraform providers
+```
+
+```
+Providers required by configuration:
+.
+└── provider[registry.terraform.io/hashicorp/aws] ~> 3.0
+```
+`terraform providers` 를 실행해 어떤 provider 들이 요구되는지 확인할 수 있다.
+
 ## 4. Use Terraform outside the Core Workflow
 ---
 
