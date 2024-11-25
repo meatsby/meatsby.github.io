@@ -164,6 +164,38 @@ resource "aws_instance" "web_server" {
 ```
 Resource Block 은 말 그대로 provider 에서 제공하는 resource 를 생성하기 위한 block 이다. 위 예시처럼 제공하는 `RESOURCE_TYPE` 을 명시하고 세부적인 설정들을 작성해주면 resource 를 생성할 수 있다.
 
+### Terraform Input Variables Block
+```
+variable "<VARIABLE_NAME>" {
+  type        = <VARIABLE_TYPE>
+  description = <DESCRIPTION>
+  default     = <EXPRESSION>
+  sensitive   = <BOOLEAN>
+  validation  = <RULES>
+}
+
+# Example
+variable "aws_region" {
+  type        = string
+  description = "region used to deploy workloads"
+  default     = "us-east-1"
+  validation {
+    condition     = can(regex("^us-", var.aws_region))
+    error_message = "The aws_region value must be a valid region in the
+    USA, starting with \"us-\"."
+  }
+}
+```
+Terraform 에선 Variable Block 을 통해 변수를 선언하고 사용한다. 위와 같은 구조를 가지고 있으며, default 값이 주어지지 않는 경우 `terraform plan` 시 각 variable 값을 입력해 주어야 한다. 때문에 Variable Block 을 Input Variable Block 이라고도 부른다.
+
+Variable 값을 지정해주는 방법이 여러가지 있는데 아래와 같은 우선순위로 값이 적용된다.
+1. Variable defaults
+2. Env Variables
+3. `terraform.tfvars` file
+4. `terraform.tfvars.json`
+5. `*.auto.tfvars` or `*.auto.tfvars.json`
+6. Command Line: `-var` and `-var-file`
+
 ## 4. Use Terraform outside the Core Workflow
 ---
 
