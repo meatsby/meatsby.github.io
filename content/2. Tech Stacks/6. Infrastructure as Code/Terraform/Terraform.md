@@ -150,6 +150,20 @@ provider "aws" {
 ```
 Provider Block 은 설치된 provider 에 대한 설정을 해주기 위한 block 이다. AWS provider 를 예시로 위처럼 region 을 지정해줄 수 있고, access_key 와 secret_key 등을 명시해줄 수도 있다.
 
+### Terraform Resource Block
+```
+resource "<RESOURCE_TYPE>" "<RESOURCE_NAME>" {
+  <IDENTIFIER> = <EXPRESSION> # Argument
+}
+
+# AWS EC2 Example
+resource "aws_instance" "web_server" {
+  ami           = "ami-..."
+  instance_type = var.instance_type
+}
+```
+Resource Block 은 말 그대로 provider 에서 제공하는 resource 를 생성하기 위한 block 이다. 위 예시처럼 제공하는 `RESOURCE_TYPE` 을 명시하고 세부적인 설정들을 작성해주면 resource 를 생성할 수 있다.
+
 ## 4. Use Terraform outside the Core Workflow
 ---
 
