@@ -164,7 +164,7 @@ resource "aws_instance" "web_server" {
 ```
 Resource Block 은 말 그대로 provider 에서 제공하는 resource 를 생성하기 위한 block 이다. 위 예시처럼 제공하는 `RESOURCE_TYPE` 을 명시하고 세부적인 설정들을 작성해주면 resource 를 생성할 수 있다.
 
-### Terraform Input Variables Block
+### Terraform Variables Block
 ```
 variable "<VARIABLE_NAME>" {
   type        = <VARIABLE_TYPE>
@@ -195,6 +195,22 @@ Variable 값을 지정해주는 방법이 여러가지 있는데 아래와 같�
 4. `terraform.tfvars.json`
 5. `*.auto.tfvars` or `*.auto.tfvars.json`
 6. Command Line: `-var` and `-var-file`
+
+### Terraform Locals Block
+```
+locals {
+  local_variable_name = <EXPRESSION OR VALUE>
+  local_variable_name = <EXPRESSION OR VALUE>
+}
+
+# Example
+locals {
+  time        = timestamp()
+  application = "api_server"
+  server_name = "${var.account}-${local.application}"
+}
+```
+Locals Block 을 통해 자주 사용되는 값들을 정해두고 `local.local_variable_name` 형식으로 참조해서 사용할 수 있다. 위 예시처럼 특정 값 뿐 아니라 expression 으로 variable 과 함께 사용할 수도 있다. 기타 언어의 지역변수와 달리 여러 파일에서 참조가능하다.
 
 ## 4. Use Terraform outside the Core Workflow
 ---
