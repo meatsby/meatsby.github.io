@@ -253,7 +253,7 @@ Configuration Block 은 provider 나 Terraform 의 버전등을 지정해주기 
 ### Module Block
 ```hcl
 # Template
-module “<MODULE_NAME>” {
+module "<MODULE_NAME>" {
   source = <MODULE_SOURCE>
   <INPUT_NAME> = <DESCRIPTION> #Inputs
   <INPUT_NAME> = <DESCRIPTION> #Inputs
@@ -285,6 +285,36 @@ parent(root)_module
 └── variables.tf
 ```
 local 에서 선언하여 사용할 경우 일반적으로 modules directory 내에 module 을 선언하여 root 에서 불러 사용하는 방식이다.
+
+### Output Block
+```hcl
+# Template
+output "<NAME>" {
+  value= <EXPRESSION> # Argument
+}
+
+# Example
+output "web_server_ip" {
+  description = "Public IP Address of Web Server on EC2"
+  value       = aws_instance.web_server.public_ip
+  sensitive   = true
+}
+```
+Output Block 은 Terraform 이 apply 된 이후 출력되는 값들을 선언하기 위한 block 이다. 간단하게 hello world 를 출력할 수도 있고 Terraform 에 의해 생성된 resource 에 대한 정보를 참조해 출력할 수도 있다. 이런 outputs 를 통해 나온 값들을 활용하여 자동화하거나 다른 Terraform workspace 에서 data source 로 활용할 수도 있다.
+
+### Commenting
+```hcl
+# One-line comment
+
+/*
+Multiple
+line
+comment
+*/
+```
+주석은 위와 같이 작성할 수 있다.
+
+
 
 ## 4. Use Terraform outside the Core Workflow
 ---
