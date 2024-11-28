@@ -236,6 +236,20 @@ data "aws_ami" "ubuntu_22_04" {
 ```
 Data Block 은 API 를 통해 provider 에서 제공하는 data 를 받아와 Terraform 코드에서 사용할 수 있게 도와주는 block 이다. 위 예시처럼 가장 최신 Ubuntu AMI 의 ID 를 가져와 EC2 를 생성할 때 사용할 수 있다.
 
+### Configuration Block
+```
+# Template
+terraform {
+  <ARGUMENT> = <VALUE>
+}
+
+# Example
+ terraform {
+   required_version = ">= 1.0.0"
+ }
+```
+Configuration Block 은 provider 나 Terraform 의 버전등을 지정해주기 위한 block 이다. 기본적으로 `terraform.tf` 파일에서 사용되며 형식은 위와 같다.
+
 ## 4. Use Terraform outside the Core Workflow
 ---
 
