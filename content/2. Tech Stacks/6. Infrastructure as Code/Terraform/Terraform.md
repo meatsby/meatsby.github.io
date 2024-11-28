@@ -66,7 +66,7 @@ terraform destroy
 - `terraform destroy` 는 말 그대로 배포된 리소스들을 제거한다.
 
 ### HashiCorp Configuration Language (HCL)
-```
+```hcl
 # Template
 <BLOCK TYPE> "<BLOCK LABEL>" "<BLOCK LABEL>" {
   # Block body
@@ -97,7 +97,7 @@ Terraform Core <-> Providers(Plugins) <-> Upstream APIs
 ```
 Terraform은 remote system 에 인프라를 구축하기 위해 plug-in-based architecture 로 구성되어 있다. 이는 remote system 이 제공하는 API 를 Provider 형태로 구성하여 Terraform Core 가 Provider 와 상호작용하여 API 를 호출하는 방식이다. 예를 들어 AWS 인프라를 구축하고 싶다면 AWS Provider 를 통해 AWS resource 생성 API 를 호출하는 형태다. Provider 는 [Terraform Registry](https://registry.terraform.io/browse/providers) 에서 확인할 수 있다.
 
-```
+```hcl
 # terraform.tf
 terraform {
   required_version = ">= 1.0.0"
@@ -139,7 +139,7 @@ Providers required by configuration:
 `terraform providers` 를 실행해 어떤 provider 들이 요구되는지 확인할 수 있다.
 
 ### Provider Block
-```
+```hcl
 provider "aws" {
   region                  = "ap-east-1"  
   access_key              = "my-access-key"
@@ -151,7 +151,7 @@ provider "aws" {
 Provider Block 은 설치된 provider 에 대한 설정을 해주기 위한 block 이다. AWS provider 를 예시로 위처럼 region 을 지정해줄 수 있고, access_key 와 secret_key 등을 명시해줄 수도 있다.
 
 ### Resource Block
-```
+```hcl
 # Template
 resource "<RESOURCE_TYPE>" "<RESOURCE_NAME>" {
   <IDENTIFIER> = <EXPRESSION> # Argument
@@ -166,7 +166,7 @@ resource "aws_instance" "web_server" {
 Resource Block 은 말 그대로 provider 에서 제공하는 resource 를 생성하기 위한 block 이다. 위 예시처럼 제공하는 `RESOURCE_TYPE` 을 명시하고 세부적인 설정들을 작성해주면 resource 를 생성할 수 있다.
 
 ### Variables Block
-```
+```hcl
 # Template
 variable "<VARIABLE_NAME>" {
   type        = <VARIABLE_TYPE>
@@ -199,7 +199,7 @@ Variable 값을 지정해주는 방법이 여러가지 있는데 아래와 같�
 6. Command Line: `-var` and `-var-file`
 
 ### Locals Block
-```
+```hcl
 # Template
 locals {
   local_variable_name = <EXPRESSION OR VALUE>
@@ -216,7 +216,7 @@ locals {
 Locals Block 을 통해 자주 사용되는 값들을 정해두고 `local.local_variable_name` 형식으로 참조해서 사용할 수 있다. 위 예시처럼 특정 값 뿐 아니라 expression 으로 variable 과 함께 사용할 수도 있다. 기타 언어의 지역변수와 달리 여러 파일에서 참조가능하다.
 
 ### Data Block
-```
+```hcl
 # Template
 data "<DATA TYPE>" "<DATA LOCAL NAME>" {
   <IDENTIFIER> = <EXPRESSION> # Argument
@@ -237,7 +237,7 @@ data "aws_ami" "ubuntu_22_04" {
 Data Block 은 API 를 통해 provider 에서 제공하는 data 를 받아와 Terraform 코드에서 사용할 수 있게 도와주는 block 이다. 위 예시처럼 가장 최신 Ubuntu AMI 의 ID 를 가져와 EC2 를 생성할 때 사용할 수 있다.
 
 ### Configuration Block
-```
+```hcl
 # Template
 terraform {
   <ARGUMENT> = <VALUE>
@@ -249,6 +249,42 @@ terraform {
  }
 ```
 Configuration Block 은 provider 나 Terraform 의 버전등을 지정해주기 위한 block 이다. 기본적으로 `terraform.tf` 파일에서 사용되며 형식은 위와 같다.
+
+### Module Block
+```hcl
+# Template
+module “<MODULE_NAME>” {
+  source = <MODULE_SOURCE>
+  <INPUT_NAME> = <DESCRIPTION> #Inputs
+  <INPUT_NAME> = <DESCRIPTION> #Inputs
+}
+
+# Example
+module "website_s3_bucket" {
+  source = "./modules/aws-s3-static-website-bucket"
+
+  bucket_name = var.s3_bucket_name
+  aws_region = "ap-east-1"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "certification"
+  }
+}
+```
+Module Block 은 일반적으로 함께 사용하는 resource block 들을 묶어 재사용 가능한 형태로 제공하기 위해 사용되는 block 이다. 이런 Module 들은 Github, Terraform Module Registry 등 remote 에서 가져와 사용하거나 local 에 함께 선언하여 사용할 수 있다.
+
+```
+parent(root)_module
+├── modules
+│	├── child_module
+│   │   ├── main.tf
+│   │   └── variables.tf
+│	└── child_module_2
+├── main.tf
+└── variables.tf
+```
+local 에서 선언하여 사용할 경우 일반적으로 modules directory 내에 module 을 선언하여 root 에서 불러 사용하는 방식이다.
 
 ## 4. Use Terraform outside the Core Workflow
 ---
