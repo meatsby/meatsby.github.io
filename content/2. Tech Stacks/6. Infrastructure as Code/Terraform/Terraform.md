@@ -360,6 +360,44 @@ terraform init -upgrade
 ```
 provider 버전을 다운그레이드하거나 업그레이드 하고 싶을 땐 Configuration Block 에서 provider 버전을 수정하고 위 명령어를 실행하여 원하는 provider 버전을 설치하여 사용할 수 있다. 이 때 Dependency Lock File 은 자동으로 같이 수정된다.
 
+### Provisioner
+```hcl
+resource "aws_instance" "ubuntu_server" {
+  ami                         = data.aws_ami.ubuntu.id
+  instance_type               = "t3.micro"
+  subnet_id                   = aws_subnet.public_subnets["public_subnet_1"].id
+  security_groups             = [aws_security_group.vpc-ping.id, aws_security_group.ingress-ssh.id, aws_security_group.vpc-web.id] 
+  associate_public_ip_address = true
+  key_name                    = aws_key_pair.generated.key_name
+  connection {
+    user        = "ubuntu"
+    private_key = tls_private_key.generated.private_key_pem
+    host        = self.public_ip
+  }
+
+  provisioner "local-exec" {
+    command = "chmod 600 ${local_file.private_key_pem.filename}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo rm -rf /tmp",
+      "sudo git clone https://github.com/hashicorp/demo-terraform-101 /tmp",
+      "sudo sh /tmp/assets/setup-web.sh",
+    ]
+  }
+
+  tags = {
+    Name = "Ubuntu EC2 Server"
+  }
+
+  lifecycle {
+    ignore_changes = [security_groups]
+  }
+}
+```
+Provisioner 를 통해 EC2 인스턴스 같은 머신을 provisioning 할 수 있다. `local-exec` 은 Terraform 이 실행되는 머신에서 수행할 provisioning 을 실행하고, `remote-exec` 은 target system 에 수행할 provisioning 을 ssh 로 전달한다. remote system 에 명령어를 전달하기 위해 ssh 가 필요하기 때문에 tls connection 을 함께 선언해주어야 한다. Terraform Provisioner 는 멱등성을 보장하지 않기 때문에 Ansible 같은 provisioning 전용 툴을 사용하는 것이 더 권장된다.
+
 ## 4. Use Terraform outside the Core Workflow
 ---
 
