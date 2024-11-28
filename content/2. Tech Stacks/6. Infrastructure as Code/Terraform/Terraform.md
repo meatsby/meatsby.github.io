@@ -138,7 +138,7 @@ Providers required by configuration:
 ```
 `terraform providers` 를 실행해 어떤 provider 들이 요구되는지 확인할 수 있다.
 
-### Terraform Provider Block
+### Provider Block
 ```
 provider "aws" {
   region                  = "ap-east-1"  
@@ -150,8 +150,9 @@ provider "aws" {
 ```
 Provider Block 은 설치된 provider 에 대한 설정을 해주기 위한 block 이다. AWS provider 를 예시로 위처럼 region 을 지정해줄 수 있고, access_key 와 secret_key 등을 명시해줄 수도 있다.
 
-### Terraform Resource Block
+### Resource Block
 ```
+# Template
 resource "<RESOURCE_TYPE>" "<RESOURCE_NAME>" {
   <IDENTIFIER> = <EXPRESSION> # Argument
 }
@@ -164,8 +165,9 @@ resource "aws_instance" "web_server" {
 ```
 Resource Block 은 말 그대로 provider 에서 제공하는 resource 를 생성하기 위한 block 이다. 위 예시처럼 제공하는 `RESOURCE_TYPE` 을 명시하고 세부적인 설정들을 작성해주면 resource 를 생성할 수 있다.
 
-### Terraform Variables Block
+### Variables Block
 ```
+# Template
 variable "<VARIABLE_NAME>" {
   type        = <VARIABLE_TYPE>
   description = <DESCRIPTION>
@@ -196,8 +198,9 @@ Variable 값을 지정해주는 방법이 여러가지 있는데 아래와 같�
 5. `*.auto.tfvars` or `*.auto.tfvars.json`
 6. Command Line: `-var` and `-var-file`
 
-### Terraform Locals Block
+### Locals Block
 ```
+# Template
 locals {
   local_variable_name = <EXPRESSION OR VALUE>
   local_variable_name = <EXPRESSION OR VALUE>
@@ -211,6 +214,27 @@ locals {
 }
 ```
 Locals Block 을 통해 자주 사용되는 값들을 정해두고 `local.local_variable_name` 형식으로 참조해서 사용할 수 있다. 위 예시처럼 특정 값 뿐 아니라 expression 으로 variable 과 함께 사용할 수도 있다. 기타 언어의 지역변수와 달리 여러 파일에서 참조가능하다.
+
+### Data Block
+```
+# Template
+data "<DATA TYPE>" "<DATA LOCAL NAME>" {
+  <IDENTIFIER> = <EXPRESSION> # Argument
+}
+
+# Example
+data "aws_ami" "ubuntu_22_04" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+
+  owners = ["<AWS_ACCOUNT>"]
+}
+```
+Data Block 은 API 를 통해 provider 에서 제공하는 data 를 받아와 Terraform 코드에서 사용할 수 있게 도와주는 block 이다. 위 예시처럼 가장 최신 Ubuntu AMI 의 ID 를 가져와 EC2 를 생성할 때 사용할 수 있다.
 
 ## 4. Use Terraform outside the Core Workflow
 ---
