@@ -400,6 +400,99 @@ Provisioner 를 통해 EC2 인스턴스 같은 머신을 provisioning 할 수 �
 
 ## 4. Use Terraform outside the Core Workflow
 ---
+### Auto Formatting
+```
+terraform fmt
+```
+`terraform fmt` (format) 명령어를 통해 자동으로 코드를 정렬할 수 있다.
+
+### Taint and Replace
+```
+terraform taint aws_instance.web_server
+Resource instance aws_instance.web_server has been marked as tainted.
+```
+`terraform taint` 명령어를 통해 성공적으로 생성되지 않은 resource 를 mark 해두고 추후 apply 과정에서 해당 resource 를 재생성할 수 있다. 기본적으로 Terraform 은 resource 를 정상적으로 생성하지 못하면 해당 resource 를 자동으로 taint 처리해둔다. 예를 들어 provisioner block 에서 실행한 커맨드가 에러를 반환할 경우 해당 EC2 instance 를 taint 처리해두고 추후 apply 에서 재생성을 시도한다.
+
+```
+terraform untaint aws_instance.web_server
+```
+재생성을 원하지 않는 경우 `untaint` 역시 가능하다.
+
+```
+terraform apply -replace="aws_instance.web_server"
+```
+Terraform v0.15.2 버전부터 `taint` 명령어는 deprecated 되고 대신 `-replace` 옵션을 통해 resource 를 재생성하길 권장한다.
+
+### Import
+```hcl
+resource "aws_instance" "aws_linux" {}
+```
+
+```
+terraform import aws_instance.aws_linux i-0bfff5070c5fb87b6
+aws_instance.linux: Importing from ID "i-0bfff5070c5fb87b6 "...
+aws_instance.linux: Import prepared!
+  Prepared aws_instance for import
+aws_instance.linux: Refreshing state... [id=i-0bfff5070c5fb87b6]
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+```
+`terraform import` 를 통해 수동으로 생성한 resource 를 Terraform state 에 가져올 수 있다. 각 resource 마다 import 명령어 실행 시 전달해야 할 인자값이 다 다르기 때문에 Terraform Registry 에서 검색해서 import 하면된다. EC2 instance 를 예로 들었을 때 EC2 instance 의 instance id 와 해당 resource 가 매핑될 빈 resource 블럭을 작성해준 뒤 import 명령을 실행해주자.
+
+다만 import 만 한다고 resource block 이 다 채워지지 않는다. plan 을 실행해 필요한 필드값들을 알아내고 `terraform state show aws_instance.aws_linux` 를 통해 필요한 필드값들을 손수 작성해주어야한다.
+
+### Workspace
+```
+terraform workspace show
+default
+
+terraform workspace new development
+
+Created and switched to workspace "development"!
+
+You're now on a new, empty workspace. Workspaces isolate their state, so if you run "terraform plan" Terraform will not see any existing state
+for this configuration.
+
+terraform workspace show
+development
+
+terraform show
+No state.
+
+terraform workspace list           
+  default
+* development
+
+terraform workspace select default
+```
+Terraform 으로 구성한 인프라를 dev, stg, prod 등 다양한 환경에서 똑같이 구성하고 싶을 때 terraform workspace 를 사용할 수 있다. Terraform 은 기본적으로 `default` workspace 를 사용하고 `terraform workspace new {name}` 명령어를 실행하면 지정한 이름으로 새로운 workspace 를 생성한다. 이때 `terraform.tfstate.d` 폴더가 생성된다. 각 workspace 는 다른 state file 을 갖게되고 이를 바탕으로 여러 환경을 구성하는 것이다.
+
+### State CLI
+```
+terraform show
+
+terraform state list
+
+terraform state show aws_instance.web_server
+```
+Terraform 으로 생성된 resource 는 모두 state file 에 저장되고 관리된다. 해당 workspace 의 state 를 확인하기 위해 위와 같은 명령어를 실행할 수 있는데, `terraform show` 는 상세정보를 모두 포함한 resource 를 출력하기 때문에 `terraform state list` 와 `terraform state show` 명령어의 조합으로 원하는 resource 의 상세정보만 따로 확인할 수도 있다.
+
+### Debugging
+```
+export TF_LOG=TRACE
+terraform apply
+
+export TF_LOG_PATH="terraform_log.txt"
+terraform init -upgrade
+
+export TF_LOG=""
+export TF_LOG_PATH=""
+terraform init -upgrade
+```
+디버깅이 필요한 경우 `TF_LOG` 환경변수를 원하는 로깅 레벨로 설정하고 terraform 명령어 실행 시 모든 로그를 확인할 수 있다. 로그를 따로 파일로 관리하고 싶은 경우 `TF_LOG_PATH` 환경변수를 설정해주고 `terraform init -upgrade` 로 재설정 해준 뒤 실행하면된다. 디버깅이 이후엔 모든 환경변수를 제거해주자.
 
 ## 5. Interact with Terraform Modules
 ---
