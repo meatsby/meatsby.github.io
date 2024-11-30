@@ -496,6 +496,141 @@ terraform init -upgrade
 
 ## 5. Interact with Terraform Modules
 ---
+### Modules
+```hcl
+variable "ami" {}
+
+variable "size" {
+  default = "t3.micro"
+}
+
+variable "subnet_id" {}
+
+variable "security_groups" {
+  type = list(any)
+}
+
+resource "aws_instance" "web" {
+  ami                    = var.ami
+  instance_type          = var.size
+  subnet_id              = var.subnet_id
+  vpc_security_group_ids = var.security_groups
+
+  tags = {
+    "Name"        = "Server from Module"
+    "Environment" = "Training"
+  }
+}
+
+output "public_ip" {
+  value = aws_instance.web.public_ip
+}
+
+output "public_dns" {
+  value = aws_instance.web.public_dns
+}
+```
+
+```hcl
+module "server" {
+  source          = "./server"
+  ami             = data.aws_ami.ubuntu.id
+  subnet_id       = aws_subnet.public_subnets["public_subnet_3"].id
+  security_groups = [
+    aws_security_group.vpc-ping.id,
+    aws_security_group.ingress-ssh.id,
+    aws_security_group.vpc-web.id
+  ]
+}
+```
+자주 함께 사용되는 resource 를 묶은 Module 은 직접 작성했던 외부에서 가져오던 `terraform init` 을 통해 초기화줘야한다. `terraform init` 을 실행하면 기본적으로 `.terraform/modules` 에 저장된다.
+
+### Module Sources
+```
+module "autoscaling" {
+  source  = "terraform-aws-modules/autoscaling/aws"
+  version = "4.9.0"
+
+  # Autoscaling group
+  name = "myasg"
+
+  vpc_zone_identifier = [aws_subnet.private_subnets["private_subnet_1"].id, 
+  aws_subnet.private_subnets["private_subnet_2"].id, 
+  aws_subnet.private_subnets["private_subnet_3"].id]
+  min_size            = 0
+  max_size            = 1
+  desired_capacity    = 1
+
+  # Launch template
+  use_lt    = true
+  create_lt = true
+
+  image_id      = data.aws_ami.ubuntu.id
+  instance_type = "t3.micro"
+
+  tags_as_map = {
+    Name = "Web EC2 Server 2"
+  }
+
+}
+```
+직접 작성한 Module 은 보통 `working_dir/modules/module_name/main.tf` 에 작성하여 사용하고 Terraform Registry, GitHub 등 외부에서 역시 가져와 사용할 수 있다.
+
+### Module Inputs and Outputs
+```hcl
+# main.tf
+resource "aws_instance" "web" {
+  ami                    = var.ami
+  instance_type          = var.size
+  subnet_id              = var.subnet_id
+  vpc_security_group_ids = var.security_groups
+
+  tags = {
+    "Name"        = "Server from Module"
+    "Environment" = "Training"
+  }
+}
+```
+Module 은 Variable Block 을 통해 Input 을 받고 Output Block 을 통해 Output 을 내보낸다. 모든 Variable Block, Resource Block, Output Block 을 `main.tf` 하나의 파일에 선언한 채로 사용해도 정상적으로 작동하지만 Best Practice 는 `main.tf`, `variables.tf`, `outputs.tf` 로 구분지어 선언해주는 것이 이상적이다.
+
+```hcl
+# variables.tf
+variable "ami" {}
+variable "size" {
+  default = "t3.micro"
+}
+variable "subnet_id" {}
+variable "security_groups" {
+  type = list(any)
+}
+```
+Input 에 default 값을 주고 싶은 경우엔 Variable Block 에 default 값을 선언해주면 되고,
+
+```hcl
+outputs.tf
+output "public_ip" {
+  value = aws_instance.web.public_ip
+}
+
+output "public_dns" {
+  value       = aws_instance.web.public_dns
+}
+```
+Output 을 module 을 호출하는 root 에서 사용하고 싶은 경우엔 `module.module_name.output_name` 으로 참조해서 사용할 수 있다.
+
+### Module Scope
+```
+terraform console
+
+> module.autoscaling
+```
+Terraform Module 은 단순히 Input 과 Output 을 가진 Terraform configuration file 의 집합이다. Module 을 사용하는 이유는 자주 사용되는 resource 의 조합을 module 로 추상화하여 재사용하기 편하게 제공하기 위함이다. Module 이 제공하는 추상화된 output 을 사용하기 위해서 관련 문서를 찾아도 되지만 위 명령어를 통해 직접 확인할 수도 있다.
+
+### Public Module Registry
+Terraform Module 을 제공하는 공식 저장소로 누구나 GitHub Public Repo 로 Module 을 만들어서 제공할 수 있다.
+
+### Module Versioning
+Public Terraform Module 에서도 보이듯이 Module 을 versioning 하는 것이 중요하다. Module 을 수정하는 것 외에도 Terraform 이 업데이트될 때 호환되지 않는 코드가 존재할 수 있기 때문. Private Module 을 사용할 때도 versioning 을 해주도록 하자. Terraform Module 의 경우 `version = ">3.0.0"` 과 같이 버전 제약을 걸어줄 수도 있다.
 
 ## 6. Use the Core Terraform Workflow
 ---
