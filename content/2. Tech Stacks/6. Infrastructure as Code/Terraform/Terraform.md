@@ -743,6 +743,296 @@ state file 은 암호화되지 않은 상태로 저장되기 때문에 `sensitiv
 
 ## 8. Read, Generate, and Modify Configuration
 ---
+### Local Variables
+```hcl
+locals {
+  service_name = "Automation"
+  app_team     = "Cloud Team"
+  createdby    = "terraform"
+}
+```
+
+```hcl
+...
+
+ tags = {
+    "Service"   = local.service_name
+    "AppTeam"   = local.app_team
+    "CreatedBy" = local.createdby
+  }
+
+...
+```
+자주 사용되는 텍스트를 Local Variable 로 선언해서 참조할 수 있다.
+
+```
+locals {
+  # Common tags to be assigned to all resources
+  common_tags = {
+    Name      = var.server_name
+    Owner     = local.team
+    App       = local.application
+    Service   = local.service_name
+    AppTeam   = local.app_team
+    CreatedBy = local.createdby
+ } 
+}
+```
+
+```
+resource "aws_instance" "web_server" {
+  ami                         = data.aws_ami.ubuntu.id
+  instance_type               = "t3.micro"
+  subnet_id                   = aws_subnet.public_subnets["public_subnet_1"].id
+  ...
+  tags = local.common_tags
+}
+```
+텍스트 뿐만 아니라 var, local 등을 참조해서 map 형식의 local variable 을 만들어 그대로 참조할 수도 있다.
+
+### Input Variables
+```
+export TF_VAR_variables_sub_cidr="10.0.203.0/24"
+```
+
+```
+# terraform.tfvars
+variables_sub_auto_ip = true
+variables_sub_az      = "us-east-1d"
+variables_sub_cidr    = "10.0.204.0/24"
+```
+
+```
+terraform plan -var variables_sub_az="us-east-1e" -var variables_sub_cidr="10.0.205.0/24"
+```
+Input Variable 들은 우선순위를 가진다고 했었는데, 위와 같이 적용될 경우 결론적으론 환경변수는 무시되고 tfvars 파일에선 `auto_ip` 만 적용되고 나머진 plan 실행 시 같이 제공된 var 값들이 적용된다.
+
+### Terraform Outputs
+```
+terraform output
+```
+위 명령어로 작성된 모든 output 을 확인할 수 있고,
+
+```
+terraform output public_ip
+```
+위처럼 원하는 output variable 만 확인할 수도 있다.
+
+### Variable Validation and Suppression
+```
+variable "cloud" {
+  type = string
+
+  validation {
+    condition     = contains(["aws", "azure", "gcp", "vmware"], lower(var.cloud))
+    error_message = "You must use an approved cloud."
+  }
+
+  validation {
+    condition     = lower(var.cloud) == var.cloud
+    error_message = "The cloud name must not have capital letters."
+  }
+}
+```
+Variable 선언 시 validation 을 추가하여 Input 값을 유효성을 검증할 수 있다.
+
+Variable 을 sensitive 설정했다면 Output 으로 해당값을 출력하려고 할 때 에러가 발생한다. Output 역시 sensitive 설정해주도록 하자. 근데 이렇게 해도 state file 에는 여전히 값이 그대로 노출된다. 때문에 state file 에 대한 접근 권한 등을 따로 설정해줘야한다.
+
+### Secure Secrets
+sensitive 설정 외에도 `TF_VAR_{variable_name}` 형식의 환경변수를 적용해 코드에 노출하지 않는 방법도 있다.
+
+``` hcl
+data "vault_generic_secret" "phone_number" {
+  path = "secret/app"
+}
+
+output "phone_number" {
+  value = data.vault_generic_secret.phone_number
+  sensitive = true
+}
+```
+HashiCorp 는 Vault 라는 Secret Manager 를 제공하는데 이를 이용해서 위처럼 참조해서 사용할 수도 있다.
+
+### Variable Collection and Structure Types
+```hcl
+variable "us-east-1-azs" {
+    type = list(string)
+    default = [
+        "us-east-1a",
+        "us-east-1b",
+        "us-east-1c",
+        "us-east-1d",
+        "us-east-1e"
+    ]
+}
+
+variable "ip" {
+  type = map(string)
+  default = {
+    prod = "10.0.150.0/24"
+    dev  = "10.0.250.0/24"
+  }
+}
+
+resource "aws_subnet" "list_subnet" {
+  vpc_id            = aws_vpc.vpc.id
+  cidr_block        = var.ip[var.environment]
+  availability_zone = var.us-east-1-azs[0]
+}
+```
+Terraform 은 List, Map 등의 collection 을 제공하고 위처럼 참조해서 사용할 수 있다.
+
+```hcl
+variable "env" {
+  type = map(any)
+  default = {
+    prod = {
+      ip = "10.0.150.0/24"
+      az = "us-east-1a"
+    }
+    dev  = {
+      ip = "10.0.250.0/24"
+      az = "us-east-1e"
+    }
+  }
+}
+
+resource "aws_subnet" "list_subnet" {
+  for_each          = var.env
+  vpc_id            = aws_vpc.vpc.id
+  cidr_block        = each.value.ip
+  availability_zone = each.value.az
+}
+```
+또한, for_each 를 통해 위처럼 collection 을 순회하여 prod 와 dev 의 서브넷을 생성할 수도 있다.
+
+### Terraform Built-in Functions
+Terraform 은 일반적인 built-in functions 역시 제공한다. [공식문서](https://developer.hashicorp.com/terraform/language/functions)
+
+### Dynamic Blocks
+```hcl
+resource "aws_security_group" "main" {
+  name   = "core-sg"
+  vpc_id = aws_vpc.vpc.id
+
+  ingress {
+    description = "Port 443"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "Port 80"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+```
+Terraform 은 Block 내부에서 사용되는 연속되는 nested block 을 for 문 처럼 순회해서 적용해주기 위해 Dynamic Block 을 제공한다. 위처럼 2개의 ingress 가 필요한 경우,
+
+```hcl
+locals {
+  ingress_rules = [{
+      port        = 443
+      description = "Port 443"
+    },
+    {
+      port        = 80
+      description = "Port 80"
+    }
+  ]
+}
+
+resource "aws_security_group" "main" {
+  name   = "core-sg"
+  vpc_id = aws_vpc.vpc.id
+
+  dynamic "ingress" {
+    for_each = local.ingress_rules
+
+    content {
+      description = ingress.value.description
+      from_port   = ingress.value.port
+      to_port     = ingress.value.port
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
+}
+```
+이런식으로 dynamic block 을 사용하여 중복을 제거해줄 수 있다.
+
+```hcl
+variable "web_ingress" {
+  type = map(object(
+    {
+      description = string
+      port        = number
+      protocol    = string
+      cidr_blocks = list(string)
+    }
+  ))
+  default = {
+    "80" = {
+      description = "Port 80"
+      port        = 80
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+    "443" = {
+      description = "Port 443"
+      port        = 443
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
+}
+
+resource "aws_security_group" "main" {
+  name = "core-sg"
+
+  vpc_id = aws_vpc.vpc.id
+
+  dynamic "ingress" {
+    for_each = var.web_ingress
+    content {
+      description = ingress.value.description
+      from_port   = ingress.value.port
+      to_port     = ingress.value.port
+      protocol    = ingress.value.protocol
+      cidr_blocks = ingress.value.cidr_blocks
+    }
+  }
+}
+```
+Local 로 선언해서 사용하는 대신 variable 로 선언해서 위처럼 적용할 수도 있다. 대신 dynamic block 은 가독성을 해칠 우려가 크기 때문에 웬만해선 literal 하게 작성해주자.
+
+### Terraform Graph
+```
+terraform init
+terraform apply
+terraform graph
+```
+`terraform graph` 명령어를 통해 Terraform 으로 생성된 resource 간 dependency 를 확인할 수 있다.
+
+### Terraform Resource Lifecycles
+```hcl
+resource "aws_security_group" "main" {
+  name = "core-sg-global"
+
+  # ...
+
+  lifecycle {
+    create_before_destroy = true
+    prevent_destroy       = true
+  }
+}
+```
+Resource 에는 생명주기를 관리하기 위한 lifecycle block 을 적용할 수 있는데, 위처럼 재생성 시 생성 후 기존 resource 제거, 제거 방지 등을 설정해줄 수 있다.
 
 ## 9. Understand HCP Terraform Capabilities
 ---
