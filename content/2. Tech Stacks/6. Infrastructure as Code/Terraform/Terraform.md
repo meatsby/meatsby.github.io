@@ -664,6 +664,82 @@ terraform apply -destroy
 
 ## 7. Implement and Maintain State
 ---
+### Default Local Backend
+```
+terraform {
+  backend "local" {
+    path = "terraform.tfstate"
+  }
+}
+```
+Terraform 은 `terraform.tfstate` 이라는 json 파일에 Terraform 으로 생성된 resource 의 state 를 저장한다. 기본적으로 Terraform 은 state backend 를 local 을 default 로 두기 때문에 위 코드를 작성하지 않아도 동일하게 local 에 state file 이 저장된다.
+
+### State Locking
+state file 은 reference and update 되기 때문에 여러 사람이 작업할 경우 locking 이 중요해짐
+prevents concurrent state modification
+apply 하고 yes 안 한 다음 다른 터미널에서 apply 하면 state lock 되었다고 알려줌
+Locking 중엔 `.terraform.tfstate.lock.info` 파일이 생성되어 있음
+
+Lock 이 반환되길 기다리기 위해 `terraform apply -lock-timeout=60s` 를 사용할 수 있음
+
+state backend 를 remote 로 설정해서 TFE 나 TFC 로 state 를 관리할 수도 있고, AWS S3 로 state file 을 관리할 수도 있음 다만 S3 의 경우 State locking 을 적용하기 위해선 DDB 와 연동이 필요함
+
+### Backend Authentication
+```
+terraform {
+  backend "s3" {
+    bucket = "myterraformstate"
+    key    = "path/to/my/key"
+    region = "us-east-1"
+  }
+}
+```
+S3 를 backend 로 사용할 경우 bucket name 과 state file 이 저장될 경로 등을 지정해주면 된다. backend 를 바꿨기 때문에 `terraform init -reconfigure` 로 초기화 해주면된다. 만약 AWS Credentials 가 환경변수로 등록되어 있지 않다면 에러가 발생한다.
+
+remote backend 를 사용할 경우 terraform cloud 계정이 있어야한다. `terraform login` 실행 시 브라우저에서 login 을 요구하고 login 성공 시 `.terraform.d/credentials.tfrc.json` 에 토큰이 저장된다.
+이후 terraform cloud 에서 api 토큰을 생성하고 입력해주면 연동이 완료된다.
+
+### Backend Storage
+```
+terraform {
+  backend "s3" {
+    # Replace this with your bucket name!
+    bucket = "myterraformstate"
+    key    = "path/to/my/key"
+    region = "us-east-1"
+
+    # Replace this with your DynamoDB table name!
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+  }
+}
+```
+S3 로 연동 시 Bucket Versioning 및 Encryption 을 활용할 수 있는데, state file 을 S3 Versioning 형태로 저장할 수 있다.
+
+S3 를 State Backend 로 사용할 때 Locking 을 활성화하려면 위 코드처럼 DDB 를 연동해야한다.
+
+`terraform init -reconfigure` 는 잊지 말자.
+
+### Remote State - Enhanced Backend
+S3 를 사용할 경우엔 state 만 remote 에 두고 terraform 은 local 에서 실행되었다. Terraform Cloud 의 경우 state 과 실행 모두 Cloud 에서 해결할 수 있기 때문에 Enhanced Backend 라고 한다.
+
+Terraform Cloud 에서 Terraform 을 실행하기 때문에 AWS Crendentials 는 모두 Workspace Variable 에서 환경변수로 설정해주어야한다.
+
+### State Migration
+```
+terraform validate
+terraform init -migrate-state
+```
+backend 변경 시 위 명령어를 통해 기존에 state 를 관리하던 backend 에서 새로운 backend 로 state file 을 이동할 수 있다.
+
+### State Refresh
+terraform refresh 시 Terraform 외부에서 발생한 변경사항 (drift) 를 파악하고 자동으로 state file 에 변경사항을 추가했던 반면, `terraform apply -refresh-only` 는 어떤 drift 가 있었는 지 알려주고 state 에 추가할 것인지 물어본다.
+
+### Backend Configuration
+backend 선언 시 몇몇 인자값들을 생략한 것을 Partial configuration 이라 하는데, 이런 partial configuraiton 을 file 을 통해 backend 에 적용할 수 있다.
+
+### Sensitive Data in State
+state file 은 암호화되지 않은 상태로 저장되기 때문에 `sensitive = true` 를 설정해주어 state file 에 저장되지 않도록 하자. State file 자체도 암호화하는 것이 좋다.
 
 ## 8. Read, Generate, and Modify Configuration
 ---
