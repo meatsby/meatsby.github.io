@@ -634,6 +634,33 @@ Public Terraform Module 에서도 보이듯이 Module 을 versioning 하는 것�
 
 ## 6. Use the Core Terraform Workflow
 ---
+### Understanding Terraform Workflow
+Terraform 은 기본적으로 Write -> Plan -> Apply 순서로 작업이 진행된다.
+
+### `terraform init`
+Terraform 을 초기화하는 명령어로 `.terraform` 폴더가 생성되며 필요한 Module 과 Provider 들을 설치하고 state/lock file 등을 위한 local/remote backend 과도 연결한다. 때문에 이 설정들이 변경되었을 때 항상 `terraform init` 으로 새롭게 초기화해줘야한다.
+
+이 외에 `terraform init -upgrade` 로 이미 있는 provider, module 을 최신화할 수도 있으며, `terraform init -migrate-state` 으로 기존 backend 에 있던 state 를 옮겨줄 수도 있다.
+
+### `terraform validate`
+Local directory 에 선언된 config files 만 문법적으로 맞는지 확인하는 명령어다. 다만 모든걸 잡아내진 않는데, 예를 들어 존재하지 않는 경로를 사용해도 문법이 맞으면 Success 를 반환한다.
+
+`terraform validate -json` 으로 반환값을 다른 머신이 사용할 수 있게끔 json 형식으로 내보낼 수도 있다.
+
+### `terraform plan`
+작성한 Terraform configuration file 들이 어떤 resource 들을 생성할 지 dry-run 으로 확인하는 명령어다. `terraform plan -out=myplan` 으로 plan 을 파일로 저장할 수도 있으며, No Changes 시 refactoring 후 변화가 없다는 걸 검증할 수도 있다.
+
+`terraform plan -refresh-only` 를 통해 Terraform 외부에서 변경된 사항을 파악하고 state 파일에 저장하여 Terraform 이 관리하게끔 할 수 있다.
+
+### `terraform apply`
+`terraform apply -auto-approve` 로 적용 확인 여부를 무시할 수 있고, `terraform apply myplan` 으로 파일로 저장된 plan 을 apply 할 수도 있다.
+
+### `terraform destroy`
+```
+terraform destroy
+terraform apply -destroy
+```
+위 두 명령어 모두 Terraform 이 생성한 resource 들을 제거하는 명령어다.
 
 ## 7. Implement and Maintain State
 ---
