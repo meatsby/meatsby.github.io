@@ -1036,6 +1036,60 @@ Resource 에는 생명주기를 관리하기 위한 lifecycle block 을 적용�
 
 ## 9. Understand HCP Terraform Capabilities
 ---
+### Terraform Cloud Getting Started
+[Terraform Cloud](https://app.terraform.io/session) 는 HashiCorp 이 제공하는 Terraform SaaS 로 Terraform Cloud 에서 인프라 생성 API 등을 호출하고 state 를 관리한다. 위 링크에서 계정 생성 후 local 에서 `terraform login` 으로 Terraform Cloud 와 연동하자.
+
+### Terraform Remote State
+```hcl
+terraform {
+ backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "YOUR-ORGANIZATION"
+
+    workspaces {
+      name = "my-aws-app"
+    }
+  }
+}
+```
+위 처럼 Terraform Cloud Remote Backend 와 연결하고,
+
+```
+terraform init -reconfigure
+terraform apply
+```
+위 명령어로 Terraform Cloud 가 프로비저닝을 진행하게끔 호출하자. 물론 `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` 등을 Terraform Cloud 내에서 environment variable 로 설정해줘야한다.
+
+### Terraform Cloud Workspaces
+Local 에서 workspace 를 분리하여 여러 환경을 구성하였듯, Terraform Cloud 에서도 다양한 workspace 를 구성하여 사용할 수 있다. 각 Workspace 는 각자의 resource, state, env variable 등을 가질 수 있다.
+
+이런 Workspace 는 CLI, VCS, API 로 Workflow 를 구성할 수 있는데, 대부분 VCS 로 Workflow 를 구성한다. 예를 들어, GitHub Repository 하나를 하나의 Workspace 로 구성하여 PR 이 merge 될 때 apply 하는 식이다.
+
+### Terraform Cloud Secure Variable
+Terraform Cloud Workspace 에는 variable 을 설정해줄 수 있는데, env variable 말고도 Terraform Configuration file 에서 사용될 variable 역시 지정해줄 수 있다. 이 때 sensitive 설정을 추가해주면 한 번 입력된 이후 읽기나 수정이 불가능한 상태로 안전하게 Terraform Cloud 가 해당 variable 을 사용할 수 있다.
+
+### Terraform Cloud Private Module Registry
+Terraform Cloud 는 사용자가 직접 만든 Module 을 등록하여 사용할 수 있는 Registry 도 지원한다. 직접 만든 Module 을 VCS 에 push 한 뒤 Terraform Cloud Module Registry 에 등록하여 사용하자.
+
+### Terraform Cloud Sentinel Policy
+```hcl
+module "tfplan-functions" {
+  source = "https://raw.githubusercontent.com/hashicorp/terraform-guides/master/governance/third-generation/common-functions/tfplan-functions/tfplan-functions.sentinel"
+}
+
+module "tfconfig-functions" {
+    source = "https://raw.githubusercontent.com/hashicorp/terraform-guides/master/governance/third-generation/common-functions/tfconfig-functions/tfconfig-functions.sentinel"
+}
+
+policy "enforce-mandatory-tags" {
+    enforcement_level = "advisory"
+}
+
+policy "restrict-ec2-instance-type" {
+    enforcement_level = "hard-mandatory"
+}
+```
+Terraform Cloud 에선 plan 과 apply 사이에 Policy as Code 원칙으로 개발된 Sentinel 을 추가하여 실제로 인프라가 생성되기 전에 Policy 가 지켜졌는지 확인할 수 있다. 예를 들어, EC2 에 필수 tag 가 추가되었는지, 허용된 instance type 이 설정되었는지 등을 확인할 수 있다.
 
 ## References
 ---
