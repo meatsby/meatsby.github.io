@@ -9,7 +9,7 @@ tags:
 ---
 ## Question 1
 ---
-The terraform.tfstate file always matches your currently built infrastructure.
+The `terraform.tfstate` file always matches your currently built infrastructure.
 
 - A. True
 - B. False
@@ -41,13 +41,21 @@ How is the Terraform remote backend different than other state backends such as 
 
 ## Question 4
 ---
+What is the workflow for deploying new infrastructure with Terraform?  
+
+- A. terraform plan to import the current infrastructure to the state file, make code changes, and terraform apply to update the infrastructure.
+- B. Write a Terraform configuration, run terraform show to view proposed changes, and terraform apply to create new infrastructure.
+- C. terraform import to import the current infrastructure to the state file, make code changes, and terraform apply to update the infrastructure.
+- D. Write a Terraform configuration, run terraform init, run terraform plan to view planned infrastructure changes, and terraform apply to create new infrastructure.
 
 > [!done]- Answer
-> 
+> D
 
 ## Question 5
 ---
-A provider configuration block is required in every Terraform configuration.Example:
+A provider configuration block is required in every Terraform configuration.
+Example:
+![](https://www.examtopics.com/assets/media/exam-media/04279/0000400001.png)
 
 - A. True
 - B. False
@@ -57,7 +65,7 @@ A provider configuration block is required in every Terraform configuration.Exam
 
 ## Question 6
 ---
-You run a local-exec provisioner in a null resource called null_resource.run_script and realize that you need to rerun the script.Which of the following commands would you use first?
+You run a local-exec provisioner in a null resource called null_resource.run_script and realize that you need to rerun the script. Which of the following commands would you use first?
 
 - A. terraform taint null_resource.run_script
 - B. terraform apply -target=null_resource.run_script
@@ -94,13 +102,20 @@ Which of the following is not true of Terraform providers?
 
 ## Question 9
 ---
+What command does Terraform require the first time you run it within a configuration directory?  
+
+- A. terraform import
+- B. terraform init
+- C. terraform plan
+- D. terraform workspace
 
 > [!done]- Answer
-> 
+> B
 
 ## Question 10
 ---
-You have deployed a new webapp with a public IP address on a cloud provider. However, you did not create any outputs for your code.What is the best method to quickly find the IP address of the resource you deployed?
+You have deployed a new webapp with a public IP address on a cloud provider. However, you did not create any outputs for your code.
+What is the best method to quickly find the IP address of the resource you deployed?
 
 - A. Run terraform output ip_address to view the result
 - B. In a new folder, use the terraform_remote_state data source to load in the state file, then write an output for each resource that you find the state file
