@@ -150,6 +150,7 @@ Terraform variables and outputs that set the "description" argument will store t
 ## Question 13
 ---
 What is the provider for this fictitious resource?
+![](https://www.examtopics.com/assets/media/exam-media/04279/0000800001.png)
 
 - A. vpc
 - B. main
