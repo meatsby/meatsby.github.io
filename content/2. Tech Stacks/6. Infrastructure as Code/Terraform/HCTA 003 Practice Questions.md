@@ -181,8 +181,8 @@ What is not processed when running a terraform refresh?
 - C. Credentials
 - D. Cloud provider
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/74493-exam-terraform-associate-topic-1-question-15-discussion/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/74493-exam-terraform-associate-topic-1-question-15-discussion/)
+> B, State file is updated during refresh, Cloud provider is required for comparing the state file and the cloud infrastructure, Credentials is required for Cloud provider
 
 ## Question 16
 ---
@@ -231,7 +231,7 @@ Which of the following is not a valid string function in Terraform?
 
 ## Question 20
 ---
-You have provisioned some virtual machines (VMs) on Google Cloud Platform (GCP) using the gcloud command line tool. However, you are standardizing withTerraform and want to manage these VMs using Terraform instead.What are the two things you must do to achieve this? (Choose two.)
+You have provisioned some virtual machines (VMs) on Google Cloud Platform (GCP) using the gcloud command line tool. However, you are standardizing with Terraform and want to manage these VMs using Terraform instead. What are the two things you must do to achieve this? (Choose two.)
 
 - A. Provision new VMs using Terraform with the same VM names
 - B. Use the terraform import command for the existing VMs
@@ -243,7 +243,7 @@ You have provisioned some virtual machines (VMs) on Google Cloud Platform (GCP) 
 
 ## Question 21
 ---
-You have recently started a new job at a retailer as an engineer. As part of this new role, you have been tasked with evaluating multiple outages that occurred during peak shopping time during the holiday season. Your investigation found that the team is manually deploying new compute instances and configuring each compute instance manually. This has led to inconsistent configuration between each compute instance.How would you solve this using infrastructure as code?
+You have recently started a new job at a retailer as an engineer. As part of this new role, you have been tasked with evaluating multiple outages that occurred during peak shopping time during the holiday season. Your investigation found that the team is manually deploying new compute instances and configuring each compute instance manually. This has led to inconsistent configuration between each compute instance. How would you solve this using infrastructure as code?
 
 - A. Implement a ticketing workflow that makes engineers submit a ticket before manually provisioning and configuring a resource
 - B. Implement a checklist that engineers can follow when configuring compute instances
@@ -312,7 +312,7 @@ When should you use the force-unlock command?
 
 ## Question 27
 ---
-Terraform can import modules from a number of sources `" which of the following is not a valid source?
+Terraform can import modules from a number of sources which of the following is not a valid source?
 
 - A. FTP server
 - B. GitHub repository
@@ -346,7 +346,7 @@ terraform validate validates the syntax of Terraform files.
 
 ## Question 30
 ---
-You have used Terraform to create an ephemeral development environment in the cloud and are now ready to destroy all the infrastructure described by yourTerraform configuration. To be safe, you would like to first see all the infrastructure that will be deleted by Terraform.Which command should you use to show all of the resources that will be deleted? (Choose two.)
+You have used Terraform to create an ephemeral development environment in the cloud and are now ready to destroy all the infrastructure described by your Terraform configuration. To be safe, you would like to first see all the infrastructure that will be deleted by Terraform. Which command should you use to show all of the resources that will be deleted? (Choose two.)
 
 - A. Run terraform plan -destroy.
 - B. This is not possible. You can only show resources that will be created.
