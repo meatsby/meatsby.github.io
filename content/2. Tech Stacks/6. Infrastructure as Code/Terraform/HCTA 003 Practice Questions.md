@@ -385,8 +385,8 @@ Terraform can run on Windows or Linux, but it requires a Server version of the W
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75682-exam-terraform-associate-topic-1-question-33-discussion/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75682-exam-terraform-associate-topic-1-question-33-discussion/)
+> B, Terraform is platform-agnostic
 
 ## Question 34
 ---
@@ -402,7 +402,7 @@ What does the default "local" Terraform backend store?
 
 ## Question 35
 ---
-You have multiple team members collaborating on infrastructure as code (IaC) using Terraform, and want to apply formatting standards for readability.How can you format Terraform HCL (HashiCorp Configuration Language) code according to standard Terraform style convention?
+You have multiple team members collaborating on infrastructure as code (IaC) using Terraform, and want to apply formatting standards for readability. How can you format Terraform HCL (HashiCorp Configuration Language) code according to standard Terraform style convention?
 
 - A. Run the terraform fmt command during the code linting phase of your CI/CD process
 - B. Designate one person in each team to review and format everyone's code
@@ -433,20 +433,20 @@ Which task does terraform init not perform?
 - C. Sources any modules and copies the configuration locally
 - D. Validates all required variables are present
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/76384-exam-terraform-associate-topic-1-question-37-discussion/)
-> D
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/76384-exam-terraform-associate-topic-1-question-37-discussion/)
+> D, this is done by plan or apply
 
 ## Question 38
 ---
-You have declared a variable called var.list which is a list of objects that all have an attribute id.Which options will produce a list of the IDs? (Choose two.)
+You have declared a variable called var.list which is a list of objects that all have an attribute id. Which options will produce a list of the IDs? (Choose two.)
 
-- A. { for o in var.list : o => o.id }
-- B. var.list[*].id
-- C. [ var.list[*].id ]
-- D. [ for o in var.list : o.id ]
+- A. `{ for o in var.list : o => o.id }`
+- B. `var.list[*].id`
+- C. `[ var.list[*].id ]`
+- D. `[ for o in var.list : o.id ]`
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75092-exam-terraform-associate-topic-1-question-38-discussion/)
-> BD
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75092-exam-terraform-associate-topic-1-question-38-discussion/)
+> BD, According to the [official doc](https://developer.hashicorp.com/terraform/language/expressions/splat), splat expression provides a more concise way to express a common operation that could otherwise be performed with a for expression.
 
 ## Question 39
 ---
@@ -458,12 +458,14 @@ Which argument(s) is (are) required when declaring a Terraform variable?
 - D. All of the above
 - E. None of the above
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/74327-exam-terraform-associate-topic-1-question-39-discussion/)
-> E
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/74327-exam-terraform-associate-topic-1-question-39-discussion/)
+> E, we can define a variable without a type
 
 ## Question 40
 ---
-When using a module block to reference a module stored on the public Terraform Module Registry such as:How do you specify version 1.0.0?
+When using a module block to reference a module stored on the public Terraform Module Registry such as:
+![](https://www.examtopics.com/assets/media/exam-media/04279/0002300001.png)
+How do you specify version 1.0.0?
 
 - A. Modules stored on the public Terraform Module Registry do not support versioning
 - B. Append ?ref=v1.0.0 argument to the source path
@@ -506,14 +508,20 @@ Which option can not be used to keep secrets out of Terraform configuration file
 - C. A -var flag
 - D. secure string
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75093-exam-terraform-associate-topic-1-question-43-discussion/)
-> D
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75093-exam-terraform-associate-topic-1-question-43-discussion/)
+> D, Terraform providers such as Vault can be used to supply secrets
 
 ## Question 44
 ---
+What is one disadvantage of using dynamic blocks in Terraform?
+
+- A. They cannot be used to loop through a list of values
+- B. Dynamic blocks can construct repeatable nested blocks
+- C. They make configuration harder to read and understand
+- D. Terraform will run more slowly
 
 > [!done]- Answer
-> 
+> C
 
 ## Question 45
 ---
@@ -527,7 +535,8 @@ Only the user that generated a plan may apply it.
 
 ## Question 46
 ---
-Examine the following Terraform configuration, which uses the data source for an AWS AMI.What value should you enter for the ami argument in the AWS instance resource?
+Examine the following Terraform configuration, which uses the data source for an AWS AMI. What value should you enter for the ami argument in the AWS instance resource?
+![](https://www.examtopics.com/assets/media/exam-media/04279/0002600001.png)
 
 - A. aws_ami.ubuntu
 - B. data.aws_ami.ubuntu
@@ -539,15 +548,15 @@ Examine the following Terraform configuration, which uses the data source for an
 
 ## Question 47
 ---
-FILL BLANK -You need to specify a dependency manually.What resource meta-parameter can you use to make sure Terraform respects the dependency?Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
+FILL BLANK -
+You need to specify a dependency manually. What resource meta-parameter can you use to make sure Terraform respects the dependency? Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
 
-
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/76388-exam-terraform-associate-topic-1-question-47-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/76388-exam-terraform-associate-topic-1-question-47-discussion/)
 > depends_on
 
 ## Question 48
 ---
-You have never used Terraform before and would like to test it out using a shared team account for a cloud provider. The shared team account already contains15 virtual machines (VM). You develop a Terraform configuration containing one VM, perform terraform apply, and see that your VM was created successfully.What should you do to delete the newly-created VM with Terraform?
+You have never used Terraform before and would like to test it out using a shared team account for a cloud provider. The shared team account already contains 15 virtual machines (VM). You develop a Terraform configuration containing one VM, perform terraform apply, and see that your VM was created successfully. What should you do to delete the newly-created VM with Terraform?
 
 - A. The Terraform state file contains all 16 VMs in the team account. Execute terraform destroy and select the newly-created VM.
 - B. The Terraform state file only contains the one new VM. Execute terraform destroy.
@@ -560,6 +569,7 @@ You have never used Terraform before and would like to test it out using a share
 ## Question 49
 ---
 What is the name assigned by Terraform to reference this resource?
+![](https://www.examtopics.com/assets/media/exam-media/04279/0002800001.png)
 
 - A. dev
 - B. azurerm_resource_group
@@ -576,8 +586,8 @@ Setting the TF_LOG environment variable to DEBUG causes debug messages to be log
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/74899-exam-terraform-associate-topic-1-question-50-discussion/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/74899-exam-terraform-associate-topic-1-question-50-discussion/)
+> B, TF_LOG_PATH is required for syslog
 
 ## Question 51
 ---
