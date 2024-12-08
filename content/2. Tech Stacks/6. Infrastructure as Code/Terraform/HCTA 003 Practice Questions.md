@@ -608,8 +608,8 @@ In Terraform 0.13 and above, outside of the required_providers block, Terraform 
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75721-exam-terraform-associate-topic-1-question-52-discussion/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75721-exam-terraform-associate-topic-1-question-52-discussion/)
+> A, [official doc](https://developer.hashicorp.com/terraform/language/providers/requirements#local-names)
 
 ## Question 53
 ---
@@ -661,12 +661,13 @@ When does terraform apply reflect changes in the cloud environment?
 ## Question 57
 ---
 How would you reference the "name" value of the second instance of this fictitious resource?
+![](https://www.examtopics.com/assets/media/exam-media/04279/0003200001.png)
 
-- A. element(aws_instance.web, 2)
-- B. aws_instance.web[1].name
-- C. aws_instance.web[1]
-- D. aws_instance.web[2].name
-- E. aws_instance.web.*.name
+- A. `element(aws_instance.web, 2)`
+- B. `aws_instance.web[1].name`
+- C. `aws_instance.web[1]`
+- D. `aws_instance.web[2].name`
+- E. `aws_instance.web.*.name`
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/74961-exam-terraform-associate-topic-1-question-57-discussion/)
 > B
@@ -680,8 +681,8 @@ A Terraform provider is not responsible for:
 - C. Exposing resources and data sources based on an API
 - D. Managing actions to take based on resource differences
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/76736-exam-terraform-associate-topic-1-question-58-discussion/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/76736-exam-terraform-associate-topic-1-question-58-discussion/)
+> B, Terraform provider(AWS) is not responsible for provisioning in multiple clouds(Azure/GCP)
 
 ## Question 59
 ---
@@ -690,8 +691,8 @@ Terraform provisioners can be added to any resource block.
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75723-exam-terraform-associate-topic-1-question-59-discussion/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75723-exam-terraform-associate-topic-1-question-59-discussion/)
+> A, can perform "local-exec"
 
 ## Question 60
 ---
@@ -707,19 +708,21 @@ What is terraform refresh intended to detect?
 
 ## Question 61
 ---
-FILL BLANK -Which flag would you add to terraform plan to save the execution plan to a file?Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
+FILL BLANK -
+Which flag would you add to terraform plan to save the execution plan to a file?
+Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
 
-
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/77137-exam-terraform-associate-topic-1-question-61-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/77137-exam-terraform-associate-topic-1-question-61-discussion/)
 > -out=FILENAME
 
 ## Question 62
 ---
-FILL BLANK -What is the name of the default file where Terraform stores the state?Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
-
+FILL BLANK -
+What is the name of the default file where Terraform stores the state?
+Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/77138-exam-terraform-associate-topic-1-question-62-discussion/)
-> Terraform.tfstate
+> terraform.tfstate
 
 ## Question 63
 ---
@@ -777,25 +780,34 @@ How can terraform plan aid in the development process?
 
 ## Question 68
 ---
+You would like to reuse the same Terraform configuration for your development and production environments with a different state file for each.
+Which command would you use?
+
+- A. terraform import
+- B. terraform workspace
+- C. terraform state
+- D. terraform init
 
 > [!done]- Answer
-> 
+> B
 
 ## Question 69
 ---
 What is the name assigned by Terraform to reference this resource?
+![](https://www.examtopics.com/assets/media/exam-media/04279/0004000001.png)
 
 - A. compute_instance
 - B. main
 - C. google
-- D. teat
+- D. test
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/77141-exam-terraform-associate-topic-1-question-69-discussion/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/77141-exam-terraform-associate-topic-1-question-69-discussion/)
+> B, not D as Terraform is referencing this resource by name "main"
 
 ## Question 70
 ---
-You're building a CI/CD (continuous integration/ continuous delivery) pipeline and need to inject sensitive variables into your Terraform run.How can you do this safely?
+You're building a CI/CD (continuous integration/ continuous delivery) pipeline and need to inject sensitive variables into your Terraform run.
+How can you do this safely?
 
 - A. Pass variables to Terraform with a ג€"var flag
 - B. Copy the sensitive variables into your Terraform code
@@ -807,7 +819,8 @@ You're building a CI/CD (continuous integration/ continuous delivery) pipeline a
 
 ## Question 71
 ---
-Your security team scanned some Terraform workspaces and found secrets stored in a plaintext in state files.How can you protect sensitive data stored in Terraform state files?
+Your security team scanned some Terraform workspaces and found secrets stored in a plaintext in state files.
+How can you protect sensitive data stored in Terraform state files?
 
 - A. Delete the state file every time you run Terraform
 - B. Store the state in an encrypted backend
@@ -829,7 +842,8 @@ In contrast to Terraform Open Source, when working with Terraform Enterprise and
 
 ## Question 73
 ---
-You want to know from which paths Terraform is loading providers referenced in your Terraform configuration (*.tf files). You need to enable debug messages to find this out.Which of the following would achieve this?
+You want to know from which paths Terraform is loading providers referenced in your Terraform configuration (`*.tf files`). You need to enable debug messages to find this out.
+Which of the following would achieve this?
 
 - A. Set the environment variable TF_LOG=TRACE
 - B. Set verbose logging for each provider in your Terraform configuration
@@ -854,7 +868,8 @@ How is terraform import run?
 
 ## Question 75
 ---
-You have a simple Terraform configuration containing one virtual machine (VM) in a cloud provider. You run terraform apply and the VM is created successfully.What will happen if you delete the VM using the cloud provider console, and run terraform apply again without changing any Terraform code?
+You have a simple Terraform configuration containing one virtual machine (VM) in a cloud provider. You run terraform apply and the VM is created successfully.
+What will happen if you delete the VM using the cloud provider console, and run terraform apply again without changing any Terraform code?
 
 - A. Terraform will remove the VM from state file
 - B. Terraform will report an error
@@ -866,27 +881,28 @@ You have a simple Terraform configuration containing one virtual machine (VM) in
 
 ## Question 76
 ---
-Which of these options is the most secure place to store secrets foe connecting to a Terraform remote backend?
+Which of these options is the most secure place to store secrets for connecting to a Terraform remote backend?
 
 - A. Defined in Environment variables
 - B. Inside the backend block within the Terraform configuration
 - C. Defined in a connection configuration outside of Terraform
 - D. None of above
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/76919-exam-terraform-associate-topic-1-question-76-discussion/)
-> C
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/76919-exam-terraform-associate-topic-1-question-76-discussion/)
+> C, A is also possible but storing secrets in external storage such as Vault is more safer
 
 ## Question 77
 ---
-Your DevOps team is currently using the local backend for your Terraform configuration. You would like to move to a remote backend to begin storing the state file in a central location.Which of the following backends would not work?
+Your DevOps team is currently using the local backend for your Terraform configuration. You would like to move to a remote backend to begin storing the state file in a central location.
+Which of the following backends would not work?
 
 - A. Amazon S3
 - B. Artifactory
 - C. Git
 - D. Terraform Cloud
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/74893-exam-terraform-associate-topic-1-question-77-discussion/)
-> C
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/74893-exam-terraform-associate-topic-1-question-77-discussion/)
+> C, B is deprecated after Terraform v1.3
 
 ## Question 78
 ---
@@ -914,7 +930,8 @@ When you initialize Terraform, where does it cache modules from the public Terra
 
 ## Question 80
 ---
-You write a new Terraform configuration and immediately run terraform apply in the CLI using the local backend.Why will the apply fail?
+You write a new Terraform configuration and immediately run terraform apply in the CLI using the local backend.
+Why will the apply fail?
 
 - A. Terraform needs you to format your code according to best practices first
 - B. Terraform needs to install the necessary plugins first
@@ -938,12 +955,13 @@ What features stops multiple admins from changing the Terraform state at the sam
 
 ## Question 82
 ---
-A fellow developer on your team is asking for some help in refactoring their Terraform code. As part of their application's architecture, they are going to tear down an existing deployment managed by Terraform and deploy new. However, there is a server resource named aws_instance.ubuntu[1] they would like to keep to perform some additional analysis.What command should be used to tell Terraform to no longer manage the resource?
+A fellow developer on your team is asking for some help in refactoring their Terraform code. As part of their application's architecture, they are going to tear down an existing deployment managed by Terraform and deploy new. However, there is a server resource named `aws_instance.ubuntu[1]` they would like to keep to perform some additional analysis.
+What command should be used to tell Terraform to no longer manage the resource?
 
-- A. terraform apply rm aws_instance.ubuntu[1]
-- B. terraform state rm aws_instance.ubuntu[1]
-- C. terraform plan rm aws_instance.ubuntu[1]
-- D. terraform delete aws_instance.ubuntu[1]
+- A. `terraform apply rm aws_instance.ubuntu[1]`
+- B. `terraform state rm aws_instance.ubuntu[1]`
+- C. `terraform plan rm aws_instance.ubuntu[1]`
+- D. `terraform delete aws_instance.ubuntu[1]`
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/76922-exam-terraform-associate-topic-1-question-82-discussion/)
 > B
@@ -972,19 +990,21 @@ A terraform apply can not _________ infrastructure.
 
 ## Question 85
 ---
-You need to constrain the GitHub provider to version 2.1 or greater.Which of the following should you put into the Terraform 0.12 configuration's provider block?
+You need to constrain the GitHub provider to version 2.1 or greater.
+Which of the following should you put into the Terraform 0.12 configuration's provider block?
 
 - A. version >= 2.1
 - B. version ~> 2.1
-- C. version = ג€<= 2.1ג€
-- D. version = ג€>= 2.1ג€
+- C. version = "<= 2.1"
+- D. version = ">= 2.1"
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/75724-exam-terraform-associate-topic-1-question-85-discussion/)
 > D
 
 ## Question 86
 ---
-You just scaled your VM infrastructure and realized you set the count variable to the wrong value. You correct the value and save your change.What do you do next to make your infrastructure match your configuration?
+You just scaled your VM infrastructure and realized you set the count variable to the wrong value. You correct the value and save your change.
+What do you do next to make your infrastructure match your configuration?
 
 - A. Run an apply and confirm the planned changes
 - B. Inspect your Terraform state because you want to change it
@@ -1134,7 +1154,9 @@ When using Terraform to deploy resources into Azure, which scenarios are true re
 
 ## Question 99
 ---
-You need to deploy resources into two different cloud regions in the same Terraform configuration. To do that, you declare multiple provider configurations as follows:What meta-argument do you need to configure in a resource block to deploy the resource to the `us-west-2` AWS region?
+You need to deploy resources into two different cloud regions in the same Terraform configuration. To do that, you declare multiple provider configurations as follows:
+![](https://www.examtopics.com/assets/media/exam-media/04279/0005900001.png)
+What meta-argument do you need to configure in a resource block to deploy the resource to the `us-west-2` AWS region?
 
 - A. alias = west
 - B. provider = west
