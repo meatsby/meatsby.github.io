@@ -1260,22 +1260,26 @@ What does terraform import allow you to do?
 
 ## Question 108
 ---
-FILL BLANK -In the below configuration, how would you reference the module output vpc_id?Type your answer in the field provided. The text field is not case sensitive and all variations of the correct answer are accepted.
+FILL BLANK -
+In the below configuration, how would you reference the module output vpc_id?
+![](https://www.examtopics.com/assets/media/exam-media/04279/0006300001.png)
+Type your answer in the field provided. The text field is not case sensitive and all variations of the correct answer are accepted.
 
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79123-exam-terraform-associate-topic-1-question-108-discussion/)
-> output "outvpc_id"
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79123-exam-terraform-associate-topic-1-question-108-discussion/)
+> module.vpc.vpc_id
 
 ## Question 109
 ---
 How would you reference the Volume IDs associated with the ebs_block_device blocks in this configuration?
+![](https://www.examtopics.com/assets/media/exam-media/04279/0006400001.png)
 
-- A. aws_instance.example.ebs_block_device.[*].volume_id
-- B. aws_instance.example.ebs_block_device.volume_id
-- C. aws_instance.example.ebs_block_device[sda2,sda3].volume_id
-- D. aws_instance.example.ebs_block_device.*.volume_id
+- A. `aws_instance.example.ebs_block_device.[*].volume_id`
+- B. `aws_instance.example.ebs_block_device.volume_id`
+- C. `aws_instance.example.ebs_block_device[sda2,sda3].volume_id`
+- D. `aws_instance.example.ebs_block_device.*.volume_id`
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79464-exam-terraform-associate-topic-1-question-109-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79464-exam-terraform-associate-topic-1-question-109-discussion/)
 > D
 
 ## Question 110
