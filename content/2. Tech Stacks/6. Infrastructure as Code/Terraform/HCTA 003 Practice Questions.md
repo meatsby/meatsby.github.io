@@ -1330,7 +1330,8 @@ When you use a remote backend that needs authentication, HashiCorp recommends th
 
 ## Question 114
 ---
-You have a simple Terraform configuration containing one virtual machine (VM) in a cloud provider. You run terraform apply and the VM is created successfully.What will happen if you terraform apply again immediately afterwards without changing any Terraform code?
+You have a simple Terraform configuration containing one virtual machine (VM) in a cloud provider. You run terraform apply and the VM is created successfully.
+What will happen if you terraform apply again immediately afterwards without changing any Terraform code?
 
 - A. Terraform will terminate and recreate the VM
 - B. Terraform will create another duplicate VM
@@ -1354,7 +1355,7 @@ A junior admin accidentally deleted some of your cloud instances. What does Terr
 
 ## Question 116
 ---
-You have created a main.tr Terraform configuration consisting of an application server, a database, and a load balancer. You ran terraform apply and all resources were created successfully. Now you realize that you do not actually need the load balancer so you run terraform destroy without any flags What will happen?
+You have created a main.tf Terraform configuration consisting of an application server, a database, and a load balancer. You ran terraform apply and all resources were created successfully. Now you realize that you do not actually need the load balancer so you run terraform destroy without any flags What will happen?
 
 - A. Terraform will destroy the application server because it is listed first in the code
 - B. Terraform will prompt you to confirm that you want to destroy all the infrastructure
@@ -1374,12 +1375,13 @@ Which type of block fetches or computes information for use elsewhere in a Terra
 - C. local
 - D. data
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79137-exam-terraform-associate-topic-1-question-117-discussion/)
-> D
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79137-exam-terraform-associate-topic-1-question-117-discussion/)
+> D, Data sources allow data to be fetched or computed for use elsewhere in Terraform configuration. Use of data sources allows a Terraform configuration to build on information defined outside of Terraform, or defined by another separate Terraform configuration.
 
 ## Question 118
 ---
-You have just developed a new Terraform configuration for two virtual machines with a cloud provider. You would like to create the infrastructure for the first time.Which Terraform command should you run first?
+You have just developed a new Terraform configuration for two virtual machines with a cloud provider. You would like to create the infrastructure for the first time.
+Which Terraform command should you run first?
 
 - A. terraform apply
 - B. terraform plan
@@ -1406,8 +1408,8 @@ You have to initialize a Terraform backend before it can be configured.
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80143-exam-terraform-associate-topic-1-question-120-discussion/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80143-exam-terraform-associate-topic-1-question-120-discussion/)
+> B, you have to configure first and then initialize
 
 ## Question 121
 ---
