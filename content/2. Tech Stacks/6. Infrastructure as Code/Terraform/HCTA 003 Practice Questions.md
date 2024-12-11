@@ -1422,7 +1422,7 @@ Which of the following does terraform apply change after you approve the executi
 - E. Terraform code
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79141-exam-terraform-associate-topic-1-question-121-discussion/)
-> A
+> AD
 
 ## Question 122
 ---
@@ -1446,8 +1446,8 @@ What does Terraform use .terraform.lock.hcl file for?
 - C. Preventing Terraform runs from occurring
 - D. Storing references to workspaces which are locked
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79148-exam-terraform-associate-topic-1-question-123-discussion/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79148-exam-terraform-associate-topic-1-question-123-discussion/)
+> A, The .terraform.lock.hcl file is used to track provider dependencies and their exact versions.
 
 ## Question 124
 ---
@@ -1470,8 +1470,8 @@ How do you specify a module's version when publishing it to the public Terraform
 - C. The release tags in the associated repo
 - D. The module's Terraform code
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79157-exam-terraform-associate-topic-1-question-125-discussion/)
-> C
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79157-exam-terraform-associate-topic-1-question-125-discussion/)
+> C, For example, GitHub release tag will be the version of the module
 
 ## Question 126
 ---
@@ -1489,7 +1489,7 @@ To check if all code in a Terraform configuration with multiple modules is prope
 
 - A. terraform fmt -check
 - B. terraform fmt -write-false
-- C. terraform fmt ג€"list -recursive
+- C. terraform fmt -list -recursive
 - D. terraform fmt -check -recursive
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79527-exam-terraform-associate-topic-1-question-127-discussion/)
@@ -1499,7 +1499,7 @@ To check if all code in a Terraform configuration with multiple modules is prope
 ---
 As a member of the operations team, you need to run a script on a virtual machine created by Terraform. Which provision is best to use in your Terraform code?
 
-- A. null-ex׀µׁ
+- A. null-exec
 - B. local-exec
 - C. remote-exec
 - D. file
@@ -1509,7 +1509,11 @@ As a member of the operations team, you need to run a script on a virtual machin
 
 ## Question 129
 ---
-You are using a networking module in your Terraform configuration with the name label my_network. In your main configuration you have the following code:When you run terraform validate, you get the following error:What must you do to successfully retrieve this value from your networking module?
+You are using a networking module in your Terraform configuration with the name label my_network. In your main configuration you have the following code:
+![](https://www.examtopics.com/assets/media/exam-media/04279/0007200001.png)
+When you run terraform validate, you get the following error:
+![](https://www.examtopics.com/assets/media/exam-media/04279/0007200002.png)
+What must you do to successfully retrieve this value from your networking module?
 
 - A. Define the attribute vnet_id as a variable in the networking module
 - B. Change the referenced value to module.my_network.outputs.vnet_id
@@ -1521,8 +1525,12 @@ You are using a networking module in your Terraform configuration with the name 
 
 ## Question 130
 ---
-You are writing a child Terraform module which provisions an AWS instance. You want to make use of the IP address returned in the root configuration. You name the instance resource "main".Which of these is the correct way to define the output value using HCL2?A.B.
-
+You are writing a child Terraform module which provisions an AWS instance. You want to make use of the IP address returned in the root configuration. You name the instance resource "main".
+Which of these is the correct way to define the output value using HCL2?
+- A.
+	![](https://www.examtopics.com/assets/media/exam-media/04279/0007300001.jpg)
+- B.
+	![](https://www.examtopics.com/assets/media/exam-media/04279/0007300002.jpg)
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80553-exam-terraform-associate-topic-1-question-130-discussion/)
 > A
@@ -1537,7 +1545,7 @@ How can a ticket-based system slow down infrastructure provisioning and limit th
 - D. A catalog of approved resources can be accessed from drop down lists in a request form
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80427-exam-terraform-associate-topic-1-question-131-discussion/)
-> C
+> BC
 
 ## Question 132
 ---
@@ -1557,7 +1565,7 @@ Which Terraform collection type should you use to store key/value pairs?
 
 - A. tuple
 - B. set
-- C. maׁ€
+- C. map
 - D. list
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79029-exam-terraform-associate-topic-1-question-133-discussion/)
@@ -1565,7 +1573,8 @@ Which Terraform collection type should you use to store key/value pairs?
 
 ## Question 134
 ---
-You have used Terraform to create an ephemeral development environment in the cloud and are now ready to destroy all the infrastructure described by yourTerraform configuration. To be safe, you would like to first see all the infrastructure that will be deleted by Terraform.Which command should you use to show all of the resources that will be deleted? (Choose two.)
+You have used Terraform to create an ephemeral development environment in the cloud and are now ready to destroy all the infrastructure described by your Terraform configuration. To be safe, you would like to first see all the infrastructure that will be deleted by Terraform.
+Which command should you use to show all of the resources that will be deleted? (Choose two.)
 
 - A. Run terraform plan -destroy
 - B. Run terraform show -destroy
@@ -1611,9 +1620,11 @@ What advantage does an operations team that uses infrastructure as code have?
 
 ## Question 138
 ---
-You have modified your Terraform configuration to fix a typo in the Terraform ID of a resource from aws_security_group.http to aws_security_group.httpWhich of the following commands would you run to update the ID in state without destroying the resource?
+You have modified your Terraform configuration to fix a typo in the Terraform ID of a resource from aws_security_group.htp to aws_security_group.http
+![](https://www.examtopics.com/assets/media/exam-media/04279/0007700001.jpg)
+Which of the following commands would you run to update the ID in state without destroying the resource?
 
-- A. terraform mv aws_security_group.htp aws_security_group.http
+- A. terraform state mv aws_security_group.htp aws_security_group.http
 - B. terraform apply
 - C. terraform refresh
 
@@ -1622,8 +1633,14 @@ You have modified your Terraform configuration to fix a typo in the Terraform ID
 
 ## Question 139
 ---
-You are creating a Terraform configuration which needs to make use of multiple providers, one for AWS and one for Datadog.Which of the following provider blocks would allow you to do this?A.B.C.
-
+You are creating a Terraform configuration which needs to make use of multiple providers, one for AWS and one for Datadog.
+Which of the following provider blocks would allow you to do this?
+- A.
+	![](https://www.examtopics.com/assets/media/exam-media/04279/0007800001.jpg)
+- B.
+	![](https://www.examtopics.com/assets/media/exam-media/04279/0007900001.jpg)
+- C.
+	![](https://www.examtopics.com/assets/media/exam-media/04279/0008000001.jpg)
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80556-exam-terraform-associate-topic-1-question-139-discussion/)
 > B
