@@ -1687,12 +1687,13 @@ Which of the following is not an advantage of using infrastructure as code opera
 - D. Modify a count parameter to scale resources
 - E. API driven workflows
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80774-exam-terraform-associate-topic-1-question-143-discussion/)
-> C
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80774-exam-terraform-associate-topic-1-question-143-discussion/)
+> C, B is also strange but C is not an advantage of IaC for sure
 
 ## Question 144
 ---
-You're writing a Terraform configuration that needs to read input from a local file called id_rsa.pub.Which built-in Terraform function can you use to import the file's contents as a string?
+You're writing a Terraform configuration that needs to read input from a local file called id_rsa.pub.
+Which built-in Terraform function can you use to import the file's contents as a string?
 
 - A. fileset("id_rsa.pub")
 - B. filebase64("id_rsa.pub")
@@ -1712,18 +1713,18 @@ What does Terraform use providers for? (Choose three.)
 - D. Enforce security and compliance policies
 - E. Group a collection of Terraform configuration files that map to a single state file
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79381-exam-terraform-associate-topic-1-question-145-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79381-exam-terraform-associate-topic-1-question-145-discussion/)
 > ABC
 
 ## Question 146
 ---
-You can reference a resource created with for_each using a Splat (*) expression.
+You can reference a resource created with for_each using a Splat `(*)` expression.
 
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79034-exam-terraform-associate-topic-1-question-146-discussion/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79034-exam-terraform-associate-topic-1-question-146-discussion/)
+> B, for_each is map of objects not list of objects
 
 ## Question 147
 ---
@@ -1746,8 +1747,8 @@ Which parameters does terraform import require? (Choose two.)
 - C. Resource ID
 - D. Resource address
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79153-exam-terraform-associate-topic-1-question-148-discussion/)
-> CD
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79153-exam-terraform-associate-topic-1-question-148-discussion/)
+> CD, the command is `terraform import {resource_address} {resource_id}`
 
 ## Question 149
 ---
@@ -1764,6 +1765,7 @@ Once a new Terraform backend is configured with a Terraform code block, which co
 ## Question 150
 ---
 What does this code do?
+![](https://www.examtopics.com/assets/media/exam-media/04279/0008400001.jpg)
 
 - A. Requires any version of the AWS provider >= 3.0 and < 4.0
 - B. Requires any version of the AWS provider >= 3.0
