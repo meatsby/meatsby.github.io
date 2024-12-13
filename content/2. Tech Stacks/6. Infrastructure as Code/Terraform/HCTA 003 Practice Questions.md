@@ -1796,7 +1796,7 @@ Which of the following is not valid source path for specifying a module?
 - C. source = "./module"
 - D. source = "hashicorp/consul/aws"
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80155-exam-terraform-associate-topic-1-question-152-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80155-exam-terraform-associate-topic-1-question-152-discussion/)
 > A
 
 ## Question 153
@@ -1809,8 +1809,8 @@ Which of the following is true about terraform apply? (Choose two.)
 - D. By default, it does not refresh your state file to reflect current infrastructure configuration
 - E. You cannot target specific resources for the operation
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80580-exam-terraform-associate-topic-1-question-153-discussion/)
-> AC
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80580-exam-terraform-associate-topic-1-question-153-discussion/)
+> AC, There are some resources that need to be destroyed and recreated
 
 ## Question 154
 ---
@@ -1840,7 +1840,9 @@ Which of the following is true about Terraform's implementation of infrastructur
 
 ## Question 156
 ---
-You need to write some Terraform code that adds 42 firewall rules to a security group as shown in the example.What can you use to avoid writing 42 different nested ingress config blocks by hand?
+You need to write some Terraform code that adds 42 firewall rules to a security group as shown in the example.
+![](https://www.examtopics.com/assets/media/exam-media/04279/0008700001.jpg)
+What can you use to avoid writing 42 different nested ingress config blocks by hand?
 
 - A. A count loop
 - B. A for block
@@ -1859,7 +1861,7 @@ Which of the following is the safest way to inject sensitive values into a Terra
 - C. Edit the state file directly just before running terraform apply
 - D. Set the variable value on the command line with the -var flag
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80164-exam-terraform-associate-topic-1-question-157-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80164-exam-terraform-associate-topic-1-question-157-discussion/)
 > B
 
 ## Question 158
@@ -1875,6 +1877,7 @@ terraform apply will fail if you have not am terraform plan first to update the 
 ## Question 159
 ---
 How would you reference the attribute "name" of this fictitious resource in HCL?
+![](https://www.examtopics.com/assets/media/exam-media/04279/0008900001.jpg)
 
 - A. resource.kubernetes_namespace.example.name
 - B. kubernetes_namespace.test.name
@@ -1882,7 +1885,7 @@ How would you reference the attribute "name" of this fictitious resource in HCL?
 - D. data.kubernetes_namespace.name
 - E. None of the above
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80166-exam-terraform-associate-topic-1-question-159-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80166-exam-terraform-associate-topic-1-question-159-discussion/)
 > C
 
 ## Question 160
@@ -1930,7 +1933,7 @@ When does Sentinel enforce policy logic during a Terraform Enterprise run?
 - C. Before the apply phase
 - D. After the apply phase
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79468-exam-terraform-associate-topic-1-question-163-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79468-exam-terraform-associate-topic-1-question-163-discussion/)
 > C
 
 ## Question 164
@@ -1966,7 +1969,7 @@ Changing the Terraform backend from the default "local" backend to a different o
 - C. Impossible
 - D. Discouraged
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80589-exam-terraform-associate-topic-1-question-166-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80589-exam-terraform-associate-topic-1-question-166-discussion/)
 > B
 
 ## Question 167
@@ -1981,19 +1984,21 @@ You have modified your local Terraform configuration and ran terraform plan to r
 
 ## Question 168
 ---
-terraform apply is failing with the following error. What next step should you take to determine the root cause of the problem?Error loading state: AccessDenied: Access Denied status code: 403, request id: 288766CE5CCA24A0, host id: FOOBAR
+terraform apply is failing with the following error. What next step should you take to determine the root cause of the problem?
+Error loading state: AccessDenied: Access Denied status code: 403, request id: 288766CE5CCA24A0, host id: FOOBAR
 
 - A. Set TF_LOG=DEBUG
 - B. Review syslog for Terraform error messages
 - C. Run terraform login to reauthenticate with the provider
 - D. Review /var/log/terraform.log for error messages
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79471-exam-terraform-associate-topic-1-question-168-discussion/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79471-exam-terraform-associate-topic-1-question-168-discussion/)
+> A, C is for logging in to TFE
 
 ## Question 169
 ---
-As a member of an operations team that uses infrastructure as code (IaC) practices, you are tasked with making a change to an infrastructure stack running in a public cloud.Which pattern would follow IaC best practices for making a change?
+As a member of an operations team that uses infrastructure as code (IaC) practices, you are tasked with making a change to an infrastructure stack running in a public cloud.
+Which pattern would follow IaC best practices for making a change?
 
 - A. Clone the repository containing your infrastructure code and then run the code
 - B. Use the public cloud console to make the change after a database record has been approved
@@ -2050,7 +2055,8 @@ terraform init retrieves the source code for all referenced modules.
 
 ## Question 174
 ---
-You have a Terraform configuration that defines a single virtual machine with no references to it. You have run terraform apply to create the resource, and then removed the resource definition from your Terraform configuration file.What will happen when you run terraform apply in the working directory again?
+You have a Terraform configuration that defines a single virtual machine with no references to it. You have run terraform apply to create the resource, and then removed the resource definition from your Terraform configuration file.
+What will happen when you run terraform apply in the working directory again?
 
 - A. Nothing
 - B. Terraform will destroy the virtual machine
@@ -2069,13 +2075,16 @@ Which configuration consistency errors does terraform validate report?
 - C. Terraform module isn't the latest version
 - D. Declaring a resource identifier more than once
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80597-exam-terraform-associate-topic-1-question-175-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80597-exam-terraform-associate-topic-1-question-175-discussion/)
 > D
 
 ## Question 176
 ---
-In Terraform HCL, an object type of object({ name=string, age=number }) would match this value:A.B.
-
+In Terraform HCL, an object type of object({ name=string, age=number }) would match this value:
+- A.
+	![](https://www.examtopics.com/assets/media/exam-media/04279/0009600001.jpg)
+- B.
+	![](https://www.examtopics.com/assets/media/exam-media/04279/0009600002.jpg)
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/82190-exam-terraform-associate-topic-1-question-176-discussion/)
 > B
@@ -2113,7 +2122,7 @@ Why should secrets not be hard coded into Terraform code? (Choose two.)
 - C. The Terraform code is copied to the target resources to be applied locally and could expose secrets if a target resource is compromised.
 - D. All passwords should be rotated on a quarterly basis.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80807-exam-terraform-associate-topic-1-question-179-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80807-exam-terraform-associate-topic-1-question-179-discussion/)
 > AB
 
 ## Question 180
@@ -2125,7 +2134,7 @@ If a Terraform creation-time provisioner fails, what will occur by default?
 - C. The resource will be marked as "tainted"
 - D. Nothing, provisioners will not show errors in the command line
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79480-exam-terraform-associate-topic-1-question-180-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79480-exam-terraform-associate-topic-1-question-180-discussion/)
 > C
 
 ## Question 181
@@ -2149,12 +2158,13 @@ Which command lets you experiment with Terraform's built-in functions?
 - C. terraform test
 - D. terraform validate
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79336-exam-terraform-associate-topic-1-question-182-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79336-exam-terraform-associate-topic-1-question-182-discussion/)
 > B
 
 ## Question 183
 ---
 Why does this backend configuration not follow best practices?
+![](https://www.examtopics.com/assets/media/exam-media/04279/0009900001.jpg)
 
 - A. You should not store credentials in Terraform Configuration
 - B. You should use the local enhanced storage backend whenever possible
@@ -2195,7 +2205,7 @@ While attempting to deploy resources into your cloud provider using Terraform, y
 - C. TF_LOG
 - D. TP_LOG_PATH
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80606-exam-terraform-associate-topic-1-question-186-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80606-exam-terraform-associate-topic-1-question-186-discussion/)
 > C
 
 ## Question 187
@@ -2246,8 +2256,9 @@ Which are examples of infrastructure as code? (Choose two.)
 
 ## Question 191
 ---
-FILL BLANK -You need to migrate a workspace to use a remote backend. After updating your configuration, what command do you run to perform the migration?Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
-
+FILL BLANK -
+You need to migrate a workspace to use a remote backend. After updating your configuration, what command do you run to perform the migration?
+Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/81331-exam-terraform-associate-topic-1-question-191-discussion/)
 > terraform init
@@ -2262,8 +2273,8 @@ When using a module from the public Terraform Module Registry, the following par
 - D. Each of the module’s dependencies (example: submodules)
 - E. The version of the module
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95113-exam-terraform-associate-topic-1-question-192-discussion/)
-> AB
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95113-exam-terraform-associate-topic-1-question-192-discussion/)
+> AB, E is not required
 
 ## Question 193
 ---
@@ -2284,12 +2295,15 @@ You can access state stored with the local backend by using the terraform_remote
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95150-exam-terraform-associate-topic-1-question-194-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95150-exam-terraform-associate-topic-1-question-194-discussion/)
 > A
 
 ## Question 195
 ---
-You have been working in a Cloud provider account that is shared with other team members. You previously used Terraform to create a load balancer that is listening on port 80. After some application changes, you updated the Terraform code to change the port to 443.You run terraform plan and see that the execution plan shows the port changing from 80 to 443 like you intended, and step away to grab some coffee.In the meantime, another team member manually changes the load balancer port to 443 through the Cloud provider console before you get back to your desk.What will happen when you terraform apply upon returning to your desk?
+You have been working in a Cloud provider account that is shared with other team members. You previously used Terraform to create a load balancer that is listening on port 80. After some application changes, you updated the Terraform code to change the port to 443.
+You run terraform plan and see that the execution plan shows the port changing from 80 to 443 like you intended, and step away to grab some coffee.
+In the meantime, another team member manually changes the load balancer port to 443 through the Cloud provider console before you get back to your desk.
+What will happen when you terraform apply upon returning to your desk?
 
 - A. Terraform will fail with an error because the state file is no longer accurate.
 - B. Terraform will change the load balancer port to 80, and then change it back to 443.
@@ -2311,13 +2325,14 @@ In a Terraform Cloud workspace linked to a version control repository, speculati
 
 ## Question 197
 ---
-You have some Terraform code and a variable definitions file named dev.auto.tfvars that you tested successfully in the dev environment. You want to deploy the same code in the staging environment with a separate variable definition file and a separate state file.Which two actions should you perform? (Choose two.)
+You have some Terraform code and a variable definitions file named dev.auto.tfvars that you tested successfully in the dev environment. You want to deploy the same code in the staging environment with a separate variable definition file and a separate state file.
+Which two actions should you perform? (Choose two.)
 
 - A. Copy the existing terraform.tfstate file and save it as staging.terraform.tfstate
 - B. Write a new staging.auto.tfvars variable definition file and run Terraform with the  var-file=”staging.auto.tfvars” flag
 - C. Create a new Terraform workspace for staging
 - D. Create a new Terraform provider for staging
-- E. Add new Terraform code (*.tf files) for staging in the same directory
+- E. Add new Terraform code (`*.tf` files) for staging in the same directory
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95074-exam-terraform-associate-topic-1-question-197-discussion/)
 > BC
@@ -2331,8 +2346,8 @@ The ________ determines how Terraform creates, updates, or deletes resources.
 - C. Terraform provider
 - D. Terraform provisioner
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95075-exam-terraform-associate-topic-1-question-198-discussion/)
-> C
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95075-exam-terraform-associate-topic-1-question-198-discussion/)
+> C, providers such as AWS, Azure, GCP determines how
 
 ## Question 199
 ---
@@ -2348,9 +2363,9 @@ Terraform destroy is the only way to remove infrastructure.
 ---
 Which of the following is the correct way to pass the value in the variable num_servers into a module with the input servers in HCL2?
 
-- A. servers - var.num_servers
-- B. servers - num_servers
-- C. servers - var(num_servers)
+- A. servers = var.num_servers
+- B. servers = num_servers
+- C. servers = var(num_servers)
 - D. $(var.num_servers)
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95077-exam-terraform-associate-topic-1-question-200-discussion/)
