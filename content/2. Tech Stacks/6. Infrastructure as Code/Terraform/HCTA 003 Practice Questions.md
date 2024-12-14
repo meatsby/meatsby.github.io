@@ -2373,7 +2373,7 @@ Which of the following is the correct way to pass the value in the variable num_
 
 ## Question 201
 ---
-Which of the fallowing commands would you use to access all of the attributes and details of a resource managed by Terraform?
+Which of the following commands would you use to access all of the attributes and details of a resource managed by Terraform?
 
 - A. terraform state list
 - B. terraform state show
@@ -2386,6 +2386,7 @@ Which of the fallowing commands would you use to access all of the attributes an
 ## Question 202
 ---
 How would you be able to reference an attribute from the vsphere_datacenter data source for use with the datacenter_id argument within the vsphere_folder resource in the following configuration?
+![](https://img.examtopics.com/terraform-associate/image1.png)
 
 - A. data.dc.id
 - B. data.vsphere_datacenter.dc
@@ -2397,7 +2398,9 @@ How would you be able to reference an attribute from the vsphere_datacenter data
 
 ## Question 203
 ---
-You decide to move a Terraform state file to Amazon S3 from another location. You write the code below into a file called backend.tf.Which command will migrate your current state file to the new S3 remote backend?
+You decide to move a Terraform state file to Amazon S3 from another location. You write the code below into a file called backend.tf.
+![](https://img.examtopics.com/terraform-associate/image2.png)
+Which command will migrate your current state file to the new S3 remote backend?
 
 - A. terraform state
 - B. terraform init
@@ -2409,7 +2412,8 @@ You decide to move a Terraform state file to Amazon S3 from another location. Yo
 
 ## Question 204
 ---
-You want to tag multiple resources with a string that is a combination of a generated random_id and a variable.How should you use the same value in all these resources without repeating the random_id and variable in each resource?
+You want to tag multiple resources with a string that is a combination of a generated random_id and a variable.
+How should you use the same value in all these resources without repeating the random_id and variable in each resource?
 
 - A. Local values
 - B. Data source
@@ -2443,7 +2447,8 @@ Module version is required to reference a module on the Terraform Module Registr
 
 ## Question 207
 ---
-While deploying a virtual machine, the first launch user_data script fails due to race condition with another resource deployed during the same Terraform run.What is the least disruptive method to correct the issue?
+While deploying a virtual machine, the first launch user_data script fails due to race condition with another resource deployed during the same Terraform run.
+What is the least disruptive method to correct the issue?
 
 - A. Run terraform taint against the virtual machine’s resource name, then terraform apply
 - B. Restart the virtual machine from the cloud portal
@@ -2470,12 +2475,13 @@ Both Terraform Cloud and Terraform Enterprise support policy as code (Sentinel).
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95108-exam-terraform-associate-topic-1-question-209-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95108-exam-terraform-associate-topic-1-question-209-discussion/)
 > A
 
 ## Question 210
 ---
-You want to define multiple data disks as nested blocks inside the resource block for a virtual machine.What Terraform feature would help you define the blocks using the values in a variable?
+You want to define multiple data disks as nested blocks inside the resource block for a virtual machine.
+What Terraform feature would help you define the blocks using the values in a variable?
 
 - A. Local values
 - B. Collection functions
@@ -2499,12 +2505,16 @@ Which of the following module source paths does not specify a remote module?
 
 ## Question 212
 ---
-You have a list of numbers that represents the number of free CPU cores on each virtual cluster:numcpus = [ 18, 3, 7, 11, 2 ]What Terraform function could you use to select the largest number from the list?
+You have a list of numbers that represents the number of free CPU cores on each virtual cluster:
 
-- A. max(numcpus)
-- B. ceil(numcpus)
-- C. top(numcpus)
-- D. high[numcpus]
+`numcpus = [ 18, 3, 7, 11, 2 ]`
+
+What Terraform function could you use to select the largest number from the list?
+
+- A. `max(numcpus)`
+- B. `ceil(numcpus)`
+- C. `top(numcpus)`
+- D. `high[numcpus]`
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95111-exam-terraform-associate-topic-1-question-212-discussion/)
 > A
@@ -2540,7 +2550,7 @@ What is a key benefit of the Terraform state file?
 - C. A state file represents the desired state expressed by the Terraform code files
 - D. A state file represents a source of truth for resources provisioned with Terraform
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95149-exam-terraform-associate-topic-1-question-215-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/95149-exam-terraform-associate-topic-1-question-215-discussion/)
 > D
 
 ## Question 216
@@ -2599,17 +2609,18 @@ Which method for sharing Terraform configurations keeps them confidential within
 - C. Public Terraform Module Registry
 - D. Subfolder within a workspace
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/104152-exam-terraform-associate-topic-1-question-220-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/104152-exam-terraform-associate-topic-1-question-220-discussion/)
 > B
 
 ## Question 221
 ---
-You are writing a child Terraform module which provisions an AWS instance. You want to make use of the IP address returned in the root configuration. You name the instance resource “main”.Which of these is the correct way to define the output value using HCL2?
+You are writing a child Terraform module which provisions an AWS instance. You want to make use of the IP address returned in the root configuration. You name the instance resource “main”.
+Which of these is the correct way to define the output value using HCL2?
 
-- A. 
-- B. 
-- C. 
-- D. 
+- A. ![](https://img.examtopics.com/terraform-associate/image3.png)
+- B. ![](https://img.examtopics.com/terraform-associate/image4.png)
+- C. ![](https://img.examtopics.com/terraform-associate/image5.png)
+- D. ![](https://img.examtopics.com/terraform-associate/image6.png)
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/104661-exam-terraform-associate-topic-1-question-221-discussion/)
 > A
@@ -2617,11 +2628,12 @@ You are writing a child Terraform module which provisions an AWS instance. You w
 ## Question 222
 ---
 How would you refer to the indexing instance from the below configuration?
+![](https://img.examtopics.com/terraform-associate/image7.png)
 
-- A. aws_instance[“web”][“indexing”]
-- B. aws_instance.web.indexing
-- C. aws_instance-web[“indexing”]
-- D. aws_instance.web[“indexing”]
+- A. `aws_instance[“web”][“indexing”]`
+- B. `aws_instance.web.indexing`
+- C. `aws_instance-web[“indexing”]`
+- D. `aws_instance.web[“indexing”]`
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/104667-exam-terraform-associate-topic-1-question-222-discussion/)
 > D
@@ -2635,8 +2647,8 @@ Which feature is not included in Terraform Cloud’s free tier?
 - C. Audit logging
 - D. Private module registry
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/104310-exam-terraform-associate-topic-1-question-223-discussion/)
-> C
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/104310-exam-terraform-associate-topic-1-question-223-discussion/)
+> C, Terraform Cloud supports private module registry
 
 ## Question 224
 ---
@@ -2662,7 +2674,8 @@ Terraform configuration (including any module references) can contain only one T
 
 ## Question 226
 ---
-You are making changes to existing Terraform code to add some new infrastructure.When is the best time to run terraform validate?
+You are making changes to existing Terraform code to add some new infrastructure.
+When is the best time to run terraform validate?
 
 - A. After you run terraform plan so you can validate that your state file is consistent with your infrastructure
 - B. Before you run terraform plan so you can validate your code syntax
@@ -2711,7 +2724,8 @@ What are some benefits of using Sentinel with Terraform Cloud/Terraform Enterpri
 
 ## Question 230
 ---
-You want to share Terraform state with your team, store it securely, and provide state locking.How would you do this? (Choose three.)
+You want to share Terraform state with your team, store it securely, and provide state locking.
+How would you do this? (Choose three.)
 
 - A. Using the remote Terraform backend with Terraform Cloud / Terraform Enterprise.
 - B. Using the local backend.
@@ -2737,12 +2751,13 @@ How would you output returned values from a child module?
 - C. Declare the output in both the root and child module
 - D. None of the above
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/104624-exam-terraform-associate-topic-1-question-232-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/104624-exam-terraform-associate-topic-1-question-232-discussion/)
 > C
 
 ## Question 233
 ---
-You have decided to create a new Terraform workspace to deploy a development environment.What is different about this workspace?
+You have decided to create a new Terraform workspace to deploy a development environment.
+What is different about this workspace?
 
 - A. It has its own state file
 - B. It pulls in a different terraform.tfvars file
@@ -2929,10 +2944,10 @@ What features stops multiple users from operating on the Terraform state at the 
 ---
 You are creating a reusable Terraform configuration and want to include a billing_dept tag so your Finance team can track team-specific spending on resources. Which of the following billing_dept variable declarations will allow you to do this?
 
-- A. 
-- B. 
-- C. 
-- D. 
+- A. ![](https://img.examtopics.com/terraform-associate/image8.png)
+- B. ![](https://img.examtopics.com/terraform-associate/image9.png)
+- C. ![](https://img.examtopics.com/terraform-associate/image10.png)
+- D. ![](https://img.examtopics.com/terraform-associate/image11.png)
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/108623-exam-terraform-associate-topic-1-question-249-discussion/)
 > C
