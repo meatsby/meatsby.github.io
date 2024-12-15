@@ -2966,14 +2966,15 @@ Which of these are secure options for storing secrets for connecting to a Terraf
 
 ## Question 251
 ---
-You want to define a single input variable to capture configuration values for a server. The values must represent memory as a number, and the server name as a string.Which variable type could you use for this input?
+You want to define a single input variable to capture configuration values for a server. The values must represent memory as a number, and the server name as a string.
+Which variable type could you use for this input?
 
 - A. List
 - B. Object
 - C. Map
 - D. Terraform does not support complex input variables of different types
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/108621-exam-terraform-associate-topic-1-question-251-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/108621-exam-terraform-associate-topic-1-question-251-discussion/)
 > B
 
 ## Question 252
@@ -2993,7 +2994,7 @@ What does Terraform not reference when running a terraform apply -refresh-only?
 Multiple team members are collaborating on infrastructure using Terraform and want to format their Terraform code following standard Terraform-style convention. How could they automatically ensure the code satisfies conventions?
 
 - A. Run the terraform fmt command during the code linting phase of your CI/CD process
-- B. Manually apply two spaces indentation and align equal sign "=" characters in every Terraform file (*.tf)
+- B. Manually apply two spaces indentation and align equal sign "=" characters in every Terraform file (`*.tf`)
 - C. Run the terraform validate command prior to executing terraform plan or terraform apply
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/108619-exam-terraform-associate-topic-1-question-253-discussion/)
@@ -3015,17 +3016,18 @@ When using a remote backend or Terraform Cloud integration, where does Terraform
 ---
 In Terraform HCL, an object type of object({ name=string, age=number }) would match this value:
 
-- A. 
-- B. 
-- C. 
-- D. 
+- A. ![](https://img.examtopics.com/terraform-associate/image12.png)
+- B. ![](https://img.examtopics.com/terraform-associate/image13.png)
+- C. ![](https://img.examtopics.com/terraform-associate/image14.png)
+- D. ![](https://img.examtopics.com/terraform-associate/image15.png)
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/112204-exam-terraform-associate-topic-1-question-255-discussion/)
 > B
 
 ## Question 256
 ---
-You add a new resource to an existing Terraform configuration, but do not update the version constraint in the configuration. The existing and new resources use the same provider. The working directory contains a .terraform-lock.hcl file.How will Terraform choose which version of the provider to use?
+You add a new resource to an existing Terraform configuration, but do not update the version constraint in the configuration. The existing and new resources use the same provider. The working directory contains a .terraform-lock.hcl file.
+How will Terraform choose which version of the provider to use?
 
 - A. Terraform will use the latest version of the provider for the new resource and the version recorded in the lock file to manage existing resources
 - B. Terraform will use the version recorded in your lock file
@@ -3088,7 +3090,7 @@ The Terraform binary version and provider versions must match each other in a si
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/112482-exam-terraform-associate-topic-1-question-261-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/112482-exam-terraform-associate-topic-1-question-261-discussion/)
 > B
 
 ## Question 262
@@ -3098,8 +3100,8 @@ The .terraform.lock.hcl file tracks module versions.
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/112481-exam-terraform-associate-topic-1-question-262-discussion/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/112481-exam-terraform-associate-topic-1-question-262-discussion/)
+> B, it's for locking the versions of the provider dependencies
 
 ## Question 263
 ---
@@ -3108,7 +3110,7 @@ You can develop a custom provider to manage its resources using Terraform.
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/113324-exam-terraform-associate-topic-1-question-263-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/113324-exam-terraform-associate-topic-1-question-263-discussion/)
 > A
 
 ## Question 264
@@ -3120,7 +3122,7 @@ Which of these is not a benefit of remote state?
 - C. Working in a team
 - D. Delegate output to other teams
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/112926-exam-terraform-associate-topic-1-question-264-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/112926-exam-terraform-associate-topic-1-question-264-discussion/)
 > B
 
 ## Question 265
@@ -3132,12 +3134,13 @@ When using multiple configurations of the same Terraform provider, what meta-arg
 - C. id
 - D. name
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/113326-exam-terraform-associate-topic-1-question-265-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/113326-exam-terraform-associate-topic-1-question-265-discussion/)
 > B
 
 ## Question 266
 ---
-A developer accidentally launched a VM (virtual machine) outside of the Terraform workflow and ended up with two servers with the same name. They don’t know which VM Terraform manages but do have a list of all active VM IDs.Which of the following methods could you use to discover which instance Terraform manages?
+A developer accidentally launched a VM (virtual machine) outside of the Terraform workflow and ended up with two servers with the same name. They don’t know which VM Terraform manages but do have a list of all active VM IDs.
+Which of the following methods could you use to discover which instance Terraform manages?
 
 - A. Run terraform taint/code on all the VMs to recreate them
 - B. Update the code to include outputs for the ID of all VMs, then run terraform plan to view the outputs
@@ -3165,8 +3168,8 @@ If you update the version constraint in your Terraform configuration, Terraform 
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/112975-exam-terraform-associate-topic-1-question-268-discussion/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/112975-exam-terraform-associate-topic-1-question-268-discussion/)
+> B, should run terraform init -upgrade
 
 ## Question 269
 ---
@@ -3322,8 +3325,8 @@ Setting the TF_LOG environment variable to DEBUG causes debug messages to be log
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/117591-exam-terraform-associate-topic-1-question-282-discussion/)
-> B
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/117591-exam-terraform-associate-topic-1-question-282-discussion/)
+> B, it logs into stderr instead
 
 ## Question 283
 ---
@@ -3340,6 +3343,7 @@ How would you output returned values from a child module in the Terraform CLI ou
 ## Question 284
 ---
 What is the Terraform resource name of the following resource block?
+![](https://img.examtopics.com/terraform-associate/image16.png)
 
 - A. azurerm_resource_group
 - B. azurerm
@@ -3383,7 +3387,7 @@ Which of the following are advantages of using infrastructure as code (IaC) inst
 - D. Reduces risk of operator error
 - E. Prevents manual modifications to your resources
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/127121-exam-terraform-associate-topic-1-question-287-discussion/)
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/127121-exam-terraform-associate-topic-1-question-287-discussion/)
 > BD
 
 ## Question 288
@@ -3398,7 +3402,8 @@ One cloud configuration always maps to a single remote workspace.
 
 ## Question 289
 ---
-Multiple team members are collaborating on infrastructure using Terraform and want to format their Terraform code following standard Terraform-style convention.How could they automatically ensure the code satisfies conventions?
+Multiple team members are collaborating on infrastructure using Terraform and want to format their Terraform code following standard Terraform-style convention.
+How could they automatically ensure the code satisfies conventions?
 
 - A. Replace all tabs with spaces
 - B. Terraform automatically formats configuration on terraform apply
@@ -3470,12 +3475,12 @@ Which of the following is the correct way to pass the value in the variable num_
 
 ## Question 295
 ---
-A developer on your team is going to tear down an existing deployment managed by Terraform and deploy a new one. However, there is a server resource named aws_instance.ubuntu[1] they would like to keep. What command should they use to tell Terraform to stop managing that specific resource?
+A developer on your team is going to tear down an existing deployment managed by Terraform and deploy a new one. However, there is a server resource named `aws_instance.ubuntu[1]` they would like to keep. What command should they use to tell Terraform to stop managing that specific resource?
 
-- A. terraform destroy aws_instance.ubuntu[l]
-- B. terraform apply rm aws_instance.ubuntu[l]
-- C. terraform state rm aws_instance.ubuntu[l]
-- D. terraform plan rm aws_instance.ubuntu[l]
+- A. `terraform destroy aws_instance.ubuntu[1]`
+- B. `terraform apply rm aws_instance.ubuntu[1]`
+- C. `terraform state rm aws_instance.ubuntu[1]`
+- D. `terraform plan rm aws_instance.ubuntu[1]`
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/127163-exam-terraform-associate-topic-1-question-295-discussion/)
 > C
@@ -3777,12 +3782,13 @@ If you don't use the local backend, where does Terraform save resource state?
 
 ## Question 321
 ---
-You are writing a child Terraform module that provisions an AWS instance. You want to reference the IP address returned by the child module in the root configuration. You name the instance resource "main".Which of these is the correct way to define the output value?
+You are writing a child Terraform module that provisions an AWS instance. You want to reference the IP address returned by the child module in the root configuration. You name the instance resource "main".
+Which of these is the correct way to define the output value?
 
-- A. 
-- B. 
-- C. 
-- D. 
+- A. ![](https://img.examtopics.com/terraform-associate/image17.png)
+- B. ![](https://img.examtopics.com/terraform-associate/image18.png)
+- C. ![](https://img.examtopics.com/terraform-associate/image19.png)
+- D. ![](https://img.examtopics.com/terraform-associate/image20.png)
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/134705-exam-terraform-associate-topic-1-question-321-discussion/)
 > A
@@ -3853,7 +3859,10 @@ When does Terraform create the .terraform.lock.hcl file?
 
 ## Question 328
 ---
-You have been working in a Cloud provider account that is shared with other team members. You previously used Terraform to create a load balancer that is listening on port 80. After some application changes, you updated the Terraform code to change the port to 443.You run terraform plan and see that the execution plan shows the port changing from 80 to 443 like you intended, and step away to grab some coffee.In the meantime, another team member manually changes the load balancer port to 443 through the Cloud provider console before you get back to your desk.What will happen when you terraform apply upon returning to your desk?
+You have been working in a Cloud provider account that is shared with other team members. You previously used Terraform to create a load balancer that is listening on port 80. After some application changes, you updated the Terraform code to change the port to 443.
+You run terraform plan and see that the execution plan shows the port changing from 80 to 443 like you intended, and step away to grab some coffee.
+In the meantime, another team member manually changes the load balancer port to 443 through the Cloud provider console before you get back to your desk.
+What will happen when you terraform apply upon returning to your desk?
 
 - A. Terraform will fail with an error because the state file is no longer accurate.
 - B. Terraform will change the load balancer port to 80, and then change it back to 443.
@@ -3894,6 +3903,7 @@ In a HCP Terraform/Terraform Cloud workspace linked to a version control reposit
 ## Question 332
 ---
 A resource block is shown in the Exhibit space of this page. What is the Terraform resource name of the resource block?
+![](https://img.examtopics.com/terraform-associate/image21.png)
 
 - A. test
 - B. main
@@ -3905,7 +3915,9 @@ A resource block is shown in the Exhibit space of this page. What is the Terrafo
 
 ## Question 333
 ---
-A module block is shown in the Exhibit space of this page.When you use a module block to reference a module from the Terraform Registry such as the one in the example, how do you specify version 1.0.0 of the module?
+A module block is shown in the Exhibit space of this page.
+![](https://img.examtopics.com/terraform-associate/image22.png)
+When you use a module block to reference a module from the Terraform Registry such as the one in the example, how do you specify version 1.0.0 of the module?
 
 - A. You cannot. Modules stored on the public Terraform Registry do not support versioning.
 - B. Add a version = “1.0.0” attribute to the module block.
@@ -3924,8 +3936,8 @@ Which syntax check errors when you run terraform validate?
 - C. The state file does not match the current infrastructure.
 - D. None of the above.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/146924-exam-terraform-associate-topic-1-question-334-discussion/)
-> D
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/146924-exam-terraform-associate-topic-1-question-334-discussion/)
+> D, it does not check for missing variable value
 
 ## Question 335
 ---
@@ -3951,7 +3963,8 @@ When should you run terraform init?
 
 ## Question 337
 ---
-You are making changes to existing Terraform code to add some new infrastructure.When is the best time to run terraform validate?
+You are making changes to existing Terraform code to add some new infrastructure.
+When is the best time to run terraform validate?
 
 - A. After you run terraform plan so you can validate that your state file is consistent with your infrastructure
 - B. Before you run terraform plan so you can validate your code syntax
@@ -4004,6 +4017,7 @@ terraform init retrieves and caches the configuration for all remote modules.
 ## Question 343
 ---
 A resource block is shown in the Exhibit section of this page. How would you reference the attribute name of this resource in HCL?
+![](https://img.examtopics.com/terraform-associate/image24.png)
 
 - A. data.kubernetes_namespace.name
 - B. resource.kubernetes_namespace.example.name
@@ -4028,8 +4042,8 @@ What happens when you execute terraform plan?
 - C. Compares your Terraform code and local state file to the remote state file in a cloud provider and determines if any changes need to be made.
 - D. Refreshes your state, then compares your state file to your Terraform configuration and creates an execution plan if any changes need to be made.
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/147184-exam-terraform-associate-topic-1-question-345-discussion/)
-> D
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/147184-exam-terraform-associate-topic-1-question-345-discussion/)
+> D, it does refresh the state
 
 ## Question 346
 ---
@@ -4055,7 +4069,7 @@ When you include a module block in your configuration that references a module f
 
 ## Question 348
 ---
-Your root module contains a variable named num.servers. Which is the correct way to pass its value to a child module with an input named servers?
+Your root module contains a variable named num_servers. Which is the correct way to pass its value to a child module with an input named servers?
 
 - A. ${var.num.servers}
 - B. servers = num.servers
@@ -4116,8 +4130,8 @@ It is _________ to change the Terraform backend from the default “local” bac
 - C. impossible
 - D. discouraged
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/151731-exam-terraform-associate-topic-1-question-355-discussion/)
-> D
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/151731-exam-terraform-associate-topic-1-question-355-discussion/)
+> B
 
 ## Question 356
 ---
@@ -4126,8 +4140,8 @@ A child module can always access variables declared in its parent module.
 - A. True
 - B. False
 
-> [!done]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/151601-exam-terraform-associate-topic-1-question-356-discussion/)
-> A
+> [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/151601-exam-terraform-associate-topic-1-question-356-discussion/)
+> B
 
 ## Question 357
 ---
