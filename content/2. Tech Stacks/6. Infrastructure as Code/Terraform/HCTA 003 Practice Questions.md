@@ -549,7 +549,8 @@ Examine the following Terraform configuration, which uses the data source for an
 ## Question 47
 ---
 FILL BLANK -
-You need to specify a dependency manually. What resource meta-parameter can you use to make sure Terraform respects the dependency? Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
+You need to specify a dependency manually. What resource meta-parameter can you use to make sure Terraform respects the dependency?
+Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
 
 > [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/76388-exam-terraform-associate-topic-1-question-47-discussion/)
 > depends_on
@@ -1280,7 +1281,7 @@ How would you reference the Volume IDs associated with the ebs_block_device bloc
 - D. `aws_instance.example.ebs_block_device.*.volume_id`
 
 > [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/79464-exam-terraform-associate-topic-1-question-109-discussion/)
-> D
+> D, if trying to use `[*]`, A should not have `.` in front of `[*]`
 
 ## Question 110
 ---
@@ -1791,10 +1792,10 @@ What does terraform refresh modify?
 ---
 Which of the following is not valid source path for specifying a module?
 
-- A. source = "./modulelversion=v1.0.0"
-- B. source = "github.com/hashicorp/example?ref=v1.0.0"
-- C. source = "./module"
-- D. source = "hashicorp/consul/aws"
+- A. `source = "./modulelversion=v1.0.0"`
+- B. `source = "github.com/hashicorp/example?ref=v1.0.0"`
+- C. `source = "./module"`
+- D. `source = "hashicorp/consul/aws"`
 
 > [!help]- [Answer](https://www.examtopics.com/discussions/hashicorp/view/80155-exam-terraform-associate-topic-1-question-152-discussion/)
 > A

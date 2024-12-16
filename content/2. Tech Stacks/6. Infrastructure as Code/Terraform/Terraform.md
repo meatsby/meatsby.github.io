@@ -81,6 +81,21 @@ resource "aws_instance" "web_server" {
 ```
 Terraform 은 HCL 로 작성되고 위와 같은 구조로 이루어져있다.
 
+### Splat Expressions
+```hcl
+# id List 를 반환하는 표현식, 아래 2줄 모두 같은 결과가 나온다
+[for o in var.list : o.id]
+var.list[*].id
+
+# name List 를 반환하는 표현식, 아래 3줄 모두 같은 결과가 나온다
+[for o in var.list : o.interfaces[0].name]
+var.list[*].interfaces[0].name
+var.list.*.interfaces[0].name
+```
+Terraform 은 for 문과 동시에 Splat Expression 역시 지원하는데, List 를 순회할 때 위처럼 작성할 수 있다.
+마지막 줄은 Legacy 를 지원하기 위해 존재하는 표현식인데 작동방식이 다르기 때문에 사용을 지양하고 있다.
+for_each 의 경우 Map 형태로 Object 를 순회하기 때문에 Splat Expression 을 사용할 수 없다.
+
 Terraform 은 아래와 같은 다양한 종류의 `<BLOCK TYPE>` 을 제공한다.
 - Setting Block
 - Provider Block
@@ -424,6 +439,10 @@ terraform apply -replace="aws_instance.web_server"
 Terraform v0.15.2 버전부터 `taint` 명령어는 deprecated 되고 대신 `-replace` 옵션을 통해 resource 를 재생성하길 권장한다.
 
 ### Import
+```
+terraform import {resource_address} {resource_id}
+```
+
 ```hcl
 resource "aws_instance" "aws_linux" {}
 ```
@@ -493,6 +512,7 @@ export TF_LOG_PATH=""
 terraform init -upgrade
 ```
 디버깅이 필요한 경우 `TF_LOG` 환경변수를 원하는 로깅 레벨로 설정하고 terraform 명령어 실행 시 모든 로그를 확인할 수 있다. 로그를 따로 파일로 관리하고 싶은 경우 `TF_LOG_PATH` 환경변수를 설정해주고 `terraform init -upgrade` 로 재설정 해준 뒤 실행하면된다. 디버깅이 이후엔 모든 환경변수를 제거해주자.
+`TF_LOG` 는 기본적으로 stderr 에 로그를 출력한다.
 
 ## 5. Interact with Terraform Modules
 ---
@@ -643,7 +663,10 @@ Terraform 을 초기화하는 명령어로 `.terraform` 폴더가 생성되며 �
 이 외에 `terraform init -upgrade` 로 이미 있는 provider, module 을 최신화할 수도 있으며, `terraform init -migrate-state` 으로 기존 backend 에 있던 state 를 옮겨줄 수도 있다.
 
 ### `terraform validate`
-Local directory 에 선언된 config files 만 문법적으로 맞는지 확인하는 명령어다. 다만 모든걸 잡아내진 않는데, 예를 들어 존재하지 않는 경로를 사용해도 문법이 맞으면 Success 를 반환한다.
+Local directory 에 선언된 config files 만 문법적으로 맞는지 확인하는 명령어다.
+- 예를 들어 같은 이름의 resource 가 존재하는지 확인해준다.
+- indent 나 space 차이를 잡아주진 않는다.
+다만 모든걸 잡아내진 않는데, 예를 들어 존재하지 않는 경로를 사용해도 문법이 맞으면 Success 를 반환한다.
 
 `terraform validate -json` 으로 반환값을 다른 머신이 사용할 수 있게끔 json 형식으로 내보낼 수도 있다.
 
