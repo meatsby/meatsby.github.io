@@ -566,7 +566,7 @@ module "server" {
 자주 함께 사용되는 resource 를 묶은 Module 은 직접 작성했던 외부에서 가져오던 `terraform init` 을 통해 초기화줘야한다. `terraform init` 을 실행하면 기본적으로 `.terraform/modules` 에 저장된다.
 
 ### Module Sources
-```
+```hcl
 module "autoscaling" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "4.9.0"
@@ -788,7 +788,7 @@ locals {
 ```
 자주 사용되는 텍스트를 Local Variable 로 선언해서 참조할 수 있다.
 
-```
+```hcl
 locals {
   # Common tags to be assigned to all resources
   common_tags = {
@@ -802,7 +802,7 @@ locals {
 }
 ```
 
-```
+```hcl
 resource "aws_instance" "web_server" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = "t3.micro"
@@ -842,7 +842,7 @@ terraform output public_ip
 위처럼 원하는 output variable 만 확인할 수도 있다.
 
 ### Variable Validation and Suppression
-```
+```hcl
 variable "cloud" {
   type = string
 
@@ -864,7 +864,7 @@ Variable 을 sensitive 설정했다면 Output 으로 해당값을 출력하려�
 ### Secure Secrets
 sensitive 설정 외에도 `TF_VAR_{variable_name}` 형식의 환경변수를 적용해 코드에 노출하지 않는 방법도 있다.
 
-``` hcl
+```hcl
 data "vault_generic_secret" "phone_number" {
   path = "secret/app"
 }
