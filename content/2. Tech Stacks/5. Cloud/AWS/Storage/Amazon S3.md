@@ -394,6 +394,11 @@ fatal error: An error occurred (IllegalLocationConstraintException)
 ```
 - Requires source & destination
 	- e.g. `aws s3 sync s3://site1 s3://site2 --source-region ap-east-1 --region ap-southeast-1`
+```
+fatal error: An error occurred (InvalidAccessKeyId)
+```
+- `saml2aws` 사용 시 기본적으로 `~/.aws/credentials` 에서 `default` 를 profile 로 사용해서 발생
+	- `--profile saml-profile-name` 옵션으로 saml profile 을 사용하도록 지정하여 해결
 
 ## References
 ---
