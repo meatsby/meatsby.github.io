@@ -490,6 +490,118 @@ public class SpringConfig {
 추가적으로, `PagingAndSortingRepository` 를 통해 페이징 기능도 자동으로 제공한다.
 실무에서는 JPA 와 스프링 데이터 JPA 를 기본으로 사용하고, 복잡한 동적 쿼리는 Querydsl 이라는 라이브러리를 사용한다. Querydsl 을 사용하면 자바 코드로 쿼리도 안전하게 작성할 수 있고, 동적 쿼리도 편리하게 작성할 수 있다. 이 조합으로 해결하기 어려운 쿼리는 JPA 가 제공하는 네이티브 쿼리를 사용하거나, JdbcTemplate 을 사용할 수 있다.
 
+## AOP
+---
+### AOP 가 필요한 상황
+예를 들어, 모든 메서드의 호출 시간을 측정하고 싶다고 가정해보자.
+그렇다면 위 처럼 모든 메서드에 시간 측정 로직을 추가하는 작업을 수행해야 할 것이다.
+```java
+public class MemberService {
+
+    public Long join(Member member) {
+        long start = System.currentTimeMillis();
+        try {
+            validateDuplicateMember(member); //중복 회원 검증
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("join " + timeMs + "ms");
+        }
+    }
+
+    public List<Member> findMembers() {
+        long start = System.currentTimeMillis();
+        try {
+            return memberRepository.findAll();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("findMembers " + timeMs + "ms");
+        }
+    }
+}
+```
+요구사항을 충족하기 위해선 위처럼 코드가 변경되어야 할 것이다.
+이렇게 코드가 변경된다면 어떤 문제점들이 있을까?
+- 회원가입, 회원 조회에 시간을 측정하는 기능은 핵심 관심 사항이 아니다.
+- 시간을 측정하는 로직은 공통 관심 사항이다.
+- 시간을 측정하는 로직과 비즈니스 로직이 섞여 유지보수가 어렵다.
+- 시간을 측정하는 로직을 별도의 공통 로직으로 만들기 매우 어렵다.
+- 시간을 측정하는 로직을 변경할 때 모든 로직을 찾아가 변경해야 한다.
+이를 해결하기 위해 나온 것이 AOP 이다.
+
+### AOP 적용
+AOP 란 Aspect Oriented Programming 즉, 관점 지향 프로그래밍이다.
+AOP 는 공통 관심 사항(cross-cutting concern) 과 핵심 관심 사항(core concern) 을 분리하여 원하는 곳에만 공통 관심 사항을 적용하는 방법이다.
+
+### AOP 빈 등록
+```java
+package hello.hellospring;
+
+import hello.hellospring.aop.TimeTraceAop;
+import hello.hellospring.repository.MemberRepository;
+import hello.hellospring.service.MemberService;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class SpringConfig {
+
+    private final MemberRepository memberRepository;
+
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
+    @Bean
+    public MemberService memberService() {
+        return new MemberService(memberRepository);
+    }
+
+    @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }
+}
+```
+
+### 시간 측정 AOP 등록
+```java
+package hello.hellospring.aop;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+
+@Aspect
+public class TimeTraceAop {
+
+//    @Around("execution(* hello.hellospring..*(..))")
+    @Around("execution(* hello.hellospring..*(..)) && !target(hello.hellospring.SpringConfig)")
+    public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
+        long start = System.currentTimeMillis();
+        System.out.println("START: " + joinPoint.toString());
+        try {
+            return joinPoint.proceed();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("END: " + joinPoint.toString() + " " + timeMs + "ms");
+        }
+    }
+}
+```
+
+AOP 등록 시, `@Component` 애너테이션을 통해 Bean 등록을 수행해도 되지만, 정형적인 Component 가 아니기 때문에, 대부분 SpringConfig 에서 Bean 등록을 따로 해주어야 명시적으로 AOP 가 적용되고 있다는 것을 알 수 있다.
+
+`@Around("execution(* hello.hellospring..*(..))")` 코드를 통해 주어진 경로에 해당하는 모든 메서드 실행 시 해당 메서드를 실행하라는 의미가 되는데, 이렇게 되면 SpringConfig 의 `timeTraceAop()` 메서드도 AOP 로 처리하게 된다.
+
+이럴 경우, 자기 자신을 생성하는 메서드에서도 AOP 가 적용되기 때문에 순환참조가 발생할 수 있다.
+
+때문에, 바로 아래 있는 `@Around` 코드를 통해 SpringConfig 를 AOP 대상에서 제외해주면 된다.
+
 ## References
 ---
 - 
