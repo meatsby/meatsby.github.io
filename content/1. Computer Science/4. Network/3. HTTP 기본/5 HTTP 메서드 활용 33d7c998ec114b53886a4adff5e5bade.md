@@ -19,12 +19,10 @@
     - Content-Type: application/x-www-form-urlencoded
     - GET - start-line 에 포함하여 조회
         
-        ![Screen Shot 2022-04-27 at 9.45.40 PM.png](Screen_Shot_2022-04-27_at_9.45.40_PM.png)
-        
+![[Screen_Shot_2022-04-27_at_9.45.40_PM.png]]        
     - POST - message body 에 포함하여 저장
         
-        ![Screen Shot 2022-04-27 at 9.44.59 PM.png](Screen_Shot_2022-04-27_at_9.44.59_PM.png)
-        
+![[Screen_Shot_2022-04-27_at_9.44.59_PM.png]]        
 - HTTP API 데이터 전송
     - HTML Form 전송 대신 JS 를 통한 통신에 사용
     - Content-Type: application/json

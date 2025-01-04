@@ -29,4 +29,4 @@ numbers.remove(0); // 삭제
 - 가변길이의 특성을 갖고 있으며 다양한 기능을 내장하고 있음
 - Array List 와 Linked List 두가지가 존재함
 
-![Untitled](Untitled%2010.png)
+![[Untitled%2010.png]]

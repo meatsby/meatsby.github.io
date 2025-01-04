@@ -51,6 +51,5 @@ public class study {
 
 # Difference
 
-![Untitled](Untitled%2014.png)
-
-![Untitled](Untitled%2015.png)
+![[Untitled%2014.png]]
+![[Untitled%2015.png]]
