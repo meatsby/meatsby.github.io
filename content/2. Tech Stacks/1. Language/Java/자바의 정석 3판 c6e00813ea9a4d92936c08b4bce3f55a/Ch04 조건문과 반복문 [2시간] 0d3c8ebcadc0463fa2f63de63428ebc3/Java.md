@@ -1,0 +1,75 @@
+---
+title: Java
+date: 2022-01-05 20:20:45 +0900
+status: Done
+draft: false
+tags:
+  - Java
+---
+## 1~4. 조건문 if문과 if-else문
+---
+### 제어문 (flow control statement)
+- 조건문 : 조건을 만족할 때만 {}를 수행 (0~1번)
+- 반복문 : 조건을 만족하는 동안 {}를 수행 (0~n번)
+## 9~11. switch문
+---
+> 처리해야 하는 경우의 수가 많을 때 유용한 조건문
+> 
+### switch문의 제약조건
+1. switch문의 조건식 결과는 정수 또는 문자열이어야 한다.
+2. case문의 값은 정수 상수(문자 포함), 문자열만 가능하며, 중복되지 않아야 한다.
+## 12. 임의의 정수 만들기
+---
+> Math.random() - 0.0과 1.0사이의 임의의 double값을 반환
+> 
+```java
+// 1 ~ 3 사이의 임의의 정수 반환식
+(int)(Math.random() * 3) + 1
+```
+## 13~14. for문
+---
+```java
+public class Ex4_8 {
+	public static void main(String[] args) {
+		// for (초기화; 조건식; 증감식)
+		// i를 2씩 증가
+		for (int i = 1; i <= 10; i+=2) {
+			System.out.println(i);
+		}
+		// 같은 타입의 2개 이상의 변수를 사용할 수 있음
+		for (int i = 1, j = 10; i <= 10; i++, j--) {
+			System.out.printf("i = %d, j = %d%n", i, j);
+		}
+	}
+}
+```
+## 16~19. while문, do-while문
+---
+> 블럭{}을 최소한 한 번 이상 반복 - 사용자 입력받을 때 유용
+> 
+```java
+do {
+	// 조건식의 연산결과가 참일 때 수행될 문장들을 작성
+	//처음 한 번은 무조건 실행
+} while (조건식);
+```
+## 23. 이름붙은 반복문
+---
+> 반복문에 이름을 붙여서 하나 이상의 반복문을 벗어날 수 있다.
+> 
+### Ex4_19
+```java
+public class Ex4_19 {
+	public static void main(String[] args) {
+		Loop1 : for (int i = 2; i <= 9; i++) { // 반복문 앞에 이름을 붙인다
+			for (int j =1; j <= 9; j++) {
+				if (j == 5) {
+					break Loop1; // 탈출할 반복문을 언급한다
+				}
+				System.out.printf("%d*%d=%d%n", i, j, i*j);
+			}
+			System.out.println();
+		}
+	}
+}
+```

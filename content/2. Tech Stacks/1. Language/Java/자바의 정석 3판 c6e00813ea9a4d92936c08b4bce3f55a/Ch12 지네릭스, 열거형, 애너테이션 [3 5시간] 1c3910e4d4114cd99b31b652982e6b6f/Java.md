@@ -1,0 +1,364 @@
+---
+title: Java
+date: 2022-01-05 20:20:45 +0900
+status: Done
+draft: false
+tags:
+  - Java
+---
+## 1. 지네릭스(Generics)란?
+---
+## 지네릭스(Generics)란?
+- 컴파일 시 타입을 체크해 주는 기능(compile-time type check) - JDK1.5
+- 객체의 타입 안정성을 높이고 형변환의 번거로움을 줄여줌
+```java
+ArrayList<Tv> tvList = new ArrayList<Tv>();
+tvList.add(new Tv());    // OK.
+tvList.add(new Audio()); // 컴파일 에러.
+// Tv t = (Tv)tvList.get(0);
+Tv t = tvList.get(0); // 형변환 불필요
+```
+- `RuntimException`인 `ClassCastException`을 `Compiletime`에서 처리하기 위해
+- e.g. `String str = null;`보다 `String str = “”;`로 초기화하여 `NullPointerException` 회피
+## 2~3. 타입 변수
+---
+## 타입 변수
+- 클래스를 작성할 때, Object 타입 대신 타입 변수(E)를 선언해서 사용
+## 타입 변수에 대입하기
+- 객체 생성 시, 타입 변수(E) 대신 실제 타입(Tv)을 지정(대입)
+```java
+// 타입 변수 E 대신에 실제 타입 Tv를 대입
+ArrayList<Tv> tvList = new ArrayList<Tv>();
+```
+- 타입 변수 대신 실제 타입이 지정되면, 형변환 생략가능
+## 4~5. 지네릭스 용어, 타입과 다형성
+---
+## 지네릭스 용어
+- `Box<T>` 지네릭 클래스. ‘T의 Box’ 또는 ‘T Box’라고 읽음
+- `T` 타입 변수 또는 타입 매개변수. (T는 타입 문자)
+- `Box` 원시 타입 (raw type). 일반 클래스
+## 지네릭스 타입과 다형성
+- 참조 변수와 생성자의 대입된 타입은 일치해야 함
+```java
+ArrayList<Tv>      list = new ArrayList<Tv>(); // OK.
+ArrayList<Product> list = new ArrayList<Tv>(); // 에러.
+```
+- 지네릭 클래스간의 다형성은 성립. (여전히 대입된 타입은 일치해야 함)
+```java
+List<Tv> list = new ArrayList<Tv>();  // OK. 다형성. ArrayList가 List를 구현
+List<Tv> list = new LinkedList<Tv>(); // OK. 다형성. LinkedList가 List를 구현
+```
+- 매개변수의 다형성도 성립
+```java
+ArrayList<Product> list = new ArrayList<Product>();
+list.add(new Product());
+list.add(new Tv());
+list.add(new Audio());
+```
+## 7~8. Iterator, HashMap과 지네릭스
+---
+## Iterator<E>
+- 클래스를 작성할 때, Object 타입 대신 T 와 같은 타입 변수를 사용
+```java
+Iterator<Student> it = list.iterator();
+while (it.hasNext()) {
+		Student s = it.next(); // 형변환 생략 가능
+}
+```
+## HashMap<K, V>
+- 여러 개의 타입 변수가 필요한 경우, 콤마를 구분자로 선언
+```java
+HashMap<String, Student> map = new HashMap<String, Student>();
+map.put("자바왕", new Student("자바왕", 1, 1, 100, 100, 100));
+```
+## 9~11. 제한된 지네릭 클래스, 제약
+---
+## 제한된 지네릭 클래스
+- extends로 대입할 수 있는 타입을 제한
+```java
+class FruitBox<T extends Fruit> { // Fruit의 자손만 타입으로 지정가능
+		ArrayList<T> list = new ArrayList<T>();
+}
+```
+- 인터페이스인 경우에도 extends를 사용
+```java
+interface Eatable {}
+class FruitBox<T extends Eatable> { ... }
+```
+## 지네릭스의 제약
+- 타입 변수에 대입은 인스턴스 별로 다르게 가능
+```java
+Box<Apple> appleBox = new Box<Apple>();
+Box<Grape> grapeBox = new Box<Grape>();
+```
+1. static 멤버에 타입 변수 사용 불가 (인스턴스 공통이기 때문에)
+```java
+class Box<T> {
+		static T item; // 에러.
+		static int compare(T, t1, T t2) { ... } // 에러.
+}
+```
+1. 배열 생성 시 타입 변수 사용불가. 타입 변수로 배열 선언은 가능
+```java
+class Box<T> {
+		T[] itemArr; // OK. T타입의 배열을 위한 참조변수
+				...
+		T[] toArray() {
+				T[] tmpArr = new T[itemArr.length]; // 에러. 지네릭 배열 생성불가
+				...
+		}
+}
+```
+## 12~14. 와일드 카드, 지네릭 메서드
+---
+## 와일드 카드 <?>
+- 하나의 참조 변수로 대입된 타입이 다른 객체를 참조 가능
+    ```java
+    ArrayList<? extends Product> list = new ArrayList<Tv>();    // OK.
+    ArrayList<? extends Product> list = new ArrayList<Audio>(); // OK.
+    ArrayList<Product> list = new ArrayList<Tv>(); // 에러. 대입된 타입 불일치
+    ```
+    - `<? extends T>` 와일드 카드의 상한 제한. T와 그 자손들만 가능
+    - `<? super T>` 와일드 카드의 상한 제한. T와 그 조상들만 가능
+    - `<?>` 제한 없음. 모든 타입이 가능. `<? extends Object>` 와 동일
+- 메서드의 매개변수에 와일드 카드를 사용
+    ```java
+    static Juice makeJuice(FruitBox<? extends Fruit> box) {
+    		String tmp = "";
+    		for (Fruit f : box.getList()) {
+    				tmp += f + " ";
+    		}
+    		return new Juice(tmp);
+    }
+    ```
+## 지네릭 메서드
+- 지네릭 타입이 선언된 메서드 (타입 변수는 메서드 내에서만 유효)
+```java
+static <T> void sort(List<T> list, Comparator<? super T> c)
+```
+- 클래스의 타입 매개변수<T>와 메서드의 타입 매개변수 <T>는 별개
+```java
+class FruitBox<T> {
+				...
+		static <T> void sort(List<T> list, Comparator<? super T> c) {
+				...
+		}
+}
+```
+- 메서드를 호출할 때마다 타입을 대입해야(대부분 생략 가능)
+```java
+System.out.println(Juicer.<Fruit>makeJuice(fruitBox));
+System.out.println(Juicer.<Apple>makeJuice(appleBox));
+```
+- 메서드를 호출할 때 타입을 생략하지 않을 때는 클래스 이름 생략 불가
+```java
+System.out.println(<Fruit>makeJuice(fruitBox));        // 에러. 클래스 이름 생략불가
+System.out.println(this.<Fruit>makeJuice(appleBox));   // OK.
+System.out.println(Juicer.<Fruit>makeJuice(fruitBox)); // OK.
+```
+## 15~16. 지네릭 형변환
+---
+## 지네릭 타입의 형변환
+- 지네릭 타입과 원시 타입 간의 형변환은 바람직 하지 않음
+```java
+Box<Object> objBox = null;
+Box box = (Box)objBox;     // OK. 지네릭 타입 -> 원시 타입. 경고 발생
+objBox = (Box<Object>)box; // OK. 원시 타입 -> 지네릭 타입. 경고 발생
+objBox = (Box<Object>)strBox; // 에러. Box<String> -> Box<Object>
+strBox = (Box<String>)objBox; // 에러. Box<Object> -> Box<String>
+```
+- 와일드 카드가 사용된 지네릭 타입으로는 형변환 가능
+```java
+Box<Object>         objBox = (Box<Object>)new Box<String>(); // 에러. 형변환 불가능
+Box<? extends Object> wBox = (Box<? extends Object>)new Box<String>(); // OK.
+Box<? extends Object> wBox = new Box<String>(); // 위 문장과 동일
+// 매개변수로 FruitBox<Fruit>, FruitBox<Apple>, FruitBox<Grape> 등이 가능
+static Juice makeJuice<FruitBox<? extends Fruit> box) { ... }
+FruitBox<? extends Fruit> box = new FruitBox<Fruit>(); // OK.
+FruitBox<? extends Fruit> box = new FruitBox<Apple>(); // OK.
+```
+## 지네릭 타입의 제거
+- 컴파일러는 지네릭 타입을 제거하고, 필요한 곳에 형변환을 넣음
+1. 지네릭 타입의 경계(bound)를 제거
+2. 지네릭 타입 제거 후 타입이 불일치하면, 형변환 추가
+3. 와일드 카드가 포함된 경우, 적절한 타입으로 형변환 추가
+## 17~20. 열거형
+---
+## 열거형(enum)
+### 개념
+- 관련된 상수들을 같이 묶어 놓은 것
+```java
+class Card {
+		enum Kind { CLOVER, HEART, DIAMOND, SPADE }
+		enum Value { TWO, THREE, FOUR }
+		final Kind kind; // 타입이 int가 아닌 Kind
+		final Value value;
+}
+```
+### 장점
+- Java는 타입에 안전한 열거형을 제공
+```java
+if(Card.Kind.CLOVER==Card.Value.TWO) { // 컴파일 에러. 타입이 달라서 비교불가
+```
+## 열거형의 정의와 사용
+- 열거형을 정의하는 방법
+```java
+enum Direction { EAST, SOUTH, WEST, NORTH }
+```
+- 열거형 타입의 변수를 선언하고 사용하는 방법
+```java
+class Unit {
+		int x, y;      // 유닛의 위치
+		Direction dir; // 열거형 인스턴스 변수 선언
+		void init() {
+				dir = Direction.EAST; // 유닛의 방향을 EAST로 초기화
+		}
+}
+```
+- 열거형 상수의 비교에 `==` 와 `compareTo()` 사용 가능
+```java
+if (dir == Direction.EAST) {
+		x++;
+} else if (dir > Direction.WEST) { // 에러. 열거형 상수에 비교연산자 사용 불가
+		...
+} else if (dir.compareTo(Direction.WEST) > 0) {
+		...
+}
+```
+## 열거형의 조상 - java.lang.Enum
+- 모든 열거형은 Enum의 자손이며, 아래의 메서드를 상속받음
+```java
+// 열거형 상수의 이름을 문자열로 반환
+String name()
+// 열거형 상수가 정의된 순서를 반환
+int ordinal()
+// 지정된 열거형에서 name과 일치하는 열거형 상수를 반환
+T valueOf(Class<T> enumType, String name)
+// 모든 열거형 상수를 배열로 반환
+static E[] values()
+// 열거형 상수 이름으로 값 반환
+static E valueOf(String name)
+```
+## 21~22. 열거형 멤버 추가하기
+---
+## 열거형 멤버 추가하기
+- 불연속적인 열거형 상수의 경우, 원하는 값을 괄호 안에 적음
+```java
+enum Direction { EAST(1), SOUTH(5), WEST(-1), NORTH(10) }
+```
+- 괄호를 사용하려면, 인스턴스 변수와 생성자를 새로 추가해 줘야 함
+```java
+enum Direction {
+		EAST(1), SOUTH(5), WEST(-1), NORTH(10);
+		private final int value;
+		Direction(int value) {
+				this.value = value;
+		}
+		public int getValue() {
+				return value;
+		}
+}
+```
+- 열거형의 생성자는 묵시적으로 private 이기 때문에, 외부에서 객체 생성 불가
+```java
+Direction d = new Direction(1); // 에러. 열거형의 생성자는 외부에서 호출불가
+```
+## 23~26. 표준 애너테이션
+---
+## 애너테이션이란?
+- 주석처럼 프로그래밍 언어에 영향을 미치지 않으며, 유용한 정보를 제공
+## @Override
+- 오버라이딩을 올바르게 했는지 컴파일러가 체크하게 함
+- 오버라이딩할 때 메서드 이름을 잘못 적는 실수를 하는 경우가 많음
+## @Deprecated
+- 앞으로 사용하지 않을 것을 권장하는 필드나 메서드에 붙힘
+- @Deprecated의 사용 예, Date 클래스의 getDate()
+## @FunctionalInterface
+- 함수형 인터페이스에 붙이면, 컴파일러가 올바르게 작성했는지 체크
+    - 함수형 인터페이스에는 하나의 추상메서드만 가져야 한다는 제약이 있음
+## @SuppressWarning
+- 컴파일러의 경고 메시지가 나타나지 않게 억제
+- 괄호 안에 억제하고자 하는 경고의 종류를 문자열로 지정
+## 29~33. 메타 애너테이션
+---
+## 메타 애너테이션이란?
+- 애너테이션을 위한 애너테이션
+## @Target
+- 애너테이션을 정의할 때, 적용대상 지정에 사용
+## @Retention
+- 애너테이션이 유지되는 기간을 지정하는데 사용
+## @Documented, @Inherited
+- javadoc으로 작성한 문서에 포함시키려면 @Documented
+- 애너테이션을 자손 클래스에 상속하고자할 때, @Inherited
+## @Repeatable
+- 반복해서 붙일 수 있는 애너테이션을 정의할 때 사용
+## 34~37. 애너테이션 타입 정의, 요소
+---
+## 애너테이션 타입 정의하기
+- 애너테이션을 직접 만들어 쓸 수 있음
+```java
+@interface DateTime {
+		String yymmdd();
+		String hhmmss();
+}
+```
+- 애너테이션의 메서드는 추상 메서드이며, 애너테이션을 적용할 때 지정 (순서 X)
+```java
+// 정의
+@interface TestInfo {
+		int count();
+		String testedBy();
+		String[] testTools();
+		TestType testType();
+		DateTime testDate();
+}
+// 사용
+@TestInfo(
+		count = 3, testedBy = "Kim",
+		testTools = {"JUnit", "AutoTester"},
+		testType = TestType.FIRST,
+		testDate = @DateTime(yymmdd = "160101", hhmmss = 235959")
+)
+public class NewClass { ... }
+```
+## 애너테이션의 요소
+- 적용 시 값을 지정하지 않으면, 사용될 수 있는 기본값 지정 가능 (null 제외)
+```java
+@interface TestInfo {
+		int count() default 1;  // 기본값을 1로 지정
+}
+@TestInfo // @TestInfo(count=1)과 동일
+public class NewClass { ... }
+```
+- 요소가 하나이고 이름이 value일 때, 요소의 이름 생략 가능
+```java
+@interface TestInfo {
+		String value();
+}
+@TestInfo("passed") // @TestInfo(value="passed")와 동일
+public class NewClass { ... }
+```
+- 요소의 타입이 배열인 경우, 중괄호 사용
+```java
+@interface TestInfo {
+		String[] testTools();
+}
+@TestInfo(testTools = {"JUnit", "AutoTester"})
+@TestInfo(testTools = "JUnit")
+@TestInfo(testTools = {}) // 값이 없을 경우 빈괄호 필요
+```
+## 모든 애너테이션의 조상
+- Annotation은 모든 애너테이션의 조상이지만 상속 불가
+- 사실 Annotation은 인터페이스
+## 마커 애너테이션
+- 요소가 하나도 정의되지 않은 애너테이션
+```java
+public @interface Override{}
+public @interface Test{}
+```
+## 애너테이션 요소의 규칙
+- 애너테이션의 요소를 선언할 때 규칙
+    - 요소의 타입은 기본형, String, enum, 애너테이션, Class 만 허용
+    - 괄호 안에 매개변수 선언 X
+    - 예외 선언 X
+    - 요소를 타입 매개변수로 정의 X

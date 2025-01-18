@@ -1,0 +1,215 @@
+---
+title: Java
+date: 2022-01-05 20:20:45 +0900
+status: Done
+draft: false
+tags:
+  - Java
+---
+## 1~3. 프로그램 오류
+---
+## 프로그램 오류
+### 오류의 종류
+- 컴파일 에러 : 컴파일 할 때 발생하는 에러
+- 런타임 에러 : 실행 할 때 발생하는 에러
+    - 에러 : 프로그램 코드에 의해서 수습될 수 없는 심각한 오류
+        - e.g. OutOfMemoryError
+    - 예외 : 프로그램 코드에 의해서 수습될 수 있는 다소 미약한 오류
+        - Exception 클래스들 (외적 요인)
+        - Runtime Exception 클래스들 (내적 요인)
+- 논리적 에러 : 작성 의도와 다르게 동작
+### 컴파일러의 역할
+- 구문 체크
+- 번역
+- 최적화
+- 생략된 코드 추가
+### 예외처리의 정의와 목적
+- 정의 : 프로그램 실행 시 발생할 수 있는 예외의 발생에 대비한 코드를 작성하는 것
+- 목적 : 프로그램의 비정상 종료를 막고, 정상적인 실행상태를 유지하는 것
+## 예외 클래스의 계층 구조
+![[1~3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7%20%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2%20d94b8c181664447988c39cb8fe01689d/Untitled.png]]## Exception과 RuntimeException
+- Exception 클래스들 : 외적인 요인에 의해 발생하는 예외 (사용자의 실수)
+- RuntimeException 클래스들 : 내적인 요인에 의해 발생하는 예외 (프로그래머의 실수)
+![[1~3%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B7%20%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B2%20d94b8c181664447988c39cb8fe01689d/Untitled%201.png]]
+## 4~6. 예외 처리하기
+---
+## 예외 처리하기. try-catch문
+```java
+try {
+	// 예외가 발생할 가능성이 있는 구문
+} catch (Exception1 e1) {
+	// Exception1을 처리할 구문
+} catch (Exception2 e2) {
+	// Exception2를 처리할 구문
+} catch (ExceptionN eN) {
+	// ExceptionN을 처리할 구문
+}
+```
+## 예외의 발생과 catch 블럭
+- 예외가 발생하면, 이를 처리할 catch 블럭을 찾아 내려감
+- 일치하는 catch 블럭이 없으면, 예외는 처리 안됨
+- Exception이 선언된 catch 블럭은 모든 예외 처리 (마지막 catch 블럭)
+## 7~8. printStackTrace(), 멀티 catch
+---
+## printStackTrace()와 getMessage()
+- `printStackTrace()` - 예외발생 당시의 호출스택(Call Stack)에 있었던 메서드의 정보와 예외 메시지를 화면에 출력
+- `getMessage()` - 발생한 예외클래스의 인스턴스에 저장된 메시지를 반환
+```java
+try {
+	...
+	System.out.println(0/0); // ArithmeticException 예외 객체 생성
+	...
+} catch (ArithmeticException ae) {
+	ae.printStackTrace();
+	System.out.println(ae.getMessage());
+} catch (Exception e) {
+	...
+}
+```
+## 멀티 catch 블럭
+- 내용이 같은 catch 블럭을 하나로 합친 것 (JDK 1.7부터)
+```java
+try {
+	...
+} catch (ExceptionA | ExceptionB e) {
+	e.printStackTrace();
+	e.methodA(); // 에러. ExceptionA와 ExceptionB의 공통멤버만 사용 가능
+} catch (ParentException | ChildException pe) { // 에러. 부모만 사용해도 됨
+}
+```
+## 9~10. 예외 발생시키기
+---
+## 예외 발생시키기
+1. 연산자 new를 이용해서 발생시키려는 예외 클래스의 객체를 만든 다음
+2. 키워드 throw를 이용해서 예외를 발생시킨다.
+```java
+public class Ex8_6 {
+	public static void main(String[] args) {
+		try {
+			throw new Exception("고의로 발생시켰음.");
+		} catch (Exception e) {
+			System.out.println("에러 메시지 : " + e.getMessage());
+			e.printStackTrace();
+		}
+		System.out.println("정상 종료");
+	}
+}
+```
+## checked 예외, unchecked 예외
+- checked 예외 : 컴파일러가 예외 처리 여부를 체크 (예외 처리 필수)
+    - Exception과 자손들 (외적 요인)
+- unchecked 예외 : 컴파일러가 예외 처리 여부를 체크 안함 (예외 처리 선택)
+    - RuntimeException과 자손들 (내적 요인)
+## 11~14. 예외 선언하기, finally 블럭
+---
+## 메서드에 예외 선언하기
+- 예외를 처리하는 방법 : try-catch문, 예외 선언하기
+- 메서드가 호출 시 발생 가능한 예외를 호출하는 쪽에 알리는 것
+- checked 예외 (필수 처리 예외) 만 throws 로 알림
+```java
+void method() throws Exception1, Exception2, ... ExceptionN {
+	// 메서드 내용
+}
+// method()에서 Exception과 그 자손 예외 발생 가능
+void method() throws Exception {
+	// 메서드 내용
+}
+static void startInstall() throws SpaceException, MemoryException {
+	if (!enoughSpace()) {
+		throw new SpaceException("설치할 공간 부족");
+	}
+	if (!enoughMemory()) {
+		throw new MemoryException("메모리 부족");
+	}
+}
+```
+## finally 블럭
+- 예외 발생 여부와 관계 없이 수행되어야 하는 코드
+```java
+try {
+	// 예외 발생 가능성이 있는 구문
+} catch (Exception1 e1) {
+	// 예외 처리 구문
+} finally {
+	// 예외 발생 여부와 관계 없이 수행되어야 하는 구문
+	// try 와 catch 문에 모두 해당하는 구문
+}
+```
+## 15~17. 사용자 정의 예외
+---
+## 사용자 정의 예외 만들기
+- 직접 예외 클래스를 정의
+- 조상은 Exception과 RuntimeException 중에 선택
+```java
+class MyException extends Exception {
+	MyException(String msg) {
+		super(msg); // 조상인 Exception 클래스의 생성자 호출
+	}
+}
+```
+## 예외 되던지기
+- 예외를 처리한 후에 다시 예외를 발생시키는 것
+- 호출한 메서드와 호출된 메서드 양쪽 모두에서 예외처리하는 것
+```java
+public class Ex8_12 {
+	public static void main(String[] args) {
+		try {
+			method1();
+		} catch (Exception e) {
+			System.out.println("main 에서 예외 처리");
+		}
+	}
+	static void method1() throws Exception {
+		try {
+			throw new Exception();
+		} catch (Exception e) {
+			System.out.println("method1 에서 예외 처리");
+			throw e;
+		}
+	}
+}
+```
+## 18. 연결된 예외
+---
+## 연결된 예외
+- 한 예외가 다른 예외를 발생시킬 수 있음
+- 예외A가 예외B를 발생시키면, A는 B의 원인 예외 (cause exception)
+```java
+Throwable initCause(Throwable cause) 지정한 예외를 원인 예외로 등록
+Throwable getCause()                 원인 예외를 반환
+```
+```java
+void install() throws InstallException {
+	try {
+		startInstall(); // SpaceException 발생
+		copyFiles();
+	} catch (SpaceException e) {
+		InstallException ie = new InstallException("설치중 예외 발생"); // 예외 생성
+		ie.initCause(e); // InstallException의 원인 예외를 SpaceException으로 지정
+		throw ie;        // InstallException을 발생시킴
+	} catch (MemoryException me) {
+	}
+}
+```
+### 이유
+1. 여러 예외를 하나로 묶어서 다루기 위해
+    ```java
+    try {
+    	install(); // install 메서드 안에서 Space, MemoryException을 처리
+    } catch(InstallException e) { // InstallException의 원인 예외를
+    	e.printStackTrace();        // Space, MemoryException으로 지정
+    }
+    ```
+2. checked 예외를 unchecked 예외로 변경하려 할 때
+    ```java
+    static void startInstall() throws SpaceException {
+    	if (!enoughSpace()) {
+    		throw new SpaceException("공간 부족");
+    	}
+    	// RuntimeException의 원인 예외를 MemoryException으로 지정
+    	// 필수 예외처리를 선택 예외처리로 변경
+    	if (!enoughMemory()) {
+    		throw new RuntimeException(new MemoryException("메모리 부족"));
+    	}
+    }
+    ```
