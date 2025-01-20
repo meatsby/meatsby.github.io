@@ -1,7 +1,7 @@
 ---
-title: "Broken pipe 오류 원인, 해결 방법"
+title: Broken pipe 오류 원인, 해결 방법
 date: 2022-04-06 23:20:00 +0900
-status: In Progress
+status: Done
 draft: false
 tags:
   - Java
@@ -53,43 +53,38 @@ Receiver 에서 송신 받은 데이터를 제때 처리하지 못하는 상황(
 ## 미션 도중 만난 Broken pipe
 ---
 ### 재시작 시 404 Not Found
-
 - 원인
     - `Caused by: java.io.IOException: Broken pipe`
     - JS 코드 내부에서 두 번의 요청이 겹치는 문제
-    
-    ```java
-    document.getElementById("terminate").addEventListener('click', (e) => {
-        if (e.target.id) {
-            if (confirm("재시작 하시겠습니까?")) {
-                fetch("/terminate", {
-                }).then(() => {
-                    location.href = "/"; // redirect 요청
-                });
-            }
-            location.href = "/"; // 또 다른 redirect 요청
-        }
-    });
-    ```
-    
+```java
+document.getElementById("terminate").addEventListener('click', (e) => {
+	if (e.target.id) {
+		if (confirm("재시작 하시겠습니까?")) {
+			fetch("/terminate", {
+			}).then(() => {
+				location.href = "/"; // redirect 요청
+			});
+		}
+		location.href = "/"; // 또 다른 redirect 요청
+	}
+});
+```
 - 해결
     - JS 코드 내부에서 `if-else` 문으로 redirect 조정
-    
-    ```java
-    document.getElementById("terminate").addEventListener('click', (e) => {
-        if (e.target.id) {
-            if (confirm("재시작 하시겠습니까?")) {
-                fetch("/terminate", {
-                }).then(() => {
-                    location.href = "/";
-                });
-            } else {
-                location.href = "/";
-            }
-        }
-    });
-    ```
-    
+```java
+document.getElementById("terminate").addEventListener('click', (e) => {
+	if (e.target.id) {
+		if (confirm("재시작 하시겠습니까?")) {
+			fetch("/terminate", {
+			}).then(() => {
+				location.href = "/";
+			});
+		} else {
+			location.href = "/";
+		}
+	}
+});
+```
 
 ## References
 ---
