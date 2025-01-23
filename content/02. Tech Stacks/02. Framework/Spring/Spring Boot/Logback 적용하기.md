@@ -1,10 +1,11 @@
 ---
-title: "Logback 적용하기"
+title: Logback 적용하기
 date: 2022-07-28 20:10:00 +0900
-status: In Progress
+status: Done
 draft: false
 tags:
-  - Spring Boot
+  - Spring
+  - Boot
 ---
 ## 로깅
 ---

@@ -1,10 +1,11 @@
 ---
-title: "Spring Boot 프로젝트에 Slack Bot 연동하기"
+title: Spring Boot 프로젝트에 Slack Bot 연동하기
 date: 2022-07-13 16:50:00 +0900
-status: In Progress
+status: Done
 draft: false
 tags:
-  - Spring Boot
+  - Spring
+  - Boot
 ---
 ## 개요
 ---

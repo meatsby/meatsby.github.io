@@ -1,10 +1,11 @@
 ---
-title: "POJO"
+title: POJO
 date: 2022-10-04 19:00:00 +0900
-status: In Progress
+status: Done
 draft: false
 tags:
-  - Spring Boot
+  - Spring
+  - Boot
 ---
 ## POJO
 ---
