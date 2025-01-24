@@ -1,10 +1,10 @@
 ---
-title: "Spring REST docs"
+title: Spring REST Docs
 date: 2023-01-17 20:30:00 +0800
 status: To Do
 draft: false
 tags:
-  - Spring REST docs
+  - Spring
 ---
 [https://github.com/Library-solider/codesquad-library/blob/master/src/main/java/com/librarycodesquad/prod/global/error/ErrorCode.java](https://github.com/Library-solider/codesquad-library/blob/master/src/main/java/com/librarycodesquad/prod/global/error/ErrorCode.java)
 

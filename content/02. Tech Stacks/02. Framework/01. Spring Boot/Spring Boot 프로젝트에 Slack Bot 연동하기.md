@@ -5,7 +5,6 @@ status: Done
 draft: false
 tags:
   - Spring
-  - Boot
 ---
 ## 개요
 ---

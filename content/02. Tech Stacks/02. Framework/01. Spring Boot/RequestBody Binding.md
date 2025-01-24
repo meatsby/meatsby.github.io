@@ -1,10 +1,10 @@
 ---
-title: "@RequestBody Binding"
+title: RequestBody Binding
 date: 2022-05-23 23:30:00 +0900
 status: In Progress
 draft: false
 tags:
-  - Spring Boot
+  - Spring
 ---
 ## 경로 조회 미션 진행 도중 받은 피드백
 ---

@@ -5,7 +5,6 @@ status: Done
 draft: false
 tags:
   - Spring
-  - Boot
 ---
 ## 경로 조회 미션 중에
 ---

@@ -1,9 +1,10 @@
 ---
-title: "Tomcat 요청 처리"
+title: Tomcat 요청 처리
 date: 2022-11-14 12:30:00 +0900
 status: To Do
 draft: false
 tags:
+  - Spring
   - Tomcat
 ---
 Spring Boot 를 사용하다보면 내장 톰캣을 Servlet Container 로 사용하여 웹 요청을 처리할 수 있다고 합니다. Tomcat 은 또한 다중 요청을 처리하는데, 이는 Thread Pool 을 통해 구현되어 있습니다.
