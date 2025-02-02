@@ -1,9 +1,10 @@
 ---
-title: "MySQL Transaction Isolation Level"
+title: MySQL Transaction Isolation Level
 date: 2022-08-04 21:30:00 +0900
 status: Done
 draft: false
 tags:
+  - Database
   - MySQL
 ---
 ## Transaction Isolation Level
