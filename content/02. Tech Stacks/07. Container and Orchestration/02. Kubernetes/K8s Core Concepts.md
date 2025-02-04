@@ -311,14 +311,50 @@ or
 kubectl get all
 ```
 
+### Service - NodePort
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  type: NodePort
+  ports:
+   - targetPort: 80
+   - port: 80
+   - nodePort: 30008
+  selector:
+    app: myapp
+    type: front-end
+```
+- Node(host) 에 노출되어 외부에서 접근 가능한 서비스
+- 모든 Node 에 동일한 포트로 생성
+- targetPort 는 target pod 의 port 를 지정, 지정하지 않을 경우 port 와 같은 값을 가짐
+- port 는 Service Object 의 port 를 지정 (required)
+- nodePort 는 30,000 ~ 32,767 까지의 범위 안에 속해야 하며 지정하지 않을 경우 자동으로 할당됨
+- selector 를 통해 target pod 를 지정
+- 하나의 Node 에 같은 종류의 Pod 가 여러개 있을 경우 Service 가 알아서 selector 에 해당하는 Pod 를 찾고 부하를 분산하여 각각 Pod 에 Random 하게 보내줌.
+- 여러 Node 에 Pod 가 배포되어 있을 경우에도 Service 는 모든 Node 에 걸쳐 적용되어 아무 Node 에 요청을 보내도 알아서 아무 Node 에 배포된 Pod 에 트래픽을 보냄.
+
 ### Service - ClusterIP
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: back-end
+spec:
+  type: ClusterIP
+  ports:
+   - targetPort: 80
+   - port: 80
+  selector:
+    app: myapp
+    type: back-end
+```
 - 클러스터 내부에서 사용하는 프록시
 - Pod 은 동적이지만 서비스는 고유 IP 를 가짐
 - 클러스터 내부에서 서비스 연결은 DNS 를 이용
-
-### Service - NodePort
-- Node(host) 에 노출되어 외부에서 접근 가능한 서비스
-- 모든 Node 에 동일한 포트로 생성
+- 가령 3-tier-architecture 에서 backend app 에 요청을 보내고 싶을 때 backend 를 담당하는 여러 Pod 가 cluster 전체에 퍼져있으니 ClusterIP 를 통해 원하는 layer 를 지정
 
 ### Service - LoadBalancer
 - 하나의 IP 주소를 외부에 노출
