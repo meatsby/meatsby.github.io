@@ -357,7 +357,20 @@ spec:
 - 가령 3-tier-architecture 에서 backend app 에 요청을 보내고 싶을 때 backend 를 담당하는 여러 Pod 가 cluster 전체에 퍼져있으니 ClusterIP 를 통해 원하는 layer 를 지정
 
 ### Service - LoadBalancer
-- 하나의 IP 주소를 외부에 노출
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  type: LoadBalancer
+  ports:
+   - targetPort: 80
+   - port: 80
+   - nodePort: 30008
+```
+- 하나의 IP 주소를 외부에 노출하여 지정된 Pod 에 요청이 도달할 수 있도록 도와줌
+- NodePort 대신 AWS, Azure, GCP 등에서 제공하는 Native Load Balancer 로 부하를 분산하여 보내는 역할을 수행함
 
 ### Ingress
 - 도메인 또는 경로별 라우팅
