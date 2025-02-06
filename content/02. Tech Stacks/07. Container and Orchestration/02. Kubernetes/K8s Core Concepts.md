@@ -372,6 +372,79 @@ spec:
 - 하나의 IP 주소를 외부에 노출하여 지정된 Pod 에 요청이 도달할 수 있도록 도와줌
 - NodePort 대신 AWS, Azure, GCP 등에서 제공하는 Native Load Balancer 로 부하를 분산하여 보내는 역할을 수행함
 
+### Namespaces
+K8s Cluster 를 구축하게되면 기본적으로 Default, kube-system, kube-public Namespace 들이 자동으로 생성된다. 사용자가 생성한 Pod, Deployment, Service 등 K8s Object 들은 기본적으로 Default Namespace 에 속하게 된다.
+
+```
+kubectl get pods --namespace=kube-system
+```
+kube-system Namespace 의 경우, coredns, etcd-master, kube-apiserver-master, kube-controller-manager-master 등 K8s 의 기본적인 Component 들을 확인할 수 있다.
+
+```
+kubectl create -f pod-definition.yml --namespace=dev
+```
+K8s Object 를 특정 Namespace 에 배포하고 싶을 경우엔 옵션으로 namespace 를 지정해주거나,
+
+```yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  namespace: dev
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+```
+위 처럼 metadata 필드에 namespace 를 추가해주면된다.
+
+```yml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev
+```
+Namespace 를 생성할 땐 위처럼 Namespace yaml 을 생성한 뒤,
+
+```
+kubectl create -f namespace-dev.yml
+```
+위 명령어로 생성하거나,
+
+```
+kubectl create namespace dev
+```
+yaml 파일 없이 명령어로 생성할 수 있다.
+
+```
+kubectl config set-context $(kubectl config current-context) --namespace=dev
+```
+위 명령어를 통해 cli 작업 위치를 특정 Namespace 로 이동시킬 수도 있다.
+
+```yml
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: compute-quota
+  namespace: dev
+spec:
+  hard:
+    pods: "10"
+    requests.cpu: "4"
+    requests.memory: 5Gi
+    limits.cpu: "10"
+    limits.memory: 10Gi
+```
+특정 Namespace 에 하드웨어 리소스를 할당할 때엔 ResourceQuota yaml 을 생성한 뒤,
+
+```
+kubectl create -f compute-quota.yml
+```
+생성하여 자원을 할당해줄 수 있다.
+
 ### Ingress
 - 도메인 또는 경로별 라우팅
 	- Nginx, HAProxy, ALB, ...
