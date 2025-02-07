@@ -445,6 +445,34 @@ kubectl create -f compute-quota.yml
 ```
 생성하여 자원을 할당해줄 수 있다.
 
+### Imperative vs Declarative
+IaC 에선 명령형과 선언형 방식으로 인프라를 구축할 수 있는데,
+
+```
+kubectl run --image=nginx nginx
+kubectl create deployment --image=nginx nginx
+kubectl expose deployment nginx --port 80
+```
+위 같은 명령어들을 통해 Object 를 생성하고,
+
+```
+kubectl edit deployment nginx
+kubectl scale deployment nginx --replicas=5
+kubectl set image deployment nginx nginx=nginx:1.18
+```
+생성된 Object 를 수정할 수 있다. 이는 명령형 방식으로 K8s 를 구축하는 방법이다.
+
+```
+kubectl create -f nginx.yaml
+kubectl edit deployment nginx
+```
+K8s configuration file 을 통해 Object 를 생성한 경우 선언형 방식으로 구축했다고 생각할 수 있지만, edit 명령어를 통해 접근한 file 은 K8s memory 에 동적으로 생성된 yaml 인 것을 확인할 수 있다. 때문에 edit 으로 설정을 바꾼다고 기존에 작성한 nginx.yaml 은 수정되지 않기 때문에 추후에 replace 등을 할 경우 예상하지 못한 변경이 생길 수 있다. 이를 방지하기 위해선 edit 대신 configuration file 자체를 변경한 후 replace 를 실행하는 것이 바람직하다.
+
+```
+kubectl apply -f nginx.yaml
+```
+K8s 는 apply 를 통해 선언형 방식으로 Object 를 제어할 수 있다. apply 는 이미 만들어진 Object 를 파악하며 부분적으로 설정이 수정된 경우 해당 부분만 적용하는 기능 역시 지원한다.
+
 ### Ingress
 - 도메인 또는 경로별 라우팅
 	- Nginx, HAProxy, ALB, ...
