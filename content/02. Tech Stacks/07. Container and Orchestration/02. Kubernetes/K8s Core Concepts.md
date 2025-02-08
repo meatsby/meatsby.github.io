@@ -473,6 +473,28 @@ kubectl apply -f nginx.yaml
 ```
 K8s 는 apply 를 통해 선언형 방식으로 Object 를 제어할 수 있다. apply 는 이미 만들어진 Object 를 파악하며 부분적으로 설정이 수정된 경우 해당 부분만 적용하는 기능 역시 지원한다.
 
+```yml
+# Live object configuration
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: {"apiVersion": "v1", ...}
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+status:
+  conditions:
+  - lastProbeTime: null
+    ...
+```
+kubectl apply 를 실행하면 K8s 는 사용자가 작성한 yaml file 과 K8s memory 에 저장된 Live object configuration 과 `kubectl.kubernetes.io/last-applied-configuration` 필드를 비교하여 변경된 사항만 부분적으로 확인하고 적용이 가능하다.
+
 ### Ingress
 - 도메인 또는 경로별 라우팅
 	- Nginx, HAProxy, ALB, ...
