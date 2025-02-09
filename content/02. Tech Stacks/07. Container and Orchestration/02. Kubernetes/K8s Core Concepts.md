@@ -18,18 +18,19 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 
 ## K8s Architecture
 ---
-![[K8s Architecture.png]]
-- Worker Nodes = Host Application as Containers
-	- Container Runtime
-	- Kubelet
-	- Kube-proxy
-- Master Node = Manage, Plan, Schedule, Monitor Worker Nodes
-	- Kube-apiserver
-	- Controller-Manager
-		- Node-Controller
-		- Replication Controller
-	- ETCD Cluster = HA Key-Value Store
-	- Kube-scheduler = Identifies the right node to place a container
+![[Pasted image 20250208155052.png]]
+K8s 는 Master Node 와 Worker Node 의 집합으로 이루어진다.
+
+Master Node 는 Worker Node 들을 Manage, Plan, Schedule, Monitor 하는 역할을 수행하기 위해 아래와 같은 Component 들을 가진다.
+- kube-apiserver
+- controller manager
+- etcd cluster
+- kube-scheduler
+
+Worker Node 는 Containerized Application 이 실행되는 Node 로, 이를 위해 아래와 같은 Component 들을 가진다.
+- Container Runtime
+- kubelet
+- kube-proxy
 
 ## Docker vs containerd
 ---
@@ -59,6 +60,7 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 - REST API 형태로 제공
 - 요청에 대한 권한 체크
 - 수평적 확장 가능
+- kubeadm 으로 설치할 경우 Pod 의 형태로 실행된다.
 
 1. Authenticate User
 2. Validate Request
@@ -79,41 +81,37 @@ Container Orchestration 이란 복잡한 컨테이너 환경을 효과적으로 
 ```
 wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kube-controller-manager
 ```
+- kubeadm 으로 설치할 경우 Pod 의 형태로 실행된다.
 
 ## Kube Scheduler
 ---
-- Kube Scheduler decides which pod goes on which node. In other words, it schedules pods on nodes.
-- It doesn't actually place the pod on the node, Kubelet is responsible for that instead.
-- Node 의 현재 상태와 Pod 의 요구사항을 체크
-	- Node 에 Label 부여
-		- e.g. a-zone, b-zone, gpu-enabled, ...
+- kube-scheduler 는 생성 요청된 Pod 가 어느 Node 에 배포되어야 하는지 확인하는 역할을 수행한다. Node 의 현재 상태와 Pod 의 요구사항을 체크하여 적절한 Node 를 찾는 작업만 수행할 뿐 Pod 를 생성하는 역할은 kubelet 이 수행한다.
 
 ### How does it work?
-- It filters nodes based on the remaining resources of the nodes.
-- Then it ranks the nodes based on the remaining resources that the nodes will have after placing the pod.
+- Pod 에 필요한 리소스를 여분으로 가지고 있는 Node 를 확인하고 Pod 가 배치된 후 남은 리소스량을 기준으로 순위를 매겨 스케쥴링을 수행한다.
 
 ### Installing Kube Scheduler
 ```
 wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kube-scheduler
 ```
+- kubeadm 으로 설치할 경우 Pod 의 형태로 실행된다.
 
 ## Kubelet
 ---
-- Kubelet is the sole point of contact for the K8s cluster.
-- It will create the pods on the nodes based on the instructions from the Kube Scheduler through the Kube API Server.
-- It monitors nodes and pods and continuously communicates with the Kube API Server.
+kubelet 은 Master Node 의 kube-apiserver 로 부터 Container 생성 요청을 받아 Worker Node 에 설치된 Container Runtime 을 이용해 Container 를 생성하는 역할을 한다.
+kubelet 은 자신이 위치한 Node 와 생성한 Pod 들을 모니터링하여 주기적으로 kube-apiserver 와 소통한다.
 
 ### Installing Kubelet
 ```
 wget https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kubelet
 ```
+kubeadm 으로 K8s Cluster 를 구축할 때 kubelet 은 설치되지 않으니 수동으로 Worker Node 에 kubelet 을 설치해주어야 한다. 때문에 kubelet 은 다른 Component 들과 다르게 Pod 이 아닌 Node 의 프로세스로서 실행된다.
 
 ## Kube Proxy
 ---
-- Kube Proxy is a process that runs on each node.
-- Every pod in the K8s cluster can reach every other pod through a pod networking solution.
-- 네트워크 프록시와 부하 분산 역할
-- 성능상의 이유로 별도의 프록시 프로그램 대신 iptables 또는 IPVS 를 사용하여 설정만 관리
+- 네트워크 프록시와 부하 분산 역할을 하며 K8s Cluster 에 배포된 모든 Pod 간의 통신을 담당한다.
+- Pod 형태로 실행되기 때문에 kubectl get pods 로 조회 가능하다.
+- 성능상의 이유로 별도의 프록시 프로그램 대신 iptables 또는 IPVS 를 사용하여 설정만 관리한다.
 
 ## K8s Objects
 ---
