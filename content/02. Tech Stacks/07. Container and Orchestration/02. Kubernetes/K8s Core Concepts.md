@@ -267,6 +267,7 @@ kubectl scale --replicas=6 replicaset myapp-replicaset
 
 ## Deployment
 ---
+![[Pasted image 20250209200142.png]]
 - 내부적으로 ReplicaSet 을 이용하여 배포 버전을 관리
 - The Deployment provides the capability of upgrading underlying instances seamlessly using rolling updates, undo changes, pauses, and resume changes as required.
 
@@ -309,7 +310,8 @@ or
 kubectl get all
 ```
 
-### Service - NodePort
+## Service - NodePort
+---
 ```yml
 apiVersion: v1
 kind: Service
@@ -334,7 +336,8 @@ spec:
 - 하나의 Node 에 같은 종류의 Pod 가 여러개 있을 경우 Service 가 알아서 selector 에 해당하는 Pod 를 찾고 부하를 분산하여 각각 Pod 에 Random 하게 보내줌.
 - 여러 Node 에 Pod 가 배포되어 있을 경우에도 Service 는 모든 Node 에 걸쳐 적용되어 아무 Node 에 요청을 보내도 알아서 아무 Node 에 배포된 Pod 에 트래픽을 보냄.
 
-### Service - ClusterIP
+## Service - ClusterIP
+---
 ```yml
 apiVersion: v1
 kind: Service
@@ -354,7 +357,13 @@ spec:
 - 클러스터 내부에서 서비스 연결은 DNS 를 이용
 - 가령 3-tier-architecture 에서 backend app 에 요청을 보내고 싶을 때 backend 를 담당하는 여러 Pod 가 cluster 전체에 퍼져있으니 ClusterIP 를 통해 원하는 layer 를 지정
 
-### Service - LoadBalancer
+```
+kubectl run httpd --image=httpd --port=80 --expose
+```
+- kubectl run 으로 Pod 를 생성할 때 --expose 옵션을 주면 Pod 에 연결되는 ClusterIP 를 자동으로 생성해준다. ClusterIP 와 연결되어야 하기 때문에 --port 옵션이 필수적으로 포함되어야 한다.
+
+## Service - LoadBalancer
+---
 ```yml
 apiVersion: v1
 kind: Service
@@ -370,7 +379,8 @@ spec:
 - 하나의 IP 주소를 외부에 노출하여 지정된 Pod 에 요청이 도달할 수 있도록 도와줌
 - NodePort 대신 AWS, Azure, GCP 등에서 제공하는 Native Load Balancer 로 부하를 분산하여 보내는 역할을 수행함
 
-### Namespaces
+## Namespaces
+---
 K8s Cluster 를 구축하게되면 기본적으로 Default, kube-system, kube-public Namespace 들이 자동으로 생성된다. 사용자가 생성한 Pod, Deployment, Service 등 K8s Object 들은 기본적으로 Default Namespace 에 속하게 된다.
 
 ```
@@ -443,7 +453,8 @@ kubectl create -f compute-quota.yml
 ```
 생성하여 자원을 할당해줄 수 있다.
 
-### Imperative vs Declarative
+## Imperative vs Declarative
+---
 IaC 에선 명령형과 선언형 방식으로 인프라를 구축할 수 있는데,
 
 ```
@@ -493,15 +504,14 @@ status:
 ```
 kubectl apply 를 실행하면 K8s 는 사용자가 작성한 yaml file 과 K8s memory 에 저장된 Live object configuration 과 `kubectl.kubernetes.io/last-applied-configuration` 필드를 비교하여 변경된 사항만 부분적으로 확인하고 적용이 가능하다.
 
-### Ingress
+## Ingress
+---
 - 도메인 또는 경로별 라우팅
 	- Nginx, HAProxy, ALB, ...
 
-## API Primitives
+## Scheduling
 ---
 
-## Services & Other Network Primitives
----
 
 ## References
 ---
