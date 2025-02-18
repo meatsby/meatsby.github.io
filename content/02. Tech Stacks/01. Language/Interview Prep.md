@@ -23,15 +23,12 @@ tags:
 - equals vs hashcode 차이
 - SOLID 에 대해 설명해라
 - Java Singleton 구현
-- Java Multithread
+- ⭐️ Java Multithread
 	- Executor
 	- CompletableFuture
 - Functional Interface
 - Checked and unchecked exceptions?
-- Aggregation vs Composition
-	- Part-Whole Relationship
-	- Aggregation = Loose Coupling, independent lifecycle
-	- Composition = Strong Coupling, dependent lifecycle
+- ⭐️ Java Transaction
 
 - @SpringBootApplication annotation?
 - Spring Bean Scope
@@ -49,7 +46,7 @@ tags:
 1. What is content negotiation in REST Microservice
 	- Annotation with consumes
 		- e.g. xml or json
-2. Java Version different
+2. Java Version difference
 3. Advantage of DI?
 4. What DB have you used?
 	- NoSQL vs RDBMS?
@@ -83,6 +80,27 @@ tags:
 	- hashcode & equals 로 중복 확인
 22. What is Deepcopy?
 ---
+1. SOLID Principles?
+2. ⭐️ How to implement Singleton with Java
+3. ⭐️ Java synchronized
+4. EAGER LOADING vs LAZY LOADING
+5. Java serialization and deserialization
+6. hashcode 가 항상 1을 반환하는 객체 5개를 HashMap 저장하면 크기는?
+7. Java8 에서 String 안에 같은 char 갯수
+	- Stream 물어보는 듯, `str.chars().filter(c -> c == char).count()`
+8. Child class 가 unchecked exception 을 던지고 Parent class 는 안 던지면 compile error?
+	- method overriding 하고 둘 다 wrapper 를 parameter 로 받는다면 둘 다 nullable 이기에 compile error
+9. Aggregation vs Composition
+	- Part-Whole Relationship
+	- Aggregation = Loose Coupling, independent lifecycle
+	- Composition = Strong Coupling, dependent lifecycle
+10. environment 별 application.yml
+11. Performance testing?
+12. ⭐️ How to ensure Security?
+	- Bearer token
+	- ⭐️ Spring Security
+---
+
 
 ## ETC
 ---
