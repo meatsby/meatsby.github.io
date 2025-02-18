@@ -8,21 +8,46 @@ tags:
 ---
 ## Java
 ---
+- JVM
+	- Java Byte Code -> OS machine code 해석, GC 자동 메모리 관리
+	- JVM 클래스 로딩 과정
+		- Lazy Loading mechanism, 클래스를 필요할 때 메모리에 올려 사용
+			- 인스턴스 생성, 클래스 정적 메서드 호출, 정적 변수 사용 시 초기화됨
+		- static final = JVM Method Area Constant Pool
+		- final = 인스턴스 변수는 Heap, 지역 변수는 Stack
 - GC
 	- CMS: 레거시
 	- G1: 범용 애플리케이션
 	- ZGC: 매우 큰 힙을 요구하는 애플리케이션
-- Hashmap
-	- Hash 값을 키로 저장함 키를 찾을 때 상수시간에 찾을 수 있음
-- Why is there still a memory leak in Java?
 - Java8, 11, 17 차이
 	- Java8 에 Stream API, Lambda 식, GC PermGen -> Metaspace
 	- Java11 에 G1GC 기본
 	- Java17 에 record class 추가, Spring3.0 부터 17 이상 지원
+- Java 컴파일 과정
+	- .java -> build -> java complier(javac) -> .class -> Class Loader 로 JVM 메모리에 로드 -> Java Interpreter/JIT -> runtime -> OS
+- Immutable 객체
+	- 인스턴스화 이후 변하지 않는 것을 보장하는 객체
+	- 인스턴스 변수로 참조 객체를 가질 경우 deep-copy 를 위한 defensive-copy 요
+	- Thread-Safe?
+	- 중복 객체가 줄기 때문에 GC 성능 향상
+- Abstract vs Interface
+	- abstract method 가 하나 이상일 경우 Abstract, 전체가 abstract method 일 경우 Interface
+	- 둘 다 인스턴스 생성 불가능하기 때문에 구현체를 만들어 사용해야 함
+	- 추상클래스는 다중 상속 불가, 인터페이스는 다중 상속 가능
+- Hashmap
+	- Hash 값을 키로 저장함 키를 찾을 때 상수시간에 찾을 수 있음
+- Why is there still a memory leak in Java?
 - Vector, LinkedList, ArrayList 차이
 - equals vs hashcode 차이
 - SOLID 에 대해 설명해라
+	- SRP
+	- OCP
+	- LSP
+	- ISP
+	- DIP
 - Java Singleton 구현
+	- getter 가 자기 자신을 반환
+	- 대표적인 예 = Spring Bean
 - ⭐️ Java Multithread
 	- Executor
 	- CompletableFuture
@@ -79,6 +104,7 @@ tags:
 21. Convert List to Set what will happen internally
 	- hashcode & equals 로 중복 확인
 22. What is Deepcopy?
+	- 내부 객체까지 복사본으로 만듬, 이를 위해 defensive-copy 구현
 ---
 1. SOLID Principles?
 2. ⭐️ How to implement Singleton with Java
