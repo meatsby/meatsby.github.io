@@ -25,6 +25,7 @@ tags:
 	- ZGC: 매우 큰 힙을 사용하고, 짧은 일시정지가 필요한 실시간 애플리케이션
 	- Why is there still a memory leak in Java?
 		- Because some unused objects are being referred and will not be targeted for GC
+	- Weak Generational Hypothesis = 대부분의 객체는 일찍 죽는다는 가설
 - Java8, 11, 17 차이
 	- Java8 에 Stream API, Lambda 식, GC PermGen -> Metaspace, Optional API
 	- Java11 에 G1GC 기본
@@ -78,8 +79,25 @@ tags:
 - Java Collection Framework
 	- List, Set, Map 등 인터페이스로 여러 데이터를 관리
 	- List = Vector, ArrayList, LinkedList
-	- Set = HashSet, LinkedHastSet
+	- Set = HashSet > LinkedHastSet > TreeSet 순으로 성능이 좋으며, 모두 null 한 번만 저장 가능
+		- HashSet
+			- 순서 보장 x
+			- 내부적으로 HashMap 사용
+		- LinkedHashSet
+			- 입력한 순서 보장
+			- 내부적으로 LinkedHashMap 사용
+		- TreeSet
+			- 오름차순 정렬
+			- 내부적으로 TreeMap 사용
 	- Map = HashMap, HashTable, ConcurrentHashMap
+		- HashMap
+			- Hash 값을 키로 저장함 키를 찾을 때 상수시간에 찾을 수 있음
+		- LinkedHashMap
+			- 순서 유지를 위한 Double Linked List, FIFO
+		- TreeMap
+			- Key 값에 따라 정렬됨
+			- 내부적으로 synchronized, Thread-safe
+			- RedBlack Tree 로 저장되며, Comparator 로 정렬 커스텀
 - Set, Map 중복 검사
 	- hashcode 가 다르면 다른 객체, 같으면 equals 까지 비교
 - Vector, LinkedList, ArrayList 차이
@@ -96,17 +114,13 @@ tags:
 - Functional Interface
 	- containing only 1 method to be implemented
 	- can be used for lambda expression type
-- Checked and unchecked exceptions?
 - Java Stream 이란
 	- 병렬 연산 가능
 	- 최종 연산 전까지 중간 연산 지연
 	- 원본을 읽기만 할 뿐 변경하지 않음
+- Checked and unchecked exceptions?
 
 - LRU Cache 란?
-- Hashmap
-	- Hash 값을 키로 저장함 키를 찾을 때 상수시간에 찾을 수 있음
-
-- Python shallow-copy vs deep-copy
 
 - Session vs Cookie
 - MFA 란
@@ -186,7 +200,35 @@ tags:
 	- Bearer token
 	- ⭐️ Spring Security
 ---
-
+1. How to implement Singleton with Java
+2. How to test Singleton
+	- Use ` == ` operator in JUnit to check same instance
+3. Collection for uniqueness and insertion order
+	- LinkedHashSet
+4. equals 는 구현하고 hashcode 를 구현하지 않았을 경우 HashMap 에 저장하면 어떻게되나?
+	- 제대로 동작하지 않는다, HashMap, HashSet, HashTable 등은 hashcode && equals 가 모두 동일해야 같은 객체로 판단하기 때문에 HashMap 에 저장할 경우 다른 버킷에 저장됨
+	- 때문에 map.size 는 1 이 되고, 같은 키로 간주하여 마지막에 put 한 value 를 반환함
+5. Object 클래스의 default hashcode 는 어떻게 구현되어 있나?
+	- Written in native method, creates hashcode based on the Object address
+6. What is immutable object and how to implement it?
+7. public static synchronized vs public synchronized
+	- static synchronized 는 클래스 레벨에 락을 걸기 때문에 public synchronized 를 사용하려는 Thread2 는 Thread1 을 기다려야 함
+8. static synchronized method 는 Method area synchronized method 는 Heap 에 저장된다?
+9. Thread Pool & Executor?
+10. Dependency Injection 이란?
+	- Providing dependency of the Bean
+	- e.g. Controller contains Service that AppContext will inject, this is for loose coupling
+11. Which bean will know what to inject when Autowired
+	- AppContext will inject based on type
+	- If there are 2 implementations for Autowired interface, it will inject based on the name
+12. `@Primary` Annotation?
+	- 인터페이스를 구현한 Bean 이 2개 이상일 때 우선 순위를 가지는 Bean
+	- `@Qualifier` 로 명시적으로 지정, 사용할 경우 `@Primary` 보다 높은 우선순위
+13. How does Java manage memory?
+14. What is the top most parent class for Exception?
+	- Object -> Throwable -> Exception & Error
+15. Deadlock 이란? Spring 에서 Deadlock 이 발생할 수 있는 상황은?
+16. Optimistic Lock 과 Pessimistic Lock 의 차이는?
 
 ## ETC
 ---
