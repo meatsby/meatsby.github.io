@@ -135,11 +135,51 @@ tags:
 ## JPA Hibernate
 ---
 
+
 ## DB, SQL
 ---
-- SQL query, joining, indexing
-
-
+- DDL, DML, DCL
+	- DDL = ALTER, CREATE, DROP
+	- DML = SELECT, INSERT, UPDATE, DELETE
+	- DCL = COMMIT, ROLLBACK, GRANT, REVOKE
+- SQL query
+	- FROM, ON, JOIN > WHERE, GROUP BY, HAVING > SELECT > DISTINCT > ORDERBY > LIMIT
+- GROUP BY = 특정 Column 기준으로 연산한 결과를 그룹짓는 역할
+	- COUNT, SUM, AVG, MAX, MIN 등으로 연산 후 DISTINCT 로 중복 데이터 제거 가능
+- DELETE, TRUNCATE, DROP
+	- DELETE = 데이터만 골라 지울 수 있고 Rollback 가능
+	- TRUNCATE = 전체 데이터를 한 번에 삭제, Rollback 불가능
+	- DROP = 테이블 자체를 완전 삭제, Rollback 불가능
+- Inner Join vs Outer Join
+	- Inner Join = 테이블 2개가 교차되는 교집합
+	- Outer Join = 필요한 데이터를 다른 테이블이 가지고 있는 경우 데이터가 있는 테이블 전부
+		- LEFT OUTER JOIN
+		- RIGHT OUTER JOIN
+		- FULL OUTER JOIN
+- Indexing
+	- Full Table Scan 대신 Index 를 검색하여 데이터를 찾는 방식
+	- Index 는 정렬된 상태를 유지하기 때문에 검색은 빠르나, 추가/수정/삭제는 느림
+	- 즉, 저장 성능을 희생하고 검색 성능을 높이는 것
+	- B-Tree 리프노드를 LinkedList 로 연결한 B+Tree 자료구조
+- Normalization
+	- Column 이 Atomic Value 를 갖도록 테이블을 분해
+	- 구조 확장 시 정규화된 DB 는 구조를 변경하지 않거나 일부만 변경
+	- JOIN 연산이 많아지는 단점이 있음
+	- 읽기 성능이 중요한 경우 Denormalize 할 수 있음
+- Transaction
+	- 여러 쿼리의 집합, ACID, Commit 또는 Rollback
+- DB 락
+	- Shared Lock = Read Lock, 읽기만 하기 때문에 동시 접근 가능
+	- Exclusive Lock = Write Lock, 락이 반환될 때 까지 하나의 Transaction 만 접근 가능
+- Optimizer
+	- SQL 을 가장 빠르게 수행할 처리 경로를 생성하는 핵심 엔진
+	- 여러 실행 계획을 세우고, 최고의 효율을 작는 실행 계획을 판별 후 쿼리 수행
+- Clustering vs Replication
+	- Clustering = 수평 확장, 동기 방식
+		- 동기화 보장으로, 높은 가용성, 로드밸런싱 등 이점
+	- Replication = 권한에 따른 수직 확장, 비동기 방식
+		- 읽기 작업을 대신해 성능 향상, 비동기 방식이라 지연 시간이 거의 없음
+		- 동기화가 보장되지 않음, Master 가 다운되면 복구가 까다로움
 
 ---
 1. What is content negotiation in REST Microservice
