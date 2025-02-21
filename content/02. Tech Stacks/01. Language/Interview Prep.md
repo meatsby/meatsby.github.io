@@ -20,6 +20,7 @@ tags:
 		- Stack = 지역변수, 매개변수, 메서드 호출 시 메모리 할당, 종료 시 해제
 		- Heap = new 객체, GC 대상
 - GC
+	- Parallel GC: Java8 기본
 	- CMS: Concurrent Mark Sweep, 레거시
 	- G1: 범용 애플리케이션, Java9 부터 기본
 	- ZGC: 매우 큰 힙을 사용하고, 짧은 일시정지가 필요한 실시간 애플리케이션
@@ -159,21 +160,25 @@ tags:
 	- type 을 하나로 지정하지 않고 범용적으로 사용하기 위해 사용
 	- Invariance 란 type safety 를 위해 inheritance 와 무관하게 다른 타입으로 취급
 	- wildcard 를 사용하여 처리 가능
-- ⭐️ Java Multithread
+- Java Multithread
 	- ExecutorService 를 통해 ThreadPool 을 생성하고 스레드를 가져와서 사용
-	- JDK8 이후 지원되는 CompletableFuture
+	- JDK8 이후 지원되는 CompletableFuture 를 통해 non-blocking 으로 처리 가능
 	- Kotlin 에선 코루틴을 사용
 	- Java21 부터 Virtual Thread 가 등장
 - Java Synchronized
 	- 한 개의 Thread 만 접근할 수 있게 제한하는 기능
 	- static synchronized 는 클래스 레벨에 락을 걸기 때문에 public synchronized 를 사용하려는 Thread2 는 Thread1 을 기다려야 함
+	- static synchronized method 는 Method area 에 synchronized method 도 Method area 에 저장되지만 락은 인스턴스 락을 걸기 때문에 heap 에 걸림
 - volatile keyword
-	- variable that will be modified by different thread
+	- a variable that different threads will modify
 	- stored in main memory instead of CPU cache
-- Thread Safe 란?
-- 비동기 ThreadLocal?
+- ThreadLocal
+	- 스레드 마다 독립적인 변수를 저장할 수 있는 클래스
 - Thread start() run() 차이
-- static synchronized method 는 Method 에 synchronized method 는 Heap 에 저장된다?
+	- start() = 새로운 스레드 실행
+	- run() = 현재 스레드에서 실행
+- Process vs Thread
+	- Thread 마다 stack 을 할당 받고 code, data, heap 은 공유
 - Aggregation vs Composition
 	- Part-Whole Relationship
 	- Aggregation = Loose Coupling, independent lifecycle
@@ -181,48 +186,106 @@ tags:
 
 ## Spring
 ---
-- @SpringBootApplication annotation?
-- Java Bean 과 Spring Bean 의 차이
-- Spring Bean Scope
-- ⭐️ Spring Transaction
-- readOnly 작동원리
-- 리플랙션 쓰면 싱글턴 깨지는데 어떻게 해결?
-- AOP 프록시가 적용이 안되는 경우? 내부 호출 시 적용이 왜 안됨?
-- Spring MVC 구조 및 흐름
-- Filter vs Interceptor? 뭐가 먼저 실행됨?
-- Servlet?
-- Spring Scheduler?
-- Spring Security?
-- DAO layer vs repository layer?
-- Spring 에서 데드락이 발생할 수 있는 상황은?
-- 낙관적 락과 비관적 락의 차이는?
-- DI 란 무엇이고 장점이 뭔가?
-- ComponentScan 이란 무엇이고 어떻게 작동하나
+- @SpringBootApplication annotation
+	- SpringBoot 의 시작점
+	- SpringApplication.run() 으로 내장 WAS 실행
+	- ComponentScan 을 통해 모든 빈 등록
+	- `@EnableAutoConfiguration` 포함
+		- application.yml 같은 설정을 자동으로 등록
+		- `@EnableAutoConfiguration(exclud={className})` 으로 불필요한 AutoConfig 해제 가능
+- IoC, DI
+	- Inversion of Control 으로 빈 생명주기를 ApplicationContext 가 대신 관리
+		- ApplicationContext 는 BeanFactory 의 확장판
+	- Dependency Injection 으로 빈 의존관계를 자동으로 주입
+		- 생성자 주입, 필드 주입, 세터 주입
+		- Louse Coupling, 테스트 용의성, 유지보수성 향상
+- Spring Bean
+	- ComponentScan 으로 자동 등록되며 @Configuration 으로 직접 등록도 가능
+	- Java Bean 과 Spring Bean 의 차이
+		- Java Bean 은 일반적인 자바 객체(POJO)로 Spring Bean 은 Spring 이 관리하는 객체
+	- Spring Bean Scope
+		- 생명주기를 정의하는 개념으로 기본적으로 Singleton
+			- prototype = 요청할 때 마다 새로운 인스턴스
+			- request = 요청이 끝나면 소멸
+			- session = 세션이 끝나면 소멸
+		- 리플랙션 쓰면 싱글턴 깨지는데 어떻게 해결?
+- ComponentScan
+	- 주입될 빈을 어떻게 판별하나
+		- 타입에 의해 판별, 이름에 의해 판별, Primary 또는 Qualifier 로 판별
+	-  `@Primary` Annotation?
+		- 인터페이스를 구현한 Bean 이 2개 이상일 때 우선 순위를 가지는 Bean
+		- `@Qualifier` 로 명시적으로 지정, 사용할 경우 `@Primary` 보다 높은 우선순위
 - Controller, Service, Repository 차이
 	- Stereotype Annotation 으로 차이가 없음
 	- Service 에서 DB 로직을 수행하면 어떻게 되나
 		- 상관없음
-- Spring 에서 Exception Handling 어떻게 하나
+	- RestController 의 경우 Controller + ResponseBody 로 json 반환
+	- RequestBody 는 ObjectMapper 를 사용하고 Reflection 을 통해 객체를 생성하기에 DTO 기본 생성자 필수
+	- DAO layer vs Repository layer
+		- Repository 어노테이션을 사용하는 레이어
+		- DAO 는 보통 JDBC
+		- Repository 는 보통 JPA
+- Spring MVC
+	- Servlet = 자바를 이용해 웹을 만들기 위한 기술, Spring MVC 에선 Controller
+	- 스프링에서 제공하는 웹 모듈
+		- 요청을 적합한 컨트롤러에게 전달하는 디스패처서블릿이 요청을 받고
+		- 핸들러매핑에 해당하는 `@RequestMapping` 핸들러를 찾아서 디스패처서블릿에게 알려줌
+		- 핸들러를 실행하기 전 후에 인터셉터로 처리
+		- 핸들러로 요청을 처리하고 뷰 또는 응답을 디스패처서블릿에게 전달
+		- 디스패처서블릿이 클아이언트에게 응답
+	- Filter vs Interceptor? 뭐가 먼저 실행됨?
+		- Filter 는 디스패처서블릿에 요청이 전달되기 전후에 부가 작업 처리
+			- javax 기술
+			- 톰캣과 같은 서블릿 컨테이너에 의해 관리됨
+			- ErrorController 를 구현한 컨트롤러로 예외처리
+		- 인터셉터는 핸들러에게 요청이 전달되기 전후에 처리
+			- ControllerAdvice 로 예외처리
+				- ExceptionHandler 를 하나의 클래스에서 처리
+		- 즉, 필터가 먼저 실행됨
+- Spring AOP
+	- Aspect Oriented Programming 으로 로깅, 트랜잭션 등 처리
+- Spring Transaction
+	- AOP 로 프록시 객체를 만들어 트랜잭션 로직 추가
+		- 내부에서 메서드가 다른 메서드를 호출하면 적용이 안됨
+		- 자기자신의 메서드를 호출하면 프록시를 거치지 않기 때문
+	- JDK Dynamic Proxy vs CGLIB Proxy
+		- JDK 는 리플렉션 사용 (인터페이스가 존재하면 JDK 로 프록시 생성)
+		- CGLIB 은 바이트코드 조작 (인터페이스가 존재하지 않으면 CGLIB)
+		- `@EnableTransactionManagement(proxyTargetClass = true)` 로 강제 적용 가능
+	- readOnly 설정을 키면 JPA 더티체킹이 비활성화 되서 성능 향상
+	- db 락에 의한 데드락 발생 가능
+		- 두개의 메서드가 교차로 db 락을 걸 경우 발생
+		- LockTimeOut 이나 Optimistic Lock 사용
+			- 낙관적 락과 비관적 락의 차이는?
+				- 낙관적 락은 @Version 을 필드에 넣어서 어플리케이션 레벨에서 사용
+				- 비관적 락은 DB 락을 사용
+	- Transaction 격리 수준
+		- Read uncommitted
+		- Nonrepeatable read - Record Lock
+		- Repeatable read - Record Lock + Gap Lock
+		- Serializable - S Lock
+	- 트랜잭션 전파 속성 = 피호출 메서드도 트랜잭션을 수행해야 할 때 따로하냐 아니면 같이하냐
+		- REQUIRED, REQUIRES_NEW
 - Gradle vs maven
+	- 빌드 자동화 툴 gradle 이 jvm 기반으로 작성 가능하고 성능이 좋아서 더 많이 쓰임
 - environment 별 application.yml
-- Which bean will know what to inject when Autowired
-	- AppContext will inject based on type
-	- If there are 2 implementations for Autowired interface, it will inject based on the name
--  `@Primary` Annotation?
-	- 인터페이스를 구현한 Bean 이 2개 이상일 때 우선 순위를 가지는 Bean
-	- `@Qualifier` 로 명시적으로 지정, 사용할 경우 `@Primary` 보다 높은 우선순위
-- 트랜젝션 시 데드락 발생 및 해결법
-	- 두개의 메서드가 교차로 db 락을 걸 경우 발생
-	- LockTimeOut 이나 Optimistic Lock 사용
-- `@RequestMapping` 작동 방식
-- `@AutoConfig` 란?
-	- `@EnableAutoConfiguration(exclud={className})` 으로 불필요한 AutoConfig 해제 가능
+	- spring.profiles.active 로 설정 가능
 
 ## JPA Hibernate
 ---
 - JPA 란 무엇이고 어떻게 사용하나
 	- JPA Persistence API 로 RDBMS 와 OOP 를 이어주는 ORM
 	- 다양한 구현체가 있고 Hibernate 가 대표적
+- Persistence Context
+	- 엔티티를 영구 저장하는 가상의 환경
+	- 엔티티 생명주기
+		- 비영속, 영속, 준영속, 삭제
+	- 장점
+		- 1차캐시 First-level cache
+		- 동일성 보장
+		- 쓰기 지연 transactional write-behind
+		- Dirty Checking
+		- Lazy Loading
 - N+1 문제란 무엇이고 어떻게 해결하는가
 	- 일대다 또는 다대일 연관관계 엔티티 조회 메서드 실행 시 발생
 	- FetchType=EAGER 일 땐 연관관계에 있는 객체를 모두 조회해서 발생하고
@@ -232,15 +295,15 @@ tags:
 		- FetchJoin 으로 Inner Join 하여 한 번에 다 가져오기
 		- EntityGraph 도 있지만 OuterJoin 이고 권장하지 않음
 	- Pagination 이 안된다는 단점이 있음
-- 엔티티 생명주기
-	- 준영속, 영속
-- JDK Dynamic Proxy vs CGLIB Proxy
-- 트랜잭션 전파 속성
-	- REQUIRED, REQUIRED_NEW
+- 연관관계 주인
+	- FK 를 관리하는 엔티티, 즉 테이블에 FK 가 있는 쪽이 연관관계 주인
+	- mappedBy 속성이 없는 쪽이 주인
 - ManyToOne vs OneToMay 단방향 매핑 시 문제
+	- OneToMay 단방향 매핑하면 불필요한 JOIN TABLE 발생
+	- ManyToOne + JoinColumn 을 사용하거나
+	- 양방향 필요 시 @OneToMany + mappedBy 사용
 - PSA(Portable Service Abstraction)
 	- PlatformTransactionManager -> JDBCTxManager, HibernateTxManager 등
-- 연관관계 주인
 
 ## DB, SQL
 ---
@@ -286,17 +349,23 @@ tags:
 	- Replication = 권한에 따른 수직 확장, 비동기 방식
 		- 읽기 작업을 대신해 성능 향상, 비동기 방식이라 지연 시간이 거의 없음
 		- 동기화가 보장되지 않음, Master 가 다운되면 복구가 까다로움
-- Index B-Tree vs Hash Table
-- Transaction 격리 수준
+- 인덱스 거는 기준
+	- WHERE, JOIN, ORDER BY 등 자주 검색되는 컬럼에 추가하거나
+	- 중복된 값이 적은 컬럼에 추가하여 성능 향상
+- 복합 인덱스
+	- `CREATE INDEX idx_name ON table_name (col1, col2, col3);`
+	- 컬럼 순차적으로 효율적임, col2 만 자주 검색되면 효과 없음
 - MySQL vs Postgres
-- 인덱스 거는 기준, 복합 인덱스?
+	- Postgres 가 json, xml 등 더 다양한 데이터 타입 지원
+	- 복잡한 트랜잭션에 더 빠름
 - DB 테이블 컬럼 추가 시 읽기 성능이 저하되는데 해결법?
-	- Vertical Partitioning?
+	- Horizontal, Vertical Partitioning
 - DB 성능을 올리기 위해 할 수 있는 방법은?
+	- Query tuning
 	- Indexing
-	- Archiving
-	- Replication?
-- Optimistic Lock 과 Pessimistic Lock 의 차이는?
+	- Normalization, denormalization
+	- Clustering(Sharding), replication
+- Index B-Tree vs Hash Table
 
 ## ETC
 ---
@@ -318,23 +387,45 @@ tags:
 	- ALB
 - GQL 이란?
 - Kotlin + SpringBoot 프로젝트에 대해 더 설명해라
+- 2022 Spring 2.6.9 + JDK11
+- 2024 Spring 3.4.1 + Kotlin1.8.0 = JDK19
 
 - TCP UDP 차이
+	- TCP 3way handshake, 4way handshake 로 연결 및 해제
+		- syn, synack, ack
+		- fin, ack, fin, ack
+	- UDP 수신여부 확인 x, 스트리밍
 - HTTP1.1, 2.0 차이
+	- 멀티플렉싱 = 하나의 요청 당 연결 대신 하나의 연결로 latency 개선
+	- 헤더 압축 = 데이터 전송양 줄임
+	- 동시성 지원으로 병렬 처리 가능
 - HTTP/S, 대칭키 비대칭키
+	- SSL encryption 을 추가한 프로토콜, TLS 는 업그레이드 된 버전
+	- 처음에 asymmetric key 로 symmetric key 를 교환하고 추후엔 대칭키로 소통
 - HTTP 는 stateful? stateless?
+	- 이전 요청과 독릭접이기에 stateless
 - RestAPI 란?
 	- URI 로 자원을 지정하고, HTTP Method 로 행위를 명시하는 법
-- HEATOS? REST vs RESTful?
+	- HEATOS 로 RESTful 마지막 레이어
 - CORS 란?
-- OAuth2.0
-
-- 데드락? 탐지는 어떻게?
+	- Cross-Origin Resource Sharing
+	- 브라우저 Same-Origin Policy 로 CSRF 공격 방지
+	- Simple, Preflight, Credentialed Request 로 접근 제어
 - 뮤텍스 세마포어
+	- 뮤텍스는 lock 을 사용해 하나의 스레드만 접근하게끔
+	- 세마포어는 2개 이상 스레드 접근 가능
 
 - 무중단 배포
 - 쿠키 vs 세션 vs JWT
+	- 쿠키 클라이언트에 저장됨
+	- 서버에서 관리 stateful
+	- 토큰으로 저장 stateless, json format
 - MFA 란
+	- Multi-Factor Authentication 2가지 이상의 인증을 요구하는 방법
+	- OTP 토큰, PIN, 지문
+- OAuth2.0
+	- 다른 서비스의 계정으로 Authorization
+	- 구글 로그인, 애플 로그인 등
 - LRU Cache 란?
 
 - 자신의 장단점
