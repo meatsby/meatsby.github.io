@@ -16,3 +16,8 @@ tags:
 - Kernel 은 실제로 하드웨어를 제어한다.
 - CPU, 메모리, 파일 시스템, 네트워크 등을 관리한다.
 - 대표적으로 Linux Kernel 이 있다.
+
+### Shell
+- 우리는 Shell 을 통해 Kernel 에 명령을 내린다.
+- 우리가 ls 를 입력하면 Shell 은 Kernel 이 이해할 수 있는 명령으로 변환한다. 일종의 명령어 인터프리터인셈
+- 대표적으로 bash, zsh 등이 있다.
