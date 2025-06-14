@@ -35,3 +35,9 @@ echo $SHELL
 - Shell 을 실행하는 입출력 창이다.
 - 실제로 우리가 키보드로 명령어를 입력하는 인터페이스
 - 대표적으로 iTerm2 가 있다.
+
+## Linux
+---
+- 그렇다면 Linux 는 OS 인가?
+- Linux 는 대충 OS 라고 한다.
+- 사실 Linux 를 정확하게 정의하면 Kernel 이다.
