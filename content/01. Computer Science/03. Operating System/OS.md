@@ -10,11 +10,12 @@ tags:
 ---
 - Operating System, OS 는 일반적으로 하드웨어를 제어하기 위한 소프트웨어인 Windows, Linux 정도로 알려져있다.
 - 컨테이너를 제대로 이해하기 위해선 컨테이너화 기술의 기반인 Linux 를 제대로 이해해야하고, Linux 를 제대로 이해하려면 OS 를 구체적으로 알아야 한다.
-- OS 를 자세히 들여다보면 Kernel 과 Shell 로 이루어져있다.
+- OS 의 구조는 크게 Kernel, Shell, System Program 으로 이루어져있다. 운영체제의 3요소다.
 
 ### Kernel
 - Kernel 은 실제로 하드웨어를 제어한다.
 - CPU, 메모리, 파일 시스템, 네트워크 등을 관리한다.
+- 운영체제의 핵심이다.
 - 대표적으로 Linux Kernel 이 있다.
 
 ### Shell
@@ -29,15 +30,16 @@ echo $SHELL
 /bin/zsh
 ```
 - 위 명령어를 통해 현재 사용중인 Shell 을 확인할 수 있다.
-- CLI 또는 GUI 로 제공되는데, CLI 는 우리가 흔히 사용하는 Terminal 이고, GUI 는 윈도우 탐색기, macOS 의 Finder 가 해당된다.
+- CLI 또는 GUI 로 제공되는데, CLI 는 우리가 흔히 사용하는 Terminal 이고, GUI 는 윈도우 탐색기, macOS 의 Finder 가 해당된다. 크게보면 바탕화면도 GUI Shell 이다.
+- Terminal 은 Shell 을 실행하는 입출력 창이다.
+	- 실제로 우리가 키보드로 명령어를 입력하는 인터페이스
+	- 대표적으로 iTerm2 가 있다.
 
-### Terminal
-- Shell 을 실행하는 입출력 창이다.
-- 실제로 우리가 키보드로 명령어를 입력하는 인터페이스
-- 대표적으로 iTerm2 가 있다.
+### System Program
+[[systemd]] 에 작성된 내용처럼, Kernel 과 Shell 을 이용한 프로그램이다.
 
 ## Linux
 ---
 - 그렇다면 Linux 는 OS 인가?
 - Linux 는 대충 OS 라고 한다.
-- 사실 Linux 를 정확하게 정의하면 Kernel 이다.
+- 사실 Linux 를 정확하게 얘기하면 Kernel 이다.
