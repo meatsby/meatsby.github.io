@@ -16,6 +16,7 @@ tags:
 - Kernel 은 실제로 하드웨어를 제어한다.
 - CPU, 메모리, 파일 시스템, 네트워크 등을 관리한다.
 - 운영체제의 핵심이다.
+- Application 은 system call 을 통해 Kernel 과 소통하는 것.
 - 대표적으로 Linux Kernel 이 있다.
 
 ### Shell
@@ -43,3 +44,7 @@ echo $SHELL
 - 그렇다면 Linux 는 OS 인가?
 - Linux 는 대충 OS 라고 한다.
 - 사실 Linux 를 정확하게 얘기하면 Kernel 이다.
+- OS 를 구성하기 위해선 위에서 설명한 3요소가 모두 갖춰져야한다.
+- Linux 는 Kernel 만 만들었기 때문에 OS 라고 부르기엔 Shell 이랑 System Program 이 부족한 상태인 것.
+- 그래서 Shell 과 System Program 은 Open Source 에서 가져와서 Linux OS 를 만들 것이다.
+- 이런 특성 때문에 Kernel 은 Linux 를 사용하되 각기 다른 Shell 과 System Program 을 포함하여 만든 것들이 RedHat 의 CentOS, Fedora, Debian 의 Ubuntu, Amazon 의 Amazon Linux 등의 Linux 배포판이다.
