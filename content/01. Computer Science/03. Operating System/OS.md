@@ -37,7 +37,10 @@ echo $SHELL
 	- 대표적으로 iTerm2 가 있다.
 
 ### System Program
-[[systemd]] 에 작성된 내용처럼, Kernel 과 Shell 을 이용한 프로그램이다.
+- [[systemd]] 에 작성된 내용처럼, Kernel 과 Shell 을 이용한 프로그램이다.
+- Application Software, 그러니까 응용 프로그램이 아닌 System Software, 컴퓨터 시스템 자체를 제어하기 위한 프로그램이다.
+- 개발자들이 흔히 사용하는 Java, Python 등 고수준 언어를 사용해 응용 프로그램을 개발하는 과정에서 하드웨어를 직접적으로 제어하는 코드를 작성하진 않는다. System Software 가 이 간극을 메꿔주기 때문이다.
+- System Software 는 자신이 Kernel 을 직접 호출하고 하드웨어 자원을 조작하고, 다른 프로그램이 그 기능을 쉽게 사용할 수 있도록 추상화된 인터페이스를 제공한다.
 
 ## Linux
 ---
