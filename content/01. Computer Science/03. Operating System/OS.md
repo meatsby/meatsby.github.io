@@ -41,6 +41,13 @@ echo $SHELL
 - Application Software, 그러니까 응용 프로그램이 아닌 System Software, 컴퓨터 시스템 자체를 제어하기 위한 프로그램이다.
 - 개발자들이 흔히 사용하는 Java, Python 등 고수준 언어를 사용해 응용 프로그램을 개발하는 과정에서 하드웨어를 직접적으로 제어하는 코드를 작성하진 않는다. System Software 가 이 간극을 메꿔주기 때문이다.
 - System Software 는 자신이 Kernel 을 직접 호출하고 하드웨어 자원을 조작하고, 다른 프로그램이 그 기능을 쉽게 사용할 수 있도록 추상화된 인터페이스를 제공한다.
+- System Call 은 Kernel 에 명령을 전달하기 위해 있는 인터페이스다.
+- System Call 이 운영체제의 서비스를 정의하기 때문에 엄밀히 말해, System Call 이 곧 운영체제다.
+- System Programming 은 System Call 을 다루는 프로그래밍이라고 볼 수 있다.
+- C 에서 read() 함수는 파일을 읽는 System Call 이다. read() 함수가 실행되는 순간, Kernel 에 System Call 이 전달된다. 이때 실행의 제어권이 User Mode 에서 Kernel Mode 로 넘어간다.
+- System Programming 한다는 말은 곧 C 로 프로그래밍 한다는 뜻
+- 복잡한 System Call 을 쉽게 사용하기 위해 한 단계 더 추상화된 라이브러리 함수를 통해 System Call 을 사용할 수 있다.
+- 
 
 ## Linux
 ---
