@@ -47,7 +47,9 @@ echo $SHELL
 - C 에서 read() 함수는 파일을 읽는 System Call 이다. read() 함수가 실행되는 순간, Kernel 에 System Call 이 전달된다. 이때 실행의 제어권이 User Mode 에서 Kernel Mode 로 넘어간다.
 - System Programming 한다는 말은 곧 C 로 프로그래밍 한다는 뜻
 - 복잡한 System Call 을 쉽게 사용하기 위해 한 단계 더 추상화된 라이브러리 함수를 통해 System Call 을 사용할 수 있다.
-- 
+- Shell 을 통해서도 Kernel 에 System Call 을 호출할 수 있다.
+- ls 는 System Software 다. Shell 에서 ls 명령어를 호출하면 쉘은 ls 라는 프로그램을 실행하는 것. 실행된 ls 는 C 라이브러리 함수나 System Call 을 호출해서 디렉터리 내 파일 정보를 가져와 출력한다.
+- 프로그래밍은 결국엔 하드웨어를 제어하기 위한 Kernel 을 호출하기 위한 System Call 을 사용하기 위한 일을 하고 있는 셈이고, System Call 을 직접 호출하거나 한 단계 추상화된 라이브러리 함수 또는 쉘을 사용해 하드웨어를 제어하는 것이다.
 
 ## Linux
 ---
