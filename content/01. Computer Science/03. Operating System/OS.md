@@ -37,8 +37,7 @@ echo $SHELL
 	- 대표적으로 iTerm2 가 있다.
 
 ### System Program
-- [[systemd]] 에 작성된 내용처럼, Kernel 과 Shell 을 이용한 프로그램이다.
-- Application Software, 그러니까 응용 프로그램이 아닌 System Software, 컴퓨터 시스템 자체를 제어하기 위한 프로그램이다.
+- Kernel 과 Shell 을 이용한 프로그램이다. Application Software, 그러니까 응용 프로그램이 아닌 System Software, 컴퓨터 시스템 자체를 제어하기 위한 프로그램이다.
 - 개발자들이 흔히 사용하는 Java, Python 등 고수준 언어를 사용해 응용 프로그램을 개발하는 과정에서 하드웨어를 직접적으로 제어하는 코드를 작성하진 않는다. System Software 가 이 간극을 메꿔주기 때문이다.
 - System Software 는 자신이 Kernel 을 직접 호출하고 하드웨어 자원을 조작하고, 다른 프로그램이 그 기능을 쉽게 사용할 수 있도록 추상화된 인터페이스를 제공한다.
 - System Call 은 Kernel 에 명령을 전달하기 위해 있는 인터페이스다.
@@ -60,3 +59,19 @@ echo $SHELL
 - Linux 는 Kernel 만 만들었기 때문에 OS 라고 부르기엔 Shell 이랑 System Program 이 부족한 상태인 것.
 - 그래서 Shell 과 System Program 은 Open Source 에서 가져와서 Linux OS 를 만들 것이다.
 - 이런 특성 때문에 Kernel 은 Linux 를 사용하되 각기 다른 Shell 과 System Program 을 포함하여 만든 것들이 RedHat 의 CentOS, Fedora, Debian 의 Ubuntu, Amazon 의 Amazon Linux 등의 Linux 배포판이다.
+
+## File System
+---
+- 컴퓨터는 정보를 체계적으로 저장하기 위해 File System 을 사용한다.
+- 대표적으로 Linux 는 ext2/3/4 등의 File System 을 사용한다.
+
+### 메타데이터 관리
+- 파일에 대한 데이터를 저장한다.
+	- 파일 크기
+	- 만들어진 시각
+	- 마지막 접근 시각
+	- 변경된 시각
+	- 파일 소유자
+	- 파일 접근 모드
+- 유닉스 계열에서 메타데이터를 저장하는 자료구조를 i-node 라고 부른다.
+- 때문에 ls -i 명령어를 쳤을 때 i-node 번호가 포함되는 것
