@@ -55,6 +55,45 @@ scp -rp -i ssh-key-2023-08-09.key {파일} opc@129.154.55.231:/home/opc
 ssh -i ssh-key-2023-08-09.key opc@129.154.55.231
 ```
 
+### SSH Config
+```
+~/.ssh/
+├── config                ← SSH 설정 파일
+├── id_rsa                ← 기본 개인 키 (기본값)
+├── id_rsa.pub            ← 기본 공개 키
+├── company_id_rsa        ← 회사용 개인 키
+├── company_id_rsa.pub    ← 회사용 공개 키
+├── personal_server_id    ← 개인 서버용 키
+├── personal_server_id.pub
+└── known_hosts           ← 접속한 호스트 정보 저장
+```
+
+```
+# ~/.ssh/config
+
+# 회사 서버
+Host company-server
+    HostName server.company.com
+    User ec2-user
+    IdentityFile ~/.ssh/company_id_rsa
+    IdentitiesOnly yes
+
+# 개인 서버
+Host my-vps
+    HostName 123.45.67.89
+    User ubuntu
+    IdentityFile ~/.ssh/personal_server_id
+    IdentitiesOnly yes
+```
+
+```
+# 개인 서버 접속
+ssh my-vps
+
+# 회사 서버 접속
+ssh company-server
+```
+
 ## Insufficient space for shared memory file
 ---
 ### 디스크 용량 확인
