@@ -148,3 +148,12 @@ set -exuo pipefail
 mkdir -p /not_yet_parent/target_dir
 ```
 - `-p` (parents) 필요한 상위 디렉토리 생성
+
+## Vim
+---
+### 여러 줄 문자 수정
+1. `Ctrl` + `v` 로 VISUAL BLOCK
+2. `Shift` + `g` 로 맨 밑까지 씌우기
+3. `Shift` + `i` 로 문자 삽입 / `x` 로 문자 제거
+4. `Esc` 두 번으로 적용
+- [아주 잘 설명된 포스트](https://jupiny.com/2024/07/16/vim-edit-multiple-lines-simultaneously/)
