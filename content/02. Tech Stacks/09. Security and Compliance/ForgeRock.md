@@ -14,7 +14,9 @@ tags:
 - 다른 솔루션으로 오픈소스인 CNCF 의 [KeyCloak](https://www.keycloak.org/)을 사용할 수 있다.
 
 ### ForgeRock AM
-
+- ForgeRock Access Management 는 인증, 인가를 담당하는 컴포넌트다.
+- SSO, OIDC, OAuth2, SAML, MFA 등을 지원한다.
+- Authentication Tree 와 Node 를 활용해 UI 에서 인증 플로우를 설계할 수 있다.
 
 ### ForgeRock DS
 
