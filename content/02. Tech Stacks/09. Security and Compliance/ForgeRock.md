@@ -19,7 +19,8 @@ tags:
 - Authentication Tree 와 Node 를 활용해 UI 에서 인증 플로우를 설계할 수 있다.
 
 ### ForgeRock DS
-
+- ForgeRock Directory Services 는 사용자, 그룹, 토큰 등 모든 아이덴티티 정보를 저장하는 LDAP 기반의 디렉토리 서버다.
+- LDAP, Lightweight Directory Access Protocol 은 네트워크 상에서 조직이나 조직 내 파일, 개인정보, 디바이스 정보 등을 찾아볼 수 있도록 하는 프로토콜이다.
 
 ## References
 ---
