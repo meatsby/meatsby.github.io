@@ -18,6 +18,12 @@ tags:
 - SSO, OIDC, OAuth2, SAML, MFA 등을 지원한다.
 - Authentication Tree 와 Node 를 활용해 UI 에서 인증 플로우를 설계할 수 있다.
 
+### Authentication Tree & Node
+- Authentication Tree & Node 는 ForgeRock AM 에서 유저 인증 플로우를 드래그 앤 드랍 방식으로 시각적으로 설계할 때 사용되는 엔티티다.
+	- Auth Tree: 인증 플로우의 전체 구조
+	- Auth Node: 인증 과정의 각 단계를 구성하는 노드
+		- e.g. Username Collector, Password Collector, OTP Validator 등
+
 ### ForgeRock DS
 - ForgeRock Directory Services 는 사용자, 그룹, 토큰 등 모든 아이덴티티 정보를 저장하는 LDAP 기반의 디렉토리 서버다.
 - LDAP, Lightweight Directory Access Protocol 은 네트워크 상에서 조직이나 조직 내 파일, 개인정보, 디바이스 정보 등을 찾아볼 수 있도록 하는 프로토콜이다.
