@@ -24,6 +24,13 @@ tags:
 	- Auth Node: 인증 과정의 각 단계를 구성하는 노드
 		- e.g. Username Collector, Password Collector, OTP Validator 등
 
+### Realms
+- AM 에서 인증 정책과 사용자 그룹을 격리시키기 위한 보안 도메인이다.
+	- `/` : 기본 realm
+	- `/banking` : 은행 사용자용 인증/인가 realm
+	- `/admin` : 관리자 전용 realm
+- Realm 별로 Auth Tree, OAuth2, Policy 등 독립적인 설정이 가능하다.
+
 ### ForgeRock DS
 - ForgeRock Directory Services 는 사용자, 그룹, 토큰 등 모든 아이덴티티 정보를 저장하는 LDAP 기반의 디렉토리 서버다.
 - LDAP, Lightweight Directory Access Protocol 은 네트워크 상에서 조직이나 조직 내 파일, 개인정보, 디바이스 정보 등을 찾아볼 수 있도록 하는 프로토콜이다.
