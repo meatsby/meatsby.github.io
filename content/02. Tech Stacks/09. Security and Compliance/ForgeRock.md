@@ -18,7 +18,7 @@ tags:
 ### Introducing AM Core Concepts
 - ForgeRock Access Management 는 인증, 인가를 담당하는 컴포넌트다.
 - SSO, OIDC, OAuth2, SAML, MFA 등을 지원한다.
-- Authentication Tree 와 Node 를 활용해 UI 에서 인증 플로우를 설계할 수 있다.
+- API, 웹사이트, 모바일 앱 등을 사용하려는 유저가 누군지, 어떤 권한을 가지고 있는지 확인하기 위해 유저는 먼저 인증, 인가, SSO 등을 ForgeRock AM 을 통해 거친다. 이 과정에서 OAuth 를 활용해 Google, Facebook 등 Social Media 에서 제공하는 유저의 이름, 이메일 등을 ForgeRock AM 에 저장할 수 있다.
 
 ### Protecting an Application with Intelligent Authentication
 
@@ -28,7 +28,9 @@ tags:
 
 ### Protecting REST APIs and Integrating Mobile Applications
 
+
 ### Authentication Tree & Node
+- Authentication Tree 와 Node 를 활용해 UI 에서 인증 플로우를 설계할 수 있다.
 - Authentication Tree & Node 는 ForgeRock AM 에서 유저 인증 플로우를 드래그 앤 드랍 방식으로 시각적으로 설계할 때 사용되는 엔티티다.
 	- Auth Tree: 인증 플로우의 전체 구조
 	- Auth Node: 인증 과정의 각 단계를 구성하는 노드
