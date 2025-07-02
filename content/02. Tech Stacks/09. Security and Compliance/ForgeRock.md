@@ -19,6 +19,7 @@ tags:
 - ForgeRock Access Management 는 인증, 인가를 담당하는 컴포넌트다.
 - SSO, OIDC, OAuth2, SAML, MFA 등을 지원한다.
 - API, 웹사이트, 모바일 앱 등을 사용하려는 유저가 누군지, 어떤 권한을 가지고 있는지 확인하기 위해 유저는 먼저 인증, 인가, SSO 등을 ForgeRock AM 을 통해 거친다. 이 과정에서 OAuth 를 활용해 Google, Facebook 등 Social Media 에서 제공하는 유저의 이름, 이메일 등을 ForgeRock AM 에 저장할 수 있다.
+- 유저가 사용하려는 컴포넌트에 따라 AM 과 통신하는 인터페이스가 다른데, 모바일 앱의 경우 SDK 를 활용해 AM 과 통신할 수 있고 API, 웹사이트 등은 Identity Gateway 를 통해 AM 과 통신할 수 있다.
 
 ### Protecting an Application with Intelligent Authentication
 
