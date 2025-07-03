@@ -22,7 +22,10 @@ tags:
 - 유저가 사용하려는 컴포넌트에 따라 AM 과 통신하는 인터페이스가 다른데, 모바일 앱의 경우 SDK 를 활용해 AM 과 통신할 수 있고 API, 웹사이트 등은 Identity Gateway 를 통해 AM 과 통신할 수 있다.
 
 ### Protecting an Application with Intelligent Authentication
-
+- 유저는 IG, Web agent, Java agent 를 통해 접근하고자 하는 리소스에 대한 인증, 인가를 요청할 수 있다.
+- IG 는 유저에게 AM 을 통해 인증, 인가를 받아게끔하는데, 유저는 AM 에게 지문인식, 얼굴인식 등을 통해 SSO token 을 발급받을 수 있다.
+- 이후 유저는 발급받은 SSO token 을 IG 에게 넘겨주고, IG 는 해당 token 이 유효한지 AM 을 통해 확인한다.
+- SSO token 이 유효하다면 IG 는 유저에게 리소스에 대한 접근을 허가한다.
 
 ### Controlling Access to an Application with AM Authorization
 
