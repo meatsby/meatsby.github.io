@@ -28,19 +28,17 @@ tags:
 	- SSO token 이 유효하다면 IG 는 유저에게 리소스에 대한 접근을 허가한다.
 - AM 은 ACR level 을 통해 여러 단계의 인증 역시 지원한다.
 	- 예를 들어, 지문인식, 얼굴인식 보다 높은 수준의 인증을 위해 SMS OTP 등을 활용할 수 있다.
+- AM 을 활용해 인증 플로우를 설계하는 관리자는 AM 이 제공하는 UI 를 통해 드래그 앤 드랍 방식을 통해 시각적으로 인증 플로우를 설계할 수 있다.
+	- Authentication Tree & Node 는 ForgeRock AM 에서 유저 인증 플로우를 설계할 때 사용되는 엔티티다.
+		- Auth Tree: 인증 플로우의 전체 구조
+		- Auth Node: 인증 과정의 각 단계를 구성하는 노드
+			- e.g. Username Collector, Password Collector, OTP Validator 등
 
 ### Controlling Access to an Application with AM Authorization
 
 
 ### Protecting REST APIs and Integrating Mobile Applications
 
-
-### Authentication Tree & Node
-- Authentication Tree 와 Node 를 활용해 UI 에서 인증 플로우를 설계할 수 있다.
-- Authentication Tree & Node 는 ForgeRock AM 에서 유저 인증 플로우를 드래그 앤 드랍 방식으로 시각적으로 설계할 때 사용되는 엔티티다.
-	- Auth Tree: 인증 플로우의 전체 구조
-	- Auth Node: 인증 과정의 각 단계를 구성하는 노드
-		- e.g. Username Collector, Password Collector, OTP Validator 등
 
 ### Realms
 - AM 에서 인증 정책과 사용자 그룹을 격리시키기 위한 보안 도메인이다.
