@@ -30,9 +30,8 @@ tags:
 	- 예를 들어, 지문인식, 얼굴인식 보다 높은 수준의 인증을 위해 SMS OTP 등을 활용할 수 있다.
 - AM 을 활용해 인증 플로우를 설계하는 관리자는 AM 이 제공하는 UI 를 통해 드래그 앤 드랍 방식을 통해 시각적으로 인증 플로우를 설계할 수 있다.
 	- Authentication Tree & Node 는 ForgeRock AM 에서 유저 인증 플로우를 설계할 때 사용되는 엔티티다.
-		- Auth Tree: 인증 플로우의 전체 구조
-		- Auth Node: 인증 과정의 각 단계를 구성하는 노드
-			- e.g. Username Collector, Password Collector, OTP Validator 등
+	- Auth Tree 는 인증 플로우의 전체 구조를 의미하고, Auth Tree 를 더 큰 인증 플로우의 일부분으로 활용할 수 있다.
+	- Auth Node 는 인증 과정의 각 단계를 구성하는 노드로, Username Collector, Password Collector, OTP Validator 등이 있다. 관리자는 Auth Node 를 조합하여 Auth Tree 를 구성할 수 있다.
 
 ### Controlling Access to an Application with AM Authorization
 
