@@ -32,6 +32,9 @@ tags:
 	- Authentication Tree & Node 는 ForgeRock AM 에서 유저 인증 플로우를 설계할 때 사용되는 엔티티다.
 	- Auth Tree 는 인증 플로우의 전체 구조를 의미하고, Auth Tree 를 더 큰 인증 플로우의 일부분으로 활용할 수 있다.
 	- Auth Node 는 인증 과정의 각 단계를 구성하는 노드로, Username Collector, Password Collector, OTP Validator 등이 있다. 관리자는 Auth Node 를 조합하여 Auth Tree 를 구성할 수 있다.
+- ForgeRock AM 에서 제공하는 MFA Auth Node 를 활용해 더 높은 수준의 인증을 구현할 수 있다.
+	- MFA 는 기본적인 ID, PW 인증 방식 외에 다른 채널(다른 타입의 프로토콜, 다른 디바이스)에서 추가적인 모바일 Authenticator 앱을 통한 푸시 또는 이메일, 문자등을 통한 OTP 를 활용한 인증을 거치는 과정을 의미한다.
+	- ForgeRock 이 제공하는 MFA 외 다른 도구들도 손 쉽게 연동 가능하다.
 
 ### Controlling Access to an Application with AM Authorization
 
