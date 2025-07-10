@@ -37,7 +37,9 @@ tags:
 	- ForgeRock 이 제공하는 MFA 외 다른 도구들도 손 쉽게 연동 가능하다.
 
 ### Controlling Access to an Application with AM Authorization
-
+- ForgeRock AM 은 Policy 를 통해 유저 그룹의 리소스 접근을 제어할 수 있다.
+	- Subject, Action, Resource, Condition 을 통해 Policy 를 정의할 수 있다.
+- 유저가 IG/SDK 등을 통해 리소스에 대한 접근을 요청하면, IG/SDK 는 AM 에게 접근권한에 대한 확인을 요청하고 AM 이 제공하는 응답에 따라 리소스에 대한 접근을 제어할 수 있다.
 
 ### Protecting REST APIs and Integrating Mobile Applications
 
