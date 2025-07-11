@@ -38,8 +38,16 @@ tags:
 
 ### Controlling Access to an Application with AM Authorization
 - ForgeRock AM 은 Policy 를 통해 유저 그룹의 리소스 접근을 제어할 수 있다.
-	- Subject, Action, Resource, Condition 을 통해 Policy 를 정의할 수 있다.
 - 유저가 IG/SDK 등을 통해 리소스에 대한 접근을 요청하면, IG/SDK 는 AM 에게 접근권한에 대한 확인을 요청하고 AM 이 제공하는 응답에 따라 리소스에 대한 접근을 제어할 수 있다.
+- Subject, Action, Resource, Condition 을 통해 Policy 를 정의할 수 있다.
+	- Subject: 룰이 적용될 누군가
+		- e.g. 인증된 유저 및 그룹, OIDC, JWT claim 등
+	- Actions: 무엇을 할 수 있는지
+		- e.g. 일반적인 HTTP Method `GET`, `POST` 등 외에도 Database `INSERT`, `SELECT` 등도 설정할 수 있음
+	- Resources: 어떤 리소스를 제한할 것인지
+		- e.g. 일반적인 URL `https://fec.example.com` 이나, DB Table 도 가능
+	- Conditions: 룰이 적용될 조건
+		- e.g. IP 가 `192.168.100.22` 일 경우
 
 ### Protecting REST APIs and Integrating Mobile Applications
 
