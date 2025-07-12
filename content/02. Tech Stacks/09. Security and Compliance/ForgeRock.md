@@ -50,7 +50,9 @@ tags:
 		- e.g. IP 가 `192.168.100.22` 일 경우
 
 ### Protecting REST APIs and Integrating Mobile Applications
-
+- ForgeRock AM 이 인증 서버로써 OIDC 와 OAuth 2.0 를 어떻게 지원하는지 알아보자.
+- OAuth 2.0 은 인가를 위한 프로토콜이다. 리소스 소유자가 리소스에 대한 접근을 허용하고 싶을 때 Access Token 을 발급하여 Access Token 을 가진 사용자가 리소스에 접근할 수 있도록 한다. 때문에 리소스에 접근하려는 유저는 아무런 Credentials 를 제공하지 않아도되며 리소스를 제공하는 쪽 역시 본인이 발급한 Access Token 의 validity 만 확인하면 된다.
+- OIDC 는 인증을 위한 프로토콜이다. OAuth 2.0 handshake 위에서 작동하며 Access Token 이외에도 추가적으로 ID Token 을 발급하여 인증 기능을 제공한다.
 
 ### Realms
 - AM 에서 인증 정책과 사용자 그룹을 격리시키기 위한 보안 도메인이다.
