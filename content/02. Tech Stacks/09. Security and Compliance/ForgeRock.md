@@ -54,6 +54,10 @@ tags:
 - OAuth 2.0 은 인가를 위한 프로토콜이다. 리소스 소유자가 리소스에 대한 접근을 허용하고 싶을 때 Access Token 을 발급하여 Access Token 을 가진 사용자가 리소스에 접근할 수 있도록 한다. 때문에 리소스에 접근하려는 유저는 아무런 Credentials 를 제공하지 않아도되며 리소스를 제공하는 쪽 역시 본인이 발급한 Access Token 의 validity 만 확인하면 된다.
 - OIDC 는 인증을 위한 프로토콜이다. OAuth 2.0 handshake 위에서 작동하며 Access Token 이외에도 추가적으로 ID Token 을 발급하여 인증 기능을 제공한다. 클라이언트가 ForgeRock AM 에 요청하는 엔드포인트는 OAuth 2.0 과 같지만, Scope 를 `openid` 로 설정하여 요청할 경우 ID Token 을 반환하는 방식이다.
 - Access Token 은 Bearer Token 형식으로 이루어져 있기 때문에 탈취될 경우 아무나 리소스에 접근할 수 있게된다. 때문에 항상 TLS/SSL 을 사용해야하며, 추가적으로 Proof-of-Possession 이라는 방식을 통해 요청이 실제로 Access Token 을 발급해준 유저에게서 온 것인지 확인할 수 있다. Access Token 을 발급할 때 클라이언트의 identity 를 함께 첨가하는 방식으로 AM 과 Resource Server 가 이를 대조하여 동일한 유저가 요청한 것인지 확인하는 방법이다.
+- Scope 의 경우 OIDC Provider, 여기선 ForgeRock AM 에게 요청 시, Claims 를 반환한다.
+	- Scope: Subscription 이라면,
+	- Claims: Subscription Level, Subscription Expiry, 등등 이 반환된다.
+	- OIDC 는 Scope: openid 로 요청하는 것이고, 반환되는 Claims 가 sn, givenName, cn 등 유저 정보를 반환하기 때문에 인증 역할을 수행할 수 있는 것이다.
 
 ### Realms
 - AM 에서 인증 정책과 사용자 그룹을 격리시키기 위한 보안 도메인이다.
