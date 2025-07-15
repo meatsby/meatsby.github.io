@@ -58,6 +58,7 @@ tags:
 	- Scope: Subscription 이라면,
 	- Claims: Subscription Level, Subscription Expiry, 등등 이 반환된다.
 	- OIDC 는 Scope: openid 로 요청하는 것이고, 반환되는 Claims 가 sn, givenName, cn 등 유저 정보를 반환하기 때문에 인증 역할을 수행할 수 있는 것이다.
+- 모바일 애플리케이션의 경우 ForgeRock 에서 제공하는 iOS, Android, JS SDKs 들을 통해 AM 에 쉽게 연동할 수 있다.
 
 ### Realms
 - AM 에서 인증 정책과 사용자 그룹을 격리시키기 위한 보안 도메인이다.
