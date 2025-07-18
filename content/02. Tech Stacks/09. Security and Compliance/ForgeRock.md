@@ -67,9 +67,19 @@ tags:
 	- `/admin` : 관리자 전용 realm
 - Realm 별로 Auth Tree, OAuth2, Policy 등 독립적인 설정이 가능하다.
 
-### ForgeRock DS
+## ForgeRock DS
+---
 - ForgeRock Directory Services 는 사용자, 그룹, 토큰 등 모든 아이덴티티 정보를 저장하는 LDAP 기반의 디렉토리 서버다.
 - LDAP, Lightweight Directory Access Protocol 은 네트워크 상에서 조직이나 조직 내 파일, 개인정보, 디바이스 정보 등을 찾아볼 수 있도록 하는 프로토콜이다.
+
+### PingDS Concepts
+- Directory Service 는 LDAP 혹은 HTTP 형태로 접근할 수 있는 디렉터리형 저장소 정도로 볼 수 있다. 저장되는 내용은 잘 변경되지 않는 유저 정보, 애플리케이션 정보 등이 저장된다. 유저 정보는 구조가 대부분 일정하고 인증, 권한, 조직 구조 관리 등의 목적으로 읽기 중심의 데이터가 저장되기 때문에 LDAP 에 주로 저장하여 사용한다.
+
+### DS Proxy Server
+
+
+### Using Directory Servers in PingAM Deployment
+
 
 ## References
 ---
