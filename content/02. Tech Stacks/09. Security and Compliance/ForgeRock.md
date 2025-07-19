@@ -74,6 +74,11 @@ tags:
 
 ### PingDS Concepts
 - Directory Service 는 LDAP 혹은 HTTP 형태로 접근할 수 있는 디렉터리형 저장소 정도로 볼 수 있다. 저장되는 내용은 잘 변경되지 않는 유저 정보, 애플리케이션 정보 등이 저장된다. 유저 정보는 구조가 대부분 일정하고 인증, 권한, 조직 구조 관리 등의 목적으로 읽기 중심의 데이터가 저장되기 때문에 LDAP 에 주로 저장하여 사용한다.
+- PingDS 는 LDAPv3 표준을 기반으로 Java Platform 위에서 작동하도록 설계되었으며, 고성능, 고가용성을 자랑한다.
+- PingDS 는 크게 3가지 컴포넌트로 이루어지는데,
+	- Directory Server: LDAP Client 에게 Directory 데이터를 제공하는 주체로 LDAP Server 를 구성하기 위해 최소 1개 이상 필요하다. LDAP 외에 HTTP 역시 지원한다.
+	- LDAP Proxy Server: 분산된 Directory Server 앞단에서 Single Point of Access 역할을 해주는 Server. LDAP 은 HTTP 와 다르게 FTP 나 SQL 처럼 Stateful 하기 때문에 Proxy 역시 LDAP 전용 Proxy 를 사용해야한다. HTTP 로 프록시를 통하고 싶을 경우 HDAP 을 통해 HTTP 요청을 LDAP 으로 변환시켜줘야한다.
+	- Replication Server: 분산된 Directory Server 들의 동기화를 수행하는 서버들이다.
 
 ### DS Proxy Server
 
