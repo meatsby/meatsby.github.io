@@ -79,6 +79,13 @@ tags:
 	- Directory Server: LDAP Client 에게 Directory 데이터를 제공하는 주체로 LDAP Server 를 구성하기 위해 최소 1개 이상 필요하다. LDAP 외에 HTTP 역시 지원한다.
 	- LDAP Proxy Server: 분산된 Directory Server 앞단에서 Single Point of Access 역할을 해주는 Server. LDAP 은 HTTP 와 다르게 FTP 나 SQL 처럼 Stateful 하기 때문에 Proxy 역시 LDAP 전용 Proxy 를 사용해야한다. HTTP 로 프록시를 통하고 싶을 경우 HDAP 을 통해 HTTP 요청을 LDAP 으로 변환시켜줘야한다.
 	- Replication Server: 분산된 Directory Server 들의 동기화를 수행하는 서버들이다.
+- DS 는 크게 5가지 데이터를 저장하는데,
+	- User Data 는 BerkeleyDB Java Edition Backend Database 에 저장되며, local 디스크에 위치한다.
+	- Server Config Data 는 각 서버의 local 에 LDIF 형태로 위치한다.
+	- Schema 역시 LDIF 형태로 저장된다.
+	- Log files 는 local 에 저장되고,
+	- Backup files 도 local 에 저장된다.
+- 
 
 ### DS Proxy Server
 
@@ -89,3 +96,4 @@ tags:
 ## References
 ---
 - 
+
