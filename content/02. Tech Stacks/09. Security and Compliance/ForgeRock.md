@@ -85,7 +85,9 @@ tags:
 	- Schema 역시 LDIF 형태로 저장된다.
 	- Log files 는 local 에 저장되고,
 	- Backup files 도 local 에 저장된다.
-- 
+- DS 에 저장되는 LDAP Data Model 의 구조는 dn, objectClass, 그리고 노드의 필드 등을 포함한다.
+- LDAP 요청 흐름은, LDAP Client 가 DS 에 요청을 보내면, DS 내부 LDAP Connection Handler 가 요청을 큐에 받아놓고 Core DS 에 요청을 순서대로 전달한 뒤, Backend Data 에서 데이터를 반환한다.
+- AM 은 Schema 에 따라 여러가지 DS 를 사용하는데, 대표적으로 유저 데이터를 저장하는 Identity Store, 토큰 정보를 저장하는 CTS Store, 설정값을 저장하는 Config Store 등이 있다.
 
 ### DS Proxy Server
 
