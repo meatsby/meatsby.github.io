@@ -89,6 +89,7 @@ tags:
 - LDAP 요청 흐름은, LDAP Client 가 DS 에 요청을 보내면, DS 내부 LDAP Connection Handler 가 요청을 큐에 받아놓고 Core DS 에 요청을 순서대로 전달한 뒤, Backend Data 에서 데이터를 반환한다.
 - AM 은 Schema 에 따라 여러가지 DS 를 사용하는데, 대표적으로 유저 데이터를 저장하는 Identity Store, 토큰 정보를 저장하는 CTS Store, 설정값을 저장하는 Config Store 등이 있다.
 - DS 는 Replication Server 와 함께 배포되어 고가용성을 보장한다. 데이터의 일관성을 위해 Replication Server 가 changeLog 을 가지고 서로 다른 Replication Server 에게 데이터의 변화를 알려준다. Replication Server 와 Directory Server 는 서로 다른 호스트에 배포되어 운영할 수 있다.
+- DS Backend 백업은 개발환경을 위한 local 디스크 백업과 운영환경을 위한 remote 백업 모두 지원한다. 기본적으로 signed, encrypted 되어있으며 AWS S3 등에 백업할 수 있다.
 
 ### DS Proxy Server
 
