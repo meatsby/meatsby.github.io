@@ -92,7 +92,9 @@ tags:
 - DS Backend 백업은 개발환경을 위한 local 디스크 백업과 운영환경을 위한 remote 백업 모두 지원한다. 기본적으로 signed, encrypted 되어있으며 AWS S3 등에 백업할 수 있다.
 
 ### DS Proxy Server
-
+- DS Proxy Server 는 DS 앞단에서 LDAP Client 들의 요청을 받으면서 다양한 일을 수행한다.
+- 먼저 LDAP Client 의 LDAP account 로 바인딩된 커넥션을 Proxy account 에서 추가적으로 바인딩하여 인가된 DS 에 접근하여 마치 LDAP Client 가 직접적으로 DS 와 연결된 것 처럼 작동한다.
+- 또한, 로드밸런싱 역할 역시 수행하는데, 샤드에 따라 요청을 분산하고, Failover 역시 지원한다.
 
 ### Using Directory Servers in PingAM Deployment
 
