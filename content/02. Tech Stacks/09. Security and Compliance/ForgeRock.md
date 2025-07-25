@@ -97,7 +97,12 @@ tags:
 - 또한, 로드밸런싱 역할 역시 수행하는데, 샤드에 따라 요청을 분산하고, Failover 역시 지원한다.
 
 ### Using Directory Servers in PingAM Deployment
-
+- DS 는 기본적으로 AM 과 함께 배포되며 모두 적어도 3개 이상의 ReplicaSet 으로 배포된다.
+	- IAM 기능을 위한 PingAM 컨테이너
+	- User Data 를 위한 Identity Store DS 컨테이너
+	- Session, Access Token 등을 위한 CTS Store DS 컨테이너
+	- AM 의 설정을 위한 Config Store DS 컨테이너
+- 위 모든 컨테이너가 배포되면 최소한의 IAM 애플리케이션이 작동할 수 있다.
 
 ## References
 ---
