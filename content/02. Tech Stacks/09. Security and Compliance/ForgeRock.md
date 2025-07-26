@@ -67,6 +67,12 @@ tags:
 	- `/admin` : 관리자 전용 realm
 - Realm 별로 Auth Tree, OAuth2, Policy 등 독립적인 설정이 가능하다.
 
+### File-Based-Config, FBC
+
+
+### Amster
+
+
 ## ForgeRock DS
 ---
 - ForgeRock Directory Services 는 사용자, 그룹, 토큰 등 모든 아이덴티티 정보를 저장하는 LDAP 기반의 디렉토리 서버다.
@@ -101,8 +107,14 @@ tags:
 	- IAM 기능을 위한 PingAM 컨테이너
 	- User Data 를 위한 Identity Store DS 컨테이너
 	- Session, Access Token 등을 위한 CTS Store DS 컨테이너
-	- AM 의 설정을 위한 Config Store DS 컨테이너
+	- AM 의 설정을 위한 Config Store DS 컨테이너 (FBC 를 활용하면 굳이 배포하지 않아도 된다.)
 - 위 모든 컨테이너가 배포되면 최소한의 IAM 애플리케이션이 작동할 수 있다.
+
+### App Store
+
+
+### dsconfig
+
 
 ## References
 ---
