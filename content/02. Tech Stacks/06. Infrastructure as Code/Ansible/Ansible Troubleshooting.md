@@ -34,10 +34,13 @@ amazon-ebs.ths: fatal: [default]: FAILED! => {"changed": false, "dest": "/tmp/{a
 ```
 어느날 갑작스럽게 위와 같은 403 에러가 발생하여 해당 에러를 트러블슈팅하는 과정을 기록하려한다.
 
-Ansible의 `get_url` 모듈을 사용하여 GitHub Release의 asset binary를 다운로드하려 할 때, 다음과 같은 이슈가 발생:
-- GitHub REST API의 `/repos/{owner}/{repo}/releases/assets/{asset_id}` 엔드포인트로 요청 시, 302 Redirect가 발생함
-- `get_url` 모듈이 해당 302를 자동으로 따라가지 않고, 403 Forbidden 에러를 반환함
-- 이는 presigned S3 URL로 redirect된 후 인증 없이 접근해야 하는 구조 때문으로 보임
+GitHub 에서 Release Asset 을 다운로드하려면 우선 [Get a release by tag name](https://docs.github.com/en/rest/releases/releases#get-a-release-by-tag-name) API 를 통해 Asset 을 다운로드할 수 있는 API 경로를 JSON response 에서 assets property 에 명시된 url 을 통해 받아와야한다.
+
+API 경로는 [Get a release asset](https://docs.github.com/en/rest/releases/assets?apiVersion=2022-11-28#get-a-release-asset) 형식으로 주어지는데, 바이너리를 직접적으로 다운로드받기 위해선 `Accept: application/octet-stream` 헤더를 추가해주어야한다. 이때 GitHub 는 200 을 반환하며 직접 stream 을 시도할 수도 있고, 302 을 반환해 stream 받을 수 있는 storage 경로로 redirect 해줄 수도 있다.
+
+302 Redirect Response 의 Location 헤더에 포함된 경로는 보통 pre-signed URL 로 GitHub 가 제공하는 다양한 storage backend 로 부터 바이너리를 다운받을 수 있다.
+
+처음엔 Ansible의 `get_url` 모듈이 302 Redirect 를 처리하지 못하는 줄 알았다. pre-signed URL 은 기본적으로 추가적인 인증이 필요하지 않기 때문에 Authorization Header 와 충돌로 인한 이슈로 생각했다.
 
 ### 실패한 예시 (직접 URL 접근)
 ```yml
