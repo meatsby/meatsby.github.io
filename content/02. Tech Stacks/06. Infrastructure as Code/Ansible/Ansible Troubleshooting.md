@@ -40,21 +40,22 @@ API 경로는 [Get a release asset](https://docs.github.com/en/rest/releases/ass
 
 302 Redirect Response 의 Location 헤더에 포함된 경로는 보통 pre-signed URL 로 GitHub 가 제공하는 다양한 storage backend 로 부터 바이너리를 다운받을 수 있다.
 
-처음엔 Ansible의 `get_url` 모듈이 302 Redirect 를 처리하지 못하는 줄 알았다. pre-signed URL 은 기본적으로 추가적인 인증이 필요하지 않기 때문에 Authorization Header 와 충돌로 인한 이슈로 생각했다.
+처음엔 Ansible 의 `get_url` 모듈이 302 Redirect 를 처리하지 못하는 줄 알았다. pre-signed URL 은 기본적으로 추가적인 인증이 필요하지 않기 때문에 Authorization Header 와 충돌로 인한 이슈로 생각했다.
 
-### 실패한 예시 (직접 URL 접근)
-```yml
-- name: Download binary (direct API call)
-  get_url:
-    url: "https://api.github.com/repos/{owner}/{repo}/releases/assets/{asset_id}"
-    headers:
-      Authorization: "Bearer {{ github_token }}"
-      Accept: "application/octet-stream"
-    dest: "/tmp/{{ asset_filename }}"
-    mode: '0644'
+```sh
+curl -L \
+	-H "Authorization: Bearer {{ github_token }}" \
+	https://api.github.com/repos/{owner}/{repo}/releases/tags/{tag}
+
+curl -v -L \
+	-H "Authorization: Bearer {{ github_token }}" \
+	-H "Accept: application/octet-stream" \
+	-o {{ asset_filename }} \
+	https://api.github.com/repos/{owner}/{repo}/releases/assets/{asset_id}
 ```
-- 결과: `403 Forbidden`
-- 원인: GitHub가 해당 API 엔드포인트에 대해 302로 presigned URL로 redirect → 인증 헤더가 유지되지 않아 403 발생
+통신과정을 더 자세히 들여다보기 위해 위와 같이 curl command 를 통해 API 를 호출한 결과, 302 Redirect 를 문제없이 처리하고 바이너리 역시 성공적으로 다운로드 받을 수 있었다.
+
+때문에 더더욱 Ansible 의 `get_url` 모듈을 의심하게 되었고, 직접 소스코드를 찾아보기로했다.
 
 ### 성공한 예시 (302 location 추출 후 별도 요청)
 ```yml
