@@ -21,6 +21,7 @@ tags:
 - name: Download Asset from GHR
   get_url:
     url: "https://api.github.com/repos/{owner}/{repo}/releases/assets/{asset_id}"
+	# 위 라인은 사실 url: "{{ response.json.assets[0].url }}"
     headers:
       authorization: "Bearer {{ github_token }}"
       accept: "application/octet-stream"
@@ -55,103 +56,50 @@ curl -v -L \
 ```
 통신과정을 더 자세히 들여다보기 위해 위와 같이 curl command 를 통해 API 를 호출한 결과, 302 Redirect 를 문제없이 처리하고 바이너리 역시 성공적으로 다운로드 받을 수 있었다.
 
-때문에 더더욱 Ansible 의 `get_url` 모듈을 의심하게 되었고, 직접 소스코드를 찾아보기로했다.
+때문에 더더욱 Ansible 의 `get_url` 모듈을 의심하게 되었고, 직접 소스코드를 찾아보기로했다. `get_url` 모듈은 내부적으로 `urls` 모듈에서 제공하는 [fetch_url](https://github.com/ansible/ansible/blob/82529e534dd3edd84aba03d86b337f88c58b9982/lib/ansible/modules/get_url.py#L403) 을 사용하고 있었고, 이미 내부엔 Redirect 를 handle 하는 [HTTPRedirectHandler](https://github.com/ansible/ansible/blob/82529e534dd3edd84aba03d86b337f88c58b9982/lib/ansible/module_utils/urls.py#L393) 가 포함되어있었다.
 
-### 성공한 예시 (302 location 추출 후 별도 요청)
+이를 통해 Ansible 의 `get_url` 모듈의 문제는 아니라는 것을 알게되었고, 403 에러를 reproduce 하기 위해 Ansible Playbook 을 재실행해본 결과 이번엔 문제없이 바이너리가 다운로드 되었다.
+
 ```yml
-- name: Get asset metadata
+- name: Get Assets from GHR
   uri:
-    url: "https://api.github.com/repos/{owner}/{repo}/releases/assets/{{ asset_id }}"
+	url: "https://api.github.com/repos/{owner}/{repo}/releases/tags/{tag}"
+	headers:
+	  authorization: "Bearer {{ github_token }}"
+	return_content: true
+  register: response
+
+- name: Get Asset metadata response
+  uri:
+    url: "https://api.github.com/repos/{owner}/{repo}/releases/assets/{asset_id}"
+    # 위 라인은 사실 url: "{{ response.json.assets[0].url }}"
     headers:
-      Authorization: "Bearer {{ github_token }}"
-      Accept: "application/octet-stream"
-    return_content: no
-    status_code: 302
+      authorization: "Bearer {{ github_token }}"
+      accept: "application/octet-stream"
+    status_code: [200, 302]
+    return_content: true
+    follow_redirects: no
   register: asset_response
 
-- name: Download binary from presigned S3 URL
+- name: Save binary stream to file (200 OK)
+  copy:
+    content: "{{ asset_response.content }}"
+    dest: "/tmp/{{ asset_filename }}"
+    mode: '0644'
+  when: asset_response.status == 200
+
+- name: Download binary from pre-signed URL (302 Redirect)
   get_url:
     url: "{{ asset_response.location }}"
     dest: "/tmp/{{ asset_filename }}"
     mode: '0644'
   when: asset_response.status == 302
 ```
-- 결과: 성공적으로 presigned URL로부터 다운로드
-- 특징: presigned URL은 S3 URL로, 인증 헤더 필요 없음
 
-# GitHub Release Asset 다운로드와 Ansible 리다이렉트/인증 정리
-
-## 1. 개요
-
-- GitHub Release Asset을 Ansible로 자동 다운로드할 때,
-
-인증, 리다이렉트, CDN 정책에 따라 200, 302, 403 등 다양한 HTTP 응답이 발생할 수 있다.
-
-- 특히, get_url 모듈과 uri 모듈의 동작 차이,
-
-그리고 리다이렉트 대상 도메인에 따라 인증 헤더 처리 방식이 달라진다.
-
----
-
-## 2. 주요 개념
----
-### 2.1 GitHub Release Asset API
-
-API 엔드포인트
-```
-https://api.github.com/repos/{owner}/{repo}/releases/assets/{asset_id}
-```
-- 인증 필요(Authorization 헤더)
-- 302 리다이렉트 발생 (실제 파일 URL로 이동)
-
-공개 다운로드 URL
-```
-https://github.com/{owner}/{repo}/releases/download/{tag}/{filename}
-```
-- 인증 불필요
-- 바로 파일 다운로드
-
-
-### 2.2 리다이렉트 대상 도메인
 - release-assets.githubusercontent.com
 - objects.githubusercontent.com
 
-## 3. Ansible로 다운로드하는 방법
----
-### 3.1 단순 get_url 사용 (비추천)
-```yml
-- name: Download Asset (문제 발생 가능)
-  get_url:
-    url: "{{ response.json.assets[0].url }}"
-    headers:
-      authorization: "Bearer {{ token }}"
-      accept: application/octet-stream
-    dest: /tmp/file.bin
-```
-- 문제점: 리다이렉트된 URL에 Authorization 헤더가 붙어서 403 Forbidden이 발생할 수 있음
-
-### 3.2 안전한 2단계 다운로드 (권장)
-```yml
-- name: 1단계 - 리다이렉트 URL 얻기
-  uri:
-    url: "{{ response.json.assets[0].url }}"
-    headers:
-      authorization: "Bearer {{ token }}"
-      accept: application/octet-stream
-    method: GET
-    follow_redirects: none
-    return_content: no
-  register: asset_redirect
-
-- name: 2단계 - 실제 파일 다운로드 (Authorization 없이)
-  get_url:
-    url: "{{ asset_redirect.location }}"
-    dest: /tmp/file.bin
-    mode: "0644"
-```
-- 장점: 리다이렉트된 URL에는 Authorization 헤더가 붙지 않아 403 오류 없이 다운로드 가능
-
-## 4. 302/403/200 응답이 달라지는 이유
+## 302/403/200 응답이 달라지는 이유
 ---
 - 302:
 	- GitHub가 실제 파일을 CDN으로 리다이렉트
@@ -160,20 +108,11 @@ https://github.com/{owner}/{repo}/releases/download/{tag}/{filename}
 - 403:
 	- 리다이렉트된 CDN(S3 등)이 Authorization 헤더가 붙은 요청을 거부할 때
 
-## 5. 실전 팁
+## 실전 팁
 ---
 - 리다이렉트 대상 도메인에 따라 인증 정책이 다르니 항상 2단계로 처리하는 것이 안전
 - uri 모듈의 follow_redirects: none으로 302와 location을 직접 확인 가능
 - get_url만으로는 중간 리다이렉트 여부를 알 수 없음
-
-## 6. 참고 curl 예시
----
-```sh
-curl -v -L -H "Authorization: Bearer <token>" \
-     -H "Accept: application/octet-stream" \
-     -o downloaded.txt \
-     "https://api.github.com/repos/{owner}/{repo}/releases/assets/{asset_id}"
-```
 
 ## 결론
 ---
