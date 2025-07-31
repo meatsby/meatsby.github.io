@@ -39,26 +39,7 @@ GitHub 에서 Release Asset 을 다운로드하려면 우선 [Get a release by t
 
 API 경로는 [Get a release asset](https://docs.github.com/en/rest/releases/assets?apiVersion=2022-11-28#get-a-release-asset) 형식으로 주어지는데, 바이너리를 직접적으로 다운로드받기 위해선 `Accept: application/octet-stream` 헤더를 추가해주어야한다. 이때 GitHub 는 200 을 반환하며 직접 stream 을 시도할 수도 있고, 302 을 반환해 stream 받을 수 있는 storage 경로로 redirect 해줄 수도 있다.
 
-302 Redirect Response 의 Location 헤더에 포함된 경로는 보통 pre-signed URL 로 GitHub 가 제공하는 다양한 storage backend 로 부터 바이너리를 다운받을 수 있다.
-
-처음엔 Ansible 의 `get_url` 모듈이 302 Redirect 를 처리하지 못하는 줄 알았다. pre-signed URL 은 기본적으로 추가적인 인증이 필요하지 않기 때문에 Authorization Header 와 충돌로 인한 이슈로 생각했다.
-
-```sh
-curl -L \
-	-H "Authorization: Bearer {{ github_token }}" \
-	https://api.github.com/repos/{owner}/{repo}/releases/tags/{tag}
-
-curl -v -L \
-	-H "Authorization: Bearer {{ github_token }}" \
-	-H "Accept: application/octet-stream" \
-	-o {{ asset_filename }} \
-	https://api.github.com/repos/{owner}/{repo}/releases/assets/{asset_id}
-```
-통신과정을 더 자세히 들여다보기 위해 위와 같이 curl command 를 통해 API 를 호출한 결과, 302 Redirect 를 문제없이 처리하고 바이너리 역시 성공적으로 다운로드 받을 수 있었다.
-
-때문에 더더욱 Ansible 의 `get_url` 모듈을 의심하게 되었고, 직접 소스코드를 찾아보기로했다. `get_url` 모듈은 내부적으로 `urls` 모듈에서 제공하는 [fetch_url](https://github.com/ansible/ansible/blob/82529e534dd3edd84aba03d86b337f88c58b9982/lib/ansible/modules/get_url.py#L403) 을 사용하고 있었고, 이미 내부엔 Redirect 를 handle 하는 [HTTPRedirectHandler](https://github.com/ansible/ansible/blob/82529e534dd3edd84aba03d86b337f88c58b9982/lib/ansible/module_utils/urls.py#L393) 가 포함되어있었다.
-
-이를 통해 Ansible 의 `get_url` 모듈의 문제는 아니라는 것을 알게되었고, 403 에러를 reproduce 하기 위해 Ansible Playbook 을 재실행해본 결과 이번엔 문제없이 바이너리가 다운로드 되었다.
+302 Redirect Response 의 Location 헤더에 포함된 경로는 보통 pre-signed URL 로 GitHub 가 제공하는 다양한 storage backend 로 부터 바이너리를 다운받을 수 있다. ([Related GitHub Discussion](https://github.com/orgs/community/discussions/165767#discussioncomment-13741776))
 
 ```yml
 - name: Get Assets from GHR
@@ -95,33 +76,32 @@ curl -v -L \
     mode: '0644'
   when: asset_response.status == 302
 ```
+처음엔 Ansible 의 `get_url` 모듈이 302 Redirect 를 처리하지 못하는 줄 알았다. pre-signed URL 은 기본적으로 추가적인 인증이 필요하지 않기 때문에 Authorization Header 와 충돌로 인한 이슈로 생각했다. 때문에 위와 같이 `uri` 모듈을 활용하여 HTTP Response Status Code 에 따라 다르게 처리하도록 Ansible Playbook 을 수정했고, 302 Redirect 를 따로 처리하여 403 에러 없이 바이너리를 성공적으로 다운받을 수 있었다.
 
-- release-assets.githubusercontent.com
-- objects.githubusercontent.com
+```sh
+curl -L \
+	-H "Authorization: Bearer {{ github_token }}" \
+	https://api.github.com/repos/{owner}/{repo}/releases/tags/{tag}
 
-## 302/403/200 응답이 달라지는 이유
----
-- 302:
-	- GitHub가 실제 파일을 CDN으로 리다이렉트
-- 200:
-	- 바로 파일을 내려주거나, browser_download_url 사용 시
-- 403:
-	- 리다이렉트된 CDN(S3 등)이 Authorization 헤더가 붙은 요청을 거부할 때
+curl -v -L \
+	-H "Authorization: Bearer {{ github_token }}" \
+	-H "Accept: application/octet-stream" \
+	-o {{ asset_filename }} \
+	https://api.github.com/repos/{owner}/{repo}/releases/assets/{asset_id}
+```
+통신과정을 더 자세히 들여다보기 위해 위와 같이 curl command 를 통해 API 를 호출한 결과, curl command 는 302 Redirect 를 문제없이 처리하고 바이너리 역시 성공적으로 다운로드 받을 수 있었다.
 
-## 실전 팁
----
-- 리다이렉트 대상 도메인에 따라 인증 정책이 다르니 항상 2단계로 처리하는 것이 안전
-- uri 모듈의 follow_redirects: none으로 302와 location을 직접 확인 가능
-- get_url만으로는 중간 리다이렉트 여부를 알 수 없음
+때문에 더더욱 Ansible 의 `get_url` 모듈을 의심하게 되었고, 직접 소스코드를 찾아보기로했다. `get_url` 모듈은 내부적으로 `urls` 모듈에서 제공하는 [fetch_url](https://github.com/ansible/ansible/blob/82529e534dd3edd84aba03d86b337f88c58b9982/lib/ansible/modules/get_url.py#L403) 을 사용하고 있었고, 이미 내부엔 Redirect 를 handle 하는 [HTTPRedirectHandler](https://github.com/ansible/ansible/blob/82529e534dd3edd84aba03d86b337f88c58b9982/lib/ansible/module_utils/urls.py#L393) 가 포함되어있었다.
 
-## 결론
----
-- `uri` 모듈은 `status_code: 302`와 함께 사용하면 redirect 응답을 수신하고, `Location` 헤더를 추출할 수 있음
-- 실제 바이너리 다운로드는 redirect된 URL을 별도로 `get_url`로 호출해야 정상 동작함
-- GitHub Release Asset 다운로드 자동화 시, 인증 헤더와 리다이렉트 정책을 반드시 고려해야 한다.
-- 2단계(리다이렉트 URL 추출 → 인증 없이 다운로드) 방식이 가장 안전하다.
+이를 통해 Ansible 의 `get_url` 모듈의 문제는 아니라는 것을 알게되었고, 403 에러를 reproduce 하기 위해 Ansible Playbook 을 재실행해본 결과 이번엔 문제없이 바이너리가 다운로드 되었다.
+
+간헐적으로 403 에러가 발생하는 것이 의아해서 실패했던 실행과 성공했던 실행의 Response 를 분석한 결과, 실패한 302 Redirect 의 Location Header 는 바이너리를 `objects.githubusercontent.com` 에서 받아오고 있었고, 성공한 것은 `release-assets.githubusercontent.com` 에서 바이너리를 받아오고 있었다.
+
+아무래도 GitHub 가 다양한 storage backend 로 부터 바이너리를 streaming 하기 때문에 `objects.githubusercontent.com` 서버에서 뭔가 이슈가 있었거나 인증 정책이 달랐던 모양이다.
+
+결론적으론 302 Redirect 대상 도메인에 따라 간헐적으로 403 이슈가 발생할 수 있으니, `uri` 모듈을 통해 직접 302 Location Header 를 확인하고 이후에 `get_url` 모듈을 통해 바이너리를 다운로드받는 방식으로 2단계에 거쳐 처리하는 것이 가장 안전해보인다.
 
 ## References
 ---
-- [GitHub REST API Docs – Download a release asset](https://docs.github.com/en/rest/releases/assets?apiVersion=2022-11-28#get-a-release-asset)
-- [Ansible Source Code – get_url module](https://github.com/ansible/ansible/blob/devel/lib/ansible/modules/get_url.py)
+- [GitHub REST API Docs – Releases](https://docs.github.com/en/rest/releases?apiVersion=2022-11-28)
+- [GitHub - Ansible Source Code](https://github.com/ansible/ansible)
