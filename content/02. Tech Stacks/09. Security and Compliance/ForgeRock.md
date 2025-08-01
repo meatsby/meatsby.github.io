@@ -111,7 +111,10 @@ tags:
 - 위 모든 컨테이너가 배포되면 최소한의 IAM 애플리케이션이 작동할 수 있다.
 
 ### App Store
-
+- PolicySet 과 Application Data 를 저장하는 DS 컨테이너
+	- Policy Store 는 인증/인가 정책 정보를 저장하고
+	- Application Store 는 리소스/애플리케이션 등의 정보를 저장한다
+- 즉, AM 에서 활용되는 정책, 리소스 정보들을 저장해두는 DS 다. Admin UI 에서 직접 설정할 수도 있지만, 주로 Amster 를 통해 정책, 리소스 정보를 Import 또는 Export 한다.
 
 ### dsconfig
 
@@ -119,4 +122,3 @@ tags:
 ## References
 ---
 - 
-
