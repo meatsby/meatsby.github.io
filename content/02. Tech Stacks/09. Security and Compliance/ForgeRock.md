@@ -117,7 +117,16 @@ tags:
 - 즉, AM 에서 활용되는 정책, 리소스 정보들을 저장해두는 DS 다. Admin UI 에서 직접 설정할 수도 있지만, 주로 Amster 를 통해 정책, 리소스 정보를 Import 또는 Export 한다.
 
 ### dsconfig
-
+```sh
+dsconfig \
+	set-http-endpoint-prop \
+		--endpoint-name /api \
+		--set authorization-mechanism:"HTTP Basic" \
+		...
+```
+- Identity Store, CTS Store, App Store 등의 DS 컨테이너를 설정하기 위한 CLI 툴로 기본적으로 컨테이너에 내장되어있다.
+- LDAP 서버의 schema, index, backend, replication, access control 등을 설정한다.
+- 컨테이너 실행 시 dsconfig shell script 를 함께 포함하여 DS 컨테이너가 재실행될 때 마다 설정을 자동화할 수 있다.
 
 ## References
 ---
