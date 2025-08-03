@@ -68,10 +68,15 @@ tags:
 - Realm 별로 Auth Tree, OAuth2, Policy 등 독립적인 설정이 가능하다.
 
 ### File-Based-Config, FBC
-
+- AM 을 설정하기 위해 Config Store DS 컨테이너를 활용 대안으로 나온 설정 관리 방식으로, 쉽게 말해 파일형식으로 설정값을 저장하여 AM 컨테이너 이미지에 포함시키는 것을 뜻한다. 이곳에 직접 생성한 Auth Tree, Auth Node 등이 JSON 형태의 파일로 저장된다.
+- Admin UI 에서 변경한 설정값들은 AM Container 의 `/home/forgerock/openam/config/` 에 파일 형태로 저장되고, 이 파일들을 바탕으로 컨테이너 이미지를 구성하여 컨테이너 배포 시 동일한 설정을 유지할 수 있다.
 
 ### Amster
-
+- Amster 는 AM 의 REST API 를 래핑한 CLI 기반 구성 도구로, JSON 기반의 설정을 Import, Export 할 수 있고 이를 활용한 스크립트 자동화가 가능하다.
+- 간단히 말해 Admin UI 에서 할 수 있는 작업을 Amster 를 이용해 CLI 로 설정할 수 있다.
+	- Realm 생성/수정
+	- 인증 모듈 구성
+	- 정책 정의 등
 
 ## ForgeRock DS
 ---
