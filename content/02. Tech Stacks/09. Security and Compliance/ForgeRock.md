@@ -77,6 +77,7 @@ tags:
 	- Realm 생성/수정
 	- 인증 모듈 구성
 	- 정책 정의 등
+- Amster 로 Export 된 설정파일들은 JSON 형태로 저장되고 이를 FBC 라고 부른다. 해당 파일들을 VCS 에 저장해 AM Container 를 새로 실행할 때 마다 동일한 설정값을 유지할 수 있다.
 
 ## ForgeRock DS
 ---
@@ -135,4 +136,5 @@ dsconfig \
 
 ## References
 ---
-- 
+- [PingIdentity - Documentation](https://docs.pingidentity.com/)
+- [PingIdentity - Backstage Training](https://backstage.pingidentity.com/university/on-demand/category/PING)
