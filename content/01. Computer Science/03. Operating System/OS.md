@@ -8,6 +8,7 @@ tags:
 ---
 ## OS
 ---
+![[Pasted image 20250812162512.png]]
 - Operating System, OS 는 일반적으로 하드웨어를 제어하기 위한 소프트웨어인 Windows, Linux 정도로 알려져있다.
 - 컨테이너를 제대로 이해하기 위해선 컨테이너화 기술의 기반인 Linux 를 제대로 이해해야하고, Linux 를 제대로 이해하려면 OS 를 구체적으로 알아야 한다.
 - OS 의 구조는 크게 Kernel, Shell, System Program 으로 이루어져있다. 운영체제의 3요소다.
