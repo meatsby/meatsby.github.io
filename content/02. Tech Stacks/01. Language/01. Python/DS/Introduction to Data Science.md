@@ -100,6 +100,32 @@ grades=df["Grades"].astype(my_categories)
 grades[grades>"C"]
 ```
 
+## Matplotlib
+---
+```python
+import matplotlib as mpl
+mpl.get_backend()
+
+import matplotlib.pyplot as plt
+plt.plot?
+
+plt.plot(3, 2, '.')
+
+plt.figure()
+plt.plot(3, 2, 'o')
+ax = plt.gca()
+ax.axis([0,6,0,10])
+
+plt.figure()
+plt.plot(1.5, 1.5, 'o')
+plt.plot(2, 2, 'o')
+plt.plot(2.5, 2.5, 'o')
+
+ax = plt.gca()
+plt.plot(1.5, 1.5, 'o')
+ax.get_children()
+```
+
 ## References
 ---
 - [Coursera - Applied Data Science with Python Specialization](https://www.coursera.org/specializations/data-science-python)
