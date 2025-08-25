@@ -126,6 +126,101 @@ plt.plot(1.5, 1.5, 'o')
 ax.get_children()
 ```
 
+### Scatter Plots
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([1,2,3,4,5,6,7,8])
+y = x
+plt.figure()
+plt.scatter(x[:2], y[:2], s=100, c='red', label='Tall students')
+plt.scatter(x[2:], y[2:], s=100, c='blue', label='Short students')
+plt.xlabel('The number of times the child kicked a ball')
+plt.ylabel('The grade of the student')
+plt.title('Relationship between ball kicking and grades')
+plt.legend(loc=4, frameon=False, title='Legend')
+```
+
+### Line Plots
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+linear_data = np.array([1,2,3,4,5,6,7,8])
+exponential_data = linear_data**2
+plt.figure(figsize=(8,6))
+
+observation_dates = np.arange('2017-01-01', '2017-01-09', dtype='datetime64[D]')
+plt.plot(observation_dates, linear_data, '-o',  observation_dates, exponential_data, '-o')
+plt.gca().fill_between(range(len(linear_data)), 
+                       linear_data, exponential_data, 
+                       facecolor='blue', 
+                       alpha=0.25)
+
+x = plt.gca().xaxis
+for item in x.get_ticklabels():
+    item.set_rotation(45)
+
+ax = plt.gca()
+ax.set_xlabel('Date')
+ax.set_ylabel('Units')
+ax.set_title("Exponential ($x^2$) vs. Linear ($x$) performance")
+```
+
+### Bar Charts
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+linear_data = np.array([1,2,3,4,5,6,7,8])
+xvals = range(len(linear_data))
+plt.bar(xvals, linear_data, width = 0.3)
+
+new_xvals = []
+exponential_data = linear_data**2
+for item in xvals:
+    new_xvals.append(item+0.3)
+plt.bar(xvals, linear_data, width = 0.3)
+plt.bar(new_xvals, exponential_data, width = 0.3 ,color='red')
+
+from random import randint
+linear_err = [randint(1,4) for x in range(len(linear_data))]
+plt.bar(xvals, linear_data, width = 0.3, yerr=linear_err)
+
+xvals = range(len(linear_data))
+plt.bar(xvals, linear_data, width = 0.3, color='b')
+plt.bar(xvals, exponential_data, width = 0.3, bottom=linear_data, color='r')
+
+xvals = range(len(linear_data))
+plt.barh(xvals, linear_data, height = 0.3, color='b')
+plt.barh(xvals, exponential_data, height = 0.3, left=linear_data, color='r')
+```
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.figure(figsize=(10, 8));
+languages = ['Python', 'SQL', 'Java', 'C++', 'JavaScript']
+pos = np.arange(len(languages))
+popularity = [56, 39, 34, 34, 29]
+
+bars = plt.bar(pos, popularity, align='center', linewidth=0, color='lightslategrey')
+bars[0].set_color('#1F77B4')
+
+plt.xticks(pos, languages, alpha=0.8)
+plt.yticks([])
+
+plt.title('Top 5 Languages for Math & Data \nby % popularity on Stack Overflow', alpha=0.8)
+for spine in plt.gca().spines.values():
+    spine.set_visible(False)
+
+for bar in bars:
+    height = bar.get_height()
+    plt.gca().text(bar.get_x() + bar.get_width() / 2, bar.get_height() - 5, str(int(height)) + '%', ha='center', color='w', fontsize=11)
+```
+
 ## References
 ---
 - [Coursera - Applied Data Science with Python Specialization](https://www.coursera.org/specializations/data-science-python)
