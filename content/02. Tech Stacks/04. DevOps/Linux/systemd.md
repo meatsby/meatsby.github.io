@@ -1,0 +1,144 @@
+---
+title: systemd
+date: 2024-11-20 22:10:22 +0800
+status: In Progress
+draft: false
+tags:
+  - Linux
+---
+## systemd 란
+---
+systemd(system daemon)은 Unix 시스템 부팅 후 가장 먼저 생성된 후 다른 프로세스를 실행하는 init 역할을 하는 데몬이다. RedHat 에서 개발을 시작했고 RHEL/CentOS 와 Ubuntu 나 Arch 등 대부분의 리눅스 시스템에 공식적으로 채택되어 사용중이다.
+
+systemd 는 PID 1번을 갖으며 부팅부터 서비스관리, 로그관리 등을 담당한다. 부팅 시 병렬로 실행되기 때문에 부팅속도 역시 빠르다.
+
+부팅 시 필요한 작업을 systemd unit 으로 등록하여 사용할 수 있으며, 해당 파일들은 `/etc/systemd/system` 에 위치한다.
+
+## Unit과 구성 요소
+---
+### systemd Unit 파일 구조
+```service
+[Unit]
+Description=Systemd Test
+
+[Service]
+ExecStart=/usr/local/bin/example.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### systemd 파일의 섹션
+- Unit
+	- Description: 서비스 설명
+- Service
+	- ExecStart: 서비스를 시작하기 위한 실행파일
+- Timer
+- Install
+- ...
+
+### Unit 타입
+- service: 데몬/서비스 관리 (.service)
+- socket: 소켓 활성화 (.socket)
+- timer: 작업 스케줄 (.timer)
+- target: 부트 목표/런레벨 유사 개념 (.target)
+- path: 파일/디렉터리 변경 감시 후 트리거 (.path)
+- mount/automount: 마운트 관리 (.mount, .automount)
+- device: udev 디바이스 이벤트 (.device)
+- swap: 스왑 관리 (.swap)
+- slice/scope: cgroups로 리소스 그룹화 (.slice, .scope)
+
+## 서비스 관리
+---
+### Service 주요 옵션
+- Type: simple | forking | oneshot | notify | dbus | idle
+  - simple(기본): ExecStart 실행 후 곧바로 활성화로 간주
+  - forking: 백그라운드로 포크하는 데몬에 사용 (PIDFile 권장)
+  - oneshot: 단발성 작업(설정 스크립트) — RemainAfterExit=true와 함께 사용
+  - notify: systemd-notify로 준비 완료 신호를 보냄
+- ExecStart, ExecStartPre, ExecStartPost, ExecReload, ExecStop
+- Restart: no | on-success | on-failure | on-abnormal | always 등
+- RestartSec: 재시작 지연
+- User/Group: 실행 계정 지정, WorkingDirectory
+- Environment/EnvironmentFile: 환경변수
+- LimitNOFILE, Nice, IOSchedulingClass 등 리소스 제한
+
+### 의존성과 설치(Install)
+- [Unit]
+  - Requires=, Wants=: 강/약 의존
+  - After=, Before=: 실행 순서
+- [Install]
+  - WantedBy=multi-user.target 등: enable 시 심볼릭 링크가 생성되는 대상
+- enable/disable는 부팅 시 자동 시작 여부만 제어, start/stop은 즉시 실행 제어
+
+## 부팅과 Target
+---
+### Target (런레벨 매핑)
+- graphical.target ≈ runlevel5, multi-user.target ≈ runlevel3, rescue.target ≈ runlevel1
+- 기본 타깃 확인/설정: `systemctl get-default`, `systemctl set-default multi-user.target`
+
+## 운영 명령어
+---
+### 자주 쓰는 systemctl
+- 상태/제어
+  - `systemctl status <unit>`
+  - `systemctl start|stop|restart <unit>`
+  - `systemctl enable|disable <unit>`
+  - `systemctl daemon-reload` (유닛 파일 수정 후)
+- 나열/검색
+  - `systemctl list-units --type=service`
+  - `systemctl list-unit-files --type=service`
+
+### journalctl (로그)
+- `journalctl -u <service>`: 서비스 로그
+- `journalctl -u <service> -f`: 실시간 팔로우
+- `journalctl -b`: 현재 부팅 사이클 로그
+- `-p info|warning|err`, `--since "2025-09-17 09:00"`
+
+## 스케줄링과 활성화
+---
+### Timer vs cron
+- .timer 유닛으로 스케줄 정의, .service 실행을 트리거
+- 모드: OnCalendar= (캘린더), OnBootSec=/OnUnitActiveSec= (상대시간)
+- 장점: 유닛 의존성, 로깅(journal), 실패 시 Restart 정책과 통합
+
+예시 (.timer):
+```ini
+[Unit]
+Description=DB 백업 타이머
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+예시 (.service):
+```ini
+[Unit]
+Description=DB 백업 실행
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/backup.sh
+```
+
+### 소켓/패스 활성화
+- socket: 포트/소켓 접근이 있을 때 관련 .service를 지연 기동
+- path: 파일 생성/변경 시 .service 트리거 (PathChanged=, PathExists= 등)
+
+## 리소스 제어
+---
+### cgroups와 리소스 제어
+- systemd는 cgroups을 통해 각 유닛 리소스를 추적/제한
+- CPUAccounting=, MemoryMax=, IPAddressDeny=/Allow= 등으로 제어 가능 (버전 의존)
+
+## 트러블슈팅
+---
+- 유닛 파일 변경 후 `systemctl daemon-reload`
+- 권한/경로 확인: ExecStart 경로, 실행권한, WorkingDirectory
+- 환경 변수: EnvironmentFile 경로/권한
+- SELinux/AppArmor 정책으로 인한 거부 여부 확인
+- 부팅 시 실패: `systemctl --failed`, `journalctl -b -p err`
