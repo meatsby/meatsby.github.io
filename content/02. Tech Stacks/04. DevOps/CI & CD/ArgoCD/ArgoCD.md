@@ -83,6 +83,23 @@ k -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}
 ```
 로그인하기 위한 초기 비밀번호는 secret 에 저장되어 있다. 초기 Username 은 admin 으로 설정되어 있다.
 
+## ArgoCD 단위
+---
+### ArgoCD Application 이란
+```
+k get crd
+k -n argocd get application
+```
+ArgoCD 는 Application 이라는 단위로 배포할 리소스를 관리한다. ArgoCD 를 설치할 때 생성된 application 이라는 CRD 를 활용한다.
+
+Kubernetes Cluster 에 Application 을 배포하고 Application 을 사용하기 위해선 Service, Deployment 등 다양한 Object 가 생성되어야 한다. ArgoCD Application 은 필요한 모든 Object 를 모아둔 일종의 Object 묶음으로 생각할 수 있다.
+
+### ArgoCD Project 란
+```
+k -n argocd get AppProject
+```
+ArgoCD 에서 Project 는 ArgoCD 가 관리하는 논리적 그룹으로 Application 을 관리한다. Application 을 배포하면 기본적으로 Default Project 에 속하게 된다.
+
 ## References
 ---
 - 
