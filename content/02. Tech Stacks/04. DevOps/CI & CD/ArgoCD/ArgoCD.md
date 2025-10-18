@@ -100,6 +100,20 @@ k -n argocd get AppProject
 ```
 ArgoCD 에서 Project 는 ArgoCD 가 관리하는 논리적 그룹으로 Application 을 관리한다. Application 을 배포하면 기본적으로 Default Project 에 속하게 된다.
 
+## ArgoCD Sync 설정
+---
+### Refresh Period
+ArgoCD 는 기본적으로 3분(180초) 마다 Git 과 현재 상태를 비교한다. Git 에 적용한 변경사항을 ArgoCD 가 인지하기 까지 최대 3분이 걸릴 수 있다는 이야기다. Helm 으로 설치할 경우 [values.yaml](https://github.com/argoproj/argo-helm/blob/d3f234c86ca3f6c28feb5bf0304fffb3c1f28ebe/charts/argo-cd/values.yaml#L199) 에서 Refresh Period 를 수정할 수 있다.
+
+### Manual Refresh
+Refresh Period 를 기다리지 않고 Manual Refresh 를 실행해 Git 의 최신 상태를 불러올 수 있다. Hard Refresh 는 ArgoCD 가 내부적으로 사용하는 캐시를 무시하고 Refresh 하는 방법이다.
+
+### Sync 와 Sync Policy
+Sync 는 Git 에 올라간 Desired State 와 실제 Kubernetes 에 배포하는 동기화 작업이다. Sync Policy 는 Auto Sync 와 Manual Sync 가 있으며 말 그대로 자동 배포와 수동 배포의 차이다.
+
+### Sync Status
+ArgoCD 의 Sync Status 는 Synced 와 OutOfSync 로 나뉜다. 말 그대로 Desired State 와 Live State 간의 차이를 알 수 있다.
+
 ## References
 ---
 - 
