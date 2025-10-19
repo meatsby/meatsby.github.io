@@ -114,6 +114,19 @@ Sync 는 Git 에 올라간 Desired State 와 실제 Kubernetes 에 배포하는 
 ### Sync Status
 ArgoCD 의 Sync Status 는 Synced 와 OutOfSync 로 나뉜다. 말 그대로 Desired State 와 Live State 간의 차이를 알 수 있다.
 
+## Health Status
+---
+Health Status 는 Sync 이후 Kubernetes Cluster 에 배포된 리소스가 제대로 생성되었는지 확인할 수 있는 indicator 이다.
+
+### Healthy 상태
+동기화 이후 리소스가 정상적으로 확인된 상태다.
+
+### Missing 상태
+OutOfSync 일 때 Live State 에 존재하지 않는 리소스를 보여준다.
+
+### Degraded 상태
+Sync 작업이 실패한 경우 발생한다.
+
 ## References
 ---
 - 
