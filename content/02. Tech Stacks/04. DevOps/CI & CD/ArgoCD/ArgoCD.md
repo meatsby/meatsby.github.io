@@ -127,6 +127,10 @@ OutOfSync 일 때 Live State 에 존재하지 않는 리소스를 보여준다.
 ### Degraded 상태
 Sync 작업이 실패한 경우 발생한다.
 
+## Prune
+---
+Prune 은 동기화 후 남겨진 리소스 삭제 여부에 대한 옵션이다. Git 에서 리소스가 삭제되었을 때 해당 리소스를 Kubernetes 에서 또한 삭제할 지 결정할 수 있다. Prune 을 활성화하고 Sync 할 경우 Git 에서 제거된 리소스가 Kubernetes 에서 역시 제거된다.
+
 ## References
 ---
 - 
