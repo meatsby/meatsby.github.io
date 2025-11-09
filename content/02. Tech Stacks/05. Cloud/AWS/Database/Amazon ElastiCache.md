@@ -57,6 +57,12 @@ tags:
 - Memcached
 	- Supports SASL-based authentication
 
+## ElastiCache Redis OSS 7 Upgrade
+---
+ElastiCache 같은 Managed Service 는 EoL 이전에 버전 업그레이드를 하지 않으면 Premium 지원을 위한 추가 요금이 발생한다. 때문에 26년 1월에 표준 지원을 종료하는 Redis OSS v5 나 27년 1월에 표준 지원을 종료하는 Redis OSS v6 버전의 엔진을 사용하는 경우 미리 Redis OSS v7 으로 업그레이드해주는 것이 좋다.
+
+[공식문서](https://docs.aws.amazon.com/ko_kr/AmazonElastiCache/latest/dg/VersionManagement-upgrade-considerations.html)에 따르면 기본적으로 ElastiCache Redis 업그레이드는 데이터 보존과 다운타임이 발생하지 않도록 설계되어있다. 하지만 혹시 모를 데이터 유실을 방지하기 위해 업그레이드가 진행되기 전에 백업 Snapshot 을 떠놓는 것이 Best Practice 다.
+
 ## References
 ---
 - [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
