@@ -63,6 +63,28 @@ ElastiCache 같은 Managed Service 는 EoL 이전에 버전 업그레이드를 �
 
 [공식문서](https://docs.aws.amazon.com/ko_kr/AmazonElastiCache/latest/dg/VersionManagement-upgrade-considerations.html)에 따르면 기본적으로 ElastiCache Redis 업그레이드는 데이터 보존과 다운타임이 발생하지 않도록 설계되어있다. 하지만 혹시 모를 데이터 유실을 방지하기 위해 업그레이드가 진행되기 전에 백업 Snapshot 을 떠놓는 것이 Best Practice 다.
 
+### Upgrade
+```
+resource "aws_elasticache_replication_group" "example" {
+  replication_group_id = "example"
+  description          = "example description"
+  node_type            = "cache.t2.micro"
+  num_cache_clusters   = 2
+  port                 = 6379
+  subnet_group_name    = aws_elasticache_subnet_group.example.name
+  security_group_ids   = [aws_security_group.example.id]
+  parameter_group_name = "default.redis7"
+  engine_version       = "7.1"
+
+  transit_encryption_enabled = true
+  auth_token                 = "abcdefgh1234567890"
+  auth_token_update_strategy = "ROTATE"
+}
+```
+ElastiCache 를 업그레이드하기 위해선 Engine Version 과 버전에 맞는 Param Group 을 준비해야 한다. Param Group 은 AWS 에서 기본으로 제공하는 `default.redis7` `default.redis7.cluster.on` 등이 존재한다. `.cluster.on` 류는 ElastiCache Cluster Mode 를 활성화했을 때 사용할 수 있다.
+
+Terraform Apply 이후 업그레이드가 바로 진행되지 않을 수 있는데, 이는 ElastiCache Maintenance Window 가 업그레이드 등 변경 가능 시간을 제약하기 때문이다. 해당 클러스터를 사용하는 클라이언트의 사용패턴에 따라 Maintenance Window 가 상이할 수 있다. Maintenance Window 가 시작되면 Redis 7 을 호스팅하는 새로운 노드들이 순차적으로 클러스터에 조인한다.
+
 ## References
 ---
 - [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
