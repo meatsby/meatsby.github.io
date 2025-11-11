@@ -85,6 +85,20 @@ ElastiCache 를 업그레이드하기 위해선 Engine Version 과 버전에 맞
 
 Terraform Apply 이후 업그레이드가 바로 진행되지 않을 수 있는데, 이는 ElastiCache Maintenance Window 가 업그레이드 등 변경 가능 시간을 제약하기 때문이다. 해당 클러스터를 사용하는 클라이언트의 사용패턴에 따라 Maintenance Window 가 상이할 수 있다. Maintenance Window 가 시작되면 Redis 7 을 호스팅하는 새로운 노드들이 순차적으로 클러스터에 조인한다.
 
+### Verification
+
+| 메트릭                                                           | 설명                      | 데이터 유실 여부 판단 포인트                             |
+| ------------------------------------------------------------- | ----------------------- | -------------------------------------------- |
+| `aws.elasticache.curr_items`                                  | Redis 내 전체 키 개수         | 업그레이드 전후 값이 비슷하면 데이터 보존됨.                    |
+| `aws.elasticache.evictions`                                   | 메모리 부족으로 강제 삭제된 키 수     | 업그레이드 직후 spike가 있으면 일부 데이터 날아갔을 가능성 있음.      |
+| `aws.elasticache.cache_hits` / `aws.elasticache.cache_misses` | 캐시 조회 성공/실패 횟수          | 업그레이드 직후 `miss`가 급증하면 데이터 flush 의심 가능.       |
+| `aws.elasticache.bytes_used_for_cache`                        | 캐시에 실제 저장된 데이터 크기(byte) | 업그레이드 후 갑자기 줄면 캐시가 비워졌을 가능성 높음.              |
+| `aws.elasticache.new_connections`                             | 새로 생성된 Redis 클라이언트 연결 수 | 업그레이드 후 spike 있으면 재연결 발생 가능 (정상적인 failover). |
+| `aws.elasticache.replication_bytes`                           | 복제본과의 동기화된 데이터 양        | 업그레이드 시 replication 이 재시작되면 증가 가능 (정상 범위).   |
+Datadog Resources 를 활용하여 ElastiCache Redis 의 메트릭을 확인할 수 있다. 이를 통해 업그레이드 중 데이터 유실이 발생했는지 확인할 수 있다. Datadog 연동 시 위 메트릭 외에도 더 다양한 메트릭을 지원한다. 자세한 내용은 [공식문서](https://docs.datadoghq.com/integrations/amazon-elasticache/#data-collected)를 참조하자.
+
+Maintenance Window 가 시작되면 Upgrade 가 진행되고 `aws.elasticache.new_connections` 과 `aws.elasticache.replication_bytes` 등에 Spike 가 감지된다. Redis7 을 호스팅하는 새로운 노드가 클러스터에 조인하고 기존 클라이언트들이 재연결하는 과정에서 관측되는 지표다.
+
 ## References
 ---
 - [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
