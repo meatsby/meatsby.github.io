@@ -1,35 +1,19 @@
 ---
 title: Welcome to meatsby.github.io
 ---
-## :LiComputer: Computer Science
+## Computer Science
 ---
-- [[Algorithms]]
-- :BoBxCodeAlt: Data Structure & Algorithm
-- :FasNetworkWired: [[Network]]
-- :FasDatabase: [[Database]]
-- :LiCpu: [[Operating System]]
-- :LiComputer: Computer Architecture
-- :TiWorldWww: [[Web]]
-- :BoBxsPalette: [[Design Pattern]]
+- Data Structure & Algorithm
+- Network
+- Database
+- Operating System
+- Computer Architecture
+- Web
+- Design Pattern
 
-## 🛠️ Tech Stacks
+## Tech Stacks
 ---
 - [[Amazon Web Services]]
-- [[DevOps]]
-- :SiSplunk: [[Splunk]]
-- :FabJava: [[14. Java Lambda & Stream]]
-- :SiGradle: Gradle
-- :BoBxsCheckCircle: Testing
-- :SiJunit5: JUnit5
-- :SiApachetomcat: Tomcat
-- :SiSpring: [[Spring]]
-- :SiHibernate: Hibernate
-- :SiLinux: Linux
-- :SiJenkins: Jenkins
-- :SiNginx: Nginx
-- :TiBrandMysql: MySQL
-- :FabGitAlt: Git
-- :SiIntellijidea: IntelliJ
 
 ```dataview
 table date
