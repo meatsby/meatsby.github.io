@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: "meatsby.github.io",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -24,9 +24,9 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "Gowun Dodum",
+        body: "Gowun Dodum",
+        code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
