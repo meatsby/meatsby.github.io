@@ -1,9 +1,10 @@
 ---
-title: EC2 MySQL Installation & Spring App Deployment
+title: MySQL Installation & Spring App Deployment
 date: 2022-06-08 18:00:00 +0900
 status: In Progress
 draft: false
 tags:
+  - MySQL
   - AWS
   - EC2
 ---

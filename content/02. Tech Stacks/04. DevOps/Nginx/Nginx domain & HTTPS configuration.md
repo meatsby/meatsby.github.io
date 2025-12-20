@@ -1,23 +1,22 @@
 ---
-title: EC2 Nginx domain & HTTPS configuration
+title: Nginx domain & HTTPS configuration
 date: 2022-07-25 14:40:00 +0900
 status: In Progress
 draft: false
 tags:
+  - Nginx
   - AWS
   - EC2
 ---
-### Nginx 란?
-
+## Nginx 란?
+---
 `Nginx` 란 웹서버의 일종이다.
-
 - https
 - redirecting
 - 정적 파일 제공
 - 캐싱
 
 ### Nginx 설치
-
 ```
 $ sudo apt-get update
 $ sudo apt-get install nginx
@@ -26,7 +25,6 @@ $ sudo apt-get install nginx
 준비해둔 EC2 내부에서 `Nginx` 를 설치해주자.
 
 ### 도메인 설정
-
 ```
 $ sudo vi /etc/nginx/sites-available/api.gongcheck.day
 ```
@@ -59,7 +57,6 @@ SSL 인증서를 발급 받기 위해 해당 파일에 위와 같은 서버 블�
 - `server_name` 에 구매한 도메인명을 작성해주자.
 
 ### 파일 동기화
-
 ```
 $ sudo ln -s /etc/nginx/sites-available/api.gongcheck.day /etc/nginx/sites-enabled
 ```
@@ -69,7 +66,6 @@ $ sudo ln -s /etc/nginx/sites-available/api.gongcheck.day /etc/nginx/sites-enabl
 소프트링크를 통해 두 파일을 연결해주도록 하자.
 
 ### Nginx 테스트
-
 ```
 $ sudo nginx -t
 $ sudo service nginx restart
@@ -87,19 +83,16 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 ## CertBot
 ---
 ### CertBot 이란?
-
 `CertBot` 은 Let’s Encrypt 의 SSL 인증서를 쉽게 발급 받을 수 있도록 도와주는 프로그램이다.
 
 Let’s Encrypt 에서 발급 받은 SSL 인증서를 통해 도메인에 HTTPS 를 적용할 수 있다.
 
 ### CertBot 설치
-
 ```
 $ sudo apt-get install python3-certbot-nginx
 ```
 
 ### 도메인 인증서 발급
-
 ```
 $ sudo certbot --nginx -d api.gongcheck.day
 ```
@@ -107,7 +100,6 @@ $ sudo certbot --nginx -d api.gongcheck.day
 발급이 성공적으로 이루어졌다면 `sites-available` 에 작성했던 파일이 변경되어 있을 것이다.
 
 ### 리버스 프록시 설정
-
 ```
 server {
     server_name api.gongcheck.day;
