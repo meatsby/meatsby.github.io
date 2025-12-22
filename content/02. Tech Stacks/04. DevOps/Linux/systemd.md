@@ -14,6 +14,17 @@ systemd 는 PID 1번을 갖으며 부팅부터 서비스관리, 로그관리 등
 
 부팅 시 필요한 작업을 systemd unit 으로 등록하여 사용할 수 있으며, 해당 파일들은 `/etc/systemd/system` 에 위치한다.
 
+> [!info]- Good to know
+> ### `service` vs `systemctl` 차이
+> systemctl이 정식(현대) 명령어이고, service는 과거(init.d)와의 호환을 위한 래퍼(wrapper)이다.
+> systemd 환경에서 `service nginx start` 는 사실 `systemctl start nginx.service` 을 호출한다.
+> `service` 는 enable 을 지원하지 않는다.
+> `systemctl` 이 표준이다.
+> 
+> ### init.d 와 upstart
+> init.d → upstart → systemd 리눅스 init 시스템의 진화 과정이다.
+> init.d는 SysV init 기반의 스크립트형 init 시스템이고, upstart는 이벤트 기반으로 이를 개선한 과도기적 init 시스템이며, 현재 리눅스의 표준 init 시스템은 systemd이다.
+
 ## Unit과 구성 요소
 ---
 ### systemd Unit 파일 구조
