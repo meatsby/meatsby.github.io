@@ -42,7 +42,7 @@ Cassandra 에 저장되는 데이터는 Column Family 에 저장되는데 각 Ro
 ![[Pasted image 20250326231702.png]]
 Cassandra 의 Primary Key 는 1개 이상의 Partition Key(Row Key) 와 0개 이상의 Cluster Key 로 구성된다. Cassandra 는 데이터를 분산 및 복제하여 저장하기 위해 Partition Key(Row Key) 를 사용해 Hash Token 을 생성하고 해당 Token 에 맞는 노드에 데이터를 분산 및 저장한다. Cluster Key(Sort Key) 는 데이터를 정렬할 때 사용하는 Key 로 데이터가 저장될 때 정렬해서 저장한다.
 
-## Installing Cassandra with Docker
+## Installing Cassandra with Docker
 ---
 ### Cassandra Node 2개 생성
 ```sh

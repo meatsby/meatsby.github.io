@@ -11725,7 +11725,7 @@ Which combination of actions will meet these requirements MOST cost-effectively?
 - B. Configure the application to use an Amazon ElastiCache cluster in front of the Aurora PostgreSQL DB cluster.
 - C. Update the application to send the purchase requests to an Amazon Simple Queue Service (Amazon SQS) queue. Configure an Auto Scaling group of new EC2 instances that read from the SQS queue.
 - D. Configure an AWS Lambda function to retry the ticket purchases until the processing is complete.
-- E. Configure an Amazon API Gateway REST API with a usage plan.
+- E. Configure an Amazon API Gateway REST API with a usage plan.
 
 > [!done]- [Answer](https://www.examtopics.com/discussions/amazon/view/139619-exam-aws-certified-solutions-architect-associate-saa-c03/)
 > AC

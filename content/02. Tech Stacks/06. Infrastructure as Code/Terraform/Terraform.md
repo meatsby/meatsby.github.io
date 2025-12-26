@@ -17,7 +17,7 @@ tags:
 Infrastructure as Code (IaC) 는 클라우드 인프라를 수동으로 관리할 때 발생하는 위와 같은 문제점을 인프라를 코드로 관리함으로써 해결해준다. 한 마디로 IaC 는 인프라의 blueprint 와 같은 역할을 하는 것.
 
 ### Declarative vs Imperative
-IaC 툴은 크게 선언형 도구와 명령형 도구로 구분되는데, AWS CloudFormation 등 선언형 도구는 JSON, YAML 과 같은 스크립트 언어로 작성되고, AWS CDK, Pulumi 등 명령형 도구는 Python 등 프로그래밍 언어로 작성된다.
+IaC 툴은 크게 선언형 도구와 명령형 도구로 구분되는데, AWS CloudFormation 등 선언형 도구는 JSON, YAML 과 같은 스크립트 언어로 작성되고, AWS CDK, Pulumi 등 명령형 도구는 Python 등 프로그래밍 언어로 작성된다.
 
 Terraform 은 선언형과 명령형 그 중간 정도에 해당하는 HCL 로 작성하는데 Loop, Dynamic Blocks, Locals, Maps, Collections 등을 지원한다.
 
@@ -110,7 +110,7 @@ Terraform 은 아래와 같은 다양한 종류의 `<BLOCK TYPE>` 을 제공한�
 ```
 Terraform Core <-> Providers(Plugins) <-> Upstream APIs
 ```
-Terraform은 remote system 에 인프라를 구축하기 위해 plug-in-based architecture 로 구성되어 있다. 이는 remote system 이 제공하는 API 를 Provider 형태로 구성하여 Terraform Core 가 Provider 와 상호작용하여 API 를 호출하는 방식이다. 예를 들어 AWS 인프라를 구축하고 싶다면 AWS Provider 를 통해 AWS resource 생성 API 를 호출하는 형태다. Provider 는 [Terraform Registry](https://registry.terraform.io/browse/providers) 에서 확인할 수 있다.
+Terraform은 remote system 에 인프라를 구축하기 위해 plug-in-based architecture 로 구성되어 있다. 이는 remote system 이 제공하는 API 를 Provider 형태로 구성하여 Terraform Core 가 Provider 와 상호작용하여 API 를 호출하는 방식이다. 예를 들어 AWS 인프라를 구축하고 싶다면 AWS Provider 를 통해 AWS resource 생성 API 를 호출하는 형태다. Provider 는 [Terraform Registry](https://registry.terraform.io/browse/providers) 에서 확인할 수 있다.
 
 ```hcl
 # terraform.tf
@@ -249,7 +249,7 @@ data "aws_ami" "ubuntu_22_04" {
   owners = ["<AWS_ACCOUNT>"]
 }
 ```
-Data Block 은 API 를 통해 provider 에서 제공하는 data 를 받아와 Terraform 코드에서 사용할 수 있게 도와주는 block 이다. 위 예시처럼 가장 최신 Ubuntu AMI 의 ID 를 가져와 EC2 를 생성할 때 사용할 수 있다.
+Data Block 은 API 를 통해 provider 에서 제공하는 data 를 받아와 Terraform 코드에서 사용할 수 있게 도와주는 block 이다. 위 예시처럼 가장 최신 Ubuntu AMI 의 ID 를 가져와 EC2 를 생성할 때 사용할 수 있다.
 
 ### Configuration Block
 ```hcl

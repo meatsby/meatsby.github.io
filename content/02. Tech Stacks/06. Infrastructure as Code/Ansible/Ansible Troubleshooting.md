@@ -50,7 +50,7 @@ API 경로는 [Get a release asset](https://docs.github.com/en/rest/releases/ass
 	return_content: true
   register: response
 
-- name: Get Asset metadata response
+- name: Get Asset metadata response
   uri:
     url: "https://api.github.com/repos/{owner}/{repo}/releases/assets/{asset_id}"
     # 위 라인은 사실 url: "{{ response.json.assets[0].url }}"

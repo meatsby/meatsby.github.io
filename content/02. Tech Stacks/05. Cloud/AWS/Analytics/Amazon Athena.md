@@ -6,7 +6,7 @@ draft: false
 tags:
   - AWS
 ---
-## Amazon Athena
+## Amazon Athena
 ---
 - Serverless query service to analyze data stored in S3
 - Uses standard SQL language to query the files (built on Presto)

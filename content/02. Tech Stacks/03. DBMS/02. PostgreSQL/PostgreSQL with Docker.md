@@ -23,7 +23,7 @@ docker images
 docker run -d -p 5432:5432 -e POSTGRES_PASSWORD="password" --name PostgresTest postgres
 ```
 - Image 를 실행하자.
-	- `-d` 옵션으로 detached mode 로 background 에서 실행하고
+	- `-d` 옵션으로 detached mode 로 background 에서 실행하고
 	- `-p 5432:5432` 옵션으로 port mapping 해주고
 	- `-e POSTGRES_PASSWORD="password"` 옵션으로 환경변수에 원하는 DB password 를 지정하고
 	- `--name PostgresTest` 옵션으로 컨테이너 이름을 지정해주자
@@ -82,7 +82,7 @@ docker container restart {CONTAINER_ID}
 - 필요할 때 다시 재시작해주자.
 
 ```bash
-docker rm {CONTAINER_ID}
+docker rm {CONTAINER_ID}
 ```
 - 컨테이너를 제거하면 내부 데이터도 모두 제거되기 때문에 Mount 를 연결하는 것 역시 고려할 수 있다.
 

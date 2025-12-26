@@ -65,7 +65,7 @@ tags:
 ## Instance Type
 ---
 ![[Instance Type.png]]
-- Instance Type 이란 EC2 인스턴스의 사양으로 아래 네이밍 컨벤션을 따름
+- Instance Type 이란 EC2 인스턴스의 사양으로 아래 네이밍 컨벤션을 따름
 	- `t3.micro`
 		- `t`: Instance Class
 		- `3`: Generation
@@ -199,7 +199,7 @@ tags:
 ![[EC2 Hibernate.png]]
 - EC2 Hibernate 은 절전모드로 RAM state 을 root EBS volume 에 저장하는 상태
 	- 재부팅 시 RAM state 을 그대로 불러올 수 있음
-	- 전에 부팅한 상태라면 새로 부팅할 필요가 없어 부팅 시간이 단축됨
+	- 전에 부팅한 상태라면 새로 부팅할 필요가 없어 부팅 시간이 단축됨
 - RAM size must be less than 150GB
 - Not supported for bare metal instances
 - Root volume must be `EBS`, `encrypted`, not instance store, and large enough to store RAM

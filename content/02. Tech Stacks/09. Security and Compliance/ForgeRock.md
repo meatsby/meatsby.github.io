@@ -116,7 +116,7 @@ tags:
 	- AM 의 설정을 위한 Config Store DS 컨테이너 (FBC 를 활용하면 굳이 배포하지 않아도 된다.)
 - 위 모든 컨테이너가 배포되면 최소한의 IAM 애플리케이션이 작동할 수 있다.
 
-### App Store
+### App Store
 - PolicySet 과 Application Data 를 저장하는 DS 컨테이너
 	- Policy Store 는 인증/인가 정책 정보를 저장하고
 	- Application Store 는 리소스/애플리케이션 등의 정보를 저장한다

@@ -140,8 +140,8 @@ consumer.close();
 - `consumer.poll()` 메서드는 이전에 커밋된 오프셋으로부터 메시지를 읽어오고 마지막으로 읽어온 메시지의 오프셋을 기준으로 다시 커밋한다. 이 과정을 반복하여 메시지를 읽어오는 구조다.
 - 만약 처음 접근이거나 커밋한 오프셋이 없는 겨우 `auto.offset.reset` 설정을 활용할 수 있다.
 	- auto.offset.reset = earliest 의 경우 맨 처음 메시지를 오프셋으로 사용한다.
-	- auto.offset.reset = latest 의 경우 기본값으로 적용되며 마지막 메시지를 오프셋으로 사용한다.
-	- auto.offset.reset = none 의 경우 컨슈머 그룹에 대한 이전 커밋이 없으면 익셉션이 발생하기에 잘 사용하지 않는다.
+	- auto.offset.reset = latest 의 경우 기본값으로 적용되며 마지막 메시지를 오프셋으로 사용한다.
+	- auto.offset.reset = none 의 경우 컨슈머 그룹에 대한 이전 커밋이 없으면 익셉션이 발생하기에 잘 사용하지 않는다.
 
 ### 조회에 영향을 주는 설정
 - fetch.min.bytes 설정은 조회 시 브로커가 전송할 최소 데이터 크기를 지정한다.
