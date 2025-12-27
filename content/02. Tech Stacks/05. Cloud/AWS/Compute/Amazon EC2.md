@@ -181,11 +181,13 @@ tags:
 
 ### Amazon Elastic File System (EFS)
 ![[EFS.png]]
-- A managed NFS (Network File System) that can be mounted on 100s of EC2s
-- EFS works with EC2s in multiple AZs
-- Compatible with Linux-based AMIs
-	- POSIX file system
-- The file system scales automatically
+- 관리형 Network File System, NFS 로 한 지역에서 수백 개의 인스턴스에 연결 가능
+- Regional Resource 로 모든 AZ 가 사용할 수 있다
+- Multi-AZ 에 위치한 EC2 들과 연결 가능하고 여러 인스턴스들이 동시에 읽고 쓸 수 있다
+- Linux 기반 AWS 및 On-premise 서버와 함께 사용 가능한 간단하고 확장성 있는 공유 파일 스토리지 솔루션
+- POSIX file system 을 기반으로 하기에 Linux-based AMIs 와 호환된다
+- 자동으로 Scaling 한다
+- 자주 변경되는 데이터를 처리할 수 있고, 여러 사용자가 동시에 데이터에 접근하고 수정할 수 있도록 지원한다
 
 ## Advanced Details
 ---
