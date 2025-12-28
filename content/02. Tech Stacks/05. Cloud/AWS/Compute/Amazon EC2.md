@@ -179,7 +179,8 @@ tags:
 	- Fast Snapshot Restore (FSR) `$$$`
 		- Force full initialization of Snapshot to have no latency on the first use
 
-### Amazon Elastic File System (EFS)
+## Amazon Elastic File System (EFS)
+---
 ![[EFS.png]]
 - 관리형 Network File System, NFS 로 한 지역에서 수백 개의 인스턴스에 연결 가능
 - Regional Resource 로 모든 AZ 가 사용할 수 있다
@@ -188,6 +189,15 @@ tags:
 - POSIX file system 을 기반으로 하기에 Linux-based AMIs 와 호환된다
 - 자동으로 Scaling 한다
 - 자주 변경되는 데이터를 처리할 수 있고, 여러 사용자가 동시에 데이터에 접근하고 수정할 수 있도록 지원한다
+
+### EFS Mount Target
+- EFS Mount Target 은 EFS 를 EC2 인스턴스에 연결할 수 있도록 해주는 Endpoint
+- Mount Target 은 VPC 내부에서 작동하고 VPC 서브넷에 연결된다
+- 각 AZ 당 1개의 Mount Target 이 필요하다
+- 동일한 AZ 내의 EC2 인스턴스들은 같은 Mount Target 을 통해 연결한다
+- EC2 인스턴스는 Mount Target 을 통해 NFS 프로토콜로 EFS 에 연결한다
+- EFS 는 Mount Target 마다 고유한 DNS 네임을 제공한다
+- Mount Target 은 SG 로 접근을 제어한다
 
 ## Advanced Details
 ---
