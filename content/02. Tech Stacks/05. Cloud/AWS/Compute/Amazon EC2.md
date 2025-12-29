@@ -189,15 +189,10 @@ tags:
 - POSIX file system 을 기반으로 하기에 Linux-based AMIs 와 호환된다
 - 자동으로 Scaling 한다
 - 자주 변경되는 데이터를 처리할 수 있고, 여러 사용자가 동시에 데이터에 접근하고 수정할 수 있도록 지원한다
+- 5GB 까지 프리티어로 이용할 수 있다
 
 ### EFS Mount Target
-- EFS Mount Target 은 EFS 를 EC2 인스턴스에 연결할 수 있도록 해주는 Endpoint
-- Mount Target 은 VPC 내부에서 작동하고 VPC 서브넷에 연결된다
-- 각 AZ 당 1개의 Mount Target 이 필요하다
-- 동일한 AZ 내의 EC2 인스턴스들은 같은 Mount Target 을 통해 연결한다
-- EC2 인스턴스는 Mount Target 을 통해 NFS 프로토콜로 EFS 에 연결한다
-- EFS 는 Mount Target 마다 고유한 DNS 네임을 제공한다
-- Mount Target 은 SG 로 접근을 제어한다
+EFS 를 네트워크 스토리지이기 때문에 EC2 인스턴스가 EFS 에 접근하기 위해선 Endpoint 가 필요하다. EFS 는 ENI 를 기반으로 Mount Target 이라는 Endpoint 를 제공한다. EC2 인스턴스는 이 Mount Target 을 통해 NFS 프로토콜로 EFS 와 연결한다. 때문에 Mount Target 에 적용될 SG 의 Inbound Rule 은 NFS 프로토콜을 위한 2049번 포트를 허용해야한다. Mount Target 은 VPC 내부에서 작동하고 VPC 서브넷에 연결되며 각 AZ 당 1개의 Mount Target 이 필요하다. EFS 는 Mount Target 마다 고유한 DNS 네임을 제공하고 EC2 인스턴스들은 동일한 AZ 에 위치한 Mount Target 을 통해 EFS 에 접근할 수 있다.
 
 ## Advanced Details
 ---
