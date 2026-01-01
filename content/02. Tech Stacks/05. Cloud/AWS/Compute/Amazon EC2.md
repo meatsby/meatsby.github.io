@@ -143,8 +143,7 @@ tags:
 ## Storage (Volumes)
 ---
 ![[Storage (Volumes).png]]
-- [[Amazon EBS]]
-- [[Amazon EFS]]
+EC2 인스턴스 생성 시 기본적으로 [[Amazon EBS]] Root volume 으로 함께 생성된다. 추가적인 Storage 조건이 필요한 경우 추가 EBS 또는 [[Amazon EFS]] 를 마운팅하여 사용할 수 있다.
 
 ## Advanced Details
 ---
