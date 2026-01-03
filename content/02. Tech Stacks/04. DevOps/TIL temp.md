@@ -46,14 +46,6 @@ tags:
 ```
 SLA 는 SLO 보다 여유있게 설정하여 SLO 내에서 문제를 해결할 수 있는 버퍼를 확보한다. 이를 통해 SLA 위반 전에 내부적으로 대응할 수 있는 시간을 벌 수 있다.
 
-## Linux - mv * 하면 생기는 일
----
-```sh
-mv *
-```
-- 하면 해당 디렉터리에 있는 모든 파일 및 디렉터리가 맨 마지막 디렉터리 안으로 들어감
-- 다 파일이면? lima 에서 실험해보자
-
 ## AWS 로 DMZ 구성
 ---
 gql.api.example.com -> R53 -> CloudFront -> R53(Public Hosted Zone 을 타고 감) -> ALB(Ingress) -> EKS Node Group -> EKS Pod
