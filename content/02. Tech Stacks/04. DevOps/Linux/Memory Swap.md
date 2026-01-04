@@ -1,0 +1,73 @@
+---
+title: Memory Swap
+date: 2024-04-30 20:01:47 +0800
+status: In Progress
+draft: false
+tags:
+  - Linux
+---
+## Swap 이란?
+---
+Swap은 물리 메모리(RAM)가 부족할 때 디스크 공간을 가상 메모리로 사용하는 기술이다. 메모리 부족 시 사용 빈도가 낮은 데이터를 디스크로 이동시켜 메모리 공간을 확보한다.
+
+## Swap 설정
+---
+### 사용 사례
+- [[Amazon EC2]] t3.micro 와 같은 free-tier 인스턴스를 사용할 때 OOM Kill process 가 자주 발생하는 경우
+- 물리 메모리가 제한적인 환경에서 시스템 안정성을 높이고자 할 때
+
+### Swap 파일 크기 계산
+Swap Partition 크기 계산은 [AWS 공식 문서](https://repost.aws/ko/knowledge-center/ec2-memory-partition-hard-drive)를 참고
+
+### 메모리 확인
+```bash
+free -m
+```
+
+### Swap 파일 생성
+```bash
+# dd 명령을 통해 root file system 에 swap file 을 생성
+# bs(블록 크기) * count(블록 수) = swap file 의 크기
+# bs(블록 크기)는 인스턴스에서 사용 가능한 메모리보다 작아야 함
+sudo dd if=/dev/zero of=/swapfile bs=128M count=32
+```
+
+### Swap 파일 권한 설정
+```bash
+# swap file 의 rw 권한 업데이트
+sudo chmod 600 /swapfile
+```
+
+### Swap 영역 설정
+```bash
+# linux swap 영역 설정
+sudo mkswap /swapfile
+```
+
+### Swap 활성화
+```bash
+# swap 공간에 swap file 을 추가해 즉시 사용할 수 있도록 함
+sudo swapon /swapfile
+
+# 절차 성공 확인
+sudo swapon -s
+```
+
+### 부팅 시 자동 활성화
+```bash
+# swap file 을 활성화할 수 있게 설정
+sudo vi /etc/fstab
+
+# 파일 끝에 아래 줄을 추가하고 저장
+/swapfile swap swap defaults 0 0
+```
+
+### 설정 확인
+```bash
+# 메모리 재확인 시 swap memory 가 allocate 된 것을 확인 가능
+free -m
+```
+
+## References
+---
+- [AWS re:Post - 스왑 파일을 사용하여 Amazon EC2 인스턴스에서 스왑 스페이스로 작동하도록 메모리를 할당하려면 어떻게 해야 하나요?](https://repost.aws/ko/knowledge-center/ec2-memory-swap-file)
