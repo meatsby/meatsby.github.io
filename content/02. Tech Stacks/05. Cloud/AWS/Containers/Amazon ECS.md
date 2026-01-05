@@ -60,15 +60,6 @@ tags:
 - ECS Service Auto Scaling (task level) != EC2 Auto Scaling (EC2 instance level)
 - Fargate Auto Scaling is much easier to setup (because Serverless)
 
-## Amazon ECR
----
-- ECR = Elastic Container Registry
-- Store and manage Docker images on AWS
-- Private and Public repository (Amazon ECR Public Gallery)
-- Fully integrated with ECS, backed by S3
-- Access is controlled through IAM (permission errors => policy)
-- Supports image vulnerability scanning, versioning, image tags, image lifecycle, ...
-
 ## Amazon EKS
 ---
 - EKS = Elastic Kubernetes Service

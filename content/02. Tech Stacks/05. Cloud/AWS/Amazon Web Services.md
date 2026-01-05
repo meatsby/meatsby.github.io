@@ -160,9 +160,8 @@ tags:
 
 ## Storage
 ---
-- Amazon Elastic File System (EFS)
-    - 네트워크 파일 시스템, 한 지역에서 수백 개의 인스턴스에 연결 가능
-    - Linux 기반 AWS 및 On-premise 서버와 함께 사용 가능한 간단하고 확장성 있는 공유 파일 스토리지 솔루션
+- [[Amazon EBS]]
+- [[Amazon EFS]]
 - [[Amazon FSx]]
 - [[Amazon S3]]
 - [[AWS Backup]]
