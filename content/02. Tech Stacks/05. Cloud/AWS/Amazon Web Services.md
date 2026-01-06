@@ -57,9 +57,9 @@ tags:
 
 ## Containers
 ---
-- Amazon ECR
+- [[Amazon ECR]]
 - [[Amazon ECS]]
-- Amazon EKS
+- [[Amazon EKS]]
 
 ## Database
 ---
