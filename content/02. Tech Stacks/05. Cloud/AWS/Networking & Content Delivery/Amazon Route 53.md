@@ -80,14 +80,21 @@ tags:
 	- 동일한 hosted zone의 R53 Record
 	- 단, EC2 DNS name은 설정 불가
 
-### Hosted Zones
+## Hosted Zones
+---
 ![[Hosted Zones.png]]
-- 도메인 및 하위 도메인으로 트래픽을 라우팅하는 방법을 정의하는 레코드의 컨테이너
-- Public Hosted Zones - 인터넷에서 트래픽을 라우팅하는 방법을 지정하는 레코드 포함 (공용 도메인 이름)
-- Private Hosted Zones - 하나 이상의 VPC 내에서 트래픽을 라우팅하는 방법을 지정하는 레코드 포함 (프라이빗 도메인 이름)
-- hosted zone 당 월 $0.5
+Route 53 에서 Host Zone 은 도메인(예: `example.com`)과 그 하위 도메인(예: `sub1.example.com`, `sub2.example.com`)에 대한 DNS 레코드를 관리하는 단위이다. 즉, Zone 이란 DNS 서버가 관리하는 특정 도메인의 범위를 뜻하고 관리하는 도메인 이름(예: `example.com`)은 곧 호스트 존의 이름(예: `example.com`)이 된다. Hosted Zone 은 관리하는 도메인의 범위에 따라 Public Hosted Zones, Private Hosted Zones 두 가지로 구분되며 Hosted Zone 당 월 $0.5 가 청구된다.
 
-### Resolver Endpoints
+### Public Hosted Zones
+- 인터넷에서 접근 가능한 공개된 도메인의 DNS 레코드를 관리한다.
+- 예를 들어, `example.com` 이라는 도메인을 인터넷을 통해 사용자들이 접근할 수 있도록 설정할 수 있다.
+
+### Private Hosted Zones
+- VPC 내부에서만 접근 가능한 도메인의 DNS 레코드를 관리한다.
+- 내부 시스템 간의 DNS 이름 해석을 위해 사용된다.
+
+## Resolver Endpoints
+---
 - Inbound Endpoint
 	- On-premises 네트워크에서 들어오는 DNS 쿼리를 처리하는 VPC의 엔드포인트
 	- VPC 내의 도메인 이름에 대한 DNS 쿼리를 처리하는 데 사용
@@ -96,7 +103,8 @@ tags:
 - Outbound Endpoint
 	- VPC에서 On-premises 네트워크로 DNS 쿼리를 전달하는 VPC의 엔드포인트
 
-### Health Checks
+## Health Checks
+---
 - HTTP Health Check는 Public 리소스에만 사용 가능
 - Health Check -> 자동 DNS Failover:
 	- 엔드포인트를 모니터링하는 Health Check (애플리케이션, 서버, 기타 AWS 리소스)
