@@ -8,54 +8,54 @@ tags:
 ---
 ## Amazon ElastiCache
 ---
-- Managed Redis or Memcached
-- Caches are in-memory DB with high performance & low latency
-- Helps reduce load off of DBs for read-intensive workloads
-- Helps application to be stateless
+Amazon ElastiCache 는 AWS 의 완전 관리형 분산 인메모리 캐싱 서비스로 Redis 또는 Memcached 엔진을 지원한다. 인메모리 DB 의 고성능 및 낮은 지연 시간 특성을 활용하여 읽기 집약적인 워크로드에서 DB의 부하를 줄이거나 애플리케이션을 stateless 로 만드는 데 사용할 수 있다.
 
 ### Use Case - DB Cache
-- Application queries to ElastiCache
-- If not available, get from RDS and store in ElastiCache
-- Cache must have an invalidation strategy to ensure only the most current data is used
+- 애플리케이션이 ElastiCache 에 쿼리
+- 데이터가 없으면 RDS 에서 가져와 ElastiCache 에 저장
+- 캐시는 최신 데이터만 사용되도록 무효화 전략이 필요
 
 ### Use Case - User Session Store
-- The user logs into any of the application
-- The application writes the session data into ElastiCache
-- The user hits another instance of the application
-- The instance retrieves the session data to keep user's login
+- 사용자가 애플리케이션 중 하나에 로그인
+- 애플리케이션이 세션 데이터를 ElastiCache 에 작성
+- 사용자가 다른 애플리케이션 인스턴스에 접속
+- 해당 인스턴스가 세션 데이터를 가져와 사용자 로그인 상태 유지
 
-### Redis vs Memcached
-- Redis
-	- Multi-AZ with Auto-Failover
-	- Read Replicas to scale reads and have HA
-	- Data durability using AOF persistence
-	- Backup and restore features
-	- Supports Sets and Sorted Sets
-- Memcached
-	- Multi-node for partitioning of data (sharding)
-	- No HA
-	- Non persistent
-	- No backup and restore
-	- Multi-threaded architecture
+## Redis vs Memcached
+---
+### Redis
+- 읽기 확장 및 고가용성을 위한 Read Replica 를 추가하여 Multi-AZ 로 구성이 가능하다.
+- Master 에 장애가 발생하면 Read Replica 가 Master 로 승격되는 Auto-Failover 를 지원한다.
+- AOF 지속성을 사용한 데이터 내구성
+- [[Amazon S3]] 에 Snapshot 저장을 통한 백업 및 복원을 지원하여 데이터 영구 보존 역시 가능하다.
+- Sets 및 Sorted Sets 지원
 
-### Patterns for ElastiCache
+### Memcached
+- 데이터 파티셔닝(샤딩)을 위한 Multi-node
+- HA 없음
+- 비영구적
+- 백업 및 복원 없음
+- 멀티스레드 아키텍처
+
+## Patterns for ElastiCache
+---
 - Lazy Loading
-	- All the read data is cached, data can become stale in the cache
+	- 모든 읽기 데이터가 캐시됨, 캐시의 데이터가 오래될 수 있음
 - Write Through
-	- Adds or update data in the cache when written to DB (no stale data)
+	- DB에 쓸 때 캐시에 데이터 추가 또는 업데이트 (오래된 데이터 없음)
 - Session Store
-	- Store temporary session data in the cache (using TTL features)
+	- 캐시에 임시 세션 데이터 저장 (TTL 기능 사용)
 
 ## Cache Security
 ---
-- ElastiCache supports IAM Authentication for Redis
-- IAM policies on ElastiCache are only used for AWS API-level security
+- ElastiCache 는 Redis용 IAM 인증 지원
+- ElastiCache 의 IAM 정책은 AWS API 레벨 보안에만 사용됨
 - Redis Auth
-	- Can set a password/token when creating Redis cluster
-	- Extra level of security for cache (on top of SGs)
-	- Supports SSL in-flight encryption
+	- Redis 클러스터 생성 시 비밀번호/토큰 설정 가능
+	- 캐시에 대한 추가 보안 계층 (SG 위에)
+	- SSL 전송 중 암호화 지원
 - Memcached
-	- Supports SASL-based authentication
+	- SASL 기반 인증 지원
 
 ## ElastiCache Redis OSS 7 Upgrade
 ---
