@@ -9,169 +9,159 @@ tags:
 ---
 ## VPC 란
 ---
-- VPC (Virtual Private Cloud) = User-defined logically isolated virtual network
-- Multiple VPCs in an AWS region (max 5 per region)
-- Max CIDR per VPC is 5, for each CIDR:
-	- Min size = /28 (16 IP addresses)
-	- Max size = /16 (65536 IP addresses)
-- Since VPC is private, only the Private IPv4 ranges are allowed:
+- VPC (Virtual Private Cloud) = 논리적으로 격리된 사용자 정의 가상 네트워크
+- AWS Region 에 여러 VPC 생성 가능 (Region 당 최대 5개)
+- VPC 당 최대 CIDR 는 5개, 각 CIDR:
+	- 최소 크기 = /28 (16개 IP 주소)
+	- 최대 크기 = /16 (65536개 IP 주소)
+- VPC 는 프라이빗이므로 프라이빗 IPv4 범위만 허용:
 	- 10.0.0.0/8
 	- 172.16.0.0/12
 	- 192.168.0.0/16
-- VPC CIDR should not overlap with other networks
-- Requires internet gateway to access services such as S3, and DynamoDB from VPC
+- VPC CIDR 는 다른 네트워크와 겹치지 않아야 함
+- VPC 에서 S3, DynamoDB 같은 서비스에 접근하려면 IGW 가 필요
 
 ### Traffic Mirroring
-- Allows to capture and inspect network traffic in VPC
-- Route the traffic to security appliances
-- Capture the traffic
-	- From ENIs
-	- To an ENI or a NLB
-- Capture all packets or capture the packets that are in interest
-- Source and Target can be in the same VPC or different VPCs
+- VPC 에서 네트워크 트래픽을 캡처하고 검사 가능
+- 트래픽을 보안 어플라이언스로 라우팅
+- 트래픽 캡처:
+	- ENI 에서
+	- ENI 또는 NLB 로
+- 모든 패킷 캡처 또는 관심 있는 패킷만 캡처
+- 소스와 타겟은 동일한 VPC 또는 다른 VPC 에 있을 수 있음
 
 ## Subnet
 ---
-- AWS reserves 5 IP addresses (first 4 & last 1) in each subnet
-- These 5 addresses are not available for use and can't be assigned to an EC2 instance
-	- e.g. For 10.0.0.0/24:
-		- 10.0.0.0 - Network Address
-		- 10.0.0.1 - Reserved by AWS for the VPC router
-		- 10.0.0.2 - Reserved by AWS for mapping to Amazon-provided DNS
-		- 10.0.0.3 - Reserved by AWS for future use
-		- 10.0.0.255 - Network Broadcast Address
+- AWS 는 각 Subnet 에서 5개의 IP 주소 예약 (처음 4개 & 마지막 1개)
+- 이 5개 주소는 사용 불가하며 EC2 인스턴스에 할당할 수 없음
+	- e.g. 10.0.0.0/24 의 경우:
+		- 10.0.0.0 - 네트워크 주소
+		- 10.0.0.1 - VPC 라우터용으로 AWS 가 예약
+		- 10.0.0.2 - Amazon 제공 DNS 매핑용으로 AWS 가 예약
+		- 10.0.0.3 - 향후 사용을 위해 AWS 가 예약
+		- 10.0.0.255 - 네트워크 브로드캐스트 주소
 
 ## Internet Gateway
 ---
-- Allows resources in a VPC to connect to the Internet
-- It scales horizontally and is highly available and redundant
-- One VPC can only be attached to one IGW and vice versa
-- IGW on its own does not allow Internet access
-- Route tables must be edited
+- VPC 의 리소스가 인터넷에 연결할 수 있도록 함
+- 수평 확장이 가능하고 고가용성이며 중복됨
+- 하나의 VPC 는 하나의 IGW 에만 연결 가능하며 그 반대도 마찬가지, 즉, 1:1 관계
+- IGW 자체만으로는 인터넷 액세스를 허용하지 않음
+- 라우트 테이블을 편집해야 함
 
 ### Egress-only Internet Gateway
-- NATGW for IPv6
-- Must update the Route Tables
+- IPv6용 NATGW
+- 라우트 테이블을 업데이트해야 함
 
 ## Bastion Hosts
 ---
-- Bastion Hosts can be used to SSH into private EC2 instances
-- Bastion is in the Public Subnet which is then connected to all other private subnets
-- Bastion Host SG must allow inbound from the internet on port 22 from restricted CIDR
-- SG of EC2 Instances must allow the SG of the Bastion Host or the Private IP of the Bastion
-
-## NAT Instance (Outdated)
----
-- NAT = Network Address Translation
-- Allows EC2 instances in Private Subnets to connect to the Internet
-- Must be launched in a Public Subnet
-- Must disable EC2 setting: Source/destination Check
-- Must have EIP attached to it
-- Route Tables must be configured to route traffic from private subnets to the NAT Instance
+- Bastion Host 를 사용하여 프라이빗 EC2 인스턴스에 SSH 접속 가능
+- Bastion 은 Public Subnet 에 있으며 다른 모든 프라이빗 Subnet 에 연결됨
+- Bastion Host SG 는 제한된 CIDR 에서 포트 22로의 인터넷 Inbound 를 허용해야 함
+- EC2 인스턴스의 SG 는 Bastion Host 의 SG 또는 Bastion 의 Private IP 를 허용해야 함
 
 ## NAT Gateway
 ---
-- AWS-managed NAT, higher bandwidth, HA, not administration
-- Pay per hour for usage and bandwidth
-- NATGW is created in a specific AZ, uses an EIP
-- Can't be used by EC2 instance in the same subnet (only from other subnets)
-- Requires an IGW (Private Subnet -> NATGW -> IGW)
-- 5Gbps of bandwidth with automatic scaling up to 45Gbps
-- No SGs to manage/required
+- AWS 관리형 NAT, 높은 대역폭, 고가용성, 관리 불필요
+- 사용 시간 및 대역폭에 따라 시간당 요금 지불
+- NATGW 는 특정 AZ 에 생성되며 EIP 를 사용
+- 동일한 서브넷의 EC2 인스턴스에서는 사용할 수 없음 (다른 서브넷에서만 사용)
+- IGW 필요 (Private Subnet -> NATGW -> IGW)
+- 5Gbps 의 대역폭으로 최대 45Gbps 까지 자동 확장
+- 관리할 SG 없음/필요 없음
 
 ## NACL & Security Groups
 ---
 ### Network Access Control List
-- A `Stateless` virtual firewall that controls inbound and outbound traffic for the `subnet`
-- Process rules in order, starting with the lowest numbered rule, when deciding whether to allow traffic
-- `Default` NACL `allows all inbound and outbound` traffic
+- Subnet 에 대한 Inbound 및 Outbound 트래픽을 제어하는 `Stateless` 가상 방화벽
+- 트래픽 허용 여부를 결정할 때 가장 낮은 번호의 규칙부터 순서대로 처리
+- `기본` NACL은 `모든 인바운드 및 아웃바운드 트래픽을 허용`
 
 ### Security Groups
-- A `Stateful` virtual firewall that controls inbound and outbound traffic for an `EC2`
-- By `default`, it `denies all inbound` traffic and `allows all outbound` traffic
+- `EC2` 에 대한 Inbound 및 Outbound 트래픽을 제어하는 `Stateful` 가상 방화벽
+- 기본적으로 모든 Inbound 트래픽을 거부하고 모든 Outbound 트래픽을 허용
 
 ## VPC Peering
 ---
-- Privately connect 2 VPCs using the AWS network
-- Make them behave as if they were in the same network
-- Must not have overlapping CIDRs
-- VPC Peering connection is NOT transitive (must be established for each VPC that needs to communicate with one another)
-- Must update route tables in each VPC's subnets to ensure EC2 instances can communicate with each other
+- AWS 네트워크를 사용하여 2개의 VPC를 프라이빗하게 연결
+- 동일한 네트워크에 있는 것처럼 동작하게 함
+- CIDR 가 겹치지 않아야 함
+- VPC Peering 연결은 전이적이지 않음 (서로 통신해야 하는 각 VPC에 대해 설정해야 함, 때문에 2개 이상의 VPC 를 연결해야 할 경우 TGW 고려)
+- 각 VPC 의 서브넷에서 라우트 테이블을 업데이트하여 EC2 인스턴스가 서로 통신할 수 있도록 해야 함
 
 ## VPC Endpoints
 ---
-- Gateway VPC endpoints provide reliable connectivity to `Amazon S3` and `DynamoDB` without requiring an internet gateway or a NAT device for your VPC
+- Gateway VPC 엔드포인트는 VPC 에 인터넷 게이트웨이나 NAT 디바이스 없이 `Amazon S3` 및 `DynamoDB` 에 안정적인 연결을 제공
 
 ### Interface Endpoints (powered by PrivateLink)
-- Provisions an ENI (Private IP address) as an entry point (must attach a SG)
-- Supports most AWS services
-- $ per hour + $ per GB of data processed
-- Preferred when required from on-premises (S2S VPN or Direct Connect), different VPC or different Region
+- ENI(프라이빗 IP 주소)를 진입점으로 프로비저닝 (SG 연결 필수)
+- 대부분의 AWS 서비스 지원
+- 시간당 + 처리된 데이터 GB당 비용 청구
+- 온프레미스(S2S VPN 또는 Direct Connect), 다른 VPC 또는 다른 Region 에서 필요한 경우 선호
 
 ### Gateway Endpoints
-- Provisions a gateway and must be used as a target in a route table (does not use SG)
-- Supports both S3 and DDB
-- Free
+- 게이트웨이를 프로비저닝하고 라우트 테이블에서 대상으로 사용해야 함 (SG 사용 안 함)
+- S3 및 DDB 모두 지원
+- 무료
 
 ## VPC Flow Logs
 ---
-- Capture information about IP traffic going into interfaces:
+- 인터페이스로 들어가는 IP 트래픽에 대한 정보 캡처:
 	- VPC Flow Logs
 	- Subnet Flow Logs
 	- ENI Flow Logs
-- Helps to monitor & troubleshoot connectivity issues
-- Flow logs data can go to S3, CloudWatch Logs, and Kinesis Data Firehose
-- Also captures network information from AWS-managed interfaces: ELB, RDS, ElastiCache, Redshift, WorkSpaces, NATGW, Transit GW, ...
+- 연결 문제 모니터링 및 해결에 도움
+- Flow logs 데이터는 S3, CloudWatch Logs, Kinesis Data Firehose 로 전송 가능
+- AWS 관리형 인터페이스의 네트워크 정보도 캡처: ELB, RDS, ElastiCache, Redshift, WorkSpaces, NATGW, Transit GW, ...
 
 ## AWS Site-to-Site VPN
 ---
-- Creates an `encrypted network path` between the on-premises network and the AWS Cloud network
-- This `connection uses the internet`, so you cannot expect consistency
-- Even though the traffic is encrypted, the connection is `not private` because the internet is a shared resource
+- 온프레미스 네트워크와 AWS 클라우드 네트워크 간에 `암호화된 네트워크 경로` 생성
+- 이 `연결은 인터넷을 사용`하므로 일관성을 기대할 수 없음
+- 트래픽이 암호화되어 있어도 인터넷은 공유 리소스이므로 연결이 `프라이빗하지 않음`
 
 ### Virtual Private Gateway (VGW)
-- VPN concentrator on the AWS side of the VPN connection
-- VGW is created and attached to the VPC
-- Possibility to customize the ASN (Autonomous System Number)
-- Enable `Route Propagation` for the VPG in the Route Table that is associated with subnets
+- VPN 연결의 AWS 측 VPN 집중 장치
+- VGW를 생성하고 VPC에 연결
+- ASN(Autonomous System Number)을 사용자 지정할 수 있음
+- 서브넷과 연결된 라우트 테이블에서 VPG에 대한 `Route Propagation`을 활성화
 
 ### Customer Gateway (CGW)
-- Software app or physical device on the customer side of the VPN connection
-- Use Public Internet-routable IP address for CGW device
-	- If it's behind a NAT device, use the Public IP address of the NAT device
+- VPN 연결의 고객 측에 있는 소프트웨어 앱 또는 물리적 디바이스
+- CGW 디바이스에 Public 인터넷 라우팅 가능 IP 주소 사용
+	- NAT 디바이스 뒤에 있는 경우 NAT 디바이스의 Public IP 주소 사용
 
 ## Direct Connect
 ---
-- Provides a dedicated Private connection from a remote network to VPC
-- A dedicated connection must be set between DX and AWS Direct Connect Locations
-- Need to set a VPG on VPC
-- Access public resources and private on the same connection
+- 원격 네트워크에서 VPC 로의 전용 프라이빗 연결 제공
+- DX 와 AWS Direct Connect Location 간에 전용 연결을 설정해야 함
+- VPC 에 VPG 를 설정해야 함
+- 동일한 연결에서 퍼블릭 리소스 및 프라이빗 리소스에 액세스
 
 ### Direct Connect Gateway
-- To set Direct Connect to one or more VPCs in many different Regions (same account)
+- 여러 다른 Region(동일 계정)의 하나 이상의 VPC 에 Direct Connect 를 설정하기 위해 사용
 
 ## Transit Gateway
 ---
-- To connect and centrally manage network connectivity between `multiple VPCs` in several AWS Regions around the world
-- Regional resource (can work cross-region)
-- Share cross-account using Resource Access Manager (RAM)
-- Can peer TGW across regions
-- Route Tables: Limit which VPC can talk with other VPC
-- Works with Direct Connect GW, VPN connections
-- Supports IP Multicast (not supported by any other AWS service)
+- 전 세계 여러 AWS Region 의 `여러 VPC` 간 네트워크 연결을 중앙에서 연결하고 관리
+- Regional Resource (교차 Region 작동 가능)
+- Resource Access Manager(RAM) 를 사용하여 계정 간 공유
+- Region 간 TGW 피어링 가능
+- 라우트 테이블: 어떤 VPC 가 다른 VPC 와 통신할 수 있는지 제한
+- Direct Connect GW, VPN 연결과 함께 작동
+- IP Multicast 지원 (다른 AWS 서비스에서는 지원되지 않음)
 
 ## Network Firewall
 ---
-- Protect entire VPC from L3 to L7
-	- e.g. To prevent employees from using their Amazon Workspaces virtual desktops to visit specific websites that are known to be malicious
+- L3 에서 L7 까지 전체 VPC 보호
+	- e.g. 직원들이 Amazon Workspaces 가상 데스크톱을 사용하여 악성으로 알려진 특정 웹사이트를 방문하는 것을 방지
 
 ## AWS Client VPN
 ---
-- A managed client-based VPN service
-- To securely access AWS resources and the resources in on-premises network
-- Can access resources from any location through an OpenVPN-based VPN client
-- To connect individual laptops to AWS, not an entire data center
-- Client VPN은 AWS 리소스와 온프레미스 네트워크의 리소스에 안전하게 액세스할 수 있는 기능을 제공하는 관리형 클라이언트 기반 VPN 서비스입니다. Client VPN을 사용하면 OpenVPN 기반 VPN 클라이언트를 통해 어느 위치에서나 리소스에 액세스할 수 있습니다. Client VPN을 사용하면 전체 데이터 센터가 아닌 개별 랩톱을 AWS에 연결할 수 있습니다.
+- 관리형 클라이언트 기반 VPN 서비스
+- AWS 리소스 및 온프레미스 네트워크의 리소스에 안전하게 액세스
+- OpenVPN 기반 VPN 클라이언트를 통해 어느 위치에서나 리소스에 액세스 가능
+- 전체 데이터 센터가 아닌 개별 랩톱을 AWS에 연결
 
 ## References
 ---
