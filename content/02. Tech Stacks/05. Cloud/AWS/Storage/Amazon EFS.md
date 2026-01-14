@@ -20,7 +20,7 @@ tags:
 - 5GB 까지 프리티어로 이용할 수 있다
 
 ### EFS Mount Target
-EFS 를 네트워크 스토리지이기 때문에 EC2 인스턴스가 EFS 에 접근하기 위해선 Endpoint 가 필요하다. EFS 는 ENI 를 기반으로 Mount Target 이라는 Endpoint 를 제공한다. EC2 인스턴스는 이 Mount Target 을 통해 NFS 프로토콜로 EFS 와 연결한다. 때문에 Mount Target 에 적용될 SG 의 Inbound Rule 은 NFS 프로토콜을 위한 2049번 포트를 허용해야한다. Mount Target 은 VPC 내부에서 작동하고 VPC 서브넷에 연결되며 각 AZ 당 1개의 Mount Target 이 필요하다. EFS 는 Mount Target 마다 고유한 DNS 네임을 제공하고 EC2 인스턴스들은 동일한 AZ 에 위치한 Mount Target 을 통해 EFS 에 접근할 수 있다.
+EFS 는 네트워크 스토리지이기 때문에 EC2 인스턴스가 EFS 에 접근하기 위해선 Endpoint 가 필요하다. EFS 는 ENI 를 기반으로 Mount Target 이라는 Endpoint 를 제공한다. EC2 인스턴스는 이 Mount Target 을 통해 NFS 프로토콜로 EFS 와 연결한다. 때문에 Mount Target 에 적용될 SG 의 Inbound Rule 은 NFS 프로토콜을 위한 2049번 포트를 허용해야한다. Mount Target 은 VPC 내부에서 작동하고 VPC 서브넷에 연결되며 각 AZ 당 1개의 Mount Target 이 필요하다. Mount Target 마다 고유한 DNS 네임을 제공하고 EC2 인스턴스들은 동일한 AZ 에 위치한 Mount Target 을 통해 EFS 에 접근할 수 있다. Mount Target 이 위치한 AZ 와 다른 AZ 에서 Mount Target 에 접근하더라도 동일한 VPC 에 위치하면 통신이 가능하지만 서로 다른 AZ 간의 통신에는 데이터센터 간 통신이 추가적으로 발생하기 때문에 지연, 비용 등 통신 비효율이 발생할 수 있다.
 
 ## References
 ---
