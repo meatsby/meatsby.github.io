@@ -50,6 +50,14 @@ SLA 는 SLO 보다 여유있게 설정하여 SLO 내에서 문제를 해결할 �
 ---
 gql.api.example.com -> R53 -> CloudFront -> R53(Public Hosted Zone 을 타고 감) -> ALB(Ingress) -> EKS Node Group -> EKS Pod
 
+## Istio 1.26 버전업 후  istiod memory spike 이슈
+---
+- 기존 istiod 리소스를 requests.memory: 500Mi, limits.memory 2Gi 사용 중 OOMKilled 이슈로 requests.memory: 2500Mi, limits.memory 4Gi 로 증가하는 상황 발생
+- RCA 중 1.26 로 버전업 이후 istiod 메모리 사용량이 증가한 것을 확인, istiod 를 부팅하는 순간부터 더 많은 메모리를 잡아먹었고 DEV, STG, PROD 환경마다 증가량이 달랐음, DEV 가 제일 많고, STG, PROD 순으로 메모리 사용량이 많아짐
+- istiod 의 memory profile 을 확인한 결과 가장 많은 메모리를 잡아먹는 부분이 ConfigMap 과 관련있다는 것을 발견
+- [istiod 코드 중 ConfigMap 관련 코드](https://github.com/istio/istio/blob/1.28.2/pilot/pkg/config/kube/gateway/controller.go#L195-L198)를 확인한 결과 ConfigMap 을 위한 cluster-wide watcher 가 [1.26 에 추가](https://github.com/istio/istio/pull/55545/files#diff-36f29477e5e8138fa42fd7b60af1e8a5374bae908694fc86597fda03ba00cbb9R182-R185)된 것을 확인
+- 클러스터에서 ConfigMap 확인 결과 DEV 에 50000, STG 에 20000, PROD 에 9000 의 ConfigMap 이 존재하는 것을 확인
+
 ## References
 ---
 - 
