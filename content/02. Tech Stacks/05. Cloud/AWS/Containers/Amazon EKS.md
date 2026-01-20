@@ -15,6 +15,8 @@ tags:
 - EKS는 워커 노드를 배포하려는 경우 EC2를 지원하고 서버리스 컨테이너를 배포하려는 경우 Fargate를 지원
 - 사용 사례: 회사가 이미 온프레미스 또는 다른 클라우드에서 K8s를 사용 중이고, K8s를 사용하여 AWS로 마이그레이션하려는 경우
 - K8s는 클라우드 독립적 (Azure, GCP 등 모든 클라우드에서 사용 가능)
+- EKS 는 오픈소스 k8s 를 수정하지 않고 구동한다.
+- EKS 는 4개의 k8s 마이너 버전을 지원한다.
 
 ### Node Types
 - Managed Node Groups
@@ -36,6 +38,17 @@ tags:
     - EFS (Fargate와 호환)
     - FSx for Lustre
     - FSx for NetApp ONTAP
+
+### EKS Cluster Endpoint
+EKS 는 Node Group 을 통해 Worker Node 를 관리한다. 각 Worker Node 는 On-Demand 와 Spot Instance 로 각 AZ 에 고루 배치된다. 각 Worker Node 의 ENI 는 R53 의 Private Hosted Zone 을 통해 Control Plane 의 API Server 와 통신한다. 운영자는 `46E8024.eks.amazonaws.com` 과 같은 형태의 Control Plane 의 Public IP 를 통해 kubectl 로 상호작용할 수 있다.
+
+### EKS Data Plane Options
+Worker Node 를 구성하는 EKS Data Plane 은 크게 3가지로 구분된다.
+1. Self-Managed Node Group
+	- Custom AMI 를 이용하고 ASG 를 사용자가 직접 관리한다. OS 에 대한 기본 구성, 패치에 대한 책임은 사용자의 책임 영역에 해당한다.
+2. Managed Node Group
+	- 최신의 EKS Optimized AMI 를 사용하며 새로운 AMI 에 대한 배포 및 구버전 AMI 제거 등 모두 자동화하여 AWS 가 처리한다.
+3. AWS Fargate
 
 ## References
 ---
