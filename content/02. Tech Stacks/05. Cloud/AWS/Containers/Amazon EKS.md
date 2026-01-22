@@ -50,6 +50,16 @@ Worker Node 를 구성하는 EKS Data Plane 은 크게 3가지로 구분된다.
 	- 최신의 EKS Optimized AMI 를 사용하며 새로운 AMI 에 대한 배포 및 구버전 AMI 제거 등 모두 자동화하여 AWS 가 처리한다.
 3. AWS Fargate
 
+### Container 네트워킹
+![[Pasted image 20260121221205.png]]
+
+### Pod 네트워킹
+![[Pasted image 20260121214441.png]]
+- Pause Container 의 Network Namespace 를 공유
+- Pause Container 의 IP 주소를 받아서 공유
+- Pod 내 Container 는 localhost 통신
+- 동일 Node 에 위치한 타 Pod 와 통신할 경우 Bridge, 다른 Node 에 위치한 타 Pod 와 통신할 경우 CNI
+
 ## References
 ---
 - [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
