@@ -62,15 +62,8 @@ Worker Node 를 구성하는 EKS Data Plane 은 크게 3가지로 구분된다.
 
 ## EKS 1.32 to 1.33 Upgrade
 ---
-### AL2 vs AL2023 지원 현황
-- Amazon Linux 2 (AL2)
-    - 2025년 6월 30일 지원 종료 예정
-    - EKS 1.32까지만 공식 AMI 제공
-    - 1.33부터는 AL2 기반 EKS Optimized AMI 미제공
-- Amazon Linux 2023 (AL2023)
-    - 2028년까지 지원 (5년 주기)
-    - EKS 1.33부터 기본 선택지
-    - containerd 2.x, kernel 6.1 등 최신 스택
+### EKS 1.33 Breaking changes
+K8s 버전 업그레이드 시 항상 API deprecation 이 있는지 확인해야 한다. [kubepug](https://github.com/kubepug/kubepug) 를 활용하면 cluster 에 deprecated 될 API 가 있는지 쉽게 확인할 수 있다.
 
 ### 1.32에서 1.33으로 업그레이드 시 고려사항
 - Kubernetes 1.33은 containerd 2.x를 강력히 권장
