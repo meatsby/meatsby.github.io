@@ -65,6 +65,9 @@ Worker Node 를 구성하는 EKS Data Plane 은 크게 3가지로 구분된다.
 ### EKS 1.33 Breaking changes
 K8s 버전 업그레이드 시 항상 API deprecation 이 있는지 확인해야 한다. [kubepug](https://github.com/kubepug/kubepug) 를 활용하면 cluster 에 deprecated 될 API 가 있는지 쉽게 확인할 수 있다.
 
+### EKS optimized AMI 지원 현황
+Amazon 에선 EKS-optimized AMI 를 어떻게 구성했는지 [amazon-eks-ami](https://github.com/awslabs/amazon-eks-ami) 레포에 공개한다. 해당 레포를 기반으로 AMI 를 커스터마이징해서 사용할 수 있다. 현재 Amazon Linux 2 (AL2) 를 기반으로 EKS Worker Node 를 구성하고 있다. Amazon 에선 EKS 1.33 버전부터 EKS-optimized AL2 AMI 를 2025년 11월 26일부로 중단했다. 하지만 you can build a custom AMI with an Amazon Linux 2 base instance until the Amazon Linux 2 EOS date (June 30, 2026). 2026년 6월 30일 전까지 Amazon Linux 2023 (AL2023) 또는 Bottlerocket 기반으로 AMI 를 재구성해야한다.
+
 ### 1.32에서 1.33으로 업그레이드 시 고려사항
 - Kubernetes 1.33은 containerd 2.x를 강력히 권장
 - 이전 버전(containerd 1.7)도 호환은 되지만 새로운 기능 활용에 제한
