@@ -65,8 +65,53 @@ Worker Node 를 구성하는 EKS Data Plane 은 크게 3가지로 구분된다.
 ### EKS 1.33 Breaking changes
 K8s 버전 업그레이드 시 항상 API deprecation 이 있는지 확인해야 한다. [kubepug](https://github.com/kubepug/kubepug) 를 활용하면 cluster 에 deprecated 될 API 가 있는지 쉽게 확인할 수 있다.
 
-### EKS optimized AMI 지원 현황
-Amazon 에선 EKS-optimized AMI 를 어떻게 구성했는지 [amazon-eks-ami](https://github.com/awslabs/amazon-eks-ami) 레포에 공개한다. 해당 레포를 기반으로 AMI 를 커스터마이징해서 사용할 수 있다. 현재 Amazon Linux 2 (AL2) 를 기반으로 EKS Worker Node 를 구성하고 있다. Amazon 에선 EKS 1.33 버전부터 EKS-optimized AL2 AMI 를 2025년 11월 26일부로 중단했다. 하지만 you can build a custom AMI with an Amazon Linux 2 base instance until the Amazon Linux 2 EOS date (June 30, 2026). 2026년 6월 30일 전까지 Amazon Linux 2023 (AL2023) 또는 Bottlerocket 기반으로 AMI 를 재구성해야한다.
+### EKS optimized AMI
+```
+amazon-eks-ami/
+├── templates/                              # Packer 템플릿 및 프로비저닝 스크립트
+│   ├── al2/                                # Amazon Linux 2 AMI 빌드
+│   │   ├── template.json                   # AL2용 Packer 메인 템플릿
+│   │   ├── variables-default.json          # AL2 기본 변수 설정
+│   │   ├── provisioners/                   # AL2 프로비저닝 스크립트
+│   │   └── runtime/                        # 런타임 구성 파일 (systemd, scripts 등)
+│   ├── al2023/                             # Amazon Linux 2023 AMI 빌드
+│   │   ├── template.json                   # AL2023용 Packer 메인 템플릿
+│   │   ├── variables-default.json          # AL2023 기본 변수
+│   │   ├── variables-1.28.json             # K8s 1.28 전용 변수
+│   │   ├── variables-1.29.json             # K8s 1.29 전용 변수
+│   │   ├── variables-1.30.json             # K8s 1.30 전용 변수
+│   │   ├── variables-1.31.json             # K8s 1.31 전용 변수
+│   │   ├── variables-1.32.json             # K8s 1.32 전용 변수
+│   │   ├── provisioners/                   # AL2023 프로비저닝 스크립트
+│   │   └── runtime/                        # AL2023 런타임 파일
+│   ├── shared/                             # 공통 프로비저닝 스크립트
+│   │   ├── provisioners/
+│   │   └── runtime/                        # 공통 런타임 파일
+├── nodeadm/                                # EKS 노드 관리 도구 (Go 프로젝트)
+│   ├── go.mod                              # Go 모듈 정의
+│   ├── Makefile                            # nodeadm 빌드 스크립트
+│   ├── cmd/                                # 실행 파일 소스
+│   ├── api/                                # Kubernetes API 정의
+│   ├── internal/                           # 내부 패키지
+│   ├── test/e2e/                           # E2E 테스트
+│   ├── crds/                               # CRD YAML 파일
+│   └── vendor/                             # 벤더 의존성
+├── log-collector-script/                   # EKS 로그 수집 도구
+│   ├── linux/                              # Linux용 로그 수집
+│   └── windows/                            # Windows용 로그 수집
+├── hack/                                   # 개발 도구 및 스크립트
+│   ├── latest-binaries.sh                  # 최신 바이너리 버전 조회
+│   ├── generate-nvidia-open-supported-devices.sh
+│   ├── generate-template-variable-doc.py   # 변수 문서 자동 생성
+│   ├── lint-docs.sh                        # 문서 린트
+│   ├── lint-space-errors.sh                # 공백 오류 체크
+│   ├── shellcheck                          # Shell 스크립트 린터
+│   ├── shfmt                               # Shell 포맷터
+│   ├── nodeadm-check-generate.sh           # nodeadm 코드 생성 검증
+│   └── nodeadm-check-vendor.sh             # nodeadm 벤더 검증
+└── Makefile                                # 메인 빌드 스크립트
+```
+Amazon 에선 EKS-optimized AMI 를 어떻게 구성했는지 [amazon-eks-ami](https://github.com/awslabs/amazon-eks-ami) 레포에 공개한다. 해당 레포를 기반으로 AMI 를 커스터마이징해서 사용할 수 있다. 현재 Amazon Linux 2 (AL2) 를 기반으로 EKS Worker Node 를 구성하고 있다. Amazon 에선 EKS 1.33 버전부터 EKS-optimized AL2 AMI 를 2025년 11월 26일부로 중단했다. 하지만 [공식문서](https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-deprecation-faqs.html)에 따르면 `you can build a custom AMI with an Amazon Linux 2 base instance until the Amazon Linux 2 EOS date (June 30, 2026).` 2026년 6월 30일 전까지 Amazon Linux 2023 (AL2023) 또는 Bottlerocket 기반으로 AMI 를 재구성해야한다.
 
 ### 1.32에서 1.33으로 업그레이드 시 고려사항
 - Kubernetes 1.33은 containerd 2.x를 강력히 권장
