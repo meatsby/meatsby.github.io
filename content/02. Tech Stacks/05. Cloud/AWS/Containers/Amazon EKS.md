@@ -65,7 +65,10 @@ Worker Node 를 구성하는 EKS Data Plane 은 크게 3가지로 구분된다.
 ### EKS 1.33 Breaking changes
 K8s 버전 업그레이드 시 항상 API deprecation 이 있는지 확인해야 한다. [kubepug](https://github.com/kubepug/kubepug) 를 활용하면 cluster 에 deprecated 될 API 가 있는지 쉽게 확인할 수 있다.
 
-### EKS optimized AMI
+### EKS 1.33 과 AL/AL2023
+EKS 1.33 부터 AL2 기반 EKS Optimized AMI 는 v20251209 를 마지막으로 deprecated 되고 AL2023 기반 AMI 만 제공된다. AL2 기반에서 Kubernetes 1.33 이 이론적으로 안 돌아가는 건 아니지만 containerd 2.x, runc 1.3+, cgroup v2 안정성, seccomp / eBPF 등 직접 다 책임지고 맞춰야한다.
+
+### EKS Optimized AMI
 ```
 amazon-eks-ami/
 ├── templates/                              # Packer 템플릿 및 프로비저닝 스크립트
@@ -111,7 +114,8 @@ amazon-eks-ami/
 │   └── nodeadm-check-vendor.sh             # nodeadm 벤더 검증
 └── Makefile                                # 메인 빌드 스크립트
 ```
-Amazon 에선 EKS-optimized AMI 를 어떻게 구성했는지 [amazon-eks-ami](https://github.com/awslabs/amazon-eks-ami) 레포에 공개한다. 해당 레포를 기반으로 AMI 를 커스터마이징해서 사용할 수 있다. 현재 Amazon Linux 2 (AL2) 를 기반으로 EKS Worker Node 를 구성하고 있다. Amazon 에선 EKS 1.33 버전부터 EKS-optimized AL2 AMI 를 2025년 11월 26일부로 중단했다. 하지만 [공식문서](https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-deprecation-faqs.html)에 따르면 `you can build a custom AMI with an Amazon Linux 2 base instance until the Amazon Linux 2 EOS date (June 30, 2026).` 2026년 6월 30일 전까지 Amazon Linux 2023 (AL2023) 또는 Bottlerocket 기반으로 AMI 를 재구성해야한다.
+[amazon-eks-ami](https://github.com/awslabs/amazon-eks-ami) 는 AL2, AL2023, Bottlerocket 각 OS AMI 를 기반으로 EKS Worker Node 로 작동하기 위해 필요한 `kubelet`, `kube-proxy`, `containerd`, CNI bootstrap, `/etc/eks/bootstrap.sh`, systemd unit, OS 별 iptables/nftables 설정 등을 추가해서 추가해서 EKS Optimized AMI 를 만드는 IaC 레포다.
+Amazon 에선 EKS Optimized AMI 를 어떻게 구성했는지 [amazon-eks-ami](https://github.com/awslabs/amazon-eks-ami) 레포에 공개한다. 해당 레포를 기반으로 AMI 를 커스터마이징해서 사용할 수 있다. 현재 Amazon Linux 2 (AL2) 를 기반으로 EKS Worker Node 를 구성하고 있다. Amazon 에선 EKS 1.33 버전부터 EKS-optimized AL2 AMI 를 2025년 11월 26일부로 중단했다. 하지만 [공식문서](https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-deprecation-faqs.html)에 따르면 `you can build a custom AMI with an Amazon Linux 2 base instance until the Amazon Linux 2 EOS date (June 30, 2026).` 2026년 6월 30일 전까지 Amazon Linux 2023 (AL2023) 또는 Bottlerocket 기반으로 AMI 를 재구성해야한다.
 
 ### 1.32에서 1.33으로 업그레이드 시 고려사항
 - Kubernetes 1.33은 containerd 2.x를 강력히 권장
