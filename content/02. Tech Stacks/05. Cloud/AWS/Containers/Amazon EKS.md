@@ -5,6 +5,8 @@ status: In Progress
 draft: false
 tags:
   - AWS
+  - EKS
+  - K8s
 ---
 ## Amazon EKS
 ---
@@ -65,7 +67,7 @@ Worker Node 를 구성하는 EKS Data Plane 은 크게 3가지로 구분된다.
 ### EKS 1.33 Breaking changes
 K8s 버전 업그레이드 시 항상 API deprecation 이 있는지 확인해야 한다. [kubepug](https://github.com/kubepug/kubepug) 를 활용하면 cluster 에 deprecated 될 API 가 있는지 쉽게 확인할 수 있다.
 
-### EKS 1.33 과 AL/AL2023
+### EKS 1.33 과 AL2/AL2023
 EKS 1.33 부터 AL2 기반 EKS Optimized AMI 는 v20251209 를 마지막으로 deprecated 되고 AL2023 기반 AMI 만 제공된다. AL2 기반에서 Kubernetes 1.33 이 이론적으로 안 돌아가는 건 아니지만 containerd 2.x, runc 1.3+, cgroup v2 안정성, seccomp / eBPF 등 직접 다 책임지고 맞춰야한다.
 
 ### EKS Optimized AMI
@@ -118,23 +120,80 @@ amazon-eks-ami/
 
 현재 사내에선 AL2 기반의 EKS Worker Node 를 구성하여 사용하고있다. AWS 에선 AL2 기반 EKS Optimized AMI 지원을 2025년 11월 26일부로 중단해서 EKS 1.33 버전부턴 AL2 기반의 AMI 가 공식적으로 존재하지 않는다. 하지만 [공식문서](https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-deprecation-faqs.html)에 따르면 AL2 를 기반으로 구성한 Custom Worker Node AMI 의 경우 AL2 의 EOS 인 2026년 6월 30일까지 사용할 수 있다고 한다. 웬만하면 기존에 구성해왔던 방식인 AL2 기반으로 EKS 1.33 Custom Worker Node AMI 를 구성하려고 했으나 containerd 1.7.x 에 존재하는 보안 이슈 때문에 공식적으로 containerd 2.1.5 를 기반으로 작성된 AL2023 AMI 로 Worker Node AMI 를 재구성하기로했다. 어쨌든 Bottlerocket 으로 넘어갈 예정이긴 하다만...
 
-### 1.32에서 1.33으로 업그레이드 시 고려사항
-- Kubernetes 1.33은 containerd 2.x를 강력히 권장
-- 이전 버전(containerd 1.7)도 호환은 되지만 새로운 기능 활용에 제한
-- cgroup v2, CRI v1 API 완전 구현 등은 containerd 2.x 기반
-- 스택 의존성 구조:
+### Upgrade from AL2 to AL2023
+AL2 와 AL2023 의 주요 차이점으론 Bootstrap 메커니즘의 변경이 있다. 기존 AL2 에선 `/etc/eks/bootstrap.sh` 스크립트를 EC2 User Data 로 넘겨 kubelet 등 Worker Node 로 작동하기 위한 바이너리들을 실행했는데 AL2023 부턴 Go로 작성된 새로운 도구인 `nodeadm` 바이너리를 통해 Bootstrap 을 진행한다. 때문에 기존에 User Data 로 넘기던 스크립트를 `nodeadm` 형식에 맞춰야한다.
+
+```bash
+#!/bin/bash
+/etc/eks/bootstrap.sh my-cluster \
+  --b64-cluster-ca <base64-ca> \
+  --apiserver-endpoint <endpoint> \
+  --kubelet-extra-args '--node-labels=foo=bar'
 ```
-Kubernetes 1.33
-  ↓
-kubelet (CRI client)
-  ↓
-containerd 2.x (CRI server)
-  ↓
-Linux Kernel 6.1 (cgroup v2, seccomp)
+기존 AL2 User Data 는 `bootstrap.sh` 에 옵션을 추가하여 설정하고 EKS DescribeCluster API 로 필요한 메타데이터를 자동으로 조회했던 반면,
+
+```yaml
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY"
+
+--BOUNDARY
+Content-Type: application/node.eks.aws
+
+---
+apiVersion: node.eks.aws/v1alpha1
+kind: NodeConfig
+spec:
+  cluster:
+    name: my-cluster
+    apiServerEndpoint: https://EXAMPLE.gr7.us-west-2.eks.amazonaws.com
+    certificateAuthority: <base64-ca>
+    cidr: 10.100.0.0/16
+  kubelet:
+    config:
+      clusterDNS:
+        - 172.20.0.10
+    flags:
+      - --node-labels=foo=bar
+
+--BOUNDARY--
 ```
-- AL2는 kernel 5.10 + containerd 1.7 조합
-- AL2023은 kernel 6.1 + containerd 2.x 조합
-- K8s 1.33의 보안/격리 기능은 cgroup v2 활용이 전제
+AL2023 User Data (MIME multi-part) 에선 YAML 형태로 설정을 정의하고 대규모 스케일업 시 추가적인 API 호출로 인한 스로틀링 발생을 방지하기 위해 EKS DescribeCluster API 를 호출하는 대신 직접 `apiServerEndpoint`, `certificateAuthority`, `cidr` 등을 필수로 명시하게끔 변경되었다.
+
+AL2023 AMI 는 systemd 를 통해 nodeadm 을 자동으로 2단계로 실행한다.
+- `nodeadm-config.service`: User Data 실행 **전**에 실행, containerd/kubelet 기본 설정
+- `nodeadm-run.service`: User Data 실행 **후**에 실행, 최종 설정 완료
+
+```bash
+cat > /etc/eks/nodeadm.d/additional-config.yaml << EOF
+apiVersion: node.eks.aws/v1alpha1
+kind: NodeConfig
+spec:
+  kubelet:
+    config:
+      cgroupDriver: cgroupfs
+      ...
+EOF
+```
+추가적인 동적 설정은 `/etc/eks/nodeadm.d/` 디렉토리에 YAML/JSON drop-in 파일로 작성할 수 있다.
+
+네트워킹 스택 변경
+- AL2: iptables (legacy)
+- AL2023: nftables (default), iptables-nft wrapper 제공
+- kube-proxy ipvs 모드 사용 시 주의 필요
+
+cgroup 버전 변경
+- AL2: cgroup v1
+- AL2023: cgroup v2 (unified control group hierarchy)
+- cgroupv1 코드는 존재하지만 권장/지원되지 않음, 향후 완전 제거 예정
+
+IMDS (Instance Metadata Service) 요구사항
+- AL2023은 IMDSv2를 기본으로 요구
+- 보안 강화: 세션 기반 인증, 1초~6시간 토큰 유효 기간
+- **Managed Node Group의 기본 hop limit:**
+  - Launch Template 없이 생성: hop limit = 1 (컨테이너는 노드 credential 접근 불가)
+  - Custom AMI + Launch Template: hop limit = 2 (컨테이너 접근 가능)
+- 컨테이너 credential 접근 필요 시: Launch Template에서 `HttpPutResponseHopLimit=2` 설정
+- 또는 EKS Pod Identity 사용 권장 (IMDSv2 대신 IAM 역할 직접 할당)
 
 ## References
 ---
