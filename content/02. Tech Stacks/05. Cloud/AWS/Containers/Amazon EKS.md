@@ -195,6 +195,384 @@ IMDS (Instance Metadata Service) 요구사항
 - 컨테이너 credential 접근 필요 시: Launch Template에서 `HttpPutResponseHopLimit=2` 설정
 - 또는 EKS Pod Identity 사용 권장 (IMDSv2 대신 IAM 역할 직접 할당)
 
+#### Instance Reachability Check Failed 원인 분석
+
+**증상:**
+- NodeCreationFailure: 새 노드가 node group에 join 실패
+- Instance status checks: "Instance reachability check failed"
+
+**가능한 원인:**
+
+**1. User Data 형식 오류**
+```bash
+# AL2 스타일 User Data를 그대로 사용한 경우
+#!/bin/bash
+/etc/eks/bootstrap.sh my-cluster  # ❌ AL2023에는 이 스크립트 없음
+```
+
+증상:
+- 인스턴스가 부팅은 되지만 kubelet이 시작 실패
+- cloud-init이 실패하여 네트워크 설정 미완료
+- SSH 접속 불가 (reachability check failed)
+
+해결:
+```yaml
+# nodeadm 형식으로 변경
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY"
+
+--BOUNDARY
+Content-Type: application/node.eks.aws
+
+---
+apiVersion: node.eks.aws/v1alpha1
+kind: NodeConfig
+spec:
+  cluster:
+    name: YOUR_CLUSTER_NAME
+    apiServerEndpoint: https://YOUR_CLUSTER_ENDPOINT
+    certificateAuthority: YOUR_BASE64_CA
+    cidr: 172.20.0.0/16  # VPC CIDR (필수!)
+
+--BOUNDARY--
+```
+
+**1-1. cluster.cidr 누락**
+```yaml
+# ❌ cidr 누락 시 Pod 네트워크 설정 실패
+spec:
+  cluster:
+    name: my-cluster
+    apiServerEndpoint: https://example.com
+    certificateAuthority: Y2VydGlmaW...
+    # cidr이 없음!
+```
+
+증상:
+- kubelet이 service CIDR을 알지 못해 DNS 설정 실패
+- CoreDNS Pod와 통신 불가
+- Pod 생성 실패
+
+해결:
+```bash
+# VPC CIDR 확인
+aws ec2 describe-vpcs --vpc-ids vpc-xxx --query 'Vpcs[0].CidrBlock'
+
+# NodeConfig에 추가
+spec:
+  cluster:
+    cidr: 10.100.0.0/16  # VPC CIDR
+```
+
+**3. IAM Instance Profile 미설정**
+AL2023 nodeadm은 부팅 시 즉시 AWS API를 호출하므로 IAM 권한 필수:
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeInstanceTypes",
+        "eks:DescribeCluster",
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+**7. IMDSv2 hop limit 문제**
+AL2023은 IMDSv2 필수, Managed Node Group의 기본 hop limit 설정 주의:
+- Launch Template 없음: hop limit = 1 (컨테이너는 IMDS 접근 불가)
+- Custom AMI + Launch Template: hop limit = 2
+
+특정 워크로드가 IMDS 접근이 필요한 경우:
+```hcl
+# Launch Template에서 hop limit 설정
+resource "aws_launch_template" "eks_nodes" {
+  metadata_options {
+    http_endpoint               = "enabled"
+    http_tokens                 = "required"  # IMDSv2 강제
+    http_put_response_hop_limit = 2           # 컨테이너 접근 허용
+  }
+}
+```
+
+#### 디버깅 방법
+
+**1. System Log 확인 (Serial Console)**
+```bash
+# EC2 콘솔에서 Instance > Actions > Monitor and troubleshoot > Get system log
+# 또는 CLI로:
+aws ec2 get-console-output --instance-id i-xxx --output text
+```
+
+찾아야 할 패턴:
+```
+[FAILED] Failed to start nodeadm.service
+cloud-init[xxx]: Failed to run module scripts-user
+kubelet.service: Failed with result 'exit-code'
+```
+
+**2. Session Manager로 접속 (가능한 경우)**
+```bash
+# SSM Agent가 동작 중이면:
+aws ssm start-session --target i-xxx
+
+# 내부에서:
+sudo journalctl -u nodeadm -n 100
+sudo journalctl -u kubelet -n 100
+sudo cat /var/log/cloud-init-output.log
+```
+
+**3. User Data 검증**
+```bash
+# 현재 인스턴스의 User Data 확인
+aws ec2 describe-instance-attribute \
+  --instance-id i-xxx \
+  --attribute userData \
+  --query 'UserData.Value' \
+  --output text | base64 -d
+```
+
+**4. nodeadm 설정 파일 확인**
+```bash
+# 인스턴스 내부에서
+sudo cat /etc/nodeadm/config.yaml
+# nodeadm이 파싱한 최종 설정 확인
+```
+
+#### 빠른 테스트 방법
+
+**1. 단일 EC2 인스턴스로 먼저 테스트**
+```bash
+# Launch Template으로 직접 인스턴스 생성
+aws ec2 run-instances \
+  --launch-template LaunchTemplateId=lt-xxx,Version=1 \
+  --subnet-id subnet-xxx
+
+# 5분 후 상태 확인
+aws ec2 describe-instance-status --instance-id i-xxx
+
+# System log 확인
+aws ec2 get-console-output --instance-id i-xxx
+```
+
+**2. kubelet 로그 우선 확인**
+```bash
+# Session Manager로 접속 후
+sudo journalctl -u kubelet -f
+
+# 에러 패턴:
+# - "failed to run Kubelet: misconfiguration"
+# - "Unable to register node with API server"
+# - "failed to get CA cert"
+```
+
+**3. nodeadm 수동 실행 테스트**
+```bash
+# 인스턴스 내부에서
+sudo nodeadm init --config-source file:///etc/nodeadm/config.yaml
+
+# 실패 시 상세 로그:
+sudo nodeadm init --config-source file:///etc/nodeadm/config.yaml --log-level debug
+```
+
+#### 일반적인 실수 TOP 5
+
+1. **AL2 User Data를 그대로 복사** → nodeadm YAML로 변경 필요
+2. **User Data에서 nodeadm init 명시적 실행** → drop-in 설정 파일 사용 필요
+3. **cluster.cidr 누락** → VPC CIDR 명시 필요
+4. **VPC CNI 버전 부족** → 1.16.2 이상 업그레이드 필요
+5. **IMDSv2 hop limit 미설정** → Launch Template에서 hop limit 조정 필요
+
+#### 업그레이드 전 체크리스트
+
+**Phase 0: 사전 준비**
+- [ ] 클러스터 메타데이터 수집 (User Data에 필요)
+```bash
+# API Server Endpoint
+aws eks describe-cluster --name my-cluster --query 'cluster.endpoint' --output text
+
+# Certificate Authority
+aws eks describe-cluster --name my-cluster --query 'cluster.certificateAuthority.data' --output text
+
+# VPC CIDR
+aws eks describe-cluster --name my-cluster --query 'cluster.resourcesVpcConfig.vpcId' --output text
+aws ec2 describe-vpcs --vpc-ids <vpc-id> --query 'Vpcs[0].CidrBlock' --output text
+```
+
+#### 즉시 확인할 사항
+
+현재 상황에서 다음을 확인하세요:
+
+```bash
+# 1. 실패한 인스턴스의 System Log
+aws ec2 get-console-output \
+  --instance-id <failed-instance-id> \
+  --region <your-region> \
+  --output text > instance-log.txt
+
+# 2. User Data 내용 확인
+aws ec2 describe-instance-attribute \
+  --instance-id <failed-instance-id> \
+  --attribute userData \
+  --query 'UserData.Value' \
+  --output text | base64 -d
+
+# 3. 사용 중인 AMI가 AL2023인지 확인
+aws ec2 describe-instances \
+  --instance-ids <failed-instance-id> \
+  --query 'Reservations[0].Instances[0].ImageId'
+
+# 4. VPC CNI 버전 확인
+kubectl describe daemonset aws-node -n kube-system | grep Image
+
+# 5. IMDSv2 hop limit 확인
+aws ec2 describe-instances \
+  --instance-ids <failed-instance-id> \
+  --query 'Reservations[0].Instances[0].MetadataOptions'
+```
+
+#### 네트워크 인터페이스 실패 문제 (Critical)
+
+**증상:**
+```
+Failed to start - Setup network interface ens5
+Failed to start - EKS Nodeadm Boot Hook
+Failed to start - EKS Nodeadm Config
+cloud-init: Network is unreachable (169.254.169.254)
+```
+
+이것은 ENI가 제대로 attach/configure 되지 않아서 발생하는 가장 심각한 문제입니다.
+
+**원인 2: Launch Template에 네트워크 인터페이스 명시적 설정**
+
+네트워크 인터페이스를 Launch Template에 명시하면 EKS가 ENI를 자동으로 관리하지 못함:
+
+```hcl
+# ❌ 잘못된 설정 - network_interfaces 블록 사용
+resource "aws_launch_template" "eks_nodes" {
+  # ...
+  
+  network_interfaces {
+    associate_public_ip_address = false
+    security_groups            = [aws_security_group.eks_nodes.id]
+    delete_on_termination      = true
+  }
+}
+```
+
+해결:
+```hcl
+# ✅ 올바른 설정 - network_interfaces 제거
+resource "aws_launch_template" "eks_nodes" {
+  # ...
+  
+  # network_interfaces 블록 제거!
+  # 대신 vpc_security_group_ids 사용
+  vpc_security_group_ids = [aws_security_group.eks_nodes.id]
+}
+```
+
+**원인 3: Subnet 설정 오류**
+
+```bash
+# Subnet이 실제로 존재하고 사용 가능한지 확인
+aws ec2 describe-subnets \
+  --subnet-ids <subnet-id> \
+  --query 'Subnets[0].[SubnetId,State,AvailableIpAddressCount,VpcId]'
+
+# 출력:
+# ["subnet-xxx", "available", 250, "vpc-xxx"]  ← ✅ 정상
+# ["subnet-xxx", "pending", 0, "vpc-xxx"]      ← ❌ 사용 불가
+```
+
+**원인 5: IMDSv1 사용 시도 (AL2023은 IMDSv2 필수)**
+
+```bash
+# Launch Template의 IMDS 설정 확인
+aws ec2 describe-launch-template-versions \
+  --launch-template-id <lt-id> \
+  --versions $Latest \
+  --query 'LaunchTemplateVersions[0].LaunchTemplateData.MetadataOptions'
+
+# 출력:
+{
+  "HttpTokens": "optional",           # ❌ IMDSv1 허용 (AL2023에서 문제)
+  "HttpPutResponseHopLimit": 1
+}
+```
+
+해결:
+```hcl
+resource "aws_launch_template" "eks_nodes" {
+  # ...
+  
+  metadata_options {
+    http_endpoint               = "enabled"
+    http_tokens                 = "required"  # ✅ IMDSv2 강제
+    http_put_response_hop_limit = 2
+  }
+}
+```
+
+**원인 6: Security Group이 IMDS 접근 차단**
+
+극히 드물지만, Security Group에서 169.254.169.254:80 접근을 차단하는 경우:
+
+```bash
+# Security Group 아웃바운드 규칙 확인
+aws ec2 describe-security-groups \
+  --group-ids <sg-id> \
+  --query 'SecurityGroups[0].IpPermissionsEgress'
+
+# 최소한 다음이 필요:
+# - 0.0.0.0/0:443 (HTTPS)
+# - 169.254.169.254/32:80 (IMDS - 보통 기본 허용)
+```
+
+**디버깅 체크리스트 (네트워크 실패 시)**
+
+2. **Launch Template에 network_interfaces 블록이 없는지 확인**
+```bash
+aws ec2 describe-launch-template-versions \
+  --launch-template-id <lt-id> \
+  --versions $Latest \
+  --query 'LaunchTemplateVersions[0].LaunchTemplateData.NetworkInterfaces'
+
+# 출력: null 또는 빈 배열이어야 함!
+```
+
+4. **Subnet에 사용 가능한 IP가 있는지 확인**
+```bash
+aws ec2 describe-subnets \
+  --subnet-ids <subnet-id> \
+  --query 'Subnets[0].AvailableIpAddressCount'
+
+# 0보다 커야 함!
+```
+
+5. **간단한 테스트 인스턴스 생성 (User Data 없이)**
+```bash
+# User Data 완전 제거하고 AL2023 AMI로 인스턴스 시작
+aws ec2 run-instances \
+  --image-id <al2023-ami-id> \
+  --instance-type t3.small \
+  --subnet-id <subnet-id> \
+  --security-group-ids <sg-id> \
+  --iam-instance-profile Name=<profile-name>
+
+# 5분 후 SSH 가능한지 확인
+# 가능하면 User Data 문제, 불가능하면 네트워크 인프라 문제
+```
+
 ## References
 ---
 - [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
