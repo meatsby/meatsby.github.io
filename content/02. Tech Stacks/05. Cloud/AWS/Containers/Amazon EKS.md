@@ -157,7 +157,7 @@ spec:
 
 --BOUNDARY--
 ```
-AL2023 User Data (MIME multi-part) 에선 YAML 형태로 설정을 정의하고 대규모 스케일업 시 추가적인 API 호출로 인한 스로틀링 발생을 방지하기 위해 EKS DescribeCluster API 를 호출하는 대신 직접 `apiServerEndpoint`, `certificateAuthority`, `cidr` 등을 필수로 명시하게끔 변경되었다.
+AL2023 User Data (MIME multi-part) 에선 YAML 형태로 설정을 정의하고 대규모 스케일업 시 추가적인 API 호출로 인한 스로틀링 발생을 방지하기 위해 EKS DescribeCluster API 를 호출하는 대신 직접 `apiServerEndpoint`, `certificateAuthority`, `cidr` 등을 필수로 명시하게끔 변경되었다. 특히 `cidr` 의 경우 기존에 `bootstrap.sh` 에선 요구하지 않았지만 `nodeadm` 부터 DNS 설정을 위해 service CIDR 를 직접 주입해주어야한다.
 
 AL2023 AMI 는 systemd 를 통해 nodeadm 을 자동으로 2단계로 실행한다.
 - `nodeadm-config.service`: User Data 실행 **전**에 실행, containerd/kubelet 기본 설정
@@ -187,9 +187,20 @@ cgroup 버전 변경
 - cgroupv1 코드는 존재하지만 권장/지원되지 않음, 향후 완전 제거 예정
 
 IMDS (Instance Metadata Service) 요구사항
+특정 워크로드가 IMDS 접근이 필요한 경우:
+```hcl
+# Launch Template에서 hop limit 설정
+resource "aws_launch_template" "eks_nodes" {
+  metadata_options {
+    http_endpoint               = "enabled"
+    http_tokens                 = "required"  # IMDSv2 강제
+    http_put_response_hop_limit = 2           # 컨테이너 접근 허용
+  }
+}
+```
 - AL2023은 IMDSv2를 기본으로 요구
 - 보안 강화: 세션 기반 인증, 1초~6시간 토큰 유효 기간
-- **Managed Node Group의 기본 hop limit:**
+- Managed Node Group의 기본 hop limit:
   - Launch Template 없이 생성: hop limit = 1 (컨테이너는 노드 credential 접근 불가)
   - Custom AMI + Launch Template: hop limit = 2 (컨테이너 접근 가능)
 - 컨테이너 credential 접근 필요 시: Launch Template에서 `HttpPutResponseHopLimit=2` 설정
@@ -202,67 +213,6 @@ IMDS (Instance Metadata Service) 요구사항
 - Instance status checks: "Instance reachability check failed"
 
 **가능한 원인:**
-
-**1. User Data 형식 오류**
-```bash
-# AL2 스타일 User Data를 그대로 사용한 경우
-#!/bin/bash
-/etc/eks/bootstrap.sh my-cluster  # ❌ AL2023에는 이 스크립트 없음
-```
-
-증상:
-- 인스턴스가 부팅은 되지만 kubelet이 시작 실패
-- cloud-init이 실패하여 네트워크 설정 미완료
-- SSH 접속 불가 (reachability check failed)
-
-해결:
-```yaml
-# nodeadm 형식으로 변경
-MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="BOUNDARY"
-
---BOUNDARY
-Content-Type: application/node.eks.aws
-
----
-apiVersion: node.eks.aws/v1alpha1
-kind: NodeConfig
-spec:
-  cluster:
-    name: YOUR_CLUSTER_NAME
-    apiServerEndpoint: https://YOUR_CLUSTER_ENDPOINT
-    certificateAuthority: YOUR_BASE64_CA
-    cidr: 172.20.0.0/16  # VPC CIDR (필수!)
-
---BOUNDARY--
-```
-
-**1-1. cluster.cidr 누락**
-```yaml
-# ❌ cidr 누락 시 Pod 네트워크 설정 실패
-spec:
-  cluster:
-    name: my-cluster
-    apiServerEndpoint: https://example.com
-    certificateAuthority: Y2VydGlmaW...
-    # cidr이 없음!
-```
-
-증상:
-- kubelet이 service CIDR을 알지 못해 DNS 설정 실패
-- CoreDNS Pod와 통신 불가
-- Pod 생성 실패
-
-해결:
-```bash
-# VPC CIDR 확인
-aws ec2 describe-vpcs --vpc-ids vpc-xxx --query 'Vpcs[0].CidrBlock'
-
-# NodeConfig에 추가
-spec:
-  cluster:
-    cidr: 10.100.0.0/16  # VPC CIDR
-```
 
 **3. IAM Instance Profile 미설정**
 AL2023 nodeadm은 부팅 시 즉시 AWS API를 호출하므로 IAM 권한 필수:
@@ -284,23 +234,6 @@ AL2023 nodeadm은 부팅 시 즉시 AWS API를 호출하므로 IAM 권한 필수
       "Resource": "*"
     }
   ]
-}
-```
-
-**7. IMDSv2 hop limit 문제**
-AL2023은 IMDSv2 필수, Managed Node Group의 기본 hop limit 설정 주의:
-- Launch Template 없음: hop limit = 1 (컨테이너는 IMDS 접근 불가)
-- Custom AMI + Launch Template: hop limit = 2
-
-특정 워크로드가 IMDS 접근이 필요한 경우:
-```hcl
-# Launch Template에서 hop limit 설정
-resource "aws_launch_template" "eks_nodes" {
-  metadata_options {
-    http_endpoint               = "enabled"
-    http_tokens                 = "required"  # IMDSv2 강제
-    http_put_response_hop_limit = 2           # 컨테이너 접근 허용
-  }
 }
 ```
 
