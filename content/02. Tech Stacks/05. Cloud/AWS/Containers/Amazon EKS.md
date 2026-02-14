@@ -18,7 +18,7 @@ tags:
 - 사용 사례: 회사가 이미 온프레미스 또는 다른 클라우드에서 K8s를 사용 중이고, K8s를 사용하여 AWS로 마이그레이션하려는 경우
 - K8s는 클라우드 독립적 (Azure, GCP 등 모든 클라우드에서 사용 가능)
 - EKS 는 오픈소스 k8s 를 수정하지 않고 구동한다.
-- EKS 는 4개의 k8s 마이너 버전을 지원한다.
+- EKS 는 4개의 k8s 마이너 버전을 지원한다. [공식문서](https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html)
 
 ### Node Types
 - Managed Node Groups
