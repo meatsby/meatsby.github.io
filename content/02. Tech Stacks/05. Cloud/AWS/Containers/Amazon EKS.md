@@ -68,7 +68,7 @@ Worker Node 를 구성하는 EKS Data Plane 은 크게 3가지로 구분된다.
 K8s 버전 업그레이드 시 항상 API deprecation 이 있는지 확인해야 한다. [kubepug](https://github.com/kubepug/kubepug) 를 활용하면 cluster 에 deprecated 될 API 가 있는지 쉽게 확인할 수 있다.
 
 ### EKS 1.33 Native Sidecar
-k8s 1.33 부터 [Native Sidecar 기능](https://kubernetes.io/blog/2025/04/23/kubernetes-v1-33-release/#stable-sidecar-containers)이 안정화되었는데, istio-proxy 가 2개 생성되는 이슈 발생, `values.pilot.env.ENABLE_NATIVE_SIDECARS=false` 로 옵션을 제거해주자 정상적으로 사이드카 파드가 생성됨.
+k8s 1.33 부터 [Native Sidecar 기능](https://kubernetes.io/blog/2025/04/23/kubernetes-v1-33-release/#stable-sidecar-containers)이 안정화되어 기본값이 되었는데, istio-proxy 가 2개 생성되는 이슈 발생, `values.pilot.env.ENABLE_NATIVE_SIDECARS=false` 로 옵션을 제거해주자 정상적으로 사이드카 파드가 생성됨. `istiod` 에 `sidecarInjectorWebhook.templates` 으로 istio-proxy 를 gracefully shutdown 하는 커스텀 템플릿이 충돌하는건가...
 
 ### EKS 1.33 과 AL2/AL2023
 EKS 1.33 부터 AL2 기반 EKS Optimized AMI 는 v20251209 를 마지막으로 deprecated 되고 AL2023 기반 AMI 만 제공된다. AL2 기반에서 Kubernetes 1.33 이 이론적으로 안 돌아가는 건 아니지만 containerd 2.x, runc 1.3+, cgroup v2 안정성, seccomp / eBPF 등 직접 다 책임지고 맞춰야한다.
