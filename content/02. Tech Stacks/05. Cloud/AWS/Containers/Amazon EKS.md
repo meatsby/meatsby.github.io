@@ -62,6 +62,16 @@ Worker Node 를 구성하는 EKS Data Plane 은 크게 3가지로 구분된다.
 - Pod 내 Container 는 localhost 통신
 - 동일 Node 에 위치한 타 Pod 와 통신할 경우 Bridge, 다른 Node 에 위치한 타 Pod 와 통신할 경우 CNI
 
+### EKS Upgrade
+1. Control Plane 버전 업그레이드
+2. Worker Node AMI 업그레이드
+	1. AMI Packer Template 에서 kubelet 버전 업그레이드
+	2. Rolling upgrade 로 새로운 버전의 kubelet 설치된 상태로 클러스터에 조인함
+3. Add-ons 업그레이드
+	1. aws-vpc-cni, kube-proxy 등
+4. EKS Upgrade 와 호환이 필요한 추가 컴포넌트 업그레이드
+	1. alpine-k8s, cluster-autoscaler, kube-bench 등
+
 ## EKS 1.32 to 1.33 Upgrade
 ---
 ### EKS 1.33 Breaking changes
