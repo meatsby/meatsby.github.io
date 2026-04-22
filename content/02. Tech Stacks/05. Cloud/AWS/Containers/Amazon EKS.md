@@ -188,11 +188,11 @@ kind: NodeConfig
 spec:
   kubelet:
     config:
-      cgroupDriver: cgroupfs
+      cgroupDriver: systemd
       ...
 EOF
 ```
-추가적인 동적 설정은 `/etc/eks/nodeadm.d/` 디렉토리에 YAML/JSON drop-in 파일로 작성할 수 있다.
+AL2023에서 cgroup v2를 기본으로 사용하기 때문에 cgroupDriver는 반드시 `systemd`로 설정해야 한다. cgroup v2는 unified hierarchy 구조로 설계되었고, systemd가 cgroup을 직접 관리하는 방식으로 변경되었기 때문이다. cgroupfs 드라이버는 cgroup v1 기반으로 별도 계층 구조를 사용하므로, cgroup v2 환경에서 systemd와 충돌하거나 예기치 못한 리소스 제한 동작을 야기할 수 있다.
 
 네트워킹 스택 변경
 - AL2: iptables (legacy)
