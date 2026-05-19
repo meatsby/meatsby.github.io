@@ -16,7 +16,7 @@
 
 ### `content/01. Computer Science/` — CS 기초 이론
 - `01. Data Structure` — 자료구조
-- `02. Algorithm` — 알고리즘 (PS/문제풀이는 `BOJ/` 등 하위 폴더 관례 따름)
+- `02. Algorithm` — 알고리즘 (PS는 `01. BOJ/`; BOJ 파일은 `BOJ {id} - {제목}.md` 유지, NN. 면제)
 - `03. Operating System` — OS
 - `04. Network` — 네트워크
 - `05. Database` — DB 이론
@@ -24,17 +24,21 @@
 - `07. Web` — 웹 기초
 
 ### `content/02. Tech Stacks/` — 응용 기술/도구
-- `01. Language` — 프로그래밍 언어
-- `02. Framework` — 프레임워크 (Spring 등)
-- `03. Data` — 데이터 처리/엔지니어링
-- `04. DevOps` — DevOps, Linux, CI/CD
-- `05. Cloud` — AWS 등 클라우드
-- `06. Infrastructure as Code` — Terraform 등 IaC
-- `07. Container and Orchestration` — Docker, Kubernetes, Helm, Kustomize, Istio
-- `08. Observability` — 모니터링/로깅/트레이싱
-- `09. Security and Compliance` — 보안/컴플라이언스
-- `10. Test` — 테스트
-- `11. IDE` — 에디터/IDE
+- `01. Language` — 언어 (`01. Python`, `02. Java`, `03. C++`)
+- `02. Framework` — 프레임워크 (`01. Spring Boot` 등)
+- `03. Data` — 데이터/DB (`01. MySQL` … `05. ZooKeeper`)
+- `04. DevOps` — 일반 ops toolchain: `01. Linux` `02. Nginx` `03. Git` `04. GitHub` `05. Gradle`
+- `05. CI-CD` — `01. Jenkins` `02. CircleCI` `03. ArgoCD` `04. GitHub Actions` `05. Spinnaker`
+- `06. Cloud` — `01. AWS/{01. Services, 02. Certification}`
+- `07. Infrastructure as Code` — Terraform/Ansible/Packer
+- `08. Container and Orchestration` — Docker, Kubernetes, Helm, Kustomize, Istio
+- `09. Observability` — 모니터링/로깅/트레이싱
+- `10. Security and Compliance` — 보안/컴플라이언스
+- `11. Test` — 테스트 (`01. Testing Fundamental`, `02. Performance Test`)
+- `12. IDE` — 에디터/IDE
+- `13. AI Engineering` — LLM/에이전트
+
+**카테고리 결정 규칙**: 크고 독립적인 도메인(Cloud·IaC·Container 등)은 최상위 유지. 소형 ops toolchain(Linux/Git/Gradle 등)은 `04. DevOps` 하위로 묶어 최상위 단편화 방지. 특정 분야가 충분히 커지면(대략 ≥15 노트) 그때 최상위로 승격.
 
 ### `content/03. Review/` — 회고/리뷰
 
@@ -44,10 +48,11 @@
 
 ## 3. 파일 명명 규칙
 
-- leaf 폴더 안에서는 `NN. 제목.md` 형식(2자리 zero-pad 순번). **대상 폴더의 기존 파일 중 최대 `NN`을 확인한 뒤 +1** 한다.
-  - 예) `content/02. Tech Stacks/07. Container and Orchestration/02. Kubernetes/` 의 마지막이 `15. minikube.md` 면 다음은 `16. <제목>.md`.
-- 단일 주제 폴더는 폴더명과 같은 파일명을 쓰는 예외가 있다 (예: `ZooKeeper/ZooKeeper.md`, `AWS/Amazon Web Services.md`). 해당 폴더가 이 패턴이면 순번을 붙이지 않는다.
-- 제목은 한국어/영어 혼용 허용, **공백 사용**(케밥케이스 금지). 같은 폴더 인접 파일들의 명명 스타일을 따른다.
+- **모든 폴더**(모든 레벨, 빈 폴더·단일파일 폴더 포함)에 `NN. 이름` 2자리 접두사. 빈 폴더는 삭제하지 말고 `.gitkeep` 으로 보존, 단일파일 폴더도 평탄화하지 않는다.
+- leaf 폴더의 노트는 `NN. 제목.md` 로 **갭 없이 1부터 순차**. 새 노트는 폴더 최대 `NN`+1.
+- **혼재 디렉터리**(느슨한 `.md` + 하위폴더 공존): 느슨한 파일은 `00. 제목.md` 로 두어 하위폴더(01~) 위에 정렬하고 번호 충돌을 피한다. 느슨한 파일이 여럿이면 `00.`,`01.`… 로 하고 하위폴더 번호를 그 뒤로 민다.
+- 제목은 한국어/영어 혼용 허용, **공백 사용**(케밥케이스 금지). 같은 폴더 인접 파일 스타일을 따른다.
+- **예외**: `01. BOJ/` 의 `BOJ {id} - {제목}.md` 는 순번 면제. `content/img/`(flat 에셋), `templates/`, `index.md`, `.obsidian/` 는 재정리 대상 아님.
 
 ## 4. Frontmatter 스키마
 
@@ -66,6 +71,8 @@ tags:
 
 - **태그는 공백·띄어쓰기 절대 금지.** 단일 토큰만 쓴다 (예: `K8s`, `Linux`, `LLM`, `EKS`). 여러 단어 개념은 붙이거나(`AgentSDK`) 약어로. 중첩(`a/b`)은 허용하나 공백은 불가.
 - `tags` 는 **같은 폴더 인접 노트에서 이미 쓰인 태그 어휘를 먼저 살펴 재사용**하고, 개수는 적게(보통 1~3개) 유지한다.
+- `status` 는 `To Do | In Progress | Done` 세 값만 사용한다(대소문자 고정).
+- `title` 은 항상 파일명(확장자 제외, `NN.` 접두사 포함)과 정확히 일치시킨다.
 - `draft: true` 이므로 검토 전까지 사이트에 노출되지 않는다.
 
 ## 5. 본문 하우스 스타일
