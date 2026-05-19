@@ -1,0 +1,48 @@
+---
+title: Amazon EBS
+date: 2024-05-14 13:44:37 +0800
+status: In Progress
+draft: false
+tags:
+  - AWS
+  - EBS
+---
+## Amazon Elastic Block Store (EBS)
+---
+### EBS Volumes
+- `AZ-level network drive` that can be attached to EC2 instances while running
+	- EC2 instances can have multiple EBSs attached
+- 30GB free for free-tier
+- Can be encrypted with a KMS key (AES-256) only when creating
+	- If a running EBS needs to be encrypted, it needs to be snapshotted and created with encryption again
+- Delete on Termination
+	- Root EBS volume is deleted by default
+	- Additional EBS volumes are not deleted by default
+
+### EBS Volume Types
+- gp2/gp3(SSD): General purpose SSD volume
+- io1/io2(SSD): Highest-performance SSD volume
+	- For applications that need more than 16K IOPS
+	- io2 has more durability and more IOPS per GiB at the same price as io1
+	- Supports EBS Multi-attach up to `16` instances
+	- Must use a file system that's cluster-aware (not XFS, EX4, etc...)
+- st1(HDD): Low-cost HDD volume
+- sc1(HDD): Lowest cost HDD volume
+- Only gp2/gp3 and io1/io2 can be used as boot volumes
+
+### EBS Snapshots
+- A backup(snapshot) of an EBS volume at a point in time
+- It is not necessary to detach volume to snapshot, but it is recommended
+- Can copy snapshots across AZs or Regions
+- Features
+	- EBS Snapshot Archive
+		- Move a Snapshot to an "Archive" that is 75% cheaper
+		- It takes 24~72 hours to restore
+	- Recycle Bin for EBS Snapshots
+		- Retention from 1 day to 1 year
+	- Fast Snapshot Restore (FSR) `$$$`
+		- Force full initialization of Snapshot to have no latency on the first use
+
+## References
+---
+- [Udemy - Ultimate AWS Certified Solutions Architect Associate SAA-C03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
