@@ -4,10 +4,10 @@
 
 ## 1. 프로젝트 개요
 
-- `content/` 가 Obsidian vault 루트이며, **Quartz v4**로 정적 사이트(`meatsby.github.io`)에 빌드되어 GitHub Pages로 배포된다.
-- `quartz.config.ts` 핵심 동작:
-  - `ignorePatterns: ["private", "templates", ".obsidian"]` — 이 경로들은 사이트에서 제외된다. **노트를 `content/templates/` 에 두지 말 것.**
-  - `filters: [Plugin.RemoveDrafts()]` — frontmatter `draft: true` 인 노트는 빌드 결과에서 제외된다. (검토 전 비공개의 근거)
+- `content/` 가 Obsidian vault 루트이며, **Quartz v5**로 정적 사이트(`meatsby.github.io`)에 빌드되어 GitHub Pages로 배포된다.
+- `quartz.config.yaml` 핵심 동작:
+  - `ignorePatterns: [private, templates, .obsidian]` — 이 경로들은 사이트에서 제외된다. **노트를 `content/templates/` 에 두지 말 것.**
+  - `github:quartz-community/remove-draft` 플러그인 — frontmatter `draft: true` 인 노트는 빌드 결과에서 제외된다. (검토 전 비공개의 근거)
 - 커밋/푸시 시 GitHub Actions가 Quartz 빌드·배포를 수행하므로, 커밋·푸시는 **사용자가 명시적으로 요청할 때만** 한다.
 
 ## 2. Vault 폴더 체계 (주제 → 폴더 라우팅)
