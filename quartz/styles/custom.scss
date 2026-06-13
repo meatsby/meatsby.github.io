@@ -1,3 +1,57 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// 홈페이지 전체 글 목록(recent-notes)을 폴더 페이지 목록처럼
+// 한 줄(날짜 | 제목 | 태그)로 표시한다.
+.recent-notes ul.recent-ul > li {
+  margin: 0.4rem 0;
+
+  & > .section {
+    display: grid;
+    grid-template-columns: fit-content(8em) 3fr 1fr;
+
+    & > .meta {
+      grid-column: 1;
+      grid-row: 1;
+      margin: 0 1em 0 0;
+      opacity: 0.6;
+      white-space: nowrap;
+    }
+
+    & > .desc {
+      grid-column: 2;
+      grid-row: 1;
+
+      & > h3 {
+        margin: 0;
+      }
+    }
+
+    & > ul.tags {
+      grid-column: 3;
+      grid-row: 1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: flex-end;
+      list-style: none;
+
+      & > li {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 600px) {
+  .recent-notes ul.recent-ul > li > .section {
+    grid-template-columns: fit-content(8em) 1fr;
+
+    & > ul.tags {
+      display: none;
+    }
+  }
+}
