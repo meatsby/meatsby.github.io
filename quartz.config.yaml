@@ -13,7 +13,7 @@ configuration:
     - templates
     - .obsidian
   theme:
-    fontOrigin: googleFonts
+    fontOrigin: local
     cdnCaching: true
     typography:
       header: Gowun Dodum
@@ -100,6 +100,17 @@ plugins:
     order: 92
   - source: github:quartz-community/fonts
     enabled: true
+    options:
+      fontOrigin: googleFonts
+      header:
+        name: Gowun Dodum
+        weights: [400, 700]
+      body:
+        name: Gowun Dodum
+        weights: [400, 700]
+      code:
+        name: JetBrains Mono
+        weights: [400, 600]
   - source: github:quartz-community/remove-draft
     enabled: true
   - source: github:quartz-community/explicit-publish

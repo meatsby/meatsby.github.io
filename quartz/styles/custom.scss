@@ -9,7 +9,7 @@
 
   & > .section {
     display: grid;
-    grid-template-columns: fit-content(8em) 3fr 1fr;
+    grid-template-columns: fit-content(8em) minmax(0, 1fr) auto;
 
     & > .meta {
       grid-column: 1;
@@ -33,16 +33,49 @@
       grid-row: 1;
       margin: 0;
       padding: 0;
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 0.4rem;
       justify-content: flex-end;
+      align-items: baseline;
       list-style: none;
+      // 표시할 태그 개수(N). counter는 -N에서 시작해 li마다 +1 →
+      // ::after 시점엔 (전체 태그 수 - N) = 숨긴 개수가 된다.
+      counter-reset: tag-extra -3;
 
       & > li {
+        counter-increment: tag-extra;
         margin: 0;
+
+        & > a {
+          white-space: nowrap;
+        }
+      }
+
+      // 앞의 3개만 흐름에 두고 나머지는 흐름에서 빼되(레이아웃 미차지)
+      // 카운터에는 계속 잡히도록 absolute + 투명 처리한다.
+      // (display:none 으로 숨기면 counter-increment 가 무시되어 "+0" 이 됨)
+      & > li:nth-child(n + 4) {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      // 태그가 4개 이상일 때만 "+N" 칩을 끝에 붙인다 (N = 숨긴 개수)
+      &:has(> li:nth-child(4))::after {
+        content: "+" counter(tag-extra);
+        align-self: baseline;
+        opacity: 0.6;
+        font-size: 0.85em;
+        white-space: nowrap;
       }
     }
+  }
+
+  // core가 생성하는 404 페이지("Not Found")는 목록에서 숨긴다
+  &:has(a[href$="/404"]) {
+    display: none;
   }
 }
 
