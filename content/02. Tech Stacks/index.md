@@ -1,3 +1,9 @@
 ---
 title: 02. Tech Stacks
+date: 2021-11-04 10:00:01 +0900
+tags:
+  - AWS
+  - Java
+  - Spring
 ---
+실무에서 쓰는 기술 스택과 도구를 정리한다.
