@@ -2,8 +2,46 @@
 
 // put your custom CSS here!
 
-// 홈페이지 전체 글 목록(recent-notes)을 폴더 페이지 목록처럼
-// 한 줄(날짜 | 제목 | 태그)로 표시한다.
+// 목록의 태그를 한 줄에 두고, 표시 개수($n)를 넘으면 "+N"(숨긴 개수)으로 접는다.
+// display:none 으로 숨기면 counter-increment 가 무시되어 "+0" 이 되므로,
+// 초과 태그는 absolute + 투명 처리해 레이아웃에서만 빼고 카운터에는 남긴다.
+@mixin tags-collapsed($n: 3) {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.4rem;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: tag-extra #{-$n};
+
+  & > li {
+    counter-increment: tag-extra;
+    margin: 0;
+
+    & > a {
+      white-space: nowrap;
+    }
+  }
+
+  & > li:nth-child(n + #{$n + 1}) {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:has(> li:nth-child(#{$n + 1}))::after {
+    content: "+" counter(tag-extra);
+    align-self: baseline;
+    opacity: 0.6;
+    font-size: 0.85em;
+    white-space: nowrap;
+  }
+}
+
+// 홈페이지 전체 글 목록(recent-notes): 한 줄(날짜 | 제목 | 태그) 그리드
 .recent-notes ul.recent-ul > li {
   margin: 0.4rem 0;
 
@@ -31,45 +69,7 @@
     & > ul.tags {
       grid-column: 3;
       grid-row: 1;
-      margin: 0;
-      padding: 0;
-      position: relative;
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 0.4rem;
-      justify-content: flex-end;
-      align-items: baseline;
-      list-style: none;
-      // 표시할 태그 개수(N). counter는 -N에서 시작해 li마다 +1 →
-      // ::after 시점엔 (전체 태그 수 - N) = 숨긴 개수가 된다.
-      counter-reset: tag-extra -3;
-
-      & > li {
-        counter-increment: tag-extra;
-        margin: 0;
-
-        & > a {
-          white-space: nowrap;
-        }
-      }
-
-      // 앞의 3개만 흐름에 두고 나머지는 흐름에서 빼되(레이아웃 미차지)
-      // 카운터에는 계속 잡히도록 absolute + 투명 처리한다.
-      // (display:none 으로 숨기면 counter-increment 가 무시되어 "+0" 이 됨)
-      & > li:nth-child(n + 4) {
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      // 태그가 4개 이상일 때만 "+N" 칩을 끝에 붙인다 (N = 숨긴 개수)
-      &:has(> li:nth-child(4))::after {
-        content: "+" counter(tag-extra);
-        align-self: baseline;
-        opacity: 0.6;
-        font-size: 0.85em;
-        white-space: nowrap;
-      }
+      @include tags-collapsed(3);
     }
   }
 
@@ -77,6 +77,12 @@
   &:has(a[href$="/404"]) {
     display: none;
   }
+}
+
+// 네이티브 폴더/태그 페이지 목록도 동일하게 태그 한 줄 + "+N"
+// (이쪽은 .section 그리드가 날짜→제목→태그 순서라 행 배치는 네이티브 그대로 둔다)
+li.section-li ul.tags {
+  @include tags-collapsed(3);
 }
 
 @media all and (max-width: 600px) {
