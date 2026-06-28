@@ -1,9 +1,5 @@
 ---
 title: 02. Storage
 date: 2024-04-15 23:05:21 +0800
-tags:
-  - AWS
-  - EFS
-  - EBS
 ---
 AWS 스토리지 서비스를 정리한다.

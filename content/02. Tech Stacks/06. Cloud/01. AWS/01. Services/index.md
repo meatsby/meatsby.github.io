@@ -1,9 +1,5 @@
 ---
 title: 01. Services
 date: 2023-12-08 13:00:00 +0800
-tags:
-  - AWS
-  - EKS
-  - K8s
 ---
 AWS 서비스를 분야별로 정리한다.
