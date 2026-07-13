@@ -4,7 +4,7 @@
 // 인라인 <script>는 Quartz markdown 파이프라인이 문자열 속 <pre> 등을 태그로
 // 오해해 깨뜨리므로, 이 로직은 반드시 외부 static 파일로 둔다.
 ;(function () {
-  const PROXY_DEFAULT = "https://meatsby-ask.duckdns.org"
+  const PROXY_DEFAULT = "https://gilog.me"
   const MODELS = ["opus", "sonnet", "haiku"]
   const EFFORTS = ["low", "medium", "high", "xhigh", "max"]
   const LS_CFG = "askw.config"
