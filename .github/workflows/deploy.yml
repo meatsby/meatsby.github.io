@@ -38,6 +38,17 @@ jobs:
         run: npm ci
       - name: Install Quartz plugins
         run: npx quartz plugin install
+      - name: Checkout ask sources from project-mirror
+        uses: actions/checkout@v4
+        with:
+          repository: meatsby/project-mirror
+          token: ${{ secrets.PROJECT_MIRROR_TOKEN }}
+          path: .project-mirror
+          sparse-checkout: web
+      - name: Materialize ask files
+        run: |
+          cp .project-mirror/web/ask.md content/ask.md
+          cp .project-mirror/web/ask.js quartz/static/ask.js
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact
