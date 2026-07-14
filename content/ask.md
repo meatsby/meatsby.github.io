@@ -4,7 +4,7 @@ draft: false
 unlisted: true
 ---
 
-<div id="askw" class="askw" data-proxy="https://gilog.me">
+<div id="askw" class="askw" data-proxy="https://done-defined-namely-capture.trycloudflare.com">
   <div class="askw-login">
     <p class="askw-login-title">로그인</p>
     <input class="askw-pw" type="password" placeholder="비밀번호" autocomplete="current-password" />
