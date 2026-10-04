@@ -1,4 +1,4 @@
 [submodule "content"]
 	path = content
 	url = https://github.com/meatsby/vault.git
-	branch = v5
+	branch = main
