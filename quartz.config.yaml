@@ -12,6 +12,7 @@ configuration:
     - private
     - templates
     - .obsidian
+    - CLAUDE.md
   theme:
     fontOrigin: local
     cdnCaching: true

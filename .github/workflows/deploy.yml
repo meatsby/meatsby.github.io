@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - v5
+  repository_dispatch:
+    types: [vault-updated]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,6 +24,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for git info
+          submodules: true
+          token: ${{ secrets.PRIVATE_READ_TOKEN }}
+      - name: Use latest vault commit
+        run: git submodule update --remote --checkout content
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -42,7 +49,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: meatsby/project-mirror
-          token: ${{ secrets.PROJECT_MIRROR_TOKEN }}
+          token: ${{ secrets.PRIVATE_READ_TOKEN }}
           path: .project-mirror
           sparse-checkout: web
       - name: Materialize ask files
