@@ -11,3 +11,6 @@ private/
 replit.nix
 .quartz/
 quartz/cli/tui/dist/
+
+# vault 는 CI 에서 content/ 로 따로 받는다. 로컬은 content -> ~/repos/vault 링크
+/content
